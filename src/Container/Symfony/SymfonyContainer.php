@@ -6,7 +6,7 @@ namespace DiContainerBenchmarks\Container\Symfony;
 use DiContainerBenchmarks\Container\ContainerInterface;
 use DiContainerBenchmarks\Fixture\Constructor\Class1;
 use DiContainerBenchmarks\Fixture\Constructor\Class10;
-use DiContainerBenchmarks\Fixture\Constructor\Class50;
+use DiContainerBenchmarks\Fixture\Constructor\Class100;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Dumper\PhpDumper;
@@ -30,9 +30,9 @@ class SymfonyContainer implements ContainerInterface
         $definition->setAutowired(true);
         $containerBuilder->setDefinition(Class10::class, $definition);
 
-        $definition = new Definition(Class50::class, []);
+        $definition = new Definition(Class100::class, []);
         $definition->setAutowired(true);
-        $containerBuilder->setDefinition(Class50::class, $definition);
+        $containerBuilder->setDefinition(Class100::class, $definition);
 
         $containerBuilder->compile();
 

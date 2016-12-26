@@ -34,9 +34,13 @@ class Benchmark
             }
         }
 
+        echo "Generating results...\n";
+
         foreach ($outputters as $outputter) {
             $outputter->output($testSuites, $benchmarkResult);
         }
+
+        echo "Benchmark finished successfully!\n";
     }
 
     private function runTest(

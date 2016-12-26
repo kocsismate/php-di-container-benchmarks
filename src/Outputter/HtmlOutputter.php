@@ -39,23 +39,27 @@ class HtmlOutputter implements OutputterInterface
             $testCases = $testSuite->getTestCases();
 
             foreach ($testCases as $testCase) {
-                $html .= "<table border='1' style='width: 600px;'>\n";
+                $html .= "<table border='1' style='width: 700px;'>\n";
                 $html .= "<thead>\n";
                 $html .= "<tr>\n";
-                $html .= "<th colspan='4' style='font-size: 18px;'>\n";
+                $html .= "<th colspan='6' style='font-size: 18px;'>\n";
                 $html .= $testCase->getTitle() . "\n";
                 $html .= "</th>\n";
                 $html .= "</tr>\n";
                 $html .= "<tr>\n";
                 $html .= "<th style='width: 50px;'>Rank</th>\n";
                 $html .= "<th style='width: 150px;'>Container</th>\n";
-                $html .= "<th style='width: 150px;'>Time (ms)</th>\n";
-                $html .= "<th style='width: 250px;'>Peak Memory Usage (MB)</th>\n";
+                $html .= "<th style='width: 100px;'>Time (ms)</th>\n";
+                $html .= "<th style='width: 100px;'>Time Diff.</th>\n";
+                $html .= "<th style='width: 200px;'>Peak Memory (MB)</th>\n";
+                $html .= "<th style='width: 100px;'>Memory Diff.</th>\n";
                 $html .= "</tr>\n";
                 $html .= "</thead>\n";
 
                 $html .= "<tbody>\n";
                 $i = 1;
+                $timeBase = null;
+                $memoryBase = null;
                 foreach ($benchmarkResult->getResults($testSuite, $testCase) as $containerName => $result) {
                     if ($result->getTimeConsumptionInMilliSeconds() !== null) {
                         $time = sprintf('%.3F', $result->getTimeConsumptionInMilliSeconds());
@@ -65,13 +69,20 @@ class HtmlOutputter implements OutputterInterface
 
                     $memory = $result->getPeakMemoryUsageInMegaBytes() ?? "N.A.";
 
+                    if ($i === 1) {
+                        $timeBase = $time;
+                        $memoryBase = $memory;
+                    }
+
                     $html .= "<tr>\n";
                     $html .= "<th>" . $i . "</th>\n";
                     $html .= "<th>\n";
                     $html .= $containerName . "\n";
                     $html .= "</th>\n";
                     $html .= "<td>" . $time . "</td>\n";
+                    $html .= "<td>" . (round($time / $timeBase * 100, 0)) . "%</td>\n";
                     $html .= "<td>" . $memory . "</td>\n";
+                    $html .= "<td>" . (round($memory / $memoryBase * 100, 0)) . "%</td>\n";
                     $html .= "</td>\n";
                     $html .= "</tr>\n";
                     $i++;

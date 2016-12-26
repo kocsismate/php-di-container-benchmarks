@@ -3,12 +3,12 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\PhpDi;
 
-use DiContainerBenchmarks\Fixture\Constructor\Class50;
+use DiContainerBenchmarks\Fixture\Constructor\Class100;
 
 class Test3 extends AbstractPhpDiTest
 {
     public function run(): void
     {
-        $this->container->get(Class50::class);
+        $this->container->get(Class100::class);
     }
 }
