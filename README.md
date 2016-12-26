@@ -12,6 +12,8 @@
 
 ## Introduction
 
+You can find the benchmark results here: [Results](https://rawgit.com/kocsismate/php-di-container-benchmarks/master/var/benchmark.html).
+
 ## Install
 
 You need [Composer](https://getcomposer.org) to install this library. Run the command below and you will get the latest
