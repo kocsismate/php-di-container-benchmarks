@@ -39,18 +39,18 @@ class HtmlOutputter implements OutputterInterface
             $testCases = $testSuite->getTestCases();
 
             foreach ($testCases as $testCase) {
-                $html .= "<table style='width: 525px; border: 1px solid black;'>\n";
+                $html .= "<table border='1' style='width: 600px;'>\n";
                 $html .= "<thead>\n";
                 $html .= "<tr>\n";
-                $html .= "<th colspan='4'>\n";
-                $html .= "<h4>" . $testCase->getTitle() . "</h4>\n";
+                $html .= "<th colspan='4' style='font-size: 18px;'>\n";
+                $html .= $testCase->getTitle() . "\n";
                 $html .= "</th>\n";
                 $html .= "</tr>\n";
                 $html .= "<tr>\n";
-                $html .= "<th style='width: 100px; height: 20px;'>Rank</th>\n";
-                $html .= "<th style='width: 100px; height: 20px;'>Container</th>\n";
-                $html .= "<th style='width: 200px; height: 20px;'>Time (ms)</th>\n";
-                $html .= "<th style='width: 200px; height: 20px;'>Peak Memory Usage (MB)</th>\n";
+                $html .= "<th style='width: 50px;'>Rank</th>\n";
+                $html .= "<th style='width: 150px;'>Container</th>\n";
+                $html .= "<th style='width: 150px;'>Time (ms)</th>\n";
+                $html .= "<th style='width: 250px;'>Peak Memory Usage (MB)</th>\n";
                 $html .= "</tr>\n";
                 $html .= "</thead>\n";
 
@@ -58,7 +58,7 @@ class HtmlOutputter implements OutputterInterface
                 $i = 1;
                 foreach ($benchmarkResult->getResults($testSuite, $testCase) as $containerName => $result) {
                     if ($result->getTimeConsumptionInMilliSeconds() !== null) {
-                        $time = sprintf('%.6F', $result->getTimeConsumptionInMilliSeconds());
+                        $time = sprintf('%.3F', $result->getTimeConsumptionInMilliSeconds());
                     } else {
                         $time = "N/A";
                     }

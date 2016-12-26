@@ -4,21 +4,21 @@
 </head>
 <body>
 <h1>DI Container Benchmark Results</h1>
-<h2>Generated: 2016-12-22 21:43:14</h2>
+<h2>Generated: 2016-12-22 22:53:46</h2>
 <hr>
 <h3>Instantiation of a new object</h3>
-<table style='width: 525px; border: 1px solid black;'>
+<table border='1' style='width: 600px;'>
 <thead>
 <tr>
-<th colspan='4'>
-<h4>10000 iterations, setup time included</h4>
+<th colspan='4' style='font-size: 18px;'>
+10000 iterations, startup time included
 </th>
 </tr>
 <tr>
-<th style='width: 100px; height: 20px;'>Rank</th>
-<th style='width: 100px; height: 20px;'>Container</th>
-<th style='width: 200px; height: 20px;'>Time (ms)</th>
-<th style='width: 200px; height: 20px;'>Peak Memory Usage (MB)</th>
+<th style='width: 50px;'>Rank</th>
+<th style='width: 150px;'>Container</th>
+<th style='width: 150px;'>Time (ms)</th>
+<th style='width: 250px;'>Peak Memory Usage (MB)</th>
 </tr>
 </thead>
 <tbody>
@@ -27,7 +27,7 @@
 <th>
 PhpDi
 </th>
-<td>0.001560</td>
+<td>1.602</td>
 <td>0.76484</td>
 </td>
 </tr>
@@ -36,7 +36,7 @@ PhpDi
 <th>
 Zen
 </th>
-<td>0.003560</td>
+<td>3.604</td>
 <td>0.71543</td>
 </td>
 </tr>
@@ -45,25 +45,25 @@ Zen
 <th>
 Symfony
 </th>
-<td>0.004340</td>
+<td>4.299</td>
 <td>0.74012</td>
 </td>
 </tr>
 </tbody>
 </table>
 </br>
-<table style='width: 525px; border: 1px solid black;'>
+<table border='1' style='width: 600px;'>
 <thead>
 <tr>
-<th colspan='4'>
-<h4>10000 iterations, setup time excluded</h4>
+<th colspan='4' style='font-size: 18px;'>
+10000 iterations, startup time excluded
 </th>
 </tr>
 <tr>
-<th style='width: 100px; height: 20px;'>Rank</th>
-<th style='width: 100px; height: 20px;'>Container</th>
-<th style='width: 200px; height: 20px;'>Time (ms)</th>
-<th style='width: 200px; height: 20px;'>Peak Memory Usage (MB)</th>
+<th style='width: 50px;'>Rank</th>
+<th style='width: 150px;'>Container</th>
+<th style='width: 150px;'>Time (ms)</th>
+<th style='width: 250px;'>Peak Memory Usage (MB)</th>
 </tr>
 </thead>
 <tbody>
@@ -72,26 +72,26 @@ Symfony
 <th>
 PhpDi
 </th>
-<td>0.001590</td>
+<td>1.445</td>
 <td>0.76484</td>
 </td>
 </tr>
 <tr>
 <th>2</th>
 <th>
-Zen
+Symfony
 </th>
-<td>0.003650</td>
-<td>0.71543</td>
+<td>4.297</td>
+<td>0.74012</td>
 </td>
 </tr>
 <tr>
 <th>3</th>
 <th>
-Symfony
+Zen
 </th>
-<td>0.004930</td>
-<td>0.74012</td>
+<td>4.314</td>
+<td>0.71543</td>
 </td>
 </tr>
 </tbody>
@@ -99,18 +99,18 @@ Symfony
 </br>
 <hr>
 <h3>Constructor Injection of a bigger object graph</h3>
-<table style='width: 525px; border: 1px solid black;'>
+<table border='1' style='width: 600px;'>
 <thead>
 <tr>
-<th colspan='4'>
-<h4>1000 iterations, setup time included</h4>
+<th colspan='4' style='font-size: 18px;'>
+1000 iterations, startup time included
 </th>
 </tr>
 <tr>
-<th style='width: 100px; height: 20px;'>Rank</th>
-<th style='width: 100px; height: 20px;'>Container</th>
-<th style='width: 200px; height: 20px;'>Time (ms)</th>
-<th style='width: 200px; height: 20px;'>Peak Memory Usage (MB)</th>
+<th style='width: 50px;'>Rank</th>
+<th style='width: 150px;'>Container</th>
+<th style='width: 150px;'>Time (ms)</th>
+<th style='width: 250px;'>Peak Memory Usage (MB)</th>
 </tr>
 </thead>
 <tbody>
@@ -119,7 +119,7 @@ Symfony
 <th>
 PhpDi
 </th>
-<td>0.000400</td>
+<td>0.289</td>
 <td>0.83328</td>
 </td>
 </tr>
@@ -128,7 +128,7 @@ PhpDi
 <th>
 Zen
 </th>
-<td>0.000500</td>
+<td>0.429</td>
 <td>0.71543</td>
 </td>
 </tr>
@@ -137,25 +137,25 @@ Zen
 <th>
 Symfony
 </th>
-<td>0.000610</td>
+<td>0.497</td>
 <td>0.74012</td>
 </td>
 </tr>
 </tbody>
 </table>
 </br>
-<table style='width: 525px; border: 1px solid black;'>
+<table border='1' style='width: 600px;'>
 <thead>
 <tr>
-<th colspan='4'>
-<h4>1000 iterations, setup time excluded</h4>
+<th colspan='4' style='font-size: 18px;'>
+1000 iterations, startup time excluded
 </th>
 </tr>
 <tr>
-<th style='width: 100px; height: 20px;'>Rank</th>
-<th style='width: 100px; height: 20px;'>Container</th>
-<th style='width: 200px; height: 20px;'>Time (ms)</th>
-<th style='width: 200px; height: 20px;'>Peak Memory Usage (MB)</th>
+<th style='width: 50px;'>Rank</th>
+<th style='width: 150px;'>Container</th>
+<th style='width: 150px;'>Time (ms)</th>
+<th style='width: 250px;'>Peak Memory Usage (MB)</th>
 </tr>
 </thead>
 <tbody>
@@ -164,7 +164,7 @@ Symfony
 <th>
 PhpDi
 </th>
-<td>0.000360</td>
+<td>0.271</td>
 <td>0.83328</td>
 </td>
 </tr>
@@ -173,7 +173,7 @@ PhpDi
 <th>
 Zen
 </th>
-<td>0.000420</td>
+<td>0.430</td>
 <td>0.71543</td>
 </td>
 </tr>
@@ -182,7 +182,7 @@ Zen
 <th>
 Symfony
 </th>
-<td>0.001260</td>
+<td>0.467</td>
 <td>0.74012</td>
 </td>
 </tr>
@@ -191,37 +191,37 @@ Symfony
 </br>
 <hr>
 <h3>Constructor Injection of a big object graph</h3>
-<table style='width: 525px; border: 1px solid black;'>
+<table border='1' style='width: 600px;'>
 <thead>
 <tr>
-<th colspan='4'>
-<h4>100 iterations, setup time included</h4>
+<th colspan='4' style='font-size: 18px;'>
+100 iterations, startup time included
 </th>
 </tr>
 <tr>
-<th style='width: 100px; height: 20px;'>Rank</th>
-<th style='width: 100px; height: 20px;'>Container</th>
-<th style='width: 200px; height: 20px;'>Time (ms)</th>
-<th style='width: 200px; height: 20px;'>Peak Memory Usage (MB)</th>
+<th style='width: 50px;'>Rank</th>
+<th style='width: 150px;'>Container</th>
+<th style='width: 150px;'>Time (ms)</th>
+<th style='width: 250px;'>Peak Memory Usage (MB)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>1</th>
 <th>
-Zen
+Symfony
 </th>
-<td>0.000090</td>
-<td>0.73828</td>
+<td>0.075</td>
+<td>0.74012</td>
 </td>
 </tr>
 <tr>
 <th>2</th>
 <th>
-Symfony
+Zen
 </th>
-<td>0.000090</td>
-<td>0.74012</td>
+<td>0.079</td>
+<td>0.73836</td>
 </td>
 </tr>
 <tr>
@@ -229,44 +229,44 @@ Symfony
 <th>
 PhpDi
 </th>
-<td>0.000500</td>
+<td>0.535</td>
 <td>0.96915</td>
 </td>
 </tr>
 </tbody>
 </table>
 </br>
-<table style='width: 525px; border: 1px solid black;'>
+<table border='1' style='width: 600px;'>
 <thead>
 <tr>
-<th colspan='4'>
-<h4>100 iterations, setup time excluded</h4>
+<th colspan='4' style='font-size: 18px;'>
+100 iterations, startup time excluded
 </th>
 </tr>
 <tr>
-<th style='width: 100px; height: 20px;'>Rank</th>
-<th style='width: 100px; height: 20px;'>Container</th>
-<th style='width: 200px; height: 20px;'>Time (ms)</th>
-<th style='width: 200px; height: 20px;'>Peak Memory Usage (MB)</th>
+<th style='width: 50px;'>Rank</th>
+<th style='width: 150px;'>Container</th>
+<th style='width: 150px;'>Time (ms)</th>
+<th style='width: 250px;'>Peak Memory Usage (MB)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>1</th>
 <th>
-Zen
+Symfony
 </th>
-<td>0.000080</td>
-<td>0.73828</td>
+<td>0.076</td>
+<td>0.74012</td>
 </td>
 </tr>
 <tr>
 <th>2</th>
 <th>
-Symfony
+Zen
 </th>
-<td>0.000100</td>
-<td>0.74012</td>
+<td>0.129</td>
+<td>0.73836</td>
 </td>
 </tr>
 <tr>
@@ -274,7 +274,7 @@ Symfony
 <th>
 PhpDi
 </th>
-<td>0.000530</td>
+<td>0.493</td>
 <td>0.96915</td>
 </td>
 </tr>

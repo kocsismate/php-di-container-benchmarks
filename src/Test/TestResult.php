@@ -28,7 +28,7 @@ class TestResult
 
     public static function create(float $startTime, float $endTime, int $peakMemoryUsageInBytes): TestResult
     {
-        return new TestResult($endTime - $startTime, $peakMemoryUsageInBytes / 1024 / 1024);
+        return new TestResult(($endTime - $startTime) * 1000, $peakMemoryUsageInBytes / 1024 / 1024);
     }
 
     public function __construct(?float $timeConsumptionInMilliseconds, ?float $peakMemoryUsageInMegaBytes)

@@ -13,9 +13,9 @@ if ($argc < 4) {
 $testSuiteNumber = (int) $argv[1];
 $container = $argv[2];
 $iterations = (int) $argv[3];
-$isRunTimeSetupIncluded = (bool) $argv[4];
+$isStartupTimeIncluded = (bool) $argv[4];
 
 $testRunner = new TestRunner();
-$result = $testRunner->runTest($testSuiteNumber, $container, $iterations, $isRunTimeSetupIncluded);
+$result = $testRunner->runTest($testSuiteNumber, $container, $iterations, $isStartupTimeIncluded);
 
 echo $result ? $result->toJson() : null;

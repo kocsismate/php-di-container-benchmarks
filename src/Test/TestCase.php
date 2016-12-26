@@ -23,14 +23,14 @@ class TestCase
     /**
      * @var bool
      */
-    private $setupIncludedInTimeConsumption;
+    private $startupTimeIncluded;
 
-    public function __construct(int $number, string $title, int $iterations, bool $isSetupIncludedInTimeConsumption)
+    public function __construct(int $number, string $title, int $iterations, bool $isStartupTimeIncluded)
     {
         $this->number = $number;
         $this->title = $title;
         $this->iterations = $iterations;
-        $this->setupIncludedInTimeConsumption = $isSetupIncludedInTimeConsumption;
+        $this->startupTimeIncluded = $isStartupTimeIncluded;
     }
 
     public function getNumber(): int
@@ -48,8 +48,8 @@ class TestCase
         return $this->iterations;
     }
 
-    public function isSetupIncludedInTimeConsumption(): bool
+    public function isStartupTimeIncluded(): bool
     {
-        return $this->setupIncludedInTimeConsumption;
+        return $this->startupTimeIncluded;
     }
 }

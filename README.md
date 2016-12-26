@@ -1,5 +1,10 @@
 # PHP DI Container Benchmarks
 
+[![Software License][ico-license]](LICENSE.md)
+[![Quality Score][ico-code-quality]][link-code-quality]
+[![Total Downloads][ico-downloads]][link-downloads]
+[![Gitter][ico-gitter]][link-gitter]
+
 ## Table of Contents
 
 * [Introduction](#introduction)
@@ -44,5 +49,13 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 The MIT License (MIT). Please see the [License File](LICENSE.md) for more information.
 
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/kocsismate/php-di-container-benchmarks.svg
+[ico-downloads]: https://img.shields.io/packagist/dt/kocsismate/php-di-container-benchmarks.svg
+[ico-gitter]: https://badges.gitter.im/kocsismate/php-di-container-benchmarks.svg
+
+[link-code-quality]: https://scrutinizer-ci.com/g/kocsismate/php-di-container-benchmarks
+[link-downloads]: https://packagist.org/packages/kocsismate/php-di-container-benchmarks
+[link-gitter]: https://gitter.im/kocsismate/php-di-container-benchmarks?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 [link-author]: https://github.com/kocsismate
 [link-contributors]: ../../contributors

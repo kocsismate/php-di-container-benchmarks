@@ -52,8 +52,8 @@ class Benchmark
             $number = $testSuite->getNumber();
             $containerName = $container->getName();
             $iterations = $testCase->getIterations();
-            $isSetupIncludedInTimeConsumption = (int) $testCase->isSetupIncludedInTimeConsumption();
-            exec("/code/bin/test $number $containerName $iterations $isSetupIncludedInTimeConsumption", $output, $code);
+            $isStartupTimeIncluded = (int) $testCase->isStartupTimeIncluded();
+            exec("/code/bin/test $number $containerName $iterations $isStartupTimeIncluded", $output, $code);
 
             if ($code !== 0) {
                 echo "Test failed:\n";

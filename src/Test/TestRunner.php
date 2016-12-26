@@ -9,7 +9,7 @@ class TestRunner
         int $testSuiteNumber,
         string $container,
         int $iterations,
-        bool $isRunTimeSetupIncluded
+        bool $isStartupTimeIncluded
     ): TestResult {
         $class = "DiContainerBenchmarks\\Container\\$container\\Test$testSuiteNumber";
         if (class_exists($class) === false) {
@@ -27,7 +27,7 @@ class TestRunner
         $test->run();
 
         // Starting benchmark
-        if ($isRunTimeSetupIncluded) {
+        if ($isStartupTimeIncluded) {
             $t1 = microtime(true);
             $test->setup();
         } else {
