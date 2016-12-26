@@ -1,5 +1,7 @@
 # PHP DI Container Benchmarks
 
+[![Join the chat at https://gitter.im/kocsismate/php-di-container-benchmarks](https://badges.gitter.im/kocsismate/php-di-container-benchmarks.svg)](https://gitter.im/kocsismate/php-di-container-benchmarks?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Table of Contents
 
 * [Introduction](#introduction)
