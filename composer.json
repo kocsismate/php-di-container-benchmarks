@@ -1,0 +1,33 @@
+{
+    "name": "kocsismate/di-container-benchmarks",
+    "description": "Benchmarks of PHP DI Contaners",
+    "license": "MIT",
+    "homepage": "https://github.com/kocsismate/php-di-benchmarks",
+    "keywords": ["Dependency Injection Container benchmarks", "Dependency Injection Container performance", "DI"],
+    "authors": [
+        {
+            "name": "Máté Kocsis",
+            "email": "kocsismate@woohoolabs.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "doctrine/cache": "1.6.1",
+        "level-2/Dice": "*",
+        "php-di/php-di": "5.4.0",
+        "symfony/config": "*",
+        "symfony/dependency-injection": "3.2.1",
+        "woohoolabs/zen": "1.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "DiContainerBenchmarks\\": "src/"
+        }
+    },
+    "config": {
+        "bin-compat": "full",
+        "platform": {
+            "php": "7.1"
+        }
+    }
+}

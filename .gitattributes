@@ -1,0 +1,6 @@
+* text eol=lf
+
+/vendor export-ignore
+.editorconfig export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore

@@ -1,0 +1,33 @@
+#!/usr/bin/env php
+<?php
+declare(strict_types=1);
+
+require "/code/app/bootstrap.php";
+
+use DiContainerBenchmarks\Benchmark\Benchmark;
+use DiContainerBenchmarks\Container\PhpDi\PhpDiContainer;
+use DiContainerBenchmarks\Container\Symfony\SymfonyContainer;
+use DiContainerBenchmarks\Container\Zen\ZenContainer;
+use DiContainerBenchmarks\Outputter\HtmlOutputter;
+use DiContainerBenchmarks\TestSuite\TestSuite1;
+use DiContainerBenchmarks\TestSuite\TestSuite2;
+use DiContainerBenchmarks\TestSuite\TestSuite3;
+
+$testSuites = [
+    new TestSuite1(),
+    new TestSuite2(),
+    new TestSuite3(),
+];
+
+$containers = [
+    new PhpDiContainer(),
+    new SymfonyContainer(),
+    new ZenContainer(),
+];
+
+$outputters = [
+    new HtmlOutputter("/code/var/benchmark.html"),
+];
+
+$benchmark = new Benchmark();
+$benchmark->runBenchmark($testSuites, $containers, $outputters);

@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  di-benchmarks-php:
+    image: woohoolabs/php:3.1.4
+    container_name: di-benchmarks-php
+    volumes:
+      - .:/code
+    env_file:
+      - .env
+    command: /bin/bash -c "/code/build/container/php/run.sh"

@@ -1,0 +1,94 @@
+<?php
+declare(strict_types=1);
+
+namespace DiContainerBenchmarks\Benchmark;
+
+use DiContainerBenchmarks\Container\ContainerInterface;
+use DiContainerBenchmarks\Test\TestCase;
+use DiContainerBenchmarks\Test\TestResult;
+use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
+
+class BenchmarkResult
+{
+    /**
+     * @var array
+     */
+    private $testResults;
+
+    public function __construct()
+    {
+        $this->testResults = [];
+    }
+
+    public function addTestResult(
+        TestSuiteInterface $testSuite,
+        TestCase $testCase,
+        ContainerInterface $container,
+        TestResult $result
+    ) {
+        $containerName = $container->getName();
+        $testSuiteNumber = $testSuite->getNumber();
+        $testCaseNumber = $testCase->getNumber();
+
+        $this->testResults[$testSuiteNumber][$testCaseNumber][$containerName][] = $result;
+    }
+
+    /**
+     * @return TestResult[]
+     */
+    public function getResults(TestSuiteInterface $testSuite, TestCase $testCase): array
+    {
+        $testSuiteNumber = $testSuite->getNumber();
+        $testCaseNumber = $testCase->getNumber();
+
+        if (isset($this->testResults[$testSuiteNumber][$testCaseNumber]) === false) {
+            return [];
+        }
+
+        $results = [];
+        foreach ($this->testResults[$testSuiteNumber][$testCaseNumber] as $containerName => $containerResult) {
+            $timeResults = [];
+            $memoryResults = [];
+            foreach ($containerResult as $item) {
+                /** @var TestResult $item */
+                $timeResults[] = $item->getTimeConsumptionInMilliSeconds();
+                $memoryResults[] = $item->getPeakMemoryUsageInMegaBytes();
+            }
+
+            $results[$containerName] = new TestResult(
+                $this->getAverage($timeResults),
+                $this->getAverage($memoryResults)
+            );
+        }
+
+        uasort($results, function($a, $b) use ($results) {
+            /** @var TestResult $a */
+            /** @var TestResult $b */
+            return $a->getTimeConsumptionInMilliSeconds() <=> $b->getTimeConsumptionInMilliSeconds();
+        });
+
+        return $results;
+    }
+
+    private function getAverage(array $array, $precision = 5): ?float
+    {
+        if (empty($array) || $array[0] === null) {
+            return null;
+        }
+
+        sort($array, SORT_NUMERIC);
+
+        $smallest = $array[0];
+        $num = 0;
+        $total = 0;
+
+        foreach ($array as $val) {
+            if ($val <= $smallest * 1.2) {
+                $num++;
+                $total += $val;
+            }
+        }
+
+        return round($total / $num, $precision);
+    }
+}

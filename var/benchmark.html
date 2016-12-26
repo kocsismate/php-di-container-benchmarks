@@ -1,0 +1,285 @@
+<html>
+<head>
+<title>DI Container Benchmark Results</title>
+</head>
+<body>
+<h1>DI Container Benchmark Results</h1>
+<h2>Generated: 2016-12-22 21:43:14</h2>
+<hr>
+<h3>Instantiation of a new object</h3>
+<table style='width: 525px; border: 1px solid black;'>
+<thead>
+<tr>
+<th colspan='4'>
+<h4>10000 iterations, setup time included</h4>
+</th>
+</tr>
+<tr>
+<th style='width: 100px; height: 20px;'>Rank</th>
+<th style='width: 100px; height: 20px;'>Container</th>
+<th style='width: 200px; height: 20px;'>Time (ms)</th>
+<th style='width: 200px; height: 20px;'>Peak Memory Usage (MB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1</th>
+<th>
+PhpDi
+</th>
+<td>0.001560</td>
+<td>0.76484</td>
+</td>
+</tr>
+<tr>
+<th>2</th>
+<th>
+Zen
+</th>
+<td>0.003560</td>
+<td>0.71543</td>
+</td>
+</tr>
+<tr>
+<th>3</th>
+<th>
+Symfony
+</th>
+<td>0.004340</td>
+<td>0.74012</td>
+</td>
+</tr>
+</tbody>
+</table>
+</br>
+<table style='width: 525px; border: 1px solid black;'>
+<thead>
+<tr>
+<th colspan='4'>
+<h4>10000 iterations, setup time excluded</h4>
+</th>
+</tr>
+<tr>
+<th style='width: 100px; height: 20px;'>Rank</th>
+<th style='width: 100px; height: 20px;'>Container</th>
+<th style='width: 200px; height: 20px;'>Time (ms)</th>
+<th style='width: 200px; height: 20px;'>Peak Memory Usage (MB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1</th>
+<th>
+PhpDi
+</th>
+<td>0.001590</td>
+<td>0.76484</td>
+</td>
+</tr>
+<tr>
+<th>2</th>
+<th>
+Zen
+</th>
+<td>0.003650</td>
+<td>0.71543</td>
+</td>
+</tr>
+<tr>
+<th>3</th>
+<th>
+Symfony
+</th>
+<td>0.004930</td>
+<td>0.74012</td>
+</td>
+</tr>
+</tbody>
+</table>
+</br>
+<hr>
+<h3>Constructor Injection of a bigger object graph</h3>
+<table style='width: 525px; border: 1px solid black;'>
+<thead>
+<tr>
+<th colspan='4'>
+<h4>1000 iterations, setup time included</h4>
+</th>
+</tr>
+<tr>
+<th style='width: 100px; height: 20px;'>Rank</th>
+<th style='width: 100px; height: 20px;'>Container</th>
+<th style='width: 200px; height: 20px;'>Time (ms)</th>
+<th style='width: 200px; height: 20px;'>Peak Memory Usage (MB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1</th>
+<th>
+PhpDi
+</th>
+<td>0.000400</td>
+<td>0.83328</td>
+</td>
+</tr>
+<tr>
+<th>2</th>
+<th>
+Zen
+</th>
+<td>0.000500</td>
+<td>0.71543</td>
+</td>
+</tr>
+<tr>
+<th>3</th>
+<th>
+Symfony
+</th>
+<td>0.000610</td>
+<td>0.74012</td>
+</td>
+</tr>
+</tbody>
+</table>
+</br>
+<table style='width: 525px; border: 1px solid black;'>
+<thead>
+<tr>
+<th colspan='4'>
+<h4>1000 iterations, setup time excluded</h4>
+</th>
+</tr>
+<tr>
+<th style='width: 100px; height: 20px;'>Rank</th>
+<th style='width: 100px; height: 20px;'>Container</th>
+<th style='width: 200px; height: 20px;'>Time (ms)</th>
+<th style='width: 200px; height: 20px;'>Peak Memory Usage (MB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1</th>
+<th>
+PhpDi
+</th>
+<td>0.000360</td>
+<td>0.83328</td>
+</td>
+</tr>
+<tr>
+<th>2</th>
+<th>
+Zen
+</th>
+<td>0.000420</td>
+<td>0.71543</td>
+</td>
+</tr>
+<tr>
+<th>3</th>
+<th>
+Symfony
+</th>
+<td>0.001260</td>
+<td>0.74012</td>
+</td>
+</tr>
+</tbody>
+</table>
+</br>
+<hr>
+<h3>Constructor Injection of a big object graph</h3>
+<table style='width: 525px; border: 1px solid black;'>
+<thead>
+<tr>
+<th colspan='4'>
+<h4>100 iterations, setup time included</h4>
+</th>
+</tr>
+<tr>
+<th style='width: 100px; height: 20px;'>Rank</th>
+<th style='width: 100px; height: 20px;'>Container</th>
+<th style='width: 200px; height: 20px;'>Time (ms)</th>
+<th style='width: 200px; height: 20px;'>Peak Memory Usage (MB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1</th>
+<th>
+Zen
+</th>
+<td>0.000090</td>
+<td>0.73828</td>
+</td>
+</tr>
+<tr>
+<th>2</th>
+<th>
+Symfony
+</th>
+<td>0.000090</td>
+<td>0.74012</td>
+</td>
+</tr>
+<tr>
+<th>3</th>
+<th>
+PhpDi
+</th>
+<td>0.000500</td>
+<td>0.96915</td>
+</td>
+</tr>
+</tbody>
+</table>
+</br>
+<table style='width: 525px; border: 1px solid black;'>
+<thead>
+<tr>
+<th colspan='4'>
+<h4>100 iterations, setup time excluded</h4>
+</th>
+</tr>
+<tr>
+<th style='width: 100px; height: 20px;'>Rank</th>
+<th style='width: 100px; height: 20px;'>Container</th>
+<th style='width: 200px; height: 20px;'>Time (ms)</th>
+<th style='width: 200px; height: 20px;'>Peak Memory Usage (MB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1</th>
+<th>
+Zen
+</th>
+<td>0.000080</td>
+<td>0.73828</td>
+</td>
+</tr>
+<tr>
+<th>2</th>
+<th>
+Symfony
+</th>
+<td>0.000100</td>
+<td>0.74012</td>
+</td>
+</tr>
+<tr>
+<th>3</th>
+<th>
+PhpDi
+</th>
+<td>0.000530</td>
+<td>0.96915</td>
+</td>
+</tr>
+</tbody>
+</table>
+</br>
+</body>
+</html>
