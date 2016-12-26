@@ -61,9 +61,15 @@ class BenchmarkResult
             );
         }
 
-        uasort($results, function($a, $b) use ($results) {
-            /** @var TestResult $a */
-            /** @var TestResult $b */
+        uasort($results, function(TestResult $a, TestResult $b) use ($results) {
+            if ($a->getTimeConsumptionInMilliSeconds() === null && $b->getTimeConsumptionInMilliSeconds() !== null) {
+                return 1;
+            }
+
+            if ($a->getTimeConsumptionInMilliSeconds() !== null && $b->getTimeConsumptionInMilliSeconds() === null) {
+                return -1;
+            }
+
             return $a->getTimeConsumptionInMilliSeconds() <=> $b->getTimeConsumptionInMilliSeconds();
         });
 

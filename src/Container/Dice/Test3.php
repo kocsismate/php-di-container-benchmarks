@@ -9,6 +9,6 @@ class Test3 extends AbstractDiceTest
 {
     public function run(): void
     {
-        $this->container->getRule(Class100::class);
+        $this->container->create(Class100::class);
     }
 }

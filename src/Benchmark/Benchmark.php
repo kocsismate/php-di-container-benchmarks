@@ -25,6 +25,8 @@ class Benchmark
             $container->build();
         }
 
+        exec("composer dump-autoload --working-dir=/code --classmap-authoritative");
+
         foreach ($testSuites as $testSuite) {
             foreach ($testSuite->getTestCases() as $testCase) {
                 foreach ($containers as $container) {

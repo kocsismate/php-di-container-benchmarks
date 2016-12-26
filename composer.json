@@ -12,11 +12,12 @@
     ],
     "require": {
         "php": "^7.1",
+        "bitexpert/disco": "0.6.1",
         "doctrine/cache": "1.6.1",
         "illuminate/container": "v5.3.23",
         "level-2/Dice": "*",
         "php-di/php-di": "5.4.0",
-        "symfony/config": "*",
+        "symfony/config": "3.2.1",
         "symfony/dependency-injection": "3.2.1",
         "woohoolabs/zen": "1.0.1"
     },

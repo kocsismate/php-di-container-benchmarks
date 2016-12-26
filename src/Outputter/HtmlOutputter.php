@@ -64,14 +64,14 @@ class HtmlOutputter implements OutputterInterface
                     if ($result->getTimeConsumptionInMilliSeconds() !== null) {
                         $time = sprintf('%.3F', $result->getTimeConsumptionInMilliSeconds());
                     } else {
-                        $time = "N/A";
+                        $time = null;
                     }
 
-                    $memory = $result->getPeakMemoryUsageInMegaBytes() ?? "N.A.";
+                    $memory = $result->getPeakMemoryUsageInMegaBytes() ?? null;
 
                     if ($i === 1) {
-                        $timeBase = $time;
-                        $memoryBase = $memory;
+                        $timeBase = $time ?? null;
+                        $memoryBase = $memory ?? null;
                     }
 
                     $html .= "<tr>\n";
@@ -79,10 +79,10 @@ class HtmlOutputter implements OutputterInterface
                     $html .= "<th>\n";
                     $html .= $containerName . "\n";
                     $html .= "</th>\n";
-                    $html .= "<td>" . $time . "</td>\n";
-                    $html .= "<td>" . (round($time / $timeBase * 100, 0)) . "%</td>\n";
-                    $html .= "<td>" . $memory . "</td>\n";
-                    $html .= "<td>" . (round($memory / $memoryBase * 100, 0)) . "%</td>\n";
+                    $html .= "<td>" . ($time ?? "N/A") . "</td>\n";
+                    $html .= "<td>" . ($time ? round($time / $timeBase * 100, 0) . "%" : "N/A") . "</td>\n";
+                    $html .= "<td>" . ($memory ?? "N/A") . "</td>\n";
+                    $html .= "<td>" . ($memory ? round($memory / $memoryBase * 100, 0) . "%" : "N/A") . "</td>\n";
                     $html .= "</td>\n";
                     $html .= "</tr>\n";
                     $i++;
