@@ -51,7 +51,7 @@ The MIT License (MIT). Please see the [License File](LICENSE.md) for more inform
 
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/kocsismate/php-di-container-benchmarks.svg
-[ico-downloads]: https://img.shields.io/packagist/dt/kocsismate/php-di-container-benchmarks.svg
+[ico-downloads]: https://img.shields.io/packagist/dt/kocsismate/di-container-benchmarks.svg
 [ico-gitter]: https://badges.gitter.im/kocsismate/php-di-container-benchmarks.svg
 
 [link-code-quality]: https://scrutinizer-ci.com/g/kocsismate/php-di-container-benchmarks
