@@ -20,10 +20,9 @@ class Benchmark
     {
         $benchmarkResult = new BenchmarkResult();
 
-        echo "Setting up containers...\n";
+        echo "Building containers...\n";
         foreach ($containers as $container) {
-            echo "Setting up " . $container->getName() . "...\n";
-            $container->setup();
+            $container->build();
         }
 
         foreach ($testSuites as $testSuite) {

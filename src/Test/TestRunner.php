@@ -23,15 +23,15 @@ class TestRunner
         }
 
         // Warming up
-        $test->setup();
+        $test->startup();
         $test->run();
 
         // Starting benchmark
         if ($isStartupTimeIncluded) {
             $t1 = microtime(true);
-            $test->setup();
+            $test->startup();
         } else {
-            $test->setup();
+            $test->startup();
             $t1 = microtime(true);
         }
 

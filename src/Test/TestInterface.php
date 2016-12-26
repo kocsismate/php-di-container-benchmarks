@@ -5,7 +5,7 @@ namespace DiContainerBenchmarks\Test;
 
 interface TestInterface
 {
-    public function setup(): void;
+    public function startup(): void;
 
     public function run(): void;
 }

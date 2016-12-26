@@ -18,7 +18,7 @@ class SymfonyContainer implements ContainerInterface
         return "Symfony";
     }
 
-    public function setup(): void
+    public function build(): void
     {
         $containerBuilder = new ContainerBuilder();
 

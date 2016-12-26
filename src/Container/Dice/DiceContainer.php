@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace DiContainerBenchmarks\Container\PhpDi;
+namespace DiContainerBenchmarks\Container\Dice;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
 
-class PhpDiContainer implements ContainerInterface
+class DiceContainer implements ContainerInterface
 {
     public function getName(): string
     {
-        return "PhpDi";
+        return "Dice";
     }
 
     public function build(): void

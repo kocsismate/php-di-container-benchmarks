@@ -14,7 +14,7 @@ abstract class AbstractZenTest implements TestInterface
      */
     protected $container;
 
-    public function setup(): void
+    public function startup(): void
     {
         $this->container = new CompiledContainer();
     }

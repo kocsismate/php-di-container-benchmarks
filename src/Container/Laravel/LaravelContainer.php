@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace DiContainerBenchmarks\Container\PhpDi;
+namespace DiContainerBenchmarks\Container\Laravel;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
 
-class PhpDiContainer implements ContainerInterface
+class LaravelContainer implements ContainerInterface
 {
     public function getName(): string
     {
-        return "PhpDi";
+        return "Laravel";
     }
 
     public function build(): void

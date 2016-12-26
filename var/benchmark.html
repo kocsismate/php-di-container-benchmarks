@@ -4,21 +4,23 @@
 </head>
 <body>
 <h1>DI Container Benchmark Results</h1>
-<h2>Generated: 2016-12-22 22:53:46</h2>
+<h2>Generated: 2016-12-26 13:18:14</h2>
 <hr>
 <h3>Instantiation of a new object</h3>
-<table border='1' style='width: 600px;'>
+<table border='1' style='width: 700px;'>
 <thead>
 <tr>
-<th colspan='4' style='font-size: 18px;'>
-10000 iterations, startup time included
+<th colspan='6' style='font-size: 18px;'>
+10 000 iterations, startup time included
 </th>
 </tr>
 <tr>
 <th style='width: 50px;'>Rank</th>
 <th style='width: 150px;'>Container</th>
-<th style='width: 150px;'>Time (ms)</th>
-<th style='width: 250px;'>Peak Memory Usage (MB)</th>
+<th style='width: 100px;'>Time (ms)</th>
+<th style='width: 100px;'>Time Diff.</th>
+<th style='width: 200px;'>Peak Memory (MB)</th>
+<th style='width: 100px;'>Memory Diff.</th>
 </tr>
 </thead>
 <tbody>
@@ -27,43 +29,73 @@
 <th>
 PhpDi
 </th>
-<td>1.602</td>
-<td>0.76484</td>
+<td>1.409</td>
+<td>100%</td>
+<td>0.79455</td>
+<td>100%</td>
 </td>
 </tr>
 <tr>
 <th>2</th>
 <th>
-Zen
+Laravel
 </th>
-<td>3.604</td>
-<td>0.71543</td>
+<td>2.412</td>
+<td>171%</td>
+<td>0.90275</td>
+<td>114%</td>
 </td>
 </tr>
 <tr>
 <th>3</th>
 <th>
+Dice
+</th>
+<td>3.085</td>
+<td>219%</td>
+<td>0.77241</td>
+<td>97%</td>
+</td>
+</tr>
+<tr>
+<th>4</th>
+<th>
+Zen
+</th>
+<td>3.395</td>
+<td>241%</td>
+<td>0.66004</td>
+<td>83%</td>
+</td>
+</tr>
+<tr>
+<th>5</th>
+<th>
 Symfony
 </th>
-<td>4.299</td>
-<td>0.74012</td>
+<td>4.126</td>
+<td>293%</td>
+<td>0.65091</td>
+<td>82%</td>
 </td>
 </tr>
 </tbody>
 </table>
 </br>
-<table border='1' style='width: 600px;'>
+<table border='1' style='width: 700px;'>
 <thead>
 <tr>
-<th colspan='4' style='font-size: 18px;'>
-10000 iterations, startup time excluded
+<th colspan='6' style='font-size: 18px;'>
+10 000 iterations, startup time excluded
 </th>
 </tr>
 <tr>
 <th style='width: 50px;'>Rank</th>
 <th style='width: 150px;'>Container</th>
-<th style='width: 150px;'>Time (ms)</th>
-<th style='width: 250px;'>Peak Memory Usage (MB)</th>
+<th style='width: 100px;'>Time (ms)</th>
+<th style='width: 100px;'>Time Diff.</th>
+<th style='width: 200px;'>Peak Memory (MB)</th>
+<th style='width: 100px;'>Memory Diff.</th>
 </tr>
 </thead>
 <tbody>
@@ -72,17 +104,21 @@ Symfony
 <th>
 PhpDi
 </th>
-<td>1.445</td>
-<td>0.76484</td>
+<td>1.394</td>
+<td>100%</td>
+<td>0.65091</td>
+<td>100%</td>
 </td>
 </tr>
 <tr>
 <th>2</th>
 <th>
-Symfony
+Laravel
 </th>
-<td>4.297</td>
-<td>0.74012</td>
+<td>2.434</td>
+<td>175%</td>
+<td>0.70425</td>
+<td>108%</td>
 </td>
 </tr>
 <tr>
@@ -90,8 +126,32 @@ Symfony
 <th>
 Zen
 </th>
-<td>4.314</td>
-<td>0.71543</td>
+<td>3.437</td>
+<td>247%</td>
+<td>0.66004</td>
+<td>101%</td>
+</td>
+</tr>
+<tr>
+<th>4</th>
+<th>
+Symfony
+</th>
+<td>4.416</td>
+<td>317%</td>
+<td>0.65091</td>
+<td>100%</td>
+</td>
+</tr>
+<tr>
+<th>5</th>
+<th>
+Dice
+</th>
+<td>7.219</td>
+<td>518%</td>
+<td>0.65091</td>
+<td>100%</td>
 </td>
 </tr>
 </tbody>
@@ -99,63 +159,95 @@ Zen
 </br>
 <hr>
 <h3>Constructor Injection of a bigger object graph</h3>
-<table border='1' style='width: 600px;'>
+<table border='1' style='width: 700px;'>
 <thead>
 <tr>
-<th colspan='4' style='font-size: 18px;'>
+<th colspan='6' style='font-size: 18px;'>
 1000 iterations, startup time included
 </th>
 </tr>
 <tr>
 <th style='width: 50px;'>Rank</th>
 <th style='width: 150px;'>Container</th>
-<th style='width: 150px;'>Time (ms)</th>
-<th style='width: 250px;'>Peak Memory Usage (MB)</th>
+<th style='width: 100px;'>Time (ms)</th>
+<th style='width: 100px;'>Time Diff.</th>
+<th style='width: 200px;'>Peak Memory (MB)</th>
+<th style='width: 100px;'>Memory Diff.</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>1</th>
 <th>
-PhpDi
+Dice
 </th>
-<td>0.289</td>
-<td>0.83328</td>
+<td>0.241</td>
+<td>100%</td>
+<td>0.65091</td>
+<td>100%</td>
 </td>
 </tr>
 <tr>
 <th>2</th>
 <th>
-Zen
+PhpDi
 </th>
-<td>0.429</td>
-<td>0.71543</td>
+<td>0.260</td>
+<td>108%</td>
+<td>0.66003</td>
+<td>101%</td>
 </td>
 </tr>
 <tr>
 <th>3</th>
 <th>
+Laravel
+</th>
+<td>0.329</td>
+<td>137%</td>
+<td>0.70425</td>
+<td>108%</td>
+</td>
+</tr>
+<tr>
+<th>4</th>
+<th>
+Zen
+</th>
+<td>0.414</td>
+<td>172%</td>
+<td>0.66004</td>
+<td>101%</td>
+</td>
+</tr>
+<tr>
+<th>5</th>
+<th>
 Symfony
 </th>
-<td>0.497</td>
-<td>0.74012</td>
+<td>0.429</td>
+<td>178%</td>
+<td>0.65091</td>
+<td>100%</td>
 </td>
 </tr>
 </tbody>
 </table>
 </br>
-<table border='1' style='width: 600px;'>
+<table border='1' style='width: 700px;'>
 <thead>
 <tr>
-<th colspan='4' style='font-size: 18px;'>
+<th colspan='6' style='font-size: 18px;'>
 1000 iterations, startup time excluded
 </th>
 </tr>
 <tr>
 <th style='width: 50px;'>Rank</th>
 <th style='width: 150px;'>Container</th>
-<th style='width: 150px;'>Time (ms)</th>
-<th style='width: 250px;'>Peak Memory Usage (MB)</th>
+<th style='width: 100px;'>Time (ms)</th>
+<th style='width: 100px;'>Time Diff.</th>
+<th style='width: 200px;'>Peak Memory (MB)</th>
+<th style='width: 100px;'>Memory Diff.</th>
 </tr>
 </thead>
 <tbody>
@@ -164,26 +256,54 @@ Symfony
 <th>
 PhpDi
 </th>
-<td>0.271</td>
-<td>0.83328</td>
+<td>0.248</td>
+<td>100%</td>
+<td>0.66003</td>
+<td>100%</td>
 </td>
 </tr>
 <tr>
 <th>2</th>
 <th>
-Zen
+Laravel
 </th>
-<td>0.430</td>
-<td>0.71543</td>
+<td>0.267</td>
+<td>108%</td>
+<td>0.70425</td>
+<td>107%</td>
 </td>
 </tr>
 <tr>
 <th>3</th>
 <th>
+Dice
+</th>
+<td>0.288</td>
+<td>116%</td>
+<td>0.65091</td>
+<td>99%</td>
+</td>
+</tr>
+<tr>
+<th>4</th>
+<th>
+Zen
+</th>
+<td>0.356</td>
+<td>144%</td>
+<td>0.66004</td>
+<td>100%</td>
+</td>
+</tr>
+<tr>
+<th>5</th>
+<th>
 Symfony
 </th>
-<td>0.467</td>
-<td>0.74012</td>
+<td>0.468</td>
+<td>189%</td>
+<td>0.65091</td>
+<td>99%</td>
 </td>
 </tr>
 </tbody>
@@ -191,73 +311,107 @@ Symfony
 </br>
 <hr>
 <h3>Constructor Injection of a big object graph</h3>
-<table border='1' style='width: 600px;'>
+<table border='1' style='width: 700px;'>
 <thead>
 <tr>
-<th colspan='4' style='font-size: 18px;'>
+<th colspan='6' style='font-size: 18px;'>
 100 iterations, startup time included
 </th>
 </tr>
 <tr>
 <th style='width: 50px;'>Rank</th>
 <th style='width: 150px;'>Container</th>
-<th style='width: 150px;'>Time (ms)</th>
-<th style='width: 250px;'>Peak Memory Usage (MB)</th>
+<th style='width: 100px;'>Time (ms)</th>
+<th style='width: 100px;'>Time Diff.</th>
+<th style='width: 200px;'>Peak Memory (MB)</th>
+<th style='width: 100px;'>Memory Diff.</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>1</th>
 <th>
-Symfony
+Dice
 </th>
-<td>0.075</td>
-<td>0.74012</td>
+<td>0.026</td>
+<td>100%</td>
+<td>0.65091</td>
+<td>100%</td>
 </td>
 </tr>
 <tr>
 <th>2</th>
 <th>
-Zen
+Symfony
 </th>
-<td>0.079</td>
-<td>0.73836</td>
+<td>0.081</td>
+<td>312%</td>
+<td>0.73718</td>
+<td>113%</td>
 </td>
 </tr>
 <tr>
 <th>3</th>
 <th>
+Zen
+</th>
+<td>0.091</td>
+<td>350%</td>
+<td>0.74597</td>
+<td>115%</td>
+</td>
+</tr>
+<tr>
+<th>4</th>
+<th>
+Laravel
+</th>
+<td>0.380</td>
+<td>1462%</td>
+<td>0.81529</td>
+<td>125%</td>
+</td>
+</tr>
+<tr>
+<th>5</th>
+<th>
 PhpDi
 </th>
-<td>0.535</td>
-<td>0.96915</td>
+<td>0.892</td>
+<td>3431%</td>
+<td>1.04356</td>
+<td>160%</td>
 </td>
 </tr>
 </tbody>
 </table>
 </br>
-<table border='1' style='width: 600px;'>
+<table border='1' style='width: 700px;'>
 <thead>
 <tr>
-<th colspan='4' style='font-size: 18px;'>
+<th colspan='6' style='font-size: 18px;'>
 100 iterations, startup time excluded
 </th>
 </tr>
 <tr>
 <th style='width: 50px;'>Rank</th>
 <th style='width: 150px;'>Container</th>
-<th style='width: 150px;'>Time (ms)</th>
-<th style='width: 250px;'>Peak Memory Usage (MB)</th>
+<th style='width: 100px;'>Time (ms)</th>
+<th style='width: 100px;'>Time Diff.</th>
+<th style='width: 200px;'>Peak Memory (MB)</th>
+<th style='width: 100px;'>Memory Diff.</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>1</th>
 <th>
-Symfony
+Dice
 </th>
-<td>0.076</td>
-<td>0.74012</td>
+<td>0.033</td>
+<td>100%</td>
+<td>0.65091</td>
+<td>100%</td>
 </td>
 </tr>
 <tr>
@@ -265,17 +419,43 @@ Symfony
 <th>
 Zen
 </th>
-<td>0.129</td>
-<td>0.73836</td>
+<td>0.109</td>
+<td>330%</td>
+<td>0.74597</td>
+<td>115%</td>
 </td>
 </tr>
 <tr>
 <th>3</th>
 <th>
+Symfony
+</th>
+<td>0.119</td>
+<td>361%</td>
+<td>0.73718</td>
+<td>113%</td>
+</td>
+</tr>
+<tr>
+<th>4</th>
+<th>
+Laravel
+</th>
+<td>0.329</td>
+<td>997%</td>
+<td>0.81529</td>
+<td>125%</td>
+</td>
+</tr>
+<tr>
+<th>5</th>
+<th>
 PhpDi
 </th>
-<td>0.493</td>
-<td>0.96915</td>
+<td>0.880</td>
+<td>2667%</td>
+<td>1.04356</td>
+<td>160%</td>
 </td>
 </tr>
 </tbody>

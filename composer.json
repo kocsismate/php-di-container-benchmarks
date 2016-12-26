@@ -13,6 +13,7 @@
     "require": {
         "php": "^7.1",
         "doctrine/cache": "1.6.1",
+        "illuminate/container": "v5.3.23",
         "level-2/Dice": "*",
         "php-di/php-di": "5.4.0",
         "symfony/config": "*",

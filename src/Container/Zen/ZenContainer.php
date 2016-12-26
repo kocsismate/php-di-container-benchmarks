@@ -14,7 +14,7 @@ class ZenContainer implements ContainerInterface
         return "Zen";
     }
 
-    public function setup(): void
+    public function build(): void
     {
         $builder = new FileSystemContainerBuilder();
         $builder->build('/code/src/Container/Zen/Resource/CompiledContainer.php', new CompilerConfig());

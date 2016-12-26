@@ -7,5 +7,5 @@ interface ContainerInterface
 {
     public function getName(): string;
 
-    public function setup(): void;
+    public function build(): void;
 }

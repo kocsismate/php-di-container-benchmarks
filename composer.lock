@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7b607e87f0c142357fbfcdb88f5532c2",
-    "content-hash": "bbcf647a4836a17c3fa1d10cfd9e59af",
+    "content-hash": "6083bdcce4ceeb42cd6a8a87729be170",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -32,7 +31,7 @@
                 "MIT"
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
-            "time": "2014-12-30 15:22:37"
+            "time": "2014-12-30T15:22:37+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -100,7 +99,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2016-10-24 11:45:47"
+            "time": "2016-10-24T11:45:47+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -170,7 +169,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2016-10-29 11:16:17"
+            "time": "2016-10-29T11:16:17+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -224,7 +223,92 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2014-09-09 13:34:57"
+            "time": "2014-09-09T13:34:57+00:00"
+        },
+        {
+            "name": "illuminate/container",
+            "version": "v5.3.23",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/container.git",
+                "reference": "8047b47e1f731c975d9aa0fe0b269064d3f1346d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/8047b47e1f731c975d9aa0fe0b269064d3f1346d",
+                "reference": "8047b47e1f731c975d9aa0fe0b269064d3f1346d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "5.3.*",
+                "php": ">=5.6.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Container\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The Illuminate Container package.",
+            "homepage": "https://laravel.com",
+            "time": "2016-10-02T01:14:30+00:00"
+        },
+        {
+            "name": "illuminate/contracts",
+            "version": "v5.3.23",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/contracts.git",
+                "reference": "ce5d73c6015b2054d32f3f8530767847b358ae4e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/ce5d73c6015b2054d32f3f8530767847b358ae4e",
+                "reference": "ce5d73c6015b2054d32f3f8530767847b358ae4e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Contracts\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The Illuminate Contracts package.",
+            "homepage": "https://laravel.com",
+            "time": "2016-09-26T20:36:27+00:00"
         },
         {
             "name": "level-2/dice",
@@ -267,7 +351,7 @@
                 "di",
                 "ioc"
             ],
-            "time": "2015-12-13 17:24:53"
+            "time": "2015-12-13T17:24:53+00:00"
         },
         {
             "name": "php-di/invoker",
@@ -310,7 +394,7 @@
                 "invoke",
                 "invoker"
             ],
-            "time": "2016-07-14 13:09:58"
+            "time": "2016-07-14T13:09:58+00:00"
         },
         {
             "name": "php-di/php-di",
@@ -370,7 +454,7 @@
                 "dependency injection",
                 "di"
             ],
-            "time": "2016-08-23 20:18:00"
+            "time": "2016-08-23T20:18:00+00:00"
         },
         {
             "name": "php-di/phpdoc-reader",
@@ -407,7 +491,7 @@
                 "phpdoc",
                 "reflection"
             ],
-            "time": "2015-11-29 10:34:25"
+            "time": "2015-11-29T10:34:25+00:00"
         },
         {
             "name": "symfony/config",
@@ -463,7 +547,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2016-12-09 07:45:17"
+            "time": "2016-12-09T07:45:17+00:00"
         },
         {
             "name": "symfony/dependency-injection",
@@ -526,7 +610,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2016-12-08 15:27:33"
+            "time": "2016-12-08T15:27:33+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -575,7 +659,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-24 00:46:43"
+            "time": "2016-11-24T00:46:43+00:00"
         },
         {
             "name": "woohoolabs/zen",
@@ -632,7 +716,7 @@
                 "di",
                 "dic"
             ],
-            "time": "2016-10-30 22:44:53"
+            "time": "2016-10-30T22:44:53+00:00"
         }
     ],
     "packages-dev": [],

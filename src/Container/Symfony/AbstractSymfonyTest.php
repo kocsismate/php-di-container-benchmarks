@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Symfony;
 
+use DiContainerBenchmarks\Container\Symfony\Resource\CompiledContainer;
 use DiContainerBenchmarks\Test\TestInterface;
 use Interop\Container\ContainerInterface;
-use DiContainerBenchmarks\Container\Symfony\Resource\CompiledContainer;
 
 abstract class AbstractSymfonyTest implements TestInterface
 {
@@ -14,7 +14,7 @@ abstract class AbstractSymfonyTest implements TestInterface
      */
     protected $container;
 
-    public function setup(): void
+    public function startup(): void
     {
         $this->container = new CompiledContainer();
     }

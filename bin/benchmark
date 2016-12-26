@@ -5,6 +5,8 @@ declare(strict_types=1);
 require "/code/app/bootstrap.php";
 
 use DiContainerBenchmarks\Benchmark\Benchmark;
+use DiContainerBenchmarks\Container\Dice\DiceContainer;
+use DiContainerBenchmarks\Container\Laravel\LaravelContainer;
 use DiContainerBenchmarks\Container\PhpDi\PhpDiContainer;
 use DiContainerBenchmarks\Container\Symfony\SymfonyContainer;
 use DiContainerBenchmarks\Container\Zen\ZenContainer;
@@ -20,6 +22,8 @@ $testSuites = [
 ];
 
 $containers = [
+    new DiceContainer(),
+    new LaravelContainer(),
     new PhpDiContainer(),
     new SymfonyContainer(),
     new ZenContainer(),

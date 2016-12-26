@@ -15,7 +15,7 @@ abstract class AbstractPhpDiTest implements TestInterface
      */
     protected $container;
 
-    public function setup(): void
+    public function startup(): void
     {
         $builder = new ContainerBuilder();
         $builder->setDefinitionCache(new ApcuCache());
