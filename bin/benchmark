@@ -5,12 +5,13 @@ declare(strict_types=1);
 require "/code/app/bootstrap.php";
 
 use DiContainerBenchmarks\Benchmark\Benchmark;
-use DiContainerBenchmarks\Container\Disco\DiscoContainer;
 use DiContainerBenchmarks\Container\Dice\DiceContainer;
 use DiContainerBenchmarks\Container\Laravel\LaravelContainer;
 use DiContainerBenchmarks\Container\PhpDi\PhpDiContainer;
+use DiContainerBenchmarks\Container\Pimple\PimpleContainer;
 use DiContainerBenchmarks\Container\Symfony\SymfonyContainer;
 use DiContainerBenchmarks\Container\Zen\ZenContainer;
+use DiContainerBenchmarks\Container\ZendServiceManager\ZendServiceManagerContainer;
 use DiContainerBenchmarks\Outputter\HtmlOutputter;
 use DiContainerBenchmarks\TestSuite\TestSuite1;
 use DiContainerBenchmarks\TestSuite\TestSuite2;
@@ -23,12 +24,13 @@ $testSuites = [
 ];
 
 $containers = [
-    new DiscoContainer(),
     new DiceContainer(),
     new LaravelContainer(),
     new PhpDiContainer(),
+    new PimpleContainer(),
     new SymfonyContainer(),
     new ZenContainer(),
+    new ZendServiceManagerContainer(),
 ];
 
 $outputters = [
