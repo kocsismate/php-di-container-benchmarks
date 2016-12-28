@@ -22,6 +22,11 @@ class PimpleContainer implements ContainerInterface
         return false;
     }
 
+    public function getUrl(): string
+    {
+        return "http://pimple.sensiolabs.org/";
+    }
+
     public function build(): void
     {
     }

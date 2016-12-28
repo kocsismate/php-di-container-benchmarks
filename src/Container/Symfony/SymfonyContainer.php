@@ -27,6 +27,11 @@ class SymfonyContainer implements ContainerInterface
         return true;
     }
 
+    public function getUrl(): string
+    {
+        return "https://symfony.com/doc/3.2/components/dependency_injection.html";
+    }
+
     public function build(): void
     {
         // Build container with prototype services

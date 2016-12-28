@@ -22,6 +22,11 @@ class DiceContainer implements ContainerInterface
         return false;
     }
 
+    public function getUrl(): string
+    {
+        return "https://github.com/Level-2/Dice";
+    }
+
     public function build(): void
     {
     }

@@ -22,6 +22,11 @@ class LaravelContainer implements ContainerInterface
         return true;
     }
 
+    public function getUrl(): string
+    {
+        return "https://laravel.com/docs/5.3/container";
+    }
+
     public function build(): void
     {
     }

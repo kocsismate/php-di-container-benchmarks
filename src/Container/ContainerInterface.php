@@ -11,5 +11,7 @@ interface ContainerInterface
 
     public function isAutowiringSupported(): bool;
 
+    public function getUrl(): string;
+
     public function build(): void;
 }

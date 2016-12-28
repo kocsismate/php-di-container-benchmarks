@@ -22,6 +22,11 @@ class PhpDiContainer implements ContainerInterface
         return true;
     }
 
+    public function getUrl(): string
+    {
+        return "http://php-di.org/";
+    }
+
     public function build(): void
     {
     }

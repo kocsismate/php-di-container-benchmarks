@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9689c134b0a2910f8f361a11afff62f",
+    "content-hash": "812991343c56bdee6445bbf4ce6ada1b",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -312,16 +312,16 @@
         },
         {
             "name": "level-2/dice",
-            "version": "2.0.3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Level-2/Dice.git",
-                "reference": "fee948c67e8881f081627f6b1791b841d2e5bd0e"
+                "reference": "97551e1c720cb1ae7b4a2cb751768584110b515f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Level-2/Dice/zipball/fee948c67e8881f081627f6b1791b841d2e5bd0e",
-                "reference": "fee948c67e8881f081627f6b1791b841d2e5bd0e",
+                "url": "https://api.github.com/repos/Level-2/Dice/zipball/97551e1c720cb1ae7b4a2cb751768584110b515f",
+                "reference": "97551e1c720cb1ae7b4a2cb751768584110b515f",
                 "shasum": ""
             },
             "require": {
@@ -351,7 +351,7 @@
                 "di",
                 "ioc"
             ],
-            "time": "2015-12-13T17:24:53+00:00"
+            "time": "2016-12-15 14:50:33"
         },
         {
             "name": "php-di/invoker",
@@ -874,7 +874,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "level-2/dice": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

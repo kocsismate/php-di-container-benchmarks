@@ -25,6 +25,11 @@ class ZenContainer implements ContainerInterface
         return true;
     }
 
+    public function getUrl(): string
+    {
+        return "https://github.com/woohoolabs/zen";
+    }
+
     public function build(): void
     {
         $builder = new FileSystemContainerBuilder();

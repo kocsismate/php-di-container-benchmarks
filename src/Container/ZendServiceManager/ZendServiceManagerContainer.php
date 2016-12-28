@@ -22,6 +22,11 @@ class ZendServiceManagerContainer implements ContainerInterface
         return false;
     }
 
+    public function getUrl(): string
+    {
+        return "https://zendframework.github.io/zend-servicemanager/";
+    }
+
     public function build(): void
     {
     }
