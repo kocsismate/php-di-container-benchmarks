@@ -12,6 +12,16 @@ class LaravelContainer implements ContainerInterface
         return "Laravel";
     }
 
+    public function isCompiled(): bool
+    {
+        return false;
+    }
+
+    public function isAutowiringSupported(): bool
+    {
+        return true;
+    }
+
     public function build(): void
     {
     }

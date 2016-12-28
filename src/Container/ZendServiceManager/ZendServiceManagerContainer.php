@@ -12,6 +12,16 @@ class ZendServiceManagerContainer implements ContainerInterface
         return "ZendServiceManager";
     }
 
+    public function isCompiled(): bool
+    {
+        return false;
+    }
+
+    public function isAutowiringSupported(): bool
+    {
+        return false;
+    }
+
     public function build(): void
     {
     }

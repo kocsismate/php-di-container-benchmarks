@@ -12,6 +12,16 @@ class PimpleContainer implements ContainerInterface
         return "Pimple";
     }
 
+    public function isCompiled(): bool
+    {
+        return false;
+    }
+
+    public function isAutowiringSupported(): bool
+    {
+        return false;
+    }
+
     public function build(): void
     {
     }

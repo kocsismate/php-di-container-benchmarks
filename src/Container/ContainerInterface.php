@@ -7,5 +7,9 @@ interface ContainerInterface
 {
     public function getName(): string;
 
+    public function isCompiled(): bool;
+
+    public function isAutowiringSupported(): bool;
+
     public function build(): void;
 }

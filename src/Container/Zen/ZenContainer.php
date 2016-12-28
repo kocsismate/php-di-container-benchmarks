@@ -15,6 +15,16 @@ class ZenContainer implements ContainerInterface
         return "Zen";
     }
 
+    public function isCompiled(): bool
+    {
+        return true;
+    }
+
+    public function isAutowiringSupported(): bool
+    {
+        return true;
+    }
+
     public function build(): void
     {
         $builder = new FileSystemContainerBuilder();

@@ -17,6 +17,16 @@ class SymfonyContainer implements ContainerInterface
         return "Symfony";
     }
 
+    public function isCompiled(): bool
+    {
+        return true;
+    }
+
+    public function isAutowiringSupported(): bool
+    {
+        return true;
+    }
+
     public function build(): void
     {
         // Build container with prototype services

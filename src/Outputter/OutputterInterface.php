@@ -11,5 +11,5 @@ interface OutputterInterface
     /**
      * @param TestSuiteInterface[] $testSuites
      */
-    public function output(array $testSuites, BenchmarkResult $benchmarkResult): void;
+    public function output(array $testSuites, array $containers, BenchmarkResult $benchmarkResult): void;
 }

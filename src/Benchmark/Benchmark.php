@@ -38,7 +38,7 @@ class Benchmark
         echo "Generating results...\n";
 
         foreach ($outputters as $outputter) {
-            $outputter->output($testSuites, $benchmarkResult);
+            $outputter->output($testSuites, $containers, $benchmarkResult);
         }
 
         echo "Benchmark finished successfully!\n";

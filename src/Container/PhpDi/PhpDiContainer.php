@@ -12,6 +12,16 @@ class PhpDiContainer implements ContainerInterface
         return "PhpDi";
     }
 
+    public function isCompiled(): bool
+    {
+        return false;
+    }
+
+    public function isAutowiringSupported(): bool
+    {
+        return true;
+    }
+
     public function build(): void
     {
     }

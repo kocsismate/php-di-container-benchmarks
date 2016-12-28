@@ -12,6 +12,16 @@ class DiceContainer implements ContainerInterface
         return "Dice";
     }
 
+    public function isCompiled(): bool
+    {
+        return false;
+    }
+
+    public function isAutowiringSupported(): bool
+    {
+        return false;
+    }
+
     public function build(): void
     {
     }
