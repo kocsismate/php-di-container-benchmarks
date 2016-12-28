@@ -17,6 +17,13 @@
 
 ## Introduction
 
+In 2014, a really interesting benchmark about DI Containers for PHP was published on
+[Sitepoint](https://www.sitepoint.com/php-dependency-injection-container-performance-benchmarks/). Unfortunately,
+the implementation of the tests turned out to be quite controversial, so the benchmark itself wasn't really useful.
+
+I have been interested in the topic since then so I wanted to conduct a better benchmark than the last one was: I tried
+to fix some of its flaws while still being heavily inspired by the good parts of it.
+
 You can find the benchmark results here: [Results](https://rawgit.com/kocsismate/php-di-container-benchmarks/master/var/benchmark.html).
 
 ## Install
@@ -32,8 +39,9 @@ Furthermore, [Docker Compose](https://www.docker.com/products/docker-compose) ha
 
 ## Usage
 
-Run `docker-compose up` in the package root directory in order to execute the tests. The html output will be generated
-in the "var" directory.  
+Run `docker-compose up` in order to execute the tests. The html output will be generated in the "var" directory.
+
+The same output can be seen [Here](https://rawgit.com/kocsismate/php-di-container-benchmarks/master/var/benchmark.html).
 
 ## Change Log
 
