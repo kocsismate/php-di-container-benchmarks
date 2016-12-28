@@ -9,7 +9,7 @@
 
 * [Introduction](#introduction)
 * [Install](#install)
-* [Basic Usage](#basic-usage)
+* [Usage](#usage)
 * [Change Log](#change-log)
 * [Contributing](#contributing)
 * [Credits](#credits)
@@ -21,16 +21,19 @@ You can find the benchmark results here: [Results](https://rawgit.com/kocsismate
 
 ## Install
 
-You need [Composer](https://getcomposer.org) to install this library. Run the command below and you will get the latest
-version:
+You can simply download this repository or install it via [Composer](https://getcomposer.org) by running the command
+below:
 
 ```bash
 $ composer require kocsismate/di-container-benchmarks
 ```
 
-## Basic Usage
+Furthermore, [Docker Compose](https://www.docker.com/products/docker-compose) has to be installed on your machine.
 
-Run `docker-compose up` in order to execute the tests. 
+## Usage
+
+Run `docker-compose up` in the package root directory in order to execute the tests. The html output will be generated
+in the `var` directory.  
 
 ## Change Log
 

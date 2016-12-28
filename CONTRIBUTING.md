@@ -8,6 +8,8 @@ We accept contributions via Pull Requests on [Github](https://github.com/woohool
 
 - **[PSR-2 Coding Standard](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)** - The easiest way to apply the conventions is to install [PHP Code Sniffer](http://pear.php.net/package/PHP_CodeSniffer).
 
+- **Do not commit the output** - Make sure not to commit your `benchmark.html` file.
+
 - **Document any change in behaviour** - Make sure the `README.md` and any other relevant documentation are kept up-to-date.
 
 - **Create feature branches** - Don't ask us to pull from your master branch.
