@@ -18,4 +18,6 @@ $isStartupTimeIncluded = (bool) $argv[4];
 $testRunner = new TestRunner();
 $result = $testRunner->runTest($testSuiteNumber, $container, $iterations, $isStartupTimeIncluded);
 
-echo $result ? $result->toJson() : null;
+if ($result) {
+    echo $result->toJson();
+}

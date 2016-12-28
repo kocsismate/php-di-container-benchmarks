@@ -89,7 +89,7 @@ class HtmlOutputter implements OutputterInterface
         $html .= "the 120% of the smallest one.";
         $html .= "</p>";
         $html .= "<p style='width: 700px;'>";
-        $html .= "The benchmark is run on a 15-inch MacBook Pro from 2015.";
+        $html .= "The benchmark is run on a 15-inch MacBook Pro from 2015 using Docker and PHP 7.1.";
         $html .= "</p>";
 
         foreach ($testSuites as $testSuite) {
