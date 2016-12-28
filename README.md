@@ -33,7 +33,7 @@ Furthermore, [Docker Compose](https://www.docker.com/products/docker-compose) ha
 ## Usage
 
 Run `docker-compose up` in the package root directory in order to execute the tests. The html output will be generated
-in the `var` directory.  
+in the "var" directory.  
 
 ## Change Log
 
