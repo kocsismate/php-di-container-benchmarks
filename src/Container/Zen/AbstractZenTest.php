@@ -3,7 +3,8 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Zen;
 
-use DiContainerBenchmarks\Container\Zen\Resource\CompiledContainer;
+use DiContainerBenchmarks\Container\Zen\Resource\CompiledPrototypeContainer;
+use DiContainerBenchmarks\Container\Zen\Resource\CompiledSingletonContainer;
 use DiContainerBenchmarks\Test\TestInterface;
 use Interop\Container\ContainerInterface;
 
@@ -14,8 +15,13 @@ abstract class AbstractZenTest implements TestInterface
      */
     protected $container;
 
-    public function startup(): void
+    protected function setContainerWithPrototypeServices(): void
     {
-        $this->container = new CompiledContainer();
+        $this->container = new CompiledPrototypeContainer();
+    }
+
+    protected function setContainerWithSingletonServices(): void
+    {
+        $this->container = new CompiledSingletonContainer();
     }
 }

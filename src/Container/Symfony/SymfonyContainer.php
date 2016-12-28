@@ -4,9 +4,8 @@ declare(strict_types=1);
 namespace DiContainerBenchmarks\Container\Symfony;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
-use DiContainerBenchmarks\Fixture\Constructor\Class1;
-use DiContainerBenchmarks\Fixture\Constructor\Class10;
-use DiContainerBenchmarks\Fixture\Constructor\Class100;
+use DiContainerBenchmarks\Fixture\Class10;
+use DiContainerBenchmarks\Fixture\Class100;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Dumper\PhpDumper;
@@ -20,11 +19,31 @@ class SymfonyContainer implements ContainerInterface
 
     public function build(): void
     {
+        // Build container with prototype services
         $containerBuilder = new ContainerBuilder();
 
-        $definition = new Definition(Class1::class, []);
-        $definition->setAutowired(true);
-        $containerBuilder->setDefinition(Class1::class, $definition);
+        for ($i = 1; $i <= 100; $i++) {
+            $definition = new Definition('DiContainerBenchmarks\Fixture\Class' . $i, []);
+            $definition->setShared(false);
+            $definition->setAutowired(true);
+            $containerBuilder->setDefinition('DiContainerBenchmarks\Fixture\Class' . $i, $definition);
+        }
+
+        $containerBuilder->compile();
+
+        $dumper = new PhpDumper($containerBuilder);
+        file_put_contents(
+            "/code/src/Container/Symfony/Resource/CompiledPrototypeContainer.php",
+            $dumper->dump(
+                [
+                    "namespace" => "DiContainerBenchmarks\\Container\\Symfony\\Resource",
+                    "class" => "CompiledPrototypeContainer"
+                ]
+            )
+        );
+
+        // Build container with singleton services
+        $containerBuilder = new ContainerBuilder();
 
         $definition = new Definition(Class10::class, []);
         $definition->setAutowired(true);
@@ -38,11 +57,11 @@ class SymfonyContainer implements ContainerInterface
 
         $dumper = new PhpDumper($containerBuilder);
         file_put_contents(
-            "/code/src/Container/Symfony/Resource/CompiledContainer.php",
+            "/code/src/Container/Symfony/Resource/CompiledSingletonContainer.php",
             $dumper->dump(
                 [
                     "namespace" => "DiContainerBenchmarks\\Container\\Symfony\\Resource",
-                    "class" => "CompiledContainer"
+                    "class" => "CompiledSingletonContainer"
                 ]
             )
         );

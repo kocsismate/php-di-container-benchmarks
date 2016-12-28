@@ -4,7 +4,8 @@ declare(strict_types=1);
 namespace DiContainerBenchmarks\Container\Zen;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
-use DiContainerBenchmarks\Container\Zen\Resource\CompilerConfig;
+use DiContainerBenchmarks\Container\Zen\Resource\PrototypeCompilerConfig;
+use DiContainerBenchmarks\Container\Zen\Resource\SingletonCompilerConfig;
 use WoohooLabs\Zen\Container\Builder\FileSystemContainerBuilder;
 
 class ZenContainer implements ContainerInterface
@@ -17,6 +18,11 @@ class ZenContainer implements ContainerInterface
     public function build(): void
     {
         $builder = new FileSystemContainerBuilder();
-        $builder->build('/code/src/Container/Zen/Resource/CompiledContainer.php', new CompilerConfig());
+
+        // Build container with prototype services
+        $builder->build("/code/src/Container/Zen/Resource/CompiledPrototypeContainer.php", new PrototypeCompilerConfig());
+
+        // Build container with singleton services
+        $builder->build("/code/src/Container/Zen/Resource/CompiledSingletonContainer.php", new SingletonCompilerConfig());
     }
 }

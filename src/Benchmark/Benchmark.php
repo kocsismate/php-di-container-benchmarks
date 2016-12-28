@@ -51,8 +51,8 @@ class Benchmark
         BenchmarkResult $benchmarkResult
     ): void {
         for ($run = 0; $run < 10; $run++) {
-            echo "Running test case '" . $testSuite->getNumber() . "/" . $testCase->getNumber() .
-                "' (" . $container->getName() . '): ' . ($run+1) . "/10\n";
+            echo "Running test " . $testSuite->getNumber() . "." . $testCase->getNumber() .
+                " (" . $container->getName() . '): ' . ($run+1) . "/10\n";
 
             $number = $testSuite->getNumber();
             $containerName = $container->getName();

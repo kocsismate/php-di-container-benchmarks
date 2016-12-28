@@ -14,14 +14,20 @@ class TestSuite2 implements TestSuiteInterface
 
     public function getTitle(): string
     {
-        return "Constructor Injection of a bigger object graph";
+        return "Instantiation of a big object graph (100 objects)";
+    }
+
+    public function getDescription(): string
+    {
+        return "";
     }
 
     public function getTestCases(): array
     {
         return [
-            new TestCase(1, "1000 iterations, startup time included", 1000, true),
-            new TestCase(2, "1000 iterations, startup time excluded", 1000, false),
+            new TestCase(1, "100 iterations, startup time included", 100, true),
+            new TestCase(2, "100 iterations, startup time excluded", 100, false),
+            new TestCase(3, "1000 iterations, startup time included", 1000, true),
         ];
     }
 }

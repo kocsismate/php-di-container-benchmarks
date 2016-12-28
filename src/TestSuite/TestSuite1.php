@@ -14,14 +14,20 @@ class TestSuite1 implements TestSuiteInterface
 
     public function getTitle(): string
     {
-        return "Instantiation of a new object";
+        return "Instantiation of a small object graph (10 objects)";
+    }
+
+    public function getDescription(): string
+    {
+        return "";
     }
 
     public function getTestCases(): array
     {
         return [
-            new TestCase(1, "10 000 iterations, startup time included", 10000, true),
-            new TestCase(2, "10 000 iterations, startup time excluded", 10000, false),
+            new TestCase(1, "100 iterations, startup time included", 100, true),
+            new TestCase(2, "100 iterations, startup time excluded", 100, false),
+            new TestCase(3, "1000 iterations, startup time included", 1000, true),
         ];
     }
 }

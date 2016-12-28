@@ -11,6 +11,8 @@ interface TestSuiteInterface
 
     public function getTitle(): string;
 
+    public function getDescription(): string;
+
     /**
      * @return TestCase[]
      */

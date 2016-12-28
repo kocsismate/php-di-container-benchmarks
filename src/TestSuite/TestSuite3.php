@@ -14,14 +14,18 @@ class TestSuite3 implements TestSuiteInterface
 
     public function getTitle(): string
     {
-        return "Constructor Injection of a big object graph";
+        return "Fetching the same small object graph (10 objects)";
+    }
+
+    public function getDescription(): string
+    {
+        return "";
     }
 
     public function getTestCases(): array
     {
         return [
-            new TestCase(1, "100 iterations, startup time included", 100, true),
-            new TestCase(2, "100 iterations, startup time excluded", 100, false),
+            new TestCase(1, "10 000 iterations, startup time included", 10000, true),
         ];
     }
 }

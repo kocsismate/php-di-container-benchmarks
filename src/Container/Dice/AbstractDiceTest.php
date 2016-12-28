@@ -4,9 +4,6 @@ declare(strict_types=1);
 namespace DiContainerBenchmarks\Container\Dice;
 
 use Dice\Dice;
-use DiContainerBenchmarks\Fixture\Constructor\Class1;
-use DiContainerBenchmarks\Fixture\Constructor\Class10;
-use DiContainerBenchmarks\Fixture\Constructor\Class100;
 use DiContainerBenchmarks\Test\TestInterface;
 
 abstract class AbstractDiceTest implements TestInterface
@@ -16,13 +13,23 @@ abstract class AbstractDiceTest implements TestInterface
      */
     protected $container;
 
-    public function startup(): void
+    protected function setContainerWithPrototypeServices(): void
     {
-        $dice = new Dice();
-        $dice->addRule(Class1::class, ["shared" => true]);
-        $dice->addRule(Class10::class, ["shared" => true]);
-        $dice->addRule(Class100::class, ["shared" => true]);
+        $container = new Dice();
+        for ($i = 1; $i <= 100; $i++) {
+            $container->addRule('DiContainerBenchmarks\Fixture\Class' . $i, ["shared" => false]);
+        }
 
-        $this->container = $dice;
+        $this->container = $container;
+    }
+
+    protected function setContainerWithSingletonServices(): void
+    {
+        $container = new Dice();
+        for ($i = 1; $i <= 100; $i++) {
+            $container->addRule('DiContainerBenchmarks\Fixture\Class' . $i, ["shared" => true]);
+        }
+
+        $this->container = $container;
     }
 }

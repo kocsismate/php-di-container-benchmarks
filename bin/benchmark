@@ -16,11 +16,13 @@ use DiContainerBenchmarks\Outputter\HtmlOutputter;
 use DiContainerBenchmarks\TestSuite\TestSuite1;
 use DiContainerBenchmarks\TestSuite\TestSuite2;
 use DiContainerBenchmarks\TestSuite\TestSuite3;
+use DiContainerBenchmarks\TestSuite\TestSuite4;
 
 $testSuites = [
     new TestSuite1(),
     new TestSuite2(),
     new TestSuite3(),
+    new TestSuite4(),
 ];
 
 $containers = [

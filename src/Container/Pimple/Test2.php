@@ -3,12 +3,17 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Pimple;
 
-use DiContainerBenchmarks\Fixture\Constructor\Class10;
+use DiContainerBenchmarks\Fixture\Class100;
 
 class Test2 extends AbstractPimpleTest
 {
+    public function startup(): void
+    {
+        $this->setContainerWithPrototypeServices();
+    }
+
     public function run(): void
     {
-        $this->container[Class10::class];
+        $this->container[Class100::class];
     }
 }

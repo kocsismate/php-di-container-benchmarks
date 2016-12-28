@@ -3,12 +3,17 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Dice;
 
-use DiContainerBenchmarks\Fixture\Constructor\Class10;
+use DiContainerBenchmarks\Fixture\Class100;
 
 class Test2 extends AbstractDiceTest
 {
+    public function startup(): void
+    {
+        $this->setContainerWithPrototypeServices();
+    }
+
     public function run(): void
     {
-        $this->container->create(Class10::class);
+        $this->container->create(Class100::class);
     }
 }

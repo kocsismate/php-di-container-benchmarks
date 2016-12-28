@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 require "/code/app/bootstrap.php";
 
-ini_set("max_execution_time", "3");
-
 use DiContainerBenchmarks\Test\TestRunner;
 
 if ($argc < 4) {
