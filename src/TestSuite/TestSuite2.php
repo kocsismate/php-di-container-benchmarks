@@ -25,9 +25,10 @@ class TestSuite2 implements TestSuiteInterface
     public function getTestCases(): array
     {
         return [
-            new TestCase(1, "100 iterations, startup time included", 100, true),
-            new TestCase(2, "100 iterations, startup time excluded", 100, false),
-            new TestCase(3, "1000 iterations, startup time included", 1000, true),
+            new TestCase(1, "10 iterations, startup time included", 10, true),
+            new TestCase(2, "10 iterations, startup time excluded", 10, false),
+            new TestCase(3, "100 iterations, startup time included", 100, true),
+            new TestCase(4, "1000 iterations, startup time included", 1000, true),
         ];
     }
 }

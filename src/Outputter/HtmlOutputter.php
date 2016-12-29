@@ -27,97 +27,159 @@ class HtmlOutputter implements OutputterInterface
     {
         $now = date("Y-m-d H:i:s");
 
-        $html = "<html>\n";
-        $html .= "<head>\n";
-        $html .= "<title>DI Container Benchmark Results</title>\n";
-        $html .= "</head>\n";
-        $html .= "<body>\n";
-        $html .= "<h1>DI Container Benchmark Results</h1>\n";
-        $html .= "<h2>Generated: $now</h2>\n";
-
-        $html .= "<hr>\n";
-        $html .= "<h3>Comparison of Containers</h3>\n";
-
-        $html .= "<table border='1' style='width: 750px;'>\n";
-        $html .= "<thead>\n";
-        $html .= "<tr>\n";
-        $html .= "<th style='width: 50px;'>No.</th>\n";
-        $html .= "<th style='width: 175px;'>Name</th>\n";
-        $html .= "<th style='width: 150px;'>Compiled/Dynamic</th>\n";
-        $html .= "<th style='width: 125px;'>Autowiring</th>\n";
-        $html .= "<th style='width: 250px;'>Project URL</th>\n";
-        $html .= "</tr>\n";
-        $html .= "</thead>\n";
-
-        $html .= "<tbody>\n";
-        foreach ($containers as $i => $container) {
-            $displayedUrl = str_replace(["http://", "https://"], "", $container->getUrl());
-            $html .= "<tr>\n";
-            $html .= "<th>" . ($i+1) . "</th>\n";
-            $html .= "<td><b>" . $container->getName() . "</b></td>\n";
-            $html .= "<td>" . ($container->isCompiled() ? "compiled" : "dynamic") . "</td>\n";
-            $html .= "<td>" . ($container->isAutowiringSupported() ? "supported" : "not supported") . "</td>\n";
-            $html .= "<td>";
-            $html .= "<a target='_blank' href='" . $container->getUrl() . "' style='display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>" . $displayedUrl . "</a>\n";
-            $html .= "</td>\n";
-            $html .= "</tr>\n";
+        $html = <<<HERE
+<html lang="en">
+<head>
+    <title>DI Container Benchmark Results</title>
+    <meta name="description" content="DI Container Benchmark Results for PHP">
+    <meta name="keywords" content="PHP, Dependency Injection Container benchmark">
+    <meta charset="utf-8">
+    <style>
+        table,p {
+            width: 750px;
         }
-        $html .= "</tbody>\n";
-        $html .= "</table>\n";
+    </style>
+</head>
+<body>
+    <article>
+        <h1>DI Container Benchmark Results</h1>
+        <table>
+            <tr>
+                <td style="width: 85px;"><b>Author:</b></td><td>Máté Kocsis (kocsismate@woohoolabs.com)</td>
+            </tr>
+            <tr>
+                <td><b>Repository:</b></td><td><a href="https://github.com/kocsismate/php-di-container-benchmarks">https://github.com/kocsismate/php-di-container-benchmarks</a></td>
+            </tr>
+            <tr>
+                <td><b>Generated:</b></td><td>$now</td>
+            </tr>
+        </table>
+        
+        <hr>
+        <section>
+            <h2>Table of Contents</h2>
+        
+            <nav>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#method">Method</a></li>
+                    <li><a href="#results">Results</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                </ul>
+            </nav>
+        </section>
+        
+        <hr>
+        <section>
+            <h2>Introduction</h2>
+            <p>
+                In 2014, a really interesting benchmark about DI Containers for PHP was
+                <a target="_blank" href="https://www.sitepoint.com/php-dependency-injection-container-performance-benchmarks/">published</a>
+                on Sitepoint. Unfortunately, <a target="_blank" href="https://github.com/TomBZombie/php-dependency-injection-benchmarks">the implementation</a>
+                of the tests turned out to be quite controversial, so the benchmark itself wasn't really useful.
+            </p>
+            
+            <p>
+                I have been interested in the topic since then so I wanted to conduct a better benchmark than the last one was:
+                I tried to fix some of its flaws while keeping the good parts.
+            </p>
+        
+            <h3>Comparison of Containers</h3>
+        
+            <table border="1" style="width: 750px;">
+                <thead>
+                    <tr>
+                        <th style="width: 50px;">No.</th>
+                        <th style="width: 175px;">Name</th>
+                        <th style="width: 150px;">Compiled/Dynamic</th>
+                        <th style="width: 125px;">Autowiring</th>
+                        <th style="width: 250px;">Project URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+HERE;
+        foreach ($containers as $i => $container) {
+            $number = ($i+1);
+            $name = $container->getName();
+            $url = $container->getUrl();
+            $displayedUrl = str_replace(["http://", "https://"], "", $container->getUrl());
+            $compiled = $container->isCompiled() ? "compiled" : "dynamic";
+            $autowiring = $container->isAutowiringSupported() ? "supported" : "not supported";
 
-        $html .= "<p style='width: 750px;'>";
-        $html .= "Different types of containers have different performance characteristics. It can be concluded that ";
-        $html .= "the more user-friendly a container is (dynamic &gt; compiled, autowired &gt; not autowired), ";
-        $html .= "the more the chance is that it is slower than its rivals. So in turn of their lower performance ";
-        $html .= "- which is highlighted in the following benchmark - dynamic containers are usually need less ";
-        $html .= "attention during development than compiled ones, while containers supporting autowiring usually need ";
-        $html .= "much less configuration than the ones without autowiring capabilities.";
-        $html .= "</p>";
+            $html .= <<<HERE
+                    <tr>
+                        <th>$number</th>
+                        <td><b>$name</b></td>
+                        <td>$compiled</td>
+                        <td>$autowiring</td>
+                        <td>
+                            <a target="_blank" href="$url" style="display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                                $displayedUrl
+                            </a>
+                        </td>
+                    </tr>
+HERE;
+        }
 
-        $html .= "<hr>\n";
-        $html .= "<h3>Methodology</h3>\n";
-        $html .= "<p style='width: 750px;'>";
-        $html .= "Each container is given 4 tasks (test suites) where they have to create or fetch object ";
-        $html .= "graphs of different size. Test suites contain one or more test cases which define some settings ";
-        $html .= "for a test: how many times it has to be repeated (iteration) and if the container startup time ";
-        $html .= "should be counted in the time consumption.";
-        $html .= "</p>";
-        $html .= "<p style='width: 750px;'>";
-        $html .= "Before measuring each test, containers are warmed up so autoloading can take place and caches ";
-        $html .= "can be fed. Then all tests are performed 10 times, but only those results are used when ";
-        $html .= "calculating the average time consumption/peak memory usage of a container which are not more than ";
-        $html .= "the 120% of the smallest one.";
-        $html .= "</p>";
-        $html .= "<p style='width: 700px;'>";
-        $html .= "The benchmark is run on a 15-inch MacBook Pro from 2015 using Docker and PHP 7.1.";
-        $html .= "</p>";
+        $html .= <<<HERE
+                </tbody>
+            </table>
+        </section>
+        
+        <hr>
+        <section>
+            <h2>Method</h2>
+        
+            <p>
+                Each container is given 4 tasks (test suites) where they have to create or fetch object
+                graphs of different size. Test suites contain one or more test cases which define some settings
+                for a test: how many times it has to be repeated (iteration) and if the container startup time
+                should be counted in the time consumption.
+            </p>
+            <p>
+                Before measuring each test, containers are warmed up so autoloading can take place and caches
+                can be fed. Then all tests are performed 10 times, but only those results are used when
+                calculating the average time consumption/peak memory usage of a container which are not more than
+                the 120% of the smallest one.
+            </p>
+            <p>
+                The benchmark is run on a 15-inch MacBook Pro from 2015 using Docker and PHP 7.1.
+            </p>
+        </section>
+        
+        <hr>
+        <h2>Results</h2>
+HERE;
+        foreach ($testSuites as $i => $testSuite) {
+            $testSuiteNumber = $i+1;
+            $testSuiteTitle = $testSuite->getTitle();
+            $testSuiteDescription = $testSuite->getDescription();
 
-        foreach ($testSuites as $testSuite) {
-            $html .= "<hr>\n";
-            $html .= "<h3>" . $testSuite->getTitle() . "</h3>\n";
-            $html .= "<p style='width: 700px;'>" . $testSuite->getDescription() . "</p>";
+            $html .= <<<HERE
+        <h3>Test Suite $testSuiteNumber: $testSuiteTitle</h3>
+        <p>$testSuiteDescription</p>
+HERE;
+            foreach ($testSuite->getTestCases() as $testCase) {
+                $testCaseTitle = $testCase->getTitle();
 
-            $testCases = $testSuite->getTestCases();
-            foreach ($testCases as $testCase) {
-                $html .= "<table border='1' style='width: 750px;'>\n";
-                $html .= "<thead>\n";
-                $html .= "<tr>\n";
-                $html .= "<th colspan='6' style='font-size: 18px;'>\n";
-                $html .= $testCase->getTitle() . "\n";
-                $html .= "</th>\n";
-                $html .= "</tr>\n";
-                $html .= "<tr>\n";
-                $html .= "<th style='width: 50px;'>Rank</th>\n";
-                $html .= "<th style='width: 175px;'>Container</th>\n";
-                $html .= "<th style='width: 100px;'>Time (ms)</th>\n";
-                $html .= "<th style='width: 100px;'>Time (%)</th>\n";
-                $html .= "<th style='width: 175px;'>Peak Memory (MB)</th>\n";
-                $html .= "<th style='width: 150px;'>Peak Memory (%)</th>\n";
-                $html .= "</tr>\n";
-                $html .= "</thead>\n";
-
-                $html .= "<tbody>\n";
-                $i = 1;
+                $html .= <<<HERE
+        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">$testCaseTitle</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>
+HERE;
+                $rank = 1;
                 $timeBase = null;
                 $memoryBase = null;
                 foreach ($benchmarkResult->getResults($testSuite, $testCase) as $containerName => $result) {
@@ -129,30 +191,72 @@ class HtmlOutputter implements OutputterInterface
 
                     $memory = $result->getPeakMemoryUsageInMegaBytes() ?? null;
 
-                    if ($i === 1) {
+                    if ($rank === 1) {
                         $timeBase = $time ?? null;
                         $memoryBase = $memory ?? null;
                     }
 
-                    $html .= "<tr>\n";
-                    $html .= "<th>$i</th>\n";
-                    $html .= "<td><b>$containerName</b></td>\n";
-                    $html .= "<td>" . ($time ?? "N/A") . "</td>\n";
-                    $html .= "<td>" . ($time ? round($time / $timeBase * 100, 0) . "%" : "N/A") . "</td>\n";
-                    $html .= "<td>" . ($memory ?? "N/A") . "</td>\n";
-                    $html .= "<td>" . ($memory ? round($memory / $memoryBase * 100, 0) . "%" : "N/A") . "</td>\n";
-                    $html .= "</td>\n";
-                    $html .= "</tr>\n";
-                    $i++;
+                    $timeColumn = $time ?? "N/A";
+                    $timePercentColumn = $time ? round($time / $timeBase * 100, 0) . "%" : "N/A";
+                    $memoryColumn = $memory ?? "N/A";
+                    $memoryPercentColumn = $memory ? round($memory / $memoryBase * 100, 0) . "%" : "N/A";
+
+                    $html .= <<<HERE
+                <tr>
+                    <th>$rank</th>
+                    <td><b>$containerName</b></td>
+                    <td>$timeColumn</td> 
+                    <td>$timePercentColumn</td> 
+                    <td>$memoryColumn</td> 
+                    <td>$memoryPercentColumn</td>
+                </tr>
+
+HERE;
+                   $rank++;
                 }
-                $html .= "</tbody>\n";
-                $html .= "</table>\n";
-                $html .= "</br>\n";
+                $html .= <<<HERE
+            </tbody>
+        </table>
+        </br>
+HERE;
             }
         }
 
-        $html .= "</body>\n";
-        $html .= "</html>\n";
+        $html .= <<<HERE
+            <hr>
+            <h2>Conclusion</h2>
+            
+            <p>
+                Different types of containers have different performance characteristics. It can be concluded by looking
+                at the benchmark results that the more user-friendly a container is (dynamic &gt; compiled,
+                autowired &gt; not autowired), the more the probability is that it is slower than its rivals.
+            </p>
+            
+            <p>
+                In turn of their lower performance, dynamic containers usually need less attention during
+                development than compiled ones, while containers supporting autowiring usually need much less configuration
+                than the ones without autowiring capabilities.
+            </p>
+            
+            <p>
+                However, keep in mind that in a well-architected application, you won't call your DI Container
+                hundreds or even thousands of times because there should be only one real injection point: when you invoke
+                the controller which handles the request (and there is a good chance of using the container in
+                other places of the application layer - e.g. in your middleware or in your bootstrap files). That's why
+                most tests are exaggerated - you probably won't see tens of milliseconds of difference between the
+                fastest and the slowest implementations in the real life.
+            </p>
+            
+            <p>
+                To sum up, it depends on your needs which container suits your project best: if it is performance-critical
+                then you want to choose a compiled container. If maximum performance is not needed, but you have a big
+                project, then I would recommend a dynamic container with autowiring capabilities. Otherwise you can go
+                with simpler containers.
+            </p>
+        </article>
+    </body>
+</html>
+HERE;
 
         file_put_contents($this->path, $html);
     }

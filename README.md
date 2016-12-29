@@ -19,11 +19,11 @@
 
 In 2014, a really interesting benchmark about DI Containers for PHP
 [was published](https://www.sitepoint.com/php-dependency-injection-container-performance-benchmarks/) on Sitepoint.
-Unfortunately, the implementation of the tests turned out to be quite controversial, so the benchmark itself wasn't
-really useful.
+Unfortunately, [the implementation](https://github.com/TomBZombie/php-dependency-injection-benchmarks) of the tests
+turned out to be quite controversial, so the benchmark itself wasn't really useful.
 
 I have been interested in the topic since then so I wanted to conduct a better benchmark than the last one was: I tried
-to fix some of its flaws while still being heavily inspired by the good parts of it.
+to fix some of its flaws while keeping the good parts.
 
 You can find the benchmark results [here](https://rawgit.com/kocsismate/php-di-container-benchmarks/master/var/benchmark.html).
 

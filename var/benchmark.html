@@ -1,754 +1,849 @@
-<html>
+<html lang="en">
 <head>
-<title>DI Container Benchmark Results</title>
+    <title>DI Container Benchmark Results</title>
+    <meta name="description" content="DI Container Benchmark Results for PHP">
+    <meta name="keywords" content="PHP, Dependency Injection Container benchmark">
+    <meta charset="utf-8">
+    <style>
+        table,p {
+            width: 750px;
+        }
+    </style>
 </head>
 <body>
-<h1>DI Container Benchmark Results</h1>
-<h2>Generated: 2016-12-27 14:07:35</h2>
-<hr>
-<h3>Comparison of Containers</h3>
-<table border='1' style='width: 750px;'>
-<thead>
-<tr>
-<th style='width: 50px;'>No.</th>
-<th style='width: 175px;'>Name</th>
-<th style='width: 150px;'>Compiled/Dynamic</th>
-<th style='width: 125px;'>Autowiring</th>
-<th style='width: 250px;'>Project URL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>1</th>
-<td><b>Dice</b></td>
-<td>dynamic</td>
-<td>not supported</td>
-<td><a target='_blank' href='https://github.com/Level-2/Dice' style='display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>github.com/Level-2/Dice</a>
-</td>
-</tr>
-<tr>
-<th>2</th>
-<td><b>Laravel</b></td>
-<td>dynamic</td>
-<td>supported</td>
-<td><a target='_blank' href='https://laravel.com/docs/5.3/container' style='display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>laravel.com/docs/5.3/container</a>
-</td>
-</tr>
-<tr>
-<th>3</th>
-<td><b>PhpDi</b></td>
-<td>dynamic</td>
-<td>supported</td>
-<td><a target='_blank' href='http://php-di.org/' style='display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>php-di.org/</a>
-</td>
-</tr>
-<tr>
-<th>4</th>
-<td><b>Pimple</b></td>
-<td>dynamic</td>
-<td>not supported</td>
-<td><a target='_blank' href='http://pimple.sensiolabs.org/' style='display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>pimple.sensiolabs.org/</a>
-</td>
-</tr>
-<tr>
-<th>5</th>
-<td><b>Symfony</b></td>
-<td>compiled</td>
-<td>supported</td>
-<td><a target='_blank' href='https://symfony.com/doc/3.2/components/dependency_injection.html' style='display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>symfony.com/doc/3.2/components/dependency_injection.html</a>
-</td>
-</tr>
-<tr>
-<th>6</th>
-<td><b>Zen</b></td>
-<td>compiled</td>
-<td>supported</td>
-<td><a target='_blank' href='https://github.com/woohoolabs/zen' style='display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>github.com/woohoolabs/zen</a>
-</td>
-</tr>
-<tr>
-<th>7</th>
-<td><b>ZendServiceManager</b></td>
-<td>dynamic</td>
-<td>not supported</td>
-<td><a target='_blank' href='https://zendframework.github.io/zend-servicemanager/' style='display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>zendframework.github.io/zend-servicemanager/</a>
-</td>
-</tr>
-</tbody>
-</table>
-<p style='width: 750px;'>Different types of containers have different performance characteristics. It can be concluded that the more user-friendly a container is (dynamic &gt; compiled, autowired &gt; not autowired), the more the chance is that it is slower than its rivals. So in turn of their lower performance - which is highlighted in the following benchmark - dynamic containers are usually need less attention during development than compiled ones, while containers supporting autowiring usually need much less configuration than the ones without autowiring capabilities.</p><hr>
-<h3>Methodology</h3>
-<p style='width: 750px;'>Each container is given 4 tasks (test suites) where they have to create or fetch object graphs of different size. Test suites contain one or more test cases which define some settings for a test: how many times it has to be repeated (iteration) and if the container startup time should be counted in the time consumption.</p><p style='width: 750px;'>Before measuring each test, containers are warmed up so autoloading can take place and caches can be fed. Then all tests are performed 10 times, but only those results are used when calculating the average time consumption/peak memory usage of a container which are not more than the 120% of the smallest one.</p><p style='width: 700px;'>The benchmark is run on a 15-inch MacBook Pro from 2015 using Docker and PHP 7.1.</p><hr>
-<h3>Instantiation of a small object graph (10 objects)</h3>
-<p style='width: 700px;'></p><table border='1' style='width: 750px;'>
-<thead>
-<tr>
-<th colspan='6' style='font-size: 18px;'>
-100 iterations, startup time included
-</th>
-</tr>
-<tr>
-<th style='width: 50px;'>Rank</th>
-<th style='width: 175px;'>Container</th>
-<th style='width: 100px;'>Time (ms)</th>
-<th style='width: 100px;'>Time (%)</th>
-<th style='width: 175px;'>Peak Memory (MB)</th>
-<th style='width: 150px;'>Peak Memory (%)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>1</th>
-<td><b>Symfony</b></td>
-<td>0.240</td>
-<td>100%</td>
-<td>2.50765</td>
-<td>100%</td>
-</td>
-</tr>
-<tr>
-<th>2</th>
-<td><b>Zen</b></td>
-<td>0.388</td>
-<td>162%</td>
-<td>0.7819</td>
-<td>31%</td>
-</td>
-</tr>
-<tr>
-<th>3</th>
-<td><b>ZendServiceManager</b></td>
-<td>0.739</td>
-<td>308%</td>
-<td>1.02779</td>
-<td>41%</td>
-</td>
-</tr>
-<tr>
-<th>4</th>
-<td><b>Pimple</b></td>
-<td>0.908</td>
-<td>378%</td>
-<td>0.99101</td>
-<td>40%</td>
-</td>
-</tr>
-<tr>
-<th>5</th>
-<td><b>Dice</b></td>
-<td>1.579</td>
-<td>658%</td>
-<td>0.95302</td>
-<td>38%</td>
-</td>
-</tr>
-<tr>
-<th>6</th>
-<td><b>Laravel</b></td>
-<td>2.907</td>
-<td>1211%</td>
-<td>0.78918</td>
-<td>31%</td>
-</td>
-</tr>
-<tr>
-<th>7</th>
-<td><b>PhpDi</b></td>
-<td>4.080</td>
-<td>1700%</td>
-<td>1.00532</td>
-<td>40%</td>
-</td>
-</tr>
-</tbody>
-</table>
-</br>
-<table border='1' style='width: 750px;'>
-<thead>
-<tr>
-<th colspan='6' style='font-size: 18px;'>
-100 iterations, startup time excluded
-</th>
-</tr>
-<tr>
-<th style='width: 50px;'>Rank</th>
-<th style='width: 175px;'>Container</th>
-<th style='width: 100px;'>Time (ms)</th>
-<th style='width: 100px;'>Time (%)</th>
-<th style='width: 175px;'>Peak Memory (MB)</th>
-<th style='width: 150px;'>Peak Memory (%)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>1</th>
-<td><b>Symfony</b></td>
-<td>0.248</td>
-<td>100%</td>
-<td>2.50765</td>
-<td>100%</td>
-</td>
-</tr>
-<tr>
-<th>2</th>
-<td><b>Zen</b></td>
-<td>0.346</td>
-<td>140%</td>
-<td>0.7819</td>
-<td>31%</td>
-</td>
-</tr>
-<tr>
-<th>3</th>
-<td><b>Dice</b></td>
-<td>0.643</td>
-<td>259%</td>
-<td>0.95302</td>
-<td>38%</td>
-</td>
-</tr>
-<tr>
-<th>4</th>
-<td><b>ZendServiceManager</b></td>
-<td>0.666</td>
-<td>269%</td>
-<td>1.02779</td>
-<td>41%</td>
-</td>
-</tr>
-<tr>
-<th>5</th>
-<td><b>Pimple</b></td>
-<td>0.805</td>
-<td>325%</td>
-<td>0.99101</td>
-<td>40%</td>
-</td>
-</tr>
-<tr>
-<th>6</th>
-<td><b>Laravel</b></td>
-<td>2.918</td>
-<td>1177%</td>
-<td>0.78918</td>
-<td>31%</td>
-</td>
-</tr>
-<tr>
-<th>7</th>
-<td><b>PhpDi</b></td>
-<td>4.206</td>
-<td>1696%</td>
-<td>1.00532</td>
-<td>40%</td>
-</td>
-</tr>
-</tbody>
-</table>
-</br>
-<table border='1' style='width: 750px;'>
-<thead>
-<tr>
-<th colspan='6' style='font-size: 18px;'>
-1000 iterations, startup time included
-</th>
-</tr>
-<tr>
-<th style='width: 50px;'>Rank</th>
-<th style='width: 175px;'>Container</th>
-<th style='width: 100px;'>Time (ms)</th>
-<th style='width: 100px;'>Time (%)</th>
-<th style='width: 175px;'>Peak Memory (MB)</th>
-<th style='width: 150px;'>Peak Memory (%)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>1</th>
-<td><b>Symfony</b></td>
-<td>1.539</td>
-<td>100%</td>
-<td>2.50765</td>
-<td>100%</td>
-</td>
-</tr>
-<tr>
-<th>2</th>
-<td><b>Zen</b></td>
-<td>3.003</td>
-<td>195%</td>
-<td>0.7819</td>
-<td>31%</td>
-</td>
-</tr>
-<tr>
-<th>3</th>
-<td><b>ZendServiceManager</b></td>
-<td>6.454</td>
-<td>419%</td>
-<td>1.02779</td>
-<td>41%</td>
-</td>
-</tr>
-<tr>
-<th>4</th>
-<td><b>Dice</b></td>
-<td>7.120</td>
-<td>463%</td>
-<td>0.95302</td>
-<td>38%</td>
-</td>
-</tr>
-<tr>
-<th>5</th>
-<td><b>Pimple</b></td>
-<td>8.150</td>
-<td>530%</td>
-<td>0.99101</td>
-<td>40%</td>
-</td>
-</tr>
-<tr>
-<th>6</th>
-<td><b>Laravel</b></td>
-<td>29.179</td>
-<td>1896%</td>
-<td>0.78918</td>
-<td>31%</td>
-</td>
-</tr>
-<tr>
-<th>7</th>
-<td><b>PhpDi</b></td>
-<td>41.139</td>
-<td>2673%</td>
-<td>1.00532</td>
-<td>40%</td>
-</td>
-</tr>
-</tbody>
-</table>
-</br>
-<hr>
-<h3>Instantiation of a big object graph (100 objects)</h3>
-<p style='width: 700px;'></p><table border='1' style='width: 750px;'>
-<thead>
-<tr>
-<th colspan='6' style='font-size: 18px;'>
-100 iterations, startup time included
-</th>
-</tr>
-<tr>
-<th style='width: 50px;'>Rank</th>
-<th style='width: 175px;'>Container</th>
-<th style='width: 100px;'>Time (ms)</th>
-<th style='width: 100px;'>Time (%)</th>
-<th style='width: 175px;'>Peak Memory (MB)</th>
-<th style='width: 150px;'>Peak Memory (%)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>1</th>
-<td><b>Symfony</b></td>
-<td>1.312</td>
-<td>100%</td>
-<td>2.50765</td>
-<td>100%</td>
-</td>
-</tr>
-<tr>
-<th>2</th>
-<td><b>Zen</b></td>
-<td>3.043</td>
-<td>232%</td>
-<td>0.86771</td>
-<td>35%</td>
-</td>
-</tr>
-<tr>
-<th>3</th>
-<td><b>ZendServiceManager</b></td>
-<td>6.657</td>
-<td>507%</td>
-<td>1.16802</td>
-<td>47%</td>
-</td>
-</tr>
-<tr>
-<th>4</th>
-<td><b>Dice</b></td>
-<td>8.254</td>
-<td>629%</td>
-<td>1.37804</td>
-<td>55%</td>
-</td>
-</tr>
-<tr>
-<th>5</th>
-<td><b>Pimple</b></td>
-<td>8.571</td>
-<td>653%</td>
-<td>1.0861</td>
-<td>43%</td>
-</td>
-</tr>
-<tr>
-<th>6</th>
-<td><b>Laravel</b></td>
-<td>33.631</td>
-<td>2563%</td>
-<td>0.95789</td>
-<td>38%</td>
-</td>
-</tr>
-<tr>
-<th>7</th>
-<td><b>PhpDi</b></td>
-<td>42.536</td>
-<td>3242%</td>
-<td>1.7006</td>
-<td>68%</td>
-</td>
-</tr>
-</tbody>
-</table>
-</br>
-<table border='1' style='width: 750px;'>
-<thead>
-<tr>
-<th colspan='6' style='font-size: 18px;'>
-100 iterations, startup time excluded
-</th>
-</tr>
-<tr>
-<th style='width: 50px;'>Rank</th>
-<th style='width: 175px;'>Container</th>
-<th style='width: 100px;'>Time (ms)</th>
-<th style='width: 100px;'>Time (%)</th>
-<th style='width: 175px;'>Peak Memory (MB)</th>
-<th style='width: 150px;'>Peak Memory (%)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>1</th>
-<td><b>Symfony</b></td>
-<td>0.895</td>
-<td>100%</td>
-<td>2.50765</td>
-<td>100%</td>
-</td>
-</tr>
-<tr>
-<th>2</th>
-<td><b>Zen</b></td>
-<td>3.070</td>
-<td>343%</td>
-<td>0.86771</td>
-<td>35%</td>
-</td>
-</tr>
-<tr>
-<th>3</th>
-<td><b>ZendServiceManager</b></td>
-<td>6.500</td>
-<td>726%</td>
-<td>1.16802</td>
-<td>47%</td>
-</td>
-</tr>
-<tr>
-<th>4</th>
-<td><b>Dice</b></td>
-<td>7.219</td>
-<td>807%</td>
-<td>1.37804</td>
-<td>55%</td>
-</td>
-</tr>
-<tr>
-<th>5</th>
-<td><b>Pimple</b></td>
-<td>9.239</td>
-<td>1032%</td>
-<td>1.0861</td>
-<td>43%</td>
-</td>
-</tr>
-<tr>
-<th>6</th>
-<td><b>Laravel</b></td>
-<td>31.879</td>
-<td>3562%</td>
-<td>0.95789</td>
-<td>38%</td>
-</td>
-</tr>
-<tr>
-<th>7</th>
-<td><b>PhpDi</b></td>
-<td>44.055</td>
-<td>4922%</td>
-<td>1.7006</td>
-<td>68%</td>
-</td>
-</tr>
-</tbody>
-</table>
-</br>
-<table border='1' style='width: 750px;'>
-<thead>
-<tr>
-<th colspan='6' style='font-size: 18px;'>
-1000 iterations, startup time included
-</th>
-</tr>
-<tr>
-<th style='width: 50px;'>Rank</th>
-<th style='width: 175px;'>Container</th>
-<th style='width: 100px;'>Time (ms)</th>
-<th style='width: 100px;'>Time (%)</th>
-<th style='width: 175px;'>Peak Memory (MB)</th>
-<th style='width: 150px;'>Peak Memory (%)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>1</th>
-<td><b>Symfony</b></td>
-<td>8.954</td>
-<td>100%</td>
-<td>2.50765</td>
-<td>100%</td>
-</td>
-</tr>
-<tr>
-<th>2</th>
-<td><b>Zen</b></td>
-<td>31.994</td>
-<td>357%</td>
-<td>0.86771</td>
-<td>35%</td>
-</td>
-</tr>
-<tr>
-<th>3</th>
-<td><b>ZendServiceManager</b></td>
-<td>65.869</td>
-<td>736%</td>
-<td>1.16802</td>
-<td>47%</td>
-</td>
-</tr>
-<tr>
-<th>4</th>
-<td><b>Dice</b></td>
-<td>72.626</td>
-<td>811%</td>
-<td>1.37804</td>
-<td>55%</td>
-</td>
-</tr>
-<tr>
-<th>5</th>
-<td><b>Pimple</b></td>
-<td>89.200</td>
-<td>996%</td>
-<td>1.0861</td>
-<td>43%</td>
-</td>
-</tr>
-<tr>
-<th>6</th>
-<td><b>Laravel</b></td>
-<td>305.393</td>
-<td>3411%</td>
-<td>0.95789</td>
-<td>38%</td>
-</td>
-</tr>
-<tr>
-<th>7</th>
-<td><b>PhpDi</b></td>
-<td>432.575</td>
-<td>4831%</td>
-<td>1.7006</td>
-<td>68%</td>
-</td>
-</tr>
-</tbody>
-</table>
-</br>
-<hr>
-<h3>Fetching the same small object graph (10 objects)</h3>
-<p style='width: 700px;'></p><table border='1' style='width: 750px;'>
-<thead>
-<tr>
-<th colspan='6' style='font-size: 18px;'>
-10 000 iterations, startup time included
-</th>
-</tr>
-<tr>
-<th style='width: 50px;'>Rank</th>
-<th style='width: 175px;'>Container</th>
-<th style='width: 100px;'>Time (ms)</th>
-<th style='width: 100px;'>Time (%)</th>
-<th style='width: 175px;'>Peak Memory (MB)</th>
-<th style='width: 150px;'>Peak Memory (%)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>1</th>
-<td><b>ZendServiceManager</b></td>
-<td>1.057</td>
-<td>100%</td>
-<td>1.02988</td>
-<td>100%</td>
-</td>
-</tr>
-<tr>
-<th>2</th>
-<td><b>PhpDi</b></td>
-<td>1.563</td>
-<td>148%</td>
-<td>0.93016</td>
-<td>90%</td>
-</td>
-</tr>
-<tr>
-<th>3</th>
-<td><b>Pimple</b></td>
-<td>1.863</td>
-<td>176%</td>
-<td>0.99101</td>
-<td>96%</td>
-</td>
-</tr>
-<tr>
-<th>4</th>
-<td><b>Dice</b></td>
-<td>2.277</td>
-<td>215%</td>
-<td>0.95731</td>
-<td>93%</td>
-</td>
-</tr>
-<tr>
-<th>5</th>
-<td><b>Zen</b></td>
-<td>2.303</td>
-<td>218%</td>
-<td>0.83904</td>
-<td>81%</td>
-</td>
-</tr>
-<tr>
-<th>6</th>
-<td><b>Laravel</b></td>
-<td>2.546</td>
-<td>241%</td>
-<td>0.78918</td>
-<td>77%</td>
-</td>
-</tr>
-<tr>
-<th>7</th>
-<td><b>Symfony</b></td>
-<td>4.211</td>
-<td>398%</td>
-<td>0.74403</td>
-<td>72%</td>
-</td>
-</tr>
-</tbody>
-</table>
-</br>
-<hr>
-<h3>Fetching the same big object graph (100 objects)</h3>
-<p style='width: 700px;'></p><table border='1' style='width: 750px;'>
-<thead>
-<tr>
-<th colspan='6' style='font-size: 18px;'>
-10 000 iterations, startup time included
-</th>
-</tr>
-<tr>
-<th style='width: 50px;'>Rank</th>
-<th style='width: 175px;'>Container</th>
-<th style='width: 100px;'>Time (ms)</th>
-<th style='width: 100px;'>Time (%)</th>
-<th style='width: 175px;'>Peak Memory (MB)</th>
-<th style='width: 150px;'>Peak Memory (%)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>1</th>
-<td><b>ZendServiceManager</b></td>
-<td>1.105</td>
-<td>100%</td>
-<td>1.19138</td>
-<td>100%</td>
-</td>
-</tr>
-<tr>
-<th>2</th>
-<td><b>Zen</b></td>
-<td>1.744</td>
-<td>158%</td>
-<td>0.88865</td>
-<td>75%</td>
-</td>
-</tr>
-<tr>
-<th>3</th>
-<td><b>Pimple</b></td>
-<td>2.073</td>
-<td>188%</td>
-<td>1.08373</td>
-<td>91%</td>
-</td>
-</tr>
-<tr>
-<th>4</th>
-<td><b>PhpDi</b></td>
-<td>2.285</td>
-<td>207%</td>
-<td>1.62784</td>
-<td>137%</td>
-</td>
-</tr>
-<tr>
-<th>5</th>
-<td><b>Dice</b></td>
-<td>2.506</td>
-<td>227%</td>
-<td>1.43338</td>
-<td>120%</td>
-</td>
-</tr>
-<tr>
-<th>6</th>
-<td><b>Laravel</b></td>
-<td>2.719</td>
-<td>246%</td>
-<td>0.95789</td>
-<td>80%</td>
-</td>
-</tr>
-<tr>
-<th>7</th>
-<td><b>Symfony</b></td>
-<td>4.308</td>
-<td>390%</td>
-<td>0.85118</td>
-<td>71%</td>
-</td>
-</tr>
-</tbody>
-</table>
-</br>
-</body>
+    <article>
+        <h1>DI Container Benchmark Results</h1>
+        <table>
+            <tr>
+                <td style="width: 85px;"><b>Author:</b></td><td>Máté Kocsis (kocsismate@woohoolabs.com)</td>
+            </tr>
+            <tr>
+                <td><b>Repository:</b></td><td><a href="https://github.com/kocsismate/php-di-container-benchmarks">https://github.com/kocsismate/php-di-container-benchmarks</a></td>
+            </tr>
+            <tr>
+                <td><b>Generated:</b></td><td>2016-12-27 16:51:20</td>
+            </tr>
+        </table>
+        
+        <hr>
+        <section>
+            <h2>Table of Contents</h2>
+        
+            <nav>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#method">Method</a></li>
+                    <li><a href="#results">Results</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                </ul>
+            </nav>
+        </section>
+        
+        <hr>
+        <section>
+            <h2>Introduction</h2>
+            <p>
+                In 2014, a really interesting benchmark about DI Containers for PHP was
+                <a target="_blank" href="https://www.sitepoint.com/php-dependency-injection-container-performance-benchmarks/">published</a>
+                on Sitepoint. Unfortunately, <a target="_blank" href="https://github.com/TomBZombie/php-dependency-injection-benchmarks">the implementation</a>
+                of the tests turned out to be quite controversial, so the benchmark itself wasn't really useful.
+            </p>
+            
+            <p>
+                I have been interested in the topic since then so I wanted to conduct a better benchmark than the last one was:
+                I tried to fix some of its flaws while keeping the good parts.
+            </p>
+        
+            <h3>Comparison of Containers</h3>
+        
+            <table border="1" style="width: 750px;">
+                <thead>
+                    <tr>
+                        <th style="width: 50px;">No.</th>
+                        <th style="width: 175px;">Name</th>
+                        <th style="width: 150px;">Compiled/Dynamic</th>
+                        <th style="width: 125px;">Autowiring</th>
+                        <th style="width: 250px;">Project URL</th>
+                    </tr>
+                </thead>
+                <tbody>                    <tr>
+                        <th>1</th>
+                        <td><b>Dice</b></td>
+                        <td>dynamic</td>
+                        <td>not supported</td>
+                        <td>
+                            <a target="_blank" href="https://github.com/Level-2/Dice" style="display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                                github.com/Level-2/Dice
+                            </a>
+                        </td>
+                    </tr>                    <tr>
+                        <th>2</th>
+                        <td><b>Laravel</b></td>
+                        <td>dynamic</td>
+                        <td>supported</td>
+                        <td>
+                            <a target="_blank" href="https://laravel.com/docs/5.3/container" style="display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                                laravel.com/docs/5.3/container
+                            </a>
+                        </td>
+                    </tr>                    <tr>
+                        <th>3</th>
+                        <td><b>PhpDi</b></td>
+                        <td>dynamic</td>
+                        <td>supported</td>
+                        <td>
+                            <a target="_blank" href="http://php-di.org/" style="display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                                php-di.org/
+                            </a>
+                        </td>
+                    </tr>                    <tr>
+                        <th>4</th>
+                        <td><b>Pimple</b></td>
+                        <td>dynamic</td>
+                        <td>not supported</td>
+                        <td>
+                            <a target="_blank" href="http://pimple.sensiolabs.org/" style="display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                                pimple.sensiolabs.org/
+                            </a>
+                        </td>
+                    </tr>                    <tr>
+                        <th>5</th>
+                        <td><b>Symfony</b></td>
+                        <td>compiled</td>
+                        <td>supported</td>
+                        <td>
+                            <a target="_blank" href="https://symfony.com/doc/3.2/components/dependency_injection.html" style="display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                                symfony.com/doc/3.2/components/dependency_injection.html
+                            </a>
+                        </td>
+                    </tr>                    <tr>
+                        <th>6</th>
+                        <td><b>Zen</b></td>
+                        <td>compiled</td>
+                        <td>supported</td>
+                        <td>
+                            <a target="_blank" href="https://github.com/woohoolabs/zen" style="display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                                github.com/woohoolabs/zen
+                            </a>
+                        </td>
+                    </tr>                    <tr>
+                        <th>7</th>
+                        <td><b>ZendServiceManager</b></td>
+                        <td>dynamic</td>
+                        <td>not supported</td>
+                        <td>
+                            <a target="_blank" href="https://zendframework.github.io/zend-servicemanager/" style="display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                                zendframework.github.io/zend-servicemanager/
+                            </a>
+                        </td>
+                    </tr>                </tbody>
+            </table>
+        </section>
+        
+        <hr>
+        <section>
+            <h2>Method</h2>
+        
+            <p>
+                Each container is given 4 tasks (test suites) where they have to create or fetch object
+                graphs of different size. Test suites contain one or more test cases which define some settings
+                for a test: how many times it has to be repeated (iteration) and if the container startup time
+                should be counted in the time consumption.
+            </p>
+            <p>
+                Before measuring each test, containers are warmed up so autoloading can take place and caches
+                can be fed. Then all tests are performed 10 times, but only those results are used when
+                calculating the average time consumption/peak memory usage of a container which are not more than
+                the 120% of the smallest one.
+            </p>
+            <p>
+                The benchmark is run on a 15-inch MacBook Pro from 2015 using Docker and PHP 7.1.
+            </p>
+        </section>
+        
+        <hr>
+        <h2>Results</h2>        <h3>Test Suite 1: Instantiation of a small object graph (10 objects)</h3>
+        <p></p>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">100 iterations, startup time included</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>Symfony</b></td>
+                    <td>0.184</td> 
+                    <td>100%</td> 
+                    <td>2.50765</td> 
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>Zen</b></td>
+                    <td>0.397</td> 
+                    <td>216%</td> 
+                    <td>0.7819</td> 
+                    <td>31%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>0.671</td> 
+                    <td>365%</td> 
+                    <td>1.02779</td> 
+                    <td>41%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>Pimple</b></td>
+                    <td>0.998</td> 
+                    <td>542%</td> 
+                    <td>0.99101</td> 
+                    <td>40%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>Dice</b></td>
+                    <td>1.590</td> 
+                    <td>864%</td> 
+                    <td>0.95302</td> 
+                    <td>38%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>Laravel</b></td>
+                    <td>2.843</td> 
+                    <td>1545%</td> 
+                    <td>0.78918</td> 
+                    <td>31%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>PhpDi</b></td>
+                    <td>4.051</td> 
+                    <td>2202%</td> 
+                    <td>1.00532</td> 
+                    <td>40%</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">100 iterations, startup time excluded</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>Symfony</b></td>
+                    <td>0.167</td> 
+                    <td>100%</td> 
+                    <td>2.50765</td> 
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>Zen</b></td>
+                    <td>0.370</td> 
+                    <td>222%</td> 
+                    <td>0.7819</td> 
+                    <td>31%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>0.652</td> 
+                    <td>390%</td> 
+                    <td>1.02779</td> 
+                    <td>41%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>Dice</b></td>
+                    <td>0.747</td> 
+                    <td>447%</td> 
+                    <td>0.95302</td> 
+                    <td>38%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>Pimple</b></td>
+                    <td>0.842</td> 
+                    <td>504%</td> 
+                    <td>0.99101</td> 
+                    <td>40%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>Laravel</b></td>
+                    <td>2.907</td> 
+                    <td>1741%</td> 
+                    <td>0.78918</td> 
+                    <td>31%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>PhpDi</b></td>
+                    <td>5.282</td> 
+                    <td>3163%</td> 
+                    <td>1.00532</td> 
+                    <td>40%</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">1000 iterations, startup time included</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>Symfony</b></td>
+                    <td>1.579</td> 
+                    <td>100%</td> 
+                    <td>2.50765</td> 
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>Zen</b></td>
+                    <td>2.953</td> 
+                    <td>187%</td> 
+                    <td>0.7819</td> 
+                    <td>31%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>7.123</td> 
+                    <td>451%</td> 
+                    <td>1.02779</td> 
+                    <td>41%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>Dice</b></td>
+                    <td>7.846</td> 
+                    <td>497%</td> 
+                    <td>0.95302</td> 
+                    <td>38%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>Pimple</b></td>
+                    <td>8.154</td> 
+                    <td>516%</td> 
+                    <td>0.99101</td> 
+                    <td>40%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>Laravel</b></td>
+                    <td>31.375</td> 
+                    <td>1987%</td> 
+                    <td>0.78918</td> 
+                    <td>31%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>PhpDi</b></td>
+                    <td>41.792</td> 
+                    <td>2647%</td> 
+                    <td>1.00532</td> 
+                    <td>40%</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <h3>Test Suite 2: Instantiation of a big object graph (100 objects)</h3>
+        <p></p>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">10 iterations, startup time included</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>Symfony</b></td>
+                    <td>0.115</td> 
+                    <td>100%</td> 
+                    <td>2.50765</td> 
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>Zen</b></td>
+                    <td>0.326</td> 
+                    <td>283%</td> 
+                    <td>0.86771</td> 
+                    <td>35%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>0.881</td> 
+                    <td>766%</td> 
+                    <td>1.16802</td> 
+                    <td>47%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>Pimple</b></td>
+                    <td>0.987</td> 
+                    <td>858%</td> 
+                    <td>1.0861</td> 
+                    <td>43%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>Laravel</b></td>
+                    <td>2.915</td> 
+                    <td>2535%</td> 
+                    <td>0.95789</td> 
+                    <td>38%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>Dice</b></td>
+                    <td>3.097</td> 
+                    <td>2693%</td> 
+                    <td>1.37804</td> 
+                    <td>55%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>PhpDi</b></td>
+                    <td>5.015</td> 
+                    <td>4361%</td> 
+                    <td>1.7006</td> 
+                    <td>68%</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">10 iterations, startup time excluded</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>Symfony</b></td>
+                    <td>0.122</td> 
+                    <td>100%</td> 
+                    <td>2.50765</td> 
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>Zen</b></td>
+                    <td>0.346</td> 
+                    <td>284%</td> 
+                    <td>0.86771</td> 
+                    <td>35%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>0.738</td> 
+                    <td>605%</td> 
+                    <td>1.16802</td> 
+                    <td>47%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>Pimple</b></td>
+                    <td>0.842</td> 
+                    <td>690%</td> 
+                    <td>1.0861</td> 
+                    <td>43%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>Dice</b></td>
+                    <td>1.011</td> 
+                    <td>829%</td> 
+                    <td>1.37804</td> 
+                    <td>55%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>Laravel</b></td>
+                    <td>3.278</td> 
+                    <td>2687%</td> 
+                    <td>0.95789</td> 
+                    <td>38%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>PhpDi</b></td>
+                    <td>4.935</td> 
+                    <td>4045%</td> 
+                    <td>1.7006</td> 
+                    <td>68%</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">100 iterations, startup time included</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>Symfony</b></td>
+                    <td>1.202</td> 
+                    <td>100%</td> 
+                    <td>2.50765</td> 
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>Zen</b></td>
+                    <td>3.252</td> 
+                    <td>271%</td> 
+                    <td>0.86771</td> 
+                    <td>35%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>7.795</td> 
+                    <td>649%</td> 
+                    <td>1.16802</td> 
+                    <td>47%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>Dice</b></td>
+                    <td>8.302</td> 
+                    <td>691%</td> 
+                    <td>1.37804</td> 
+                    <td>55%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>Pimple</b></td>
+                    <td>10.783</td> 
+                    <td>897%</td> 
+                    <td>1.0861</td> 
+                    <td>43%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>Laravel</b></td>
+                    <td>29.950</td> 
+                    <td>2492%</td> 
+                    <td>0.95789</td> 
+                    <td>38%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>PhpDi</b></td>
+                    <td>46.188</td> 
+                    <td>3843%</td> 
+                    <td>1.7006</td> 
+                    <td>68%</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">1000 iterations, startup time included</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>Symfony</b></td>
+                    <td>8.990</td> 
+                    <td>100%</td> 
+                    <td>2.50765</td> 
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>Zen</b></td>
+                    <td>31.976</td> 
+                    <td>356%</td> 
+                    <td>0.86771</td> 
+                    <td>35%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>70.326</td> 
+                    <td>782%</td> 
+                    <td>1.16802</td> 
+                    <td>47%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>Dice</b></td>
+                    <td>74.782</td> 
+                    <td>832%</td> 
+                    <td>1.37804</td> 
+                    <td>55%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>Pimple</b></td>
+                    <td>102.259</td> 
+                    <td>1137%</td> 
+                    <td>1.0861</td> 
+                    <td>43%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>Laravel</b></td>
+                    <td>316.371</td> 
+                    <td>3519%</td> 
+                    <td>0.95789</td> 
+                    <td>38%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>PhpDi</b></td>
+                    <td>458.145</td> 
+                    <td>5096%</td> 
+                    <td>1.7006</td> 
+                    <td>68%</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <h3>Test Suite 3: Fetching the same small object graph (10 objects)</h3>
+        <p></p>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">10 000 iterations, startup time included</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>1.044</td> 
+                    <td>100%</td> 
+                    <td>1.02988</td> 
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>Zen</b></td>
+                    <td>1.737</td> 
+                    <td>166%</td> 
+                    <td>0.83904</td> 
+                    <td>81%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>Pimple</b></td>
+                    <td>1.829</td> 
+                    <td>175%</td> 
+                    <td>0.99101</td> 
+                    <td>96%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>PhpDi</b></td>
+                    <td>2.123</td> 
+                    <td>203%</td> 
+                    <td>0.93016</td> 
+                    <td>90%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>Dice</b></td>
+                    <td>2.308</td> 
+                    <td>221%</td> 
+                    <td>0.95731</td> 
+                    <td>93%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>Laravel</b></td>
+                    <td>2.615</td> 
+                    <td>250%</td> 
+                    <td>0.78918</td> 
+                    <td>77%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>Symfony</b></td>
+                    <td>4.225</td> 
+                    <td>405%</td> 
+                    <td>0.74403</td> 
+                    <td>72%</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <h3>Test Suite 4: Fetching the same big object graph (100 objects)</h3>
+        <p></p>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">10 000 iterations, startup time included</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>1.113</td> 
+                    <td>100%</td> 
+                    <td>1.19138</td> 
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>Zen</b></td>
+                    <td>1.787</td> 
+                    <td>161%</td> 
+                    <td>0.88865</td> 
+                    <td>75%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>Pimple</b></td>
+                    <td>1.960</td> 
+                    <td>176%</td> 
+                    <td>1.08373</td> 
+                    <td>91%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>PhpDi</b></td>
+                    <td>2.310</td> 
+                    <td>208%</td> 
+                    <td>1.62784</td> 
+                    <td>137%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>Dice</b></td>
+                    <td>2.479</td> 
+                    <td>223%</td> 
+                    <td>1.43338</td> 
+                    <td>120%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>Laravel</b></td>
+                    <td>2.855</td> 
+                    <td>257%</td> 
+                    <td>0.95789</td> 
+                    <td>80%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>Symfony</b></td>
+                    <td>4.564</td> 
+                    <td>410%</td> 
+                    <td>0.85118</td> 
+                    <td>71%</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>            <hr>
+            <h2>Conclusion</h2>
+            
+            <p>
+                Different types of containers have different performance characteristics. It can be concluded by looking
+                at the benchmark results that the more user-friendly a container is (dynamic &gt; compiled,
+                autowired &gt; not autowired), the more the probability is that it is slower than its rivals.
+            </p>
+            
+            <p>
+                In turn of their lower performance, dynamic containers usually need less attention during
+                development than compiled ones, while containers supporting autowiring usually need much less configuration
+                than the ones without autowiring capabilities.
+            </p>
+            
+            <p>
+                However, keep in mind that in a well-architected application, you won't call your DI Container
+                hundreds or even thousands of times because there should be only one real injection point: when you invoke
+                the controller which handles the request (and there is a good chance of using the container in
+                other places of the application layer - e.g. in your middleware or in your bootstrap files). That's why
+                most tests are exaggerated - you probably won't see tens of milliseconds of difference between the
+                fastest and the slowest implementations in the real life.
+            </p>
+            
+            <p>
+                To sum up, it depends on your needs which container suits your project best: if it is performance-critical
+                then you want to choose a compiled container. If maximum performance is not needed, but you have a big
+                project, then I would recommend a dynamic container with autowiring capabilities. Otherwise you can go
+                with simpler containers.
+            </p>
+        </article>
+    </body>
 </html>
