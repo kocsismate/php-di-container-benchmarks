@@ -12,16 +12,16 @@
 </head>
 <body>
     <article>
-        <h1>DI Container Benchmark Results</h1>
+        <h1>DI Container Benchmark</h1>
         <table>
             <tr>
-                <td style="width: 85px;"><b>Author:</b></td><td>Máté Kocsis (kocsismate@woohoolabs.com)</td>
+                <td style="width: 85px;"><b>Author:</b></td><td>Máté Kocsis (<a target="_blank" href="https://twitter.com/kocsismate90">@kocsismate90</a>)</td>
             </tr>
             <tr>
-                <td><b>Repository:</b></td><td><a href="https://github.com/kocsismate/php-di-container-benchmarks">https://github.com/kocsismate/php-di-container-benchmarks</a></td>
+                <td><b>Repository:</b></td><td><a target="_blank" href="https://github.com/kocsismate/php-di-container-benchmarks">https://github.com/kocsismate/php-di-container-benchmarks</a></td>
             </tr>
             <tr>
-                <td><b>Generated:</b></td><td>2016-12-27 16:51:20</td>
+                <td><b>Generated:</b></td><td>2016-12-27 19:11:46</td>
             </tr>
         </table>
         
@@ -41,7 +41,7 @@
         
         <hr>
         <section>
-            <h2>Introduction</h2>
+            <h2 id="introduction">Introduction</h2>
             <p>
                 In 2014, a really interesting benchmark about DI Containers for PHP was
                 <a target="_blank" href="https://www.sitepoint.com/php-dependency-injection-container-performance-benchmarks/">published</a>
@@ -50,11 +50,13 @@
             </p>
             
             <p>
-                I have been interested in the topic since then so I wanted to conduct a better benchmark than the last one was:
-                I tried to fix some of its flaws while keeping the good parts.
+                I have been interested in the topic since then so I wanted to finally conduct a better benchmark than
+                the last one was: I tried to fix some of its flaws while keeping the good parts. So here is my take!
             </p>
         
-            <h3>Comparison of Containers</h3>
+            <p>
+                The containers examined are listed below along with some of their attributes:
+            </p>
         
             <table border="1" style="width: 750px;">
                 <thead>
@@ -138,15 +140,35 @@
                         </td>
                     </tr>                </tbody>
             </table>
+            
+            <p>
+                I'll try to give some vague definitions for some of the aforementioned notions:
+            </p>
+            
+            <p>
+                A DI Container is <i>compiled</i> if it can be generated into a new class for production usage
+                from where container entries then can be fetched. It means that your dependency graph is resolved
+                during build time. This technique usually results in a very fast DIC, because there is no need for any
+                Reflection or configuration when consuming the container. <i>Dynamic</i> containers
+                however resolve your dependency graph Just-In-Time thus they are by design slower compared to the
+                <i>compiled</i> ones.
+            </p>
+            
+            <p>
+                A DI Container supports <i>autowiring</i> if it can be configured to automatically inspect and
+                resolve at least some non-trivial subgraphs of the dependency graph - no matter if the resolution takes
+                place build time or run time. Otherwise all dependencies have to be resolved manually which is usually
+                done in the configuration. In this case, a DI Container does not support <i>autowiring</i>.
+            </p>
         </section>
         
         <hr>
         <section>
-            <h2>Method</h2>
+            <h2 id="method">Method</h2>
         
             <p>
                 Each container is given 4 tasks (test suites) where they have to create or fetch object
-                graphs of different size. Test suites contain one or more test cases which define some settings
+                graphs of different sizes. A test suite contains one or more test cases which define some settings
                 for a test: how many times it has to be repeated (iteration) and if the container startup time
                 should be counted in the time consumption.
             </p>
@@ -157,12 +179,17 @@
                 the 120% of the smallest one.
             </p>
             <p>
-                The benchmark is run on a 15-inch MacBook Pro from 2015 using Docker and PHP 7.1.
+                The benchmark is run on a 15-inch MacBook Pro from 2015 using Docker and PHP 7.1. The examined
+                DI Containers are configured for production usage as if it was probably done in case of a big project.
+                That's why I took advantage of autowiring capabilities when possible. Unfortunately, this
+                discriminates some participants giving them a big handicap, but I wanted to measure container
+                performance with a configuration as advertised or recommended by the documentation and most probable
+                to be used in the real world.
             </p>
         </section>
         
         <hr>
-        <h2>Results</h2>        <h3>Test Suite 1: Instantiation of a small object graph (10 objects)</h3>
+        <h2 id="results">Results</h2>        <h3>Test Suite 1: Instantiation of a small object graph (10 objects)</h3>
         <p></p>        <table border="1">
             <thead>
                 <tr>
@@ -180,7 +207,7 @@
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Symfony</b></td>
-                    <td>0.184</td> 
+                    <td>0.254</td> 
                     <td>100%</td> 
                     <td>2.50765</td> 
                     <td>100%</td>
@@ -188,48 +215,48 @@
                 <tr>
                     <th>2</th>
                     <td><b>Zen</b></td>
-                    <td>0.397</td> 
-                    <td>216%</td> 
+                    <td>0.340</td> 
+                    <td>134%</td> 
                     <td>0.7819</td> 
                     <td>31%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>ZendServiceManager</b></td>
-                    <td>0.671</td> 
-                    <td>365%</td> 
+                    <td>0.713</td> 
+                    <td>281%</td> 
                     <td>1.02779</td> 
                     <td>41%</td>
                 </tr>
                 <tr>
                     <th>4</th>
                     <td><b>Pimple</b></td>
-                    <td>0.998</td> 
-                    <td>542%</td> 
+                    <td>0.943</td> 
+                    <td>371%</td> 
                     <td>0.99101</td> 
                     <td>40%</td>
                 </tr>
                 <tr>
                     <th>5</th>
                     <td><b>Dice</b></td>
-                    <td>1.590</td> 
-                    <td>864%</td> 
+                    <td>1.562</td> 
+                    <td>615%</td> 
                     <td>0.95302</td> 
                     <td>38%</td>
                 </tr>
                 <tr>
                     <th>6</th>
                     <td><b>Laravel</b></td>
-                    <td>2.843</td> 
-                    <td>1545%</td> 
+                    <td>3.197</td> 
+                    <td>1259%</td> 
                     <td>0.78918</td> 
                     <td>31%</td>
                 </tr>
                 <tr>
                     <th>7</th>
                     <td><b>PhpDi</b></td>
-                    <td>4.051</td> 
-                    <td>2202%</td> 
+                    <td>4.022</td> 
+                    <td>1583%</td> 
                     <td>1.00532</td> 
                     <td>40%</td>
                 </tr>
@@ -252,7 +279,7 @@
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Symfony</b></td>
-                    <td>0.167</td> 
+                    <td>0.166</td> 
                     <td>100%</td> 
                     <td>2.50765</td> 
                     <td>100%</td>
@@ -260,48 +287,48 @@
                 <tr>
                     <th>2</th>
                     <td><b>Zen</b></td>
-                    <td>0.370</td> 
-                    <td>222%</td> 
+                    <td>0.328</td> 
+                    <td>198%</td> 
                     <td>0.7819</td> 
                     <td>31%</td>
                 </tr>
                 <tr>
                     <th>3</th>
-                    <td><b>ZendServiceManager</b></td>
-                    <td>0.652</td> 
-                    <td>390%</td> 
-                    <td>1.02779</td> 
-                    <td>41%</td>
-                </tr>
-                <tr>
-                    <th>4</th>
                     <td><b>Dice</b></td>
-                    <td>0.747</td> 
-                    <td>447%</td> 
+                    <td>0.641</td> 
+                    <td>386%</td> 
                     <td>0.95302</td> 
                     <td>38%</td>
                 </tr>
                 <tr>
+                    <th>4</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>0.644</td> 
+                    <td>388%</td> 
+                    <td>1.02779</td> 
+                    <td>41%</td>
+                </tr>
+                <tr>
                     <th>5</th>
                     <td><b>Pimple</b></td>
-                    <td>0.842</td> 
-                    <td>504%</td> 
+                    <td>0.803</td> 
+                    <td>484%</td> 
                     <td>0.99101</td> 
                     <td>40%</td>
                 </tr>
                 <tr>
                     <th>6</th>
                     <td><b>Laravel</b></td>
-                    <td>2.907</td> 
-                    <td>1741%</td> 
+                    <td>3.445</td> 
+                    <td>2075%</td> 
                     <td>0.78918</td> 
                     <td>31%</td>
                 </tr>
                 <tr>
                     <th>7</th>
                     <td><b>PhpDi</b></td>
-                    <td>5.282</td> 
-                    <td>3163%</td> 
+                    <td>4.200</td> 
+                    <td>2530%</td> 
                     <td>1.00532</td> 
                     <td>40%</td>
                 </tr>
@@ -324,7 +351,7 @@
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Symfony</b></td>
-                    <td>1.579</td> 
+                    <td>1.542</td> 
                     <td>100%</td> 
                     <td>2.50765</td> 
                     <td>100%</td>
@@ -332,48 +359,48 @@
                 <tr>
                     <th>2</th>
                     <td><b>Zen</b></td>
-                    <td>2.953</td> 
-                    <td>187%</td> 
+                    <td>3.087</td> 
+                    <td>200%</td> 
                     <td>0.7819</td> 
                     <td>31%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>ZendServiceManager</b></td>
-                    <td>7.123</td> 
-                    <td>451%</td> 
+                    <td>6.273</td> 
+                    <td>407%</td> 
                     <td>1.02779</td> 
                     <td>41%</td>
                 </tr>
                 <tr>
                     <th>4</th>
                     <td><b>Dice</b></td>
-                    <td>7.846</td> 
-                    <td>497%</td> 
+                    <td>7.167</td> 
+                    <td>465%</td> 
                     <td>0.95302</td> 
                     <td>38%</td>
                 </tr>
                 <tr>
                     <th>5</th>
                     <td><b>Pimple</b></td>
-                    <td>8.154</td> 
-                    <td>516%</td> 
+                    <td>8.016</td> 
+                    <td>520%</td> 
                     <td>0.99101</td> 
                     <td>40%</td>
                 </tr>
                 <tr>
                     <th>6</th>
                     <td><b>Laravel</b></td>
-                    <td>31.375</td> 
-                    <td>1987%</td> 
+                    <td>31.234</td> 
+                    <td>2026%</td> 
                     <td>0.78918</td> 
                     <td>31%</td>
                 </tr>
                 <tr>
                     <th>7</th>
                     <td><b>PhpDi</b></td>
-                    <td>41.792</td> 
-                    <td>2647%</td> 
+                    <td>41.185</td> 
+                    <td>2671%</td> 
                     <td>1.00532</td> 
                     <td>40%</td>
                 </tr>
@@ -397,7 +424,7 @@
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Symfony</b></td>
-                    <td>0.115</td> 
+                    <td>0.126</td> 
                     <td>100%</td> 
                     <td>2.50765</td> 
                     <td>100%</td>
@@ -405,48 +432,48 @@
                 <tr>
                     <th>2</th>
                     <td><b>Zen</b></td>
-                    <td>0.326</td> 
-                    <td>283%</td> 
+                    <td>0.333</td> 
+                    <td>264%</td> 
                     <td>0.86771</td> 
                     <td>35%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>ZendServiceManager</b></td>
-                    <td>0.881</td> 
-                    <td>766%</td> 
+                    <td>0.732</td> 
+                    <td>581%</td> 
                     <td>1.16802</td> 
                     <td>47%</td>
                 </tr>
                 <tr>
                     <th>4</th>
                     <td><b>Pimple</b></td>
-                    <td>0.987</td> 
-                    <td>858%</td> 
+                    <td>0.981</td> 
+                    <td>779%</td> 
                     <td>1.0861</td> 
                     <td>43%</td>
                 </tr>
                 <tr>
                     <th>5</th>
-                    <td><b>Laravel</b></td>
-                    <td>2.915</td> 
-                    <td>2535%</td> 
-                    <td>0.95789</td> 
-                    <td>38%</td>
-                </tr>
-                <tr>
-                    <th>6</th>
                     <td><b>Dice</b></td>
-                    <td>3.097</td> 
-                    <td>2693%</td> 
+                    <td>1.862</td> 
+                    <td>1478%</td> 
                     <td>1.37804</td> 
                     <td>55%</td>
                 </tr>
                 <tr>
+                    <th>6</th>
+                    <td><b>Laravel</b></td>
+                    <td>2.886</td> 
+                    <td>2290%</td> 
+                    <td>0.95789</td> 
+                    <td>38%</td>
+                </tr>
+                <tr>
                     <th>7</th>
                     <td><b>PhpDi</b></td>
-                    <td>5.015</td> 
-                    <td>4361%</td> 
+                    <td>4.956</td> 
+                    <td>3933%</td> 
                     <td>1.7006</td> 
                     <td>68%</td>
                 </tr>
@@ -469,7 +496,7 @@
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Symfony</b></td>
-                    <td>0.122</td> 
+                    <td>0.154</td> 
                     <td>100%</td> 
                     <td>2.50765</td> 
                     <td>100%</td>
@@ -477,48 +504,48 @@
                 <tr>
                     <th>2</th>
                     <td><b>Zen</b></td>
-                    <td>0.346</td> 
-                    <td>284%</td> 
+                    <td>0.339</td> 
+                    <td>220%</td> 
                     <td>0.86771</td> 
                     <td>35%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>ZendServiceManager</b></td>
-                    <td>0.738</td> 
-                    <td>605%</td> 
+                    <td>0.705</td> 
+                    <td>458%</td> 
                     <td>1.16802</td> 
                     <td>47%</td>
                 </tr>
                 <tr>
                     <th>4</th>
                     <td><b>Pimple</b></td>
-                    <td>0.842</td> 
-                    <td>690%</td> 
+                    <td>0.855</td> 
+                    <td>555%</td> 
                     <td>1.0861</td> 
                     <td>43%</td>
                 </tr>
                 <tr>
                     <th>5</th>
                     <td><b>Dice</b></td>
-                    <td>1.011</td> 
-                    <td>829%</td> 
+                    <td>0.910</td> 
+                    <td>591%</td> 
                     <td>1.37804</td> 
                     <td>55%</td>
                 </tr>
                 <tr>
                     <th>6</th>
                     <td><b>Laravel</b></td>
-                    <td>3.278</td> 
-                    <td>2687%</td> 
+                    <td>2.997</td> 
+                    <td>1946%</td> 
                     <td>0.95789</td> 
                     <td>38%</td>
                 </tr>
                 <tr>
                     <th>7</th>
                     <td><b>PhpDi</b></td>
-                    <td>4.935</td> 
-                    <td>4045%</td> 
+                    <td>5.056</td> 
+                    <td>3283%</td> 
                     <td>1.7006</td> 
                     <td>68%</td>
                 </tr>
@@ -541,7 +568,7 @@
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Symfony</b></td>
-                    <td>1.202</td> 
+                    <td>0.933</td> 
                     <td>100%</td> 
                     <td>2.50765</td> 
                     <td>100%</td>
@@ -549,48 +576,48 @@
                 <tr>
                     <th>2</th>
                     <td><b>Zen</b></td>
-                    <td>3.252</td> 
-                    <td>271%</td> 
+                    <td>3.340</td> 
+                    <td>358%</td> 
                     <td>0.86771</td> 
                     <td>35%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>ZendServiceManager</b></td>
-                    <td>7.795</td> 
-                    <td>649%</td> 
+                    <td>6.505</td> 
+                    <td>697%</td> 
                     <td>1.16802</td> 
                     <td>47%</td>
                 </tr>
                 <tr>
                     <th>4</th>
-                    <td><b>Dice</b></td>
-                    <td>8.302</td> 
-                    <td>691%</td> 
-                    <td>1.37804</td> 
-                    <td>55%</td>
-                </tr>
-                <tr>
-                    <th>5</th>
                     <td><b>Pimple</b></td>
-                    <td>10.783</td> 
-                    <td>897%</td> 
+                    <td>8.528</td> 
+                    <td>914%</td> 
                     <td>1.0861</td> 
                     <td>43%</td>
                 </tr>
                 <tr>
+                    <th>5</th>
+                    <td><b>Dice</b></td>
+                    <td>8.715</td> 
+                    <td>934%</td> 
+                    <td>1.37804</td> 
+                    <td>55%</td>
+                </tr>
+                <tr>
                     <th>6</th>
                     <td><b>Laravel</b></td>
-                    <td>29.950</td> 
-                    <td>2492%</td> 
+                    <td>30.223</td> 
+                    <td>3239%</td> 
                     <td>0.95789</td> 
                     <td>38%</td>
                 </tr>
                 <tr>
                     <th>7</th>
                     <td><b>PhpDi</b></td>
-                    <td>46.188</td> 
-                    <td>3843%</td> 
+                    <td>43.919</td> 
+                    <td>4707%</td> 
                     <td>1.7006</td> 
                     <td>68%</td>
                 </tr>
@@ -613,7 +640,7 @@
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Symfony</b></td>
-                    <td>8.990</td> 
+                    <td>8.997</td> 
                     <td>100%</td> 
                     <td>2.50765</td> 
                     <td>100%</td>
@@ -621,48 +648,48 @@
                 <tr>
                     <th>2</th>
                     <td><b>Zen</b></td>
-                    <td>31.976</td> 
-                    <td>356%</td> 
+                    <td>31.585</td> 
+                    <td>351%</td> 
                     <td>0.86771</td> 
                     <td>35%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>ZendServiceManager</b></td>
-                    <td>70.326</td> 
-                    <td>782%</td> 
+                    <td>69.385</td> 
+                    <td>771%</td> 
                     <td>1.16802</td> 
                     <td>47%</td>
                 </tr>
                 <tr>
                     <th>4</th>
                     <td><b>Dice</b></td>
-                    <td>74.782</td> 
-                    <td>832%</td> 
+                    <td>71.475</td> 
+                    <td>794%</td> 
                     <td>1.37804</td> 
                     <td>55%</td>
                 </tr>
                 <tr>
                     <th>5</th>
                     <td><b>Pimple</b></td>
-                    <td>102.259</td> 
-                    <td>1137%</td> 
+                    <td>90.434</td> 
+                    <td>1005%</td> 
                     <td>1.0861</td> 
                     <td>43%</td>
                 </tr>
                 <tr>
                     <th>6</th>
                     <td><b>Laravel</b></td>
-                    <td>316.371</td> 
-                    <td>3519%</td> 
+                    <td>320.771</td> 
+                    <td>3565%</td> 
                     <td>0.95789</td> 
                     <td>38%</td>
                 </tr>
                 <tr>
                     <th>7</th>
                     <td><b>PhpDi</b></td>
-                    <td>458.145</td> 
-                    <td>5096%</td> 
+                    <td>443.449</td> 
+                    <td>4929%</td> 
                     <td>1.7006</td> 
                     <td>68%</td>
                 </tr>
@@ -686,56 +713,56 @@
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>ZendServiceManager</b></td>
-                    <td>1.044</td> 
+                    <td>1.056</td> 
                     <td>100%</td> 
                     <td>1.02988</td> 
                     <td>100%</td>
                 </tr>
                 <tr>
                     <th>2</th>
-                    <td><b>Zen</b></td>
-                    <td>1.737</td> 
-                    <td>166%</td> 
-                    <td>0.83904</td> 
-                    <td>81%</td>
-                </tr>
-                <tr>
-                    <th>3</th>
-                    <td><b>Pimple</b></td>
-                    <td>1.829</td> 
-                    <td>175%</td> 
-                    <td>0.99101</td> 
-                    <td>96%</td>
-                </tr>
-                <tr>
-                    <th>4</th>
                     <td><b>PhpDi</b></td>
-                    <td>2.123</td> 
-                    <td>203%</td> 
+                    <td>1.558</td> 
+                    <td>148%</td> 
                     <td>0.93016</td> 
                     <td>90%</td>
                 </tr>
                 <tr>
+                    <th>3</th>
+                    <td><b>Zen</b></td>
+                    <td>1.809</td> 
+                    <td>171%</td> 
+                    <td>0.83904</td> 
+                    <td>81%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>Pimple</b></td>
+                    <td>1.855</td> 
+                    <td>176%</td> 
+                    <td>0.99101</td> 
+                    <td>96%</td>
+                </tr>
+                <tr>
                     <th>5</th>
                     <td><b>Dice</b></td>
-                    <td>2.308</td> 
-                    <td>221%</td> 
+                    <td>2.253</td> 
+                    <td>213%</td> 
                     <td>0.95731</td> 
                     <td>93%</td>
                 </tr>
                 <tr>
                     <th>6</th>
                     <td><b>Laravel</b></td>
-                    <td>2.615</td> 
-                    <td>250%</td> 
+                    <td>2.462</td> 
+                    <td>233%</td> 
                     <td>0.78918</td> 
                     <td>77%</td>
                 </tr>
                 <tr>
                     <th>7</th>
                     <td><b>Symfony</b></td>
-                    <td>4.225</td> 
-                    <td>405%</td> 
+                    <td>4.191</td> 
+                    <td>397%</td> 
                     <td>0.74403</td> 
                     <td>72%</td>
                 </tr>
@@ -759,7 +786,7 @@
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>ZendServiceManager</b></td>
-                    <td>1.113</td> 
+                    <td>1.111</td> 
                     <td>100%</td> 
                     <td>1.19138</td> 
                     <td>100%</td>
@@ -767,82 +794,83 @@
                 <tr>
                     <th>2</th>
                     <td><b>Zen</b></td>
-                    <td>1.787</td> 
-                    <td>161%</td> 
+                    <td>1.775</td> 
+                    <td>160%</td> 
                     <td>0.88865</td> 
                     <td>75%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>Pimple</b></td>
-                    <td>1.960</td> 
-                    <td>176%</td> 
+                    <td>1.971</td> 
+                    <td>177%</td> 
                     <td>1.08373</td> 
                     <td>91%</td>
                 </tr>
                 <tr>
                     <th>4</th>
                     <td><b>PhpDi</b></td>
-                    <td>2.310</td> 
-                    <td>208%</td> 
+                    <td>2.301</td> 
+                    <td>207%</td> 
                     <td>1.62784</td> 
                     <td>137%</td>
                 </tr>
                 <tr>
                     <th>5</th>
                     <td><b>Dice</b></td>
-                    <td>2.479</td> 
-                    <td>223%</td> 
+                    <td>2.424</td> 
+                    <td>218%</td> 
                     <td>1.43338</td> 
                     <td>120%</td>
                 </tr>
                 <tr>
                     <th>6</th>
                     <td><b>Laravel</b></td>
-                    <td>2.855</td> 
-                    <td>257%</td> 
+                    <td>2.780</td> 
+                    <td>250%</td> 
                     <td>0.95789</td> 
                     <td>80%</td>
                 </tr>
                 <tr>
                     <th>7</th>
                     <td><b>Symfony</b></td>
-                    <td>4.564</td> 
-                    <td>410%</td> 
+                    <td>4.411</td> 
+                    <td>397%</td> 
                     <td>0.85118</td> 
                     <td>71%</td>
                 </tr>
             </tbody>
         </table>
         </br>            <hr>
-            <h2>Conclusion</h2>
+            <h2 id="conclusion">Conclusion</h2>
             
             <p>
-                Different types of containers have different performance characteristics. It can be concluded by looking
-                at the benchmark results that the more user-friendly a container is (dynamic &gt; compiled,
-                autowired &gt; not autowired), the more the probability is that it is slower than its rivals.
+                My hypothesis was that different types of containers have different performance characteristics.
+                It can be concluded by looking at the results that the hypothesis can't be rejected as it seems that
+                the more user-friendly a container is (dynamic &gt; compiled, autowired &gt; not autowired) the
+                slower it is.
             </p>
             
             <p>
                 In turn of their lower performance, dynamic containers usually need less attention during
-                development than compiled ones, while containers supporting autowiring usually need much less configuration
-                than the ones without autowiring capabilities.
+                development than compiled ones, while containers supporting autowiring usually need much less
+                configuration than the ones without autowiring capabilities.
             </p>
             
             <p>
-                However, keep in mind that in a well-architected application, you won't call your DI Container
-                hundreds or even thousands of times because there should be only one real injection point: when you invoke
-                the controller which handles the request (and there is a good chance of using the container in
-                other places of the application layer - e.g. in your middleware or in your bootstrap files). That's why
+                However, keep in mind that in a well-architected application you won't call your DI Container
+                hundreds or even thousands of times because there should be only one injection point: when you invoke
+                the controller(s) which handle(s) the request (and there is a good chance of needing the container in
+                other places of the application layer - e.g. in your middleware or bootstrap files). That's why
                 most tests are exaggerated - you probably won't see tens of milliseconds of difference between the
-                fastest and the slowest implementations in the real life.
+                fastest and the slowest DIC in the real life.
             </p>
             
             <p>
-                To sum up, it depends on your needs which container suits your project best: if it is performance-critical
-                then you want to choose a compiled container. If maximum performance is not needed, but you have a big
-                project, then I would recommend a dynamic container with autowiring capabilities. Otherwise you can go
-                with simpler containers.
+                To sum up, it depends on your needs which container suits your project best: if it is a
+                performance-critical application then you want to choose a compiled container. If maximum performance
+                is not required, but you have a big and complex system then I would recommend a dynamic container with
+                autowiring capabilities. Otherwise you can go with simpler containers.
             </p>
         </article>
     </body>
