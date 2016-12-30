@@ -76,12 +76,12 @@ class HtmlOutputter implements OutputterInterface
                 In 2014, a really interesting benchmark about DI Containers for PHP was
                 <a target="_blank" href="https://www.sitepoint.com/php-dependency-injection-container-performance-benchmarks/">published</a>
                 on Sitepoint. Unfortunately, <a target="_blank" href="https://github.com/TomBZombie/php-dependency-injection-benchmarks">the implementation</a>
-                of the tests turned out to be quite controversial, so the benchmark itself wasn't really useful.
+                of the tests turned out to be quite controversial, so the benchmark itself wasn't very insightful.
             </p>
             
             <p>
                 I have been interested in the topic since then so I wanted to finally conduct a better benchmark than
-                the last one was: I tried to fix some of its flaws while keeping the good parts. So here is my take!
+                the last one was: I tried to fix its flaws while keeping the good parts. So here is my take!
             </p>
         
             <p>
@@ -128,7 +128,7 @@ HERE;
             </table>
             
             <p>
-                I'll try to give some vague definitions for some of the aforementioned notions:
+                I'll try to give a vague definition below for some of the aforementioned notions:
             </p>
             
             <p>
@@ -142,10 +142,17 @@ HERE;
             
             <p>
                 A DI Container supports <i>autowiring</i> if it can be configured to automatically inspect and
-                resolve at least some non-trivial subgraphs of the dependency graph - no matter if the resolution takes
-                place build time or run time. Otherwise all dependencies have to be resolved manually which is usually
-                done in the configuration. In this case, a DI Container does not support <i>autowiring</i>.
+                resolve at least some non-trivial subgraphs of the full dependency graph - no matter if the resolution
+                takes place build time or run time. Otherwise all dependencies have to be resolved manually which is
+                probably done as configuration. In this case, a DI Container does not support <i>autowiring</i>.
             </p>
+            
+            <p>
+                Essentially, dynamic containers usually need less attention during development than compiled ones,
+                while containers which support autowiring usually need much less configuration than the ones without
+                autowiring capabilities.
+            </p>
+            
         </section>
         
         <hr>
@@ -261,25 +268,19 @@ HERE;
             </p>
             
             <p>
-                In turn of their lower performance, dynamic containers usually need less attention during
-                development than compiled ones, while containers supporting autowiring usually need much less
-                configuration than the ones without autowiring capabilities.
-            </p>
-            
-            <p>
                 However, keep in mind that in a well-architected application you won't call your DI Container
                 hundreds or even thousands of times because there should be only one injection point: when you invoke
-                the controller(s) which handle(s) the request (and there is a good chance of needing the container in
+                the controller(s) which handle(s) the request (but there is a good chance of needing the container in
                 other places of the application layer - e.g. in your middleware or bootstrap files). That's why
-                most tests are exaggerated - you probably won't see tens of milliseconds of difference between the
+                most results are exaggerated - you probably won't see tens of milliseconds of difference between the
                 fastest and the slowest DIC in the real life.
             </p>
             
             <p>
-                To sum up, it depends on your needs which container suits your project best: if it is a
-                performance-critical application then you want to choose a compiled container. If maximum performance
-                is not required, but you have a big and complex system then I would recommend a dynamic container with
-                autowiring capabilities. Otherwise you can go with simpler containers.
+                To sum up, it only depends on your needs which container suits your project best: if you have a
+                performance-critical application then you probably want to choose a compiled container. If maximum
+                performance is not required, but you develop a big and complex system then I would recommend a dynamic
+                container with autowiring capabilities. Otherwise you can go with simpler containers.
             </p>
         </article>
     </body>
