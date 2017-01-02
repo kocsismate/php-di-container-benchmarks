@@ -54,11 +54,11 @@ class HtmlOutputter implements OutputterInterface
                 <td><b>Generated:</b></td><td>$now</td>
             </tr>
         </table>
-        
+
         <hr>
         <section>
             <h2>Table of Contents</h2>
-        
+
             <nav>
                 <ul>
                     <li><a href="#introduction">Introduction</a></li>
@@ -68,7 +68,7 @@ class HtmlOutputter implements OutputterInterface
                 </ul>
             </nav>
         </section>
-        
+
         <hr>
         <section>
             <h2 id="introduction">Introduction</h2>
@@ -78,16 +78,16 @@ class HtmlOutputter implements OutputterInterface
                 on Sitepoint. Unfortunately, <a target="_blank" href="https://github.com/TomBZombie/php-dependency-injection-benchmarks">the implementation</a>
                 of the tests turned out to be quite controversial, so the benchmark itself wasn't very insightful.
             </p>
-            
+
             <p>
                 I have been interested in the topic since then so I wanted to finally conduct a better benchmark than
                 the last one was: I tried to fix its flaws while keeping the good parts. So here is my take!
             </p>
-        
+
             <p>
                 The containers examined are listed below along with some of their attributes:
             </p>
-        
+
             <table border="1" style="width: 750px;">
                 <thead>
                     <tr>
@@ -126,11 +126,11 @@ HERE;
         $html .= <<<HERE
                 </tbody>
             </table>
-            
+
             <p>
                 I'll try to give a vague definition below for some of the aforementioned notions:
             </p>
-            
+
             <p>
                 A DI Container is <i>compiled</i> if it can be generated into a new class for production usage
                 from where container entries then can be fetched. It means that your dependency graph is resolved
@@ -139,26 +139,25 @@ HERE;
                 however resolve your dependency graph Just-In-Time thus they are by design slower compared to the
                 <i>compiled</i> ones.
             </p>
-            
+
             <p>
                 A DI Container supports <i>autowiring</i> if it can be configured to automatically inspect and
                 resolve at least some non-trivial subgraphs of the full dependency graph - no matter if the resolution
                 takes place build time or run time. Otherwise all dependencies have to be resolved manually which is
                 probably done as configuration. In this case, a DI Container does not support <i>autowiring</i>.
             </p>
-            
+
             <p>
                 Essentially, dynamic containers usually need less attention during development than compiled ones,
                 while containers which support autowiring usually need much less configuration than the ones without
                 autowiring capabilities.
             </p>
-            
         </section>
-        
+
         <hr>
         <section>
             <h2 id="method">Method</h2>
-        
+
             <p>
                 Each container is given 4 tasks (test suites) where they have to create or fetch object
                 graphs of different sizes. A test suite contains one or more test cases which define some settings
@@ -180,7 +179,7 @@ HERE;
                 to be used in the real world.
             </p>
         </section>
-        
+
         <hr>
         <h2 id="results">Results</h2>
 HERE;
@@ -259,14 +258,14 @@ HERE;
         $html .= <<<HERE
             <hr>
             <h2 id="conclusion">Conclusion</h2>
-            
+
             <p>
                 My hypothesis was that different types of containers have different performance characteristics.
                 It can be concluded by looking at the results that the hypothesis can't be rejected as it seems that
-                the more user-friendly a container is (dynamic &gt; compiled, autowired &gt; not autowired) the
-                slower it is.
+                the more user-friendly a container is (dynamic &gt; compiled, dynamic with autowiring &gt; dynamic
+                without autowiring) the slower it is.
             </p>
-            
+
             <p>
                 However, keep in mind that in a well-architected application you won't call your DI Container
                 hundreds or even thousands of times because there should be only one injection point: when you invoke
@@ -275,12 +274,12 @@ HERE;
                 most results are exaggerated - you probably won't see tens of milliseconds of difference between the
                 fastest and the slowest DIC in the real life.
             </p>
-            
+
             <p>
-                To sum up, it only depends on your needs which container suits your project best: if you have a
-                performance-critical application then you probably want to choose a compiled container. If maximum
-                performance is not required, but you develop a big and complex system then I would recommend a dynamic
-                container with autowiring capabilities. Otherwise you can go with simpler containers.
+                To sum up, when choosing a container it only depends on your needs which one suits your project best:
+                if you have a performance-critical application then you probably want to choose a compiled container.
+                If maximum performance is not required, but you develop a big and complex system then I would recommend
+                a dynamic container with autowiring capabilities. Otherwise you can go with simpler containers.
             </p>
         </article>
     </body>
