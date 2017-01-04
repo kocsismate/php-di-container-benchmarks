@@ -5,7 +5,10 @@ namespace DiContainerBenchmarks\Fixture;
 
 class Class17
 {
+    private $dependency;
+
     public function __construct(Class16 $dependency)
     {
+        $this->dependency = $dependency;
     }
 }
