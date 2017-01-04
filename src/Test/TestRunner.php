@@ -24,23 +24,20 @@ class TestRunner
 
         // Warming up
         $test->startup();
+
+        $t1 = microtime(true);
+        $test->startup();
+        $t2 = microtime(true);
+
+        // Warming up
         $test->run();
 
-        // Starting benchmark
-        if ($isStartupTimeIncluded) {
-            $t1 = microtime(true);
-            $test->startup();
-        } else {
-            $test->startup();
-            $t1 = microtime(true);
-        }
-
+        $t3 = microtime(true);
         for ($i = 0; $i < $iterations; $i++) {
             $test->run();
         }
+        $t4 = microtime(true);
 
-        $t2 = microtime(true);
-
-        return TestResult::create($t1, $t2, memory_get_peak_usage());
+        return TestResult::create($t1, $t2, $t3, $t4, $isStartupTimeIncluded, memory_get_peak_usage());
     }
 }
