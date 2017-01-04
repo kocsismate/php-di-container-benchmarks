@@ -60,13 +60,12 @@ class SymfonyContainer implements ContainerInterface
         // Build container with singleton services
         $containerBuilder = new ContainerBuilder();
 
-        $definition = new Definition(Class10::class, []);
-        $definition->setAutowired(true);
-        $containerBuilder->setDefinition(Class10::class, $definition);
-
-        $definition = new Definition(Class100::class, []);
-        $definition->setAutowired(true);
-        $containerBuilder->setDefinition(Class100::class, $definition);
+        for ($i = 1; $i <= 100; $i++) {
+            $definition = new Definition('DiContainerBenchmarks\Fixture\Class' . $i, []);
+            $definition->setShared(true);
+            $definition->setAutowired(true);
+            $containerBuilder->setDefinition('DiContainerBenchmarks\Fixture\Class' . $i, $definition);
+        }
 
         $containerBuilder->compile();
 
