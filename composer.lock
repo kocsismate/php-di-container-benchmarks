@@ -709,16 +709,16 @@
         },
         {
             "name": "woohoolabs/zen",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/woohoolabs/zen.git",
-                "reference": "6a8b52985e5d5d61bec6d106371bced82321dd15"
+                "reference": "f896d5fabd3e31f980a0a64ccb088f07108612c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/6a8b52985e5d5d61bec6d106371bced82321dd15",
-                "reference": "6a8b52985e5d5d61bec6d106371bced82321dd15",
+                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/f896d5fabd3e31f980a0a64ccb088f07108612c1",
+                "reference": "f896d5fabd3e31f980a0a64ccb088f07108612c1",
                 "shasum": ""
             },
             "require": {
@@ -762,7 +762,7 @@
                 "di",
                 "dic"
             ],
-            "time": "2017-01-05T10:21:01+00:00"
+            "time": "2017-01-05T12:04:55+00:00"
         },
         {
             "name": "zendframework/zend-servicemanager",
