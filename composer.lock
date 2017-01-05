@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5be966760017c04b0f43510c93587c9d",
+    "content-hash": "4ebe6d2247181bc573c1c29dcaceea22",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -709,16 +709,16 @@
         },
         {
             "name": "woohoolabs/zen",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/woohoolabs/zen.git",
-                "reference": "f896d5fabd3e31f980a0a64ccb088f07108612c1"
+                "reference": "bbbe8d5e7564481a3984660ae74daa7ac31ceaf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/f896d5fabd3e31f980a0a64ccb088f07108612c1",
-                "reference": "f896d5fabd3e31f980a0a64ccb088f07108612c1",
+                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/bbbe8d5e7564481a3984660ae74daa7ac31ceaf5",
+                "reference": "bbbe8d5e7564481a3984660ae74daa7ac31ceaf5",
                 "shasum": ""
             },
             "require": {
@@ -762,7 +762,7 @@
                 "di",
                 "dic"
             ],
-            "time": "2017-01-05T12:04:55+00:00"
+            "time": "2017-01-05T13:04:12+00:00"
         },
         {
             "name": "zendframework/zend-servicemanager",
