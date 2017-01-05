@@ -265,10 +265,10 @@ HERE;
             <h2 id="conclusion">Conclusion</h2>
 
             <p>
-                My hypothesis was that different types of containers have different performance characteristics.
-                It can be concluded by looking at the results that the hypothesis can't be rejected as it seems that
-                the more user-friendly a container is (dynamic &gt; compiled, dynamic with autowiring &gt; dynamic
-                without autowiring) the slower it is.
+                My hypothesis was that different types of containers have significantly different performance
+                characteristics. It can be concluded by looking at the results that the hypothesis can't be rejected as
+                it seems that the more user-friendly a container is (dynamic &gt; compiled, dynamic with autowiring
+                &gt; dynamic without autowiring) the slower it is.
             </p>
 
             <p>
