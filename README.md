@@ -33,7 +33,7 @@ You can simply download this repository or install it via [Composer](https://get
 below:
 
 ```bash
-$ composer require kocsismate/di-container-benchmarks
+$ composer require kocsismate/di-container-benchmarks:dev-master
 ```
 
 Furthermore, [Docker Compose](https://www.docker.com/products/docker-compose) has to be installed on your machine.
