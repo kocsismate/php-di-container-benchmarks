@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e2dd493af98896d57a0b5c4371031935",
+    "content-hash": "5be966760017c04b0f43510c93587c9d",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -35,16 +35,16 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "v1.3.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "30e07cf03edc3cd3ef579d0dd4dd8c58250799a5"
+                "reference": "bd4461328621bde0ae6b1b2675fbc6aca4ceb558"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/30e07cf03edc3cd3ef579d0dd4dd8c58250799a5",
-                "reference": "30e07cf03edc3cd3ef579d0dd4dd8c58250799a5",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/bd4461328621bde0ae6b1b2675fbc6aca4ceb558",
+                "reference": "bd4461328621bde0ae6b1b2675fbc6aca4ceb558",
                 "shasum": ""
             },
             "require": {
@@ -99,7 +99,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2016-10-24T11:45:47+00:00"
+            "time": "2016-12-30T15:59:45+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -709,16 +709,16 @@
         },
         {
             "name": "woohoolabs/zen",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/woohoolabs/zen.git",
-                "reference": "d0bf3524265b550a1be8b593cfe6423b57b9596e"
+                "reference": "6a8b52985e5d5d61bec6d106371bced82321dd15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/d0bf3524265b550a1be8b593cfe6423b57b9596e",
-                "reference": "d0bf3524265b550a1be8b593cfe6423b57b9596e",
+                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/6a8b52985e5d5d61bec6d106371bced82321dd15",
+                "reference": "6a8b52985e5d5d61bec6d106371bced82321dd15",
                 "shasum": ""
             },
             "require": {
@@ -762,7 +762,7 @@
                 "di",
                 "dic"
             ],
-            "time": "2016-12-27T00:30:34+00:00"
+            "time": "2017-01-05T10:21:01+00:00"
         },
         {
             "name": "zendframework/zend-servicemanager",
