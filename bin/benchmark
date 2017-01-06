@@ -6,6 +6,7 @@ require "/code/app/bootstrap.php";
 
 use DiContainerBenchmarks\Benchmark\Benchmark;
 use DiContainerBenchmarks\Container\Aura\AuraContainer;
+use DiContainerBenchmarks\Container\Auryn\AurynContainer;
 use DiContainerBenchmarks\Container\Dice\DiceContainer;
 use DiContainerBenchmarks\Container\Laravel\LaravelContainer;
 use DiContainerBenchmarks\Container\PhpDi\PhpDiContainer;
@@ -28,6 +29,7 @@ $testSuites = [
 
 $containers = [
     new AuraContainer(),
+    new AurynContainer(),
     new DiceContainer(),
     new LaravelContainer(),
     new PhpDiContainer(),
