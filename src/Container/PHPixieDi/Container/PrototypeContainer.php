@@ -12,14 +12,14 @@ class PrototypeContainer extends Root
         $prefix = 'DiContainerBenchmarks\Fixture\Class';
         $class = $prefix . '1';
         
-        $this->callback($class, function() use($class) {
+        $this->callback('c1', function() use($class) {
             return new $class;
         });
         
         for ($i = 2; $i <= 100; $i++) {
             $class = $prefix . $i;
-            $dependency = $prefix . ($i-1);
-            $this->callback($class, function() use($class, $dependency) {
+            $dependency = 'c' . ($i-1) ;
+            $this->callback('c' . $i, function() use($class, $dependency) {
                 return new $class($this->getValue($dependency, true, []));
             });
         }
