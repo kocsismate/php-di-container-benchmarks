@@ -12,6 +12,7 @@
     ],
     "require": {
         "php": "^7.1",
+        "aura/di": "^3.2",
         "doctrine/cache": "^1.6.1",
         "illuminate/container": "^v5.3.23",
         "level-2/Dice": "dev-master",
