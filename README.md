@@ -39,7 +39,8 @@ Furthermore, [Docker Compose](https://www.docker.com/products/docker-compose) ha
 
 ## Usage
 
-Run `docker-compose up` in order to execute the tests. The html output will be generated in the "var" directory.
+Run `docker-compose up` in order to execute the tests. The html output will be generated in the "var" directory. In
+order to customize the php.ini you can copy the ".env.dist" file as ".env" and overwrite the values in it.
 
 ## Results
 
