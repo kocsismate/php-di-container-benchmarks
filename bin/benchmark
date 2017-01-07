@@ -10,6 +10,7 @@ use DiContainerBenchmarks\Container\Auryn\AurynContainer;
 use DiContainerBenchmarks\Container\Dice\DiceContainer;
 use DiContainerBenchmarks\Container\Laravel\LaravelContainer;
 use DiContainerBenchmarks\Container\PhpDi\PhpDiContainer;
+use DiContainerBenchmarks\Container\PHPixieDi\PHPixieDiContainer;
 use DiContainerBenchmarks\Container\Pimple\PimpleContainer;
 use DiContainerBenchmarks\Container\Symfony\SymfonyContainer;
 use DiContainerBenchmarks\Container\Zen\ZenContainer;
@@ -33,6 +34,7 @@ $containers = [
     new DiceContainer(),
     new LaravelContainer(),
     new PhpDiContainer(),
+    new PHPixieDiContainer(),
     new PimpleContainer(),
     new SymfonyContainer(),
     new ZenContainer(),
