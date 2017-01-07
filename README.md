@@ -41,8 +41,6 @@ Furthermore, [Docker Compose](https://www.docker.com/products/docker-compose) ha
 
 Run `docker-compose up` in order to execute the tests. The html output will be generated in the "var" directory.
 
-The same output can be seen [here](https://rawgit.com/kocsismate/php-di-container-benchmarks/master/var/benchmark.html).
-
 ## Results
 
 You can find the benchmark results [here](https://rawgit.com/kocsismate/php-di-container-benchmarks/master/var/benchmark.html).
