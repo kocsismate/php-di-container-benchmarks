@@ -8,6 +8,7 @@ use DiContainerBenchmarks\Benchmark\Benchmark;
 use DiContainerBenchmarks\Container\Aura\AuraContainer;
 use DiContainerBenchmarks\Container\Auryn\AurynContainer;
 use DiContainerBenchmarks\Container\Dice\DiceContainer;
+use DiContainerBenchmarks\Container\Disco\DiscoContainer;
 use DiContainerBenchmarks\Container\Laravel\LaravelContainer;
 use DiContainerBenchmarks\Container\PhpDi\PhpDiContainer;
 use DiContainerBenchmarks\Container\PHPixieDi\PHPixieDiContainer;
@@ -32,6 +33,7 @@ $containers = [
     new AuraContainer(),
     new AurynContainer(),
     new DiceContainer(),
+    new DiscoContainer(),
     new LaravelContainer(),
     new PhpDiContainer(),
     new PHPixieDiContainer(),
