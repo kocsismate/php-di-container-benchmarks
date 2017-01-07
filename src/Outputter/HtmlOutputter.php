@@ -83,7 +83,7 @@ class HtmlOutputter implements OutputterInterface
                 I have been interested in the topic since then so I wanted to finally conduct a better benchmark than
                 the last one was: I tried to fix its flaws while keeping the good parts. So here is my take!
             </p>
-            
+
             <p>
                 If you have any suggestion in mind about the benchmark or you want to add your container to the list,
                 please create an <a target="_blank" href="https://github.com/kocsismate/php-di-container-benchmarks">Issue or a Pull Request</a>.
@@ -243,9 +243,9 @@ HERE;
                 <tr>
                     <th>$rank</th>
                     <td><b>$containerName</b></td>
-                    <td>$timeColumn</td> 
-                    <td>$timePercentColumn</td> 
-                    <td>$memoryColumn</td> 
+                    <td>$timeColumn</td>
+                    <td>$timePercentColumn</td>
+                    <td>$memoryColumn</td>
                     <td>$memoryPercentColumn</td>
                 </tr>
 
@@ -290,6 +290,7 @@ HERE;
         </article>
     </body>
 </html>
+
 HERE;
 
         file_put_contents($this->path, $html);

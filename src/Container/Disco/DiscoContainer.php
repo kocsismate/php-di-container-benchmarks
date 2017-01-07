@@ -18,7 +18,7 @@ class DiscoContainer implements ContainerInterface
 
     public function isCompiled(): bool
     {
-        return true;
+        return false;
     }
 
     public function isAutowiringSupported(): bool
