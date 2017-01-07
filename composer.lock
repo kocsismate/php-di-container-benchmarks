@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bad60cd4a061879daf8059d2c675e785",
+    "hash": "17e44af7558c936fd64ccb5573fad7e8",
+    "content-hash": "b5369c9830306d8a60a171e91a6e591e",
     "packages": [
         {
             "name": "aura/di",
@@ -56,7 +57,7 @@
                 "di",
                 "di container"
             ],
-            "time": "2016-10-04T15:52:29+00:00"
+            "time": "2016-10-04 15:52:29"
         },
         {
             "name": "bitexpert/disco",
@@ -106,7 +107,7 @@
                 }
             ],
             "description": "Dependency Injection Container",
-            "time": "2017-01-07T08:35:38+00:00"
+            "time": "2017-01-07 08:35:38"
         },
         {
             "name": "bitexpert/slf4psrlog",
@@ -152,7 +153,7 @@
                 }
             ],
             "description": "Simple Logging Facade for Loggers implementing PSR-3 logging interface.",
-            "time": "2015-10-18T15:43:07+00:00"
+            "time": "2015-10-18 15:43:07"
         },
         {
             "name": "container-interop/container-interop",
@@ -179,7 +180,7 @@
                 "MIT"
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
-            "time": "2014-12-30T15:22:37+00:00"
+            "time": "2014-12-30 15:22:37"
         },
         {
             "name": "doctrine/annotations",
@@ -247,7 +248,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2016-12-30T15:59:45+00:00"
+            "time": "2016-12-30 15:59:45"
         },
         {
             "name": "doctrine/cache",
@@ -317,7 +318,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2016-10-29T11:16:17+00:00"
+            "time": "2016-10-29 11:16:17"
         },
         {
             "name": "doctrine/lexer",
@@ -371,7 +372,7 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2014-09-09T13:34:57+00:00"
+            "time": "2014-09-09 13:34:57"
         },
         {
             "name": "illuminate/container",
@@ -547,7 +548,7 @@
                 }
             ],
             "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
-            "time": "2016-12-30T09:49:15+00:00"
+            "time": "2016-12-30 09:49:15"
         },
         {
             "name": "ocramius/proxy-manager",
@@ -612,7 +613,7 @@
                 "proxy pattern",
                 "service proxies"
             ],
-            "time": "2016-11-04T15:53:15+00:00"
+            "time": "2016-11-04 15:53:15"
         },
         {
             "name": "php-di/invoker",
@@ -655,7 +656,7 @@
                 "invoke",
                 "invoker"
             ],
-            "time": "2016-07-14T13:09:58+00:00"
+            "time": "2016-07-14 13:09:58"
         },
         {
             "name": "php-di/php-di",
@@ -715,7 +716,7 @@
                 "dependency injection",
                 "di"
             ],
-            "time": "2016-08-23T20:18:00+00:00"
+            "time": "2016-08-23 20:18:00"
         },
         {
             "name": "php-di/phpdoc-reader",
@@ -752,7 +753,7 @@
                 "phpdoc",
                 "reflection"
             ],
-            "time": "2015-11-29T10:34:25+00:00"
+            "time": "2015-11-29 10:34:25"
         },
         {
             "name": "phpixie/di",
@@ -800,7 +801,7 @@
                 "dependency injection",
                 "di"
             ],
-            "time": "2016-05-25T09:21:03+00:00"
+            "time": "2016-05-25 09:21:03"
         },
         {
             "name": "pimple/pimple",
@@ -846,7 +847,7 @@
                 "container",
                 "dependency injection"
             ],
-            "time": "2015-09-11T15:10:35+00:00"
+            "time": "2015-09-11 15:10:35"
         },
         {
             "name": "psr/log",
@@ -893,7 +894,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10T12:19:37+00:00"
+            "time": "2016-10-10 12:19:37"
         },
         {
             "name": "rdlowrey/auryn",
@@ -954,7 +955,7 @@
                 "dic",
                 "ioc"
             ],
-            "time": "2016-03-14T20:10:19+00:00"
+            "time": "2016-03-14 20:10:19"
         },
         {
             "name": "symfony/config",
@@ -1010,7 +1011,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2016-12-09T07:45:17+00:00"
+            "time": "2016-12-09 07:45:17"
         },
         {
             "name": "symfony/dependency-injection",
@@ -1073,7 +1074,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2016-12-08T15:27:33+00:00"
+            "time": "2016-12-08 15:27:33"
         },
         {
             "name": "symfony/filesystem",
@@ -1122,7 +1123,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-24T00:46:43+00:00"
+            "time": "2016-11-24 00:46:43"
         },
         {
             "name": "woohoolabs/zen",
@@ -1179,7 +1180,7 @@
                 "di",
                 "dic"
             ],
-            "time": "2017-01-05T13:04:12+00:00"
+            "time": "2017-01-05 13:04:12"
         },
         {
             "name": "zendframework/zend-code",
@@ -1232,7 +1233,7 @@
                 "code",
                 "zf2"
             ],
-            "time": "2016-10-24T13:23:32+00:00"
+            "time": "2016-10-24 13:23:32"
         },
         {
             "name": "zendframework/zend-eventmanager",
@@ -1286,7 +1287,7 @@
                 "events",
                 "zf2"
             ],
-            "time": "2016-12-19T21:47:12+00:00"
+            "time": "2016-12-19 21:47:12"
         },
         {
             "name": "zendframework/zend-servicemanager",
@@ -1347,7 +1348,7 @@
                 "servicemanager",
                 "zf"
             ],
-            "time": "2016-12-19T20:04:51+00:00"
+            "time": "2016-12-19 20:04:51"
         },
         {
             "name": "zendframework/zend-stdlib",
@@ -1392,7 +1393,7 @@
                 "stdlib",
                 "zf2"
             ],
-            "time": "2016-09-13T14:38:50+00:00"
+            "time": "2016-09-13 14:38:50"
         }
     ],
     "packages-dev": [],

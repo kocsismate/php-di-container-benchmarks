@@ -36,10 +36,10 @@ class SymfonyContainer implements ContainerInterface
         $containerBuilder = new ContainerBuilder();
 
         for ($i = 1; $i <= 100; $i++) {
-            $definition = new Definition('DiContainerBenchmarks\Fixture\Class' . $i, []);
+            $definition = new Definition("DiContainerBenchmarks\\Fixture\\Class$i", []);
             $definition->setShared(false);
             $definition->setAutowired(true);
-            $containerBuilder->setDefinition('DiContainerBenchmarks\Fixture\Class' . $i, $definition);
+            $containerBuilder->setDefinition("class$i", $definition);
         }
 
         $containerBuilder->compile();
@@ -60,10 +60,10 @@ class SymfonyContainer implements ContainerInterface
         $containerBuilder = new ContainerBuilder();
 
         for ($i = 1; $i <= 100; $i++) {
-            $definition = new Definition('DiContainerBenchmarks\Fixture\Class' . $i, []);
+            $definition = new Definition("DiContainerBenchmarks\\Fixture\\Class$i", []);
             $definition->setShared(true);
             $definition->setAutowired(true);
-            $containerBuilder->setDefinition('DiContainerBenchmarks\Fixture\Class' . $i, $definition);
+            $containerBuilder->setDefinition("class$i", $definition);
         }
 
         $containerBuilder->compile();
