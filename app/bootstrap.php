@@ -1,4 +1,6 @@
 <?php
 declare(strict_types=1);
 
-require_once("/code/vendor/autoload.php");
+define("PROJECT_ROOT", getenv("PROJECT_ROOT"));
+
+require_once(PROJECT_ROOT . "/vendor/autoload.php");

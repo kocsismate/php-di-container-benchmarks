@@ -2,7 +2,7 @@
 <?php
 declare(strict_types=1);
 
-require "/code/app/bootstrap.php";
+require getenv("PROJECT_ROOT") . "/app/bootstrap.php";
 
 use DiContainerBenchmarks\Test\TestRunner;
 

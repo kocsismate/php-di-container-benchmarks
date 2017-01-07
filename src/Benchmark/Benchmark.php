@@ -25,7 +25,7 @@ class Benchmark
             $container->build();
         }
 
-        exec("composer dump-autoload --working-dir=/code --classmap-authoritative");
+        exec("composer dump-autoload --working-dir=" . getenv("PROJECT_ROOT") . " --classmap-authoritative");
 
         foreach ($testSuites as $testSuite) {
             foreach ($testSuite->getTestCases() as $testCase) {
@@ -58,7 +58,11 @@ class Benchmark
             $containerName = $container->getName();
             $iterations = $testCase->getIterations();
             $isStartupTimeIncluded = (int) $testCase->isStartupTimeIncluded();
-            exec("/code/bin/test $number $containerName $iterations $isStartupTimeIncluded", $output, $code);
+            exec(
+                PROJECT_ROOT . "/bin/test $number $containerName $iterations $isStartupTimeIncluded",
+                $output,
+                $code
+            );
 
             if ($code !== 0) {
                 echo "Test failed:\n";

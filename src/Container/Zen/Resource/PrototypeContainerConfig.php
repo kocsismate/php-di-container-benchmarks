@@ -12,7 +12,7 @@ class PrototypeContainerConfig extends AbstractContainerConfig
     protected function getEntryPoints(): array
     {
         return [
-            new WildcardEntryPoint("/code/src/Fixture")
+            new WildcardEntryPoint(PROJECT_ROOT . "/src/Fixture")
         ];
     }
 
@@ -25,7 +25,7 @@ class PrototypeContainerConfig extends AbstractContainerConfig
     {
         return [
             WildcardHint::prototype(
-                "/code/src/Fixture",
+                PROJECT_ROOT . "/src/Fixture",
                 'DiContainerBenchmarks\Fixture\Class*',
                 'DiContainerBenchmarks\Fixture\Class*'
             )

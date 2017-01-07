@@ -11,7 +11,7 @@ class SingletonContainerConfig extends AbstractContainerConfig
     protected function getEntryPoints(): array
     {
         return [
-            new WildcardEntryPoint("/code/src/Fixture")
+            new WildcardEntryPoint(PROJECT_ROOT . "/src/Fixture")
         ];
     }
 

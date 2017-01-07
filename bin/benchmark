@@ -2,7 +2,7 @@
 <?php
 declare(strict_types=1);
 
-require "/code/app/bootstrap.php";
+require getenv("PROJECT_ROOT") . "/app/bootstrap.php";
 
 use DiContainerBenchmarks\Benchmark\Benchmark;
 use DiContainerBenchmarks\Container\Aura\AuraContainer;
@@ -44,7 +44,7 @@ $containers = [
 ];
 
 $outputters = [
-    new HtmlOutputter("/code/var/benchmark.html"),
+    new HtmlOutputter(PROJECT_ROOT . "/var/benchmark.html"),
 ];
 
 $benchmark = new Benchmark();

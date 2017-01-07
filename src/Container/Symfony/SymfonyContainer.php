@@ -46,7 +46,7 @@ class SymfonyContainer implements ContainerInterface
 
         $dumper = new PhpDumper($containerBuilder);
         file_put_contents(
-            "/code/src/Container/Symfony/Resource/CompiledPrototypeContainer.php",
+            PROJECT_ROOT . "/src/Container/Symfony/Resource/CompiledPrototypeContainer.php",
             $dumper->dump(
                 [
                     "namespace" => "DiContainerBenchmarks\\Container\\Symfony\\Resource",
@@ -70,7 +70,7 @@ class SymfonyContainer implements ContainerInterface
 
         $dumper = new PhpDumper($containerBuilder);
         file_put_contents(
-            "/code/src/Container/Symfony/Resource/CompiledSingletonContainer.php",
+            PROJECT_ROOT . "/src/Container/Symfony/Resource/CompiledSingletonContainer.php",
             $dumper->dump(
                 [
                     "namespace" => "DiContainerBenchmarks\\Container\\Symfony\\Resource",
