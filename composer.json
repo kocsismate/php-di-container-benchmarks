@@ -24,7 +24,8 @@
         "symfony/config": "^3.2.1",
         "symfony/dependency-injection": "^3.2.1",
         "woohoolabs/zen": "^1.2.2",
-        "zendframework/zend-servicemanager": "^3.2.0"
+        "zendframework/zend-servicemanager": "^3.2.0",
+        "bitexpert/disco": "^0.6.2"
     },
     "autoload": {
         "psr-4": {
