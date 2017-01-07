@@ -50,7 +50,8 @@ class SymfonyContainer implements ContainerInterface
             $dumper->dump(
                 [
                     "namespace" => "DiContainerBenchmarks\\Container\\Symfony\\Resource",
-                    "class" => "CompiledPrototypeContainer"
+                    "class" => "CompiledPrototypeContainer",
+                    "debug" => false,
                 ]
             )
         );
@@ -73,7 +74,8 @@ class SymfonyContainer implements ContainerInterface
             $dumper->dump(
                 [
                     "namespace" => "DiContainerBenchmarks\\Container\\Symfony\\Resource",
-                    "class" => "CompiledSingletonContainer"
+                    "class" => "CompiledSingletonContainer",
+                    "debug" => false,
                 ]
             )
         );
