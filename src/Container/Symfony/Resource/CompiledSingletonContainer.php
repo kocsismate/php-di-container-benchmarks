@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\Exception\LogicException;
 use Symfony\Component\DependencyInjection\Exception\RuntimeException;
 use Symfony\Component\DependencyInjection\ParameterBag\FrozenParameterBag;
 
-/**
+/*
  * CompiledSingletonContainer.
  *
  * This class has been auto-generated
@@ -19,7 +19,7 @@ class CompiledSingletonContainer extends Container
     private $parameters;
     private $targetDirs = array();
 
-    /**
+    /*
      * Constructor.
      */
     public function __construct()
@@ -131,7 +131,7 @@ class CompiledSingletonContainer extends Container
         $this->aliases = array();
     }
 
-    /**
+    /*
      * {@inheritdoc}
      */
     public function compile()
@@ -139,7 +139,7 @@ class CompiledSingletonContainer extends Container
         throw new LogicException('You cannot compile a dumped frozen container.');
     }
 
-    /**
+    /*
      * {@inheritdoc}
      */
     public function isFrozen()
@@ -147,7 +147,7 @@ class CompiledSingletonContainer extends Container
         return true;
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class1' service.
      *
      * This service is autowired.
@@ -159,7 +159,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class1'] = new \DiContainerBenchmarks\Fixture\Class1();
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class10' service.
      *
      * This service is autowired.
@@ -171,7 +171,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class10'] = new \DiContainerBenchmarks\Fixture\Class10($this->get('dicontainerbenchmarks\fixture\class9'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class100' service.
      *
      * This service is autowired.
@@ -183,7 +183,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class100'] = new \DiContainerBenchmarks\Fixture\Class100($this->get('dicontainerbenchmarks\fixture\class99'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class11' service.
      *
      * This service is autowired.
@@ -195,7 +195,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class11'] = new \DiContainerBenchmarks\Fixture\Class11($this->get('dicontainerbenchmarks\fixture\class10'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class12' service.
      *
      * This service is autowired.
@@ -207,7 +207,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class12'] = new \DiContainerBenchmarks\Fixture\Class12($this->get('dicontainerbenchmarks\fixture\class11'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class13' service.
      *
      * This service is autowired.
@@ -219,7 +219,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class13'] = new \DiContainerBenchmarks\Fixture\Class13($this->get('dicontainerbenchmarks\fixture\class12'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class14' service.
      *
      * This service is autowired.
@@ -231,7 +231,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class14'] = new \DiContainerBenchmarks\Fixture\Class14($this->get('dicontainerbenchmarks\fixture\class13'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class15' service.
      *
      * This service is autowired.
@@ -243,7 +243,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class15'] = new \DiContainerBenchmarks\Fixture\Class15($this->get('dicontainerbenchmarks\fixture\class14'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class16' service.
      *
      * This service is autowired.
@@ -255,7 +255,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class16'] = new \DiContainerBenchmarks\Fixture\Class16($this->get('dicontainerbenchmarks\fixture\class15'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class17' service.
      *
      * This service is autowired.
@@ -267,7 +267,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class17'] = new \DiContainerBenchmarks\Fixture\Class17($this->get('dicontainerbenchmarks\fixture\class16'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class18' service.
      *
      * This service is autowired.
@@ -279,7 +279,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class18'] = new \DiContainerBenchmarks\Fixture\Class18($this->get('dicontainerbenchmarks\fixture\class17'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class19' service.
      *
      * This service is autowired.
@@ -291,7 +291,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class19'] = new \DiContainerBenchmarks\Fixture\Class19($this->get('dicontainerbenchmarks\fixture\class18'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class2' service.
      *
      * This service is autowired.
@@ -303,7 +303,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class2'] = new \DiContainerBenchmarks\Fixture\Class2($this->get('dicontainerbenchmarks\fixture\class1'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class20' service.
      *
      * This service is autowired.
@@ -315,7 +315,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class20'] = new \DiContainerBenchmarks\Fixture\Class20($this->get('dicontainerbenchmarks\fixture\class19'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class21' service.
      *
      * This service is autowired.
@@ -327,7 +327,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class21'] = new \DiContainerBenchmarks\Fixture\Class21($this->get('dicontainerbenchmarks\fixture\class20'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class22' service.
      *
      * This service is autowired.
@@ -339,7 +339,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class22'] = new \DiContainerBenchmarks\Fixture\Class22($this->get('dicontainerbenchmarks\fixture\class21'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class23' service.
      *
      * This service is autowired.
@@ -351,7 +351,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class23'] = new \DiContainerBenchmarks\Fixture\Class23($this->get('dicontainerbenchmarks\fixture\class22'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class24' service.
      *
      * This service is autowired.
@@ -363,7 +363,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class24'] = new \DiContainerBenchmarks\Fixture\Class24($this->get('dicontainerbenchmarks\fixture\class23'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class25' service.
      *
      * This service is autowired.
@@ -375,7 +375,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class25'] = new \DiContainerBenchmarks\Fixture\Class25($this->get('dicontainerbenchmarks\fixture\class24'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class26' service.
      *
      * This service is autowired.
@@ -387,7 +387,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class26'] = new \DiContainerBenchmarks\Fixture\Class26($this->get('dicontainerbenchmarks\fixture\class25'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class27' service.
      *
      * This service is autowired.
@@ -399,7 +399,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class27'] = new \DiContainerBenchmarks\Fixture\Class27($this->get('dicontainerbenchmarks\fixture\class26'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class28' service.
      *
      * This service is autowired.
@@ -411,7 +411,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class28'] = new \DiContainerBenchmarks\Fixture\Class28($this->get('dicontainerbenchmarks\fixture\class27'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class29' service.
      *
      * This service is autowired.
@@ -423,7 +423,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class29'] = new \DiContainerBenchmarks\Fixture\Class29($this->get('dicontainerbenchmarks\fixture\class28'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class3' service.
      *
      * This service is autowired.
@@ -435,7 +435,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class3'] = new \DiContainerBenchmarks\Fixture\Class3($this->get('dicontainerbenchmarks\fixture\class2'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class30' service.
      *
      * This service is autowired.
@@ -447,7 +447,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class30'] = new \DiContainerBenchmarks\Fixture\Class30($this->get('dicontainerbenchmarks\fixture\class29'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class31' service.
      *
      * This service is autowired.
@@ -459,7 +459,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class31'] = new \DiContainerBenchmarks\Fixture\Class31($this->get('dicontainerbenchmarks\fixture\class30'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class32' service.
      *
      * This service is autowired.
@@ -471,7 +471,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class32'] = new \DiContainerBenchmarks\Fixture\Class32($this->get('dicontainerbenchmarks\fixture\class31'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class33' service.
      *
      * This service is autowired.
@@ -483,7 +483,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class33'] = new \DiContainerBenchmarks\Fixture\Class33($this->get('dicontainerbenchmarks\fixture\class32'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class34' service.
      *
      * This service is autowired.
@@ -495,7 +495,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class34'] = new \DiContainerBenchmarks\Fixture\Class34($this->get('dicontainerbenchmarks\fixture\class33'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class35' service.
      *
      * This service is autowired.
@@ -507,7 +507,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class35'] = new \DiContainerBenchmarks\Fixture\Class35($this->get('dicontainerbenchmarks\fixture\class34'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class36' service.
      *
      * This service is autowired.
@@ -519,7 +519,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class36'] = new \DiContainerBenchmarks\Fixture\Class36($this->get('dicontainerbenchmarks\fixture\class35'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class37' service.
      *
      * This service is autowired.
@@ -531,7 +531,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class37'] = new \DiContainerBenchmarks\Fixture\Class37($this->get('dicontainerbenchmarks\fixture\class36'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class38' service.
      *
      * This service is autowired.
@@ -543,7 +543,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class38'] = new \DiContainerBenchmarks\Fixture\Class38($this->get('dicontainerbenchmarks\fixture\class37'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class39' service.
      *
      * This service is autowired.
@@ -555,7 +555,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class39'] = new \DiContainerBenchmarks\Fixture\Class39($this->get('dicontainerbenchmarks\fixture\class38'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class4' service.
      *
      * This service is autowired.
@@ -567,7 +567,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class4'] = new \DiContainerBenchmarks\Fixture\Class4($this->get('dicontainerbenchmarks\fixture\class3'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class40' service.
      *
      * This service is autowired.
@@ -579,7 +579,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class40'] = new \DiContainerBenchmarks\Fixture\Class40($this->get('dicontainerbenchmarks\fixture\class39'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class41' service.
      *
      * This service is autowired.
@@ -591,7 +591,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class41'] = new \DiContainerBenchmarks\Fixture\Class41($this->get('dicontainerbenchmarks\fixture\class40'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class42' service.
      *
      * This service is autowired.
@@ -603,7 +603,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class42'] = new \DiContainerBenchmarks\Fixture\Class42($this->get('dicontainerbenchmarks\fixture\class41'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class43' service.
      *
      * This service is autowired.
@@ -615,7 +615,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class43'] = new \DiContainerBenchmarks\Fixture\Class43($this->get('dicontainerbenchmarks\fixture\class42'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class44' service.
      *
      * This service is autowired.
@@ -627,7 +627,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class44'] = new \DiContainerBenchmarks\Fixture\Class44($this->get('dicontainerbenchmarks\fixture\class43'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class45' service.
      *
      * This service is autowired.
@@ -639,7 +639,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class45'] = new \DiContainerBenchmarks\Fixture\Class45($this->get('dicontainerbenchmarks\fixture\class44'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class46' service.
      *
      * This service is autowired.
@@ -651,7 +651,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class46'] = new \DiContainerBenchmarks\Fixture\Class46($this->get('dicontainerbenchmarks\fixture\class45'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class47' service.
      *
      * This service is autowired.
@@ -663,7 +663,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class47'] = new \DiContainerBenchmarks\Fixture\Class47($this->get('dicontainerbenchmarks\fixture\class46'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class48' service.
      *
      * This service is autowired.
@@ -675,7 +675,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class48'] = new \DiContainerBenchmarks\Fixture\Class48($this->get('dicontainerbenchmarks\fixture\class47'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class49' service.
      *
      * This service is autowired.
@@ -687,7 +687,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class49'] = new \DiContainerBenchmarks\Fixture\Class49($this->get('dicontainerbenchmarks\fixture\class48'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class5' service.
      *
      * This service is autowired.
@@ -699,7 +699,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class5'] = new \DiContainerBenchmarks\Fixture\Class5($this->get('dicontainerbenchmarks\fixture\class4'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class50' service.
      *
      * This service is autowired.
@@ -711,7 +711,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class50'] = new \DiContainerBenchmarks\Fixture\Class50($this->get('dicontainerbenchmarks\fixture\class49'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class51' service.
      *
      * This service is autowired.
@@ -723,7 +723,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class51'] = new \DiContainerBenchmarks\Fixture\Class51($this->get('dicontainerbenchmarks\fixture\class50'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class52' service.
      *
      * This service is autowired.
@@ -735,7 +735,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class52'] = new \DiContainerBenchmarks\Fixture\Class52($this->get('dicontainerbenchmarks\fixture\class51'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class53' service.
      *
      * This service is autowired.
@@ -747,7 +747,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class53'] = new \DiContainerBenchmarks\Fixture\Class53($this->get('dicontainerbenchmarks\fixture\class52'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class54' service.
      *
      * This service is autowired.
@@ -759,7 +759,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class54'] = new \DiContainerBenchmarks\Fixture\Class54($this->get('dicontainerbenchmarks\fixture\class53'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class55' service.
      *
      * This service is autowired.
@@ -771,7 +771,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class55'] = new \DiContainerBenchmarks\Fixture\Class55($this->get('dicontainerbenchmarks\fixture\class54'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class56' service.
      *
      * This service is autowired.
@@ -783,7 +783,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class56'] = new \DiContainerBenchmarks\Fixture\Class56($this->get('dicontainerbenchmarks\fixture\class55'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class57' service.
      *
      * This service is autowired.
@@ -795,7 +795,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class57'] = new \DiContainerBenchmarks\Fixture\Class57($this->get('dicontainerbenchmarks\fixture\class56'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class58' service.
      *
      * This service is autowired.
@@ -807,7 +807,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class58'] = new \DiContainerBenchmarks\Fixture\Class58($this->get('dicontainerbenchmarks\fixture\class57'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class59' service.
      *
      * This service is autowired.
@@ -819,7 +819,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class59'] = new \DiContainerBenchmarks\Fixture\Class59($this->get('dicontainerbenchmarks\fixture\class58'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class6' service.
      *
      * This service is autowired.
@@ -831,7 +831,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class6'] = new \DiContainerBenchmarks\Fixture\Class6($this->get('dicontainerbenchmarks\fixture\class5'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class60' service.
      *
      * This service is autowired.
@@ -843,7 +843,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class60'] = new \DiContainerBenchmarks\Fixture\Class60($this->get('dicontainerbenchmarks\fixture\class59'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class61' service.
      *
      * This service is autowired.
@@ -855,7 +855,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class61'] = new \DiContainerBenchmarks\Fixture\Class61($this->get('dicontainerbenchmarks\fixture\class60'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class62' service.
      *
      * This service is autowired.
@@ -867,7 +867,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class62'] = new \DiContainerBenchmarks\Fixture\Class62($this->get('dicontainerbenchmarks\fixture\class61'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class63' service.
      *
      * This service is autowired.
@@ -879,7 +879,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class63'] = new \DiContainerBenchmarks\Fixture\Class63($this->get('dicontainerbenchmarks\fixture\class62'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class64' service.
      *
      * This service is autowired.
@@ -891,7 +891,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class64'] = new \DiContainerBenchmarks\Fixture\Class64($this->get('dicontainerbenchmarks\fixture\class63'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class65' service.
      *
      * This service is autowired.
@@ -903,7 +903,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class65'] = new \DiContainerBenchmarks\Fixture\Class65($this->get('dicontainerbenchmarks\fixture\class64'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class66' service.
      *
      * This service is autowired.
@@ -915,7 +915,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class66'] = new \DiContainerBenchmarks\Fixture\Class66($this->get('dicontainerbenchmarks\fixture\class65'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class67' service.
      *
      * This service is autowired.
@@ -927,7 +927,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class67'] = new \DiContainerBenchmarks\Fixture\Class67($this->get('dicontainerbenchmarks\fixture\class66'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class68' service.
      *
      * This service is autowired.
@@ -939,7 +939,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class68'] = new \DiContainerBenchmarks\Fixture\Class68($this->get('dicontainerbenchmarks\fixture\class67'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class69' service.
      *
      * This service is autowired.
@@ -951,7 +951,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class69'] = new \DiContainerBenchmarks\Fixture\Class69($this->get('dicontainerbenchmarks\fixture\class68'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class7' service.
      *
      * This service is autowired.
@@ -963,7 +963,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class7'] = new \DiContainerBenchmarks\Fixture\Class7($this->get('dicontainerbenchmarks\fixture\class6'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class70' service.
      *
      * This service is autowired.
@@ -975,7 +975,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class70'] = new \DiContainerBenchmarks\Fixture\Class70($this->get('dicontainerbenchmarks\fixture\class69'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class71' service.
      *
      * This service is autowired.
@@ -987,7 +987,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class71'] = new \DiContainerBenchmarks\Fixture\Class71($this->get('dicontainerbenchmarks\fixture\class70'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class72' service.
      *
      * This service is autowired.
@@ -999,7 +999,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class72'] = new \DiContainerBenchmarks\Fixture\Class72($this->get('dicontainerbenchmarks\fixture\class71'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class73' service.
      *
      * This service is autowired.
@@ -1011,7 +1011,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class73'] = new \DiContainerBenchmarks\Fixture\Class73($this->get('dicontainerbenchmarks\fixture\class72'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class74' service.
      *
      * This service is autowired.
@@ -1023,7 +1023,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class74'] = new \DiContainerBenchmarks\Fixture\Class74($this->get('dicontainerbenchmarks\fixture\class73'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class75' service.
      *
      * This service is autowired.
@@ -1035,7 +1035,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class75'] = new \DiContainerBenchmarks\Fixture\Class75($this->get('dicontainerbenchmarks\fixture\class74'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class76' service.
      *
      * This service is autowired.
@@ -1047,7 +1047,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class76'] = new \DiContainerBenchmarks\Fixture\Class76($this->get('dicontainerbenchmarks\fixture\class75'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class77' service.
      *
      * This service is autowired.
@@ -1059,7 +1059,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class77'] = new \DiContainerBenchmarks\Fixture\Class77($this->get('dicontainerbenchmarks\fixture\class76'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class78' service.
      *
      * This service is autowired.
@@ -1071,7 +1071,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class78'] = new \DiContainerBenchmarks\Fixture\Class78($this->get('dicontainerbenchmarks\fixture\class77'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class79' service.
      *
      * This service is autowired.
@@ -1083,7 +1083,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class79'] = new \DiContainerBenchmarks\Fixture\Class79($this->get('dicontainerbenchmarks\fixture\class78'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class8' service.
      *
      * This service is autowired.
@@ -1095,7 +1095,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class8'] = new \DiContainerBenchmarks\Fixture\Class8($this->get('dicontainerbenchmarks\fixture\class7'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class80' service.
      *
      * This service is autowired.
@@ -1107,7 +1107,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class80'] = new \DiContainerBenchmarks\Fixture\Class80($this->get('dicontainerbenchmarks\fixture\class79'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class81' service.
      *
      * This service is autowired.
@@ -1119,7 +1119,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class81'] = new \DiContainerBenchmarks\Fixture\Class81($this->get('dicontainerbenchmarks\fixture\class80'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class82' service.
      *
      * This service is autowired.
@@ -1131,7 +1131,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class82'] = new \DiContainerBenchmarks\Fixture\Class82($this->get('dicontainerbenchmarks\fixture\class81'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class83' service.
      *
      * This service is autowired.
@@ -1143,7 +1143,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class83'] = new \DiContainerBenchmarks\Fixture\Class83($this->get('dicontainerbenchmarks\fixture\class82'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class84' service.
      *
      * This service is autowired.
@@ -1155,7 +1155,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class84'] = new \DiContainerBenchmarks\Fixture\Class84($this->get('dicontainerbenchmarks\fixture\class83'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class85' service.
      *
      * This service is autowired.
@@ -1167,7 +1167,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class85'] = new \DiContainerBenchmarks\Fixture\Class85($this->get('dicontainerbenchmarks\fixture\class84'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class86' service.
      *
      * This service is autowired.
@@ -1179,7 +1179,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class86'] = new \DiContainerBenchmarks\Fixture\Class86($this->get('dicontainerbenchmarks\fixture\class85'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class87' service.
      *
      * This service is autowired.
@@ -1191,7 +1191,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class87'] = new \DiContainerBenchmarks\Fixture\Class87($this->get('dicontainerbenchmarks\fixture\class86'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class88' service.
      *
      * This service is autowired.
@@ -1203,7 +1203,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class88'] = new \DiContainerBenchmarks\Fixture\Class88($this->get('dicontainerbenchmarks\fixture\class87'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class89' service.
      *
      * This service is autowired.
@@ -1215,7 +1215,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class89'] = new \DiContainerBenchmarks\Fixture\Class89($this->get('dicontainerbenchmarks\fixture\class88'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class9' service.
      *
      * This service is autowired.
@@ -1227,7 +1227,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class9'] = new \DiContainerBenchmarks\Fixture\Class9($this->get('dicontainerbenchmarks\fixture\class8'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class90' service.
      *
      * This service is autowired.
@@ -1239,7 +1239,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class90'] = new \DiContainerBenchmarks\Fixture\Class90($this->get('dicontainerbenchmarks\fixture\class89'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class91' service.
      *
      * This service is autowired.
@@ -1251,7 +1251,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class91'] = new \DiContainerBenchmarks\Fixture\Class91($this->get('dicontainerbenchmarks\fixture\class90'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class92' service.
      *
      * This service is autowired.
@@ -1263,7 +1263,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class92'] = new \DiContainerBenchmarks\Fixture\Class92($this->get('dicontainerbenchmarks\fixture\class91'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class93' service.
      *
      * This service is autowired.
@@ -1275,7 +1275,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class93'] = new \DiContainerBenchmarks\Fixture\Class93($this->get('dicontainerbenchmarks\fixture\class92'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class94' service.
      *
      * This service is autowired.
@@ -1287,7 +1287,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class94'] = new \DiContainerBenchmarks\Fixture\Class94($this->get('dicontainerbenchmarks\fixture\class93'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class95' service.
      *
      * This service is autowired.
@@ -1299,7 +1299,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class95'] = new \DiContainerBenchmarks\Fixture\Class95($this->get('dicontainerbenchmarks\fixture\class94'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class96' service.
      *
      * This service is autowired.
@@ -1311,7 +1311,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class96'] = new \DiContainerBenchmarks\Fixture\Class96($this->get('dicontainerbenchmarks\fixture\class95'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class97' service.
      *
      * This service is autowired.
@@ -1323,7 +1323,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class97'] = new \DiContainerBenchmarks\Fixture\Class97($this->get('dicontainerbenchmarks\fixture\class96'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class98' service.
      *
      * This service is autowired.
@@ -1335,7 +1335,7 @@ class CompiledSingletonContainer extends Container
         return $this->services['dicontainerbenchmarks\fixture\class98'] = new \DiContainerBenchmarks\Fixture\Class98($this->get('dicontainerbenchmarks\fixture\class97'));
     }
 
-    /**
+    /*
      * Gets the 'dicontainerbenchmarks\fixture\class99' service.
      *
      * This service is autowired.
