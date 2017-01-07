@@ -273,11 +273,12 @@ HERE;
 
             <p>
                 However, keep in mind that in a well-architected application you won't call your DI Container
-                hundreds or even thousands of times because there should be only one injection point: when you invoke
-                the controller(s) which handle(s) the request (but there is a good chance of needing the container in
-                other places of the application layer - e.g. in your middleware or bootstrap files). That's why
-                most results are exaggerated - you probably won't see tens of milliseconds of difference between the
-                fastest and the slowest DIC in the real life.
+                hundreds or even thousands of times because ideally there should be only one
+                <a target="_blank" href="http://blog.ploeh.dk/2011/07/28/CompositionRoot/">composition root</a>:
+                when you invoke the controller(s) which handle(s) the request (but there is a good chance
+                of needing the container in other places of the application layer - e.g. in your middleware or bootstrap
+                files). That's why most results are exaggerated - you probably won't see tens of milliseconds of
+                difference between the fastest and the slowest DIC in the real life.
             </p>
 
             <p>

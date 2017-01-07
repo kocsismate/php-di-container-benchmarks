@@ -19,7 +19,7 @@ class DiceContainer implements ContainerInterface
 
     public function isAutowiringSupported(): bool
     {
-        return false;
+        return true;
     }
 
     public function getUrl(): string
