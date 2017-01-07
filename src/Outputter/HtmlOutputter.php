@@ -268,7 +268,9 @@ HERE;
                 My hypothesis was that different types of containers have significantly different performance
                 characteristics. It can be concluded by looking at the results that the hypothesis can't be rejected as
                 it seems that the more user-friendly a container is (dynamic &gt; compiled, dynamic with autowiring
-                &gt; dynamic without autowiring) the slower it is.
+                &gt; dynamic without autowiring) the slower it is when creating objects (first 2 test suites). For
+                tasks when a container has to retrieve objects that were created in advance (last 2 test suites),
+                usually other factors affect performance (basically how optimized a container is for this purpose).
             </p>
 
             <p>
