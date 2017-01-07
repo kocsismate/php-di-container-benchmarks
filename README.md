@@ -10,6 +10,7 @@
 * [Introduction](#introduction)
 * [Install](#install)
 * [Usage](#usage)
+* [Results](#results)
 * [Change Log](#change-log)
 * [Contributing](#contributing)
 * [Credits](#credits)
@@ -24,8 +25,6 @@ turned out to be quite controversial, so the benchmark itself wasn't really usef
 
 I have been interested in the topic since then so I wanted to conduct a better benchmark than the last one was: I tried
 to fix some of its flaws while keeping the good parts.
-
-You can find the benchmark results [here](https://rawgit.com/kocsismate/php-di-container-benchmarks/master/var/benchmark.html).
 
 ## Install
 
@@ -43,6 +42,10 @@ Furthermore, [Docker Compose](https://www.docker.com/products/docker-compose) ha
 Run `docker-compose up` in order to execute the tests. The html output will be generated in the "var" directory.
 
 The same output can be seen [here](https://rawgit.com/kocsismate/php-di-container-benchmarks/master/var/benchmark.html).
+
+## Results
+
+You can find the benchmark results [here](https://rawgit.com/kocsismate/php-di-container-benchmarks/master/var/benchmark.html).
 
 ## Change Log
 
