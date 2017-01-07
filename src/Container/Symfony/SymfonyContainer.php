@@ -4,8 +4,6 @@ declare(strict_types=1);
 namespace DiContainerBenchmarks\Container\Symfony;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
-use DiContainerBenchmarks\Fixture\Class10;
-use DiContainerBenchmarks\Fixture\Class100;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Dumper\PhpDumper;
