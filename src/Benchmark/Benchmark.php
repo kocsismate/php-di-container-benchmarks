@@ -25,7 +25,7 @@ class Benchmark
             $container->build();
         }
 
-        exec("composer dump-autoload --working-dir=" . getenv("PROJECT_ROOT") . " --classmap-authoritative");
+        exec("composer dump-autoload --working-dir=" . PROJECT_ROOT . " --classmap-authoritative");
 
         foreach ($testSuites as $testSuite) {
             foreach ($testSuite->getTestCases() as $testCase) {
