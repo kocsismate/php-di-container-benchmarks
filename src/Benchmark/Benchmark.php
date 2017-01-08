@@ -58,6 +58,7 @@ class Benchmark
             $containerName = $container->getName();
             $iterations = $testCase->getIterations();
             $isStartupTimeIncluded = (int) $testCase->isStartupTimeIncluded();
+            $output = "";
             exec(
                 PROJECT_ROOT . "/bin/test $number $containerName $iterations $isStartupTimeIncluded",
                 $output,
