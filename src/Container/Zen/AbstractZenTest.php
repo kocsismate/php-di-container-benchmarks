@@ -24,9 +24,4 @@ abstract class AbstractZenTest implements TestInterface
     {
         $this->container = new CompiledSingletonContainer();
     }
-
-    public function supported(): bool
-    {
-        return true;
-    }
 }

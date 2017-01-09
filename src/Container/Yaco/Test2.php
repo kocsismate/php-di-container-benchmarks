@@ -16,9 +16,4 @@ class Test2 extends AbstractYacoTest
     public function run(): void
     {
     }
-
-    public function supported(): bool
-    {
-        throw new UnsupportedFeatureException('Yaco cannot act as a factory.');
-    }
 }

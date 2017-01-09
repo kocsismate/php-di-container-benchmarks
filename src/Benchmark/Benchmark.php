@@ -7,7 +7,6 @@ use DiContainerBenchmarks\Container\ContainerInterface;
 use DiContainerBenchmarks\Outputter\OutputterInterface;
 use DiContainerBenchmarks\Test\TestCase;
 use DiContainerBenchmarks\Test\TestResult;
-use DiContainerBenchmarks\Test\UnsupportedFeatureException;
 use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
 
 class Benchmark
@@ -31,14 +30,7 @@ class Benchmark
         foreach ($testSuites as $testSuite) {
             foreach ($testSuite->getTestCases() as $testCase) {
                 foreach ($containers as $container) {
-                    $testClass = "DiContainerBenchmarks\\Container\\".$container->getName()."\\Test".$testSuite->getNumber();
-                    $test = new $testClass();
-                    try {
-                        $test->supported();
-                        $this->runTest($testSuite, $testCase, $container, $benchmarkResult);
-                    } catch (UnsupportedFeatureException $e) {
-                        echo $e->getMessage()."\n";
-                    }
+                    $this->runTest($testSuite, $testCase, $container, $benchmarkResult);
                 }
             }
         }

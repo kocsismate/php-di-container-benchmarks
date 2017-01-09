@@ -29,9 +29,4 @@ abstract class AbstractDiceTest implements TestInterface
 
         $this->container = $container;
     }
-
-    public function supported(): bool
-    {
-        return true;
-    }
 }

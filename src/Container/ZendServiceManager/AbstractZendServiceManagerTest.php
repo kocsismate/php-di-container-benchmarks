@@ -762,9 +762,4 @@ abstract class AbstractZendServiceManagerTest implements TestInterface
 
         $this->container = $serviceManager;
     }
-
-    public function supported(): bool
-    {
-        return true;
-    }
 }

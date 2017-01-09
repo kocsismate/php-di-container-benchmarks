@@ -141,9 +141,4 @@ abstract class AbstractPhpDiTest implements TestInterface
 
         $this->container = $builder->build();
     }
-
-    public function supported(): bool
-    {
-        return true;
-    }
 }

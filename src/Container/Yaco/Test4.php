@@ -16,9 +16,4 @@ class Test4 extends AbstractYacoTest
     {
         $this->container->get(Class100::class);
     }
-
-    public function supported(): bool
-    {
-        return true;
-    }
 }

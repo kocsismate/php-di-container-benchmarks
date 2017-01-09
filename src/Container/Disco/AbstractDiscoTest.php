@@ -12,9 +12,4 @@ abstract class AbstractDiscoTest implements TestInterface
      * @var ContainerInterface
      */
     protected $container;
-
-    public function supported(): bool
-    {
-        return true;
-    }
 }

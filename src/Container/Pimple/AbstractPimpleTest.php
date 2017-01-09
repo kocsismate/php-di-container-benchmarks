@@ -946,9 +946,4 @@ abstract class AbstractPimpleTest implements TestInterface
 
         $this->container = $container;
     }
-
-    public function supported(): bool
-    {
-        return true;
-    }
 }
