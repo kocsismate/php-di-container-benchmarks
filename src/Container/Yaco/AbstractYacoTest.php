@@ -15,8 +15,6 @@ abstract class AbstractYacoTest implements TestInterface
 
     protected function setContainerWithPrototypeServices(): void
     {
-        //TODO: be able to disable prototype
-        $this->container = new CompiledSingletonContainer();
     }
 
     protected function setContainerWithSingletonServices(): void
