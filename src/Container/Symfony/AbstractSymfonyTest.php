@@ -24,4 +24,9 @@ abstract class AbstractSymfonyTest implements TestInterface
     {
         $this->container = new CompiledSingletonContainer();
     }
+
+    public function supported(): bool
+    {
+        return true;
+    }
 }

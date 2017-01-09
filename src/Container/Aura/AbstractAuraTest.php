@@ -29,4 +29,9 @@ abstract class AbstractAuraTest implements TestInterface
 
         $this->container = $containerBuilder->newConfiguredInstance([new SingletonContainerConfig()], true);
     }
+
+    public function supported(): bool
+    {
+        return true;
+    }
 }

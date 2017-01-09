@@ -3,8 +3,7 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Yaco;
 
-use DiContainerBenchmarks\Container\Yaco\Resource\PrototypeContainerConfig;
-use DiContainerBenchmarks\Container\Yaco\Resource\SingletonContainerConfig;
+use DiContainerBenchmarks\Container\Yaco\Resource\CompiledSingletonContainer;
 use DiContainerBenchmarks\Test\TestInterface;
 
 abstract class AbstractYacoTest implements TestInterface

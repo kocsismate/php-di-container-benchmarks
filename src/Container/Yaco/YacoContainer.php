@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace DiContainerBenchmarks\Container\Yaco;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
+use TheCodingMachine\Yaco\Compiler;
+use TheCodingMachine\Yaco\Definition\ObjectDefinition;
 
 class YacoContainer implements ContainerInterface
 {
@@ -34,17 +36,17 @@ class YacoContainer implements ContainerInterface
 
       $previousDefinition = null;
       for ($i = 1; $i <= 100; $i++) {
-          $definition = new ObjectDefinition("DiContainerBenchmarks\\Fixture\\Class$i", []);
+          $definition = new ObjectDefinition("DiContainerBenchmarks\\Fixture\\Class$i", "DiContainerBenchmarks\\Fixture\\Class$i");
           if ($previousDefinition !== null) {
             $definition->addConstructorArgument($previousDefinition);
-            $previousDefinition = $definition;
           }
-          $containerBuilder->setDefinition("class$i", $definition);
+          $previousDefinition = $definition;
+          $containerBuilder->addDumpableDefinition($definition);
       }
 
       file_put_contents(
           PROJECT_ROOT . "/src/Container/Yaco/Resource/CompiledSingletonContainer.php",
-          $containerBuilder->compile()
+          $containerBuilder->compile('DiContainerBenchmarks\\Container\\Yaco\\Resource\\CompiledSingletonContainer')
       );
 
     }

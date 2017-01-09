@@ -25,4 +25,9 @@ abstract class AbstractPHPixieDiTest implements TestInterface
     {
         $this->container = new Container\SingletonContainer();
     }
+
+    public function supported(): bool
+    {
+        return true;
+    }
 }
