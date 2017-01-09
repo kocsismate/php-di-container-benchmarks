@@ -1,3 +1,7 @@
+## 2017-01-09
+
+- Added Yaco to the benchmark
+
 ## 2017-01-07
 
 - Added Auryn and PHPixie to the benchmark

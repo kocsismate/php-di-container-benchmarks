@@ -12,21 +12,22 @@
     ],
     "require": {
         "php": "^7.1",
-        "aura/di": "^3.2",
+        "aura/di": "^3.2.0",
         "bitexpert/disco": "^0.6.2",
         "doctrine/cache": "^1.6.1",
         "illuminate/container": "v5.4.*@dev",
         "illuminate/contracts": "v5.4.*@dev",
         "level-2/Dice": "dev-master",
         "php-di/php-di": "^5.4.0",
-        "phpixie/di": "^3.2",
+        "phpixie/di": "^3.2.0",
         "pimple/pimple": "^3.0.2",
-        "rdlowrey/auryn": "^1.4",
+        "rdlowrey/auryn": "^1.4.0",
         "symfony/config": "^3.2.1",
         "symfony/dependency-injection": "^3.2.1",
-        "thecodingmachine/yaco": "^0.4",
+        "thecodingmachine/yaco": "^0.4.1",
         "woohoolabs/zen": "^1.2.2",
-        "zendframework/zend-servicemanager": "^3.2.0"
+        "zendframework/zend-servicemanager": "^3.2.0",
+        "phpbench/phpbench": "^0.13.0"
     },
     "autoload": {
         "psr-4": {

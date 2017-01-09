@@ -58,20 +58,23 @@ class Benchmark
             $containerName = $container->getName();
             $iterations = $testCase->getIterations();
             $isStartupTimeIncluded = (int) $testCase->isStartupTimeIncluded();
-            $output = "";
+            $output = [];
+
+            //$process = new Process();
             exec(
                 PROJECT_ROOT . "/bin/test $number $containerName $iterations $isStartupTimeIncluded",
                 $output,
                 $code
             );
 
+            $testResult = TestResult::createFromJson($output[0] ?? "");
+            $benchmarkResult->addTestResult($testSuite, $testCase, $container, $testResult);
+
             if ($code !== 0) {
                 echo "Test failed:\n";
                 var_dump($output);
+                break;
             }
-
-            $testResult = TestResult::createFromJson($output[0] ?? "");
-            $benchmarkResult->addTestResult($testSuite, $testCase, $container, $testResult);
         }
     }
 }
