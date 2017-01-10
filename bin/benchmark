@@ -10,6 +10,7 @@ use DiContainerBenchmarks\Container\Auryn\AurynContainer;
 use DiContainerBenchmarks\Container\Dice\DiceContainer;
 use DiContainerBenchmarks\Container\Disco\DiscoContainer;
 use DiContainerBenchmarks\Container\Laravel\LaravelContainer;
+use DiContainerBenchmarks\Container\OpulenceIoc\OpulenceIocContainer;
 use DiContainerBenchmarks\Container\PhpDi\PhpDiContainer;
 use DiContainerBenchmarks\Container\PHPixieDi\PHPixieDiContainer;
 use DiContainerBenchmarks\Container\Pimple\PimpleContainer;
@@ -40,6 +41,7 @@ $containers = [
     new DiceContainer(),
     new DiscoContainer(),
     new LaravelContainer(),
+    new OpulenceIocContainer(),
     new PhpDiContainer(),
     new PHPixieDiContainer(),
     new PimpleContainer(),
