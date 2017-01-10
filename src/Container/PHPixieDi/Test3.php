@@ -7,7 +7,7 @@ class Test3 extends AbstractPHPixieDiTest
 {
     public function startup(): void
     {
-        $this->setContainerWithSingletonServices();
+        $this->setContainerWithPrototypeServices();
     }
 
     public function run(): void

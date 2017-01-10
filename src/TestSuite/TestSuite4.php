@@ -14,7 +14,7 @@ class TestSuite4 implements TestSuiteInterface
 
     public function getTitle(): string
     {
-        return "Fetching the same big object graph (100 objects)";
+        return "\"Semi-Warm\" Instantiation of a big object graph (100 objects)";
     }
 
     public function getDescription(): string
@@ -25,7 +25,9 @@ class TestSuite4 implements TestSuiteInterface
     public function getTestCases(): array
     {
         return [
-            new TestCase(1, "10 000 iterations, startup time included", 10000, true),
+            new TestCase(1, "10 iterations, startup time included", 10, TestCase::SEMI_WARM),
+            new TestCase(2, "100 iterations, startup time included", 100, TestCase::SEMI_WARM),
+            new TestCase(3, "1000 iterations, startup time included", 1000, TestCase::SEMI_WARM),
         ];
     }
 }

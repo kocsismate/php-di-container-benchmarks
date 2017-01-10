@@ -9,7 +9,7 @@ class TestRunner
         int $testSuiteNumber,
         string $container,
         int $iterations,
-        bool $isStartupTimeIncluded
+        string $testType
     ): TestResult {
         $class = "DiContainerBenchmarks\\Container\\$container\\Test$testSuiteNumber";
         if (class_exists($class) === false) {
@@ -22,22 +22,62 @@ class TestRunner
             return new TestResult(null, null);
         }
 
-        // Warming up
-        $test->startup();
+        if ($testType === TestCase::COLD) {
+            return $this->runColdTest($test, $iterations);
+        }
 
+        if ($testType === TestCase::SEMI_WARM) {
+            return $this->runSemiWarmTest($test, $iterations);
+        }
+
+        return $this->runWarmTest($test, $iterations);
+    }
+
+    private function runColdTest(TestInterface $test, int $iterations): TestResult
+    {
         $t1 = microtime(true);
+
         $test->startup();
-        $t2 = microtime(true);
 
-        // Warming up
-        $test->run();
-
-        $t3 = microtime(true);
         for ($i = 0; $i < $iterations; $i++) {
             $test->run();
         }
-        $t4 = microtime(true);
 
-        return TestResult::create($t1, $t2, $t3, $t4, $isStartupTimeIncluded, memory_get_peak_usage());
+        $t2 = microtime(true);
+
+        return TestResult::create($t1, $t2, memory_get_peak_usage());
+    }
+
+    private function runSemiWarmTest(TestInterface $test, int $iterations): TestResult
+    {
+        $test->startup();
+
+        $t1 = microtime(true);
+
+        $test->startup();
+        for ($i = 0; $i < $iterations; $i++) {
+            $test->run();
+        }
+
+        $t2 = microtime(true);
+
+        return TestResult::create($t1, $t2, memory_get_peak_usage());
+    }
+
+    private function runWarmTest(TestInterface $test, int $iterations): TestResult
+    {
+        $test->startup();
+        $test->run();
+
+        $t1 = microtime(true);
+
+        $test->startup();
+        for ($i = 0; $i < $iterations; $i++) {
+            $test->run();
+        }
+
+        $t2 = microtime(true);
+
+        return TestResult::create($t1, $t2, memory_get_peak_usage());
     }
 }

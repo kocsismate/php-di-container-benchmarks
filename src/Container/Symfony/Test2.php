@@ -7,7 +7,7 @@ class Test2 extends AbstractSymfonyTest
 {
     public function startup(): void
     {
-        $this->setContainerWithPrototypeServices();
+        $this->setContainerWithSingletonServices();
     }
 
     public function run(): void

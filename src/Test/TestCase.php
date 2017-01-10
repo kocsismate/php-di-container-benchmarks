@@ -5,6 +5,12 @@ namespace DiContainerBenchmarks\Test;
 
 class TestCase
 {
+    public const COLD = "cold";
+
+    public const SEMI_WARM = "semi_warm";
+
+    public const WARM = "warm";
+
     /**
      * @var int
      */
@@ -21,16 +27,16 @@ class TestCase
     private $iterations;
 
     /**
-     * @var bool
+     * @var string
      */
-    private $startupTimeIncluded;
+    private $testType;
 
-    public function __construct(int $number, string $title, int $iterations, bool $isStartupTimeIncluded)
+    public function __construct(int $number, string $title, int $iterations, string $testType)
     {
         $this->number = $number;
         $this->title = $title;
         $this->iterations = $iterations;
-        $this->startupTimeIncluded = $isStartupTimeIncluded;
+        $this->testType = $testType;
     }
 
     public function getNumber(): int
@@ -48,8 +54,8 @@ class TestCase
         return $this->iterations;
     }
 
-    public function isStartupTimeIncluded(): bool
+    public function getTestType(): string
     {
-        return $this->startupTimeIncluded;
+        return $this->testType;
     }
 }

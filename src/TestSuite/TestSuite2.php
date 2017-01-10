@@ -14,7 +14,7 @@ class TestSuite2 implements TestSuiteInterface
 
     public function getTitle(): string
     {
-        return "Instantiation of a big object graph (100 objects)";
+        return "\"Cold\" Retrieval of a big object graph (100 objects)";
     }
 
     public function getDescription(): string
@@ -25,10 +25,9 @@ class TestSuite2 implements TestSuiteInterface
     public function getTestCases(): array
     {
         return [
-            new TestCase(1, "10 iterations, startup time included", 10, true),
-            new TestCase(2, "10 iterations, startup time excluded", 10, false),
-            new TestCase(3, "100 iterations, startup time included", 100, true),
-            new TestCase(4, "1000 iterations, startup time included", 1000, true),
+            new TestCase(1, "10 iterations, autoload + startup time included", 10, TestCase::COLD),
+            new TestCase(2, "100 iterations, autoload + startup time included", 100, TestCase::COLD),
+            new TestCase(3, "1000 iterations, autoload + startup time included", 1000, TestCase::COLD),
         ];
     }
 }

@@ -9,7 +9,7 @@ class Test1 extends AbstractLaravelTest
 {
     public function startup(): void
     {
-        $this->setContainerWithPrototypeServices();
+        $this->setContainerWithSingletonServices();
     }
 
     public function run(): void

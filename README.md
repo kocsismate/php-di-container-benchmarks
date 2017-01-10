@@ -43,7 +43,7 @@ First, copy the ".env.dist" file as ".env" and feel free to overwrite the values
 `docker-compose up` in order to execute the tests. The html output will be generated in the "var" directory.
 
 If you don't want to use Docker and you have PHP 7.1 at least on your host OS then you can simply run `./bin/benchmark`
-after all Composer dependencies have been installed.
+after all Composer dependencies have been installed with `composer install`.
 
 ## Results
 

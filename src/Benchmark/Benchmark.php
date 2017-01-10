@@ -57,12 +57,11 @@ class Benchmark
             $number = $testSuite->getNumber();
             $containerName = $container->getName();
             $iterations = $testCase->getIterations();
-            $isStartupTimeIncluded = (int) $testCase->isStartupTimeIncluded();
+            $testType = (int) $testCase->getTestType();
             $output = [];
 
-            //$process = new Process();
             exec(
-                PROJECT_ROOT . "/bin/test $number $containerName $iterations $isStartupTimeIncluded",
+                PROJECT_ROOT . "/bin/test $number $containerName $iterations $testType",
                 $output,
                 $code
             );

@@ -26,18 +26,9 @@ class TestResult
         return new TestResult($result["time"], $result["memory"]);
     }
 
-    public static function create(
-        float $startupStartTime,
-        float $startupEndTime,
-        float $startTime,
-        float $endTime,
-        bool $isStartupTimeIncluded,
-        int $peakMemoryUsageInBytes
-    ): TestResult {
-        $startupTime = $isStartupTimeIncluded ? $startupEndTime - $startupStartTime : 0;
-        $timeConsumption = $startupTime + $endTime - $startTime;
-
-        return new TestResult($timeConsumption * 1000, $peakMemoryUsageInBytes / 1024 / 1024);
+    public static function create(float $startTime, float $endTime, int $peakMemoryUsageInBytes): TestResult
+    {
+        return new TestResult(($endTime - $startTime) * 1000, $peakMemoryUsageInBytes / 1024 / 1024);
     }
 
     public function __construct(?float $timeConsumptionInMilliseconds, ?float $peakMemoryUsageInMegaBytes)

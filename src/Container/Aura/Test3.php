@@ -9,11 +9,11 @@ class Test3 extends AbstractAuraTest
 {
     public function startup(): void
     {
-        $this->setContainerWithSingletonServices();
+        $this->setContainerWithPrototypeServices();
     }
 
     public function run(): void
     {
-        $this->container->get(Class10::class);
+        $this->container->newInstance(Class10::class);
     }
 }

@@ -9,7 +9,7 @@ class Test4 extends AbstractZendServiceManagerTest
 {
     public function startup(): void
     {
-        $this->setContainerWithSingletonServices();
+        $this->setContainerWithPrototypeServices();
     }
 
     public function run(): void

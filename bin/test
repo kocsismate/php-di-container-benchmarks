@@ -13,10 +13,10 @@ if ($argc < 4) {
 $testSuiteNumber = (int) $argv[1];
 $container = $argv[2];
 $iterations = (int) $argv[3];
-$isStartupTimeIncluded = (bool) $argv[4];
+$testType = $argv[4];
 
 $testRunner = new TestRunner();
-$result = $testRunner->runTest($testSuiteNumber, $container, $iterations, $isStartupTimeIncluded);
+$result = $testRunner->runTest($testSuiteNumber, $container, $iterations, $testType);
 
 if ($result) {
     echo $result->toJson();

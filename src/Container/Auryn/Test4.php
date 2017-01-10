@@ -9,7 +9,7 @@ class Test4 extends AbstractAurynTest
 {
     public function startup(): void
     {
-        $this->setContainerWithSingletonServices();
+        $this->setContainerWithPrototypeServices();
     }
 
     public function run(): void

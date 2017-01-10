@@ -5,13 +5,13 @@ namespace DiContainerBenchmarks\Container\Disco;
 
 use bitExpert\Disco\AnnotationBeanFactory;
 use bitExpert\Disco\BeanFactoryRegistry;
-use DiContainerBenchmarks\Container\Disco\Resource\PrototypeContainerConfig;
+use DiContainerBenchmarks\Container\Disco\Resource\SingletonContainerConfig;
 
 class Test1 extends AbstractDiscoTest
 {
     public function startup(): void
     {
-        $beanFactory = new AnnotationBeanFactory(PrototypeContainerConfig::class);
+        $beanFactory = new AnnotationBeanFactory(SingletonContainerConfig::class);
         BeanFactoryRegistry::register($beanFactory);
 
         $this->container = $beanFactory;
