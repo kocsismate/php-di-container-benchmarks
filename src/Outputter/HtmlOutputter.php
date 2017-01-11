@@ -164,19 +164,26 @@ HERE;
             <h2 id="method">Method</h2>
 
             <p>
-                Each container is given 4 tasks (test suites) where they have to create or fetch object
-                graphs of different sizes. A test suite contains one or more test cases which define some settings
-                for a test: how many times it has to be repeated (iteration) and if the container startup time
-                should be counted in the time consumption.
+                Each container is given 6 tasks (Test Suites) where they have to create or fetch object
+                graphs of different sizes (10 or 100 objects). For this purpose, containers are configured
+                either to always instantiate objects (this is usually called as Prototype scope or not shared services)
+                or to instantiate objects only at the first retrieval and return the same instance on the subsequent
+                calls (which is usually referred as Singleton scope or shared services).
+            </p>
+            <p>    
+                There are 3 main types of the Test Suites: "Cold" ones (Test Suite 1-2) measure performance including
+                autoloading and startup time of containers as well as autoloading time of the retrieved objects.
+                "Semi-Warm" ones (Test Suite 3-4) measure performance excluding container autoloading time, but
+                including startup time and autoloading time of the retrieved objects, while "Warm" ones (Test Suite 5-6)
+                exclude autoloading and startup time.
             </p>
             <p>
-                Before measuring each test, containers are warmed up so autoloading can take place and caches
-                can be fed. Then all tests are performed 10 times, but only those results are used when
-                calculating the average time consumption/peak memory usage of a container which are not more than
-                the 120% of the smallest one.
+                A Test Suite contains three Test Cases which define how many times the main task has to be
+                repeated (it is called Iteration). All Test Cases are performed 10 times (this is referred as "runs") in
+                order to improve the stability of the measurements.
             </p>
             <p>
-                The benchmark is run on a 15-inch MacBook Pro from 2015 using Docker and PHP 7.1. The examined
+                The benchmark is run on a 15-inch MacBook Pro from 2015 using PHP 7.1. The examined
                 DI Containers are configured for production usage as if it was probably done in case of a big project.
                 That's why I took advantage of autowiring capabilities when possible. Unfortunately, this
                 discriminates some participants giving them a big handicap, but I wanted to measure container
@@ -234,9 +241,9 @@ HERE;
                         $memoryBase = $memory ?? null;
                     }
 
-                    $timeColumn = $time ?? "N/A";
+                    $timeColumn = $time !== null ? round($time, 3) : "N/A";
                     $timePercentColumn = $time ? round($time / $timeBase * 100, 0) . "%" : "N/A";
-                    $memoryColumn = $memory ?? "N/A";
+                    $memoryColumn = $memory !== null ? round($memory, 3) : "N/A";
                     $memoryPercentColumn = $memory ? round($memory / $memoryBase * 100, 0) . "%" : "N/A";
 
                     $html .= <<<HERE
@@ -268,9 +275,7 @@ HERE;
                 My hypothesis was that different types of containers have significantly different performance
                 characteristics. It can be concluded by looking at the results that the hypothesis can't be rejected as
                 it seems that the more user-friendly a container is (dynamic &gt; compiled, dynamic with autowiring
-                &gt; dynamic without autowiring) the slower it is when creating objects (first 2 test suites). For
-                tasks when a container has to retrieve objects that were created in advance (last 2 test suites),
-                usually other factors affect performance (basically how optimized a container is for this purpose).
+                &gt; dynamic without autowiring) the slower it is.
             </p>
 
             <p>

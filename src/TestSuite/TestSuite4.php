@@ -19,7 +19,11 @@ class TestSuite4 implements TestSuiteInterface
 
     public function getDescription(): string
     {
-        return "";
+        return <<<HERE
+In this Test Suite, containers have to create an object graph of 100 objects (defined as Prototypes) 10, 100 and 1000
+times. Container autoloading time is excluded while startup time of the container and autoloading time of the retrieved
+objects are included in the measurements.
+HERE;
     }
 
     public function getTestCases(): array

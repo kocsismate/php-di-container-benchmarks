@@ -19,7 +19,11 @@ class TestSuite2 implements TestSuiteInterface
 
     public function getDescription(): string
     {
-        return "";
+        return <<<HERE
+In this Test Suite, containers have to fetch an object graph of 100 objects (defined as Singletons) 10, 100 and 1000
+times. Autoloading and startup time of the containers are included in the measurements as well as autoloading time of
+the retrieved objects. That's why this Test Suite simulates production usage very well.
+HERE;
     }
 
     public function getTestCases(): array

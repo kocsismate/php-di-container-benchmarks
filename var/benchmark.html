@@ -21,7 +21,7 @@
                 <td><b>Repository:</b></td><td><a target="_blank" href="https://github.com/kocsismate/php-di-container-benchmarks">https://github.com/kocsismate/php-di-container-benchmarks</a></td>
             </tr>
             <tr>
-                <td><b>Generated:</b></td><td>2017-01-07 22:21:15</td>
+                <td><b>Generated:</b></td><td>2017-01-11 00:00:59</td>
             </tr>
         </table>
 
@@ -106,7 +106,7 @@
                     </tr>                    <tr>
                         <th>4</th>
                         <td><b>Disco</b></td>
-                        <td>dynamic</td>
+                        <td>compiled</td>
                         <td>not supported</td>
                         <td>
                             <a target="_blank" href="https://github.com/bitExpert/disco" style="display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
@@ -125,6 +125,16 @@
                         </td>
                     </tr>                    <tr>
                         <th>6</th>
+                        <td><b>OpulenceIoc</b></td>
+                        <td>dynamic</td>
+                        <td>supported</td>
+                        <td>
+                            <a target="_blank" href="https://www.opulencephp.com/docs/1.0/ioc-container" style="display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                                www.opulencephp.com/docs/1.0/ioc-container
+                            </a>
+                        </td>
+                    </tr>                    <tr>
+                        <th>7</th>
                         <td><b>PhpDi</b></td>
                         <td>dynamic</td>
                         <td>supported</td>
@@ -134,7 +144,7 @@
                             </a>
                         </td>
                     </tr>                    <tr>
-                        <th>7</th>
+                        <th>8</th>
                         <td><b>PHPixieDi</b></td>
                         <td>dynamic</td>
                         <td>not supported</td>
@@ -144,7 +154,7 @@
                             </a>
                         </td>
                     </tr>                    <tr>
-                        <th>8</th>
+                        <th>9</th>
                         <td><b>Pimple</b></td>
                         <td>dynamic</td>
                         <td>not supported</td>
@@ -154,7 +164,7 @@
                             </a>
                         </td>
                     </tr>                    <tr>
-                        <th>9</th>
+                        <th>10</th>
                         <td><b>Symfony</b></td>
                         <td>compiled</td>
                         <td>supported</td>
@@ -164,7 +174,17 @@
                             </a>
                         </td>
                     </tr>                    <tr>
-                        <th>10</th>
+                        <th>11</th>
+                        <td><b>Yaco</b></td>
+                        <td>compiled</td>
+                        <td>not supported</td>
+                        <td>
+                            <a target="_blank" href="https://github.com/thecodingmachine/yaco" style="display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                                github.com/thecodingmachine/yaco
+                            </a>
+                        </td>
+                    </tr>                    <tr>
+                        <th>12</th>
                         <td><b>Zen</b></td>
                         <td>compiled</td>
                         <td>supported</td>
@@ -174,7 +194,7 @@
                             </a>
                         </td>
                     </tr>                    <tr>
-                        <th>11</th>
+                        <th>13</th>
                         <td><b>ZendServiceManager</b></td>
                         <td>dynamic</td>
                         <td>not supported</td>
@@ -218,19 +238,26 @@
             <h2 id="method">Method</h2>
 
             <p>
-                Each container is given 4 tasks (test suites) where they have to create or fetch object
-                graphs of different sizes. A test suite contains one or more test cases which define some settings
-                for a test: how many times it has to be repeated (iteration) and if the container startup time
-                should be counted in the time consumption.
+                Each container is given 6 tasks (Test Suites) where they have to create or fetch object
+                graphs of different sizes (10 or 100 objects). For this purpose, containers are configured
+                either to always instantiate objects (this is usually called as Prototype scope or not shared services)
+                or to instantiate objects only at the first retrieval and return the same instance on the subsequent
+                calls (which is usually referred as Singleton scope or shared services).
+            </p>
+            <p>    
+                There are 3 main types of the Test Suites: "Cold" ones (Test Suite 1-2) measure performance including
+                autoloading and startup time of containers as well as autoloading time of the retrieved objects.
+                "Semi-Warm" ones (Test Suite 3-4) measure performance excluding container autoloading time, but
+                including startup time and autoloading time of the retrieved objects, while "Warm" ones (Test Suite 5-6)
+                exclude autoloading and startup time.
             </p>
             <p>
-                Before measuring each test, containers are warmed up so autoloading can take place and caches
-                can be fed. Then all tests are performed 10 times, but only those results are used when
-                calculating the average time consumption/peak memory usage of a container which are not more than
-                the 120% of the smallest one.
+                A Test Suite contains three Test Cases which define how many times the main task has to be
+                repeated (it is called Iteration). All Test Cases are performed 10 times (this is referred as "runs") in
+                order to improve the stability of the measurements.
             </p>
             <p>
-                The benchmark is run on a 15-inch MacBook Pro from 2015 using Docker and PHP 7.1. The examined
+                The benchmark is run on a 15-inch MacBook Pro from 2015 using PHP 7.1. The examined
                 DI Containers are configured for production usage as if it was probably done in case of a big project.
                 That's why I took advantage of autowiring capabilities when possible. Unfortunately, this
                 discriminates some participants giving them a big handicap, but I wanted to measure container
@@ -240,11 +267,13 @@
         </section>
 
         <hr>
-        <h2 id="results">Results</h2>        <h3>Test Suite 1: Instantiation of a small object graph (10 objects)</h3>
-        <p></p>        <table border="1">
+        <h2 id="results">Results</h2>        <h3>Test Suite 1: "Cold" Retrieval of a small object graph (10 objects)</h3>
+        <p>In this Test Suite, containers have to fetch an object graph of 10 objects (defined as Singletons) 10, 100 and 1000
+times. Autoloading and startup time of the containers are included in the measurements as well as autoloading time of
+the retrieved objects. That's why this Test Suite simulates production usage very well.</p>        <table border="1">
             <thead>
                 <tr>
-                    <th colspan="6" style="font-size: 18px;">100 iterations, startup time included</th>
+                    <th colspan="6" style="font-size: 18px;">10 iterations, autoload + startup time included</th>
                 </tr>
                 <tr>
                     <th style='width: 50px;'>Rank</th>
@@ -257,98 +286,114 @@
             </thead>
             <tbody>                <tr>
                     <th>1</th>
-                    <td><b>Symfony</b></td>
-                    <td>0.155</td>
+                    <td><b>Zen</b></td>
+                    <td>0.009</td>
                     <td>100%</td>
-                    <td>2.60615</td>
+                    <td>1.176</td>
                     <td>100%</td>
                 </tr>
                 <tr>
                     <th>2</th>
-                    <td><b>Zen</b></td>
-                    <td>0.168</td>
-                    <td>108%</td>
-                    <td>0.97253</td>
-                    <td>37%</td>
+                    <td><b>Symfony</b></td>
+                    <td>0.015</td>
+                    <td>167%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
                 </tr>
                 <tr>
                     <th>3</th>
-                    <td><b>PHPixieDi</b></td>
-                    <td>0.484</td>
-                    <td>312%</td>
-                    <td>0.98151</td>
-                    <td>38%</td>
+                    <td><b>Yaco</b></td>
+                    <td>0.017</td>
+                    <td>189%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
                 </tr>
                 <tr>
                     <th>4</th>
-                    <td><b>Disco</b></td>
-                    <td>0.501</td>
-                    <td>323%</td>
-                    <td>3.02911</td>
-                    <td>116%</td>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>0.029</td>
+                    <td>322%</td>
+                    <td>1.3</td>
+                    <td>111%</td>
                 </tr>
                 <tr>
                     <th>5</th>
-                    <td><b>Dice</b></td>
-                    <td>0.669</td>
-                    <td>432%</td>
-                    <td>0.97253</td>
-                    <td>37%</td>
+                    <td><b>PHPixieDi</b></td>
+                    <td>0.039</td>
+                    <td>433%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
                 </tr>
                 <tr>
                     <th>6</th>
-                    <td><b>Pimple</b></td>
-                    <td>0.947</td>
-                    <td>611%</td>
-                    <td>1.13239</td>
-                    <td>43%</td>
+                    <td><b>OpulenceIoc</b></td>
+                    <td>0.041</td>
+                    <td>456%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
                 </tr>
                 <tr>
                     <th>7</th>
-                    <td><b>ZendServiceManager</b></td>
-                    <td>1.081</td>
-                    <td>697%</td>
-                    <td>1.17588</td>
-                    <td>45%</td>
+                    <td><b>Dice</b></td>
+                    <td>0.044</td>
+                    <td>489%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
                 </tr>
                 <tr>
                     <th>8</th>
-                    <td><b>Aura</b></td>
-                    <td>1.116</td>
-                    <td>720%</td>
-                    <td>0.97253</td>
-                    <td>37%</td>
+                    <td><b>Laravel</b></td>
+                    <td>0.049</td>
+                    <td>544%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
                 </tr>
                 <tr>
                     <th>9</th>
-                    <td><b>Laravel</b></td>
-                    <td>3.042</td>
-                    <td>1963%</td>
-                    <td>0.97253</td>
-                    <td>37%</td>
+                    <td><b>Pimple</b></td>
+                    <td>0.056</td>
+                    <td>622%</td>
+                    <td>1.251</td>
+                    <td>106%</td>
                 </tr>
                 <tr>
                     <th>10</th>
-                    <td><b>PhpDi</b></td>
-                    <td>3.783</td>
-                    <td>2441%</td>
-                    <td>1.14185</td>
-                    <td>44%</td>
+                    <td><b>Auryn</b></td>
+                    <td>0.093</td>
+                    <td>1033%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
                 </tr>
                 <tr>
                     <th>11</th>
-                    <td><b>Auryn</b></td>
-                    <td>4.928</td>
-                    <td>3179%</td>
-                    <td>1.62505</td>
-                    <td>62%</td>
+                    <td><b>Disco</b></td>
+                    <td>0.096</td>
+                    <td>1067%</td>
+                    <td>3.376</td>
+                    <td>287%</td>
+                </tr>
+                <tr>
+                    <th>12</th>
+                    <td><b>PhpDi</b></td>
+                    <td>0.099</td>
+                    <td>1100%</td>
+                    <td>1.197</td>
+                    <td>102%</td>
+                </tr>
+                <tr>
+                    <th>13</th>
+                    <td><b>Aura</b></td>
+                    <td>0.122</td>
+                    <td>1356%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
                 </tr>
             </tbody>
         </table>
         </br>        <table border="1">
             <thead>
                 <tr>
-                    <th colspan="6" style="font-size: 18px;">100 iterations, startup time excluded</th>
+                    <th colspan="6" style="font-size: 18px;">100 iterations, autoload + startup time included</th>
                 </tr>
                 <tr>
                     <th style='width: 50px;'>Rank</th>
@@ -362,199 +407,596 @@
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Zen</b></td>
-                    <td>0.166</td>
+                    <td>0.025</td>
                     <td>100%</td>
-                    <td>0.97253</td>
+                    <td>1.176</td>
                     <td>100%</td>
                 </tr>
                 <tr>
                     <th>2</th>
-                    <td><b>Symfony</b></td>
-                    <td>0.168</td>
-                    <td>101%</td>
-                    <td>2.60615</td>
-                    <td>268%</td>
+                    <td><b>Yaco</b></td>
+                    <td>0.027</td>
+                    <td>108%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
                 </tr>
                 <tr>
                     <th>3</th>
-                    <td><b>Disco</b></td>
-                    <td>0.402</td>
-                    <td>242%</td>
-                    <td>3.02911</td>
-                    <td>311%</td>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>0.039</td>
+                    <td>156%</td>
+                    <td>1.3</td>
+                    <td>111%</td>
                 </tr>
                 <tr>
                     <th>4</th>
-                    <td><b>PHPixieDi</b></td>
-                    <td>0.417</td>
-                    <td>251%</td>
-                    <td>0.98151</td>
-                    <td>101%</td>
+                    <td><b>Symfony</b></td>
+                    <td>0.04</td>
+                    <td>160%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
                 </tr>
                 <tr>
                     <th>5</th>
-                    <td><b>ZendServiceManager</b></td>
-                    <td>0.636</td>
-                    <td>383%</td>
-                    <td>1.17588</td>
-                    <td>121%</td>
+                    <td><b>Dice</b></td>
+                    <td>0.056</td>
+                    <td>224%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
                 </tr>
                 <tr>
                     <th>6</th>
-                    <td><b>Dice</b></td>
-                    <td>0.646</td>
-                    <td>389%</td>
-                    <td>0.97253</td>
+                    <td><b>Pimple</b></td>
+                    <td>0.074</td>
+                    <td>296%</td>
+                    <td>1.251</td>
+                    <td>106%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>PHPixieDi</b></td>
+                    <td>0.081</td>
+                    <td>324%</td>
+                    <td>1.176</td>
                     <td>100%</td>
+                </tr>
+                <tr>
+                    <th>8</th>
+                    <td><b>Laravel</b></td>
+                    <td>0.082</td>
+                    <td>328%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>9</th>
+                    <td><b>OpulenceIoc</b></td>
+                    <td>0.099</td>
+                    <td>396%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>10</th>
+                    <td><b>PhpDi</b></td>
+                    <td>0.119</td>
+                    <td>476%</td>
+                    <td>1.197</td>
+                    <td>102%</td>
+                </tr>
+                <tr>
+                    <th>11</th>
+                    <td><b>Aura</b></td>
+                    <td>0.135</td>
+                    <td>540%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>12</th>
+                    <td><b>Disco</b></td>
+                    <td>0.137</td>
+                    <td>548%</td>
+                    <td>3.376</td>
+                    <td>287%</td>
+                </tr>
+                <tr>
+                    <th>13</th>
+                    <td><b>Auryn</b></td>
+                    <td>0.156</td>
+                    <td>624%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">1000 iterations, autoload + startup time included</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>Yaco</b></td>
+                    <td>0.12</td>
+                    <td>100%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>0.136</td>
+                    <td>113%</td>
+                    <td>1.3</td>
+                    <td>111%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>Zen</b></td>
+                    <td>0.176</td>
+                    <td>147%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>Dice</b></td>
+                    <td>0.181</td>
+                    <td>151%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>Aura</b></td>
+                    <td>0.236</td>
+                    <td>197%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>PhpDi</b></td>
+                    <td>0.251</td>
+                    <td>209%</td>
+                    <td>1.197</td>
+                    <td>102%</td>
                 </tr>
                 <tr>
                     <th>7</th>
                     <td><b>Pimple</b></td>
-                    <td>0.884</td>
-                    <td>533%</td>
-                    <td>1.13239</td>
-                    <td>116%</td>
+                    <td>0.268</td>
+                    <td>223%</td>
+                    <td>1.251</td>
+                    <td>106%</td>
                 </tr>
                 <tr>
                     <th>8</th>
-                    <td><b>Aura</b></td>
-                    <td>1.146</td>
-                    <td>690%</td>
-                    <td>0.97253</td>
+                    <td><b>Symfony</b></td>
+                    <td>0.297</td>
+                    <td>248%</td>
+                    <td>1.176</td>
                     <td>100%</td>
                 </tr>
                 <tr>
                     <th>9</th>
                     <td><b>Laravel</b></td>
-                    <td>2.977</td>
-                    <td>1793%</td>
-                    <td>0.97253</td>
+                    <td>0.412</td>
+                    <td>343%</td>
+                    <td>1.176</td>
                     <td>100%</td>
                 </tr>
                 <tr>
                     <th>10</th>
-                    <td><b>Auryn</b></td>
-                    <td>3.792</td>
-                    <td>2284%</td>
-                    <td>1.62505</td>
-                    <td>167%</td>
+                    <td><b>PHPixieDi</b></td>
+                    <td>0.496</td>
+                    <td>413%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
                 </tr>
                 <tr>
                     <th>11</th>
+                    <td><b>Disco</b></td>
+                    <td>0.543</td>
+                    <td>453%</td>
+                    <td>3.376</td>
+                    <td>287%</td>
+                </tr>
+                <tr>
+                    <th>12</th>
+                    <td><b>OpulenceIoc</b></td>
+                    <td>0.703</td>
+                    <td>586%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>13</th>
+                    <td><b>Auryn</b></td>
+                    <td>0.787</td>
+                    <td>656%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <h3>Test Suite 2: "Cold" Retrieval of a big object graph (100 objects)</h3>
+        <p>In this Test Suite, containers have to fetch an object graph of 100 objects (defined as Singletons) 10, 100 and 1000
+times. Autoloading and startup time of the containers are included in the measurements as well as autoloading time of
+the retrieved objects. That's why this Test Suite simulates production usage very well.</p>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">10 iterations, autoload + startup time included</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>Zen</b></td>
+                    <td>0.034</td>
+                    <td>100%</td>
+                    <td>1.218</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>Yaco</b></td>
+                    <td>0.051</td>
+                    <td>150%</td>
+                    <td>1.292</td>
+                    <td>106%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>PHPixieDi</b></td>
+                    <td>0.072</td>
+                    <td>212%</td>
+                    <td>1.252</td>
+                    <td>103%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>Symfony</b></td>
+                    <td>0.084</td>
+                    <td>247%</td>
+                    <td>1.31</td>
+                    <td>107%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>Disco</b></td>
+                    <td>0.097</td>
+                    <td>285%</td>
+                    <td>3.376</td>
+                    <td>277%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>0.102</td>
+                    <td>300%</td>
+                    <td>1.515</td>
+                    <td>124%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>Pimple</b></td>
+                    <td>0.155</td>
+                    <td>456%</td>
+                    <td>1.405</td>
+                    <td>115%</td>
+                </tr>
+                <tr>
+                    <th>8</th>
+                    <td><b>OpulenceIoc</b></td>
+                    <td>0.234</td>
+                    <td>688%</td>
+                    <td>1.2</td>
+                    <td>99%</td>
+                </tr>
+                <tr>
+                    <th>9</th>
+                    <td><b>Laravel</b></td>
+                    <td>0.327</td>
+                    <td>962%</td>
+                    <td>1.256</td>
+                    <td>103%</td>
+                </tr>
+                <tr>
+                    <th>10</th>
+                    <td><b>Dice</b></td>
+                    <td>0.448</td>
+                    <td>1318%</td>
+                    <td>1.651</td>
+                    <td>135%</td>
+                </tr>
+                <tr>
+                    <th>11</th>
+                    <td><b>Aura</b></td>
+                    <td>0.637</td>
+                    <td>1874%</td>
+                    <td>1.618</td>
+                    <td>133%</td>
+                </tr>
+                <tr>
+                    <th>12</th>
+                    <td><b>Auryn</b></td>
+                    <td>0.732</td>
+                    <td>2153%</td>
+                    <td>1.612</td>
+                    <td>132%</td>
+                </tr>
+                <tr>
+                    <th>13</th>
                     <td><b>PhpDi</b></td>
-                    <td>4.131</td>
-                    <td>2489%</td>
-                    <td>1.14185</td>
+                    <td>0.886</td>
+                    <td>2606%</td>
+                    <td>1.946</td>
+                    <td>160%</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">100 iterations, autoload + startup time included</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>Zen</b></td>
+                    <td>0.049</td>
+                    <td>100%</td>
+                    <td>1.218</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>Yaco</b></td>
+                    <td>0.063</td>
+                    <td>129%</td>
+                    <td>1.292</td>
+                    <td>106%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>Symfony</b></td>
+                    <td>0.108</td>
+                    <td>220%</td>
+                    <td>1.31</td>
+                    <td>107%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>PHPixieDi</b></td>
+                    <td>0.114</td>
+                    <td>233%</td>
+                    <td>1.252</td>
+                    <td>103%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>0.115</td>
+                    <td>235%</td>
+                    <td>1.515</td>
+                    <td>124%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>Disco</b></td>
+                    <td>0.138</td>
+                    <td>282%</td>
+                    <td>3.376</td>
+                    <td>277%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>Pimple</b></td>
+                    <td>0.177</td>
+                    <td>361%</td>
+                    <td>1.405</td>
+                    <td>115%</td>
+                </tr>
+                <tr>
+                    <th>8</th>
+                    <td><b>OpulenceIoc</b></td>
+                    <td>0.298</td>
+                    <td>608%</td>
+                    <td>1.2</td>
+                    <td>99%</td>
+                </tr>
+                <tr>
+                    <th>9</th>
+                    <td><b>Laravel</b></td>
+                    <td>0.359</td>
+                    <td>733%</td>
+                    <td>1.256</td>
+                    <td>103%</td>
+                </tr>
+                <tr>
+                    <th>10</th>
+                    <td><b>Dice</b></td>
+                    <td>0.48</td>
+                    <td>980%</td>
+                    <td>1.651</td>
+                    <td>135%</td>
+                </tr>
+                <tr>
+                    <th>11</th>
+                    <td><b>Aura</b></td>
+                    <td>0.646</td>
+                    <td>1318%</td>
+                    <td>1.618</td>
+                    <td>133%</td>
+                </tr>
+                <tr>
+                    <th>12</th>
+                    <td><b>Auryn</b></td>
+                    <td>0.808</td>
+                    <td>1649%</td>
+                    <td>1.612</td>
+                    <td>132%</td>
+                </tr>
+                <tr>
+                    <th>13</th>
+                    <td><b>PhpDi</b></td>
+                    <td>0.892</td>
+                    <td>1820%</td>
+                    <td>1.946</td>
+                    <td>160%</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">1000 iterations, autoload + startup time included</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>Yaco</b></td>
+                    <td>0.158</td>
+                    <td>100%</td>
+                    <td>1.292</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>Zen</b></td>
+                    <td>0.195</td>
+                    <td>123%</td>
+                    <td>1.218</td>
+                    <td>94%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>0.209</td>
+                    <td>132%</td>
+                    <td>1.515</td>
                     <td>117%</td>
                 </tr>
-            </tbody>
-        </table>
-        </br>        <table border="1">
-            <thead>
-                <tr>
-                    <th colspan="6" style="font-size: 18px;">1000 iterations, startup time included</th>
-                </tr>
-                <tr>
-                    <th style='width: 50px;'>Rank</th>
-                    <th style='width: 175px;'>Container</th>
-                    <th style='width: 100px;'>Time (ms)</th>
-                    <th style='width: 100px;'>Time (%)</th>
-                    <th style='width: 175px;'>Peak Memory (MB)</th>
-                    <th style='width: 150px;'>Peak Memory (%)</th>
-                </tr>
-            </thead>
-            <tbody>                <tr>
-                    <th>1</th>
-                    <td><b>Symfony</b></td>
-                    <td>1.521</td>
-                    <td>100%</td>
-                    <td>2.60615</td>
-                    <td>100%</td>
-                </tr>
-                <tr>
-                    <th>2</th>
-                    <td><b>Zen</b></td>
-                    <td>1.626</td>
-                    <td>107%</td>
-                    <td>0.97253</td>
-                    <td>37%</td>
-                </tr>
-                <tr>
-                    <th>3</th>
-                    <td><b>PHPixieDi</b></td>
-                    <td>4.692</td>
-                    <td>308%</td>
-                    <td>0.98151</td>
-                    <td>38%</td>
-                </tr>
                 <tr>
                     <th>4</th>
-                    <td><b>Disco</b></td>
-                    <td>5.254</td>
-                    <td>345%</td>
-                    <td>3.02911</td>
-                    <td>116%</td>
+                    <td><b>Symfony</b></td>
+                    <td>0.337</td>
+                    <td>213%</td>
+                    <td>1.31</td>
+                    <td>101%</td>
                 </tr>
                 <tr>
                     <th>5</th>
-                    <td><b>ZendServiceManager</b></td>
-                    <td>6.247</td>
-                    <td>411%</td>
-                    <td>1.17588</td>
-                    <td>45%</td>
+                    <td><b>Pimple</b></td>
+                    <td>0.357</td>
+                    <td>226%</td>
+                    <td>1.405</td>
+                    <td>109%</td>
                 </tr>
                 <tr>
                     <th>6</th>
-                    <td><b>Dice</b></td>
-                    <td>6.345</td>
-                    <td>417%</td>
-                    <td>0.97253</td>
-                    <td>37%</td>
+                    <td><b>PHPixieDi</b></td>
+                    <td>0.532</td>
+                    <td>337%</td>
+                    <td>1.252</td>
+                    <td>97%</td>
                 </tr>
                 <tr>
                     <th>7</th>
-                    <td><b>Pimple</b></td>
-                    <td>8.821</td>
-                    <td>580%</td>
-                    <td>1.13239</td>
-                    <td>43%</td>
+                    <td><b>Disco</b></td>
+                    <td>0.546</td>
+                    <td>346%</td>
+                    <td>3.376</td>
+                    <td>261%</td>
                 </tr>
                 <tr>
                     <th>8</th>
-                    <td><b>Aura</b></td>
-                    <td>11.661</td>
-                    <td>767%</td>
-                    <td>0.97253</td>
-                    <td>37%</td>
+                    <td><b>Dice</b></td>
+                    <td>0.576</td>
+                    <td>365%</td>
+                    <td>1.651</td>
+                    <td>128%</td>
                 </tr>
                 <tr>
                     <th>9</th>
                     <td><b>Laravel</b></td>
-                    <td>32.369</td>
-                    <td>2128%</td>
-                    <td>0.97253</td>
-                    <td>37%</td>
+                    <td>0.689</td>
+                    <td>436%</td>
+                    <td>1.256</td>
+                    <td>97%</td>
                 </tr>
                 <tr>
                     <th>10</th>
-                    <td><b>PhpDi</b></td>
-                    <td>41.195</td>
-                    <td>2708%</td>
-                    <td>1.14185</td>
-                    <td>44%</td>
+                    <td><b>Aura</b></td>
+                    <td>0.739</td>
+                    <td>468%</td>
+                    <td>1.618</td>
+                    <td>125%</td>
                 </tr>
                 <tr>
                     <th>11</th>
+                    <td><b>OpulenceIoc</b></td>
+                    <td>0.896</td>
+                    <td>567%</td>
+                    <td>1.2</td>
+                    <td>93%</td>
+                </tr>
+                <tr>
+                    <th>12</th>
+                    <td><b>PhpDi</b></td>
+                    <td>1.029</td>
+                    <td>651%</td>
+                    <td>1.946</td>
+                    <td>151%</td>
+                </tr>
+                <tr>
+                    <th>13</th>
                     <td><b>Auryn</b></td>
-                    <td>42.333</td>
-                    <td>2783%</td>
-                    <td>1.62505</td>
-                    <td>62%</td>
+                    <td>1.412</td>
+                    <td>894%</td>
+                    <td>1.612</td>
+                    <td>125%</td>
                 </tr>
             </tbody>
         </table>
-        </br>        <h3>Test Suite 2: Instantiation of a big object graph (100 objects)</h3>
-        <p></p>        <table border="1">
+        </br>        <h3>Test Suite 3: "Semi-Warm" Instantiation of a small object graph (10 objects)</h3>
+        <p>In this Test Suite, containers have to create an object graph of 10 objects (defined as Prototypes) 10, 100 and 1000
+times. Container autoloading time is excluded while startup time of the container and autoloading time of the retrieved
+objects are included in the measurements.</p>        <table border="1">
             <thead>
                 <tr>
                     <th colspan="6" style="font-size: 18px;">10 iterations, startup time included</th>
@@ -571,194 +1013,106 @@
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Symfony</b></td>
-                    <td>0.130</td>
+                    <td>0.022</td>
                     <td>100%</td>
-                    <td>2.60616</td>
+                    <td>2.729</td>
                     <td>100%</td>
                 </tr>
                 <tr>
                     <th>2</th>
                     <td><b>Zen</b></td>
-                    <td>0.190</td>
-                    <td>146%</td>
-                    <td>1.06596</td>
-                    <td>41%</td>
+                    <td>0.023</td>
+                    <td>105%</td>
+                    <td>1.176</td>
+                    <td>43%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>PHPixieDi</b></td>
-                    <td>0.456</td>
-                    <td>351%</td>
-                    <td>1.17572</td>
-                    <td>45%</td>
+                    <td>0.07</td>
+                    <td>318%</td>
+                    <td>1.176</td>
+                    <td>43%</td>
                 </tr>
                 <tr>
                     <th>4</th>
-                    <td><b>Disco</b></td>
-                    <td>0.633</td>
-                    <td>487%</td>
-                    <td>3.02912</td>
-                    <td>116%</td>
-                </tr>
-                <tr>
-                    <th>5</th>
                     <td><b>ZendServiceManager</b></td>
-                    <td>0.655</td>
-                    <td>504%</td>
-                    <td>1.36623</td>
-                    <td>52%</td>
-                </tr>
-                <tr>
-                    <th>6</th>
-                    <td><b>Dice</b></td>
-                    <td>0.738</td>
-                    <td>568%</td>
-                    <td>1.23447</td>
-                    <td>47%</td>
-                </tr>
-                <tr>
-                    <th>7</th>
-                    <td><b>Pimple</b></td>
-                    <td>0.948</td>
-                    <td>729%</td>
-                    <td>1.26974</td>
-                    <td>49%</td>
-                </tr>
-                <tr>
-                    <th>8</th>
-                    <td><b>Aura</b></td>
-                    <td>1.456</td>
-                    <td>1120%</td>
-                    <td>1.26377</td>
+                    <td>0.087</td>
+                    <td>395%</td>
+                    <td>1.298</td>
                     <td>48%</td>
                 </tr>
                 <tr>
-                    <th>9</th>
-                    <td><b>Laravel</b></td>
-                    <td>2.993</td>
-                    <td>2302%</td>
-                    <td>1.13729</td>
-                    <td>44%</td>
-                </tr>
-                <tr>
-                    <th>10</th>
-                    <td><b>PhpDi</b></td>
-                    <td>4.455</td>
-                    <td>3427%</td>
-                    <td>1.81339</td>
-                    <td>70%</td>
-                </tr>
-                <tr>
-                    <th>11</th>
-                    <td><b>Auryn</b></td>
-                    <td>4.794</td>
-                    <td>3688%</td>
-                    <td>1.62505</td>
-                    <td>62%</td>
-                </tr>
-            </tbody>
-        </table>
-        </br>        <table border="1">
-            <thead>
-                <tr>
-                    <th colspan="6" style="font-size: 18px;">10 iterations, startup time excluded</th>
-                </tr>
-                <tr>
-                    <th style='width: 50px;'>Rank</th>
-                    <th style='width: 175px;'>Container</th>
-                    <th style='width: 100px;'>Time (ms)</th>
-                    <th style='width: 100px;'>Time (%)</th>
-                    <th style='width: 175px;'>Peak Memory (MB)</th>
-                    <th style='width: 150px;'>Peak Memory (%)</th>
-                </tr>
-            </thead>
-            <tbody>                <tr>
-                    <th>1</th>
-                    <td><b>Symfony</b></td>
-                    <td>0.116</td>
-                    <td>100%</td>
-                    <td>2.60616</td>
-                    <td>100%</td>
-                </tr>
-                <tr>
-                    <th>2</th>
-                    <td><b>Zen</b></td>
-                    <td>0.171</td>
-                    <td>147%</td>
-                    <td>1.06596</td>
-                    <td>41%</td>
-                </tr>
-                <tr>
-                    <th>3</th>
-                    <td><b>Disco</b></td>
-                    <td>0.439</td>
-                    <td>378%</td>
-                    <td>3.02912</td>
-                    <td>116%</td>
-                </tr>
-                <tr>
-                    <th>4</th>
-                    <td><b>PHPixieDi</b></td>
-                    <td>0.440</td>
-                    <td>379%</td>
-                    <td>1.17572</td>
-                    <td>45%</td>
-                </tr>
-                <tr>
                     <th>5</th>
-                    <td><b>ZendServiceManager</b></td>
-                    <td>0.637</td>
-                    <td>549%</td>
-                    <td>1.36623</td>
-                    <td>52%</td>
+                    <td><b>Dice</b></td>
+                    <td>0.098</td>
+                    <td>445%</td>
+                    <td>1.176</td>
+                    <td>43%</td>
                 </tr>
                 <tr>
                     <th>6</th>
-                    <td><b>Pimple</b></td>
-                    <td>0.909</td>
-                    <td>784%</td>
-                    <td>1.26974</td>
-                    <td>49%</td>
+                    <td><b>Disco</b></td>
+                    <td>0.131</td>
+                    <td>595%</td>
+                    <td>3.154</td>
+                    <td>116%</td>
                 </tr>
                 <tr>
                     <th>7</th>
-                    <td><b>Dice</b></td>
-                    <td>1.071</td>
-                    <td>923%</td>
-                    <td>1.23447</td>
-                    <td>47%</td>
+                    <td><b>Pimple</b></td>
+                    <td>0.161</td>
+                    <td>732%</td>
+                    <td>1.251</td>
+                    <td>46%</td>
                 </tr>
                 <tr>
                     <th>8</th>
                     <td><b>Aura</b></td>
+                    <td>0.169</td>
+                    <td>768%</td>
+                    <td>1.176</td>
+                    <td>43%</td>
+                </tr>
+                <tr>
+                    <th>9</th>
+                    <td><b>OpulenceIoc</b></td>
+                    <td>0.218</td>
+                    <td>991%</td>
+                    <td>1.176</td>
+                    <td>43%</td>
+                </tr>
+                <tr>
+                    <th>10</th>
+                    <td><b>Laravel</b></td>
+                    <td>0.337</td>
+                    <td>1532%</td>
+                    <td>1.176</td>
+                    <td>43%</td>
+                </tr>
+                <tr>
+                    <th>11</th>
+                    <td><b>PhpDi</b></td>
+                    <td>0.51</td>
+                    <td>2318%</td>
                     <td>1.272</td>
-                    <td>1097%</td>
-                    <td>1.26377</td>
-                    <td>48%</td>
+                    <td>47%</td>
                 </tr>
                 <tr>
-                    <th>9</th>
-                    <td><b>Laravel</b></td>
-                    <td>2.940</td>
-                    <td>2534%</td>
-                    <td>1.13729</td>
-                    <td>44%</td>
-                </tr>
-                <tr>
-                    <th>10</th>
-                    <td><b>PhpDi</b></td>
-                    <td>4.134</td>
-                    <td>3564%</td>
-                    <td>1.81339</td>
-                    <td>70%</td>
-                </tr>
-                <tr>
-                    <th>11</th>
+                    <th>12</th>
                     <td><b>Auryn</b></td>
-                    <td>5.032</td>
-                    <td>4338%</td>
-                    <td>1.62505</td>
-                    <td>62%</td>
+                    <td>1.254</td>
+                    <td>5700%</td>
+                    <td>1.748</td>
+                    <td>64%</td>
+                </tr>
+                <tr>
+                    <th>13</th>
+                    <td><b>Yaco</b></td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
                 </tr>
             </tbody>
         </table>
@@ -779,90 +1133,106 @@
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Symfony</b></td>
-                    <td>1.176</td>
+                    <td>0.162</td>
                     <td>100%</td>
-                    <td>2.60616</td>
+                    <td>2.729</td>
                     <td>100%</td>
                 </tr>
                 <tr>
                     <th>2</th>
                     <td><b>Zen</b></td>
-                    <td>1.636</td>
-                    <td>139%</td>
-                    <td>1.06596</td>
-                    <td>41%</td>
+                    <td>0.183</td>
+                    <td>113%</td>
+                    <td>1.176</td>
+                    <td>43%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>Disco</b></td>
-                    <td>4.042</td>
-                    <td>344%</td>
-                    <td>3.02912</td>
+                    <td>0.451</td>
+                    <td>278%</td>
+                    <td>3.154</td>
                     <td>116%</td>
                 </tr>
                 <tr>
                     <th>4</th>
                     <td><b>PHPixieDi</b></td>
-                    <td>4.172</td>
-                    <td>355%</td>
-                    <td>1.17572</td>
-                    <td>45%</td>
+                    <td>0.458</td>
+                    <td>283%</td>
+                    <td>1.176</td>
+                    <td>43%</td>
                 </tr>
                 <tr>
                     <th>5</th>
                     <td><b>ZendServiceManager</b></td>
-                    <td>7.043</td>
-                    <td>599%</td>
-                    <td>1.36623</td>
-                    <td>52%</td>
+                    <td>0.662</td>
+                    <td>409%</td>
+                    <td>1.298</td>
+                    <td>48%</td>
                 </tr>
                 <tr>
                     <th>6</th>
                     <td><b>Dice</b></td>
-                    <td>7.746</td>
-                    <td>659%</td>
-                    <td>1.23447</td>
-                    <td>47%</td>
+                    <td>0.694</td>
+                    <td>428%</td>
+                    <td>1.176</td>
+                    <td>43%</td>
                 </tr>
                 <tr>
                     <th>7</th>
                     <td><b>Pimple</b></td>
-                    <td>9.922</td>
-                    <td>844%</td>
-                    <td>1.26974</td>
-                    <td>49%</td>
+                    <td>0.982</td>
+                    <td>606%</td>
+                    <td>1.251</td>
+                    <td>46%</td>
                 </tr>
                 <tr>
                     <th>8</th>
                     <td><b>Aura</b></td>
-                    <td>12.700</td>
-                    <td>1080%</td>
-                    <td>1.26377</td>
-                    <td>48%</td>
+                    <td>1.246</td>
+                    <td>769%</td>
+                    <td>1.176</td>
+                    <td>43%</td>
                 </tr>
                 <tr>
                     <th>9</th>
-                    <td><b>Laravel</b></td>
-                    <td>32.257</td>
-                    <td>2743%</td>
-                    <td>1.13729</td>
-                    <td>44%</td>
+                    <td><b>OpulenceIoc</b></td>
+                    <td>2.028</td>
+                    <td>1252%</td>
+                    <td>1.176</td>
+                    <td>43%</td>
                 </tr>
                 <tr>
                     <th>10</th>
-                    <td><b>PhpDi</b></td>
-                    <td>45.860</td>
-                    <td>3900%</td>
-                    <td>1.81339</td>
-                    <td>70%</td>
+                    <td><b>Laravel</b></td>
+                    <td>3.147</td>
+                    <td>1943%</td>
+                    <td>1.176</td>
+                    <td>43%</td>
                 </tr>
                 <tr>
                     <th>11</th>
+                    <td><b>PhpDi</b></td>
+                    <td>4.185</td>
+                    <td>2583%</td>
+                    <td>1.272</td>
+                    <td>47%</td>
+                </tr>
+                <tr>
+                    <th>12</th>
                     <td><b>Auryn</b></td>
-                    <td>49.263</td>
-                    <td>4189%</td>
-                    <td>1.62505</td>
-                    <td>62%</td>
+                    <td>5.002</td>
+                    <td>3088%</td>
+                    <td>1.748</td>
+                    <td>64%</td>
+                </tr>
+                <tr>
+                    <th>13</th>
+                    <td><b>Yaco</b></td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
                 </tr>
             </tbody>
         </table>
@@ -883,98 +1253,236 @@
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Symfony</b></td>
-                    <td>12.890</td>
+                    <td>1.545</td>
                     <td>100%</td>
-                    <td>2.60616</td>
+                    <td>2.729</td>
                     <td>100%</td>
                 </tr>
                 <tr>
                     <th>2</th>
                     <td><b>Zen</b></td>
-                    <td>17.394</td>
-                    <td>135%</td>
-                    <td>1.06596</td>
-                    <td>41%</td>
+                    <td>1.695</td>
+                    <td>110%</td>
+                    <td>1.176</td>
+                    <td>43%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>Disco</b></td>
-                    <td>41.950</td>
-                    <td>325%</td>
-                    <td>3.02912</td>
+                    <td>3.696</td>
+                    <td>239%</td>
+                    <td>3.154</td>
                     <td>116%</td>
                 </tr>
                 <tr>
                     <th>4</th>
                     <td><b>PHPixieDi</b></td>
-                    <td>44.411</td>
-                    <td>345%</td>
-                    <td>1.17572</td>
-                    <td>45%</td>
+                    <td>4.279</td>
+                    <td>277%</td>
+                    <td>1.176</td>
+                    <td>43%</td>
                 </tr>
                 <tr>
                     <th>5</th>
-                    <td><b>ZendServiceManager</b></td>
-                    <td>73.204</td>
-                    <td>568%</td>
-                    <td>1.36623</td>
-                    <td>52%</td>
+                    <td><b>Dice</b></td>
+                    <td>6.835</td>
+                    <td>442%</td>
+                    <td>1.176</td>
+                    <td>43%</td>
                 </tr>
                 <tr>
                     <th>6</th>
-                    <td><b>Dice</b></td>
-                    <td>79.910</td>
-                    <td>620%</td>
-                    <td>1.23447</td>
-                    <td>47%</td>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>6.906</td>
+                    <td>447%</td>
+                    <td>1.298</td>
+                    <td>48%</td>
                 </tr>
                 <tr>
                     <th>7</th>
                     <td><b>Pimple</b></td>
-                    <td>96.631</td>
-                    <td>750%</td>
-                    <td>1.26974</td>
-                    <td>49%</td>
+                    <td>9.053</td>
+                    <td>586%</td>
+                    <td>1.251</td>
+                    <td>46%</td>
                 </tr>
                 <tr>
                     <th>8</th>
                     <td><b>Aura</b></td>
-                    <td>127.615</td>
-                    <td>990%</td>
-                    <td>1.26377</td>
-                    <td>48%</td>
+                    <td>12.08</td>
+                    <td>782%</td>
+                    <td>1.176</td>
+                    <td>43%</td>
                 </tr>
                 <tr>
                     <th>9</th>
+                    <td><b>OpulenceIoc</b></td>
+                    <td>21.037</td>
+                    <td>1362%</td>
+                    <td>1.176</td>
+                    <td>43%</td>
+                </tr>
+                <tr>
+                    <th>10</th>
                     <td><b>Laravel</b></td>
-                    <td>309.375</td>
-                    <td>2400%</td>
-                    <td>1.13729</td>
+                    <td>32.846</td>
+                    <td>2126%</td>
+                    <td>1.176</td>
+                    <td>43%</td>
+                </tr>
+                <tr>
+                    <th>11</th>
+                    <td><b>PhpDi</b></td>
+                    <td>42.624</td>
+                    <td>2759%</td>
+                    <td>1.272</td>
+                    <td>47%</td>
+                </tr>
+                <tr>
+                    <th>12</th>
+                    <td><b>Auryn</b></td>
+                    <td>45.238</td>
+                    <td>2928%</td>
+                    <td>1.748</td>
+                    <td>64%</td>
+                </tr>
+                <tr>
+                    <th>13</th>
+                    <td><b>Yaco</b></td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <h3>Test Suite 4: "Semi-Warm" Instantiation of a big object graph (100 objects)</h3>
+        <p>In this Test Suite, containers have to create an object graph of 100 objects (defined as Prototypes) 10, 100 and 1000
+times. Container autoloading time is excluded while startup time of the container and autoloading time of the retrieved
+objects are included in the measurements.</p>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">10 iterations, startup time included</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>Symfony</b></td>
+                    <td>0.129</td>
+                    <td>100%</td>
+                    <td>2.729</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>Zen</b></td>
+                    <td>0.176</td>
+                    <td>136%</td>
+                    <td>1.188</td>
+                    <td>44%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>PHPixieDi</b></td>
+                    <td>0.462</td>
+                    <td>358%</td>
+                    <td>1.294</td>
+                    <td>47%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>Disco</b></td>
+                    <td>0.493</td>
+                    <td>382%</td>
+                    <td>3.154</td>
+                    <td>116%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>0.679</td>
+                    <td>526%</td>
+                    <td>1.488</td>
+                    <td>55%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>Pimple</b></td>
+                    <td>1.021</td>
+                    <td>791%</td>
+                    <td>1.406</td>
+                    <td>52%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>Dice</b></td>
+                    <td>1.086</td>
+                    <td>842%</td>
+                    <td>1.591</td>
+                    <td>58%</td>
+                </tr>
+                <tr>
+                    <th>8</th>
+                    <td><b>Aura</b></td>
+                    <td>1.72</td>
+                    <td>1333%</td>
+                    <td>1.586</td>
+                    <td>58%</td>
+                </tr>
+                <tr>
+                    <th>9</th>
+                    <td><b>OpulenceIoc</b></td>
+                    <td>2.147</td>
+                    <td>1664%</td>
+                    <td>1.197</td>
                     <td>44%</td>
                 </tr>
                 <tr>
                     <th>10</th>
-                    <td><b>PhpDi</b></td>
-                    <td>421.020</td>
-                    <td>3266%</td>
-                    <td>1.81339</td>
-                    <td>70%</td>
+                    <td><b>Laravel</b></td>
+                    <td>3.173</td>
+                    <td>2460%</td>
+                    <td>1.256</td>
+                    <td>46%</td>
                 </tr>
                 <tr>
                     <th>11</th>
+                    <td><b>PhpDi</b></td>
+                    <td>5.166</td>
+                    <td>4005%</td>
+                    <td>2.017</td>
+                    <td>74%</td>
+                </tr>
+                <tr>
+                    <th>12</th>
                     <td><b>Auryn</b></td>
-                    <td>456.606</td>
-                    <td>3542%</td>
-                    <td>1.62505</td>
-                    <td>62%</td>
+                    <td>5.257</td>
+                    <td>4075%</td>
+                    <td>1.748</td>
+                    <td>64%</td>
+                </tr>
+                <tr>
+                    <th>13</th>
+                    <td><b>Yaco</b></td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
                 </tr>
             </tbody>
         </table>
-        </br>        <h3>Test Suite 3: Fetching the same small object graph (10 objects)</h3>
-        <p></p>        <table border="1">
+        </br>        <table border="1">
             <thead>
                 <tr>
-                    <th colspan="6" style="font-size: 18px;">10 000 iterations, startup time included</th>
+                    <th colspan="6" style="font-size: 18px;">100 iterations, startup time included</th>
                 </tr>
                 <tr>
                     <th style='width: 50px;'>Rank</th>
@@ -987,99 +1495,356 @@
             </thead>
             <tbody>                <tr>
                     <th>1</th>
-                    <td><b>ZendServiceManager</b></td>
-                    <td>1.043</td>
+                    <td><b>Symfony</b></td>
+                    <td>1.249</td>
                     <td>100%</td>
-                    <td>1.17706</td>
+                    <td>2.729</td>
                     <td>100%</td>
                 </tr>
                 <tr>
                     <th>2</th>
-                    <td><b>Aura</b></td>
-                    <td>1.081</td>
-                    <td>104%</td>
-                    <td>0.97253</td>
-                    <td>83%</td>
+                    <td><b>Zen</b></td>
+                    <td>1.755</td>
+                    <td>141%</td>
+                    <td>1.188</td>
+                    <td>44%</td>
                 </tr>
                 <tr>
                     <th>3</th>
-                    <td><b>Dice</b></td>
-                    <td>1.313</td>
-                    <td>126%</td>
-                    <td>0.97253</td>
-                    <td>83%</td>
+                    <td><b>Disco</b></td>
+                    <td>3.932</td>
+                    <td>315%</td>
+                    <td>3.154</td>
+                    <td>116%</td>
                 </tr>
                 <tr>
                     <th>4</th>
-                    <td><b>PhpDi</b></td>
-                    <td>1.426</td>
-                    <td>137%</td>
-                    <td>1.06949</td>
-                    <td>91%</td>
+                    <td><b>PHPixieDi</b></td>
+                    <td>4.328</td>
+                    <td>347%</td>
+                    <td>1.294</td>
+                    <td>47%</td>
                 </tr>
                 <tr>
                     <th>5</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>6.601</td>
+                    <td>529%</td>
+                    <td>1.488</td>
+                    <td>55%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>Dice</b></td>
+                    <td>7.89</td>
+                    <td>632%</td>
+                    <td>1.591</td>
+                    <td>58%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>Pimple</b></td>
+                    <td>9.425</td>
+                    <td>755%</td>
+                    <td>1.406</td>
+                    <td>52%</td>
+                </tr>
+                <tr>
+                    <th>8</th>
+                    <td><b>Aura</b></td>
+                    <td>13.765</td>
+                    <td>1102%</td>
+                    <td>1.586</td>
+                    <td>58%</td>
+                </tr>
+                <tr>
+                    <th>9</th>
+                    <td><b>OpulenceIoc</b></td>
+                    <td>22.744</td>
+                    <td>1821%</td>
+                    <td>1.197</td>
+                    <td>44%</td>
+                </tr>
+                <tr>
+                    <th>10</th>
+                    <td><b>Laravel</b></td>
+                    <td>34.38</td>
+                    <td>2753%</td>
+                    <td>1.256</td>
+                    <td>46%</td>
+                </tr>
+                <tr>
+                    <th>11</th>
+                    <td><b>Auryn</b></td>
+                    <td>47.47</td>
+                    <td>3801%</td>
+                    <td>1.748</td>
+                    <td>64%</td>
+                </tr>
+                <tr>
+                    <th>12</th>
+                    <td><b>PhpDi</b></td>
+                    <td>47.635</td>
+                    <td>3814%</td>
+                    <td>2.017</td>
+                    <td>74%</td>
+                </tr>
+                <tr>
+                    <th>13</th>
+                    <td><b>Yaco</b></td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">1000 iterations, startup time included</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>Symfony</b></td>
+                    <td>12.525</td>
+                    <td>100%</td>
+                    <td>2.729</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
                     <td><b>Zen</b></td>
-                    <td>1.688</td>
-                    <td>162%</td>
-                    <td>0.99624</td>
-                    <td>85%</td>
+                    <td>17.39</td>
+                    <td>139%</td>
+                    <td>1.188</td>
+                    <td>44%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>Disco</b></td>
+                    <td>38.516</td>
+                    <td>308%</td>
+                    <td>3.154</td>
+                    <td>116%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>PHPixieDi</b></td>
+                    <td>45.478</td>
+                    <td>363%</td>
+                    <td>1.294</td>
+                    <td>47%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>71.425</td>
+                    <td>570%</td>
+                    <td>1.488</td>
+                    <td>55%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>Dice</b></td>
+                    <td>79.532</td>
+                    <td>635%</td>
+                    <td>1.591</td>
+                    <td>58%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>Pimple</b></td>
+                    <td>96.801</td>
+                    <td>773%</td>
+                    <td>1.406</td>
+                    <td>52%</td>
+                </tr>
+                <tr>
+                    <th>8</th>
+                    <td><b>Aura</b></td>
+                    <td>132.556</td>
+                    <td>1058%</td>
+                    <td>1.586</td>
+                    <td>58%</td>
+                </tr>
+                <tr>
+                    <th>9</th>
+                    <td><b>OpulenceIoc</b></td>
+                    <td>213.638</td>
+                    <td>1706%</td>
+                    <td>1.197</td>
+                    <td>44%</td>
+                </tr>
+                <tr>
+                    <th>10</th>
+                    <td><b>Laravel</b></td>
+                    <td>323.648</td>
+                    <td>2584%</td>
+                    <td>1.256</td>
+                    <td>46%</td>
+                </tr>
+                <tr>
+                    <th>11</th>
+                    <td><b>PhpDi</b></td>
+                    <td>436.034</td>
+                    <td>3481%</td>
+                    <td>2.017</td>
+                    <td>74%</td>
+                </tr>
+                <tr>
+                    <th>12</th>
+                    <td><b>Auryn</b></td>
+                    <td>438.087</td>
+                    <td>3498%</td>
+                    <td>1.748</td>
+                    <td>64%</td>
+                </tr>
+                <tr>
+                    <th>13</th>
+                    <td><b>Yaco</b></td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <h3>Test Suite 5: "Warm" Fetching of the same small object graph (10 objects)</h3>
+        <p>In this Test Suite, containers have to fetch an object graph of 10 objects (defined as Singletons) 100, 1000 and 10 000
+times. Neither autoloading time, nor startup time are included in the measurements.</p>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">100 iterations, bootstrap time excluded</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>Zen</b></td>
+                    <td>0.025</td>
+                    <td>100%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>Yaco</b></td>
+                    <td>0.027</td>
+                    <td>108%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>0.039</td>
+                    <td>156%</td>
+                    <td>1.3</td>
+                    <td>111%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>Symfony</b></td>
+                    <td>0.04</td>
+                    <td>160%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>Dice</b></td>
+                    <td>0.058</td>
+                    <td>232%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
                 </tr>
                 <tr>
                     <th>6</th>
                     <td><b>Pimple</b></td>
-                    <td>2.135</td>
-                    <td>205%</td>
-                    <td>1.13239</td>
-                    <td>96%</td>
+                    <td>0.075</td>
+                    <td>300%</td>
+                    <td>1.251</td>
+                    <td>106%</td>
                 </tr>
                 <tr>
                     <th>7</th>
-                    <td><b>Symfony</b></td>
-                    <td>2.487</td>
-                    <td>238%</td>
-                    <td>0.97253</td>
-                    <td>83%</td>
+                    <td><b>Laravel</b></td>
+                    <td>0.081</td>
+                    <td>324%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
                 </tr>
                 <tr>
                     <th>8</th>
-                    <td><b>Laravel</b></td>
-                    <td>3.422</td>
-                    <td>328%</td>
-                    <td>0.97253</td>
-                    <td>83%</td>
+                    <td><b>PHPixieDi</b></td>
+                    <td>0.081</td>
+                    <td>324%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
                 </tr>
                 <tr>
                     <th>9</th>
-                    <td><b>PHPixieDi</b></td>
-                    <td>4.428</td>
-                    <td>425%</td>
-                    <td>0.97284</td>
-                    <td>83%</td>
+                    <td><b>OpulenceIoc</b></td>
+                    <td>0.102</td>
+                    <td>408%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
                 </tr>
                 <tr>
                     <th>10</th>
-                    <td><b>Disco</b></td>
-                    <td>4.494</td>
-                    <td>431%</td>
-                    <td>3.25108</td>
-                    <td>276%</td>
+                    <td><b>PhpDi</b></td>
+                    <td>0.118</td>
+                    <td>472%</td>
+                    <td>1.197</td>
+                    <td>102%</td>
                 </tr>
                 <tr>
                     <th>11</th>
+                    <td><b>Aura</b></td>
+                    <td>0.134</td>
+                    <td>536%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>12</th>
+                    <td><b>Disco</b></td>
+                    <td>0.138</td>
+                    <td>552%</td>
+                    <td>3.376</td>
+                    <td>287%</td>
+                </tr>
+                <tr>
+                    <th>13</th>
                     <td><b>Auryn</b></td>
-                    <td>6.455</td>
-                    <td>619%</td>
-                    <td>0.97253</td>
-                    <td>83%</td>
+                    <td>0.155</td>
+                    <td>620%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
                 </tr>
             </tbody>
         </table>
-        </br>        <h3>Test Suite 4: Fetching the same big object graph (100 objects)</h3>
-        <p></p>        <table border="1">
+        </br>        <table border="1">
             <thead>
                 <tr>
-                    <th colspan="6" style="font-size: 18px;">10 000 iterations, startup time included</th>
+                    <th colspan="6" style="font-size: 18px;">1000 iterations, bootstrap time excluded</th>
                 </tr>
                 <tr>
                     <th style='width: 50px;'>Rank</th>
@@ -1092,91 +1857,589 @@
             </thead>
             <tbody>                <tr>
                     <th>1</th>
-                    <td><b>ZendServiceManager</b></td>
-                    <td>1.036</td>
+                    <td><b>Yaco</b></td>
+                    <td>0.121</td>
                     <td>100%</td>
-                    <td>1.37943</td>
+                    <td>1.176</td>
                     <td>100%</td>
                 </tr>
                 <tr>
                     <th>2</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>0.133</td>
+                    <td>110%</td>
+                    <td>1.3</td>
+                    <td>111%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>Zen</b></td>
+                    <td>0.179</td>
+                    <td>148%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>Dice</b></td>
+                    <td>0.181</td>
+                    <td>150%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
                     <td><b>Aura</b></td>
-                    <td>1.114</td>
-                    <td>108%</td>
-                    <td>1.2949</td>
+                    <td>0.227</td>
+                    <td>188%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>PhpDi</b></td>
+                    <td>0.253</td>
+                    <td>209%</td>
+                    <td>1.197</td>
+                    <td>102%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>Pimple</b></td>
+                    <td>0.266</td>
+                    <td>220%</td>
+                    <td>1.251</td>
+                    <td>106%</td>
+                </tr>
+                <tr>
+                    <th>8</th>
+                    <td><b>Symfony</b></td>
+                    <td>0.289</td>
+                    <td>239%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>9</th>
+                    <td><b>Laravel</b></td>
+                    <td>0.417</td>
+                    <td>345%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>10</th>
+                    <td><b>PHPixieDi</b></td>
+                    <td>0.518</td>
+                    <td>428%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>11</th>
+                    <td><b>Disco</b></td>
+                    <td>0.53</td>
+                    <td>438%</td>
+                    <td>3.376</td>
+                    <td>287%</td>
+                </tr>
+                <tr>
+                    <th>12</th>
+                    <td><b>OpulenceIoc</b></td>
+                    <td>0.72</td>
+                    <td>595%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>13</th>
+                    <td><b>Auryn</b></td>
+                    <td>0.759</td>
+                    <td>627%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">10 000 iterations, bootstrap time excluded</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>Yaco</b></td>
+                    <td>1.035</td>
+                    <td>100%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>1.1</td>
+                    <td>106%</td>
+                    <td>1.3</td>
+                    <td>111%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>Aura</b></td>
+                    <td>1.182</td>
+                    <td>114%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>Dice</b></td>
+                    <td>1.419</td>
+                    <td>137%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>PhpDi</b></td>
+                    <td>1.612</td>
+                    <td>156%</td>
+                    <td>1.197</td>
+                    <td>102%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>Zen</b></td>
+                    <td>1.634</td>
+                    <td>158%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>Pimple</b></td>
+                    <td>2.14</td>
+                    <td>207%</td>
+                    <td>1.251</td>
+                    <td>106%</td>
+                </tr>
+                <tr>
+                    <th>8</th>
+                    <td><b>Symfony</b></td>
+                    <td>2.679</td>
+                    <td>259%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>9</th>
+                    <td><b>Laravel</b></td>
+                    <td>3.645</td>
+                    <td>352%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>10</th>
+                    <td><b>Disco</b></td>
+                    <td>4.451</td>
+                    <td>430%</td>
+                    <td>3.376</td>
+                    <td>287%</td>
+                </tr>
+                <tr>
+                    <th>11</th>
+                    <td><b>PHPixieDi</b></td>
+                    <td>4.591</td>
+                    <td>444%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>12</th>
+                    <td><b>OpulenceIoc</b></td>
+                    <td>6.727</td>
+                    <td>650%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>13</th>
+                    <td><b>Auryn</b></td>
+                    <td>6.838</td>
+                    <td>661%</td>
+                    <td>1.176</td>
+                    <td>100%</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <h3>Test Suite 6: "Warm" Fetching of the same big object graph (100 objects)</h3>
+        <p>In this Test Suite, containers have to fetch an object graph of 100 objects (defined as Singletons) 100, 1000 and 10 000
+times. Neither autoloading time, nor startup time are included in the measurements.</p>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">100 iterations, bootstrap time excluded</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>Zen</b></td>
+                    <td>0.049</td>
+                    <td>100%</td>
+                    <td>1.218</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>Yaco</b></td>
+                    <td>0.062</td>
+                    <td>127%</td>
+                    <td>1.292</td>
+                    <td>106%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>Symfony</b></td>
+                    <td>0.107</td>
+                    <td>218%</td>
+                    <td>1.31</td>
+                    <td>107%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>0.111</td>
+                    <td>227%</td>
+                    <td>1.515</td>
+                    <td>124%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>PHPixieDi</b></td>
+                    <td>0.112</td>
+                    <td>229%</td>
+                    <td>1.252</td>
+                    <td>103%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>Disco</b></td>
+                    <td>0.137</td>
+                    <td>280%</td>
+                    <td>3.376</td>
+                    <td>277%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>Pimple</b></td>
+                    <td>0.177</td>
+                    <td>361%</td>
+                    <td>1.405</td>
+                    <td>115%</td>
+                </tr>
+                <tr>
+                    <th>8</th>
+                    <td><b>OpulenceIoc</b></td>
+                    <td>0.304</td>
+                    <td>620%</td>
+                    <td>1.2</td>
+                    <td>99%</td>
+                </tr>
+                <tr>
+                    <th>9</th>
+                    <td><b>Laravel</b></td>
+                    <td>0.363</td>
+                    <td>741%</td>
+                    <td>1.256</td>
+                    <td>103%</td>
+                </tr>
+                <tr>
+                    <th>10</th>
+                    <td><b>Dice</b></td>
+                    <td>0.459</td>
+                    <td>937%</td>
+                    <td>1.651</td>
+                    <td>135%</td>
+                </tr>
+                <tr>
+                    <th>11</th>
+                    <td><b>Aura</b></td>
+                    <td>0.647</td>
+                    <td>1320%</td>
+                    <td>1.618</td>
+                    <td>133%</td>
+                </tr>
+                <tr>
+                    <th>12</th>
+                    <td><b>Auryn</b></td>
+                    <td>0.796</td>
+                    <td>1624%</td>
+                    <td>1.612</td>
+                    <td>132%</td>
+                </tr>
+                <tr>
+                    <th>13</th>
+                    <td><b>PhpDi</b></td>
+                    <td>0.899</td>
+                    <td>1835%</td>
+                    <td>1.946</td>
+                    <td>160%</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">1000 iterations, bootstrap time excluded</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>Yaco</b></td>
+                    <td>0.15</td>
+                    <td>100%</td>
+                    <td>1.292</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>Zen</b></td>
+                    <td>0.196</td>
+                    <td>131%</td>
+                    <td>1.218</td>
                     <td>94%</td>
                 </tr>
                 <tr>
                     <th>3</th>
-                    <td><b>Dice</b></td>
-                    <td>1.291</td>
-                    <td>125%</td>
-                    <td>1.26047</td>
-                    <td>91%</td>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>0.206</td>
+                    <td>137%</td>
+                    <td>1.515</td>
+                    <td>117%</td>
                 </tr>
                 <tr>
                     <th>4</th>
-                    <td><b>PhpDi</b></td>
-                    <td>1.463</td>
-                    <td>141%</td>
-                    <td>1.74042</td>
-                    <td>126%</td>
+                    <td><b>Symfony</b></td>
+                    <td>0.347</td>
+                    <td>231%</td>
+                    <td>1.31</td>
+                    <td>101%</td>
                 </tr>
                 <tr>
                     <th>5</th>
-                    <td><b>Zen</b></td>
-                    <td>1.561</td>
+                    <td><b>Pimple</b></td>
+                    <td>0.385</td>
+                    <td>257%</td>
+                    <td>1.405</td>
+                    <td>109%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>Disco</b></td>
+                    <td>0.525</td>
+                    <td>350%</td>
+                    <td>3.376</td>
+                    <td>261%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>PHPixieDi</b></td>
+                    <td>0.528</td>
+                    <td>352%</td>
+                    <td>1.252</td>
+                    <td>97%</td>
+                </tr>
+                <tr>
+                    <th>8</th>
+                    <td><b>Dice</b></td>
+                    <td>0.575</td>
+                    <td>383%</td>
+                    <td>1.651</td>
+                    <td>128%</td>
+                </tr>
+                <tr>
+                    <th>9</th>
+                    <td><b>Laravel</b></td>
+                    <td>0.681</td>
+                    <td>454%</td>
+                    <td>1.256</td>
+                    <td>97%</td>
+                </tr>
+                <tr>
+                    <th>10</th>
+                    <td><b>Aura</b></td>
+                    <td>0.759</td>
+                    <td>506%</td>
+                    <td>1.618</td>
+                    <td>125%</td>
+                </tr>
+                <tr>
+                    <th>11</th>
+                    <td><b>OpulenceIoc</b></td>
+                    <td>0.919</td>
+                    <td>613%</td>
+                    <td>1.2</td>
+                    <td>93%</td>
+                </tr>
+                <tr>
+                    <th>12</th>
+                    <td><b>PhpDi</b></td>
+                    <td>1.028</td>
+                    <td>685%</td>
+                    <td>1.946</td>
                     <td>151%</td>
-                    <td>1.09679</td>
-                    <td>80%</td>
+                </tr>
+                <tr>
+                    <th>13</th>
+                    <td><b>Auryn</b></td>
+                    <td>1.423</td>
+                    <td>949%</td>
+                    <td>1.612</td>
+                    <td>125%</td>
+                </tr>
+            </tbody>
+        </table>
+        </br>        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="6" style="font-size: 18px;">10 000 iterations, bootstrap time excluded</th>
+                </tr>
+                <tr>
+                    <th style='width: 50px;'>Rank</th>
+                    <th style='width: 175px;'>Container</th>
+                    <th style='width: 100px;'>Time (ms)</th>
+                    <th style='width: 100px;'>Time (%)</th>
+                    <th style='width: 175px;'>Peak Memory (MB)</th>
+                    <th style='width: 150px;'>Peak Memory (%)</th>
+                </tr>
+            </thead>
+            <tbody>                <tr>
+                    <th>1</th>
+                    <td><b>Yaco</b></td>
+                    <td>1.049</td>
+                    <td>100%</td>
+                    <td>1.292</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><b>ZendServiceManager</b></td>
+                    <td>1.17</td>
+                    <td>112%</td>
+                    <td>1.515</td>
+                    <td>117%</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><b>Zen</b></td>
+                    <td>1.659</td>
+                    <td>158%</td>
+                    <td>1.218</td>
+                    <td>94%</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><b>Aura</b></td>
+                    <td>1.726</td>
+                    <td>165%</td>
+                    <td>1.618</td>
+                    <td>125%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>Dice</b></td>
+                    <td>1.799</td>
+                    <td>171%</td>
+                    <td>1.651</td>
+                    <td>128%</td>
                 </tr>
                 <tr>
                     <th>6</th>
                     <td><b>Pimple</b></td>
-                    <td>2.231</td>
-                    <td>215%</td>
-                    <td>1.27994</td>
-                    <td>93%</td>
+                    <td>2.237</td>
+                    <td>213%</td>
+                    <td>1.405</td>
+                    <td>109%</td>
                 </tr>
                 <tr>
                     <th>7</th>
-                    <td><b>Symfony</b></td>
-                    <td>2.478</td>
-                    <td>239%</td>
-                    <td>1.12527</td>
-                    <td>82%</td>
+                    <td><b>PhpDi</b></td>
+                    <td>2.393</td>
+                    <td>228%</td>
+                    <td>1.946</td>
+                    <td>151%</td>
                 </tr>
                 <tr>
                     <th>8</th>
-                    <td><b>Laravel</b></td>
-                    <td>3.429</td>
-                    <td>331%</td>
-                    <td>1.13729</td>
-                    <td>82%</td>
+                    <td><b>Symfony</b></td>
+                    <td>2.735</td>
+                    <td>261%</td>
+                    <td>1.31</td>
+                    <td>101%</td>
                 </tr>
                 <tr>
                     <th>9</th>
-                    <td><b>PHPixieDi</b></td>
-                    <td>4.514</td>
-                    <td>436%</td>
-                    <td>1.16287</td>
-                    <td>84%</td>
+                    <td><b>Laravel</b></td>
+                    <td>3.951</td>
+                    <td>377%</td>
+                    <td>1.256</td>
+                    <td>97%</td>
                 </tr>
                 <tr>
                     <th>10</th>
                     <td><b>Disco</b></td>
-                    <td>5.346</td>
-                    <td>516%</td>
-                    <td>3.25108</td>
-                    <td>236%</td>
+                    <td>4.554</td>
+                    <td>434%</td>
+                    <td>3.376</td>
+                    <td>261%</td>
                 </tr>
                 <tr>
                     <th>11</th>
+                    <td><b>PHPixieDi</b></td>
+                    <td>4.747</td>
+                    <td>453%</td>
+                    <td>1.252</td>
+                    <td>97%</td>
+                </tr>
+                <tr>
+                    <th>12</th>
+                    <td><b>OpulenceIoc</b></td>
+                    <td>6.825</td>
+                    <td>651%</td>
+                    <td>1.2</td>
+                    <td>93%</td>
+                </tr>
+                <tr>
+                    <th>13</th>
                     <td><b>Auryn</b></td>
-                    <td>7.111</td>
-                    <td>686%</td>
-                    <td>1.48856</td>
-                    <td>108%</td>
+                    <td>7.545</td>
+                    <td>719%</td>
+                    <td>1.612</td>
+                    <td>125%</td>
                 </tr>
             </tbody>
         </table>
@@ -1187,9 +2450,7 @@
                 My hypothesis was that different types of containers have significantly different performance
                 characteristics. It can be concluded by looking at the results that the hypothesis can't be rejected as
                 it seems that the more user-friendly a container is (dynamic &gt; compiled, dynamic with autowiring
-                &gt; dynamic without autowiring) the slower it is when creating objects (first 2 test suites). For
-                tasks when a container has to retrieve objects that were created in advance (last 2 test suites),
-                usually other factors affect performance (basically how optimized a container is for this purpose).
+                &gt; dynamic without autowiring) the slower it is.
             </p>
 
             <p>

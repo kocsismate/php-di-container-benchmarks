@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "11639cdd7260387a6045afadf2e2068e",
+    "content-hash": "4faf0bd4b0ce4b8284d59aa2b22bfcae",
     "packages": [
         {
             "name": "aura/di",
@@ -449,12 +449,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "a6c5128b46383fed416925f1b7d2bcba68e8595a"
+                "reference": "57c7fe6a7d20cded71e8823133ad64771bb4af78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/a6c5128b46383fed416925f1b7d2bcba68e8595a",
-                "reference": "a6c5128b46383fed416925f1b7d2bcba68e8595a",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/57c7fe6a7d20cded71e8823133ad64771bb4af78",
+                "reference": "57c7fe6a7d20cded71e8823133ad64771bb4af78",
                 "shasum": ""
             },
             "require": {
@@ -483,7 +483,7 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "https://laravel.com",
-            "time": "2017-01-02 20:15:25"
+            "time": "2017-01-10 22:03:56"
         },
         {
             "name": "jeremeamia/SuperClosure",

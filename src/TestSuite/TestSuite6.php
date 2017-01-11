@@ -14,12 +14,15 @@ class TestSuite6 implements TestSuiteInterface
 
     public function getTitle(): string
     {
-        return "\"Warm\" Fetching the same big object graph (100 objects)";
+        return "\"Warm\" Fetching of the same big object graph (100 objects)";
     }
 
     public function getDescription(): string
     {
-        return "";
+        return <<<HERE
+In this Test Suite, containers have to fetch an object graph of 100 objects (defined as Singletons) 100, 1000 and 10 000
+times. Neither autoloading time, nor startup time are included in the measurements.
+HERE;
     }
 
     public function getTestCases(): array
