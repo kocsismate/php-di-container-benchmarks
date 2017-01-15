@@ -90,8 +90,6 @@ class Benchmark
                 echo "Test failed:\n";
                 var_dump($output);
                 break;
-            } else {
-                echo "Result:" . $result->getTimeConsumptionInMilliSeconds() . "\n";
             }
         }
 
