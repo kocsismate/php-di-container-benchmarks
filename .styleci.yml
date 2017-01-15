@@ -6,6 +6,9 @@ linting: true
 
 finder:
   path:
+    - "app"
+    - "bin"
+    - "public"
     - "src"
 
 enabled:

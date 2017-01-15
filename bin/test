@@ -18,6 +18,4 @@ $testType = $argv[4];
 $testRunner = new TestRunner();
 $result = $testRunner->runTest($testSuiteNumber, $container, $iterations, $testType);
 
-if ($result) {
-    echo $result->toJson();
-}
+echo $result->toJson();
