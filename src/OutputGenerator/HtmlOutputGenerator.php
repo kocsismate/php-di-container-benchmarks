@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace DiContainerBenchmarks\Outputter;
+namespace DiContainerBenchmarks\OutputGenerator;
 
 use DiContainerBenchmarks\Benchmark\BenchmarkResult;
 use DiContainerBenchmarks\Container\ContainerInterface;
 use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
 
-class HtmlOutputter implements OutputterInterface
+class HtmlOutputGenerator implements OutputGeneratorInterface
 {
     /**
      * @var string
@@ -23,7 +23,7 @@ class HtmlOutputter implements OutputterInterface
      * @param TestSuiteInterface[] $testSuites
      * @param ContainerInterface[] $containers
      */
-    public function output(array $testSuites, array $containers, BenchmarkResult $benchmarkResult): void
+    public function generateOutput(array $testSuites, array $containers, BenchmarkResult $benchmarkResult): void
     {
         $now = date("Y-m-d H:i:s");
 
@@ -170,7 +170,7 @@ HERE;
                 or to instantiate objects only at the first retrieval and return the same instance on the subsequent
                 calls (which is usually referred as Singleton scope or shared services).
             </p>
-            <p>    
+            <p>
                 There are 3 main types of the Test Suites: "Cold" ones (Test Suite 1-2) measure performance including
                 autoloading and startup time of containers as well as autoloading time of the retrieved objects.
                 "Semi-Warm" ones (Test Suite 3-4) measure performance excluding container autoloading time, but
@@ -183,7 +183,7 @@ HERE;
                 order to improve the stability of the measurements.
             </p>
             <p>
-                The benchmark is run on a 15-inch MacBook Pro from 2015 using PHP 7.1. The examined
+                The benchmark is run on a 15-inch MacBook Pro from 2015 using PHP 7.1 (with opcache enabled). The examined
                 DI Containers are configured for production usage as if it was probably done in case of a big project.
                 That's why I took advantage of autowiring capabilities when possible. Unfortunately, this
                 discriminates some participants giving them a big handicap, but I wanted to measure container

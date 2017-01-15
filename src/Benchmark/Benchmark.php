@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace DiContainerBenchmarks\Benchmark;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
-use DiContainerBenchmarks\Outputter\OutputterInterface;
+use DiContainerBenchmarks\OutputGenerator\OutputGeneratorInterface;
 use DiContainerBenchmarks\Test\TestCase;
 use DiContainerBenchmarks\Test\TestResult;
 use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
@@ -12,20 +12,26 @@ use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
 class Benchmark
 {
     /**
+     * @var BenchmarkContextInterface
+     */
+    private $context;
+
+    public function __construct(BenchmarkContextInterface $context)
+    {
+        $this->context = $context;
+    }
+
+    /**
      * @param TestSuiteInterface[] $testSuites
      * @param ContainerInterface[] $containers
-     * @param OutputterInterface[] $outputters
+     * @param OutputGeneratorInterface[] $outputGenerators
      */
-    public function runBenchmark(array $testSuites, array $containers, array $outputters): void
+    public function runBenchmark(array $testSuites, array $containers, array $outputGenerators): void
     {
         $benchmarkResult = new BenchmarkResult();
 
-        echo "Building containers...\n";
-        foreach ($containers as $container) {
-            $container->build();
-        }
-
-        exec("composer dump-autoload --working-dir=" . PROJECT_ROOT . " --classmap-authoritative");
+        $this->buildContainers($containers);
+        $this->dumpAutoloader();
 
         foreach ($testSuites as $testSuite) {
             foreach ($testSuite->getTestCases() as $testCase) {
@@ -36,12 +42,27 @@ class Benchmark
         }
 
         echo "Generating results...\n";
-
-        foreach ($outputters as $outputter) {
-            $outputter->output($testSuites, $containers, $benchmarkResult);
+        foreach ($outputGenerators as $outputGenerator) {
+            $outputGenerator->generateOutput($testSuites, $containers, $benchmarkResult);
         }
 
         echo "Benchmark finished successfully!\n";
+    }
+
+    /**
+     * @param ContainerInterface[] $containers
+     */
+    private function buildContainers(array $containers): void
+    {
+        echo "Building containers...\n";
+        foreach ($containers as $container) {
+            $container->build();
+        }
+    }
+
+    private function dumpAutoloader(): void
+    {
+        exec("composer dump-autoload --working-dir=" . PROJECT_ROOT . " --classmap-authoritative");
     }
 
     private function runTest(
@@ -50,30 +71,30 @@ class Benchmark
         ContainerInterface $container,
         BenchmarkResult $benchmarkResult
     ): void {
+
         for ($run = 0; $run < 10; $run++) {
-            echo "Running test " . $testSuite->getNumber() . "." . $testCase->getNumber() .
+            echo "Running " . $this->context->getName() . " test " .
+                $testSuite->getNumber() . "." . $testCase->getNumber() .
                 " (" . $container->getName() . '): ' . ($run+1) . "/10\n";
 
             $number = $testSuite->getNumber();
             $containerName = $container->getName();
             $iterations = $testCase->getIterations();
-            $testType = (int) $testCase->getTestType();
-            $output = [];
+            $testType = $testCase->getTestType();
 
-            exec(
-                PROJECT_ROOT . "/bin/test $number $containerName $iterations $testType",
-                $output,
-                $code
-            );
+            $output = $this->context->getTestOutput($number, $containerName, $iterations, $testType);
+            $result = TestResult::createFromJson($output);
+            $benchmarkResult->addTestResult($testSuite, $testCase, $container, $result);
 
-            $testResult = TestResult::createFromJson($output[0] ?? "");
-            $benchmarkResult->addTestResult($testSuite, $testCase, $container, $testResult);
-
-            if ($code !== 0) {
+            if ($result->isSuccessful() === false) {
                 echo "Test failed:\n";
                 var_dump($output);
                 break;
+            } else {
+                echo "Result:" . $result->getTimeConsumptionInMilliSeconds() . "\n";
             }
         }
+
+        usleep(400000);
     }
 }

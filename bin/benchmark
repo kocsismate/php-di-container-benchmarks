@@ -5,6 +5,8 @@ declare(strict_types=1);
 require __DIR__ . "/../app/bootstrap.php";
 
 use DiContainerBenchmarks\Benchmark\Benchmark;
+use DiContainerBenchmarks\Benchmark\CliBenchmarkContext;
+use DiContainerBenchmarks\Benchmark\WebBenchmarkContext;
 use DiContainerBenchmarks\Container\Aura\AuraContainer;
 use DiContainerBenchmarks\Container\Auryn\AurynContainer;
 use DiContainerBenchmarks\Container\Dice\DiceContainer;
@@ -18,7 +20,7 @@ use DiContainerBenchmarks\Container\Symfony\SymfonyContainer;
 use DiContainerBenchmarks\Container\Yaco\YacoContainer;
 use DiContainerBenchmarks\Container\Zen\ZenContainer;
 use DiContainerBenchmarks\Container\ZendServiceManager\ZendServiceManagerContainer;
-use DiContainerBenchmarks\Outputter\HtmlOutputter;
+use DiContainerBenchmarks\OutputGenerator\HtmlOutputGenerator;
 use DiContainerBenchmarks\TestSuite\TestSuite1;
 use DiContainerBenchmarks\TestSuite\TestSuite2;
 use DiContainerBenchmarks\TestSuite\TestSuite3;
@@ -51,9 +53,12 @@ $containers = [
     new ZendServiceManagerContainer(),
 ];
 
-$outputters = [
-    new HtmlOutputter(PROJECT_ROOT . "/var/benchmark.html"),
+$outputGenerators = [
+    new HtmlOutputGenerator(PROJECT_ROOT . "/var/benchmark.html"),
 ];
 
-$benchmark = new Benchmark();
-$benchmark->runBenchmark($testSuites, $containers, $outputters);
+$benchmark = new Benchmark(
+    (bool) getenv("WEB_BENCHMARK") ? new WebBenchmarkContext() : new CliBenchmarkContext()
+);
+
+$benchmark->runBenchmark($testSuites, $containers, $outputGenerators);

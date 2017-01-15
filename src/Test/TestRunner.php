@@ -13,13 +13,13 @@ class TestRunner
     ): TestResult {
         $class = "DiContainerBenchmarks\\Container\\$container\\Test$testSuiteNumber";
         if (class_exists($class) === false) {
-            return new TestResult(null, null);
+            return TestResult::createUnsuccessful();
         }
 
         /** @var TestInterface $test */
         $test = new $class();
         if ($test instanceof TestInterface === false) {
-            return new TestResult(null, null);
+            return TestResult::createUnsuccessful();
         }
 
         if ($testType === TestCase::COLD) {
@@ -45,7 +45,7 @@ class TestRunner
 
         $t2 = microtime(true);
 
-        return TestResult::create($t1, $t2, memory_get_peak_usage());
+        return TestResult::createFromMeasurement($t1, $t2, memory_get_peak_usage());
     }
 
     private function runSemiWarmTest(TestInterface $test, int $iterations): TestResult
@@ -61,7 +61,7 @@ class TestRunner
 
         $t2 = microtime(true);
 
-        return TestResult::create($t1, $t2, memory_get_peak_usage());
+        return TestResult::createFromMeasurement($t1, $t2, memory_get_peak_usage());
     }
 
     private function runWarmTest(TestInterface $test, int $iterations): TestResult
@@ -71,13 +71,12 @@ class TestRunner
 
         $t1 = microtime(true);
 
-        $test->startup();
         for ($i = 0; $i < $iterations; $i++) {
             $test->run();
         }
 
         $t2 = microtime(true);
 
-        return TestResult::create($t1, $t2, memory_get_peak_usage());
+        return TestResult::createFromMeasurement($t1, $t2, memory_get_peak_usage());
     }
 }

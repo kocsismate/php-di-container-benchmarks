@@ -55,7 +55,7 @@ class BenchmarkResult
                 $memoryResults[] = $item->getPeakMemoryUsageInMegaBytes();
             }
 
-            $results[$containerName] = new TestResult(
+            $results[$containerName] = TestResult::createFromValues(
                 $this->getAverage($timeResults),
                 $this->getAverage($memoryResults)
             );

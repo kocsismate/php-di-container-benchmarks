@@ -15,6 +15,11 @@ class TestResult
      */
     private $peakMemoryUsage;
 
+    public static function createUnsuccessful(): TestResult
+    {
+        return new TestResult(null, null);
+    }
+
     public static function createFromJson(string $json): TestResult
     {
         $result = json_decode($json, true);
@@ -26,25 +31,25 @@ class TestResult
         return new TestResult($result["time"], $result["memory"]);
     }
 
-    public static function create(float $startTime, float $endTime, int $peakMemoryUsageInBytes): TestResult
-    {
-        return new TestResult(($endTime - $startTime) * 1000, $peakMemoryUsageInBytes / 1024 / 1024);
+    public static function createFromMeasurement(
+        float $startTime,
+        float $endTime,
+        int $peakMemoryUsageInBytes
+    ): TestResult {
+        return new TestResult(($endTime - $startTime) * 1000, $peakMemoryUsageInBytes / 1024 / 1024, true);
     }
 
-    public function __construct(?float $timeConsumptionInMilliseconds, ?float $peakMemoryUsageInMegaBytes)
+    public static function createFromValues(
+        ?float $timeConsumptionInMilliseconds,
+        ?float $peakMemoryUsageInMegaBytes
+    ): TestResult {
+        return new TestResult($timeConsumptionInMilliseconds, $peakMemoryUsageInMegaBytes);
+    }
+
+    private function __construct(?float $timeConsumptionInMilliseconds, ?float $peakMemoryUsageInMegaBytes)
     {
         $this->timeConsumption = $timeConsumptionInMilliseconds;
         $this->peakMemoryUsage = $peakMemoryUsageInMegaBytes;
-    }
-
-    public function toJson(): string
-    {
-        return json_encode(
-            [
-                "time" => $this->timeConsumption,
-                "memory" => $this->peakMemoryUsage,
-            ]
-        );
     }
 
     public function getTimeConsumptionInMilliSeconds(): ?float
@@ -55,5 +60,20 @@ class TestResult
     public function getPeakMemoryUsageInMegaBytes(): ?float
     {
         return $this->peakMemoryUsage;
+    }
+
+    public function isSuccessful(): bool
+    {
+        return $this->timeConsumption !== null && $this->peakMemoryUsage !== null;
+    }
+
+    public function toJson(): string
+    {
+        return json_encode(
+            [
+                "time" => $this->timeConsumption,
+                "memory" => $this->peakMemoryUsage,
+            ]
+        );
     }
 }

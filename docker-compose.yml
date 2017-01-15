@@ -1,10 +1,44 @@
 version: '2'
 
 services:
-  php:
+  cli:
     image: woohoolabs/php:3.1.4
+    container_name: benchmark-cli
+    networks:
+      - benchmark
     volumes:
       - .:/code
     env_file:
       - .env
-    command: /bin/bash -c "/code/build/container/php/run.sh"
+    command: /bin/bash -c "/code/build/container/cli/run.sh"
+    depends_on:
+      - nginx
+
+  nginx:
+    image: nginx:1.11.8
+    container_name: benchmark-nginx
+    networks:
+      - benchmark
+    volumes:
+      - .:/code
+    ports:
+      - "8090:80"
+    env_file:
+      - .env
+    command: /bin/bash -c "/code/build/container/nginx/run.sh"
+    depends_on:
+      - fpm
+
+  fpm:
+    image: woohoolabs/php:3.1.4
+    container_name: benchmark-fpm
+    networks:
+      - benchmark
+    volumes:
+      - .:/code
+    env_file:
+      - .env
+    command: /bin/bash -c "/code/build/container/fpm/run.sh"
+
+networks:
+  benchmark:
