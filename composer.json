@@ -1,6 +1,6 @@
 {
     "name": "kocsismate/di-container-benchmarks",
-    "description": "Benchmarks of PHP DI Contaners",
+    "description": "Benchmarks of some popular PHP DI Contaners",
     "license": "MIT",
     "homepage": "https://github.com/kocsismate/php-di-benchmarks",
     "keywords": ["Dependency Injection Container benchmarks", "Dependency Injection Container performance", "DI"],
@@ -22,12 +22,14 @@
         "php-di/php-di": "^5.4.0",
         "phpixie/di": "^3.2.0",
         "pimple/pimple": "^3.0.2",
+        "psr/container": "^1.0.0@dev",
         "rdlowrey/auryn": "^1.4.0",
         "symfony/config": "^3.2.1",
         "symfony/dependency-injection": "^3.2.1",
         "thecodingmachine/yaco": "^0.4.1",
-        "woohoolabs/zen": "^1.2.2",
-        "zendframework/zend-servicemanager": "^3.2.0"
+        "woohoolabs/zen": "dev-master as 1.3.0",
+        "zendframework/zend-servicemanager": "^3.2.0",
+        "symfony/process": "^3.2"
     },
     "autoload": {
         "psr-4": {

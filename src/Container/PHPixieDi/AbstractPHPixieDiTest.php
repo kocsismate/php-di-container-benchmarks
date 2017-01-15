@@ -3,9 +3,6 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\PHPixieDi;
 
-use DiContainerBenchmarks\Fixture\Class1;
-use DiContainerBenchmarks\Fixture\Class10;
-use DiContainerBenchmarks\Fixture\Class100;
 use DiContainerBenchmarks\Test\TestInterface;
 use PHPixie\DI\Container\Root as RootContainer;
 

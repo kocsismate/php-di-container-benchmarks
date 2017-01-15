@@ -6,7 +6,7 @@ namespace DiContainerBenchmarks\Container\Zen;
 use DiContainerBenchmarks\Container\Zen\Resource\CompiledPrototypeContainer;
 use DiContainerBenchmarks\Container\Zen\Resource\CompiledSingletonContainer;
 use DiContainerBenchmarks\Test\TestInterface;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 
 abstract class AbstractZenTest implements TestInterface
 {

@@ -6,12 +6,12 @@ namespace DiContainerBenchmarks\Container\Symfony;
 use DiContainerBenchmarks\Container\Symfony\Resource\CompiledPrototypeContainer;
 use DiContainerBenchmarks\Container\Symfony\Resource\CompiledSingletonContainer;
 use DiContainerBenchmarks\Test\TestInterface;
-use Interop\Container\ContainerInterface;
+use Symfony\Component\DependencyInjection\Container;
 
 abstract class AbstractSymfonyTest implements TestInterface
 {
     /**
-     * @var ContainerInterface
+     * @var Container
      */
     protected $container;
 

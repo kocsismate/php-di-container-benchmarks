@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\PHPixieDi\Container;
 
-use PHPixie\DI\Container\Root;
 use DiContainerBenchmarks\Fixture;
+use PHPixie\DI\Container\Root;
 
 class SingletonContainer extends Root
 {

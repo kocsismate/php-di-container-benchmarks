@@ -117,19 +117,19 @@ abstract class AbstractZendServiceManagerTest implements TestInterface
 
     protected function setContainerWithPrototypeServices(): void
     {
-        // Generated with:
-        // for ($i = 1; $i <= 100; $i++) {
-        // echo "use DiContainerBenchmarks\\Fixture\\Constructor\\Class" . $i . ";\n";
-        // }
+        /* Generated with:
+           for ($i = 1; $i <= 100; $i++) {
+               echo "use DiContainerBenchmarks\\Fixture\\Constructor\\Class" . $i . ";\n";
+           }
 
-        // echo "[\n";
-        // for ($i = 1; $i <= 100; $i++) {
-        // echo "    Class" . $i . "::class => function(ContainerInterface \$container) {\n";
-        // echo "        return new Class" . $i . "(\$container->get(Class" . ($i-1) . "::class));\n";
-        // echo "    },\n";
-        // }
-        // echo "]\n";
-
+           echo "[\n";
+           for ($i = 1; $i <= 100; $i++) {
+               echo "    Class" . $i . "::class => function(ContainerInterface \$container) {\n";
+               echo "        return new Class" . $i . "(\$container->get(Class" . ($i-1) . "::class));\n";
+               echo "    },\n";
+           }
+           echo "]\n";
+        */
         $serviceManager = new ServiceManager(
             [
                 "factories" => [
@@ -441,19 +441,19 @@ abstract class AbstractZendServiceManagerTest implements TestInterface
 
     protected function setContainerWithSingletonServices(): void
     {
-        // Generated with:
-        // for ($i = 1; $i <= 100; $i++) {
-        // echo "use DiContainerBenchmarks\\Fixture\\Constructor\\Class" . $i . ";\n";
-        // }
+        /* Generated with:
+           for ($i = 1; $i <= 100; $i++) {
+               echo "use DiContainerBenchmarks\\Fixture\\Constructor\\Class" . $i . ";\n";
+           }
 
-        // echo "[\n";
-        // for ($i = 1; $i <= 100; $i++) {
-        // echo "    Class" . $i . "::class => function(ContainerInterface \$container) {\n";
-        // echo "        return new Class" . $i . "(\$container->get(Class" . ($i-1) . "::class));\n";
-        // echo "    },\n";
-        // }
-        // echo "]\n";
-
+           echo "[\n";
+           for ($i = 1; $i <= 100; $i++) {
+               echo "    Class" . $i . "::class => function(ContainerInterface \$container) {\n";
+               echo "        return new Class" . $i . "(\$container->get(Class" . ($i-1) . "::class));\n";
+               echo "    },\n";
+           }
+           echo "]\n";
+        */
         $serviceManager = new ServiceManager(
             [
                 "factories" => [

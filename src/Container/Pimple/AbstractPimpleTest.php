@@ -115,16 +115,17 @@ abstract class AbstractPimpleTest implements TestInterface
 
     protected function setContainerWithPrototypeServices(): void
     {
-        // Generated with:
-        // for ($i = 1; $i <= 100; $i++) {
-        //   echo "use DiContainerBenchmarks\\Fixture\\Constructor\\Class" . $i . ";\n";
-        // }
-        //
-        // for ($i = 1; $i <= 100; $i++) {
-        //   echo "\$container[Class" . $i . "::class] = \$container->factory(function (\$container) {\n";
-        //   echo "    return new Class" . $i . "(\$container[Class" . ($i-1) . "::class]);\n";
-        //   echo "});\n\n";
-        // }
+        /* Generated with:
+           for ($i = 1; $i <= 100; $i++) {
+               echo "use DiContainerBenchmarks\\Fixture\\Constructor\\Class" . $i . ";\n";
+           }
+
+           for ($i = 1; $i <= 100; $i++) {
+               echo "\$container[Class" . $i . "::class] = \$container->factory(function (\$container) {\n";
+               echo "    return new Class" . $i . "(\$container[Class" . ($i-1) . "::class]);\n";
+               echo "});\n\n";
+           }
+        */
         $container = new Container();
 
         $container[Class1::class] = $container->factory(function () {
@@ -532,19 +533,20 @@ abstract class AbstractPimpleTest implements TestInterface
 
     protected function setContainerWithSingletonServices(): void
     {
-        // Generated with:
-        // for ($i = 1; $i <= 100; $i++) {
-        //   echo "use DiContainerBenchmarks\\Fixture\\Constructor\\Class" . $i . ";\n";
-        // }
-        //
-        // for ($i = 1; $i <= 100; $i++) {
-        //   echo "\$container[Class" . $i . "::class] = function (\$container) {\n";
-        //   echo "    return new Class" . $i . "(\$container[Class" . ($i-1) . "::class]);\n";
-        //   echo "};\n\n";
-        // }
+        /* Generated with:
+           for ($i = 1; $i <= 100; $i++) {
+               echo "use DiContainerBenchmarks\\Fixture\\Constructor\\Class" . $i . ";\n";
+           }
+
+           for ($i = 1; $i <= 100; $i++) {
+               echo "\$container[Class" . $i . "::class] = function (\$container) {\n";
+               echo "    return new Class" . $i . "(\$container[Class" . ($i-1) . "::class]);\n";
+               echo "};\n\n";
+           }
+        */
         $container = new Container();
 
-        $container[Class1::class] = function ($container) {
+        $container[Class1::class] = function () {
             return new Class1();
         };
 

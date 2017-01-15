@@ -3,8 +3,8 @@ declare(strict_types = 1);
 
 namespace DiContainerBenchmarks\Container\Disco\Resource;
 
-use bitExpert\Disco\Annotations\Bean;
 use bitExpert\Disco\Annotations\Configuration;
+use bitExpert\Disco\Annotations\Bean;
 use DiContainerBenchmarks\Fixture\Class1;
 use DiContainerBenchmarks\Fixture\Class10;
 use DiContainerBenchmarks\Fixture\Class100;
@@ -124,7 +124,6 @@ use DiContainerBenchmarks\Fixture\Class99;
 //     }
 //     echo "    }\n\n";
 // }
-
 
 /**
  * @Configuration

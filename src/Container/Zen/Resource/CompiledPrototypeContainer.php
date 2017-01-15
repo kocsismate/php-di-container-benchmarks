@@ -8,8 +8,9 @@ class CompiledPrototypeContainer extends AbstractContainer
     /**
      * @var string[]
      */
-    protected $entryPoints = [
-        \Interop\Container\ContainerInterface::class => 'Interop__Container__ContainerInterface',
+    protected static $entryPoints = [
+        \DiContainerBenchmarks\Container\Zen\Resource\CompiledPrototypeContainer::class => 'DiContainerBenchmarks__Container__Zen__Resource__CompiledPrototypeContainer',
+        \Psr\Container\ContainerInterface::class => 'Psr__Container__ContainerInterface',
         \DiContainerBenchmarks\Fixture\Class1::class => 'DiContainerBenchmarks__Fixture__Class1',
         \DiContainerBenchmarks\Fixture\Class10::class => 'DiContainerBenchmarks__Fixture__Class10',
         \DiContainerBenchmarks\Fixture\Class100::class => 'DiContainerBenchmarks__Fixture__Class100',
@@ -112,9 +113,16 @@ class CompiledPrototypeContainer extends AbstractContainer
         \DiContainerBenchmarks\Fixture\Class99::class => 'DiContainerBenchmarks__Fixture__Class99',
     ];
 
-    protected function Interop__Container__ContainerInterface()
+    protected function DiContainerBenchmarks__Container__Zen__Resource__CompiledPrototypeContainer()
     {
         return $this;
+    }
+
+    protected function Psr__Container__ContainerInterface()
+    {
+        $entry = $this->singletonEntries['DiContainerBenchmarks__Container__Zen__Resource__CompiledPrototypeContainer'] ?? $this->DiContainerBenchmarks__Container__Zen__Resource__CompiledPrototypeContainer();
+
+        return $this->singletonEntries['Psr__Container__ContainerInterface'] = $entry;
     }
 
     protected function DiContainerBenchmarks__Fixture__Class1()
