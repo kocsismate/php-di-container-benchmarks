@@ -36,7 +36,7 @@ class TestResult
         float $endTime,
         int $peakMemoryUsageInBytes
     ): TestResult {
-        return new TestResult(($endTime - $startTime) * 1000, $peakMemoryUsageInBytes / 1024 / 1024, true);
+        return new TestResult(($endTime - $startTime) * 1000, $peakMemoryUsageInBytes / 1024 / 1024);
     }
 
     public static function createFromValues(
