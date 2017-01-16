@@ -81,7 +81,7 @@ class HtmlOutputGenerator implements OutputGeneratorInterface
 
             <p>
                 I have been interested in the topic since then so I wanted to finally conduct a better benchmark than
-                the last one was: I tried to fix its flaws while keeping the good parts. So here is my take!
+                the last one was: I tried to fix its flaws while keeping its many good parts. So here is my take!
             </p>
 
             <p>
@@ -168,24 +168,34 @@ HERE;
                 graphs of different sizes (10 or 100 objects). For this purpose, containers are configured
                 either to always instantiate objects (this is usually called as Prototype scope or not shared services)
                 or to instantiate objects only at the first retrieval and return the same instance on the subsequent
-                calls (which is usually referred as Singleton scope or shared services).
+                calls (which is usually referred to as Singleton scope or shared services).
             </p>
+
             <p>
-                There are 3 main types of the Test Suites: "Cold" ones (Test Suite 1-2) measure performance including
+                There are 3 main types of Test Suites: "Cold" ones (Test Suite 1-2) measure performance including
                 autoloading and startup time of containers as well as autoloading time of the retrieved objects.
                 "Semi-Warm" ones (Test Suite 3-4) measure performance excluding container autoloading time, but
                 including startup time and autoloading time of the retrieved objects, while "Warm" ones (Test Suite 5-6)
-                exclude autoloading and startup time.
+                exclude autoloading and startup time equally. Time of compilation is always excluded from the results
+                due to OPcache.
             </p>
+
             <p>
-                A Test Suite contains three Test Cases which define how many times the main task has to be
-                repeated (it is called Iteration). All Test Cases are performed 10 times (this is referred as "runs") in
-                order to improve the stability of the measurements.
+                Each Test Suite contains three Test Cases which define the number of iterations the main task has to be
+                repeated in order to simulate real world usage patterns. This number ranges from 10 to 10 000.
+                Furthermore, all Test Cases are performed 25 times (this is referred to as "runs") in order to improve
+                the accuracy of measurements.
             </p>
+
             <p>
-                The benchmark is run on a 15-inch MacBook Pro from 2015 using PHP 7.1 (with opcache enabled). The examined
-                DI Containers are configured for production usage as if it was probably done in case of a big project.
-                That's why I took advantage of autowiring capabilities when possible. Unfortunately, this
+                The benchmark is run on a 15-inch MacBook Pro from 2015 using PHP 7.1 with OPcache enabled. During the
+                measurements, a PHP-FPM script server by nginx is executed each time. This is needed because a
+                production environment is simulated much better this way than in the CLI.
+            </p>
+
+            <p>
+                The examined DI Containers are configured for production usage as if it was probably done in case of a
+                big project. That's why I took advantage of autowiring capabilities when possible. Unfortunately, this
                 discriminates some participants giving them a big handicap, but I wanted to measure container
                 performance with a configuration as advertised or recommended by the documentation and most probable
                 to be used in the real world.
@@ -275,7 +285,8 @@ HERE;
                 My hypothesis was that different types of containers have significantly different performance
                 characteristics. It can be concluded by looking at the results that the hypothesis can't be rejected as
                 it seems that the more user-friendly a container is (dynamic &gt; compiled, dynamic with autowiring
-                &gt; dynamic without autowiring) the slower it is.
+                &gt; dynamic without autowiring) the slower it is, especially in tasks where object instantiation is
+                measured (Test Suites 3-4).
             </p>
 
             <p>
@@ -284,8 +295,8 @@ HERE;
                 <a target="_blank" href="http://blog.ploeh.dk/2011/07/28/CompositionRoot/">composition root</a>:
                 when you invoke the controller(s) which handle(s) the request (but there is a good chance
                 of needing the container in other places of the application layer - e.g. in your middleware or bootstrap
-                files). That's why most results are exaggerated - you probably won't see tens of milliseconds of
-                difference between the fastest and the slowest DIC in the real life.
+                files). That's why most results are exaggerated - you probably won't see milliseconds of difference
+                between the fastest and the slowest DIC in the real life.
             </p>
 
             <p>
