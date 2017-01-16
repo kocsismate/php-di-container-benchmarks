@@ -11,7 +11,11 @@ class Test2 extends AbstractDiscoTest
 {
     public function startup(): void
     {
-        $beanFactory = new AnnotationBeanFactory(SingletonContainerConfig::class);
+        $beanFactory = new AnnotationBeanFactory(
+            SingletonContainerConfig::class,
+            [],
+            $this->getBeanFactoryConfiguration()
+        );
         BeanFactoryRegistry::register($beanFactory);
 
         $this->container = $beanFactory;
