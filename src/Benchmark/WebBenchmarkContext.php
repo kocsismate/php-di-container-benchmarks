@@ -5,6 +5,16 @@ namespace DiContainerBenchmarks\Benchmark;
 
 class WebBenchmarkContext implements BenchmarkContextInterface
 {
+    /**
+     * @var string
+     */
+    private $benchmarkUrl;
+
+    public function __construct(string $benchmarkUrl)
+    {
+        $this->benchmarkUrl = $benchmarkUrl;
+    }
+
     public function getName(): string
     {
         return "web";
@@ -16,7 +26,7 @@ class WebBenchmarkContext implements BenchmarkContextInterface
         curl_setopt(
             $ch,
             CURLOPT_URL,
-            getenv("TEST_URL") . "?test_suite=$number&container=$container&iterations=$iterations&test_type=$testType"
+            $this->benchmarkUrl . "?test_suite=$number&container=$container&iterations=$iterations&test_type=$testType"
         );
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 

@@ -5,7 +5,6 @@ declare(strict_types=1);
 require __DIR__ . "/../app/bootstrap.php";
 
 use DiContainerBenchmarks\Benchmark\Benchmark;
-use DiContainerBenchmarks\Benchmark\CliBenchmarkContext;
 use DiContainerBenchmarks\Benchmark\WebBenchmarkContext;
 use DiContainerBenchmarks\Container\Aura\AuraContainer;
 use DiContainerBenchmarks\Container\Auryn\AurynContainer;
@@ -57,8 +56,15 @@ $outputGenerators = [
     new HtmlOutputGenerator(PROJECT_ROOT . "/var/benchmark.html"),
 ];
 
-$benchmark = new Benchmark(
-    (bool) getenv("WEB_BENCHMARK") ? new WebBenchmarkContext() : new CliBenchmarkContext()
-);
+$benchmarkUrl = getenv("BENCHMARK_URL");
+if (isset($argv[1])) {
+    $benchmarkUrl = $argv[1];
+}
+if (isset($benchmarkUrl) === false) {
+    echo "Either specify the 'BENCHMARK_URL' environment variable or pass it as the first parameter!";
+    exit(-1);
+}
+
+$benchmark = new Benchmark(new WebBenchmarkContext($benchmarkUrl));
 
 $benchmark->runBenchmark($testSuites, $containers, $outputGenerators);

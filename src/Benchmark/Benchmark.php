@@ -72,7 +72,7 @@ class Benchmark
         BenchmarkResult $benchmarkResult
     ): void {
 
-        for ($run = 0; $run < 10; $run++) {
+        for ($run = 0; $run < 25; $run++) {
             echo "Running " . $this->context->getName() . " test " .
                 $testSuite->getNumber() . "." . $testCase->getNumber() .
                 " (" . $container->getName() . '): ' . ($run+1) . "/10\n";

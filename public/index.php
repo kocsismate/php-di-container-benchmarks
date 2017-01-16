@@ -5,9 +5,14 @@ require __DIR__ . "/../app/bootstrap.php";
 
 use DiContainerBenchmarks\Test\TestRunner;
 
-if (count($_GET) < 4) {
-    echo "<h1>Error!</h1>";
-    echo "<p>Please specifiy the 'test_suite', 'container', 'iterations' and 'test_type' query parameters!</p>";
+if (empty($_GET["test_suite"]) || empty($_GET["container"]) || empty($_GET["iterations"]) || empty($_GET["test_type"])) {
+    echo "<h1>Please specifiy the required query parameters!</h1>";
+    echo "<p>";
+    echo '<b>test_suite</b>: An integer between 1-6 (inclusive)<br/>';
+    echo '<b>container</b>: Namespace of the container (e.g.: Symfony, PhpDi etc.)<br/>';
+    echo '<b>iterations</b>: A positive integer<br/>';
+    echo '<b>test_type</b>: either "cold", "semi_warm" or "warm"<br/>';
+    echo "</p>";
     exit(-1);
 }
 

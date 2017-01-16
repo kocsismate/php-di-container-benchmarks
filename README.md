@@ -11,7 +11,6 @@
 * [Install](#install)
 * [Usage](#usage)
 * [Results](#results)
-* [Change Log](#change-log)
 * [Contributing](#contributing)
 * [Credits](#credits)
 * [License](#license)
@@ -24,34 +23,55 @@ Unfortunately, [the implementation](https://github.com/TomBZombie/php-dependency
 turned out to be quite controversial, so the benchmark itself wasn't really insightful.
 
 I have been interested in the topic since then so I wanted to conduct a better benchmark than the last one was: I tried
-to fix some of its flaws while keeping the good parts.
+to fix some of its flaws while keeping its many good parts.
 
 ## Install
 
-You can simply download this repository or install it via [Composer](https://getcomposer.org) by running the command
-below:
+You can simply download or clone this repository as well as install it via [Composer](https://getcomposer.org) by
+running the command below:
 
 ```bash
 $ composer require kocsismate/di-container-benchmarks:dev-master
 ```
 
-Furthermore, [Docker Compose](https://www.docker.com/products/docker-compose) has to be installed on your machine.
-
 ## Usage
 
-First, copy the ".env.dist" file as ".env" and feel free to overwrite the values in it. Now, you can run
+### Usage with Docker
+
+First of all, [Docker Compose](https://www.docker.com/products/docker-compose) has to be installed on your machine.
+
+Then copy the ".env.dist" file to ".env" and feel free to overwrite the values in it. Now, you can run
 `docker-compose up` in order to execute the tests. The html output will be generated in the "var" directory.
 
-If you don't want to use Docker and you have PHP 7.1 at least on your host OS then you can simply run `./bin/benchmark`
-after all Composer dependencies have been installed with `composer install`.
+### Usage without Docker
+
+If you don't want to use Docker then you have to take several steps before running the benchmark:
+
+- Install PHP 7.1 at least with OPcache enabled
+- Install Composer
+- Install a web server which is capable of executing PHP scripts (for instance Apache, nginx) 
+- Install dependencies by running `composer install`
+- Define the `BENCHMARK_URL` environment variable where the "public/index.php" script is available. For instance:
+
+```bash
+export BENCHMARK_URL=http://localhost/index.php
+``` 
+
+Now you can simply type the following in order to run the benchmark:
+
+```bash
+./bin/benchmark
+``` 
+
+If you don't want to specify the benchmark URL as an environment variable then you can also pass it as a parameter:
+
+```bash
+./bin/benchmark http://localhost/index.php
+```
 
 ## Results
 
 You can find the benchmark results [here](https://rawgit.com/kocsismate/php-di-container-benchmarks/master/var/benchmark.html).
-
-## Change Log
-
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
 ## Contributing
 
