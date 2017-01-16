@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8cc7943a78a3812f7090a28898cbae97",
+    "content-hash": "e40a3c5e7bb5a2bd2d089e4689b3c26e",
     "packages": [
         {
             "name": "aura/di",
@@ -449,12 +449,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "5585b356628ead4c3633c731d60a1e110f95ca8f"
+                "reference": "039f4a7ac598b38fc0dfe5f8fd94336eceec544e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/5585b356628ead4c3633c731d60a1e110f95ca8f",
-                "reference": "5585b356628ead4c3633c731d60a1e110f95ca8f",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/039f4a7ac598b38fc0dfe5f8fd94336eceec544e",
+                "reference": "039f4a7ac598b38fc0dfe5f8fd94336eceec544e",
                 "shasum": ""
             },
             "require": {
@@ -483,7 +483,7 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "https://laravel.com",
-            "time": "2017-01-12 14:18:49"
+            "time": "2017-01-15 01:21:06"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -891,21 +891,21 @@
         },
         {
             "name": "php-di/php-di",
-            "version": "5.4.0",
+            "version": "6.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-DI/PHP-DI.git",
-                "reference": "e348393488fa909e4bc0707ba5c9c44cd602a1cb"
+                "reference": "1b1cb76c61496690d3f3609c959412eb53a5994e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/e348393488fa909e4bc0707ba5c9c44cd602a1cb",
-                "reference": "e348393488fa909e4bc0707ba5c9c44cd602a1cb",
+                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/1b1cb76c61496690d3f3609c959412eb53a5994e",
+                "reference": "1b1cb76c61496690d3f3609c959412eb53a5994e",
                 "shasum": ""
             },
             "require": {
                 "container-interop/container-interop": "~1.0",
-                "php": ">=5.5.0",
+                "php": ">=7.0.0",
                 "php-di/invoker": "^1.3.2",
                 "php-di/phpdoc-reader": "^2.0.1"
             },
@@ -919,13 +919,13 @@
                 "doctrine/annotations": "~1.2",
                 "doctrine/cache": "~1.4",
                 "mnapoli/phpunit-easymock": "~0.2.0",
-                "ocramius/proxy-manager": "~1.0|~2.0",
-                "phpunit/phpunit": "~4.5"
+                "ocramius/proxy-manager": "~2.0.2",
+                "phpunit/phpunit": "~5.0"
             },
             "suggest": {
                 "doctrine/annotations": "Install it if you want to use annotations (version ~1.2)",
                 "doctrine/cache": "Install it if you want to use the cache (version ~1.4)",
-                "ocramius/proxy-manager": "Install it if you want to use lazy injection (version ~1.0 or ~2.0)"
+                "ocramius/proxy-manager": "Install it if you want to use lazy injection (version ~2.0)"
             },
             "type": "library",
             "autoload": {
@@ -947,7 +947,7 @@
                 "dependency injection",
                 "di"
             ],
-            "time": "2016-08-23T20:18:00+00:00"
+            "time": "2017-01-07 23:20:52"
         },
         {
             "name": "php-di/phpdoc-reader",
@@ -1607,12 +1607,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/woohoolabs/zen.git",
-                "reference": "017e29844871169ab25ce4a038c01494b1ab95eb"
+                "reference": "3b58bdfad3a3f62247a7cdc153880eb7826a46a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/017e29844871169ab25ce4a038c01494b1ab95eb",
-                "reference": "017e29844871169ab25ce4a038c01494b1ab95eb",
+                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/3b58bdfad3a3f62247a7cdc153880eb7826a46a0",
+                "reference": "3b58bdfad3a3f62247a7cdc153880eb7826a46a0",
                 "shasum": ""
             },
             "require": {
@@ -1657,7 +1657,7 @@
                 "ioc",
                 "zen"
             ],
-            "time": "2017-01-15 00:51:31"
+            "time": "2017-01-16 19:24:15"
         },
         {
             "name": "zendframework/zend-code",
@@ -1888,6 +1888,7 @@
         "illuminate/contracts": 20,
         "level-2/dice": 20,
         "opulence/ioc": 20,
+        "php-di/php-di": 20,
         "psr/container": 20,
         "woohoolabs/zen": 20
     },
