@@ -47,11 +47,11 @@ Then copy the ".env.dist" file to ".env" and feel free to overwrite the values i
 
 If you don't want to use Docker then you have to take several steps before running the benchmark:
 
-- Install PHP 7.1 at least with OPcache enabled
+- Install a web server and configure it to be able to serve "public/index.php"
+- Install PHP 7.1  at least with OPcache enabled
 - Install Composer
-- Install a web server which is capable of executing PHP scripts (for instance Apache, nginx) 
-- Install dependencies by running `composer install`
-- Define the `BENCHMARK_URL` environment variable where the "public/index.php" script is available. For instance:
+- Install the benchmark dependencies by running `composer install`
+- Set the `BENCHMARK_URL` environment variable with the URL where the "public/index.php" is available. For instance:
 
 ```bash
 export BENCHMARK_URL=http://localhost/index.php
