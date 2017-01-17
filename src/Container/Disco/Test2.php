@@ -7,7 +7,7 @@ class Test2 extends AbstractDiscoTest
 {
     public function startup(): void
     {
-        $this->container = $this->setContainerWithSingletonServices();
+        $this->setContainerWithSingletonServices();
     }
 
     public function run(): void

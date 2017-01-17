@@ -15,11 +15,6 @@ class WebBenchmarkContext implements BenchmarkContextInterface
         $this->benchmarkUrl = $benchmarkUrl;
     }
 
-    public function getName(): string
-    {
-        return "web";
-    }
-
     public function getTestOutput(int $number, string $container, int $iterations, string $testType): string
     {
         $ch = curl_init();

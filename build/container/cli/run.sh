@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
-composer install --working-dir=/code --no-interaction --no-suggest
+composer install --no-suggest --no-interaction --working-dir=/code
+
+/code/bin/benchmark build
+
+composer dump-autoload --classmap-authoritative --no-interaction --working-dir=/code
 
 /code/bin/benchmark

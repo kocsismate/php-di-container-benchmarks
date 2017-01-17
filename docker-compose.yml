@@ -2,7 +2,7 @@ version: '2'
 
 services:
   cli:
-    image: woohoolabs/php:3.1.4
+    build: ./build/container/cli/build
     container_name: benchmark-cli
     networks:
       - benchmark
@@ -10,7 +10,7 @@ services:
       - .:/code
     env_file:
       - .env
-    command: /bin/bash -c "/code/build/container/cli/run.sh"
+    command: /code/build/container/cli/run.sh
     depends_on:
       - nginx
 
@@ -30,7 +30,7 @@ services:
       - fpm
 
   fpm:
-    image: woohoolabs/php:3.1.4
+    build: ./build/container/fpm/build
     container_name: benchmark-fpm
     networks:
       - benchmark
@@ -38,7 +38,7 @@ services:
       - .:/code
     env_file:
       - .env
-    command: /bin/bash -c "/code/build/container/fpm/run.sh"
+    command: /code/build/container/fpm/run.sh
 
 networks:
   benchmark:

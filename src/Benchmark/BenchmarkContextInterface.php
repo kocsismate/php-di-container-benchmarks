@@ -5,7 +5,5 @@ namespace DiContainerBenchmarks\Benchmark;
 
 interface BenchmarkContextInterface
 {
-    public function getName(): string;
-
     public function getTestOutput(int $number, string $container, int $iterations, string $testType): string;
 }

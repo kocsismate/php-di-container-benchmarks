@@ -38,6 +38,8 @@ $ composer require kocsismate/di-container-benchmarks:dev-master
 
 ### Usage with Docker
 
+__Please note that currently, benchmarks executed in Docker are not reliable (at least in Docker for Mac).__
+
 First of all, [Docker Compose](https://www.docker.com/products/docker-compose) has to be installed on your machine.
 
 Then copy the ".env.dist" file to ".env" and feel free to overwrite the values in it. Now, you can run
