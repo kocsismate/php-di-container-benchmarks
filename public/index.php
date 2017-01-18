@@ -9,8 +9,8 @@ if (empty($_GET["test_suite"]) || empty($_GET["container"]) || empty($_GET["iter
     echo "<h1>Please specifiy the required query parameters!</h1>";
     echo "<p>";
     echo '<b>test_suite</b>: An integer between 1-6 (inclusive)<br/>';
-    echo '<b>container</b>: Namespace of the container (e.g.: Symfony, PhpDi etc.)<br/>';
-    echo '<b>iterations</b>: A positive integer<br/>';
+    echo '<b>container</b>: The namespace of the container (e.g.: Symfony, PhpDi etc.)<br/>';
+    echo '<b>iterations</b>: A positive integer (e.g.: 10, 100, 1000, 10000)<br/>';
     echo '<b>test_type</b>: either "cold", "semi_warm" or "warm"<br/>';
     echo "</p>";
     exit(-1);

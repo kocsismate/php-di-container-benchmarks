@@ -2,7 +2,7 @@ version: '2'
 
 services:
   cli:
-    build: ./build/container/cli/build
+    image: php:7.1-alpine
     container_name: benchmark-cli
     networks:
       - benchmark
@@ -15,7 +15,7 @@ services:
       - nginx
 
   nginx:
-    image: nginx:1.11.8
+    image: nginx:1.11-alpine
     container_name: benchmark-nginx
     networks:
       - benchmark
@@ -25,17 +25,15 @@ services:
       - "8090:80"
     env_file:
       - .env
-    command: /bin/bash -c "/code/build/container/nginx/run.sh"
+    command: /code/build/container/nginx/run.sh
     depends_on:
       - fpm
 
   fpm:
-    build: ./build/container/fpm/build
+    build: ./
     container_name: benchmark-fpm
     networks:
       - benchmark
-    volumes:
-      - .:/code
     env_file:
       - .env
     command: /code/build/container/fpm/run.sh

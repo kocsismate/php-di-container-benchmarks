@@ -58,11 +58,11 @@ $outputGenerators = [
 
 // Validating if benchmark URL is correctly set
 $benchmarkUrl = getenv("BENCHMARK_URL");
-if (isset($argv[1])) {
+if (empty($argv[1]) === false) {
     $benchmarkUrl = $argv[1];
 }
-if (isset($benchmarkUrl) === false) {
-    echo "Either specify the 'BENCHMARK_URL' environment variable or pass it as the first parameter!";
+if ($benchmarkUrl === false) {
+    echo "Either specify the 'BENCHMARK_URL' environment variable or pass it as a parameter!\n";
     exit(-1);
 }
 

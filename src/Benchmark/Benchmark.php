@@ -26,7 +26,7 @@ class Benchmark
      */
     public function buildContainers(array $containers): void
     {
-        echo "Building containers...\n";
+        echo "Building DI Containers...\n";
         foreach ($containers as $container) {
             $container->build();
         }

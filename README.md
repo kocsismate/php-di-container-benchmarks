@@ -38,12 +38,25 @@ $ composer require kocsismate/di-container-benchmarks:dev-master
 
 ### Usage with Docker
 
-__Please note that currently, benchmarks executed in Docker are not reliable (at least in Docker for Mac).__
+__Please note that benchmarks executed in Docker For Mac and Docker for Windows may be unreliable.__
 
 First of all, [Docker Compose](https://www.docker.com/products/docker-compose) has to be installed on your machine.
 
 Then copy the ".env.dist" file to ".env" and feel free to overwrite the values in it. Now, you can run
-`docker-compose up` in order to execute the tests. The html output will be generated in the "var" directory.
+
+```bash
+./benchmark.sh docker
+```
+
+on Unix-based systems, while Windows users should use
+
+```bash
+.\benchmark.bat docker
+```
+
+to execute the measurements.
+
+The HTML output will be generated in the "var" directory.
 
 ### Usage without Docker
 
@@ -52,8 +65,7 @@ If you don't want to use Docker then you have to take several steps before runni
 - Install a web server and configure it to be able to serve "public/index.php"
 - Install PHP 7.1  at least with OPcache enabled
 - Install Composer
-- Install the benchmark dependencies by running `composer install`
-- Set the `BENCHMARK_URL` environment variable with the URL where the "public/index.php" is available. For instance:
+- Set the `BENCHMARK_URL` environment variable to the URL where "public/index.php" is available. For instance:
 
 ```bash
 export BENCHMARK_URL=http://localhost/index.php
@@ -62,14 +74,22 @@ export BENCHMARK_URL=http://localhost/index.php
 Now you can simply type the following in order to run the benchmark:
 
 ```bash
-./bin/benchmark
-``` 
+.\benchmark.sh host
+```
 
 If you don't want to specify the benchmark URL as an environment variable then you can also pass it as a parameter:
 
 ```bash
-./bin/benchmark http://localhost/index.php
+./benchmark.sh host http://localhost/index.php
 ```
+
+Windows users can use the `benchmark.bat` instead.
+
+### Usage from the browser
+
+You can even run tests manually from your browser. When the benchmark's Docker containers are running, just visit
+`localhost:8090`, otherwise you have to locate the `BENCHMARK_URL` URL (mentioned in the previous section). For further
+information, refer the URL in question, it provides you with detailed instructions.
 
 ## Results
 
