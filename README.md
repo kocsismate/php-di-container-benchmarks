@@ -8,9 +8,9 @@
 ## Table of Contents
 
 * [Introduction](#introduction)
+* [Results](#results)
 * [Install](#install)
 * [Usage](#usage)
-* [Results](#results)
 * [Contributing](#contributing)
 * [Credits](#credits)
 * [License](#license)
@@ -33,6 +33,10 @@ running the command below:
 ```bash
 $ composer require kocsismate/di-container-benchmarks:dev-master
 ```
+
+## Results
+
+You can find the benchmark results [here](https://rawgit.com/kocsismate/php-di-container-benchmarks/master/var/benchmark.html).
 
 ## Usage
 
@@ -90,10 +94,6 @@ Windows users can use the `benchmark.bat` instead.
 You can even run tests manually from your browser. When the benchmark's Docker containers are running, just visit
 `localhost:8090`, otherwise you have to locate the `BENCHMARK_URL` URL (mentioned in the previous section). For further
 information, refer the URL in question, it provides you with detailed instructions.
-
-## Results
-
-You can find the benchmark results [here](https://rawgit.com/kocsismate/php-di-container-benchmarks/master/var/benchmark.html).
 
 ## Contributing
 
