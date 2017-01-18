@@ -25,6 +25,10 @@ turned out to be quite controversial, so the benchmark itself wasn't really insi
 I have been interested in the topic since then so I wanted to conduct a better benchmark than the last one was: I tried
 to fix some of its flaws while keeping its many good parts.
 
+## Results
+
+You can find the benchmark results [here](https://rawgit.com/kocsismate/php-di-container-benchmarks/master/var/benchmark.html).
+
 ## Install
 
 You can simply download or clone this repository as well as install it via [Composer](https://getcomposer.org) by
@@ -33,10 +37,6 @@ running the command below:
 ```bash
 $ composer require kocsismate/di-container-benchmarks:dev-master
 ```
-
-## Results
-
-You can find the benchmark results [here](https://rawgit.com/kocsismate/php-di-container-benchmarks/master/var/benchmark.html).
 
 ## Usage
 
