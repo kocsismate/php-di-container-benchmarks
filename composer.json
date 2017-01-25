@@ -15,10 +15,10 @@
         "aura/di": "^3.2.0",
         "bitexpert/disco": "^0.6.2",
         "doctrine/cache": "^1.6.1",
-        "illuminate/container": "v5.4.*@dev",
-        "illuminate/contracts": "v5.4.*@dev",
+        "illuminate/container": "^v5.4.0",
+        "illuminate/contracts": "^v5.4.0",
         "level-2/Dice": "dev-master",
-        "opulence/ioc": "dev-master",
+        "opulence/ioc": "^1.0.6",
         "php-di/php-di": "6.0.x-dev",
         "phpixie/di": "^3.2.0",
         "pimple/pimple": "^3.0.2",
@@ -29,7 +29,7 @@
         "thecodingmachine/yaco": "^0.4.1",
         "woohoolabs/zen": "dev-master as 1.3.0",
         "zendframework/zend-servicemanager": "^3.2.0",
-        "symfony/process": "^3.2"
+        "symfony/process": "^3.2.0"
     },
     "autoload": {
         "psr-4": {

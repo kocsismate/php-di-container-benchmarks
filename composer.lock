@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e40a3c5e7bb5a2bd2d089e4689b3c26e",
+    "content-hash": "cb2e7b0e4eb47e7dc1e45282cd668bcd",
     "packages": [
         {
             "name": "aura/di",
@@ -402,16 +402,16 @@
         },
         {
             "name": "illuminate/container",
-            "version": "5.4.x-dev",
+            "version": "v5.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "d5489bc59e090b8e9fbe124e99a269eb87a8c7fa"
+                "reference": "f1e4caaaa9af6204d3877198b42d99658e593513"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/d5489bc59e090b8e9fbe124e99a269eb87a8c7fa",
-                "reference": "d5489bc59e090b8e9fbe124e99a269eb87a8c7fa",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/f1e4caaaa9af6204d3877198b42d99658e593513",
+                "reference": "f1e4caaaa9af6204d3877198b42d99658e593513",
                 "shasum": ""
             },
             "require": {
@@ -441,20 +441,20 @@
             ],
             "description": "The Illuminate Container package.",
             "homepage": "https://laravel.com",
-            "time": "2017-01-04 14:36:48"
+            "time": "2017-01-21T16:09:27+00:00"
         },
         {
             "name": "illuminate/contracts",
-            "version": "5.4.x-dev",
+            "version": "v5.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "039f4a7ac598b38fc0dfe5f8fd94336eceec544e"
+                "reference": "4ec919d294aca396d172e644b243b49885cd2cc7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/039f4a7ac598b38fc0dfe5f8fd94336eceec544e",
-                "reference": "039f4a7ac598b38fc0dfe5f8fd94336eceec544e",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/4ec919d294aca396d172e644b243b49885cd2cc7",
+                "reference": "4ec919d294aca396d172e644b243b49885cd2cc7",
                 "shasum": ""
             },
             "require": {
@@ -483,7 +483,7 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "https://laravel.com",
-            "time": "2017-01-15 01:21:06"
+            "time": "2017-01-18T20:23:54+00:00"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -799,16 +799,16 @@
         },
         {
             "name": "opulence/ioc",
-            "version": "dev-master",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/opulencephp/ioc.git",
-                "reference": "86419c92f1c63e317c00373a34ae9d8358ad13a7"
+                "reference": "d7430701c0eddf92af8dea72454b0455da7579f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opulencephp/ioc/zipball/86419c92f1c63e317c00373a34ae9d8358ad13a7",
-                "reference": "86419c92f1c63e317c00373a34ae9d8358ad13a7",
+                "url": "https://api.github.com/repos/opulencephp/ioc/zipball/d7430701c0eddf92af8dea72454b0455da7579f7",
+                "reference": "d7430701c0eddf92af8dea72454b0455da7579f7",
                 "shasum": ""
             },
             "require": {
@@ -844,7 +844,7 @@
                 "ioc",
                 "php"
             ],
-            "time": "2017-01-08 17:51:36"
+            "time": "2017-01-19T05:07:03+00:00"
         },
         {
             "name": "php-di/invoker",
@@ -1884,10 +1884,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "illuminate/container": 20,
-        "illuminate/contracts": 20,
         "level-2/dice": 20,
-        "opulence/ioc": 20,
         "php-di/php-di": 20,
         "psr/container": 20,
         "woohoolabs/zen": 20
