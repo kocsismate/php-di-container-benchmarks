@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb2e7b0e4eb47e7dc1e45282cd668bcd",
+    "content-hash": "574b63ec57d298a1d3af6ce558b08f88",
     "packages": [
         {
             "name": "aura/di",
@@ -1239,16 +1239,16 @@
         },
         {
             "name": "symfony/config",
-            "version": "v3.2.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "c5ea878b5a7f6a01b9a2f182f905831711b9ff3f"
+                "reference": "ba3da262813160b4963fb36f573c886592da6acb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/c5ea878b5a7f6a01b9a2f182f905831711b9ff3f",
-                "reference": "c5ea878b5a7f6a01b9a2f182f905831711b9ff3f",
+                "url": "https://api.github.com/repos/symfony/config/zipball/ba3da262813160b4963fb36f573c886592da6acb",
+                "reference": "ba3da262813160b4963fb36f573c886592da6acb",
                 "shasum": ""
             },
             "require": {
@@ -1264,7 +1264,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev"
+                    "dev-master": "3.3-dev"
                 }
             },
             "autoload": {
@@ -1291,20 +1291,20 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-02T20:32:22+00:00"
+            "time": "2017-01-09 21:03:44"
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v3.2.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "22b2c97cffc6a612db82084f9e7823b095958751"
+                "reference": "9920e8c833971b15448d2ae7cc1786ccfab21ab5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/22b2c97cffc6a612db82084f9e7823b095958751",
-                "reference": "22b2c97cffc6a612db82084f9e7823b095958751",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/9920e8c833971b15448d2ae7cc1786ccfab21ab5",
+                "reference": "9920e8c833971b15448d2ae7cc1786ccfab21ab5",
                 "shasum": ""
             },
             "require": {
@@ -1327,7 +1327,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev"
+                    "dev-master": "3.3-dev"
                 }
             },
             "autoload": {
@@ -1354,7 +1354,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-10T14:21:25+00:00"
+            "time": "2017-01-25 13:16:38"
         },
         {
             "name": "symfony/filesystem",
@@ -1607,12 +1607,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/woohoolabs/zen.git",
-                "reference": "3b58bdfad3a3f62247a7cdc153880eb7826a46a0"
+                "reference": "0f649d4b21ba6873cfecb5ef97b0d8da7b6c4784"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/3b58bdfad3a3f62247a7cdc153880eb7826a46a0",
-                "reference": "3b58bdfad3a3f62247a7cdc153880eb7826a46a0",
+                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/0f649d4b21ba6873cfecb5ef97b0d8da7b6c4784",
+                "reference": "0f649d4b21ba6873cfecb5ef97b0d8da7b6c4784",
                 "shasum": ""
             },
             "require": {
@@ -1657,7 +1657,7 @@
                 "ioc",
                 "zen"
             ],
-            "time": "2017-01-16 19:24:15"
+            "time": "2017-01-26 20:23:13"
         },
         {
             "name": "zendframework/zend-code",
@@ -1887,6 +1887,8 @@
         "level-2/dice": 20,
         "php-di/php-di": 20,
         "psr/container": 20,
+        "symfony/config": 20,
+        "symfony/dependency-injection": 20,
         "woohoolabs/zen": 20
     },
     "prefer-stable": false,

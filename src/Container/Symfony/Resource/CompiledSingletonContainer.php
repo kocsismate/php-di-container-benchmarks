@@ -1,6 +1,7 @@
 <?php
 namespace DiContainerBenchmarks\Container\Symfony\Resource;
 
+use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
@@ -13,6 +14,8 @@ use Symfony\Component\DependencyInjection\ParameterBag\FrozenParameterBag;
  *
  * This class has been auto-generated
  * by the Symfony Dependency Injection Component.
+ *
+ * @final since Symfony 3.3
  */
 class CompiledSingletonContainer extends Container
 {
@@ -168,7 +171,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass10Service()
     {
-        return $this->services['class10'] = new \DiContainerBenchmarks\Fixture\Class10($this->get('class9'));
+        return $this->services['class10'] = new \DiContainerBenchmarks\Fixture\Class10(${($_ = isset($this->services['class9']) ? $this->services['class9'] : $this->get('class9')) && false ?: '_'});
     }
 
     /*
@@ -180,7 +183,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass100Service()
     {
-        return $this->services['class100'] = new \DiContainerBenchmarks\Fixture\Class100($this->get('class99'));
+        return $this->services['class100'] = new \DiContainerBenchmarks\Fixture\Class100(${($_ = isset($this->services['class99']) ? $this->services['class99'] : $this->get('class99')) && false ?: '_'});
     }
 
     /*
@@ -192,7 +195,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass11Service()
     {
-        return $this->services['class11'] = new \DiContainerBenchmarks\Fixture\Class11($this->get('class10'));
+        return $this->services['class11'] = new \DiContainerBenchmarks\Fixture\Class11(${($_ = isset($this->services['class10']) ? $this->services['class10'] : $this->get('class10')) && false ?: '_'});
     }
 
     /*
@@ -204,7 +207,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass12Service()
     {
-        return $this->services['class12'] = new \DiContainerBenchmarks\Fixture\Class12($this->get('class11'));
+        return $this->services['class12'] = new \DiContainerBenchmarks\Fixture\Class12(${($_ = isset($this->services['class11']) ? $this->services['class11'] : $this->get('class11')) && false ?: '_'});
     }
 
     /*
@@ -216,7 +219,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass13Service()
     {
-        return $this->services['class13'] = new \DiContainerBenchmarks\Fixture\Class13($this->get('class12'));
+        return $this->services['class13'] = new \DiContainerBenchmarks\Fixture\Class13(${($_ = isset($this->services['class12']) ? $this->services['class12'] : $this->get('class12')) && false ?: '_'});
     }
 
     /*
@@ -228,7 +231,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass14Service()
     {
-        return $this->services['class14'] = new \DiContainerBenchmarks\Fixture\Class14($this->get('class13'));
+        return $this->services['class14'] = new \DiContainerBenchmarks\Fixture\Class14(${($_ = isset($this->services['class13']) ? $this->services['class13'] : $this->get('class13')) && false ?: '_'});
     }
 
     /*
@@ -240,7 +243,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass15Service()
     {
-        return $this->services['class15'] = new \DiContainerBenchmarks\Fixture\Class15($this->get('class14'));
+        return $this->services['class15'] = new \DiContainerBenchmarks\Fixture\Class15(${($_ = isset($this->services['class14']) ? $this->services['class14'] : $this->get('class14')) && false ?: '_'});
     }
 
     /*
@@ -252,7 +255,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass16Service()
     {
-        return $this->services['class16'] = new \DiContainerBenchmarks\Fixture\Class16($this->get('class15'));
+        return $this->services['class16'] = new \DiContainerBenchmarks\Fixture\Class16(${($_ = isset($this->services['class15']) ? $this->services['class15'] : $this->get('class15')) && false ?: '_'});
     }
 
     /*
@@ -264,7 +267,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass17Service()
     {
-        return $this->services['class17'] = new \DiContainerBenchmarks\Fixture\Class17($this->get('class16'));
+        return $this->services['class17'] = new \DiContainerBenchmarks\Fixture\Class17(${($_ = isset($this->services['class16']) ? $this->services['class16'] : $this->get('class16')) && false ?: '_'});
     }
 
     /*
@@ -276,7 +279,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass18Service()
     {
-        return $this->services['class18'] = new \DiContainerBenchmarks\Fixture\Class18($this->get('class17'));
+        return $this->services['class18'] = new \DiContainerBenchmarks\Fixture\Class18(${($_ = isset($this->services['class17']) ? $this->services['class17'] : $this->get('class17')) && false ?: '_'});
     }
 
     /*
@@ -288,7 +291,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass19Service()
     {
-        return $this->services['class19'] = new \DiContainerBenchmarks\Fixture\Class19($this->get('class18'));
+        return $this->services['class19'] = new \DiContainerBenchmarks\Fixture\Class19(${($_ = isset($this->services['class18']) ? $this->services['class18'] : $this->get('class18')) && false ?: '_'});
     }
 
     /*
@@ -300,7 +303,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass2Service()
     {
-        return $this->services['class2'] = new \DiContainerBenchmarks\Fixture\Class2($this->get('class1'));
+        return $this->services['class2'] = new \DiContainerBenchmarks\Fixture\Class2(${($_ = isset($this->services['class1']) ? $this->services['class1'] : $this->get('class1')) && false ?: '_'});
     }
 
     /*
@@ -312,7 +315,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass20Service()
     {
-        return $this->services['class20'] = new \DiContainerBenchmarks\Fixture\Class20($this->get('class19'));
+        return $this->services['class20'] = new \DiContainerBenchmarks\Fixture\Class20(${($_ = isset($this->services['class19']) ? $this->services['class19'] : $this->get('class19')) && false ?: '_'});
     }
 
     /*
@@ -324,7 +327,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass21Service()
     {
-        return $this->services['class21'] = new \DiContainerBenchmarks\Fixture\Class21($this->get('class20'));
+        return $this->services['class21'] = new \DiContainerBenchmarks\Fixture\Class21(${($_ = isset($this->services['class20']) ? $this->services['class20'] : $this->get('class20')) && false ?: '_'});
     }
 
     /*
@@ -336,7 +339,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass22Service()
     {
-        return $this->services['class22'] = new \DiContainerBenchmarks\Fixture\Class22($this->get('class21'));
+        return $this->services['class22'] = new \DiContainerBenchmarks\Fixture\Class22(${($_ = isset($this->services['class21']) ? $this->services['class21'] : $this->get('class21')) && false ?: '_'});
     }
 
     /*
@@ -348,7 +351,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass23Service()
     {
-        return $this->services['class23'] = new \DiContainerBenchmarks\Fixture\Class23($this->get('class22'));
+        return $this->services['class23'] = new \DiContainerBenchmarks\Fixture\Class23(${($_ = isset($this->services['class22']) ? $this->services['class22'] : $this->get('class22')) && false ?: '_'});
     }
 
     /*
@@ -360,7 +363,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass24Service()
     {
-        return $this->services['class24'] = new \DiContainerBenchmarks\Fixture\Class24($this->get('class23'));
+        return $this->services['class24'] = new \DiContainerBenchmarks\Fixture\Class24(${($_ = isset($this->services['class23']) ? $this->services['class23'] : $this->get('class23')) && false ?: '_'});
     }
 
     /*
@@ -372,7 +375,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass25Service()
     {
-        return $this->services['class25'] = new \DiContainerBenchmarks\Fixture\Class25($this->get('class24'));
+        return $this->services['class25'] = new \DiContainerBenchmarks\Fixture\Class25(${($_ = isset($this->services['class24']) ? $this->services['class24'] : $this->get('class24')) && false ?: '_'});
     }
 
     /*
@@ -384,7 +387,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass26Service()
     {
-        return $this->services['class26'] = new \DiContainerBenchmarks\Fixture\Class26($this->get('class25'));
+        return $this->services['class26'] = new \DiContainerBenchmarks\Fixture\Class26(${($_ = isset($this->services['class25']) ? $this->services['class25'] : $this->get('class25')) && false ?: '_'});
     }
 
     /*
@@ -396,7 +399,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass27Service()
     {
-        return $this->services['class27'] = new \DiContainerBenchmarks\Fixture\Class27($this->get('class26'));
+        return $this->services['class27'] = new \DiContainerBenchmarks\Fixture\Class27(${($_ = isset($this->services['class26']) ? $this->services['class26'] : $this->get('class26')) && false ?: '_'});
     }
 
     /*
@@ -408,7 +411,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass28Service()
     {
-        return $this->services['class28'] = new \DiContainerBenchmarks\Fixture\Class28($this->get('class27'));
+        return $this->services['class28'] = new \DiContainerBenchmarks\Fixture\Class28(${($_ = isset($this->services['class27']) ? $this->services['class27'] : $this->get('class27')) && false ?: '_'});
     }
 
     /*
@@ -420,7 +423,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass29Service()
     {
-        return $this->services['class29'] = new \DiContainerBenchmarks\Fixture\Class29($this->get('class28'));
+        return $this->services['class29'] = new \DiContainerBenchmarks\Fixture\Class29(${($_ = isset($this->services['class28']) ? $this->services['class28'] : $this->get('class28')) && false ?: '_'});
     }
 
     /*
@@ -432,7 +435,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass3Service()
     {
-        return $this->services['class3'] = new \DiContainerBenchmarks\Fixture\Class3($this->get('class2'));
+        return $this->services['class3'] = new \DiContainerBenchmarks\Fixture\Class3(${($_ = isset($this->services['class2']) ? $this->services['class2'] : $this->get('class2')) && false ?: '_'});
     }
 
     /*
@@ -444,7 +447,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass30Service()
     {
-        return $this->services['class30'] = new \DiContainerBenchmarks\Fixture\Class30($this->get('class29'));
+        return $this->services['class30'] = new \DiContainerBenchmarks\Fixture\Class30(${($_ = isset($this->services['class29']) ? $this->services['class29'] : $this->get('class29')) && false ?: '_'});
     }
 
     /*
@@ -456,7 +459,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass31Service()
     {
-        return $this->services['class31'] = new \DiContainerBenchmarks\Fixture\Class31($this->get('class30'));
+        return $this->services['class31'] = new \DiContainerBenchmarks\Fixture\Class31(${($_ = isset($this->services['class30']) ? $this->services['class30'] : $this->get('class30')) && false ?: '_'});
     }
 
     /*
@@ -468,7 +471,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass32Service()
     {
-        return $this->services['class32'] = new \DiContainerBenchmarks\Fixture\Class32($this->get('class31'));
+        return $this->services['class32'] = new \DiContainerBenchmarks\Fixture\Class32(${($_ = isset($this->services['class31']) ? $this->services['class31'] : $this->get('class31')) && false ?: '_'});
     }
 
     /*
@@ -480,7 +483,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass33Service()
     {
-        return $this->services['class33'] = new \DiContainerBenchmarks\Fixture\Class33($this->get('class32'));
+        return $this->services['class33'] = new \DiContainerBenchmarks\Fixture\Class33(${($_ = isset($this->services['class32']) ? $this->services['class32'] : $this->get('class32')) && false ?: '_'});
     }
 
     /*
@@ -492,7 +495,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass34Service()
     {
-        return $this->services['class34'] = new \DiContainerBenchmarks\Fixture\Class34($this->get('class33'));
+        return $this->services['class34'] = new \DiContainerBenchmarks\Fixture\Class34(${($_ = isset($this->services['class33']) ? $this->services['class33'] : $this->get('class33')) && false ?: '_'});
     }
 
     /*
@@ -504,7 +507,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass35Service()
     {
-        return $this->services['class35'] = new \DiContainerBenchmarks\Fixture\Class35($this->get('class34'));
+        return $this->services['class35'] = new \DiContainerBenchmarks\Fixture\Class35(${($_ = isset($this->services['class34']) ? $this->services['class34'] : $this->get('class34')) && false ?: '_'});
     }
 
     /*
@@ -516,7 +519,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass36Service()
     {
-        return $this->services['class36'] = new \DiContainerBenchmarks\Fixture\Class36($this->get('class35'));
+        return $this->services['class36'] = new \DiContainerBenchmarks\Fixture\Class36(${($_ = isset($this->services['class35']) ? $this->services['class35'] : $this->get('class35')) && false ?: '_'});
     }
 
     /*
@@ -528,7 +531,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass37Service()
     {
-        return $this->services['class37'] = new \DiContainerBenchmarks\Fixture\Class37($this->get('class36'));
+        return $this->services['class37'] = new \DiContainerBenchmarks\Fixture\Class37(${($_ = isset($this->services['class36']) ? $this->services['class36'] : $this->get('class36')) && false ?: '_'});
     }
 
     /*
@@ -540,7 +543,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass38Service()
     {
-        return $this->services['class38'] = new \DiContainerBenchmarks\Fixture\Class38($this->get('class37'));
+        return $this->services['class38'] = new \DiContainerBenchmarks\Fixture\Class38(${($_ = isset($this->services['class37']) ? $this->services['class37'] : $this->get('class37')) && false ?: '_'});
     }
 
     /*
@@ -552,7 +555,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass39Service()
     {
-        return $this->services['class39'] = new \DiContainerBenchmarks\Fixture\Class39($this->get('class38'));
+        return $this->services['class39'] = new \DiContainerBenchmarks\Fixture\Class39(${($_ = isset($this->services['class38']) ? $this->services['class38'] : $this->get('class38')) && false ?: '_'});
     }
 
     /*
@@ -564,7 +567,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass4Service()
     {
-        return $this->services['class4'] = new \DiContainerBenchmarks\Fixture\Class4($this->get('class3'));
+        return $this->services['class4'] = new \DiContainerBenchmarks\Fixture\Class4(${($_ = isset($this->services['class3']) ? $this->services['class3'] : $this->get('class3')) && false ?: '_'});
     }
 
     /*
@@ -576,7 +579,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass40Service()
     {
-        return $this->services['class40'] = new \DiContainerBenchmarks\Fixture\Class40($this->get('class39'));
+        return $this->services['class40'] = new \DiContainerBenchmarks\Fixture\Class40(${($_ = isset($this->services['class39']) ? $this->services['class39'] : $this->get('class39')) && false ?: '_'});
     }
 
     /*
@@ -588,7 +591,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass41Service()
     {
-        return $this->services['class41'] = new \DiContainerBenchmarks\Fixture\Class41($this->get('class40'));
+        return $this->services['class41'] = new \DiContainerBenchmarks\Fixture\Class41(${($_ = isset($this->services['class40']) ? $this->services['class40'] : $this->get('class40')) && false ?: '_'});
     }
 
     /*
@@ -600,7 +603,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass42Service()
     {
-        return $this->services['class42'] = new \DiContainerBenchmarks\Fixture\Class42($this->get('class41'));
+        return $this->services['class42'] = new \DiContainerBenchmarks\Fixture\Class42(${($_ = isset($this->services['class41']) ? $this->services['class41'] : $this->get('class41')) && false ?: '_'});
     }
 
     /*
@@ -612,7 +615,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass43Service()
     {
-        return $this->services['class43'] = new \DiContainerBenchmarks\Fixture\Class43($this->get('class42'));
+        return $this->services['class43'] = new \DiContainerBenchmarks\Fixture\Class43(${($_ = isset($this->services['class42']) ? $this->services['class42'] : $this->get('class42')) && false ?: '_'});
     }
 
     /*
@@ -624,7 +627,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass44Service()
     {
-        return $this->services['class44'] = new \DiContainerBenchmarks\Fixture\Class44($this->get('class43'));
+        return $this->services['class44'] = new \DiContainerBenchmarks\Fixture\Class44(${($_ = isset($this->services['class43']) ? $this->services['class43'] : $this->get('class43')) && false ?: '_'});
     }
 
     /*
@@ -636,7 +639,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass45Service()
     {
-        return $this->services['class45'] = new \DiContainerBenchmarks\Fixture\Class45($this->get('class44'));
+        return $this->services['class45'] = new \DiContainerBenchmarks\Fixture\Class45(${($_ = isset($this->services['class44']) ? $this->services['class44'] : $this->get('class44')) && false ?: '_'});
     }
 
     /*
@@ -648,7 +651,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass46Service()
     {
-        return $this->services['class46'] = new \DiContainerBenchmarks\Fixture\Class46($this->get('class45'));
+        return $this->services['class46'] = new \DiContainerBenchmarks\Fixture\Class46(${($_ = isset($this->services['class45']) ? $this->services['class45'] : $this->get('class45')) && false ?: '_'});
     }
 
     /*
@@ -660,7 +663,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass47Service()
     {
-        return $this->services['class47'] = new \DiContainerBenchmarks\Fixture\Class47($this->get('class46'));
+        return $this->services['class47'] = new \DiContainerBenchmarks\Fixture\Class47(${($_ = isset($this->services['class46']) ? $this->services['class46'] : $this->get('class46')) && false ?: '_'});
     }
 
     /*
@@ -672,7 +675,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass48Service()
     {
-        return $this->services['class48'] = new \DiContainerBenchmarks\Fixture\Class48($this->get('class47'));
+        return $this->services['class48'] = new \DiContainerBenchmarks\Fixture\Class48(${($_ = isset($this->services['class47']) ? $this->services['class47'] : $this->get('class47')) && false ?: '_'});
     }
 
     /*
@@ -684,7 +687,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass49Service()
     {
-        return $this->services['class49'] = new \DiContainerBenchmarks\Fixture\Class49($this->get('class48'));
+        return $this->services['class49'] = new \DiContainerBenchmarks\Fixture\Class49(${($_ = isset($this->services['class48']) ? $this->services['class48'] : $this->get('class48')) && false ?: '_'});
     }
 
     /*
@@ -696,7 +699,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass5Service()
     {
-        return $this->services['class5'] = new \DiContainerBenchmarks\Fixture\Class5($this->get('class4'));
+        return $this->services['class5'] = new \DiContainerBenchmarks\Fixture\Class5(${($_ = isset($this->services['class4']) ? $this->services['class4'] : $this->get('class4')) && false ?: '_'});
     }
 
     /*
@@ -708,7 +711,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass50Service()
     {
-        return $this->services['class50'] = new \DiContainerBenchmarks\Fixture\Class50($this->get('class49'));
+        return $this->services['class50'] = new \DiContainerBenchmarks\Fixture\Class50(${($_ = isset($this->services['class49']) ? $this->services['class49'] : $this->get('class49')) && false ?: '_'});
     }
 
     /*
@@ -720,7 +723,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass51Service()
     {
-        return $this->services['class51'] = new \DiContainerBenchmarks\Fixture\Class51($this->get('class50'));
+        return $this->services['class51'] = new \DiContainerBenchmarks\Fixture\Class51(${($_ = isset($this->services['class50']) ? $this->services['class50'] : $this->get('class50')) && false ?: '_'});
     }
 
     /*
@@ -732,7 +735,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass52Service()
     {
-        return $this->services['class52'] = new \DiContainerBenchmarks\Fixture\Class52($this->get('class51'));
+        return $this->services['class52'] = new \DiContainerBenchmarks\Fixture\Class52(${($_ = isset($this->services['class51']) ? $this->services['class51'] : $this->get('class51')) && false ?: '_'});
     }
 
     /*
@@ -744,7 +747,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass53Service()
     {
-        return $this->services['class53'] = new \DiContainerBenchmarks\Fixture\Class53($this->get('class52'));
+        return $this->services['class53'] = new \DiContainerBenchmarks\Fixture\Class53(${($_ = isset($this->services['class52']) ? $this->services['class52'] : $this->get('class52')) && false ?: '_'});
     }
 
     /*
@@ -756,7 +759,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass54Service()
     {
-        return $this->services['class54'] = new \DiContainerBenchmarks\Fixture\Class54($this->get('class53'));
+        return $this->services['class54'] = new \DiContainerBenchmarks\Fixture\Class54(${($_ = isset($this->services['class53']) ? $this->services['class53'] : $this->get('class53')) && false ?: '_'});
     }
 
     /*
@@ -768,7 +771,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass55Service()
     {
-        return $this->services['class55'] = new \DiContainerBenchmarks\Fixture\Class55($this->get('class54'));
+        return $this->services['class55'] = new \DiContainerBenchmarks\Fixture\Class55(${($_ = isset($this->services['class54']) ? $this->services['class54'] : $this->get('class54')) && false ?: '_'});
     }
 
     /*
@@ -780,7 +783,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass56Service()
     {
-        return $this->services['class56'] = new \DiContainerBenchmarks\Fixture\Class56($this->get('class55'));
+        return $this->services['class56'] = new \DiContainerBenchmarks\Fixture\Class56(${($_ = isset($this->services['class55']) ? $this->services['class55'] : $this->get('class55')) && false ?: '_'});
     }
 
     /*
@@ -792,7 +795,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass57Service()
     {
-        return $this->services['class57'] = new \DiContainerBenchmarks\Fixture\Class57($this->get('class56'));
+        return $this->services['class57'] = new \DiContainerBenchmarks\Fixture\Class57(${($_ = isset($this->services['class56']) ? $this->services['class56'] : $this->get('class56')) && false ?: '_'});
     }
 
     /*
@@ -804,7 +807,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass58Service()
     {
-        return $this->services['class58'] = new \DiContainerBenchmarks\Fixture\Class58($this->get('class57'));
+        return $this->services['class58'] = new \DiContainerBenchmarks\Fixture\Class58(${($_ = isset($this->services['class57']) ? $this->services['class57'] : $this->get('class57')) && false ?: '_'});
     }
 
     /*
@@ -816,7 +819,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass59Service()
     {
-        return $this->services['class59'] = new \DiContainerBenchmarks\Fixture\Class59($this->get('class58'));
+        return $this->services['class59'] = new \DiContainerBenchmarks\Fixture\Class59(${($_ = isset($this->services['class58']) ? $this->services['class58'] : $this->get('class58')) && false ?: '_'});
     }
 
     /*
@@ -828,7 +831,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass6Service()
     {
-        return $this->services['class6'] = new \DiContainerBenchmarks\Fixture\Class6($this->get('class5'));
+        return $this->services['class6'] = new \DiContainerBenchmarks\Fixture\Class6(${($_ = isset($this->services['class5']) ? $this->services['class5'] : $this->get('class5')) && false ?: '_'});
     }
 
     /*
@@ -840,7 +843,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass60Service()
     {
-        return $this->services['class60'] = new \DiContainerBenchmarks\Fixture\Class60($this->get('class59'));
+        return $this->services['class60'] = new \DiContainerBenchmarks\Fixture\Class60(${($_ = isset($this->services['class59']) ? $this->services['class59'] : $this->get('class59')) && false ?: '_'});
     }
 
     /*
@@ -852,7 +855,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass61Service()
     {
-        return $this->services['class61'] = new \DiContainerBenchmarks\Fixture\Class61($this->get('class60'));
+        return $this->services['class61'] = new \DiContainerBenchmarks\Fixture\Class61(${($_ = isset($this->services['class60']) ? $this->services['class60'] : $this->get('class60')) && false ?: '_'});
     }
 
     /*
@@ -864,7 +867,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass62Service()
     {
-        return $this->services['class62'] = new \DiContainerBenchmarks\Fixture\Class62($this->get('class61'));
+        return $this->services['class62'] = new \DiContainerBenchmarks\Fixture\Class62(${($_ = isset($this->services['class61']) ? $this->services['class61'] : $this->get('class61')) && false ?: '_'});
     }
 
     /*
@@ -876,7 +879,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass63Service()
     {
-        return $this->services['class63'] = new \DiContainerBenchmarks\Fixture\Class63($this->get('class62'));
+        return $this->services['class63'] = new \DiContainerBenchmarks\Fixture\Class63(${($_ = isset($this->services['class62']) ? $this->services['class62'] : $this->get('class62')) && false ?: '_'});
     }
 
     /*
@@ -888,7 +891,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass64Service()
     {
-        return $this->services['class64'] = new \DiContainerBenchmarks\Fixture\Class64($this->get('class63'));
+        return $this->services['class64'] = new \DiContainerBenchmarks\Fixture\Class64(${($_ = isset($this->services['class63']) ? $this->services['class63'] : $this->get('class63')) && false ?: '_'});
     }
 
     /*
@@ -900,7 +903,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass65Service()
     {
-        return $this->services['class65'] = new \DiContainerBenchmarks\Fixture\Class65($this->get('class64'));
+        return $this->services['class65'] = new \DiContainerBenchmarks\Fixture\Class65(${($_ = isset($this->services['class64']) ? $this->services['class64'] : $this->get('class64')) && false ?: '_'});
     }
 
     /*
@@ -912,7 +915,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass66Service()
     {
-        return $this->services['class66'] = new \DiContainerBenchmarks\Fixture\Class66($this->get('class65'));
+        return $this->services['class66'] = new \DiContainerBenchmarks\Fixture\Class66(${($_ = isset($this->services['class65']) ? $this->services['class65'] : $this->get('class65')) && false ?: '_'});
     }
 
     /*
@@ -924,7 +927,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass67Service()
     {
-        return $this->services['class67'] = new \DiContainerBenchmarks\Fixture\Class67($this->get('class66'));
+        return $this->services['class67'] = new \DiContainerBenchmarks\Fixture\Class67(${($_ = isset($this->services['class66']) ? $this->services['class66'] : $this->get('class66')) && false ?: '_'});
     }
 
     /*
@@ -936,7 +939,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass68Service()
     {
-        return $this->services['class68'] = new \DiContainerBenchmarks\Fixture\Class68($this->get('class67'));
+        return $this->services['class68'] = new \DiContainerBenchmarks\Fixture\Class68(${($_ = isset($this->services['class67']) ? $this->services['class67'] : $this->get('class67')) && false ?: '_'});
     }
 
     /*
@@ -948,7 +951,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass69Service()
     {
-        return $this->services['class69'] = new \DiContainerBenchmarks\Fixture\Class69($this->get('class68'));
+        return $this->services['class69'] = new \DiContainerBenchmarks\Fixture\Class69(${($_ = isset($this->services['class68']) ? $this->services['class68'] : $this->get('class68')) && false ?: '_'});
     }
 
     /*
@@ -960,7 +963,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass7Service()
     {
-        return $this->services['class7'] = new \DiContainerBenchmarks\Fixture\Class7($this->get('class6'));
+        return $this->services['class7'] = new \DiContainerBenchmarks\Fixture\Class7(${($_ = isset($this->services['class6']) ? $this->services['class6'] : $this->get('class6')) && false ?: '_'});
     }
 
     /*
@@ -972,7 +975,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass70Service()
     {
-        return $this->services['class70'] = new \DiContainerBenchmarks\Fixture\Class70($this->get('class69'));
+        return $this->services['class70'] = new \DiContainerBenchmarks\Fixture\Class70(${($_ = isset($this->services['class69']) ? $this->services['class69'] : $this->get('class69')) && false ?: '_'});
     }
 
     /*
@@ -984,7 +987,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass71Service()
     {
-        return $this->services['class71'] = new \DiContainerBenchmarks\Fixture\Class71($this->get('class70'));
+        return $this->services['class71'] = new \DiContainerBenchmarks\Fixture\Class71(${($_ = isset($this->services['class70']) ? $this->services['class70'] : $this->get('class70')) && false ?: '_'});
     }
 
     /*
@@ -996,7 +999,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass72Service()
     {
-        return $this->services['class72'] = new \DiContainerBenchmarks\Fixture\Class72($this->get('class71'));
+        return $this->services['class72'] = new \DiContainerBenchmarks\Fixture\Class72(${($_ = isset($this->services['class71']) ? $this->services['class71'] : $this->get('class71')) && false ?: '_'});
     }
 
     /*
@@ -1008,7 +1011,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass73Service()
     {
-        return $this->services['class73'] = new \DiContainerBenchmarks\Fixture\Class73($this->get('class72'));
+        return $this->services['class73'] = new \DiContainerBenchmarks\Fixture\Class73(${($_ = isset($this->services['class72']) ? $this->services['class72'] : $this->get('class72')) && false ?: '_'});
     }
 
     /*
@@ -1020,7 +1023,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass74Service()
     {
-        return $this->services['class74'] = new \DiContainerBenchmarks\Fixture\Class74($this->get('class73'));
+        return $this->services['class74'] = new \DiContainerBenchmarks\Fixture\Class74(${($_ = isset($this->services['class73']) ? $this->services['class73'] : $this->get('class73')) && false ?: '_'});
     }
 
     /*
@@ -1032,7 +1035,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass75Service()
     {
-        return $this->services['class75'] = new \DiContainerBenchmarks\Fixture\Class75($this->get('class74'));
+        return $this->services['class75'] = new \DiContainerBenchmarks\Fixture\Class75(${($_ = isset($this->services['class74']) ? $this->services['class74'] : $this->get('class74')) && false ?: '_'});
     }
 
     /*
@@ -1044,7 +1047,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass76Service()
     {
-        return $this->services['class76'] = new \DiContainerBenchmarks\Fixture\Class76($this->get('class75'));
+        return $this->services['class76'] = new \DiContainerBenchmarks\Fixture\Class76(${($_ = isset($this->services['class75']) ? $this->services['class75'] : $this->get('class75')) && false ?: '_'});
     }
 
     /*
@@ -1056,7 +1059,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass77Service()
     {
-        return $this->services['class77'] = new \DiContainerBenchmarks\Fixture\Class77($this->get('class76'));
+        return $this->services['class77'] = new \DiContainerBenchmarks\Fixture\Class77(${($_ = isset($this->services['class76']) ? $this->services['class76'] : $this->get('class76')) && false ?: '_'});
     }
 
     /*
@@ -1068,7 +1071,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass78Service()
     {
-        return $this->services['class78'] = new \DiContainerBenchmarks\Fixture\Class78($this->get('class77'));
+        return $this->services['class78'] = new \DiContainerBenchmarks\Fixture\Class78(${($_ = isset($this->services['class77']) ? $this->services['class77'] : $this->get('class77')) && false ?: '_'});
     }
 
     /*
@@ -1080,7 +1083,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass79Service()
     {
-        return $this->services['class79'] = new \DiContainerBenchmarks\Fixture\Class79($this->get('class78'));
+        return $this->services['class79'] = new \DiContainerBenchmarks\Fixture\Class79(${($_ = isset($this->services['class78']) ? $this->services['class78'] : $this->get('class78')) && false ?: '_'});
     }
 
     /*
@@ -1092,7 +1095,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass8Service()
     {
-        return $this->services['class8'] = new \DiContainerBenchmarks\Fixture\Class8($this->get('class7'));
+        return $this->services['class8'] = new \DiContainerBenchmarks\Fixture\Class8(${($_ = isset($this->services['class7']) ? $this->services['class7'] : $this->get('class7')) && false ?: '_'});
     }
 
     /*
@@ -1104,7 +1107,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass80Service()
     {
-        return $this->services['class80'] = new \DiContainerBenchmarks\Fixture\Class80($this->get('class79'));
+        return $this->services['class80'] = new \DiContainerBenchmarks\Fixture\Class80(${($_ = isset($this->services['class79']) ? $this->services['class79'] : $this->get('class79')) && false ?: '_'});
     }
 
     /*
@@ -1116,7 +1119,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass81Service()
     {
-        return $this->services['class81'] = new \DiContainerBenchmarks\Fixture\Class81($this->get('class80'));
+        return $this->services['class81'] = new \DiContainerBenchmarks\Fixture\Class81(${($_ = isset($this->services['class80']) ? $this->services['class80'] : $this->get('class80')) && false ?: '_'});
     }
 
     /*
@@ -1128,7 +1131,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass82Service()
     {
-        return $this->services['class82'] = new \DiContainerBenchmarks\Fixture\Class82($this->get('class81'));
+        return $this->services['class82'] = new \DiContainerBenchmarks\Fixture\Class82(${($_ = isset($this->services['class81']) ? $this->services['class81'] : $this->get('class81')) && false ?: '_'});
     }
 
     /*
@@ -1140,7 +1143,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass83Service()
     {
-        return $this->services['class83'] = new \DiContainerBenchmarks\Fixture\Class83($this->get('class82'));
+        return $this->services['class83'] = new \DiContainerBenchmarks\Fixture\Class83(${($_ = isset($this->services['class82']) ? $this->services['class82'] : $this->get('class82')) && false ?: '_'});
     }
 
     /*
@@ -1152,7 +1155,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass84Service()
     {
-        return $this->services['class84'] = new \DiContainerBenchmarks\Fixture\Class84($this->get('class83'));
+        return $this->services['class84'] = new \DiContainerBenchmarks\Fixture\Class84(${($_ = isset($this->services['class83']) ? $this->services['class83'] : $this->get('class83')) && false ?: '_'});
     }
 
     /*
@@ -1164,7 +1167,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass85Service()
     {
-        return $this->services['class85'] = new \DiContainerBenchmarks\Fixture\Class85($this->get('class84'));
+        return $this->services['class85'] = new \DiContainerBenchmarks\Fixture\Class85(${($_ = isset($this->services['class84']) ? $this->services['class84'] : $this->get('class84')) && false ?: '_'});
     }
 
     /*
@@ -1176,7 +1179,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass86Service()
     {
-        return $this->services['class86'] = new \DiContainerBenchmarks\Fixture\Class86($this->get('class85'));
+        return $this->services['class86'] = new \DiContainerBenchmarks\Fixture\Class86(${($_ = isset($this->services['class85']) ? $this->services['class85'] : $this->get('class85')) && false ?: '_'});
     }
 
     /*
@@ -1188,7 +1191,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass87Service()
     {
-        return $this->services['class87'] = new \DiContainerBenchmarks\Fixture\Class87($this->get('class86'));
+        return $this->services['class87'] = new \DiContainerBenchmarks\Fixture\Class87(${($_ = isset($this->services['class86']) ? $this->services['class86'] : $this->get('class86')) && false ?: '_'});
     }
 
     /*
@@ -1200,7 +1203,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass88Service()
     {
-        return $this->services['class88'] = new \DiContainerBenchmarks\Fixture\Class88($this->get('class87'));
+        return $this->services['class88'] = new \DiContainerBenchmarks\Fixture\Class88(${($_ = isset($this->services['class87']) ? $this->services['class87'] : $this->get('class87')) && false ?: '_'});
     }
 
     /*
@@ -1212,7 +1215,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass89Service()
     {
-        return $this->services['class89'] = new \DiContainerBenchmarks\Fixture\Class89($this->get('class88'));
+        return $this->services['class89'] = new \DiContainerBenchmarks\Fixture\Class89(${($_ = isset($this->services['class88']) ? $this->services['class88'] : $this->get('class88')) && false ?: '_'});
     }
 
     /*
@@ -1224,7 +1227,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass9Service()
     {
-        return $this->services['class9'] = new \DiContainerBenchmarks\Fixture\Class9($this->get('class8'));
+        return $this->services['class9'] = new \DiContainerBenchmarks\Fixture\Class9(${($_ = isset($this->services['class8']) ? $this->services['class8'] : $this->get('class8')) && false ?: '_'});
     }
 
     /*
@@ -1236,7 +1239,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass90Service()
     {
-        return $this->services['class90'] = new \DiContainerBenchmarks\Fixture\Class90($this->get('class89'));
+        return $this->services['class90'] = new \DiContainerBenchmarks\Fixture\Class90(${($_ = isset($this->services['class89']) ? $this->services['class89'] : $this->get('class89')) && false ?: '_'});
     }
 
     /*
@@ -1248,7 +1251,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass91Service()
     {
-        return $this->services['class91'] = new \DiContainerBenchmarks\Fixture\Class91($this->get('class90'));
+        return $this->services['class91'] = new \DiContainerBenchmarks\Fixture\Class91(${($_ = isset($this->services['class90']) ? $this->services['class90'] : $this->get('class90')) && false ?: '_'});
     }
 
     /*
@@ -1260,7 +1263,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass92Service()
     {
-        return $this->services['class92'] = new \DiContainerBenchmarks\Fixture\Class92($this->get('class91'));
+        return $this->services['class92'] = new \DiContainerBenchmarks\Fixture\Class92(${($_ = isset($this->services['class91']) ? $this->services['class91'] : $this->get('class91')) && false ?: '_'});
     }
 
     /*
@@ -1272,7 +1275,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass93Service()
     {
-        return $this->services['class93'] = new \DiContainerBenchmarks\Fixture\Class93($this->get('class92'));
+        return $this->services['class93'] = new \DiContainerBenchmarks\Fixture\Class93(${($_ = isset($this->services['class92']) ? $this->services['class92'] : $this->get('class92')) && false ?: '_'});
     }
 
     /*
@@ -1284,7 +1287,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass94Service()
     {
-        return $this->services['class94'] = new \DiContainerBenchmarks\Fixture\Class94($this->get('class93'));
+        return $this->services['class94'] = new \DiContainerBenchmarks\Fixture\Class94(${($_ = isset($this->services['class93']) ? $this->services['class93'] : $this->get('class93')) && false ?: '_'});
     }
 
     /*
@@ -1296,7 +1299,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass95Service()
     {
-        return $this->services['class95'] = new \DiContainerBenchmarks\Fixture\Class95($this->get('class94'));
+        return $this->services['class95'] = new \DiContainerBenchmarks\Fixture\Class95(${($_ = isset($this->services['class94']) ? $this->services['class94'] : $this->get('class94')) && false ?: '_'});
     }
 
     /*
@@ -1308,7 +1311,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass96Service()
     {
-        return $this->services['class96'] = new \DiContainerBenchmarks\Fixture\Class96($this->get('class95'));
+        return $this->services['class96'] = new \DiContainerBenchmarks\Fixture\Class96(${($_ = isset($this->services['class95']) ? $this->services['class95'] : $this->get('class95')) && false ?: '_'});
     }
 
     /*
@@ -1320,7 +1323,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass97Service()
     {
-        return $this->services['class97'] = new \DiContainerBenchmarks\Fixture\Class97($this->get('class96'));
+        return $this->services['class97'] = new \DiContainerBenchmarks\Fixture\Class97(${($_ = isset($this->services['class96']) ? $this->services['class96'] : $this->get('class96')) && false ?: '_'});
     }
 
     /*
@@ -1332,7 +1335,7 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass98Service()
     {
-        return $this->services['class98'] = new \DiContainerBenchmarks\Fixture\Class98($this->get('class97'));
+        return $this->services['class98'] = new \DiContainerBenchmarks\Fixture\Class98(${($_ = isset($this->services['class97']) ? $this->services['class97'] : $this->get('class97')) && false ?: '_'});
     }
 
     /*
@@ -1344,6 +1347,6 @@ class CompiledSingletonContainer extends Container
      */
     protected function getClass99Service()
     {
-        return $this->services['class99'] = new \DiContainerBenchmarks\Fixture\Class99($this->get('class98'));
+        return $this->services['class99'] = new \DiContainerBenchmarks\Fixture\Class99(${($_ = isset($this->services['class98']) ? $this->services['class98'] : $this->get('class98')) && false ?: '_'});
     }
 }
