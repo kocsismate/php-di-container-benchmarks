@@ -1607,12 +1607,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/woohoolabs/zen.git",
-                "reference": "0c1866fc981ee1c56c4e1489e6d6629ee81b948b"
+                "reference": "de0821da36c76e86ef369ed8e85e73133e2bdd5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/0c1866fc981ee1c56c4e1489e6d6629ee81b948b",
-                "reference": "0c1866fc981ee1c56c4e1489e6d6629ee81b948b",
+                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/de0821da36c76e86ef369ed8e85e73133e2bdd5d",
+                "reference": "de0821da36c76e86ef369ed8e85e73133e2bdd5d",
                 "shasum": ""
             },
             "require": {
@@ -1657,7 +1657,7 @@
                 "ioc",
                 "zen"
             ],
-            "time": "2017-01-27 13:31:11"
+            "time": "2017-01-27 15:51:34"
         },
         {
             "name": "zendframework/zend-code",
