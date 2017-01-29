@@ -106,7 +106,7 @@ class HtmlOutputGenerator implements OutputGeneratorInterface
 HERE;
         foreach ($containers as $i => $container) {
             /** @var ContainerInterface $container */
-            $name = $container->getPackage();
+            $package = $container->getPackage();
             $version = Versions::getVersion($container->getPackage());
             $displayedVersion = substr($version, 0, strpos($version, "@"));
             $url = $container->getUrl();
@@ -115,11 +115,7 @@ HERE;
 
             $html .= <<<HERE
                     <tr>
-                        <td>
-                            <a target="_blank" href="$url" style="display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
-                                <b>$name</b>
-                            </a>
-                        </td>
+                        <td><a target="_blank" href="$url"><b>$package</b></a></td>
                         <td>$displayedVersion</td>
                         <td>$compiled</td>
                         <td>$autowiring</td>
