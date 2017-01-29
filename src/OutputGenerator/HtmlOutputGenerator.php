@@ -80,24 +80,22 @@ class HtmlOutputGenerator implements OutputGeneratorInterface
             </p>
 
             <p>
-                I have been interested in the topic since then so I wanted to finally conduct a better benchmark than
-                the last one was: I tried to fix its flaws while keeping its many good parts. So here is my take!
+                
+                I have been interested in the topic since then - and my curiosity was just growing after I had started
+                to develop my own DI container, Zen - so I wanted to finally conduct a better benchmark than the last
+                one was: I tried to fix its flaws while keeping its many good parts. So here is my take! If you have any
+                suggestion in mind about the benchmark or you want to add your container to the list, please create an
+                an <a target="_blank" href="https://github.com/kocsismate/php-di-container-benchmarks">issue or a Pull Request</a>.
             </p>
 
             <p>
-                If you have any suggestion in mind about the benchmark or you want to add your container to the list,
-                please create an <a target="_blank" href="https://github.com/kocsismate/php-di-container-benchmarks">Issue or a Pull Request</a>.
-            </p>
-
-            <p>
-                The containers examined are listed below along with some of their attributes:
+                The examined containers are listed below along with some of their attributes:
             </p>
 
             <table border="1" style="width: 750px;">
                 <thead>
                     <tr>
-                        <th style="width: 50px;">No.</th>
-                        <th style="width: 175px;">Name</th>
+                        <th style="width: 225px;">Name</th>
                         <th style="width: 150px;">Compiled/Dynamic</th>
                         <th style="width: 125px;">Autowiring</th>
                         <th style="width: 250px;">Project URL</th>
@@ -107,7 +105,6 @@ class HtmlOutputGenerator implements OutputGeneratorInterface
 HERE;
         foreach ($containers as $i => $container) {
             /** @var ContainerInterface $container */
-            $number = ($i+1);
             $name = $container->getName();
             $url = $container->getUrl();
             $displayedUrl = str_replace(["http://", "https://"], "", $container->getUrl());
@@ -116,7 +113,6 @@ HERE;
 
             $html .= <<<HERE
                     <tr>
-                        <th>$number</th>
                         <td><b>$name</b></td>
                         <td>$compiled</td>
                         <td>$autowiring</td>
@@ -164,12 +160,12 @@ HERE;
         <section>
             <h2 id="method">Method</h2>
 
-            <p>
-                Each container is given 6 tasks (Test Suites) where they have to create or fetch object
-                graphs of different sizes (10 or 100 objects). For this purpose, containers are configured
-                either to always instantiate objects (this is usually called as Prototype scope or not shared services)
-                or to instantiate objects only at the first retrieval and return the same instance on the subsequent
-                calls (which is usually referred to as Singleton scope or shared services).
+            <p>            
+                Each container is given 6 tasks (Test Suites) where they have to create or fetch object graphs of
+                different sizes (10 or 100 objects). For this purpose, containers are configured either to always
+                instantiate objects (this is usually called as Prototype scope or not shared services) or to instantiate
+                objects only at the first retrieval and return the same instance on the subsequent calls (which is
+                usually referred to as Singleton scope or shared services).
             </p>
 
             <p>
@@ -184,8 +180,8 @@ HERE;
             <p>
                 Each Test Suite contains three Test Cases which define the number of iterations the main task has to be
                 repeated in order to simulate real world usage patterns. This number ranges from 10 to 10 000.
-                Furthermore, all Test Cases are performed 20 times (this is referred to as "runs") in order to improve
-                the accuracy of measurements.
+                Furthermore, all Test Cases are performed 30 times (this is referred to as "runs") in order to improve
+                the accuracy of measurements. The median of these results are displayed in the final results.
             </p>
 
             <p>
