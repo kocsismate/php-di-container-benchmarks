@@ -9,6 +9,11 @@ use TheCodingMachine\Yaco\Definition\ObjectDefinition;
 
 class YacoContainer implements ContainerInterface
 {
+    public function getNamespace(): string
+    {
+        return "Yaco";
+    }
+
     public function getName(): string
     {
         return "Yaco";

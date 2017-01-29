@@ -7,9 +7,14 @@ use DiContainerBenchmarks\Container\ContainerInterface;
 
 class PhpDiContainer implements ContainerInterface
 {
-    public function getName(): string
+    public function getNamespace(): string
     {
         return "PhpDi";
+    }
+
+    public function getName(): string
+    {
+        return "PHP-DI";
     }
 
     public function isCompiled(): bool

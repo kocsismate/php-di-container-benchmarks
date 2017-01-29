@@ -10,6 +10,11 @@ use WoohooLabs\Zen\Container\Builder\FileSystemContainerBuilder;
 
 class ZenContainer implements ContainerInterface
 {
+    public function getNamespace(): string
+    {
+        return "Zen";
+    }
+
     public function getName(): string
     {
         return "Zen";

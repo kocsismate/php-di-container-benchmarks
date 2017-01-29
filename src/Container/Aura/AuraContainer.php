@@ -7,6 +7,11 @@ use DiContainerBenchmarks\Container\ContainerInterface;
 
 class AuraContainer implements ContainerInterface
 {
+    public function getNamespace(): string
+    {
+        return "Aura";
+    }
+
     public function getName(): string
     {
         return "Aura";

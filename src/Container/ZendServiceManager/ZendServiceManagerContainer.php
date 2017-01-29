@@ -7,9 +7,14 @@ use DiContainerBenchmarks\Container\ContainerInterface;
 
 class ZendServiceManagerContainer implements ContainerInterface
 {
-    public function getName(): string
+    public function getNamespace(): string
     {
         return "ZendServiceManager";
+    }
+
+    public function getName(): string
+    {
+        return "Zend ServiceManager";
     }
 
     public function isCompiled(): bool

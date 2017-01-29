@@ -7,6 +7,11 @@ use DiContainerBenchmarks\Container\ContainerInterface;
 
 class LaravelContainer implements ContainerInterface
 {
+    public function getNamespace(): string
+    {
+        return "Laravel";
+    }
+
     public function getName(): string
     {
         return "Laravel";

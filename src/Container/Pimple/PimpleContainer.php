@@ -7,6 +7,11 @@ use DiContainerBenchmarks\Container\ContainerInterface;
 
 class PimpleContainer implements ContainerInterface
 {
+    public function getNamespace(): string
+    {
+        return "Pimple";
+    }
+
     public function getName(): string
     {
         return "Pimple";

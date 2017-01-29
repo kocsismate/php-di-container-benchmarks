@@ -7,6 +7,11 @@ use DiContainerBenchmarks\Container\ContainerInterface;
 
 class DiceContainer implements ContainerInterface
 {
+    public function getNamespace(): string
+    {
+        return "Dice";
+    }
+
     public function getName(): string
     {
         return "Dice";

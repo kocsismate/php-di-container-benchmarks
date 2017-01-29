@@ -106,6 +106,7 @@ class HtmlOutputGenerator implements OutputGeneratorInterface
                 <tbody>
 HERE;
         foreach ($containers as $i => $container) {
+            /** @var ContainerInterface $container */
             $number = ($i+1);
             $name = $container->getName();
             $url = $container->getUrl();

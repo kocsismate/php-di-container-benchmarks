@@ -7,6 +7,11 @@ use DiContainerBenchmarks\Container\ContainerInterface;
 
 class DiscoContainer implements ContainerInterface
 {
+    public function getNamespace(): string
+    {
+        return "Disco";
+    }
+
     public function getName(): string
     {
         return "Disco";

@@ -10,6 +10,11 @@ use Symfony\Component\DependencyInjection\Dumper\PhpDumper;
 
 class SymfonyContainer implements ContainerInterface
 {
+    public function getNamespace(): string
+    {
+        return "Symfony";
+    }
+
     public function getName(): string
     {
         return "Symfony";

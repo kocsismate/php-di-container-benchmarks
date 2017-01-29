@@ -7,9 +7,14 @@ use DiContainerBenchmarks\Container\ContainerInterface;
 
 class OpulenceIocContainer implements ContainerInterface
 {
-    public function getName(): string
+    public function getNamespace(): string
     {
         return "OpulenceIoc";
+    }
+
+    public function getName(): string
+    {
+        return "Opulence IoC";
     }
 
     public function isCompiled(): bool
