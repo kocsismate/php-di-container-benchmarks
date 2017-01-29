@@ -56,8 +56,8 @@ class BenchmarkResult
             }
 
             $results[$containerName] = TestResult::createFromValues(
-                $this->getAverage($timeResults),
-                $this->getAverage($memoryResults)
+                $this->getMedian($timeResults),
+                $this->getMedian($memoryResults)
             );
         }
 
@@ -74,6 +74,25 @@ class BenchmarkResult
         });
 
         return $results;
+    }
+
+    private function getMedian(array $array, $precision = 5): ?float
+    {
+        if (empty($array) || $array[0] === null) {
+            return null;
+        }
+
+        sort($array, SORT_NUMERIC);
+
+        $count = count($array);
+        $middleIndex = (int) $count / 2;
+        if ($count % 2 == 0) {
+            $median = ($array[$middleIndex] + $array[$middleIndex + 1]) / 2;
+        } else {
+            $median = $array[$middleIndex];
+        }
+
+        return round($median, $precision);
     }
 
     private function getAverage(array $array, $precision = 5): ?float

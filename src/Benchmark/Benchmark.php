@@ -64,17 +64,19 @@ class Benchmark
         BenchmarkResult $benchmarkResult
     ): void {
 
-        for ($run = 0; $run < 20; $run++) {
-            $testSuiteNumber = $testSuite->getNumber();
-            $testCaseNumber = $testCase->getNumber();
-            $containerName = $container->getName();
+        $testSuiteNumber = $testSuite->getNumber();
+        $testCaseNumber = $testCase->getNumber();
+        $containerName = $container->getName();
+
+        echo "Running test $testSuiteNumber.$testCaseNumber: $containerName\n";
+
+        for ($run = 0; $run < 30; $run++) {
+            $containerNamespace = $container->getNamespace();
+
             $iterations = $testCase->getIterations();
             $testType = $testCase->getTestType();
-            $displayedRun = $run + 1;
 
-            echo "Running test $testSuiteNumber.$testCaseNumber ($containerName): $displayedRun/20\n";
-
-            $output = $this->context->getTestOutput($testSuiteNumber, $containerName, $iterations, $testType);
+            $output = $this->context->getTestOutput($testSuiteNumber, $containerNamespace, $iterations, $testType);
             $result = TestResult::createFromJson($output);
             $benchmarkResult->addTestResult($testSuite, $testCase, $container, $result);
 
@@ -84,7 +86,5 @@ class Benchmark
                 break;
             }
         }
-
-        usleep(200000);
     }
 }
