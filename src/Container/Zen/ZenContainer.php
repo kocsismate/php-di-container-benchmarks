@@ -10,12 +10,17 @@ use WoohooLabs\Zen\Container\Builder\FileSystemContainerBuilder;
 
 class ZenContainer implements ContainerInterface
 {
+    public function getPackage(): string
+    {
+        return "woohoolabs/zen";
+    }
+
     public function getNamespace(): string
     {
         return "Zen";
     }
 
-    public function getName(): string
+    public function getDisplayedName(): string
     {
         return "Zen";
     }

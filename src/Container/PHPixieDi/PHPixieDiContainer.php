@@ -7,12 +7,17 @@ use DiContainerBenchmarks\Container\ContainerInterface;
 
 class PHPixieDiContainer implements ContainerInterface
 {
+    public function getPackage(): string
+    {
+        return "phpixie/di";
+    }
+
     public function getNamespace(): string
     {
         return "PHPixieDi";
     }
 
-    public function getName(): string
+    public function getDisplayedName(): string
     {
         return "PHPixie DI";
     }

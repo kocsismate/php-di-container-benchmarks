@@ -17,7 +17,7 @@
         "doctrine/cache": "^1.6.1",
         "illuminate/container": "^v5.4.0",
         "illuminate/contracts": "^v5.4.0",
-        "level-2/Dice": "dev-master",
+        "level-2/dice": "dev-master",
         "opulence/ioc": "^1.0.6",
         "php-di/php-di": "6.0.x-dev",
         "phpixie/di": "^3.2.0",

@@ -7,12 +7,17 @@ use DiContainerBenchmarks\Container\ContainerInterface;
 
 class AurynContainer implements ContainerInterface
 {
+    public function getPackage(): string
+    {
+        return "rdlowrey/auryn";
+    }
+
     public function getNamespace(): string
     {
         return "Auryn";
     }
 
-    public function getName(): string
+    public function getDisplayedName(): string
     {
         return "Auryn";
     }

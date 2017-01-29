@@ -26,7 +26,7 @@ class BenchmarkResult
         ContainerInterface $container,
         TestResult $result
     ) {
-        $containerName = $container->getName();
+        $containerName = $container->getDisplayedName();
         $testSuiteNumber = $testSuite->getNumber();
         $testCaseNumber = $testCase->getNumber();
 

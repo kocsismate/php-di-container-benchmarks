@@ -7,12 +7,17 @@ use DiContainerBenchmarks\Container\ContainerInterface;
 
 class DiscoContainer implements ContainerInterface
 {
+    public function getPackage(): string
+    {
+        return "bitexpert/disco";
+    }
+
     public function getNamespace(): string
     {
         return "Disco";
     }
 
-    public function getName(): string
+    public function getDisplayedName(): string
     {
         return "Disco";
     }

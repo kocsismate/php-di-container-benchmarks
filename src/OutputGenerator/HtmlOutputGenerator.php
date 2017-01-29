@@ -6,6 +6,7 @@ namespace DiContainerBenchmarks\OutputGenerator;
 use DiContainerBenchmarks\Benchmark\BenchmarkResult;
 use DiContainerBenchmarks\Container\ContainerInterface;
 use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
+use PackageVersions\Versions;
 
 class HtmlOutputGenerator implements OutputGeneratorInterface
 {
@@ -95,32 +96,33 @@ class HtmlOutputGenerator implements OutputGeneratorInterface
             <table border="1" style="width: 750px;">
                 <thead>
                     <tr>
-                        <th style="width: 225px;">Name</th>
-                        <th style="width: 150px;">Compiled/Dynamic</th>
-                        <th style="width: 125px;">Autowiring</th>
-                        <th style="width: 250px;">Project URL</th>
+                        <th style="width: 300px;">Name</th>
+                        <th style="width: 100px;">Version</th>
+                        <th style="width: 175px;">Compiled/Dynamic</th>
+                        <th style="width: 175px;">Autowiring</th>
                     </tr>
                 </thead>
                 <tbody>
 HERE;
         foreach ($containers as $i => $container) {
             /** @var ContainerInterface $container */
-            $name = $container->getName();
+            $name = $container->getPackage();
+            $version = Versions::getVersion($container->getPackage());
+            $displayedVersion = substr($version, 0, strpos($version, "@"));
             $url = $container->getUrl();
-            $displayedUrl = str_replace(["http://", "https://"], "", $container->getUrl());
             $compiled = $container->isCompiled() ? "compiled" : "dynamic";
             $autowiring = $container->isAutowiringSupported() ? "supported" : "not supported";
 
             $html .= <<<HERE
                     <tr>
-                        <td><b>$name</b></td>
-                        <td>$compiled</td>
-                        <td>$autowiring</td>
                         <td>
                             <a target="_blank" href="$url" style="display:block;width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
-                                $displayedUrl
+                                <b>$name</b>
                             </a>
                         </td>
+                        <td>$displayedVersion</td>
+                        <td>$compiled</td>
+                        <td>$autowiring</td>
                     </tr>
 HERE;
         }

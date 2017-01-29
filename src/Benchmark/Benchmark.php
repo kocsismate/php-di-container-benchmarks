@@ -66,7 +66,7 @@ class Benchmark
 
         $testSuiteNumber = $testSuite->getNumber();
         $testCaseNumber = $testCase->getNumber();
-        $containerName = $container->getName();
+        $containerName = $container->getDisplayedName();
 
         echo "Running test $testSuiteNumber.$testCaseNumber: $containerName\n";
 
