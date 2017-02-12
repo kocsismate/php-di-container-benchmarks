@@ -17,6 +17,7 @@ use DiContainerBenchmarks\Container\PHPixieDi\PHPixieDiContainer;
 use DiContainerBenchmarks\Container\Pimple\PimpleContainer;
 use DiContainerBenchmarks\Container\Symfony\SymfonyContainer;
 use DiContainerBenchmarks\Container\Yaco\YacoContainer;
+use DiContainerBenchmarks\Container\Yii2\Yii2Container;
 use DiContainerBenchmarks\Container\Zen\ZenContainer;
 use DiContainerBenchmarks\Container\ZendServiceManager\ZendServiceManagerContainer;
 use DiContainerBenchmarks\OutputGenerator\HtmlOutputGenerator;
@@ -48,6 +49,7 @@ $containers = [
     new PimpleContainer(),
     new SymfonyContainer(),
     new YacoContainer(),
+    new Yii2Container(),
     new ZenContainer(),
     new ZendServiceManagerContainer(),
 ];
