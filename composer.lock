@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bcd491210f2ba5df8b0a173ac2d63928",
+    "content-hash": "5caeda52abb7a6d3ef962c081df05266",
     "packages": [
         {
             "name": "aura/di",
@@ -60,29 +60,30 @@
         },
         {
             "name": "bitexpert/disco",
-            "version": "v0.6.3",
+            "version": "v0.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bitExpert/disco.git",
-                "reference": "3f9595810f46a013ef9508bf250dca9f523a8c93"
+                "reference": "25cffabff812dfb7306bd0ed296935d6c5b351bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bitExpert/disco/zipball/3f9595810f46a013ef9508bf250dca9f523a8c93",
-                "reference": "3f9595810f46a013ef9508bf250dca9f523a8c93",
+                "url": "https://api.github.com/repos/bitExpert/disco/zipball/25cffabff812dfb7306bd0ed296935d6c5b351bc",
+                "reference": "25cffabff812dfb7306bd0ed296935d6c5b351bc",
                 "shasum": ""
             },
             "require": {
                 "bitexpert/slf4psrlog": "^0.1.3",
-                "container-interop/container-interop": "^1.1.0",
                 "doctrine/annotations": "^1.3.0",
                 "ocramius/proxy-manager": "^2.0.4 <2.1.0",
-                "php": "7.0.0 - 7.0.5 || ^7.0.7"
+                "php": "7.0.0 - 7.0.5 || ^7.0.7",
+                "psr/container": "^1.0.0"
             },
             "require-dev": {
                 "bitexpert/phing-securitychecker": "^0.2.1",
                 "monolog/monolog": "^1.21.0",
                 "phing/phing": "^2.14.0",
+                "phpbench/phpbench": "^0.13.0",
                 "phpdocumentor/phpdocumentor": "v2.9.0",
                 "phpunit/php-code-coverage": "^4.0.1",
                 "phpunit/phpunit": "^5.6",
@@ -106,7 +107,7 @@
                 }
             ],
             "description": "Dependency Injection Container",
-            "time": "2017-01-08T10:21:00+00:00"
+            "time": "2017-02-14T17:58:00+00:00"
         },
         {
             "name": "bitexpert/slf4psrlog",
@@ -172,22 +173,22 @@
         },
         {
             "name": "bower-asset/jquery.inputmask",
-            "version": "3.3.4.0",
+            "version": "3.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RobinHerbots/Inputmask.git",
-                "reference": "8a882bc471ba4077c4f8ecbe3d9d61c7558f3ef2"
+                "reference": "ed27356d1b22366be48c4e7b8d038b9649bd4ab0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/8a882bc471ba4077c4f8ecbe3d9d61c7558f3ef2",
-                "reference": "8a882bc471ba4077c4f8ecbe3d9d61c7558f3ef2",
+                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/ed27356d1b22366be48c4e7b8d038b9649bd4ab0",
+                "reference": "ed27356d1b22366be48c4e7b8d038b9649bd4ab0",
                 "shasum": null
             },
             "require": {
                 "bower-asset/jquery": ">=1.7"
             },
-            "type": "library"
+            "type": "bower-asset"
         },
         {
             "name": "bower-asset/punycode",
@@ -286,17 +287,20 @@
         },
         {
             "name": "container-interop/container-interop",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/container-interop/container-interop.git",
-                "reference": "fc08354828f8fd3245f77a66b9e23a6bca48297e"
+                "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/container-interop/container-interop/zipball/fc08354828f8fd3245f77a66b9e23a6bca48297e",
-                "reference": "fc08354828f8fd3245f77a66b9e23a6bca48297e",
+                "url": "https://api.github.com/repos/container-interop/container-interop/zipball/79cbf1341c22ec75643d841642dd5d6acd83bdb8",
+                "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8",
                 "shasum": ""
+            },
+            "require": {
+                "psr/container": "^1.0"
             },
             "type": "library",
             "autoload": {
@@ -309,7 +313,8 @@
                 "MIT"
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
-            "time": "2014-12-30T15:22:37+00:00"
+            "homepage": "https://github.com/container-interop/container-interop",
+            "time": "2017-02-14T19:40:03+00:00"
         },
         {
             "name": "container-interop/definition-interop",
@@ -340,16 +345,16 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "v1.3.1",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "bd4461328621bde0ae6b1b2675fbc6aca4ceb558"
+                "reference": "54cacc9b81758b14e3ce750f205a393d52339e97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/bd4461328621bde0ae6b1b2675fbc6aca4ceb558",
-                "reference": "bd4461328621bde0ae6b1b2675fbc6aca4ceb558",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/54cacc9b81758b14e3ce750f205a393d52339e97",
+                "reference": "54cacc9b81758b14e3ce750f205a393d52339e97",
                 "shasum": ""
             },
             "require": {
@@ -358,7 +363,7 @@
             },
             "require-dev": {
                 "doctrine/cache": "1.*",
-                "phpunit/phpunit": "^5.6.1"
+                "phpunit/phpunit": "^5.7"
             },
             "type": "library",
             "extra": {
@@ -404,7 +409,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2016-12-30T15:59:45+00:00"
+            "time": "2017-02-24T16:22:25+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -532,20 +537,23 @@
         },
         {
             "name": "ezyang/htmlpurifier",
-            "version": "v4.8.0",
+            "version": "v4.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezyang/htmlpurifier.git",
-                "reference": "d0c392f77d2f2a3dcf7fcb79e2a1e2b8804e75b2"
+                "reference": "6d50e5282afdfdfc3e0ff6d192aff56c5629b3d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/d0c392f77d2f2a3dcf7fcb79e2a1e2b8804e75b2",
-                "reference": "d0c392f77d2f2a3dcf7fcb79e2a1e2b8804e75b2",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/6d50e5282afdfdfc3e0ff6d192aff56c5629b3d4",
+                "reference": "6d50e5282afdfdfc3e0ff6d192aff56c5629b3d4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2"
+            },
+            "require-dev": {
+                "simpletest/simpletest": "^1.1"
             },
             "type": "library",
             "autoload": {
@@ -572,20 +580,20 @@
             "keywords": [
                 "html"
             ],
-            "time": "2016-07-16T12:58:58+00:00"
+            "time": "2017-03-13T06:30:53+00:00"
         },
         {
             "name": "illuminate/container",
-            "version": "v5.4.9",
+            "version": "v5.4.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "ccbfa2c69369a11b419d071ad11147b59eb9f052"
+                "reference": "50aa19491d478edd907d1f67e0928944e8b2dcb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/ccbfa2c69369a11b419d071ad11147b59eb9f052",
-                "reference": "ccbfa2c69369a11b419d071ad11147b59eb9f052",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/50aa19491d478edd907d1f67e0928944e8b2dcb5",
+                "reference": "50aa19491d478edd907d1f67e0928944e8b2dcb5",
                 "shasum": ""
             },
             "require": {
@@ -615,20 +623,20 @@
             ],
             "description": "The Illuminate Container package.",
             "homepage": "https://laravel.com",
-            "time": "2017-01-28T17:55:54+00:00"
+            "time": "2017-04-16T13:32:45+00:00"
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.4.9",
+            "version": "v5.4.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "4ec919d294aca396d172e644b243b49885cd2cc7"
+                "reference": "ab2825726bee46a67c8cc66789852189dbef74a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/4ec919d294aca396d172e644b243b49885cd2cc7",
-                "reference": "4ec919d294aca396d172e644b243b49885cd2cc7",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/ab2825726bee46a67c8cc66789852189dbef74a9",
+                "reference": "ab2825726bee46a67c8cc66789852189dbef74a9",
                 "shasum": ""
             },
             "require": {
@@ -657,7 +665,7 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "https://laravel.com",
-            "time": "2017-01-18T20:23:54+00:00"
+            "time": "2017-03-29T13:17:47+00:00"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -723,12 +731,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Level-2/Dice.git",
-                "reference": "97551e1c720cb1ae7b4a2cb751768584110b515f"
+                "reference": "3b621d260f6285a246fa339cb81d7a69f70c25c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Level-2/Dice/zipball/97551e1c720cb1ae7b4a2cb751768584110b515f",
-                "reference": "97551e1c720cb1ae7b4a2cb751768584110b515f",
+                "url": "https://api.github.com/repos/Level-2/Dice/zipball/3b621d260f6285a246fa339cb81d7a69f70c25c4",
+                "reference": "3b621d260f6285a246fa339cb81d7a69f70c25c4",
                 "shasum": ""
             },
             "require": {
@@ -758,28 +766,29 @@
                 "di",
                 "ioc"
             ],
-            "time": "2016-12-15 14:50:33"
+            "time": "2017-02-22 16:21:30"
         },
         {
             "name": "mouf/picotainer",
-            "version": "v1.0.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thecodingmachine/picotainer.git",
-                "reference": "e6f0009c7d6b8b7f2bf7639fd0b417f897f8ed48"
+                "reference": "83737d6af8534c35e0d4cd2f0afd1e2e6c0ad7d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thecodingmachine/picotainer/zipball/e6f0009c7d6b8b7f2bf7639fd0b417f897f8ed48",
-                "reference": "e6f0009c7d6b8b7f2bf7639fd0b417f897f8ed48",
+                "url": "https://api.github.com/repos/thecodingmachine/picotainer/zipball/83737d6af8534c35e0d4cd2f0afd1e2e6c0ad7d4",
+                "reference": "83737d6af8534c35e0d4cd2f0afd1e2e6c0ad7d4",
                 "shasum": ""
             },
             "require": {
-                "container-interop/container-interop": "~1.0"
+                "container-interop/container-interop": "~1.2",
+                "psr/container": "^1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~3.7",
-                "satooshi/php-coveralls": "dev-master"
+                "phpunit/phpunit": "~4.8",
+                "satooshi/php-coveralls": "~1.0"
             },
             "type": "library",
             "autoload": {
@@ -805,20 +814,20 @@
                 "dependency injection",
                 "di"
             ],
-            "time": "2015-12-15T16:35:28+00:00"
+            "time": "2017-03-09T09:19:17+00:00"
         },
         {
             "name": "nikic/php-parser",
-            "version": "v3.0.4",
+            "version": "v3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "0bf561dfe75ba80441c22adecc0529056671a7d2"
+                "reference": "2b9e2f71b722f7c53918ab0c25f7646c2013f17d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/0bf561dfe75ba80441c22adecc0529056671a7d2",
-                "reference": "0bf561dfe75ba80441c22adecc0529056671a7d2",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/2b9e2f71b722f7c53918ab0c25f7646c2013f17d",
+                "reference": "2b9e2f71b722f7c53918ab0c25f7646c2013f17d",
                 "shasum": ""
             },
             "require": {
@@ -856,7 +865,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2017-02-10T20:20:03+00:00"
+            "time": "2017-03-05T18:23:57+00:00"
         },
         {
             "name": "ocramius/package-versions",
@@ -1069,22 +1078,24 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-DI/PHP-DI.git",
-                "reference": "1b1cb76c61496690d3f3609c959412eb53a5994e"
+                "reference": "ff03746f30bf776641a809e26e28892c73eebfd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/1b1cb76c61496690d3f3609c959412eb53a5994e",
-                "reference": "1b1cb76c61496690d3f3609c959412eb53a5994e",
+                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/ff03746f30bf776641a809e26e28892c73eebfd0",
+                "reference": "ff03746f30bf776641a809e26e28892c73eebfd0",
                 "shasum": ""
             },
             "require": {
-                "container-interop/container-interop": "~1.0",
+                "container-interop/container-interop": "~1.2",
                 "php": ">=7.0.0",
                 "php-di/invoker": "^1.3.2",
-                "php-di/phpdoc-reader": "^2.0.1"
+                "php-di/phpdoc-reader": "^2.0.1",
+                "psr/container": "~1.0"
             },
             "provide": {
-                "container-interop/container-interop-implementation": "^1.0"
+                "container-interop/container-interop-implementation": "^1.0",
+                "psr/container-implementation": "^1.0"
             },
             "replace": {
                 "mnapoli/php-di": "*"
@@ -1121,7 +1132,7 @@
                 "dependency injection",
                 "di"
             ],
-            "time": "2017-01-07 23:20:52"
+            "time": "2017-04-15 16:09:37"
         },
         {
             "name": "php-di/phpdoc-reader",
@@ -1260,12 +1271,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/container.git",
-                "reference": "18f0c75336992df5417a7dec4c9a45922d9ec413"
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/container/zipball/18f0c75336992df5417a7dec4c9a45922d9ec413",
-                "reference": "18f0c75336992df5417a7dec4c9a45922d9ec413",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
                 "shasum": ""
             },
             "require": {
@@ -1301,7 +1312,7 @@
                 "container-interop",
                 "psr"
             ],
-            "time": "2017-01-13 09:07:16"
+            "time": "2017-02-14 16:28:37"
         },
         {
             "name": "psr/log",
@@ -1352,16 +1363,16 @@
         },
         {
             "name": "rdlowrey/auryn",
-            "version": "v1.4.0",
+            "version": "v1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rdlowrey/auryn.git",
-                "reference": "2e4240791162dfe073d59654d8dc06df0eb0b73f"
+                "reference": "8c4dc07943599ba84f4f89eab8cf43efeef80395"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rdlowrey/auryn/zipball/2e4240791162dfe073d59654d8dc06df0eb0b73f",
-                "reference": "2e4240791162dfe073d59654d8dc06df0eb0b73f",
+                "url": "https://api.github.com/repos/rdlowrey/auryn/zipball/8c4dc07943599ba84f4f89eab8cf43efeef80395",
+                "reference": "8c4dc07943599ba84f4f89eab8cf43efeef80395",
                 "shasum": ""
             },
             "require": {
@@ -1409,27 +1420,31 @@
                 "dic",
                 "ioc"
             ],
-            "time": "2016-03-14T20:10:19+00:00"
+            "time": "2017-05-15T06:26:46+00:00"
         },
         {
             "name": "symfony/config",
-            "version": "dev-master",
+            "version": "v3.3.0-RC1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "4c08251c0f382ce5b713684796cdf383f7524e3b"
+                "reference": "a20ae356da7674117f77bab604d9af11fe57d97d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/4c08251c0f382ce5b713684796cdf383f7524e3b",
-                "reference": "4c08251c0f382ce5b713684796cdf383f7524e3b",
+                "url": "https://api.github.com/repos/symfony/config/zipball/a20ae356da7674117f77bab604d9af11fe57d97d",
+                "reference": "a20ae356da7674117f77bab604d9af11fe57d97d",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.9",
                 "symfony/filesystem": "~2.8|~3.0"
             },
+            "conflict": {
+                "symfony/dependency-injection": "<3.3"
+            },
             "require-dev": {
+                "symfony/dependency-injection": "~3.3",
                 "symfony/yaml": "~3.0"
             },
             "suggest": {
@@ -1465,20 +1480,20 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-12 11:59:14"
+            "time": "2017-05-03T13:21:08+00:00"
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "dev-master",
+            "version": "v3.3.0-RC1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "ffa94a545b7a16722528f1989bf4c2ab9f5ebf1a"
+                "reference": "1d736dfbdc726c1eba0efe3b8ab3a0a338767b13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/ffa94a545b7a16722528f1989bf4c2ab9f5ebf1a",
-                "reference": "ffa94a545b7a16722528f1989bf4c2ab9f5ebf1a",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/1d736dfbdc726c1eba0efe3b8ab3a0a338767b13",
+                "reference": "1d736dfbdc726c1eba0efe3b8ab3a0a338767b13",
                 "shasum": ""
             },
             "require": {
@@ -1486,7 +1501,8 @@
                 "psr/container": "^1.0"
             },
             "conflict": {
-                "symfony/config": "<3.3",
+                "symfony/config": "<=3.3-beta1",
+                "symfony/finder": "<3.3",
                 "symfony/yaml": "<3.3"
             },
             "provide": {
@@ -1500,6 +1516,7 @@
             "suggest": {
                 "symfony/config": "",
                 "symfony/expression-language": "For using expressions in service container configuration",
+                "symfony/finder": "For using double-star glob patterns or when GLOB_BRACE portability is required",
                 "symfony/proxy-manager-bridge": "Generate service proxies to lazy load them",
                 "symfony/yaml": ""
             },
@@ -1533,20 +1550,20 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-12 11:59:14"
+            "time": "2017-05-13T17:10:49+00:00"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v3.2.3",
+            "version": "v3.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "a0c6ef2dc78d33b58d91d3a49f49797a184d06f4"
+                "reference": "040651db13cf061827a460cc10f6e36a445c45b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/a0c6ef2dc78d33b58d91d3a49f49797a184d06f4",
-                "reference": "a0c6ef2dc78d33b58d91d3a49f49797a184d06f4",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/040651db13cf061827a460cc10f6e36a445c45b4",
+                "reference": "040651db13cf061827a460cc10f6e36a445c45b4",
                 "shasum": ""
             },
             "require": {
@@ -1582,7 +1599,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-08T20:47:33+00:00"
+            "time": "2017-04-12T14:13:17+00:00"
         },
         {
             "name": "symfony/polyfill-php56",
@@ -1694,16 +1711,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v3.2.3",
+            "version": "v3.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "32646a7cf53f3956c76dcb5c82555224ae321858"
+                "reference": "999c2cf5061e627e6cd551dc9ebf90dd1d11d9f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/32646a7cf53f3956c76dcb5c82555224ae321858",
-                "reference": "32646a7cf53f3956c76dcb5c82555224ae321858",
+                "url": "https://api.github.com/repos/symfony/process/zipball/999c2cf5061e627e6cd551dc9ebf90dd1d11d9f0",
+                "reference": "999c2cf5061e627e6cd551dc9ebf90dd1d11d9f0",
                 "shasum": ""
             },
             "require": {
@@ -1739,7 +1756,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-03T12:11:38+00:00"
+            "time": "2017-04-12T14:13:17+00:00"
         },
         {
             "name": "thecodingmachine/yaco",
@@ -1782,23 +1799,23 @@
         },
         {
             "name": "woohoolabs/zen",
-            "version": "dev-master",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/woohoolabs/zen.git",
-                "reference": "84167b57e9d03e3ac65a8f41259e5c737e0af566"
+                "reference": "1ea05951c0b181f7f54d038df3d4f491576c7a61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/84167b57e9d03e3ac65a8f41259e5c737e0af566",
-                "reference": "84167b57e9d03e3ac65a8f41259e5c737e0af566",
+                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/1ea05951c0b181f7f54d038df3d4f491576c7a61",
+                "reference": "1ea05951c0b181f7f54d038df3d4f491576c7a61",
                 "shasum": ""
             },
             "require": {
                 "doctrine/annotations": "^1.2.6",
                 "php": "^7.0.0",
                 "php-di/phpdoc-reader": "^2.0.1",
-                "psr/container": "^1.0.0@dev"
+                "psr/container": "^1.0.0"
             },
             "provide": {
                 "psr/container-implementation": "1.0.0"
@@ -1836,7 +1853,7 @@
                 "ioc",
                 "zen"
             ],
-            "time": "2017-02-04 11:35:46"
+            "time": "2017-02-14T19:23:57+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -2097,31 +2114,33 @@
         },
         {
             "name": "zendframework/zend-servicemanager",
-            "version": "3.2.0",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-servicemanager.git",
-                "reference": "596a2cde85a92c3366514ae0f55ea32ef59536ac"
+                "reference": "c3036efb81f71bfa36cc9962ee5d4474f36581d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-servicemanager/zipball/596a2cde85a92c3366514ae0f55ea32ef59536ac",
-                "reference": "596a2cde85a92c3366514ae0f55ea32ef59536ac",
+                "url": "https://api.github.com/repos/zendframework/zend-servicemanager/zipball/c3036efb81f71bfa36cc9962ee5d4474f36581d0",
+                "reference": "c3036efb81f71bfa36cc9962ee5d4474f36581d0",
                 "shasum": ""
             },
             "require": {
-                "container-interop/container-interop": "~1.0",
+                "container-interop/container-interop": "^1.2",
                 "php": "^5.6 || ^7.0",
+                "psr/container": "^1.0",
                 "zendframework/zend-stdlib": "^3.1"
             },
             "provide": {
-                "container-interop/container-interop-implementation": "^1.1"
+                "container-interop/container-interop-implementation": "^1.2",
+                "psr/container-implementation": "^1.0"
             },
             "require-dev": {
                 "mikey179/vfsstream": "^1.6",
                 "ocramius/proxy-manager": "^1.0 || ^2.0",
                 "phpbench/phpbench": "^0.10.0",
-                "phpunit/phpunit": "^4.6 || ^5.2.10",
+                "phpunit/phpunit": "^5.7 || ^6.0.6",
                 "zendframework/zend-coding-standard": "~1.0.0"
             },
             "suggest": {
@@ -2135,8 +2154,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev",
-                    "dev-develop": "3.3-dev"
+                    "dev-master": "3.3-dev",
+                    "dev-develop": "3.4-dev"
                 }
             },
             "autoload": {
@@ -2154,7 +2173,7 @@
                 "servicemanager",
                 "zf"
             ],
-            "time": "2016-12-19T20:04:51+00:00"
+            "time": "2017-03-01T22:08:02+00:00"
         },
         {
             "name": "zendframework/zend-stdlib",
@@ -2203,22 +2222,14 @@
         }
     ],
     "packages-dev": [],
-    "aliases": [
-        {
-            "alias": "1.3.0",
-            "alias_normalized": "1.3.0.0",
-            "version": "9999999-dev",
-            "package": "woohoolabs/zen"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "level-2/dice": 20,
         "php-di/php-di": 20,
         "psr/container": 20,
-        "symfony/config": 20,
-        "symfony/dependency-injection": 20,
-        "woohoolabs/zen": 20
+        "symfony/config": 5,
+        "symfony/dependency-injection": 5
     },
     "prefer-stable": false,
     "prefer-lowest": false,
@@ -2227,6 +2238,6 @@
     },
     "platform-dev": [],
     "platform-overrides": {
-        "php": "7.1"
+        "php": "7.1.3"
     }
 }

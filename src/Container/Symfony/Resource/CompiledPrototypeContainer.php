@@ -1,4 +1,5 @@
 <?php
+
 namespace DiContainerBenchmarks\Container\Symfony\Resource;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
@@ -28,107 +29,6 @@ class CompiledPrototypeContainer extends Container
     public function __construct()
     {
         $this->services = array();
-        $this->normalizedIds = array(
-            'dicontainerbenchmarks\\fixture\\class1' => 'DiContainerBenchmarks\\Fixture\\Class1',
-            'dicontainerbenchmarks\\fixture\\class10' => 'DiContainerBenchmarks\\Fixture\\Class10',
-            'dicontainerbenchmarks\\fixture\\class11' => 'DiContainerBenchmarks\\Fixture\\Class11',
-            'dicontainerbenchmarks\\fixture\\class12' => 'DiContainerBenchmarks\\Fixture\\Class12',
-            'dicontainerbenchmarks\\fixture\\class13' => 'DiContainerBenchmarks\\Fixture\\Class13',
-            'dicontainerbenchmarks\\fixture\\class14' => 'DiContainerBenchmarks\\Fixture\\Class14',
-            'dicontainerbenchmarks\\fixture\\class15' => 'DiContainerBenchmarks\\Fixture\\Class15',
-            'dicontainerbenchmarks\\fixture\\class16' => 'DiContainerBenchmarks\\Fixture\\Class16',
-            'dicontainerbenchmarks\\fixture\\class17' => 'DiContainerBenchmarks\\Fixture\\Class17',
-            'dicontainerbenchmarks\\fixture\\class18' => 'DiContainerBenchmarks\\Fixture\\Class18',
-            'dicontainerbenchmarks\\fixture\\class19' => 'DiContainerBenchmarks\\Fixture\\Class19',
-            'dicontainerbenchmarks\\fixture\\class2' => 'DiContainerBenchmarks\\Fixture\\Class2',
-            'dicontainerbenchmarks\\fixture\\class20' => 'DiContainerBenchmarks\\Fixture\\Class20',
-            'dicontainerbenchmarks\\fixture\\class21' => 'DiContainerBenchmarks\\Fixture\\Class21',
-            'dicontainerbenchmarks\\fixture\\class22' => 'DiContainerBenchmarks\\Fixture\\Class22',
-            'dicontainerbenchmarks\\fixture\\class23' => 'DiContainerBenchmarks\\Fixture\\Class23',
-            'dicontainerbenchmarks\\fixture\\class24' => 'DiContainerBenchmarks\\Fixture\\Class24',
-            'dicontainerbenchmarks\\fixture\\class25' => 'DiContainerBenchmarks\\Fixture\\Class25',
-            'dicontainerbenchmarks\\fixture\\class26' => 'DiContainerBenchmarks\\Fixture\\Class26',
-            'dicontainerbenchmarks\\fixture\\class27' => 'DiContainerBenchmarks\\Fixture\\Class27',
-            'dicontainerbenchmarks\\fixture\\class28' => 'DiContainerBenchmarks\\Fixture\\Class28',
-            'dicontainerbenchmarks\\fixture\\class29' => 'DiContainerBenchmarks\\Fixture\\Class29',
-            'dicontainerbenchmarks\\fixture\\class3' => 'DiContainerBenchmarks\\Fixture\\Class3',
-            'dicontainerbenchmarks\\fixture\\class30' => 'DiContainerBenchmarks\\Fixture\\Class30',
-            'dicontainerbenchmarks\\fixture\\class31' => 'DiContainerBenchmarks\\Fixture\\Class31',
-            'dicontainerbenchmarks\\fixture\\class32' => 'DiContainerBenchmarks\\Fixture\\Class32',
-            'dicontainerbenchmarks\\fixture\\class33' => 'DiContainerBenchmarks\\Fixture\\Class33',
-            'dicontainerbenchmarks\\fixture\\class34' => 'DiContainerBenchmarks\\Fixture\\Class34',
-            'dicontainerbenchmarks\\fixture\\class35' => 'DiContainerBenchmarks\\Fixture\\Class35',
-            'dicontainerbenchmarks\\fixture\\class36' => 'DiContainerBenchmarks\\Fixture\\Class36',
-            'dicontainerbenchmarks\\fixture\\class37' => 'DiContainerBenchmarks\\Fixture\\Class37',
-            'dicontainerbenchmarks\\fixture\\class38' => 'DiContainerBenchmarks\\Fixture\\Class38',
-            'dicontainerbenchmarks\\fixture\\class39' => 'DiContainerBenchmarks\\Fixture\\Class39',
-            'dicontainerbenchmarks\\fixture\\class4' => 'DiContainerBenchmarks\\Fixture\\Class4',
-            'dicontainerbenchmarks\\fixture\\class40' => 'DiContainerBenchmarks\\Fixture\\Class40',
-            'dicontainerbenchmarks\\fixture\\class41' => 'DiContainerBenchmarks\\Fixture\\Class41',
-            'dicontainerbenchmarks\\fixture\\class42' => 'DiContainerBenchmarks\\Fixture\\Class42',
-            'dicontainerbenchmarks\\fixture\\class43' => 'DiContainerBenchmarks\\Fixture\\Class43',
-            'dicontainerbenchmarks\\fixture\\class44' => 'DiContainerBenchmarks\\Fixture\\Class44',
-            'dicontainerbenchmarks\\fixture\\class45' => 'DiContainerBenchmarks\\Fixture\\Class45',
-            'dicontainerbenchmarks\\fixture\\class46' => 'DiContainerBenchmarks\\Fixture\\Class46',
-            'dicontainerbenchmarks\\fixture\\class47' => 'DiContainerBenchmarks\\Fixture\\Class47',
-            'dicontainerbenchmarks\\fixture\\class48' => 'DiContainerBenchmarks\\Fixture\\Class48',
-            'dicontainerbenchmarks\\fixture\\class49' => 'DiContainerBenchmarks\\Fixture\\Class49',
-            'dicontainerbenchmarks\\fixture\\class5' => 'DiContainerBenchmarks\\Fixture\\Class5',
-            'dicontainerbenchmarks\\fixture\\class50' => 'DiContainerBenchmarks\\Fixture\\Class50',
-            'dicontainerbenchmarks\\fixture\\class51' => 'DiContainerBenchmarks\\Fixture\\Class51',
-            'dicontainerbenchmarks\\fixture\\class52' => 'DiContainerBenchmarks\\Fixture\\Class52',
-            'dicontainerbenchmarks\\fixture\\class53' => 'DiContainerBenchmarks\\Fixture\\Class53',
-            'dicontainerbenchmarks\\fixture\\class54' => 'DiContainerBenchmarks\\Fixture\\Class54',
-            'dicontainerbenchmarks\\fixture\\class55' => 'DiContainerBenchmarks\\Fixture\\Class55',
-            'dicontainerbenchmarks\\fixture\\class56' => 'DiContainerBenchmarks\\Fixture\\Class56',
-            'dicontainerbenchmarks\\fixture\\class57' => 'DiContainerBenchmarks\\Fixture\\Class57',
-            'dicontainerbenchmarks\\fixture\\class58' => 'DiContainerBenchmarks\\Fixture\\Class58',
-            'dicontainerbenchmarks\\fixture\\class59' => 'DiContainerBenchmarks\\Fixture\\Class59',
-            'dicontainerbenchmarks\\fixture\\class6' => 'DiContainerBenchmarks\\Fixture\\Class6',
-            'dicontainerbenchmarks\\fixture\\class60' => 'DiContainerBenchmarks\\Fixture\\Class60',
-            'dicontainerbenchmarks\\fixture\\class61' => 'DiContainerBenchmarks\\Fixture\\Class61',
-            'dicontainerbenchmarks\\fixture\\class62' => 'DiContainerBenchmarks\\Fixture\\Class62',
-            'dicontainerbenchmarks\\fixture\\class63' => 'DiContainerBenchmarks\\Fixture\\Class63',
-            'dicontainerbenchmarks\\fixture\\class64' => 'DiContainerBenchmarks\\Fixture\\Class64',
-            'dicontainerbenchmarks\\fixture\\class65' => 'DiContainerBenchmarks\\Fixture\\Class65',
-            'dicontainerbenchmarks\\fixture\\class66' => 'DiContainerBenchmarks\\Fixture\\Class66',
-            'dicontainerbenchmarks\\fixture\\class67' => 'DiContainerBenchmarks\\Fixture\\Class67',
-            'dicontainerbenchmarks\\fixture\\class68' => 'DiContainerBenchmarks\\Fixture\\Class68',
-            'dicontainerbenchmarks\\fixture\\class69' => 'DiContainerBenchmarks\\Fixture\\Class69',
-            'dicontainerbenchmarks\\fixture\\class7' => 'DiContainerBenchmarks\\Fixture\\Class7',
-            'dicontainerbenchmarks\\fixture\\class70' => 'DiContainerBenchmarks\\Fixture\\Class70',
-            'dicontainerbenchmarks\\fixture\\class71' => 'DiContainerBenchmarks\\Fixture\\Class71',
-            'dicontainerbenchmarks\\fixture\\class72' => 'DiContainerBenchmarks\\Fixture\\Class72',
-            'dicontainerbenchmarks\\fixture\\class73' => 'DiContainerBenchmarks\\Fixture\\Class73',
-            'dicontainerbenchmarks\\fixture\\class74' => 'DiContainerBenchmarks\\Fixture\\Class74',
-            'dicontainerbenchmarks\\fixture\\class75' => 'DiContainerBenchmarks\\Fixture\\Class75',
-            'dicontainerbenchmarks\\fixture\\class76' => 'DiContainerBenchmarks\\Fixture\\Class76',
-            'dicontainerbenchmarks\\fixture\\class77' => 'DiContainerBenchmarks\\Fixture\\Class77',
-            'dicontainerbenchmarks\\fixture\\class78' => 'DiContainerBenchmarks\\Fixture\\Class78',
-            'dicontainerbenchmarks\\fixture\\class79' => 'DiContainerBenchmarks\\Fixture\\Class79',
-            'dicontainerbenchmarks\\fixture\\class8' => 'DiContainerBenchmarks\\Fixture\\Class8',
-            'dicontainerbenchmarks\\fixture\\class80' => 'DiContainerBenchmarks\\Fixture\\Class80',
-            'dicontainerbenchmarks\\fixture\\class81' => 'DiContainerBenchmarks\\Fixture\\Class81',
-            'dicontainerbenchmarks\\fixture\\class82' => 'DiContainerBenchmarks\\Fixture\\Class82',
-            'dicontainerbenchmarks\\fixture\\class83' => 'DiContainerBenchmarks\\Fixture\\Class83',
-            'dicontainerbenchmarks\\fixture\\class84' => 'DiContainerBenchmarks\\Fixture\\Class84',
-            'dicontainerbenchmarks\\fixture\\class85' => 'DiContainerBenchmarks\\Fixture\\Class85',
-            'dicontainerbenchmarks\\fixture\\class86' => 'DiContainerBenchmarks\\Fixture\\Class86',
-            'dicontainerbenchmarks\\fixture\\class87' => 'DiContainerBenchmarks\\Fixture\\Class87',
-            'dicontainerbenchmarks\\fixture\\class88' => 'DiContainerBenchmarks\\Fixture\\Class88',
-            'dicontainerbenchmarks\\fixture\\class89' => 'DiContainerBenchmarks\\Fixture\\Class89',
-            'dicontainerbenchmarks\\fixture\\class9' => 'DiContainerBenchmarks\\Fixture\\Class9',
-            'dicontainerbenchmarks\\fixture\\class90' => 'DiContainerBenchmarks\\Fixture\\Class90',
-            'dicontainerbenchmarks\\fixture\\class91' => 'DiContainerBenchmarks\\Fixture\\Class91',
-            'dicontainerbenchmarks\\fixture\\class92' => 'DiContainerBenchmarks\\Fixture\\Class92',
-            'dicontainerbenchmarks\\fixture\\class93' => 'DiContainerBenchmarks\\Fixture\\Class93',
-            'dicontainerbenchmarks\\fixture\\class94' => 'DiContainerBenchmarks\\Fixture\\Class94',
-            'dicontainerbenchmarks\\fixture\\class95' => 'DiContainerBenchmarks\\Fixture\\Class95',
-            'dicontainerbenchmarks\\fixture\\class96' => 'DiContainerBenchmarks\\Fixture\\Class96',
-            'dicontainerbenchmarks\\fixture\\class97' => 'DiContainerBenchmarks\\Fixture\\Class97',
-            'dicontainerbenchmarks\\fixture\\class98' => 'DiContainerBenchmarks\\Fixture\\Class98',
-            'dicontainerbenchmarks\\fixture\\class99' => 'DiContainerBenchmarks\\Fixture\\Class99',
-        );
         $this->methodMap = array(
             'class1' => 'getClass1Service',
             'class10' => 'getClass10Service',
@@ -240,7 +140,15 @@ class CompiledPrototypeContainer extends Container
      */
     public function compile()
     {
-        throw new LogicException('You cannot compile a dumped frozen container.');
+        throw new LogicException('You cannot compile a dumped container that was already compiled.');
+    }
+
+    /*
+     * {@inheritdoc}
+     */
+    public function isCompiled()
+    {
+        return true;
     }
 
     /*
@@ -248,6 +156,8 @@ class CompiledPrototypeContainer extends Container
      */
     public function isFrozen()
     {
+        @trigger_error(sprintf('The %s() method is deprecated since version 3.3 and will be removed in 4.0. Use the isCompiled() method instead.', __METHOD__), E_USER_DEPRECATED);
+
         return true;
     }
 

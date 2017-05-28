@@ -1,4 +1,5 @@
 <?php
+
 namespace DiContainerBenchmarks\Container\Symfony\Resource;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
@@ -28,107 +29,6 @@ class CompiledSingletonContainer extends Container
     public function __construct()
     {
         $this->services = array();
-        $this->normalizedIds = array(
-            'dicontainerbenchmarks\\fixture\\class1' => 'DiContainerBenchmarks\\Fixture\\Class1',
-            'dicontainerbenchmarks\\fixture\\class10' => 'DiContainerBenchmarks\\Fixture\\Class10',
-            'dicontainerbenchmarks\\fixture\\class11' => 'DiContainerBenchmarks\\Fixture\\Class11',
-            'dicontainerbenchmarks\\fixture\\class12' => 'DiContainerBenchmarks\\Fixture\\Class12',
-            'dicontainerbenchmarks\\fixture\\class13' => 'DiContainerBenchmarks\\Fixture\\Class13',
-            'dicontainerbenchmarks\\fixture\\class14' => 'DiContainerBenchmarks\\Fixture\\Class14',
-            'dicontainerbenchmarks\\fixture\\class15' => 'DiContainerBenchmarks\\Fixture\\Class15',
-            'dicontainerbenchmarks\\fixture\\class16' => 'DiContainerBenchmarks\\Fixture\\Class16',
-            'dicontainerbenchmarks\\fixture\\class17' => 'DiContainerBenchmarks\\Fixture\\Class17',
-            'dicontainerbenchmarks\\fixture\\class18' => 'DiContainerBenchmarks\\Fixture\\Class18',
-            'dicontainerbenchmarks\\fixture\\class19' => 'DiContainerBenchmarks\\Fixture\\Class19',
-            'dicontainerbenchmarks\\fixture\\class2' => 'DiContainerBenchmarks\\Fixture\\Class2',
-            'dicontainerbenchmarks\\fixture\\class20' => 'DiContainerBenchmarks\\Fixture\\Class20',
-            'dicontainerbenchmarks\\fixture\\class21' => 'DiContainerBenchmarks\\Fixture\\Class21',
-            'dicontainerbenchmarks\\fixture\\class22' => 'DiContainerBenchmarks\\Fixture\\Class22',
-            'dicontainerbenchmarks\\fixture\\class23' => 'DiContainerBenchmarks\\Fixture\\Class23',
-            'dicontainerbenchmarks\\fixture\\class24' => 'DiContainerBenchmarks\\Fixture\\Class24',
-            'dicontainerbenchmarks\\fixture\\class25' => 'DiContainerBenchmarks\\Fixture\\Class25',
-            'dicontainerbenchmarks\\fixture\\class26' => 'DiContainerBenchmarks\\Fixture\\Class26',
-            'dicontainerbenchmarks\\fixture\\class27' => 'DiContainerBenchmarks\\Fixture\\Class27',
-            'dicontainerbenchmarks\\fixture\\class28' => 'DiContainerBenchmarks\\Fixture\\Class28',
-            'dicontainerbenchmarks\\fixture\\class29' => 'DiContainerBenchmarks\\Fixture\\Class29',
-            'dicontainerbenchmarks\\fixture\\class3' => 'DiContainerBenchmarks\\Fixture\\Class3',
-            'dicontainerbenchmarks\\fixture\\class30' => 'DiContainerBenchmarks\\Fixture\\Class30',
-            'dicontainerbenchmarks\\fixture\\class31' => 'DiContainerBenchmarks\\Fixture\\Class31',
-            'dicontainerbenchmarks\\fixture\\class32' => 'DiContainerBenchmarks\\Fixture\\Class32',
-            'dicontainerbenchmarks\\fixture\\class33' => 'DiContainerBenchmarks\\Fixture\\Class33',
-            'dicontainerbenchmarks\\fixture\\class34' => 'DiContainerBenchmarks\\Fixture\\Class34',
-            'dicontainerbenchmarks\\fixture\\class35' => 'DiContainerBenchmarks\\Fixture\\Class35',
-            'dicontainerbenchmarks\\fixture\\class36' => 'DiContainerBenchmarks\\Fixture\\Class36',
-            'dicontainerbenchmarks\\fixture\\class37' => 'DiContainerBenchmarks\\Fixture\\Class37',
-            'dicontainerbenchmarks\\fixture\\class38' => 'DiContainerBenchmarks\\Fixture\\Class38',
-            'dicontainerbenchmarks\\fixture\\class39' => 'DiContainerBenchmarks\\Fixture\\Class39',
-            'dicontainerbenchmarks\\fixture\\class4' => 'DiContainerBenchmarks\\Fixture\\Class4',
-            'dicontainerbenchmarks\\fixture\\class40' => 'DiContainerBenchmarks\\Fixture\\Class40',
-            'dicontainerbenchmarks\\fixture\\class41' => 'DiContainerBenchmarks\\Fixture\\Class41',
-            'dicontainerbenchmarks\\fixture\\class42' => 'DiContainerBenchmarks\\Fixture\\Class42',
-            'dicontainerbenchmarks\\fixture\\class43' => 'DiContainerBenchmarks\\Fixture\\Class43',
-            'dicontainerbenchmarks\\fixture\\class44' => 'DiContainerBenchmarks\\Fixture\\Class44',
-            'dicontainerbenchmarks\\fixture\\class45' => 'DiContainerBenchmarks\\Fixture\\Class45',
-            'dicontainerbenchmarks\\fixture\\class46' => 'DiContainerBenchmarks\\Fixture\\Class46',
-            'dicontainerbenchmarks\\fixture\\class47' => 'DiContainerBenchmarks\\Fixture\\Class47',
-            'dicontainerbenchmarks\\fixture\\class48' => 'DiContainerBenchmarks\\Fixture\\Class48',
-            'dicontainerbenchmarks\\fixture\\class49' => 'DiContainerBenchmarks\\Fixture\\Class49',
-            'dicontainerbenchmarks\\fixture\\class5' => 'DiContainerBenchmarks\\Fixture\\Class5',
-            'dicontainerbenchmarks\\fixture\\class50' => 'DiContainerBenchmarks\\Fixture\\Class50',
-            'dicontainerbenchmarks\\fixture\\class51' => 'DiContainerBenchmarks\\Fixture\\Class51',
-            'dicontainerbenchmarks\\fixture\\class52' => 'DiContainerBenchmarks\\Fixture\\Class52',
-            'dicontainerbenchmarks\\fixture\\class53' => 'DiContainerBenchmarks\\Fixture\\Class53',
-            'dicontainerbenchmarks\\fixture\\class54' => 'DiContainerBenchmarks\\Fixture\\Class54',
-            'dicontainerbenchmarks\\fixture\\class55' => 'DiContainerBenchmarks\\Fixture\\Class55',
-            'dicontainerbenchmarks\\fixture\\class56' => 'DiContainerBenchmarks\\Fixture\\Class56',
-            'dicontainerbenchmarks\\fixture\\class57' => 'DiContainerBenchmarks\\Fixture\\Class57',
-            'dicontainerbenchmarks\\fixture\\class58' => 'DiContainerBenchmarks\\Fixture\\Class58',
-            'dicontainerbenchmarks\\fixture\\class59' => 'DiContainerBenchmarks\\Fixture\\Class59',
-            'dicontainerbenchmarks\\fixture\\class6' => 'DiContainerBenchmarks\\Fixture\\Class6',
-            'dicontainerbenchmarks\\fixture\\class60' => 'DiContainerBenchmarks\\Fixture\\Class60',
-            'dicontainerbenchmarks\\fixture\\class61' => 'DiContainerBenchmarks\\Fixture\\Class61',
-            'dicontainerbenchmarks\\fixture\\class62' => 'DiContainerBenchmarks\\Fixture\\Class62',
-            'dicontainerbenchmarks\\fixture\\class63' => 'DiContainerBenchmarks\\Fixture\\Class63',
-            'dicontainerbenchmarks\\fixture\\class64' => 'DiContainerBenchmarks\\Fixture\\Class64',
-            'dicontainerbenchmarks\\fixture\\class65' => 'DiContainerBenchmarks\\Fixture\\Class65',
-            'dicontainerbenchmarks\\fixture\\class66' => 'DiContainerBenchmarks\\Fixture\\Class66',
-            'dicontainerbenchmarks\\fixture\\class67' => 'DiContainerBenchmarks\\Fixture\\Class67',
-            'dicontainerbenchmarks\\fixture\\class68' => 'DiContainerBenchmarks\\Fixture\\Class68',
-            'dicontainerbenchmarks\\fixture\\class69' => 'DiContainerBenchmarks\\Fixture\\Class69',
-            'dicontainerbenchmarks\\fixture\\class7' => 'DiContainerBenchmarks\\Fixture\\Class7',
-            'dicontainerbenchmarks\\fixture\\class70' => 'DiContainerBenchmarks\\Fixture\\Class70',
-            'dicontainerbenchmarks\\fixture\\class71' => 'DiContainerBenchmarks\\Fixture\\Class71',
-            'dicontainerbenchmarks\\fixture\\class72' => 'DiContainerBenchmarks\\Fixture\\Class72',
-            'dicontainerbenchmarks\\fixture\\class73' => 'DiContainerBenchmarks\\Fixture\\Class73',
-            'dicontainerbenchmarks\\fixture\\class74' => 'DiContainerBenchmarks\\Fixture\\Class74',
-            'dicontainerbenchmarks\\fixture\\class75' => 'DiContainerBenchmarks\\Fixture\\Class75',
-            'dicontainerbenchmarks\\fixture\\class76' => 'DiContainerBenchmarks\\Fixture\\Class76',
-            'dicontainerbenchmarks\\fixture\\class77' => 'DiContainerBenchmarks\\Fixture\\Class77',
-            'dicontainerbenchmarks\\fixture\\class78' => 'DiContainerBenchmarks\\Fixture\\Class78',
-            'dicontainerbenchmarks\\fixture\\class79' => 'DiContainerBenchmarks\\Fixture\\Class79',
-            'dicontainerbenchmarks\\fixture\\class8' => 'DiContainerBenchmarks\\Fixture\\Class8',
-            'dicontainerbenchmarks\\fixture\\class80' => 'DiContainerBenchmarks\\Fixture\\Class80',
-            'dicontainerbenchmarks\\fixture\\class81' => 'DiContainerBenchmarks\\Fixture\\Class81',
-            'dicontainerbenchmarks\\fixture\\class82' => 'DiContainerBenchmarks\\Fixture\\Class82',
-            'dicontainerbenchmarks\\fixture\\class83' => 'DiContainerBenchmarks\\Fixture\\Class83',
-            'dicontainerbenchmarks\\fixture\\class84' => 'DiContainerBenchmarks\\Fixture\\Class84',
-            'dicontainerbenchmarks\\fixture\\class85' => 'DiContainerBenchmarks\\Fixture\\Class85',
-            'dicontainerbenchmarks\\fixture\\class86' => 'DiContainerBenchmarks\\Fixture\\Class86',
-            'dicontainerbenchmarks\\fixture\\class87' => 'DiContainerBenchmarks\\Fixture\\Class87',
-            'dicontainerbenchmarks\\fixture\\class88' => 'DiContainerBenchmarks\\Fixture\\Class88',
-            'dicontainerbenchmarks\\fixture\\class89' => 'DiContainerBenchmarks\\Fixture\\Class89',
-            'dicontainerbenchmarks\\fixture\\class9' => 'DiContainerBenchmarks\\Fixture\\Class9',
-            'dicontainerbenchmarks\\fixture\\class90' => 'DiContainerBenchmarks\\Fixture\\Class90',
-            'dicontainerbenchmarks\\fixture\\class91' => 'DiContainerBenchmarks\\Fixture\\Class91',
-            'dicontainerbenchmarks\\fixture\\class92' => 'DiContainerBenchmarks\\Fixture\\Class92',
-            'dicontainerbenchmarks\\fixture\\class93' => 'DiContainerBenchmarks\\Fixture\\Class93',
-            'dicontainerbenchmarks\\fixture\\class94' => 'DiContainerBenchmarks\\Fixture\\Class94',
-            'dicontainerbenchmarks\\fixture\\class95' => 'DiContainerBenchmarks\\Fixture\\Class95',
-            'dicontainerbenchmarks\\fixture\\class96' => 'DiContainerBenchmarks\\Fixture\\Class96',
-            'dicontainerbenchmarks\\fixture\\class97' => 'DiContainerBenchmarks\\Fixture\\Class97',
-            'dicontainerbenchmarks\\fixture\\class98' => 'DiContainerBenchmarks\\Fixture\\Class98',
-            'dicontainerbenchmarks\\fixture\\class99' => 'DiContainerBenchmarks\\Fixture\\Class99',
-        );
         $this->methodMap = array(
             'class1' => 'getClass1Service',
             'class10' => 'getClass10Service',
@@ -240,7 +140,15 @@ class CompiledSingletonContainer extends Container
      */
     public function compile()
     {
-        throw new LogicException('You cannot compile a dumped frozen container.');
+        throw new LogicException('You cannot compile a dumped container that was already compiled.');
+    }
+
+    /*
+     * {@inheritdoc}
+     */
+    public function isCompiled()
+    {
+        return true;
     }
 
     /*
@@ -248,11 +156,16 @@ class CompiledSingletonContainer extends Container
      */
     public function isFrozen()
     {
+        @trigger_error(sprintf('The %s() method is deprecated since version 3.3 and will be removed in 4.0. Use the isCompiled() method instead.', __METHOD__), E_USER_DEPRECATED);
+
         return true;
     }
 
     /*
      * Gets the 'class1' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -266,6 +179,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class10' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class10 A DiContainerBenchmarks\Fixture\Class10 instance
@@ -277,6 +193,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class100' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -290,6 +209,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class11' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class11 A DiContainerBenchmarks\Fixture\Class11 instance
@@ -301,6 +223,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class12' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -314,6 +239,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class13' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class13 A DiContainerBenchmarks\Fixture\Class13 instance
@@ -325,6 +253,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class14' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -338,6 +269,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class15' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class15 A DiContainerBenchmarks\Fixture\Class15 instance
@@ -349,6 +283,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class16' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -362,6 +299,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class17' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class17 A DiContainerBenchmarks\Fixture\Class17 instance
@@ -373,6 +313,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class18' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -386,6 +329,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class19' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class19 A DiContainerBenchmarks\Fixture\Class19 instance
@@ -397,6 +343,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class2' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -410,6 +359,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class20' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class20 A DiContainerBenchmarks\Fixture\Class20 instance
@@ -421,6 +373,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class21' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -434,6 +389,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class22' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class22 A DiContainerBenchmarks\Fixture\Class22 instance
@@ -445,6 +403,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class23' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -458,6 +419,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class24' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class24 A DiContainerBenchmarks\Fixture\Class24 instance
@@ -469,6 +433,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class25' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -482,6 +449,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class26' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class26 A DiContainerBenchmarks\Fixture\Class26 instance
@@ -493,6 +463,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class27' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -506,6 +479,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class28' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class28 A DiContainerBenchmarks\Fixture\Class28 instance
@@ -517,6 +493,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class29' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -530,6 +509,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class3' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class3 A DiContainerBenchmarks\Fixture\Class3 instance
@@ -541,6 +523,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class30' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -554,6 +539,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class31' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class31 A DiContainerBenchmarks\Fixture\Class31 instance
@@ -565,6 +553,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class32' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -578,6 +569,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class33' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class33 A DiContainerBenchmarks\Fixture\Class33 instance
@@ -589,6 +583,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class34' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -602,6 +599,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class35' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class35 A DiContainerBenchmarks\Fixture\Class35 instance
@@ -613,6 +613,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class36' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -626,6 +629,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class37' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class37 A DiContainerBenchmarks\Fixture\Class37 instance
@@ -637,6 +643,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class38' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -650,6 +659,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class39' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class39 A DiContainerBenchmarks\Fixture\Class39 instance
@@ -661,6 +673,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class4' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -674,6 +689,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class40' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class40 A DiContainerBenchmarks\Fixture\Class40 instance
@@ -685,6 +703,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class41' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -698,6 +719,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class42' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class42 A DiContainerBenchmarks\Fixture\Class42 instance
@@ -709,6 +733,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class43' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -722,6 +749,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class44' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class44 A DiContainerBenchmarks\Fixture\Class44 instance
@@ -733,6 +763,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class45' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -746,6 +779,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class46' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class46 A DiContainerBenchmarks\Fixture\Class46 instance
@@ -757,6 +793,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class47' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -770,6 +809,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class48' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class48 A DiContainerBenchmarks\Fixture\Class48 instance
@@ -781,6 +823,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class49' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -794,6 +839,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class5' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class5 A DiContainerBenchmarks\Fixture\Class5 instance
@@ -805,6 +853,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class50' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -818,6 +869,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class51' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class51 A DiContainerBenchmarks\Fixture\Class51 instance
@@ -829,6 +883,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class52' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -842,6 +899,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class53' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class53 A DiContainerBenchmarks\Fixture\Class53 instance
@@ -853,6 +913,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class54' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -866,6 +929,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class55' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class55 A DiContainerBenchmarks\Fixture\Class55 instance
@@ -877,6 +943,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class56' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -890,6 +959,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class57' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class57 A DiContainerBenchmarks\Fixture\Class57 instance
@@ -901,6 +973,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class58' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -914,6 +989,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class59' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class59 A DiContainerBenchmarks\Fixture\Class59 instance
@@ -925,6 +1003,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class6' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -938,6 +1019,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class60' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class60 A DiContainerBenchmarks\Fixture\Class60 instance
@@ -949,6 +1033,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class61' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -962,6 +1049,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class62' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class62 A DiContainerBenchmarks\Fixture\Class62 instance
@@ -973,6 +1063,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class63' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -986,6 +1079,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class64' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class64 A DiContainerBenchmarks\Fixture\Class64 instance
@@ -997,6 +1093,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class65' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -1010,6 +1109,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class66' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class66 A DiContainerBenchmarks\Fixture\Class66 instance
@@ -1021,6 +1123,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class67' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -1034,6 +1139,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class68' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class68 A DiContainerBenchmarks\Fixture\Class68 instance
@@ -1045,6 +1153,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class69' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -1058,6 +1169,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class7' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class7 A DiContainerBenchmarks\Fixture\Class7 instance
@@ -1069,6 +1183,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class70' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -1082,6 +1199,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class71' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class71 A DiContainerBenchmarks\Fixture\Class71 instance
@@ -1093,6 +1213,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class72' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -1106,6 +1229,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class73' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class73 A DiContainerBenchmarks\Fixture\Class73 instance
@@ -1117,6 +1243,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class74' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -1130,6 +1259,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class75' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class75 A DiContainerBenchmarks\Fixture\Class75 instance
@@ -1141,6 +1273,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class76' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -1154,6 +1289,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class77' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class77 A DiContainerBenchmarks\Fixture\Class77 instance
@@ -1165,6 +1303,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class78' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -1178,6 +1319,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class79' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class79 A DiContainerBenchmarks\Fixture\Class79 instance
@@ -1189,6 +1333,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class8' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -1202,6 +1349,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class80' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class80 A DiContainerBenchmarks\Fixture\Class80 instance
@@ -1213,6 +1363,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class81' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -1226,6 +1379,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class82' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class82 A DiContainerBenchmarks\Fixture\Class82 instance
@@ -1237,6 +1393,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class83' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -1250,6 +1409,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class84' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class84 A DiContainerBenchmarks\Fixture\Class84 instance
@@ -1261,6 +1423,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class85' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -1274,6 +1439,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class86' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class86 A DiContainerBenchmarks\Fixture\Class86 instance
@@ -1285,6 +1453,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class87' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -1298,6 +1469,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class88' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class88 A DiContainerBenchmarks\Fixture\Class88 instance
@@ -1309,6 +1483,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class89' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -1322,6 +1499,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class9' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class9 A DiContainerBenchmarks\Fixture\Class9 instance
@@ -1333,6 +1513,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class90' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -1346,6 +1529,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class91' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class91 A DiContainerBenchmarks\Fixture\Class91 instance
@@ -1357,6 +1543,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class92' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -1370,6 +1559,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class93' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class93 A DiContainerBenchmarks\Fixture\Class93 instance
@@ -1381,6 +1573,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class94' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -1394,6 +1589,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class95' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class95 A DiContainerBenchmarks\Fixture\Class95 instance
@@ -1405,6 +1603,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class96' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
@@ -1418,6 +1619,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class97' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class97 A DiContainerBenchmarks\Fixture\Class97 instance
@@ -1430,6 +1634,9 @@ class CompiledSingletonContainer extends Container
     /*
      * Gets the 'class98' service.
      *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
      * This service is autowired.
      *
      * @return \DiContainerBenchmarks\Fixture\Class98 A DiContainerBenchmarks\Fixture\Class98 instance
@@ -1441,6 +1648,9 @@ class CompiledSingletonContainer extends Container
 
     /*
      * Gets the 'class99' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
      *
      * This service is autowired.
      *
