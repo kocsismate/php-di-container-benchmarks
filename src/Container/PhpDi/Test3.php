@@ -3,17 +3,16 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\PhpDi;
 
-use DiContainerBenchmarks\Fixture\Class10;
+use DiContainerBenchmarks\Test\UnsupportedFeatureException;
 
 class Test3 extends AbstractPhpDiTest
 {
     public function startup(): void
     {
-        $this->setContainerWithPrototypeServices();
+        throw new UnsupportedFeatureException('PHP-DI cannot act as a factory.');
     }
 
     public function run(): void
     {
-        $this->container->get(Class10::class);
     }
 }

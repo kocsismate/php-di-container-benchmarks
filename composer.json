@@ -19,7 +19,7 @@
         "illuminate/contracts": "^v5.4.0",
         "level-2/dice": "dev-master",
         "opulence/ioc": "^1.0.6",
-        "php-di/php-di": "6.0.x-dev",
+        "php-di/php-di": "dev-master",
         "phpixie/di": "^3.2.0",
         "pimple/pimple": "^3.0.2",
         "psr/container": "^1.0.0@dev",
@@ -35,7 +35,10 @@
     "autoload": {
         "psr-4": {
             "DiContainerBenchmarks\\": "src/"
-        }
+        },
+        "files": [
+            "src/Container/PhpDi/Resource/CompiledSingletonContainer.php"
+        ]
     },
     "config": {
         "bin-compat": "full",
