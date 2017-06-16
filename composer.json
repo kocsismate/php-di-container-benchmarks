@@ -13,7 +13,7 @@
     "require": {
         "php": "^7.1",
         "aura/di": "^3.2.0",
-        "bitexpert/disco": "^0.8.0",
+        "bitexpert/disco": "^0.9.0",
         "doctrine/cache": "^1.6.1",
         "illuminate/container": "^v5.4.0",
         "illuminate/contracts": "^v5.4.0",
