@@ -254,7 +254,7 @@ class PhpDiContainer implements ContainerInterface
             Class100::class => DI\autowire(),
         ]);
 
-        $builder->compile(PROJECT_ROOT . "/src/Container/PhpDi/Resource/CompiledSingletonContainer.php");
+        $builder->enableCompilation(PROJECT_ROOT . "/src/Container/PhpDi/Resource", "CompiledSingletonContainer");
         $builder->build();
     }
 }
