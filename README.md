@@ -44,7 +44,8 @@ $ composer require kocsismate/di-container-benchmarks:dev-master
 
 __Please note that benchmarks executed in Docker For Mac and Docker for Windows may be unreliable.__
 
-First of all, [Docker Compose](https://www.docker.com/products/docker-compose) has to be installed on your machine.
+First of all, [Docker Compose](https://www.docker.com/products/docker-compose) along with at least Docker 17.06 CE
+has to be installed on your machine.
 
 Then copy the ".env.dist" file to ".env" and feel free to overwrite the values in it. Now, you can run
 

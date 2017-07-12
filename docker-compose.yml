@@ -7,7 +7,7 @@ services:
     networks:
       - benchmark
     volumes:
-      - .:/code
+      - .:/code:cached
     env_file:
       - .env
     command: /code/build/container/cli/run.sh
@@ -20,7 +20,7 @@ services:
     networks:
       - benchmark
     volumes:
-      - .:/code
+      - .:/code:cached
     ports:
       - "8090:80"
     env_file:
