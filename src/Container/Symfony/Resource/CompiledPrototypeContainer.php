@@ -162,11 +162,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class1' service.
+     * Gets the public 'class1' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class1 A DiContainerBenchmarks\Fixture\Class1 instance
+     * @return \DiContainerBenchmarks\Fixture\Class1
      */
     protected function getClass1Service()
     {
@@ -174,11 +172,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class10' service.
+     * Gets the public 'class10' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class10 A DiContainerBenchmarks\Fixture\Class10 instance
+     * @return \DiContainerBenchmarks\Fixture\Class10
      */
     protected function getClass10Service()
     {
@@ -186,11 +182,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class100' service.
+     * Gets the public 'class100' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class100 A DiContainerBenchmarks\Fixture\Class100 instance
+     * @return \DiContainerBenchmarks\Fixture\Class100
      */
     protected function getClass100Service()
     {
@@ -198,11 +192,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class11' service.
+     * Gets the public 'class11' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class11 A DiContainerBenchmarks\Fixture\Class11 instance
+     * @return \DiContainerBenchmarks\Fixture\Class11
      */
     protected function getClass11Service()
     {
@@ -210,11 +202,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class12' service.
+     * Gets the public 'class12' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class12 A DiContainerBenchmarks\Fixture\Class12 instance
+     * @return \DiContainerBenchmarks\Fixture\Class12
      */
     protected function getClass12Service()
     {
@@ -222,11 +212,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class13' service.
+     * Gets the public 'class13' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class13 A DiContainerBenchmarks\Fixture\Class13 instance
+     * @return \DiContainerBenchmarks\Fixture\Class13
      */
     protected function getClass13Service()
     {
@@ -234,11 +222,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class14' service.
+     * Gets the public 'class14' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class14 A DiContainerBenchmarks\Fixture\Class14 instance
+     * @return \DiContainerBenchmarks\Fixture\Class14
      */
     protected function getClass14Service()
     {
@@ -246,11 +232,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class15' service.
+     * Gets the public 'class15' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class15 A DiContainerBenchmarks\Fixture\Class15 instance
+     * @return \DiContainerBenchmarks\Fixture\Class15
      */
     protected function getClass15Service()
     {
@@ -258,11 +242,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class16' service.
+     * Gets the public 'class16' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class16 A DiContainerBenchmarks\Fixture\Class16 instance
+     * @return \DiContainerBenchmarks\Fixture\Class16
      */
     protected function getClass16Service()
     {
@@ -270,11 +252,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class17' service.
+     * Gets the public 'class17' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class17 A DiContainerBenchmarks\Fixture\Class17 instance
+     * @return \DiContainerBenchmarks\Fixture\Class17
      */
     protected function getClass17Service()
     {
@@ -282,11 +262,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class18' service.
+     * Gets the public 'class18' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class18 A DiContainerBenchmarks\Fixture\Class18 instance
+     * @return \DiContainerBenchmarks\Fixture\Class18
      */
     protected function getClass18Service()
     {
@@ -294,11 +272,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class19' service.
+     * Gets the public 'class19' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class19 A DiContainerBenchmarks\Fixture\Class19 instance
+     * @return \DiContainerBenchmarks\Fixture\Class19
      */
     protected function getClass19Service()
     {
@@ -306,11 +282,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class2' service.
+     * Gets the public 'class2' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class2 A DiContainerBenchmarks\Fixture\Class2 instance
+     * @return \DiContainerBenchmarks\Fixture\Class2
      */
     protected function getClass2Service()
     {
@@ -318,11 +292,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class20' service.
+     * Gets the public 'class20' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class20 A DiContainerBenchmarks\Fixture\Class20 instance
+     * @return \DiContainerBenchmarks\Fixture\Class20
      */
     protected function getClass20Service()
     {
@@ -330,11 +302,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class21' service.
+     * Gets the public 'class21' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class21 A DiContainerBenchmarks\Fixture\Class21 instance
+     * @return \DiContainerBenchmarks\Fixture\Class21
      */
     protected function getClass21Service()
     {
@@ -342,11 +312,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class22' service.
+     * Gets the public 'class22' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class22 A DiContainerBenchmarks\Fixture\Class22 instance
+     * @return \DiContainerBenchmarks\Fixture\Class22
      */
     protected function getClass22Service()
     {
@@ -354,11 +322,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class23' service.
+     * Gets the public 'class23' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class23 A DiContainerBenchmarks\Fixture\Class23 instance
+     * @return \DiContainerBenchmarks\Fixture\Class23
      */
     protected function getClass23Service()
     {
@@ -366,11 +332,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class24' service.
+     * Gets the public 'class24' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class24 A DiContainerBenchmarks\Fixture\Class24 instance
+     * @return \DiContainerBenchmarks\Fixture\Class24
      */
     protected function getClass24Service()
     {
@@ -378,11 +342,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class25' service.
+     * Gets the public 'class25' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class25 A DiContainerBenchmarks\Fixture\Class25 instance
+     * @return \DiContainerBenchmarks\Fixture\Class25
      */
     protected function getClass25Service()
     {
@@ -390,11 +352,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class26' service.
+     * Gets the public 'class26' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class26 A DiContainerBenchmarks\Fixture\Class26 instance
+     * @return \DiContainerBenchmarks\Fixture\Class26
      */
     protected function getClass26Service()
     {
@@ -402,11 +362,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class27' service.
+     * Gets the public 'class27' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class27 A DiContainerBenchmarks\Fixture\Class27 instance
+     * @return \DiContainerBenchmarks\Fixture\Class27
      */
     protected function getClass27Service()
     {
@@ -414,11 +372,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class28' service.
+     * Gets the public 'class28' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class28 A DiContainerBenchmarks\Fixture\Class28 instance
+     * @return \DiContainerBenchmarks\Fixture\Class28
      */
     protected function getClass28Service()
     {
@@ -426,11 +382,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class29' service.
+     * Gets the public 'class29' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class29 A DiContainerBenchmarks\Fixture\Class29 instance
+     * @return \DiContainerBenchmarks\Fixture\Class29
      */
     protected function getClass29Service()
     {
@@ -438,11 +392,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class3' service.
+     * Gets the public 'class3' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class3 A DiContainerBenchmarks\Fixture\Class3 instance
+     * @return \DiContainerBenchmarks\Fixture\Class3
      */
     protected function getClass3Service()
     {
@@ -450,11 +402,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class30' service.
+     * Gets the public 'class30' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class30 A DiContainerBenchmarks\Fixture\Class30 instance
+     * @return \DiContainerBenchmarks\Fixture\Class30
      */
     protected function getClass30Service()
     {
@@ -462,11 +412,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class31' service.
+     * Gets the public 'class31' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class31 A DiContainerBenchmarks\Fixture\Class31 instance
+     * @return \DiContainerBenchmarks\Fixture\Class31
      */
     protected function getClass31Service()
     {
@@ -474,11 +422,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class32' service.
+     * Gets the public 'class32' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class32 A DiContainerBenchmarks\Fixture\Class32 instance
+     * @return \DiContainerBenchmarks\Fixture\Class32
      */
     protected function getClass32Service()
     {
@@ -486,11 +432,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class33' service.
+     * Gets the public 'class33' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class33 A DiContainerBenchmarks\Fixture\Class33 instance
+     * @return \DiContainerBenchmarks\Fixture\Class33
      */
     protected function getClass33Service()
     {
@@ -498,11 +442,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class34' service.
+     * Gets the public 'class34' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class34 A DiContainerBenchmarks\Fixture\Class34 instance
+     * @return \DiContainerBenchmarks\Fixture\Class34
      */
     protected function getClass34Service()
     {
@@ -510,11 +452,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class35' service.
+     * Gets the public 'class35' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class35 A DiContainerBenchmarks\Fixture\Class35 instance
+     * @return \DiContainerBenchmarks\Fixture\Class35
      */
     protected function getClass35Service()
     {
@@ -522,11 +462,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class36' service.
+     * Gets the public 'class36' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class36 A DiContainerBenchmarks\Fixture\Class36 instance
+     * @return \DiContainerBenchmarks\Fixture\Class36
      */
     protected function getClass36Service()
     {
@@ -534,11 +472,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class37' service.
+     * Gets the public 'class37' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class37 A DiContainerBenchmarks\Fixture\Class37 instance
+     * @return \DiContainerBenchmarks\Fixture\Class37
      */
     protected function getClass37Service()
     {
@@ -546,11 +482,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class38' service.
+     * Gets the public 'class38' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class38 A DiContainerBenchmarks\Fixture\Class38 instance
+     * @return \DiContainerBenchmarks\Fixture\Class38
      */
     protected function getClass38Service()
     {
@@ -558,11 +492,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class39' service.
+     * Gets the public 'class39' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class39 A DiContainerBenchmarks\Fixture\Class39 instance
+     * @return \DiContainerBenchmarks\Fixture\Class39
      */
     protected function getClass39Service()
     {
@@ -570,11 +502,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class4' service.
+     * Gets the public 'class4' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class4 A DiContainerBenchmarks\Fixture\Class4 instance
+     * @return \DiContainerBenchmarks\Fixture\Class4
      */
     protected function getClass4Service()
     {
@@ -582,11 +512,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class40' service.
+     * Gets the public 'class40' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class40 A DiContainerBenchmarks\Fixture\Class40 instance
+     * @return \DiContainerBenchmarks\Fixture\Class40
      */
     protected function getClass40Service()
     {
@@ -594,11 +522,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class41' service.
+     * Gets the public 'class41' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class41 A DiContainerBenchmarks\Fixture\Class41 instance
+     * @return \DiContainerBenchmarks\Fixture\Class41
      */
     protected function getClass41Service()
     {
@@ -606,11 +532,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class42' service.
+     * Gets the public 'class42' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class42 A DiContainerBenchmarks\Fixture\Class42 instance
+     * @return \DiContainerBenchmarks\Fixture\Class42
      */
     protected function getClass42Service()
     {
@@ -618,11 +542,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class43' service.
+     * Gets the public 'class43' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class43 A DiContainerBenchmarks\Fixture\Class43 instance
+     * @return \DiContainerBenchmarks\Fixture\Class43
      */
     protected function getClass43Service()
     {
@@ -630,11 +552,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class44' service.
+     * Gets the public 'class44' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class44 A DiContainerBenchmarks\Fixture\Class44 instance
+     * @return \DiContainerBenchmarks\Fixture\Class44
      */
     protected function getClass44Service()
     {
@@ -642,11 +562,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class45' service.
+     * Gets the public 'class45' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class45 A DiContainerBenchmarks\Fixture\Class45 instance
+     * @return \DiContainerBenchmarks\Fixture\Class45
      */
     protected function getClass45Service()
     {
@@ -654,11 +572,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class46' service.
+     * Gets the public 'class46' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class46 A DiContainerBenchmarks\Fixture\Class46 instance
+     * @return \DiContainerBenchmarks\Fixture\Class46
      */
     protected function getClass46Service()
     {
@@ -666,11 +582,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class47' service.
+     * Gets the public 'class47' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class47 A DiContainerBenchmarks\Fixture\Class47 instance
+     * @return \DiContainerBenchmarks\Fixture\Class47
      */
     protected function getClass47Service()
     {
@@ -678,11 +592,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class48' service.
+     * Gets the public 'class48' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class48 A DiContainerBenchmarks\Fixture\Class48 instance
+     * @return \DiContainerBenchmarks\Fixture\Class48
      */
     protected function getClass48Service()
     {
@@ -690,11 +602,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class49' service.
+     * Gets the public 'class49' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class49 A DiContainerBenchmarks\Fixture\Class49 instance
+     * @return \DiContainerBenchmarks\Fixture\Class49
      */
     protected function getClass49Service()
     {
@@ -702,11 +612,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class5' service.
+     * Gets the public 'class5' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class5 A DiContainerBenchmarks\Fixture\Class5 instance
+     * @return \DiContainerBenchmarks\Fixture\Class5
      */
     protected function getClass5Service()
     {
@@ -714,11 +622,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class50' service.
+     * Gets the public 'class50' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class50 A DiContainerBenchmarks\Fixture\Class50 instance
+     * @return \DiContainerBenchmarks\Fixture\Class50
      */
     protected function getClass50Service()
     {
@@ -726,11 +632,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class51' service.
+     * Gets the public 'class51' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class51 A DiContainerBenchmarks\Fixture\Class51 instance
+     * @return \DiContainerBenchmarks\Fixture\Class51
      */
     protected function getClass51Service()
     {
@@ -738,11 +642,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class52' service.
+     * Gets the public 'class52' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class52 A DiContainerBenchmarks\Fixture\Class52 instance
+     * @return \DiContainerBenchmarks\Fixture\Class52
      */
     protected function getClass52Service()
     {
@@ -750,11 +652,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class53' service.
+     * Gets the public 'class53' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class53 A DiContainerBenchmarks\Fixture\Class53 instance
+     * @return \DiContainerBenchmarks\Fixture\Class53
      */
     protected function getClass53Service()
     {
@@ -762,11 +662,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class54' service.
+     * Gets the public 'class54' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class54 A DiContainerBenchmarks\Fixture\Class54 instance
+     * @return \DiContainerBenchmarks\Fixture\Class54
      */
     protected function getClass54Service()
     {
@@ -774,11 +672,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class55' service.
+     * Gets the public 'class55' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class55 A DiContainerBenchmarks\Fixture\Class55 instance
+     * @return \DiContainerBenchmarks\Fixture\Class55
      */
     protected function getClass55Service()
     {
@@ -786,11 +682,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class56' service.
+     * Gets the public 'class56' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class56 A DiContainerBenchmarks\Fixture\Class56 instance
+     * @return \DiContainerBenchmarks\Fixture\Class56
      */
     protected function getClass56Service()
     {
@@ -798,11 +692,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class57' service.
+     * Gets the public 'class57' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class57 A DiContainerBenchmarks\Fixture\Class57 instance
+     * @return \DiContainerBenchmarks\Fixture\Class57
      */
     protected function getClass57Service()
     {
@@ -810,11 +702,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class58' service.
+     * Gets the public 'class58' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class58 A DiContainerBenchmarks\Fixture\Class58 instance
+     * @return \DiContainerBenchmarks\Fixture\Class58
      */
     protected function getClass58Service()
     {
@@ -822,11 +712,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class59' service.
+     * Gets the public 'class59' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class59 A DiContainerBenchmarks\Fixture\Class59 instance
+     * @return \DiContainerBenchmarks\Fixture\Class59
      */
     protected function getClass59Service()
     {
@@ -834,11 +722,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class6' service.
+     * Gets the public 'class6' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class6 A DiContainerBenchmarks\Fixture\Class6 instance
+     * @return \DiContainerBenchmarks\Fixture\Class6
      */
     protected function getClass6Service()
     {
@@ -846,11 +732,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class60' service.
+     * Gets the public 'class60' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class60 A DiContainerBenchmarks\Fixture\Class60 instance
+     * @return \DiContainerBenchmarks\Fixture\Class60
      */
     protected function getClass60Service()
     {
@@ -858,11 +742,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class61' service.
+     * Gets the public 'class61' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class61 A DiContainerBenchmarks\Fixture\Class61 instance
+     * @return \DiContainerBenchmarks\Fixture\Class61
      */
     protected function getClass61Service()
     {
@@ -870,11 +752,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class62' service.
+     * Gets the public 'class62' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class62 A DiContainerBenchmarks\Fixture\Class62 instance
+     * @return \DiContainerBenchmarks\Fixture\Class62
      */
     protected function getClass62Service()
     {
@@ -882,11 +762,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class63' service.
+     * Gets the public 'class63' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class63 A DiContainerBenchmarks\Fixture\Class63 instance
+     * @return \DiContainerBenchmarks\Fixture\Class63
      */
     protected function getClass63Service()
     {
@@ -894,11 +772,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class64' service.
+     * Gets the public 'class64' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class64 A DiContainerBenchmarks\Fixture\Class64 instance
+     * @return \DiContainerBenchmarks\Fixture\Class64
      */
     protected function getClass64Service()
     {
@@ -906,11 +782,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class65' service.
+     * Gets the public 'class65' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class65 A DiContainerBenchmarks\Fixture\Class65 instance
+     * @return \DiContainerBenchmarks\Fixture\Class65
      */
     protected function getClass65Service()
     {
@@ -918,11 +792,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class66' service.
+     * Gets the public 'class66' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class66 A DiContainerBenchmarks\Fixture\Class66 instance
+     * @return \DiContainerBenchmarks\Fixture\Class66
      */
     protected function getClass66Service()
     {
@@ -930,11 +802,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class67' service.
+     * Gets the public 'class67' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class67 A DiContainerBenchmarks\Fixture\Class67 instance
+     * @return \DiContainerBenchmarks\Fixture\Class67
      */
     protected function getClass67Service()
     {
@@ -942,11 +812,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class68' service.
+     * Gets the public 'class68' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class68 A DiContainerBenchmarks\Fixture\Class68 instance
+     * @return \DiContainerBenchmarks\Fixture\Class68
      */
     protected function getClass68Service()
     {
@@ -954,11 +822,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class69' service.
+     * Gets the public 'class69' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class69 A DiContainerBenchmarks\Fixture\Class69 instance
+     * @return \DiContainerBenchmarks\Fixture\Class69
      */
     protected function getClass69Service()
     {
@@ -966,11 +832,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class7' service.
+     * Gets the public 'class7' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class7 A DiContainerBenchmarks\Fixture\Class7 instance
+     * @return \DiContainerBenchmarks\Fixture\Class7
      */
     protected function getClass7Service()
     {
@@ -978,11 +842,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class70' service.
+     * Gets the public 'class70' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class70 A DiContainerBenchmarks\Fixture\Class70 instance
+     * @return \DiContainerBenchmarks\Fixture\Class70
      */
     protected function getClass70Service()
     {
@@ -990,11 +852,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class71' service.
+     * Gets the public 'class71' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class71 A DiContainerBenchmarks\Fixture\Class71 instance
+     * @return \DiContainerBenchmarks\Fixture\Class71
      */
     protected function getClass71Service()
     {
@@ -1002,11 +862,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class72' service.
+     * Gets the public 'class72' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class72 A DiContainerBenchmarks\Fixture\Class72 instance
+     * @return \DiContainerBenchmarks\Fixture\Class72
      */
     protected function getClass72Service()
     {
@@ -1014,11 +872,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class73' service.
+     * Gets the public 'class73' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class73 A DiContainerBenchmarks\Fixture\Class73 instance
+     * @return \DiContainerBenchmarks\Fixture\Class73
      */
     protected function getClass73Service()
     {
@@ -1026,11 +882,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class74' service.
+     * Gets the public 'class74' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class74 A DiContainerBenchmarks\Fixture\Class74 instance
+     * @return \DiContainerBenchmarks\Fixture\Class74
      */
     protected function getClass74Service()
     {
@@ -1038,11 +892,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class75' service.
+     * Gets the public 'class75' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class75 A DiContainerBenchmarks\Fixture\Class75 instance
+     * @return \DiContainerBenchmarks\Fixture\Class75
      */
     protected function getClass75Service()
     {
@@ -1050,11 +902,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class76' service.
+     * Gets the public 'class76' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class76 A DiContainerBenchmarks\Fixture\Class76 instance
+     * @return \DiContainerBenchmarks\Fixture\Class76
      */
     protected function getClass76Service()
     {
@@ -1062,11 +912,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class77' service.
+     * Gets the public 'class77' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class77 A DiContainerBenchmarks\Fixture\Class77 instance
+     * @return \DiContainerBenchmarks\Fixture\Class77
      */
     protected function getClass77Service()
     {
@@ -1074,11 +922,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class78' service.
+     * Gets the public 'class78' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class78 A DiContainerBenchmarks\Fixture\Class78 instance
+     * @return \DiContainerBenchmarks\Fixture\Class78
      */
     protected function getClass78Service()
     {
@@ -1086,11 +932,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class79' service.
+     * Gets the public 'class79' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class79 A DiContainerBenchmarks\Fixture\Class79 instance
+     * @return \DiContainerBenchmarks\Fixture\Class79
      */
     protected function getClass79Service()
     {
@@ -1098,11 +942,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class8' service.
+     * Gets the public 'class8' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class8 A DiContainerBenchmarks\Fixture\Class8 instance
+     * @return \DiContainerBenchmarks\Fixture\Class8
      */
     protected function getClass8Service()
     {
@@ -1110,11 +952,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class80' service.
+     * Gets the public 'class80' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class80 A DiContainerBenchmarks\Fixture\Class80 instance
+     * @return \DiContainerBenchmarks\Fixture\Class80
      */
     protected function getClass80Service()
     {
@@ -1122,11 +962,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class81' service.
+     * Gets the public 'class81' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class81 A DiContainerBenchmarks\Fixture\Class81 instance
+     * @return \DiContainerBenchmarks\Fixture\Class81
      */
     protected function getClass81Service()
     {
@@ -1134,11 +972,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class82' service.
+     * Gets the public 'class82' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class82 A DiContainerBenchmarks\Fixture\Class82 instance
+     * @return \DiContainerBenchmarks\Fixture\Class82
      */
     protected function getClass82Service()
     {
@@ -1146,11 +982,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class83' service.
+     * Gets the public 'class83' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class83 A DiContainerBenchmarks\Fixture\Class83 instance
+     * @return \DiContainerBenchmarks\Fixture\Class83
      */
     protected function getClass83Service()
     {
@@ -1158,11 +992,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class84' service.
+     * Gets the public 'class84' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class84 A DiContainerBenchmarks\Fixture\Class84 instance
+     * @return \DiContainerBenchmarks\Fixture\Class84
      */
     protected function getClass84Service()
     {
@@ -1170,11 +1002,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class85' service.
+     * Gets the public 'class85' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class85 A DiContainerBenchmarks\Fixture\Class85 instance
+     * @return \DiContainerBenchmarks\Fixture\Class85
      */
     protected function getClass85Service()
     {
@@ -1182,11 +1012,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class86' service.
+     * Gets the public 'class86' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class86 A DiContainerBenchmarks\Fixture\Class86 instance
+     * @return \DiContainerBenchmarks\Fixture\Class86
      */
     protected function getClass86Service()
     {
@@ -1194,11 +1022,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class87' service.
+     * Gets the public 'class87' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class87 A DiContainerBenchmarks\Fixture\Class87 instance
+     * @return \DiContainerBenchmarks\Fixture\Class87
      */
     protected function getClass87Service()
     {
@@ -1206,11 +1032,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class88' service.
+     * Gets the public 'class88' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class88 A DiContainerBenchmarks\Fixture\Class88 instance
+     * @return \DiContainerBenchmarks\Fixture\Class88
      */
     protected function getClass88Service()
     {
@@ -1218,11 +1042,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class89' service.
+     * Gets the public 'class89' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class89 A DiContainerBenchmarks\Fixture\Class89 instance
+     * @return \DiContainerBenchmarks\Fixture\Class89
      */
     protected function getClass89Service()
     {
@@ -1230,11 +1052,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class9' service.
+     * Gets the public 'class9' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class9 A DiContainerBenchmarks\Fixture\Class9 instance
+     * @return \DiContainerBenchmarks\Fixture\Class9
      */
     protected function getClass9Service()
     {
@@ -1242,11 +1062,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class90' service.
+     * Gets the public 'class90' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class90 A DiContainerBenchmarks\Fixture\Class90 instance
+     * @return \DiContainerBenchmarks\Fixture\Class90
      */
     protected function getClass90Service()
     {
@@ -1254,11 +1072,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class91' service.
+     * Gets the public 'class91' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class91 A DiContainerBenchmarks\Fixture\Class91 instance
+     * @return \DiContainerBenchmarks\Fixture\Class91
      */
     protected function getClass91Service()
     {
@@ -1266,11 +1082,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class92' service.
+     * Gets the public 'class92' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class92 A DiContainerBenchmarks\Fixture\Class92 instance
+     * @return \DiContainerBenchmarks\Fixture\Class92
      */
     protected function getClass92Service()
     {
@@ -1278,11 +1092,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class93' service.
+     * Gets the public 'class93' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class93 A DiContainerBenchmarks\Fixture\Class93 instance
+     * @return \DiContainerBenchmarks\Fixture\Class93
      */
     protected function getClass93Service()
     {
@@ -1290,11 +1102,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class94' service.
+     * Gets the public 'class94' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class94 A DiContainerBenchmarks\Fixture\Class94 instance
+     * @return \DiContainerBenchmarks\Fixture\Class94
      */
     protected function getClass94Service()
     {
@@ -1302,11 +1112,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class95' service.
+     * Gets the public 'class95' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class95 A DiContainerBenchmarks\Fixture\Class95 instance
+     * @return \DiContainerBenchmarks\Fixture\Class95
      */
     protected function getClass95Service()
     {
@@ -1314,11 +1122,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class96' service.
+     * Gets the public 'class96' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class96 A DiContainerBenchmarks\Fixture\Class96 instance
+     * @return \DiContainerBenchmarks\Fixture\Class96
      */
     protected function getClass96Service()
     {
@@ -1326,11 +1132,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class97' service.
+     * Gets the public 'class97' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class97 A DiContainerBenchmarks\Fixture\Class97 instance
+     * @return \DiContainerBenchmarks\Fixture\Class97
      */
     protected function getClass97Service()
     {
@@ -1338,11 +1142,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class98' service.
+     * Gets the public 'class98' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class98 A DiContainerBenchmarks\Fixture\Class98 instance
+     * @return \DiContainerBenchmarks\Fixture\Class98
      */
     protected function getClass98Service()
     {
@@ -1350,11 +1152,9 @@ class CompiledPrototypeContainer extends Container
     }
 
     /*
-     * Gets the 'class99' service.
+     * Gets the public 'class99' autowired service.
      *
-     * This service is autowired.
-     *
-     * @return \DiContainerBenchmarks\Fixture\Class99 A DiContainerBenchmarks\Fixture\Class99 instance
+     * @return \DiContainerBenchmarks\Fixture\Class99
      */
     protected function getClass99Service()
     {
