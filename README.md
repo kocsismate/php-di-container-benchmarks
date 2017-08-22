@@ -12,6 +12,7 @@
 * [Install](#install)
 * [Usage](#usage)
 * [Contributing](#contributing)
+* [Support](#support)
 * [Credits](#credits)
 * [License](#license)
 
@@ -99,6 +100,10 @@ information, refer the URL in question, it provides you with detailed instructio
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+## Support
+
+Please see [SUPPORT](SUPPORT.md) for details.
 
 ## Credits
 
