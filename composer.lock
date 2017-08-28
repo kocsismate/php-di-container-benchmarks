@@ -415,16 +415,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.7.0",
+            "version": "v1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "53d9518ffeb019c51d542ff60cb578f076d3ff16"
+                "reference": "b3217d58609e9c8e661cd41357a54d926c4a2a1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/53d9518ffeb019c51d542ff60cb578f076d3ff16",
-                "reference": "53d9518ffeb019c51d542ff60cb578f076d3ff16",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/b3217d58609e9c8e661cd41357a54d926c4a2a1a",
+                "reference": "b3217d58609e9c8e661cd41357a54d926c4a2a1a",
                 "shasum": ""
             },
             "require": {
@@ -485,7 +485,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2017-07-22T13:00:15+00:00"
+            "time": "2017-08-25T07:02:50+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -1134,12 +1134,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-DI/PHP-DI.git",
-                "reference": "ec8120eec8cf93d0e7590a92face6b5e7fec18b9"
+                "reference": "569aa6305cbe7a41c91a8c2a9bef2adac4f7ba6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/ec8120eec8cf93d0e7590a92face6b5e7fec18b9",
-                "reference": "ec8120eec8cf93d0e7590a92face6b5e7fec18b9",
+                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/569aa6305cbe7a41c91a8c2a9bef2adac4f7ba6d",
+                "reference": "569aa6305cbe7a41c91a8c2a9bef2adac4f7ba6d",
                 "shasum": ""
             },
             "require": {
@@ -1188,7 +1188,7 @@
                 "ioc",
                 "psr11"
             ],
-            "time": "2017-08-21T05:49:26+00:00"
+            "time": "2017-08-28T05:06:14+00:00"
         },
         {
             "name": "php-di/phpdoc-reader",
