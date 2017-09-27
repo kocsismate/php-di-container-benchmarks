@@ -70,9 +70,9 @@ if ($benchmarkUrl === false) {
 
 $benchmark = new Benchmark(new WebBenchmarkContext($benchmarkUrl));
 
-
 if (isset($argv[1]) && $argv[1] === "build") {
     $benchmark->buildContainers($containers);
 } else {
+    sleep(2);
     $benchmark->runBenchmark($testSuites, $containers, $outputGenerators);
 }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace DiContainerBenchmarks\Container\Symfony;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
+use RuntimeException;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Dumper\PhpDumper;
@@ -37,11 +38,13 @@ class SymfonyContainer implements ContainerInterface
 
     public function getUrl(): string
     {
-        return "https://symfony.com/doc/3.2/components/dependency_injection.html";
+        return "https://symfony.com/doc/current/components/dependency_injection.html";
     }
 
     public function build(): void
     {
+        exec("rm -R " . PROJECT_ROOT . "/src/Container/Symfony/Resource/*");
+
         // Build container with prototype services
         $containerBuilder = new ContainerBuilder();
 
@@ -54,16 +57,10 @@ class SymfonyContainer implements ContainerInterface
 
         $containerBuilder->compile();
 
-        $dumper = new PhpDumper($containerBuilder);
-        file_put_contents(
-            PROJECT_ROOT . "/src/Container/Symfony/Resource/CompiledPrototypeContainer.php",
-            $dumper->dump(
-                [
-                    "namespace" => "DiContainerBenchmarks\\Container\\Symfony\\Resource",
-                    "class" => "CompiledPrototypeContainer",
-                    "debug" => false,
-                ]
-            )
+        $this->dumpFileContainer(
+            $containerBuilder,
+            PROJECT_ROOT . "/src/Container/Symfony/Resource/",
+            "CompiledPrototypeContainer"
         );
 
         // Build container with singleton services
@@ -78,16 +75,51 @@ class SymfonyContainer implements ContainerInterface
 
         $containerBuilder->compile();
 
+        $this->dumpFileContainer(
+            $containerBuilder,
+            PROJECT_ROOT . "/src/Container/Symfony/Resource/",
+            "CompiledSingletonContainer"
+        );
+    }
+
+    protected function dumpRegularContainer(ContainerBuilder $containerBuilder, string $path, string $class)
+    {
         $dumper = new PhpDumper($containerBuilder);
         file_put_contents(
-            PROJECT_ROOT . "/src/Container/Symfony/Resource/CompiledSingletonContainer.php",
+            $path . $class . ".php",
             $dumper->dump(
                 [
                     "namespace" => "DiContainerBenchmarks\\Container\\Symfony\\Resource",
-                    "class" => "CompiledSingletonContainer",
+                    "class" => $class,
                     "debug" => false,
                 ]
             )
         );
+    }
+
+    protected function dumpFileContainer(ContainerBuilder $containerBuilder, string $path, string $class)
+    {
+        $dumper = new PhpDumper($containerBuilder);
+
+        $content = $dumper->dump(
+            [
+                "namespace" => "DiContainerBenchmarks\\Container\\Symfony\\Resource",
+                "class" => $class,
+                "file" => $path,
+                "as_files" => true,
+                "debug" => false,
+            ]
+        );
+
+        $file = key($content);
+        $dir = $path . substr($file, 0, strpos($file, "/"));
+        $result = @mkdir($dir, 0777, true) && is_dir($dir);
+        if ($result === false) {
+            throw new RuntimeException(sprintf("Unable to create the container directory (%s)\n", $dir));
+        }
+
+        foreach ($content as $file => $code) {
+            file_put_contents($path . $file, $code);
+        }
     }
 }
