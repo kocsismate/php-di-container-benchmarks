@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace DiContainerBenchmarks\Container\Jshannon63;
+namespace DiContainerBenchmarks\Container\Cobalt;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
 
