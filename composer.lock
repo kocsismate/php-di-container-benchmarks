@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "43083534280d8023270242fe3231dcbc",
+    "content-hash": "45984bb52181338de4407a971014740c",
     "packages": [
         {
             "name": "aura/di",
@@ -742,6 +742,62 @@
                 "tokenizer"
             ],
             "time": "2016-12-07T09:37:55+00:00"
+        },
+        {
+            "name": "jshannon63/cobalt",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jshannon63/cobalt.git",
+                "reference": "a9f6d5f8edcace0ced9c6810b07d954098748869"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jshannon63/cobalt/zipball/a9f6d5f8edcace0ced9c6810b07d954098748869",
+                "reference": "a9f6d5f8edcace0ced9c6810b07d954098748869",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0",
+                "psr/container": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jshannon63\\Cobalt\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jim Shannon",
+                    "email": "jim@hltky.com",
+                    "homepage": "http://jimshannon.me/"
+                }
+            ],
+            "description": "Autowired Dependency Injection Container for PHP with Reflection Based IoC",
+            "homepage": "https://github.com/jshannon63/container",
+            "keywords": [
+                "PSR-11",
+                "application-framework",
+                "autowire",
+                "container",
+                "dependency-injection-container",
+                "di",
+                "ico-container",
+                "interop",
+                "ioc",
+                "php",
+                "reflective-injection",
+                "service-container"
+            ],
+            "time": "2017-11-15T19:05:33+00:00"
         },
         {
             "name": "level-2/dice",
