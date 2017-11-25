@@ -16,6 +16,7 @@
         "bitexpert/disco": "^0.9.0",
         "doctrine/cache": "^1.6.1",
         "illuminate/container": "^v5.4.0",
+        "jshannon63/cobalt": "^1.1",
         "level-2/dice": "dev-master",
         "opulence/ioc": "^1.0.6",
         "php-di/php-di": "dev-master",
@@ -23,15 +24,14 @@
         "pimple/pimple": "^3.1.0",
         "psr/container": "^1.0.0",
         "rdlowrey/auryn": "^1.4.0",
-        "symfony/config": "3.4.x-dev",
-        "symfony/dependency-injection": "3.4.x-dev",
-        "symfony/filesystem": "3.4.x-dev",
-        "symfony/process": "3.4.x-dev",
+        "symfony/config": "3.4.0-RC1",
+        "symfony/dependency-injection": "3.4.0-RC1",
+        "symfony/filesystem": "3.4.0-RC1",
+        "symfony/process": "3.4.0-RC1",
         "thecodingmachine/yaco": "^1.0.0",
         "yiisoft/yii2": "^2.0.11",
         "woohoolabs/zen": "^2.0.0",
-        "zendframework/zend-servicemanager": "^3.2.0",
-        "jshannon63/cobalt": "^1.1"
+        "zendframework/zend-servicemanager": "^3.2.0"
     },
     "autoload": {
         "psr-4": {

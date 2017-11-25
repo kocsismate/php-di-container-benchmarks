@@ -17,11 +17,11 @@ abstract class AbstractSymfonyTest implements TestInterface
 
     protected function setContainerWithPrototypeServices(): void
     {
-        $this->container = require __DIR__ . "/Resource/CompiledPrototypeContainer.php";
+        $this->container = new CompiledPrototypeContainer();
     }
 
     protected function setContainerWithSingletonServices(): void
     {
-        $this->container = require __DIR__ . "/Resource/CompiledSingletonContainer.php";
+        $this->container = new CompiledSingletonContainer();
     }
 }

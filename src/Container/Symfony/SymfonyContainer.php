@@ -43,8 +43,6 @@ class SymfonyContainer implements ContainerInterface
 
     public function build(): void
     {
-        exec("rm -R " . PROJECT_ROOT . "/src/Container/Symfony/Resource/*");
-
         // Build container with prototype services
         $containerBuilder = new ContainerBuilder();
 
@@ -56,8 +54,7 @@ class SymfonyContainer implements ContainerInterface
         }
 
         $containerBuilder->compile();
-
-        $this->dumpFileContainer(
+        $this->dumpRegularContainer(
             $containerBuilder,
             PROJECT_ROOT . "/src/Container/Symfony/Resource/",
             "CompiledPrototypeContainer"
@@ -74,8 +71,7 @@ class SymfonyContainer implements ContainerInterface
         }
 
         $containerBuilder->compile();
-
-        $this->dumpFileContainer(
+        $this->dumpRegularContainer(
             $containerBuilder,
             PROJECT_ROOT . "/src/Container/Symfony/Resource/",
             "CompiledSingletonContainer"
@@ -91,6 +87,7 @@ class SymfonyContainer implements ContainerInterface
                 [
                     "namespace" => "DiContainerBenchmarks\\Container\\Symfony\\Resource",
                     "class" => $class,
+                    "as_files" => false,
                     "debug" => false,
                 ]
             )
