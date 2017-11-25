@@ -50,7 +50,7 @@
             </p>
 
             <p>
-                
+
                 I have been interested in the topic since then - and my curiosity was just growing after I had started
                 to develop my own DI container, Zen - so I wanted to finally conduct a better benchmark than the last
                 one was: I tried to fix its flaws while keeping its many good parts. So here is my take! If you have any
@@ -180,7 +180,7 @@
         <section>
             <h2 id="method">Method</h2>
 
-            <p>            
+            <p>
                 Each container is given 6 tasks (Test Suites) where they have to create or fetch object graphs of
                 different sizes (10 or 100 objects). For this purpose, containers are configured either to always
                 instantiate objects (this is usually called as Prototype scope or not shared services) or to instantiate
@@ -205,10 +205,10 @@
             </p>
 
             <p>
-                The benchmark is run on a 15-inch MacBook Pro from 2015 using PHP 7.1 with OPcache enabled and autoloader
-                optimized (using authoritative mode). During the measurements, a PHP-FPM script served by nginx is
-                executed each time. This is needed because a production environment is simulated much better this way
-                than in the CLI.
+                The benchmark is run on a 15-inch MacBook Pro from 2015 using Docker with PHP 7.1 with OPcache enabled
+                and autoloader optimized (using authoritative mode). During the measurements, a PHP-FPM script served by
+                nginx is executed each time. This is needed because a production environment is simulated much better
+                this way than in the CLI.
             </p>
 
             <p>
