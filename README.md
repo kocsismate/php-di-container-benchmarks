@@ -21,8 +21,8 @@ In 2014, a really interesting benchmark about DI Containers for PHP
 Unfortunately, [the implementation](https://github.com/TomBZombie/php-dependency-injection-benchmarks) of the tests
 turned out to be quite controversial, so the benchmark itself wasn't really insightful.
 
-I have been interested in the topic since then so I wanted to conduct a better benchmark than the last one was: I tried
-to fix some of its flaws while keeping its many good parts.
+I have been interested in the topic since then so I wanted to conduct another benchmark that tries to measure real-life
+performance, while being as unbiased and reliable as possible.
 
 ## Results
 
@@ -41,10 +41,10 @@ $ composer require kocsismate/di-container-benchmarks:dev-master
 
 ### Usage with Docker
 
-First of all, [Docker Compose](https://www.docker.com/products/docker-compose) along with at least Docker 17.06 CE
-has to be installed on your machine.
+First of all, a fresh version of [Docker Compose](https://www.docker.com/products/docker-compose) and at least Docker
+17.06 CE has to be installed on your machine.
 
-Then copy the ".env.dist" file to ".env" and feel free to overwrite the values in it. Now, you can run
+Then copy the ".env.dist" file to ".env" and feel free to override the values in it. Now, you can run
 
 ```bash
 ./benchmark.sh docker
@@ -62,7 +62,7 @@ The HTML output will be generated in the "var" directory.
 
 ### Usage without Docker
 
-If you don't want to use Docker then you have to take several steps before running the benchmark:
+If using Docker is not an option for you then you have to take several steps before running the benchmark:
 
 - Install a web server and configure it to be able to serve "public/index.php"
 - Install PHP 7.1  at least with OPcache enabled
