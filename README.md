@@ -91,7 +91,7 @@ Windows users can use the `benchmark.bat` instead.
 
 You can even run tests manually from your browser. When the benchmark's Docker containers are running, just visit
 `localhost:8090`, otherwise you have to locate the `BENCHMARK_URL` URL (mentioned in the previous section). For further
-information, refer the URL in question, it provides you with detailed instructions.
+information, refer to the URL in question, it provides you with detailed instructions.
 
 ## Contributing
 
