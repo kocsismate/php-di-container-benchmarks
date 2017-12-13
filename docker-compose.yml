@@ -28,6 +28,8 @@ services:
     command: /code/build/container/nginx/run.sh
     depends_on:
       - fpm
+    logging:
+      driver: none
 
   fpm:
     build: ./
@@ -37,6 +39,8 @@ services:
     env_file:
       - .env
     command: /code/build/container/fpm/run.sh
+    logging:
+      driver: none
 
 networks:
   benchmark:
