@@ -83,10 +83,10 @@ class HtmlOutputGenerator implements OutputGeneratorInterface
             <p>
                 
                 I have been interested in the topic since then - and my curiosity was just growing after I had started
-                to develop my own DI container, Zen - so I wanted to finally conduct a better benchmark than the last
-                one was: I tried to fix its flaws while keeping its many good parts. So here is my take! If you have any
-                suggestion in mind about the benchmark or you want to add your container to the list, please create an
-                an <a target="_blank" href="https://github.com/kocsismate/php-di-container-benchmarks">issue or a Pull Request</a>.
+                to develop my own DI container, Zen - so I wanted to conduct another benchmark that also tries to measure
+                real-life performance, while being as unbiased and reliable as possible. So here is my take! If you have any
+                suggestion in mind about the benchmark or you want to add your container to the list, please create
+                an <a target="_blank" href="https://github.com/kocsismate/php-di-container-benchmarks">issue or a pull request</a>.
             </p>
 
             <p>
@@ -161,9 +161,9 @@ HERE;
             <p>            
                 Each container is given 6 tasks (Test Suites) where they have to create or fetch object graphs of
                 different sizes (10 or 100 objects). For this purpose, containers are configured either to always
-                instantiate objects (this is usually called as Prototype scope or not shared services) or to instantiate
-                objects only at the first retrieval and return the same instance on the subsequent calls (which is
-                usually referred to as Singleton scope or shared services).
+                instantiate objects (this is usually called as Prototype scope) or to instantiate objects only at
+                the first retrieval and return the same instance on the subsequent calls (which is usually referred to
+                as Singleton scope or shared services).
             </p>
 
             <p>
@@ -278,21 +278,12 @@ HERE;
             <h2 id="conclusion">Conclusion</h2>
 
             <p>
-                My hypothesis was that different types of containers have significantly different performance
-                characteristics. It can be concluded by looking at the results that the hypothesis can't be rejected as
-                it seems that the more user-friendly a container is (dynamic &gt; compiled, dynamic with autowiring
-                &gt; dynamic without autowiring) the slower it is, especially in tasks where object instantiation is
-                measured (Test Suites 3-4).
-            </p>
-
-            <p>
-                However, keep in mind that in a well-architected application you won't call your DI Container
-                hundreds or even thousands of times because ideally there should be only one
-                <a target="_blank" href="http://blog.ploeh.dk/2011/07/28/CompositionRoot/">composition root</a>:
-                when you invoke the controller(s) which handle(s) the request (but there is a good chance
-                of needing the container in other places of the application layer - e.g. in your middleware or bootstrap
-                files). That's why most results are exaggerated - you probably won't see milliseconds of difference
-                between the fastest and the slowest DIC in the real life.
+                Keep in mind that in a well-architected application you won't call your DI Container
+                hundreds or even thousands of times because ideally there should be as few
+                <a target="_blank" href="http://blog.ploeh.dk/2011/07/28/CompositionRoot/">composition roots</a>
+                as possible (but there is a good chance of needing the container in other places of the application layer -
+                e.g. in your middleware or bootstrap files). That's why most results are exaggerated - you probably won't
+                see milliseconds of difference between the fastest and the slowest DIC in the real life.
             </p>
 
             <p>
