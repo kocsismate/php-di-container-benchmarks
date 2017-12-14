@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": "^7.1",
+        "php": "^7.2",
         "aura/di": "^3.2.0",
         "bitexpert/disco": "^0.9.0",
         "doctrine/cache": "^1.6.1",
@@ -44,7 +44,7 @@
     "config": {
         "bin-compat": "full",
         "platform": {
-            "php": "7.1.3"
+            "php": "7.2.0"
         }
     },
     "repositories": [

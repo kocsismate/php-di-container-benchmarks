@@ -183,7 +183,7 @@ HERE;
             </p>
 
             <p>
-                The benchmark is run on a 15-inch MacBook Pro from 2015 using PHP 7.1 with OPcache enabled and autoloader
+                The benchmark is run on a 15-inch MacBook Pro from 2015 using PHP 7.2 with OPcache enabled and autoloader
                 optimized (using authoritative mode). During the measurements, a PHP-FPM script served by nginx is
                 executed each time. This is needed because a production environment is simulated much better this way
                 than in the CLI.

@@ -21,7 +21,7 @@ In 2014, a really interesting benchmark about DI Containers for PHP
 Unfortunately, [the implementation](https://github.com/TomBZombie/php-dependency-injection-benchmarks) of the tests
 turned out to be quite controversial, so the benchmark itself wasn't really insightful.
 
-I have been interested in the topic since then so I wanted to conduct another benchmark that tries to measure real-life
+I have been interested in the topic since then so I wanted to conduct another benchmark that also tries to measure real-life
 performance, while being as unbiased and reliable as possible.
 
 ## Results
@@ -65,7 +65,7 @@ The HTML output will be generated in the "var" directory.
 If using Docker is not an option for you then you have to take several steps before running the benchmark:
 
 - Install a web server and configure it to be able to serve "public/index.php"
-- Install PHP 7.1  at least with OPcache enabled
+- Install PHP 7.2 at least with OPcache enabled
 - Install Composer
 - Set the `BENCHMARK_URL` environment variable to the URL where "public/index.php" is available. For instance:
 
