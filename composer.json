@@ -16,6 +16,7 @@
         "bitexpert/disco": "^0.9.0",
         "doctrine/cache": "^1.6.1",
         "illuminate/container": "^v5.4.0",
+        "joomla/di": "^1.4",
         "jshannon63/cobalt": "^1.1",
         "level-2/dice": "dev-master",
         "opulence/ioc": "^1.0.6",

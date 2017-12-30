@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "95b70690fb69e98fa666951d4d05d2b0",
+    "content-hash": "91dfb826619e136833416582394b810c",
     "packages": [
         {
             "name": "aura/di",
@@ -742,6 +742,54 @@
                 "tokenizer"
             ],
             "time": "2016-12-07T09:37:55+00:00"
+        },
+        {
+            "name": "joomla/di",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/joomla-framework/di.git",
+                "reference": "756c6eb4554b9007f69da66cf488a05308251ed8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/joomla-framework/di/zipball/756c6eb4554b9007f69da66cf488a05308251ed8",
+                "reference": "756c6eb4554b9007f69da66cf488a05308251ed8",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.10|~7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35|^5.4.3|~6.0",
+                "squizlabs/php_codesniffer": "1.*"
+            },
+            "type": "joomla-package",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Joomla\\DI\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Joomla DI Package",
+            "homepage": "https://github.com/joomla-framework/di",
+            "keywords": [
+                "container",
+                "dependency injection",
+                "di",
+                "framework",
+                "ioc",
+                "joomla"
+            ],
+            "time": "2017-11-12T15:35:19+00:00"
         },
         {
             "name": "jshannon63/cobalt",
