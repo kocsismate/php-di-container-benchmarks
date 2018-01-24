@@ -1,9 +1,9 @@
 <?php
 namespace DiContainerBenchmarks\Container\Zen\Resource;
 
-use WoohooLabs\Zen\AbstractContainer;
+use WoohooLabs\Zen\AbstractCompiledContainer;
 
-class CompiledSingletonContainer extends AbstractContainer
+class CompiledSingletonContainer extends AbstractCompiledContainer
 {
     /**
      * @var string[]
@@ -113,19 +113,19 @@ class CompiledSingletonContainer extends AbstractContainer
         \DiContainerBenchmarks\Fixture\Class71::class => 'DiContainerBenchmarks__Fixture__Class71',
     ];
 
-    protected function DiContainerBenchmarks__Container__Zen__Resource__CompiledSingletonContainer()
+    public function DiContainerBenchmarks__Container__Zen__Resource__CompiledSingletonContainer()
     {
         return $this;
     }
 
-    protected function Psr__Container__ContainerInterface()
+    public function Psr__Container__ContainerInterface()
     {
         $entry = $this->singletonEntries['DiContainerBenchmarks\Container\Zen\Resource\CompiledSingletonContainer'] ?? $this->DiContainerBenchmarks__Container__Zen__Resource__CompiledSingletonContainer();
 
         return $this->singletonEntries['Psr\Container\ContainerInterface'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class68()
+    public function DiContainerBenchmarks__Fixture__Class68()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class68(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class67'] ?? $this->DiContainerBenchmarks__Fixture__Class67()
@@ -134,7 +134,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class68'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class67()
+    public function DiContainerBenchmarks__Fixture__Class67()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class67(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class66'] ?? $this->DiContainerBenchmarks__Fixture__Class66()
@@ -143,7 +143,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class67'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class66()
+    public function DiContainerBenchmarks__Fixture__Class66()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class66(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class65'] ?? $this->DiContainerBenchmarks__Fixture__Class65()
@@ -152,7 +152,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class66'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class65()
+    public function DiContainerBenchmarks__Fixture__Class65()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class65(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class64'] ?? $this->DiContainerBenchmarks__Fixture__Class64()
@@ -161,7 +161,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class65'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class64()
+    public function DiContainerBenchmarks__Fixture__Class64()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class64(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class63'] ?? $this->DiContainerBenchmarks__Fixture__Class63()
@@ -170,7 +170,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class64'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class63()
+    public function DiContainerBenchmarks__Fixture__Class63()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class63(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class62'] ?? $this->DiContainerBenchmarks__Fixture__Class62()
@@ -179,7 +179,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class63'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class62()
+    public function DiContainerBenchmarks__Fixture__Class62()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class62(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class61'] ?? $this->DiContainerBenchmarks__Fixture__Class61()
@@ -188,7 +188,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class62'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class61()
+    public function DiContainerBenchmarks__Fixture__Class61()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class61(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class60'] ?? $this->DiContainerBenchmarks__Fixture__Class60()
@@ -197,7 +197,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class61'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class60()
+    public function DiContainerBenchmarks__Fixture__Class60()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class60(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class59'] ?? $this->DiContainerBenchmarks__Fixture__Class59()
@@ -206,7 +206,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class60'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class59()
+    public function DiContainerBenchmarks__Fixture__Class59()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class59(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class58'] ?? $this->DiContainerBenchmarks__Fixture__Class58()
@@ -215,7 +215,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class59'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class58()
+    public function DiContainerBenchmarks__Fixture__Class58()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class58(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class57'] ?? $this->DiContainerBenchmarks__Fixture__Class57()
@@ -224,7 +224,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class58'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class57()
+    public function DiContainerBenchmarks__Fixture__Class57()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class57(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class56'] ?? $this->DiContainerBenchmarks__Fixture__Class56()
@@ -233,7 +233,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class57'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class56()
+    public function DiContainerBenchmarks__Fixture__Class56()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class56(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class55'] ?? $this->DiContainerBenchmarks__Fixture__Class55()
@@ -242,7 +242,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class56'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class55()
+    public function DiContainerBenchmarks__Fixture__Class55()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class55(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class54'] ?? $this->DiContainerBenchmarks__Fixture__Class54()
@@ -251,7 +251,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class55'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class54()
+    public function DiContainerBenchmarks__Fixture__Class54()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class54(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class53'] ?? $this->DiContainerBenchmarks__Fixture__Class53()
@@ -260,7 +260,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class54'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class53()
+    public function DiContainerBenchmarks__Fixture__Class53()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class53(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class52'] ?? $this->DiContainerBenchmarks__Fixture__Class52()
@@ -269,7 +269,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class53'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class52()
+    public function DiContainerBenchmarks__Fixture__Class52()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class52(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class51'] ?? $this->DiContainerBenchmarks__Fixture__Class51()
@@ -278,7 +278,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class52'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class51()
+    public function DiContainerBenchmarks__Fixture__Class51()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class51(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class50'] ?? $this->DiContainerBenchmarks__Fixture__Class50()
@@ -287,7 +287,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class51'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class50()
+    public function DiContainerBenchmarks__Fixture__Class50()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class50(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class49'] ?? $this->DiContainerBenchmarks__Fixture__Class49()
@@ -296,7 +296,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class50'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class49()
+    public function DiContainerBenchmarks__Fixture__Class49()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class49(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class48'] ?? $this->DiContainerBenchmarks__Fixture__Class48()
@@ -305,7 +305,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class49'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class48()
+    public function DiContainerBenchmarks__Fixture__Class48()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class48(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class47'] ?? $this->DiContainerBenchmarks__Fixture__Class47()
@@ -314,7 +314,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class48'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class47()
+    public function DiContainerBenchmarks__Fixture__Class47()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class47(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class46'] ?? $this->DiContainerBenchmarks__Fixture__Class46()
@@ -323,7 +323,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class47'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class46()
+    public function DiContainerBenchmarks__Fixture__Class46()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class46(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class45'] ?? $this->DiContainerBenchmarks__Fixture__Class45()
@@ -332,7 +332,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class46'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class45()
+    public function DiContainerBenchmarks__Fixture__Class45()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class45(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class44'] ?? $this->DiContainerBenchmarks__Fixture__Class44()
@@ -341,7 +341,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class45'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class44()
+    public function DiContainerBenchmarks__Fixture__Class44()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class44(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class43'] ?? $this->DiContainerBenchmarks__Fixture__Class43()
@@ -350,7 +350,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class44'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class43()
+    public function DiContainerBenchmarks__Fixture__Class43()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class43(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class42'] ?? $this->DiContainerBenchmarks__Fixture__Class42()
@@ -359,7 +359,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class43'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class42()
+    public function DiContainerBenchmarks__Fixture__Class42()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class42(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class41'] ?? $this->DiContainerBenchmarks__Fixture__Class41()
@@ -368,7 +368,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class42'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class41()
+    public function DiContainerBenchmarks__Fixture__Class41()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class41(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class40'] ?? $this->DiContainerBenchmarks__Fixture__Class40()
@@ -377,7 +377,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class41'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class40()
+    public function DiContainerBenchmarks__Fixture__Class40()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class40(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class39'] ?? $this->DiContainerBenchmarks__Fixture__Class39()
@@ -386,7 +386,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class40'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class39()
+    public function DiContainerBenchmarks__Fixture__Class39()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class39(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class38'] ?? $this->DiContainerBenchmarks__Fixture__Class38()
@@ -395,7 +395,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class39'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class38()
+    public function DiContainerBenchmarks__Fixture__Class38()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class38(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class37'] ?? $this->DiContainerBenchmarks__Fixture__Class37()
@@ -404,7 +404,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class38'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class37()
+    public function DiContainerBenchmarks__Fixture__Class37()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class37(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class36'] ?? $this->DiContainerBenchmarks__Fixture__Class36()
@@ -413,7 +413,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class37'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class36()
+    public function DiContainerBenchmarks__Fixture__Class36()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class36(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class35'] ?? $this->DiContainerBenchmarks__Fixture__Class35()
@@ -422,7 +422,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class36'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class35()
+    public function DiContainerBenchmarks__Fixture__Class35()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class35(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class34'] ?? $this->DiContainerBenchmarks__Fixture__Class34()
@@ -431,7 +431,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class35'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class34()
+    public function DiContainerBenchmarks__Fixture__Class34()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class34(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class33'] ?? $this->DiContainerBenchmarks__Fixture__Class33()
@@ -440,7 +440,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class34'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class33()
+    public function DiContainerBenchmarks__Fixture__Class33()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class33(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class32'] ?? $this->DiContainerBenchmarks__Fixture__Class32()
@@ -449,7 +449,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class33'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class32()
+    public function DiContainerBenchmarks__Fixture__Class32()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class32(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class31'] ?? $this->DiContainerBenchmarks__Fixture__Class31()
@@ -458,7 +458,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class32'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class31()
+    public function DiContainerBenchmarks__Fixture__Class31()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class31(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class30'] ?? $this->DiContainerBenchmarks__Fixture__Class30()
@@ -467,7 +467,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class31'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class30()
+    public function DiContainerBenchmarks__Fixture__Class30()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class30(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class29'] ?? $this->DiContainerBenchmarks__Fixture__Class29()
@@ -476,7 +476,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class30'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class29()
+    public function DiContainerBenchmarks__Fixture__Class29()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class29(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class28'] ?? $this->DiContainerBenchmarks__Fixture__Class28()
@@ -485,7 +485,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class29'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class28()
+    public function DiContainerBenchmarks__Fixture__Class28()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class28(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class27'] ?? $this->DiContainerBenchmarks__Fixture__Class27()
@@ -494,7 +494,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class28'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class27()
+    public function DiContainerBenchmarks__Fixture__Class27()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class27(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class26'] ?? $this->DiContainerBenchmarks__Fixture__Class26()
@@ -503,7 +503,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class27'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class26()
+    public function DiContainerBenchmarks__Fixture__Class26()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class26(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class25'] ?? $this->DiContainerBenchmarks__Fixture__Class25()
@@ -512,7 +512,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class26'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class25()
+    public function DiContainerBenchmarks__Fixture__Class25()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class25(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class24'] ?? $this->DiContainerBenchmarks__Fixture__Class24()
@@ -521,7 +521,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class25'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class24()
+    public function DiContainerBenchmarks__Fixture__Class24()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class24(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class23'] ?? $this->DiContainerBenchmarks__Fixture__Class23()
@@ -530,7 +530,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class24'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class23()
+    public function DiContainerBenchmarks__Fixture__Class23()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class23(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class22'] ?? $this->DiContainerBenchmarks__Fixture__Class22()
@@ -539,7 +539,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class23'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class22()
+    public function DiContainerBenchmarks__Fixture__Class22()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class22(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class21'] ?? $this->DiContainerBenchmarks__Fixture__Class21()
@@ -548,7 +548,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class22'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class21()
+    public function DiContainerBenchmarks__Fixture__Class21()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class21(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class20'] ?? $this->DiContainerBenchmarks__Fixture__Class20()
@@ -557,7 +557,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class21'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class20()
+    public function DiContainerBenchmarks__Fixture__Class20()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class20(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class19'] ?? $this->DiContainerBenchmarks__Fixture__Class19()
@@ -566,7 +566,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class20'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class19()
+    public function DiContainerBenchmarks__Fixture__Class19()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class19(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class18'] ?? $this->DiContainerBenchmarks__Fixture__Class18()
@@ -575,7 +575,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class19'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class18()
+    public function DiContainerBenchmarks__Fixture__Class18()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class18(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class17'] ?? $this->DiContainerBenchmarks__Fixture__Class17()
@@ -584,7 +584,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class18'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class17()
+    public function DiContainerBenchmarks__Fixture__Class17()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class17(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class16'] ?? $this->DiContainerBenchmarks__Fixture__Class16()
@@ -593,7 +593,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class17'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class16()
+    public function DiContainerBenchmarks__Fixture__Class16()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class16(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class15'] ?? $this->DiContainerBenchmarks__Fixture__Class15()
@@ -602,7 +602,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class16'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class15()
+    public function DiContainerBenchmarks__Fixture__Class15()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class15(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class14'] ?? $this->DiContainerBenchmarks__Fixture__Class14()
@@ -611,7 +611,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class15'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class14()
+    public function DiContainerBenchmarks__Fixture__Class14()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class14(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class13'] ?? $this->DiContainerBenchmarks__Fixture__Class13()
@@ -620,7 +620,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class14'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class13()
+    public function DiContainerBenchmarks__Fixture__Class13()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class13(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class12'] ?? $this->DiContainerBenchmarks__Fixture__Class12()
@@ -629,7 +629,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class13'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class12()
+    public function DiContainerBenchmarks__Fixture__Class12()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class12(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class11'] ?? $this->DiContainerBenchmarks__Fixture__Class11()
@@ -638,7 +638,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class12'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class11()
+    public function DiContainerBenchmarks__Fixture__Class11()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class11(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class10'] ?? $this->DiContainerBenchmarks__Fixture__Class10()
@@ -647,7 +647,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class11'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class10()
+    public function DiContainerBenchmarks__Fixture__Class10()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class10(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class9'] ?? $this->DiContainerBenchmarks__Fixture__Class9()
@@ -656,7 +656,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class10'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class9()
+    public function DiContainerBenchmarks__Fixture__Class9()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class9(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class8'] ?? $this->DiContainerBenchmarks__Fixture__Class8()
@@ -665,7 +665,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class9'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class8()
+    public function DiContainerBenchmarks__Fixture__Class8()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class8(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class7'] ?? $this->DiContainerBenchmarks__Fixture__Class7()
@@ -674,7 +674,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class8'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class7()
+    public function DiContainerBenchmarks__Fixture__Class7()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class7(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class6'] ?? $this->DiContainerBenchmarks__Fixture__Class6()
@@ -683,7 +683,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class7'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class6()
+    public function DiContainerBenchmarks__Fixture__Class6()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class6(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class5'] ?? $this->DiContainerBenchmarks__Fixture__Class5()
@@ -692,7 +692,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class6'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class5()
+    public function DiContainerBenchmarks__Fixture__Class5()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class5(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class4'] ?? $this->DiContainerBenchmarks__Fixture__Class4()
@@ -701,7 +701,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class5'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class4()
+    public function DiContainerBenchmarks__Fixture__Class4()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class4(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class3'] ?? $this->DiContainerBenchmarks__Fixture__Class3()
@@ -710,7 +710,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class4'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class3()
+    public function DiContainerBenchmarks__Fixture__Class3()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class3(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class2'] ?? $this->DiContainerBenchmarks__Fixture__Class2()
@@ -719,7 +719,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class3'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class2()
+    public function DiContainerBenchmarks__Fixture__Class2()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class2(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class1'] ?? $this->DiContainerBenchmarks__Fixture__Class1()
@@ -728,14 +728,14 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class2'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class1()
+    public function DiContainerBenchmarks__Fixture__Class1()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class1();
 
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class1'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class97()
+    public function DiContainerBenchmarks__Fixture__Class97()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class97(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class96'] ?? $this->DiContainerBenchmarks__Fixture__Class96()
@@ -744,7 +744,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class97'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class96()
+    public function DiContainerBenchmarks__Fixture__Class96()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class96(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class95'] ?? $this->DiContainerBenchmarks__Fixture__Class95()
@@ -753,7 +753,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class96'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class95()
+    public function DiContainerBenchmarks__Fixture__Class95()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class95(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class94'] ?? $this->DiContainerBenchmarks__Fixture__Class94()
@@ -762,7 +762,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class95'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class94()
+    public function DiContainerBenchmarks__Fixture__Class94()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class94(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class93'] ?? $this->DiContainerBenchmarks__Fixture__Class93()
@@ -771,7 +771,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class94'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class93()
+    public function DiContainerBenchmarks__Fixture__Class93()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class93(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class92'] ?? $this->DiContainerBenchmarks__Fixture__Class92()
@@ -780,7 +780,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class93'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class92()
+    public function DiContainerBenchmarks__Fixture__Class92()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class92(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class91'] ?? $this->DiContainerBenchmarks__Fixture__Class91()
@@ -789,7 +789,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class92'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class91()
+    public function DiContainerBenchmarks__Fixture__Class91()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class91(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class90'] ?? $this->DiContainerBenchmarks__Fixture__Class90()
@@ -798,7 +798,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class91'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class90()
+    public function DiContainerBenchmarks__Fixture__Class90()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class90(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class89'] ?? $this->DiContainerBenchmarks__Fixture__Class89()
@@ -807,7 +807,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class90'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class89()
+    public function DiContainerBenchmarks__Fixture__Class89()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class89(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class88'] ?? $this->DiContainerBenchmarks__Fixture__Class88()
@@ -816,7 +816,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class89'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class88()
+    public function DiContainerBenchmarks__Fixture__Class88()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class88(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class87'] ?? $this->DiContainerBenchmarks__Fixture__Class87()
@@ -825,7 +825,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class88'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class87()
+    public function DiContainerBenchmarks__Fixture__Class87()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class87(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class86'] ?? $this->DiContainerBenchmarks__Fixture__Class86()
@@ -834,7 +834,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class87'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class86()
+    public function DiContainerBenchmarks__Fixture__Class86()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class86(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class85'] ?? $this->DiContainerBenchmarks__Fixture__Class85()
@@ -843,7 +843,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class86'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class85()
+    public function DiContainerBenchmarks__Fixture__Class85()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class85(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class84'] ?? $this->DiContainerBenchmarks__Fixture__Class84()
@@ -852,7 +852,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class85'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class84()
+    public function DiContainerBenchmarks__Fixture__Class84()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class84(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class83'] ?? $this->DiContainerBenchmarks__Fixture__Class83()
@@ -861,7 +861,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class84'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class83()
+    public function DiContainerBenchmarks__Fixture__Class83()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class83(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class82'] ?? $this->DiContainerBenchmarks__Fixture__Class82()
@@ -870,7 +870,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class83'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class82()
+    public function DiContainerBenchmarks__Fixture__Class82()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class82(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class81'] ?? $this->DiContainerBenchmarks__Fixture__Class81()
@@ -879,7 +879,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class82'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class81()
+    public function DiContainerBenchmarks__Fixture__Class81()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class81(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class80'] ?? $this->DiContainerBenchmarks__Fixture__Class80()
@@ -888,7 +888,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class81'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class80()
+    public function DiContainerBenchmarks__Fixture__Class80()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class80(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class79'] ?? $this->DiContainerBenchmarks__Fixture__Class79()
@@ -897,7 +897,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class80'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class79()
+    public function DiContainerBenchmarks__Fixture__Class79()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class79(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class78'] ?? $this->DiContainerBenchmarks__Fixture__Class78()
@@ -906,7 +906,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class79'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class78()
+    public function DiContainerBenchmarks__Fixture__Class78()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class78(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class77'] ?? $this->DiContainerBenchmarks__Fixture__Class77()
@@ -915,7 +915,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class78'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class77()
+    public function DiContainerBenchmarks__Fixture__Class77()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class77(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class76'] ?? $this->DiContainerBenchmarks__Fixture__Class76()
@@ -924,7 +924,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class77'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class76()
+    public function DiContainerBenchmarks__Fixture__Class76()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class76(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class75'] ?? $this->DiContainerBenchmarks__Fixture__Class75()
@@ -933,7 +933,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class76'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class75()
+    public function DiContainerBenchmarks__Fixture__Class75()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class75(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class74'] ?? $this->DiContainerBenchmarks__Fixture__Class74()
@@ -942,7 +942,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class75'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class74()
+    public function DiContainerBenchmarks__Fixture__Class74()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class74(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class73'] ?? $this->DiContainerBenchmarks__Fixture__Class73()
@@ -951,7 +951,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class74'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class73()
+    public function DiContainerBenchmarks__Fixture__Class73()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class73(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class72'] ?? $this->DiContainerBenchmarks__Fixture__Class72()
@@ -960,7 +960,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class73'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class72()
+    public function DiContainerBenchmarks__Fixture__Class72()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class72(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class71'] ?? $this->DiContainerBenchmarks__Fixture__Class71()
@@ -969,7 +969,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class72'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class71()
+    public function DiContainerBenchmarks__Fixture__Class71()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class71(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class70'] ?? $this->DiContainerBenchmarks__Fixture__Class70()
@@ -978,7 +978,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class71'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class70()
+    public function DiContainerBenchmarks__Fixture__Class70()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class70(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class69'] ?? $this->DiContainerBenchmarks__Fixture__Class69()
@@ -987,7 +987,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class70'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class69()
+    public function DiContainerBenchmarks__Fixture__Class69()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class69(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class68'] ?? $this->DiContainerBenchmarks__Fixture__Class68()
@@ -996,7 +996,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class69'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class98()
+    public function DiContainerBenchmarks__Fixture__Class98()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class98(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class97'] ?? $this->DiContainerBenchmarks__Fixture__Class97()
@@ -1005,7 +1005,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class98'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class99()
+    public function DiContainerBenchmarks__Fixture__Class99()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class99(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class98'] ?? $this->DiContainerBenchmarks__Fixture__Class98()
@@ -1014,7 +1014,7 @@ class CompiledSingletonContainer extends AbstractContainer
         return $this->singletonEntries['DiContainerBenchmarks\Fixture\Class99'] = $entry;
     }
 
-    protected function DiContainerBenchmarks__Fixture__Class100()
+    public function DiContainerBenchmarks__Fixture__Class100()
     {
         $entry = new \DiContainerBenchmarks\Fixture\Class100(
             $this->singletonEntries['DiContainerBenchmarks\Fixture\Class99'] ?? $this->DiContainerBenchmarks__Fixture__Class99()

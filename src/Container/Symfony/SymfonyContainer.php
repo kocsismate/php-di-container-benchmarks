@@ -50,7 +50,8 @@ class SymfonyContainer implements ContainerInterface
             $definition = new Definition("DiContainerBenchmarks\\Fixture\\Class$i", []);
             $definition->setShared(false);
             $definition->setAutowired(true);
-            $containerBuilder->setDefinition("class$i", $definition);
+            $definition->setPublic(true);
+            $containerBuilder->setDefinition("DiContainerBenchmarks\\Fixture\\Class$i", $definition);
         }
 
         $containerBuilder->compile();
@@ -67,7 +68,8 @@ class SymfonyContainer implements ContainerInterface
             $definition = new Definition("DiContainerBenchmarks\\Fixture\\Class$i", []);
             $definition->setShared(true);
             $definition->setAutowired(true);
-            $containerBuilder->setDefinition("class$i", $definition);
+            $definition->setPublic(true);
+            $containerBuilder->setDefinition("DiContainerBenchmarks\\Fixture\\Class$i", $definition);
         }
 
         $containerBuilder->compile();
