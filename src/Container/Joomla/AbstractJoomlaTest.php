@@ -115,7 +115,416 @@ abstract class AbstractJoomlaTest implements TestInterface
 
     protected function setContainerWithPrototypeServices(): void
     {
+        /* Generated with:
+           for ($i = 1; $i <= 100; $i++) {
+               echo "use DiContainerBenchmarks\\Fixture\\Class" . $i . ";\n";
+           }
+
+           for ($i = 2; $i <= 100; $i++) {
+               echo "\$container->set(Class" . $i . "::class, function (Container \$container) {\n";
+               echo "    return new Class" . $i . "(\$container->get(Class" . ($i-1) . "::class));\n";
+               echo "});\n\n";
+           }
+        */
         $container = new Container();
+
+        $container->share(Class1::class, new Class1());
+
+        $container->set(Class2::class, function (Container $container) {
+            return new Class2($container->get(Class1::class));
+        });
+
+        $container->set(Class3::class, function (Container $container) {
+            return new Class3($container->get(Class2::class));
+        });
+
+        $container->set(Class4::class, function (Container $container) {
+            return new Class4($container->get(Class3::class));
+        });
+
+        $container->set(Class5::class, function (Container $container) {
+            return new Class5($container->get(Class4::class));
+        });
+
+        $container->set(Class6::class, function (Container $container) {
+            return new Class6($container->get(Class5::class));
+        });
+
+        $container->set(Class7::class, function (Container $container) {
+            return new Class7($container->get(Class6::class));
+        });
+
+        $container->set(Class8::class, function (Container $container) {
+            return new Class8($container->get(Class7::class));
+        });
+
+        $container->set(Class9::class, function (Container $container) {
+            return new Class9($container->get(Class8::class));
+        });
+
+        $container->set(Class10::class, function (Container $container) {
+            return new Class10($container->get(Class9::class));
+        });
+
+        $container->set(Class11::class, function (Container $container) {
+            return new Class11($container->get(Class10::class));
+        });
+
+        $container->set(Class12::class, function (Container $container) {
+            return new Class12($container->get(Class11::class));
+        });
+
+        $container->set(Class13::class, function (Container $container) {
+            return new Class13($container->get(Class12::class));
+        });
+
+        $container->set(Class14::class, function (Container $container) {
+            return new Class14($container->get(Class13::class));
+        });
+
+        $container->set(Class15::class, function (Container $container) {
+            return new Class15($container->get(Class14::class));
+        });
+
+        $container->set(Class16::class, function (Container $container) {
+            return new Class16($container->get(Class15::class));
+        });
+
+        $container->set(Class17::class, function (Container $container) {
+            return new Class17($container->get(Class16::class));
+        });
+
+        $container->set(Class18::class, function (Container $container) {
+            return new Class18($container->get(Class17::class));
+        });
+
+        $container->set(Class19::class, function (Container $container) {
+            return new Class19($container->get(Class18::class));
+        });
+
+        $container->set(Class20::class, function (Container $container) {
+            return new Class20($container->get(Class19::class));
+        });
+
+        $container->set(Class21::class, function (Container $container) {
+            return new Class21($container->get(Class20::class));
+        });
+
+        $container->set(Class22::class, function (Container $container) {
+            return new Class22($container->get(Class21::class));
+        });
+
+        $container->set(Class23::class, function (Container $container) {
+            return new Class23($container->get(Class22::class));
+        });
+
+        $container->set(Class24::class, function (Container $container) {
+            return new Class24($container->get(Class23::class));
+        });
+
+        $container->set(Class25::class, function (Container $container) {
+            return new Class25($container->get(Class24::class));
+        });
+
+        $container->set(Class26::class, function (Container $container) {
+            return new Class26($container->get(Class25::class));
+        });
+
+        $container->set(Class27::class, function (Container $container) {
+            return new Class27($container->get(Class26::class));
+        });
+
+        $container->set(Class28::class, function (Container $container) {
+            return new Class28($container->get(Class27::class));
+        });
+
+        $container->set(Class29::class, function (Container $container) {
+            return new Class29($container->get(Class28::class));
+        });
+
+        $container->set(Class30::class, function (Container $container) {
+            return new Class30($container->get(Class29::class));
+        });
+
+        $container->set(Class31::class, function (Container $container) {
+            return new Class31($container->get(Class30::class));
+        });
+
+        $container->set(Class32::class, function (Container $container) {
+            return new Class32($container->get(Class31::class));
+        });
+
+        $container->set(Class33::class, function (Container $container) {
+            return new Class33($container->get(Class32::class));
+        });
+
+        $container->set(Class34::class, function (Container $container) {
+            return new Class34($container->get(Class33::class));
+        });
+
+        $container->set(Class35::class, function (Container $container) {
+            return new Class35($container->get(Class34::class));
+        });
+
+        $container->set(Class36::class, function (Container $container) {
+            return new Class36($container->get(Class35::class));
+        });
+
+        $container->set(Class37::class, function (Container $container) {
+            return new Class37($container->get(Class36::class));
+        });
+
+        $container->set(Class38::class, function (Container $container) {
+            return new Class38($container->get(Class37::class));
+        });
+
+        $container->set(Class39::class, function (Container $container) {
+            return new Class39($container->get(Class38::class));
+        });
+
+        $container->set(Class40::class, function (Container $container) {
+            return new Class40($container->get(Class39::class));
+        });
+
+        $container->set(Class41::class, function (Container $container) {
+            return new Class41($container->get(Class40::class));
+        });
+
+        $container->set(Class42::class, function (Container $container) {
+            return new Class42($container->get(Class41::class));
+        });
+
+        $container->set(Class43::class, function (Container $container) {
+            return new Class43($container->get(Class42::class));
+        });
+
+        $container->set(Class44::class, function (Container $container) {
+            return new Class44($container->get(Class43::class));
+        });
+
+        $container->set(Class45::class, function (Container $container) {
+            return new Class45($container->get(Class44::class));
+        });
+
+        $container->set(Class46::class, function (Container $container) {
+            return new Class46($container->get(Class45::class));
+        });
+
+        $container->set(Class47::class, function (Container $container) {
+            return new Class47($container->get(Class46::class));
+        });
+
+        $container->set(Class48::class, function (Container $container) {
+            return new Class48($container->get(Class47::class));
+        });
+
+        $container->set(Class49::class, function (Container $container) {
+            return new Class49($container->get(Class48::class));
+        });
+
+        $container->set(Class50::class, function (Container $container) {
+            return new Class50($container->get(Class49::class));
+        });
+
+        $container->set(Class51::class, function (Container $container) {
+            return new Class51($container->get(Class50::class));
+        });
+
+        $container->set(Class52::class, function (Container $container) {
+            return new Class52($container->get(Class51::class));
+        });
+
+        $container->set(Class53::class, function (Container $container) {
+            return new Class53($container->get(Class52::class));
+        });
+
+        $container->set(Class54::class, function (Container $container) {
+            return new Class54($container->get(Class53::class));
+        });
+
+        $container->set(Class55::class, function (Container $container) {
+            return new Class55($container->get(Class54::class));
+        });
+
+        $container->set(Class56::class, function (Container $container) {
+            return new Class56($container->get(Class55::class));
+        });
+
+        $container->set(Class57::class, function (Container $container) {
+            return new Class57($container->get(Class56::class));
+        });
+
+        $container->set(Class58::class, function (Container $container) {
+            return new Class58($container->get(Class57::class));
+        });
+
+        $container->set(Class59::class, function (Container $container) {
+            return new Class59($container->get(Class58::class));
+        });
+
+        $container->set(Class60::class, function (Container $container) {
+            return new Class60($container->get(Class59::class));
+        });
+
+        $container->set(Class61::class, function (Container $container) {
+            return new Class61($container->get(Class60::class));
+        });
+
+        $container->set(Class62::class, function (Container $container) {
+            return new Class62($container->get(Class61::class));
+        });
+
+        $container->set(Class63::class, function (Container $container) {
+            return new Class63($container->get(Class62::class));
+        });
+
+        $container->set(Class64::class, function (Container $container) {
+            return new Class64($container->get(Class63::class));
+        });
+
+        $container->set(Class65::class, function (Container $container) {
+            return new Class65($container->get(Class64::class));
+        });
+
+        $container->set(Class66::class, function (Container $container) {
+            return new Class66($container->get(Class65::class));
+        });
+
+        $container->set(Class67::class, function (Container $container) {
+            return new Class67($container->get(Class66::class));
+        });
+
+        $container->set(Class68::class, function (Container $container) {
+            return new Class68($container->get(Class67::class));
+        });
+
+        $container->set(Class69::class, function (Container $container) {
+            return new Class69($container->get(Class68::class));
+        });
+
+        $container->set(Class70::class, function (Container $container) {
+            return new Class70($container->get(Class69::class));
+        });
+
+        $container->set(Class71::class, function (Container $container) {
+            return new Class71($container->get(Class70::class));
+        });
+
+        $container->set(Class72::class, function (Container $container) {
+            return new Class72($container->get(Class71::class));
+        });
+
+        $container->set(Class73::class, function (Container $container) {
+            return new Class73($container->get(Class72::class));
+        });
+
+        $container->set(Class74::class, function (Container $container) {
+            return new Class74($container->get(Class73::class));
+        });
+
+        $container->set(Class75::class, function (Container $container) {
+            return new Class75($container->get(Class74::class));
+        });
+
+        $container->set(Class76::class, function (Container $container) {
+            return new Class76($container->get(Class75::class));
+        });
+
+        $container->set(Class77::class, function (Container $container) {
+            return new Class77($container->get(Class76::class));
+        });
+
+        $container->set(Class78::class, function (Container $container) {
+            return new Class78($container->get(Class77::class));
+        });
+
+        $container->set(Class79::class, function (Container $container) {
+            return new Class79($container->get(Class78::class));
+        });
+
+        $container->set(Class80::class, function (Container $container) {
+            return new Class80($container->get(Class79::class));
+        });
+
+        $container->set(Class81::class, function (Container $container) {
+            return new Class81($container->get(Class80::class));
+        });
+
+        $container->set(Class82::class, function (Container $container) {
+            return new Class82($container->get(Class81::class));
+        });
+
+        $container->set(Class83::class, function (Container $container) {
+            return new Class83($container->get(Class82::class));
+        });
+
+        $container->set(Class84::class, function (Container $container) {
+            return new Class84($container->get(Class83::class));
+        });
+
+        $container->set(Class85::class, function (Container $container) {
+            return new Class85($container->get(Class84::class));
+        });
+
+        $container->set(Class86::class, function (Container $container) {
+            return new Class86($container->get(Class85::class));
+        });
+
+        $container->set(Class87::class, function (Container $container) {
+            return new Class87($container->get(Class86::class));
+        });
+
+        $container->set(Class88::class, function (Container $container) {
+            return new Class88($container->get(Class87::class));
+        });
+
+        $container->set(Class89::class, function (Container $container) {
+            return new Class89($container->get(Class88::class));
+        });
+
+        $container->set(Class90::class, function (Container $container) {
+            return new Class90($container->get(Class89::class));
+        });
+
+        $container->set(Class91::class, function (Container $container) {
+            return new Class91($container->get(Class90::class));
+        });
+
+        $container->set(Class92::class, function (Container $container) {
+            return new Class92($container->get(Class91::class));
+        });
+
+        $container->set(Class93::class, function (Container $container) {
+            return new Class93($container->get(Class92::class));
+        });
+
+        $container->set(Class94::class, function (Container $container) {
+            return new Class94($container->get(Class93::class));
+        });
+
+        $container->set(Class95::class, function (Container $container) {
+            return new Class95($container->get(Class94::class));
+        });
+
+        $container->set(Class96::class, function (Container $container) {
+            return new Class96($container->get(Class95::class));
+        });
+
+        $container->set(Class97::class, function (Container $container) {
+            return new Class97($container->get(Class96::class));
+        });
+
+        $container->set(Class98::class, function (Container $container) {
+            return new Class98($container->get(Class97::class));
+        });
+
+        $container->set(Class99::class, function (Container $container) {
+            return new Class99($container->get(Class98::class));
+        });
+
+        $container->set(Class100::class, function (Container $container) {
+            return new Class100($container->get(Class99::class));
+        });
 
         $this->container = $container;
     }
