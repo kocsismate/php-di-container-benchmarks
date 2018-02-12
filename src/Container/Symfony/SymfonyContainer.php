@@ -43,39 +43,52 @@ class SymfonyContainer implements ContainerInterface
 
     public function build(): void
     {
+        $path = PROJECT_ROOT . "/src/Container/Symfony/Resource/";
+
+        foreach (glob($path.'/Container*/') as $dir) {
+            foreach (glob($dir.'/*') as $file) {
+                unlink($file);
+            }
+            rmdir($dir);
+        }
+
         // Build container with prototype services
         $containerBuilder = new ContainerBuilder();
+        $containerBuilder->setParameter('container.dumper.inline_class_loader', true);
 
         for ($i = 1; $i <= 100; $i++) {
             $definition = new Definition("DiContainerBenchmarks\\Fixture\\Class$i", []);
             $definition->setShared(false);
             $definition->setAutowired(true);
-            $definition->setPublic(true);
             $containerBuilder->setDefinition("DiContainerBenchmarks\\Fixture\\Class$i", $definition);
         }
+        $containerBuilder->getDefinition("DiContainerBenchmarks\\Fixture\\Class10")->setPublic(true);
+        $containerBuilder->getDefinition("DiContainerBenchmarks\\Fixture\\Class100")->setPublic(true);
 
         $containerBuilder->compile();
-        $this->dumpRegularContainer(
+        $this->dumpFileContainer(
             $containerBuilder,
-            PROJECT_ROOT . "/src/Container/Symfony/Resource/",
+            $path,
             "CompiledPrototypeContainer"
         );
 
         // Build container with singleton services
         $containerBuilder = new ContainerBuilder();
+        $containerBuilder->setParameter('container.dumper.inline_class_loader', true);
 
         for ($i = 1; $i <= 100; $i++) {
             $definition = new Definition("DiContainerBenchmarks\\Fixture\\Class$i", []);
             $definition->setShared(true);
             $definition->setAutowired(true);
-            $definition->setPublic(true);
             $containerBuilder->setDefinition("DiContainerBenchmarks\\Fixture\\Class$i", $definition);
         }
+        $containerBuilder->getDefinition("DiContainerBenchmarks\\Fixture\\Class10")->setPublic(true);
+        $containerBuilder->getDefinition("DiContainerBenchmarks\\Fixture\\Class100")->setPublic(true);
 
         $containerBuilder->compile();
-        $this->dumpRegularContainer(
+        $this->dumpFileContainer(
             $containerBuilder,
-            PROJECT_ROOT . "/src/Container/Symfony/Resource/",
+            $path,
             "CompiledSingletonContainer"
         );
     }
@@ -104,7 +117,7 @@ class SymfonyContainer implements ContainerInterface
             [
                 "namespace" => "DiContainerBenchmarks\\Container\\Symfony\\Resource",
                 "class" => $class,
-                "file" => $path,
+                "file" => $path.'/'.$class.'.php',
                 "as_files" => true,
                 "debug" => false,
             ]
@@ -112,7 +125,7 @@ class SymfonyContainer implements ContainerInterface
 
         $file = key($content);
         $dir = $path . substr($file, 0, strpos($file, "/"));
-        $result = @mkdir($dir, 0777, true) && is_dir($dir);
+        $result = @mkdir($dir, 0777, true) || is_dir($dir);
         if ($result === false) {
             throw new RuntimeException(sprintf("Unable to create the container directory (%s)\n", $dir));
         }

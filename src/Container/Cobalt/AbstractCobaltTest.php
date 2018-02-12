@@ -17,7 +17,7 @@ abstract class AbstractCobaltTest implements TestInterface
 
     protected function setContainerWithPrototypeServices(): void
     {
-        $container = new Container("cached");
+        $container = new Container();
 
         $container->bind(Class10::class);
         $container->bind(Class100::class);
@@ -28,6 +28,9 @@ abstract class AbstractCobaltTest implements TestInterface
     protected function setContainerWithSingletonServices(): void
     {
         $container = new Container("shared");
+
+        $container->bind(Class10::class);
+        $container->bind(Class100::class);
 
         $this->container = $container;
     }
