@@ -120,9 +120,8 @@ class CompiledPrototypeContainer extends AbstractCompiledContainer
 
     public function Psr__Container__ContainerInterface()
     {
-        $entry = $this->singletonEntries['DiContainerBenchmarks\Container\Zen\Resource\CompiledPrototypeContainer'] ?? $this->DiContainerBenchmarks__Container__Zen__Resource__CompiledPrototypeContainer();
+        return $this->singletonEntries['Psr\Container\ContainerInterface'] = $this->singletonEntries['DiContainerBenchmarks\Container\Zen\Resource\CompiledPrototypeContainer'] ?? $this->DiContainerBenchmarks__Container__Zen__Resource__CompiledPrototypeContainer();
 
-        return $this->singletonEntries['Psr\Container\ContainerInterface'] = $entry;
     }
 
     public function DiContainerBenchmarks__Fixture__Class68()

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8bfbfaf3e5b5c252d88ea34371be74ab",
+    "content-hash": "7162af64a53408dfd8b6a2623a0c6b8f",
     "packages": [
         {
             "name": "aura/di",
@@ -2038,16 +2038,16 @@
         },
         {
             "name": "woohoolabs/zen",
-            "version": "2.2.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/woohoolabs/zen.git",
-                "reference": "7b4ae5918187fa5af9612784545cb8c016244b6b"
+                "reference": "a79c0c31041eac5e440ad136bc3085c3d76f2e85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/7b4ae5918187fa5af9612784545cb8c016244b6b",
-                "reference": "7b4ae5918187fa5af9612784545cb8c016244b6b",
+                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/a79c0c31041eac5e440ad136bc3085c3d76f2e85",
+                "reference": "a79c0c31041eac5e440ad136bc3085c3d76f2e85",
                 "shasum": ""
             },
             "require": {
@@ -2060,8 +2060,8 @@
                 "psr/container-implementation": "1.0.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.0.0",
-                "squizlabs/php_codesniffer": "^2.8.0"
+                "phpunit/phpunit": "^7.0.0",
+                "squizlabs/php_codesniffer": "^3.2.0"
             },
             "bin": [
                 "bin/zen"
@@ -2095,7 +2095,7 @@
                 "ioc",
                 "zen"
             ],
-            "time": "2018-01-21T23:20:23+00:00"
+            "time": "2018-02-13T22:12:59+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -2477,7 +2477,8 @@
         "symfony/config": 20,
         "symfony/dependency-injection": 20,
         "symfony/filesystem": 20,
-        "symfony/process": 20
+        "symfony/process": 20,
+        "woohoolabs/zen": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
