@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace DiContainerBenchmarks\Container\Zen\Resource;
 
 use WoohooLabs\Zen\Config\AbstractCompilerConfig;
+use WoohooLabs\Zen\Config\Autoload\AutoloadConfig;
+use WoohooLabs\Zen\Config\Autoload\AutoloadConfigInterface;
 
 class SingletonCompilerConfig extends AbstractCompilerConfig
 {
@@ -25,6 +27,11 @@ class SingletonCompilerConfig extends AbstractCompilerConfig
     public function usePropertyInjection(): bool
     {
         return true;
+    }
+
+    public function getAutoloadConfig(): AutoloadConfigInterface
+    {
+        return AutoloadConfig::disabledGlobally(PROJECT_ROOT);
     }
 
     public function getContainerConfigs(): array

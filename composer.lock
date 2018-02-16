@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7162af64a53408dfd8b6a2623a0c6b8f",
+    "content-hash": "8e0a0415e5a31bfbb31e4cca70764f48",
     "packages": [
         {
             "name": "aura/di",
@@ -1357,16 +1357,16 @@
         },
         {
             "name": "phpixie/di",
-            "version": "3.2",
+            "version": "3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPixie/DI.git",
-                "reference": "05747762f01142c4eb312a4d4aa281ff0be47a60"
+                "reference": "ab02fc6345a992bdb31d8fef2fd2e2210e8fedb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPixie/DI/zipball/05747762f01142c4eb312a4d4aa281ff0be47a60",
-                "reference": "05747762f01142c4eb312a4d4aa281ff0be47a60",
+                "url": "https://api.github.com/repos/PHPixie/DI/zipball/ab02fc6345a992bdb31d8fef2fd2e2210e8fedb0",
+                "reference": "ab02fc6345a992bdb31d8fef2fd2e2210e8fedb0",
                 "shasum": ""
             },
             "require-dev": {
@@ -1386,7 +1386,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
@@ -1401,7 +1401,7 @@
                 "dependency injection",
                 "di"
             ],
-            "time": "2016-05-25T09:21:03+00:00"
+            "time": "2018-02-16T00:20:28+00:00"
         },
         {
             "name": "pimple/pimple",
@@ -1726,12 +1726,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "7cc4097557463b2064102905de601ba73d47fae6"
+                "reference": "fa4cebb97bb6b9867c192f72c6a59ad93e46d3ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/7cc4097557463b2064102905de601ba73d47fae6",
-                "reference": "7cc4097557463b2064102905de601ba73d47fae6",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/fa4cebb97bb6b9867c192f72c6a59ad93e46d3ea",
+                "reference": "fa4cebb97bb6b9867c192f72c6a59ad93e46d3ea",
                 "shasum": ""
             },
             "require": {
@@ -1789,7 +1789,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2018-02-13T08:15:23+00:00"
+            "time": "2018-02-14T14:11:22+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -2042,12 +2042,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/woohoolabs/zen.git",
-                "reference": "a79c0c31041eac5e440ad136bc3085c3d76f2e85"
+                "reference": "e512076ff805d1f950cb221d6fbeb8a0181c60c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/a79c0c31041eac5e440ad136bc3085c3d76f2e85",
-                "reference": "a79c0c31041eac5e440ad136bc3085c3d76f2e85",
+                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/e512076ff805d1f950cb221d6fbeb8a0181c60c8",
+                "reference": "e512076ff805d1f950cb221d6fbeb8a0181c60c8",
                 "shasum": ""
             },
             "require": {
@@ -2095,7 +2095,7 @@
                 "ioc",
                 "zen"
             ],
-            "time": "2018-02-13T22:12:59+00:00"
+            "time": "2018-02-16T15:27:08+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -2469,7 +2469,14 @@
         }
     ],
     "packages-dev": [],
-    "aliases": [],
+    "aliases": [
+        {
+            "alias": "2.3.0",
+            "alias_normalized": "2.3.0.0",
+            "version": "9999999-dev",
+            "package": "woohoolabs/zen"
+        }
+    ],
     "minimum-stability": "stable",
     "stability-flags": {
         "level-2/dice": 20,

@@ -31,7 +31,7 @@
         "symfony/process": "^4.1@dev",
         "thecodingmachine/yaco": "^1.0.0",
         "yiisoft/yii2": "^2.0.11",
-        "woohoolabs/zen": "dev-master",
+        "woohoolabs/zen": "dev-master as 2.3.0",
         "zendframework/zend-servicemanager": "^3.3.0"
     },
     "autoload": {
