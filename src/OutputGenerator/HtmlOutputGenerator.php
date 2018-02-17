@@ -177,7 +177,7 @@ HERE;
 
             <p>
                 Each Test Suite contains three Test Cases which define the number of iterations the main task has to be
-                repeated in order to simulate real world usage patterns. This number ranges from 10 to 10 000.
+                repeated in order to simulate real world usage patterns. This number ranges from 10 to 100 000.
                 Furthermore, all Test Cases are performed 30 times (this is referred to as "runs") in order to improve
                 the accuracy of measurements. The median of these results are displayed in the final results.
             </p>
