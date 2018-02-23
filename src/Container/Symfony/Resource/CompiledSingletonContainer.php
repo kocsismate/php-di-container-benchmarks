@@ -18,6 +18,6 @@ if (!\class_exists(CompiledSingletonContainer::class, false)) {
 
 return new \ContainerXMKyP2A\CompiledSingletonContainer(array(
     'container.build_hash' => 'XMKyP2A',
-    'container.build_id' => '4f7e6d43',
-    'container.build_time' => 1518796007,
+    'container.build_id' => '5a082d7a',
+    'container.build_time' => 1519386395,
 ));

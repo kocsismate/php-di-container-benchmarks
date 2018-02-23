@@ -552,16 +552,16 @@
         },
         {
             "name": "ezyang/htmlpurifier",
-            "version": "v4.9.3",
+            "version": "v4.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezyang/htmlpurifier.git",
-                "reference": "95e1bae3182efc0f3422896a3236e991049dac69"
+                "reference": "d85d39da4576a6934b72480be6978fb10c860021"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/95e1bae3182efc0f3422896a3236e991049dac69",
-                "reference": "95e1bae3182efc0f3422896a3236e991049dac69",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/d85d39da4576a6934b72480be6978fb10c860021",
+                "reference": "d85d39da4576a6934b72480be6978fb10c860021",
                 "shasum": ""
             },
             "require": {
@@ -595,11 +595,11 @@
             "keywords": [
                 "html"
             ],
-            "time": "2017-06-03T02:28:16+00:00"
+            "time": "2018-02-23T01:58:20+00:00"
         },
         {
             "name": "illuminate/container",
-            "version": "v5.6.3",
+            "version": "v5.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -643,16 +643,16 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.6.3",
+            "version": "v5.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "f5d3ca46ec931e78fe961e52940e56fb7a0e6707"
+                "reference": "00a8296c63b6429eb8705d2700c2436ea193c553"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/f5d3ca46ec931e78fe961e52940e56fb7a0e6707",
-                "reference": "f5d3ca46ec931e78fe961e52940e56fb7a0e6707",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/00a8296c63b6429eb8705d2700c2436ea193c553",
+                "reference": "00a8296c63b6429eb8705d2700c2436ea193c553",
                 "shasum": ""
             },
             "require": {
@@ -683,7 +683,7 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "https://laravel.com",
-            "time": "2018-01-30T14:30:39+00:00"
+            "time": "2018-02-20T16:46:51+00:00"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -1262,12 +1262,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-DI/PHP-DI.git",
-                "reference": "d320f688f8dc8148f9bdd88cb4bead48656dc977"
+                "reference": "4773f7644b0c98ebfc22a1368e519ab5ac2e076c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/d320f688f8dc8148f9bdd88cb4bead48656dc977",
-                "reference": "d320f688f8dc8148f9bdd88cb4bead48656dc977",
+                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/4773f7644b0c98ebfc22a1368e519ab5ac2e076c",
+                "reference": "4773f7644b0c98ebfc22a1368e519ab5ac2e076c",
                 "shasum": ""
             },
             "require": {
@@ -1316,24 +1316,24 @@
                 "ioc",
                 "psr11"
             ],
-            "time": "2018-02-10T11:32:54+00:00"
+            "time": "2018-02-20T07:27:46+00:00"
         },
         {
             "name": "php-di/phpdoc-reader",
-            "version": "2.0.1",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-DI/PhpDocReader.git",
-                "reference": "83f5ead159defccfa8e7092e5b6c1c533b326d68"
+                "reference": "7d0de60b9341933c8afd172a6255cd7557601e0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-DI/PhpDocReader/zipball/83f5ead159defccfa8e7092e5b6c1c533b326d68",
-                "reference": "83f5ead159defccfa8e7092e5b6c1c533b326d68",
+                "url": "https://api.github.com/repos/PHP-DI/PhpDocReader/zipball/7d0de60b9341933c8afd172a6255cd7557601e0e",
+                "reference": "7d0de60b9341933c8afd172a6255cd7557601e0e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.4.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.6"
@@ -1353,7 +1353,7 @@
                 "phpdoc",
                 "reflection"
             ],
-            "time": "2015-11-29T10:34:25+00:00"
+            "time": "2018-02-18T17:39:01+00:00"
         },
         {
             "name": "phpixie/di",
@@ -1664,12 +1664,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "6ffcad7db8ac97ce57b35b35d494aab949896fcb"
+                "reference": "ed30f449bb4bafa8d5dd469be820ee6ca220137c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/6ffcad7db8ac97ce57b35b35d494aab949896fcb",
-                "reference": "6ffcad7db8ac97ce57b35b35d494aab949896fcb",
+                "url": "https://api.github.com/repos/symfony/config/zipball/ed30f449bb4bafa8d5dd469be820ee6ca220137c",
+                "reference": "ed30f449bb4bafa8d5dd469be820ee6ca220137c",
                 "shasum": ""
             },
             "require": {
@@ -1718,7 +1718,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2018-02-04T16:44:20+00:00"
+            "time": "2018-02-19T12:10:10+00:00"
         },
         {
             "name": "symfony/dependency-injection",
@@ -1726,12 +1726,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "fa4cebb97bb6b9867c192f72c6a59ad93e46d3ea"
+                "reference": "135dcaa8735647db5f6a544b6aa131b8df886169"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/fa4cebb97bb6b9867c192f72c6a59ad93e46d3ea",
-                "reference": "fa4cebb97bb6b9867c192f72c6a59ad93e46d3ea",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/135dcaa8735647db5f6a544b6aa131b8df886169",
+                "reference": "135dcaa8735647db5f6a544b6aa131b8df886169",
                 "shasum": ""
             },
             "require": {
@@ -1789,7 +1789,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2018-02-14T14:11:22+00:00"
+            "time": "2018-02-22T11:40:25+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -1797,12 +1797,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "94281d227ea7a154eb23c618d06c9c2ee76c1e59"
+                "reference": "da8a42afd52b7652e626bafae09ed07c64ea3c30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/94281d227ea7a154eb23c618d06c9c2ee76c1e59",
-                "reference": "94281d227ea7a154eb23c618d06c9c2ee76c1e59",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/da8a42afd52b7652e626bafae09ed07c64ea3c30",
+                "reference": "da8a42afd52b7652e626bafae09ed07c64ea3c30",
                 "shasum": ""
             },
             "require": {
@@ -1838,7 +1838,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2018-01-03T07:38:11+00:00"
+            "time": "2018-02-22T11:40:25+00:00"
         },
         {
             "name": "symfony/polyfill-php56",
@@ -1954,12 +1954,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "5a86b89a8bc438eb25976b2e8505a5ec23fbd2e6"
+                "reference": "6669e497314f3da0c288866a0635fb312a945e00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/5a86b89a8bc438eb25976b2e8505a5ec23fbd2e6",
-                "reference": "5a86b89a8bc438eb25976b2e8505a5ec23fbd2e6",
+                "url": "https://api.github.com/repos/symfony/process/zipball/6669e497314f3da0c288866a0635fb312a945e00",
+                "reference": "6669e497314f3da0c288866a0635fb312a945e00",
                 "shasum": ""
             },
             "require": {
@@ -1995,7 +1995,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2018-02-12T17:55:29+00:00"
+            "time": "2018-02-22T11:40:25+00:00"
         },
         {
             "name": "thecodingmachine/yaco",
@@ -2099,16 +2099,16 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.13.1",
+            "version": "2.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "7af96d8da5ea3e9a5dd05d0e734b21c5726a6ddf"
+                "reference": "1c9cf916b1394681c7d043e79e1522c33e5bc6c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/7af96d8da5ea3e9a5dd05d0e734b21c5726a6ddf",
-                "reference": "7af96d8da5ea3e9a5dd05d0e734b21c5726a6ddf",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/1c9cf916b1394681c7d043e79e1522c33e5bc6c1",
+                "reference": "1c9cf916b1394681c7d043e79e1522c33e5bc6c1",
                 "shasum": ""
             },
             "require": {
@@ -2195,7 +2195,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2017-11-14T11:08:21+00:00"
+            "time": "2018-02-18T22:52:12+00:00"
         },
         {
             "name": "yiisoft/yii2-composer",

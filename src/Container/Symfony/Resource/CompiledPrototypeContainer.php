@@ -18,6 +18,6 @@ if (!\class_exists(CompiledPrototypeContainer::class, false)) {
 
 return new \ContainerQgDBia4\CompiledPrototypeContainer(array(
     'container.build_hash' => 'QgDBia4',
-    'container.build_id' => '484b261f',
-    'container.build_time' => 1518796007,
+    'container.build_id' => '5d3d6626',
+    'container.build_time' => 1519386395,
 ));
