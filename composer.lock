@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e0a0415e5a31bfbb31e4cca70764f48",
+    "content-hash": "95de9baba31453dffa90f762927ea730",
     "packages": [
         {
             "name": "aura/di",
@@ -156,6 +156,57 @@
             ],
             "description": "Simple Logging Facade for Loggers implementing PSR-3 logging interface.",
             "time": "2015-10-18T15:43:07+00:00"
+        },
+        {
+            "name": "bnf/di",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bnf/di.git",
+                "reference": "170f1e3a5947227438aa829eadd645f357cfc6a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bnf/di/zipball/170f1e3a5947227438aa829eadd645f357cfc6a0",
+                "reference": "170f1e3a5947227438aa829eadd645f357cfc6a0",
+                "shasum": ""
+            },
+            "require": {
+                "container-interop/service-provider": "~0.4.0",
+                "psr/container": "^1.0"
+            },
+            "provide": {
+                "psr/container-implementation": "^1.0"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.0",
+                "phpspec/prophecy": "^1.7",
+                "phpunit/phpunit": "^6.5 || ^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bnf\\Di\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Franzke",
+                    "email": "benjaminfranzke@gmail.com",
+                    "homepage": "https://bnfr.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Dependency injection container with PSR-11 and container-interop/service-provider support",
+            "keywords": [
+                "PSR-11",
+                "service-provider"
+            ],
+            "time": "2018-03-12T19:30:31+00:00"
         },
         {
             "name": "bower-asset/inputmask",
@@ -353,6 +404,37 @@
             ],
             "description": "Promoting container interoperability through standard definitions",
             "time": "2015-11-30T17:49:54+00:00"
+        },
+        {
+            "name": "container-interop/service-provider",
+            "version": "v0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/container-interop/service-provider.git",
+                "reference": "4969b9e49460690b7430b3f1a87cab07be61418a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/container-interop/service-provider/zipball/4969b9e49460690b7430b3f1a87cab07be61418a",
+                "reference": "4969b9e49460690b7430b3f1a87cab07be61418a",
+                "shasum": ""
+            },
+            "require": {
+                "psr/container": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Interop\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Promoting container interoperability through standard service providers",
+            "homepage": "https://github.com/container-interop/service-provider",
+            "time": "2017-09-20T14:13:36+00:00"
         },
         {
             "name": "doctrine/annotations",

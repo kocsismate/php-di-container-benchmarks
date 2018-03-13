@@ -32,7 +32,8 @@
         "thecodingmachine/yaco": "^1.0.0",
         "yiisoft/yii2": "^2.0.11",
         "woohoolabs/zen": "dev-master as 2.3.0",
-        "zendframework/zend-servicemanager": "^3.3.0"
+        "zendframework/zend-servicemanager": "^3.3.0",
+        "bnf/di": "~0.1.2"
     },
     "autoload": {
         "psr-4": {
