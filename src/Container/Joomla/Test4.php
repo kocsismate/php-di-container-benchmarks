@@ -14,6 +14,6 @@ class Test4 extends AbstractJoomlaTest
 
     public function run(): void
     {
-        $this->container->buildObject(Class100::class);
+        $this->container->get(Class100::class);
     }
 }

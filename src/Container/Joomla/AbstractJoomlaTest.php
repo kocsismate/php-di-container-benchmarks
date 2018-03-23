@@ -128,7 +128,7 @@ abstract class AbstractJoomlaTest implements TestInterface
         */
         $container = new Container();
 
-        $container->share(Class1::class, new Class1());
+        $container->set(Class1::class, new Class1());
 
         $container->set(Class2::class, function (Container $container) {
             return new Class2($container->get(Class1::class));
