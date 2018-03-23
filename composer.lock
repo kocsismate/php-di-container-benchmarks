@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e0a0415e5a31bfbb31e4cca70764f48",
+    "content-hash": "c2c78a08e266b6582af01a03bf6a916a",
     "packages": [
         {
             "name": "aura/di",
@@ -745,16 +745,16 @@
         },
         {
             "name": "joomla/di",
-            "version": "1.5.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/joomla-framework/di.git",
-                "reference": "da21d37589706da13eca0bb075452c851821ea3b"
+                "reference": "33c66e4091e4433f33ddf4a0ac36604cf3b73c41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/joomla-framework/di/zipball/da21d37589706da13eca0bb075452c851821ea3b",
-                "reference": "da21d37589706da13eca0bb075452c851821ea3b",
+                "url": "https://api.github.com/repos/joomla-framework/di/zipball/33c66e4091e4433f33ddf4a0ac36604cf3b73c41",
+                "reference": "33c66e4091e4433f33ddf4a0ac36604cf3b73c41",
                 "shasum": ""
             },
             "require": {
@@ -765,8 +765,8 @@
                 "psr/container-implementation": "~1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8.35|^5.4.3|~6.0",
-                "squizlabs/php_codesniffer": "1.*"
+                "joomla/coding-standards": "~2.0@alpha",
+                "phpunit/phpunit": "^4.8.35|^5.4.3|~6.0"
             },
             "type": "joomla-package",
             "extra": {
@@ -793,7 +793,7 @@
                 "ioc",
                 "joomla"
             ],
-            "time": "2018-02-09T00:35:34+00:00"
+            "time": "2018-02-25T16:30:45+00:00"
         },
         {
             "name": "jshannon63/cobalt",
