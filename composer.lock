@@ -599,7 +599,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v5.6.6",
+            "version": "v5.6.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -643,16 +643,16 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.6.6",
+            "version": "v5.6.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "00a8296c63b6429eb8705d2700c2436ea193c553"
+                "reference": "965b814964cc4649cd7e933bba2ae3eeb11f2927"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/00a8296c63b6429eb8705d2700c2436ea193c553",
-                "reference": "00a8296c63b6429eb8705d2700c2436ea193c553",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/965b814964cc4649cd7e933bba2ae3eeb11f2927",
+                "reference": "965b814964cc4649cd7e933bba2ae3eeb11f2927",
                 "shasum": ""
             },
             "require": {
@@ -683,24 +683,24 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "https://laravel.com",
-            "time": "2018-02-20T16:46:51+00:00"
+            "time": "2018-03-25T12:54:46+00:00"
         },
         {
             "name": "jeremeamia/SuperClosure",
-            "version": "2.3.0",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeremeamia/super_closure.git",
-                "reference": "443c3df3207f176a1b41576ee2a66968a507b3db"
+                "reference": "5707d5821b30b9a07acfb4d76949784aaa0e9ce9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeremeamia/super_closure/zipball/443c3df3207f176a1b41576ee2a66968a507b3db",
-                "reference": "443c3df3207f176a1b41576ee2a66968a507b3db",
+                "url": "https://api.github.com/repos/jeremeamia/super_closure/zipball/5707d5821b30b9a07acfb4d76949784aaa0e9ce9",
+                "reference": "5707d5821b30b9a07acfb4d76949784aaa0e9ce9",
                 "shasum": ""
             },
             "require": {
-                "nikic/php-parser": "^1.2|^2.0|^3.0",
+                "nikic/php-parser": "^1.2|^2.0|^3.0|^4.0",
                 "php": ">=5.4",
                 "symfony/polyfill-php56": "^1.0"
             },
@@ -710,7 +710,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -741,7 +741,7 @@
                 "serialize",
                 "tokenizer"
             ],
-            "time": "2016-12-07T09:37:55+00:00"
+            "time": "2018-03-21T22:21:57+00:00"
         },
         {
             "name": "joomla/di",
@@ -857,12 +857,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Level-2/Dice.git",
-                "reference": "1b50d6a27274fb424e7c8d136a6e2a02b398afe5"
+                "reference": "c3a480ef996cc9474582e46958b26243c79a6044"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Level-2/Dice/zipball/1b50d6a27274fb424e7c8d136a6e2a02b398afe5",
-                "reference": "1b50d6a27274fb424e7c8d136a6e2a02b398afe5",
+                "url": "https://api.github.com/repos/Level-2/Dice/zipball/c3a480ef996cc9474582e46958b26243c79a6044",
+                "reference": "c3a480ef996cc9474582e46958b26243c79a6044",
                 "shasum": ""
             },
             "require": {
@@ -895,7 +895,7 @@
                 "di",
                 "ioc"
             ],
-            "time": "2018-01-12T14:48:01+00:00"
+            "time": "2018-03-05T18:48:00+00:00"
         },
         {
             "name": "mikey179/vfsStream",
@@ -993,16 +993,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "e57b3a09784f846411aa7ed664eedb73e3399078"
+                "reference": "bb87e28e7d7b8d9a7fda231d37457c9210faf6ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/e57b3a09784f846411aa7ed664eedb73e3399078",
-                "reference": "e57b3a09784f846411aa7ed664eedb73e3399078",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/bb87e28e7d7b8d9a7fda231d37457c9210faf6ce",
+                "reference": "bb87e28e7d7b8d9a7fda231d37457c9210faf6ce",
                 "shasum": ""
             },
             "require": {
@@ -1040,7 +1040,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2018-01-25T21:31:33+00:00"
+            "time": "2018-02-28T20:30:58+00:00"
         },
         {
             "name": "ocramius/package-versions",
@@ -1163,7 +1163,7 @@
         },
         {
             "name": "opulence/ioc",
-            "version": "v1.1.2",
+            "version": "v1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/opulencephp/ioc.git",
@@ -1262,12 +1262,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-DI/PHP-DI.git",
-                "reference": "e06622fdf89adcfb3e970c11a616ebf07ca7f400"
+                "reference": "d43dbcc953bf9399a2fbc84979a5728236fa725a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/e06622fdf89adcfb3e970c11a616ebf07ca7f400",
-                "reference": "e06622fdf89adcfb3e970c11a616ebf07ca7f400",
+                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/d43dbcc953bf9399a2fbc84979a5728236fa725a",
+                "reference": "d43dbcc953bf9399a2fbc84979a5728236fa725a",
                 "shasum": ""
             },
             "require": {
@@ -1317,7 +1317,7 @@
                 "ioc",
                 "psr11"
             ],
-            "time": "2018-02-28T07:13:13+00:00"
+            "time": "2018-03-21T20:59:56+00:00"
         },
         {
             "name": "php-di/phpdoc-reader",
@@ -1552,16 +1552,16 @@
         },
         {
             "name": "psr/simple-cache",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/simple-cache.git",
-                "reference": "753fa598e8f3b9966c886fe13f370baa45ef0e24"
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/753fa598e8f3b9966c886fe13f370baa45ef0e24",
-                "reference": "753fa598e8f3b9966c886fe13f370baa45ef0e24",
+                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
                 "shasum": ""
             },
             "require": {
@@ -1596,7 +1596,7 @@
                 "psr-16",
                 "simple-cache"
             ],
-            "time": "2017-01-02T13:31:39+00:00"
+            "time": "2017-10-23T01:57:42+00:00"
         },
         {
             "name": "rdlowrey/auryn",
@@ -1665,12 +1665,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "ed30f449bb4bafa8d5dd469be820ee6ca220137c"
+                "reference": "4eeebe8065891e190511a8f8d7e48faa0411a34b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/ed30f449bb4bafa8d5dd469be820ee6ca220137c",
-                "reference": "ed30f449bb4bafa8d5dd469be820ee6ca220137c",
+                "url": "https://api.github.com/repos/symfony/config/zipball/4eeebe8065891e190511a8f8d7e48faa0411a34b",
+                "reference": "4eeebe8065891e190511a8f8d7e48faa0411a34b",
                 "shasum": ""
             },
             "require": {
@@ -1719,7 +1719,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2018-02-19T12:10:10+00:00"
+            "time": "2018-03-27T06:02:00+00:00"
         },
         {
             "name": "symfony/dependency-injection",
@@ -1727,12 +1727,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "b27eee488051f90147083cfcf34128ec55ec9b3d"
+                "reference": "e237279af4735c1566a62853c65de12b3266f0ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/b27eee488051f90147083cfcf34128ec55ec9b3d",
-                "reference": "b27eee488051f90147083cfcf34128ec55ec9b3d",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/e237279af4735c1566a62853c65de12b3266f0ef",
+                "reference": "e237279af4735c1566a62853c65de12b3266f0ef",
                 "shasum": ""
             },
             "require": {
@@ -1740,7 +1740,7 @@
                 "psr/container": "^1.0"
             },
             "conflict": {
-                "symfony/config": "<3.4",
+                "symfony/config": "<4.1",
                 "symfony/finder": "<3.4",
                 "symfony/proxy-manager-bridge": "<3.4",
                 "symfony/yaml": "<3.4"
@@ -1749,7 +1749,7 @@
                 "psr/container-implementation": "1.0"
             },
             "require-dev": {
-                "symfony/config": "~3.4|~4.0",
+                "symfony/config": "~4.1",
                 "symfony/expression-language": "~3.4|~4.0",
                 "symfony/yaml": "~3.4|~4.0"
             },
@@ -1790,7 +1790,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2018-02-26T17:04:28+00:00"
+            "time": "2018-03-28T18:04:39+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -1955,12 +1955,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "6669e497314f3da0c288866a0635fb312a945e00"
+                "reference": "8bd128b99d14270d267aa26ab45fd5c7d1b35bc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/6669e497314f3da0c288866a0635fb312a945e00",
-                "reference": "6669e497314f3da0c288866a0635fb312a945e00",
+                "url": "https://api.github.com/repos/symfony/process/zipball/8bd128b99d14270d267aa26ab45fd5c7d1b35bc3",
+                "reference": "8bd128b99d14270d267aa26ab45fd5c7d1b35bc3",
                 "shasum": ""
             },
             "require": {
@@ -1996,7 +1996,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2018-02-22T11:40:25+00:00"
+            "time": "2018-03-22T13:45:58+00:00"
         },
         {
             "name": "thecodingmachine/yaco",
@@ -2100,16 +2100,16 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.14.1",
+            "version": "2.0.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "d99969394c66dc3606134af092b8ec561ea5d7c6"
+                "reference": "ed3a9e1c4abe206e1c3ce48a6b3624119b79850d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/d99969394c66dc3606134af092b8ec561ea5d7c6",
-                "reference": "d99969394c66dc3606134af092b8ec561ea5d7c6",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/ed3a9e1c4abe206e1c3ce48a6b3624119b79850d",
+                "reference": "ed3a9e1c4abe206e1c3ce48a6b3624119b79850d",
                 "shasum": ""
             },
             "require": {
@@ -2196,20 +2196,20 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2018-02-24T20:23:06+00:00"
+            "time": "2018-03-21T18:36:53+00:00"
         },
         {
             "name": "yiisoft/yii2-composer",
-            "version": "2.0.5",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-composer.git",
-                "reference": "3f4923c2bde6caf3f5b88cc22fdd5770f52f8df2"
+                "reference": "163419f1f197e02f015713b0d4f85598d8f8aa80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/3f4923c2bde6caf3f5b88cc22fdd5770f52f8df2",
-                "reference": "3f4923c2bde6caf3f5b88cc22fdd5770f52f8df2",
+                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/163419f1f197e02f015713b0d4f85598d8f8aa80",
+                "reference": "163419f1f197e02f015713b0d4f85598d8f8aa80",
                 "shasum": ""
             },
             "require": {
@@ -2238,6 +2238,10 @@
                 {
                     "name": "Qiang Xue",
                     "email": "qiang.xue@gmail.com"
+                },
+                {
+                    "name": "Carsten Brandt",
+                    "email": "mail@cebe.cc"
                 }
             ],
             "description": "The composer plugin for Yii extension installer",
@@ -2246,7 +2250,7 @@
                 "extension installer",
                 "yii2"
             ],
-            "time": "2016-12-20T13:26:02+00:00"
+            "time": "2018-03-21T16:15:55+00:00"
         },
         {
             "name": "zendframework/zend-code",
