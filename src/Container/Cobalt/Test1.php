@@ -14,6 +14,6 @@ class Test1 extends AbstractCobaltTest
 
     public function run(): void
     {
-        $this->container->make(Class10::class);
+        $this->container->resolve(Class10::class);
     }
 }

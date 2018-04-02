@@ -17,7 +17,7 @@
         "doctrine/cache": "^1.6.1",
         "illuminate/container": "^v5.4.0",
         "joomla/di": "^1.5.1",
-        "jshannon63/cobalt": "^1.1",
+        "jshannon63/cobalt": "^1.2@dev",
         "level-2/dice": "dev-master",
         "opulence/ioc": "^1.0.6",
         "php-di/php-di": "dev-master",
