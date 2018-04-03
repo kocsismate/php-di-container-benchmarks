@@ -1,6 +1,6 @@
 <?php
 
-namespace Container4QRaxIV;
+namespace ContainerNAfW9ym;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -16,9 +16,10 @@ use Symfony\Component\DependencyInjection\ParameterBag\FrozenParameterBag;
  *
  * @final since Symfony 3.3
  */
-class CompiledPrototypeContainer extends Container
+class CompiledSingletonContainer extends Container
 {
     private $buildParameters;
+    private $containerDir;
     private $parameters;
     private $targetDirs = array();
 
@@ -27,19 +28,20 @@ class CompiledPrototypeContainer extends Container
      */
     protected $privates = array();
 
-    public function __construct(array $buildParameters = array())
+    public function __construct(array $buildParameters = array(), $containerDir = __DIR__)
     {
-        $dir = $this->targetDirs[0] = \dirname(__DIR__);
+        $dir = $this->targetDirs[0] = \dirname($containerDir);
         for ($i = 1; $i <= 5; ++$i) {
             $this->targetDirs[$i] = $dir = \dirname($dir);
         }
         $this->buildParameters = $buildParameters;
+        $this->containerDir = $containerDir;
         $this->parameters = $this->getDefaultParameters();
 
         $this->services = $this->privates = array();
         $this->fileMap = array(
-            'DiContainerBenchmarks\\Fixture\\Class10' => __DIR__.'/getClass10Service.php',
-            'DiContainerBenchmarks\\Fixture\\Class100' => __DIR__.'/getClass100Service.php',
+            'DiContainerBenchmarks\\Fixture\\Class10' => 'getClass10Service.php',
+            'DiContainerBenchmarks\\Fixture\\Class100' => 'getClass100Service.php',
         );
 
         $this->aliases = array();
@@ -63,12 +65,12 @@ class CompiledPrototypeContainer extends Container
 
     public function getRemovedIds()
     {
-        return require __DIR__.'/removed-ids.php';
+        return require $this->containerDir.\DIRECTORY_SEPARATOR.'removed-ids.php';
     }
 
     protected function load($file, $lazyLoad = true)
     {
-        return require $file;
+        return require $this->containerDir.\DIRECTORY_SEPARATOR.$file;
     }
 
     public function getParameter($name)

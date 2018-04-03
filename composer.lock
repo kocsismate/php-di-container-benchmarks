@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2c78a08e266b6582af01a03bf6a916a",
+    "content-hash": "3eb09f3ceb956280d3e5ccca2540f865",
     "packages": [
         {
             "name": "aura/di",
@@ -599,7 +599,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v5.6.14",
+            "version": "v5.6.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -643,7 +643,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.6.14",
+            "version": "v5.6.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -797,24 +797,24 @@
         },
         {
             "name": "jshannon63/cobalt",
-            "version": "v1.1.3",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jshannon63/cobalt.git",
-                "reference": "125b477e764b367663594a1ba5e86bdddcb0938a"
+                "reference": "2b6cff1cc95a4aa738fdfa5c890e2dcdd4af42a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jshannon63/cobalt/zipball/125b477e764b367663594a1ba5e86bdddcb0938a",
-                "reference": "125b477e764b367663594a1ba5e86bdddcb0938a",
+                "url": "https://api.github.com/repos/jshannon63/cobalt/zipball/2b6cff1cc95a4aa738fdfa5c890e2dcdd4af42a6",
+                "reference": "2b6cff1cc95a4aa738fdfa5c890e2dcdd4af42a6",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.0.0",
+                "php": "^7.1",
                 "psr/container": "^1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~6.0"
+                "phpunit/phpunit": "~7.0"
             },
             "type": "library",
             "autoload": {
@@ -830,10 +830,10 @@
                 {
                     "name": "Jim Shannon",
                     "email": "jim@hltky.com",
-                    "homepage": "http://jimshannon.me/"
+                    "homepage": "https://jimshannon.me/"
                 }
             ],
-            "description": "Autowired Dependency Injection Container for PHP with Reflection Based IoC",
+            "description": "Autowired Dependency Injection Container for PHP with Dependency Caching",
             "homepage": "https://github.com/jshannon63/container",
             "keywords": [
                 "PSR-11",
@@ -846,10 +846,9 @@
                 "interop",
                 "ioc",
                 "php",
-                "reflective-injection",
                 "service-container"
             ],
-            "time": "2018-01-23T22:12:12+00:00"
+            "time": "2018-04-02T16:16:46+00:00"
         },
         {
             "name": "level-2/dice",
@@ -1727,12 +1726,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "e237279af4735c1566a62853c65de12b3266f0ef"
+                "reference": "56873c77bb72be01a66442a2152821d62363bf33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/e237279af4735c1566a62853c65de12b3266f0ef",
-                "reference": "e237279af4735c1566a62853c65de12b3266f0ef",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/56873c77bb72be01a66442a2152821d62363bf33",
+                "reference": "56873c77bb72be01a66442a2152821d62363bf33",
                 "shasum": ""
             },
             "require": {
@@ -1790,7 +1789,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2018-03-28T18:04:39+00:00"
+            "time": "2018-04-02T10:08:33+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -1798,12 +1797,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "da8a42afd52b7652e626bafae09ed07c64ea3c30"
+                "reference": "272969a3946c3aca0f8ae27cf29a7640bd41c57c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/da8a42afd52b7652e626bafae09ed07c64ea3c30",
-                "reference": "da8a42afd52b7652e626bafae09ed07c64ea3c30",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/272969a3946c3aca0f8ae27cf29a7640bd41c57c",
+                "reference": "272969a3946c3aca0f8ae27cf29a7640bd41c57c",
                 "shasum": ""
             },
             "require": {
@@ -1839,7 +1838,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2018-02-22T11:40:25+00:00"
+            "time": "2018-03-30T15:58:13+00:00"
         },
         {
             "name": "symfony/polyfill-php56",
@@ -1955,12 +1954,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "8bd128b99d14270d267aa26ab45fd5c7d1b35bc3"
+                "reference": "1ed51bf4c85f20da02500e50696ef547beea019d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/8bd128b99d14270d267aa26ab45fd5c7d1b35bc3",
-                "reference": "8bd128b99d14270d267aa26ab45fd5c7d1b35bc3",
+                "url": "https://api.github.com/repos/symfony/process/zipball/1ed51bf4c85f20da02500e50696ef547beea019d",
+                "reference": "1ed51bf4c85f20da02500e50696ef547beea019d",
                 "shasum": ""
             },
             "require": {
@@ -1996,7 +1995,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2018-03-22T13:45:58+00:00"
+            "time": "2018-04-03T05:25:17+00:00"
         },
         {
             "name": "thecodingmachine/yaco",
@@ -2484,6 +2483,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
+        "jshannon63/cobalt": 20,
         "level-2/dice": 20,
         "php-di/php-di": 20,
         "symfony/config": 20,
