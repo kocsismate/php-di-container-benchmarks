@@ -18,6 +18,6 @@ if (!\class_exists(CompiledPrototypeContainer::class, false)) {
 
 return new \ContainerDpbxygU\CompiledPrototypeContainer(array(
     'container.build_hash' => 'DpbxygU',
-    'container.build_id' => 'c6c92ca8',
-    'container.build_time' => 1528114732,
+    'container.build_id' => '65a3a8ed',
+    'container.build_time' => 1533728414,
 ), __DIR__.\DIRECTORY_SEPARATOR.'ContainerDpbxygU');
