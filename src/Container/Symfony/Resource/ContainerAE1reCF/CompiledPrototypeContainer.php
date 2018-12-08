@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerDpbxygU;
+namespace ContainerAE1reCF;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -23,11 +23,6 @@ class CompiledPrototypeContainer extends Container
     private $parameters;
     private $targetDirs = array();
 
-    /*
-     * @internal but protected for BC on cache:clear
-     */
-    protected $privates = array();
-
     public function __construct(array $buildParameters = array(), $containerDir = __DIR__)
     {
         $dir = $this->targetDirs[0] = \dirname($containerDir);
@@ -45,12 +40,6 @@ class CompiledPrototypeContainer extends Container
         );
 
         $this->aliases = array();
-    }
-
-    public function reset()
-    {
-        $this->privates = array();
-        parent::reset();
     }
 
     public function compile()
@@ -127,7 +116,7 @@ class CompiledPrototypeContainer extends Container
     /*
      * Computes a dynamic parameter.
      *
-     * @param string The name of the dynamic parameter to load
+     * @param string $name The name of the dynamic parameter to load
      *
      * @return mixed The value of the dynamic parameter
      *

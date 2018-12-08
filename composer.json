@@ -18,7 +18,7 @@
         "illuminate/container": "^v5.4.0",
         "joomla/di": "^1.5.1",
         "jshannon63/cobalt": "^1.2",
-        "level-2/dice": "dev-master",
+        "level-2/dice": "^3.0.0",
         "opulence/ioc": "^1.0.6",
         "php-di/php-di": "^6.0.0",
         "phpixie/di": "^3.2.0",
