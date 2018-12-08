@@ -18,6 +18,6 @@ if (!\class_exists(CompiledPrototypeContainer::class, false)) {
 
 return new \ContainerAE1reCF\CompiledPrototypeContainer(array(
     'container.build_hash' => 'AE1reCF',
-    'container.build_id' => 'a0a42f25',
-    'container.build_time' => 1544295823,
+    'container.build_id' => '918ada8d',
+    'container.build_time' => 1544298644,
 ), __DIR__.\DIRECTORY_SEPARATOR.'ContainerAE1reCF');
