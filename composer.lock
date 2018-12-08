@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "56cae6ec664256373d0f492c7c988cae",
+    "content-hash": "ba1be186e08e8b8cf204c59792836a8d",
     "packages": [
         {
             "name": "aura/di",
@@ -984,16 +984,16 @@
         },
         {
             "name": "level-2/dice",
-            "version": "3.0.0",
+            "version": "4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Level-2/Dice.git",
-                "reference": "9fc016aae96dfa20dfabea0b18dfcfa0488c6a52"
+                "reference": "9d951f62129ec616893c67535c16885e44af10f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Level-2/Dice/zipball/9fc016aae96dfa20dfabea0b18dfcfa0488c6a52",
-                "reference": "9fc016aae96dfa20dfabea0b18dfcfa0488c6a52",
+                "url": "https://api.github.com/repos/Level-2/Dice/zipball/9d951f62129ec616893c67535c16885e44af10f0",
+                "reference": "9d951f62129ec616893c67535c16885e44af10f0",
                 "shasum": ""
             },
             "require": {
@@ -1026,7 +1026,7 @@
                 "di",
                 "ioc"
             ],
-            "time": "2018-04-08T02:36:12+00:00"
+            "time": "2018-11-15T16:18:39+00:00"
         },
         {
             "name": "mouf/picotainer",
@@ -2666,10 +2666,10 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.2"
+        "php": "^7.3"
     },
     "platform-dev": [],
     "platform-overrides": {
-        "php": "7.2.0"
+        "php": "7.3.0"
     }
 }

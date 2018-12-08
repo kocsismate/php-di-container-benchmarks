@@ -11,14 +11,14 @@
         }
     ],
     "require": {
-        "php": "^7.2",
+        "php": "^7.3",
         "aura/di": "^3.2.0",
         "bitexpert/disco": "^0.10.0",
         "doctrine/cache": "^1.6.1",
         "illuminate/container": "^v5.4.0",
         "joomla/di": "^1.5.1",
         "jshannon63/cobalt": "^1.2",
-        "level-2/dice": "^3.0.0",
+        "level-2/dice": "^4.0.0",
         "opulence/ioc": "^1.0.6",
         "php-di/php-di": "^6.0.0",
         "phpixie/di": "^3.2.0",
@@ -42,7 +42,7 @@
     "config": {
         "bin-compat": "full",
         "platform": {
-            "php": "7.2.0"
+            "php": "7.3.0"
         }
     },
     "repositories": [
