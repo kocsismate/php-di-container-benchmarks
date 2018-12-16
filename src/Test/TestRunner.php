@@ -35,7 +35,7 @@ class TestRunner
 
     private function runColdTest(TestInterface $test, int $iterations): TestResult
     {
-        $t1 = microtime(true);
+        $t1 = hrtime(true);
 
         $test->startup();
 
@@ -43,7 +43,7 @@ class TestRunner
             $test->run();
         }
 
-        $t2 = microtime(true);
+        $t2 = hrtime(true);
 
         return TestResult::createFromMeasurement($t1, $t2, memory_get_peak_usage());
     }
@@ -52,14 +52,14 @@ class TestRunner
     {
         $test->startup();
 
-        $t1 = microtime(true);
+        $t1 = hrtime(true);
 
         $test->startup();
         for ($i = 0; $i < $iterations; $i++) {
             $test->run();
         }
 
-        $t2 = microtime(true);
+        $t2 = hrtime(true);
 
         return TestResult::createFromMeasurement($t1, $t2, memory_get_peak_usage());
     }
@@ -69,13 +69,13 @@ class TestRunner
         $test->startup();
         $test->run();
 
-        $t1 = microtime(true);
+        $t1 = hrtime(true);
 
         for ($i = 0; $i < $iterations; $i++) {
             $test->run();
         }
 
-        $t2 = microtime(true);
+        $t2 = hrtime(true);
 
         return TestResult::createFromMeasurement($t1, $t2, memory_get_peak_usage());
     }

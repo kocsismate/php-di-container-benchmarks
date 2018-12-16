@@ -32,11 +32,11 @@ class TestResult
     }
 
     public static function createFromMeasurement(
-        float $startTime,
-        float $endTime,
+        float $startNanoseconds,
+        float $endNanoseconds,
         int $peakMemoryUsageInBytes
     ): TestResult {
-        return new TestResult(($endTime - $startTime) * 1000, $peakMemoryUsageInBytes / 1024 / 1024);
+        return new TestResult(($endNanoseconds - $startNanoseconds) / 1000000, $peakMemoryUsageInBytes / 1024 / 1024);
     }
 
     public static function createFromValues(
