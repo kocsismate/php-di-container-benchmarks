@@ -15,6 +15,18 @@ class WebBenchmarkContext implements BenchmarkContextInterface
         $this->benchmarkUrl = $benchmarkUrl;
     }
 
+    public function clear(): void
+    {
+        $ch = curl_init();
+        curl_setopt(
+            $ch,
+            CURLOPT_URL,
+            $this->benchmarkUrl . "?clear=1"
+        );
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_close($ch);
+    }
+
     public function getTestOutput(int $number, string $container, int $iterations, string $testType): string
     {
         $ch = curl_init();

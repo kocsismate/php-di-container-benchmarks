@@ -63,13 +63,13 @@ class Benchmark
         ContainerInterface $container,
         BenchmarkResult $benchmarkResult
     ): void {
-
         $testSuiteNumber = $testSuite->getNumber();
         $testCaseNumber = $testCase->getNumber();
         $containerName = $container->getDisplayedName();
 
         echo "Running test $testSuiteNumber.$testCaseNumber: $containerName\n";
 
+        $this->context->clear();
         for ($run = 0; $run < 30; $run++) {
             $containerNamespace = $container->getNamespace();
 

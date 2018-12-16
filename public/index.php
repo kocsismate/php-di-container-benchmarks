@@ -5,6 +5,11 @@ require __DIR__ . "/../app/bootstrap.php";
 
 use DiContainerBenchmarks\Test\TestRunner;
 
+if (isset($_GET["clear"])) {
+    opcache_reset();
+    exit;
+}
+
 if (empty($_GET["test_suite"]) || empty($_GET["container"]) || empty($_GET["iterations"]) || empty($_GET["test_type"])) {
     echo "<h1>Please specifiy the required query parameters!</h1>";
     echo "<p>";
