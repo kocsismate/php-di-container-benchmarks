@@ -13,24 +13,29 @@ class TestRunner
     ): TestResult {
         $class = "DiContainerBenchmarks\\Container\\$container\\Test$testSuiteNumber";
         if (class_exists($class) === false) {
-            return TestResult::createUnsuccessful();
+            return TestResult::createUnsuccessful("Class '$class' doesn't exist!");
         }
 
         /** @var TestInterface $test */
         $test = new $class();
         if ($test instanceof TestInterface === false) {
-            return TestResult::createUnsuccessful();
+            return TestResult::createUnsuccessful("Class '$class' isn't instance of TestInterface!");
         }
 
-        if ($testType === TestCase::COLD) {
-            return $this->runColdTest($test, $iterations);
+        try {
+            switch ($testType) {
+                case TestCase::COLD:
+                    return $this->runColdTest($test, $iterations);
+                case TestCase::SEMI_WARM:
+                    return $this->runSemiWarmTest($test, $iterations);
+                case TestCase::WARM:
+                    return $this->runWarmTest($test, $iterations);
+                default:
+                    return TestResult::createUnsuccessful("Invalid test type: '$testType'");
+            }
+        } catch (UnsupportedTestException $exception) {
+            return TestResult::createUnsuccessful($exception->getMessage());
         }
-
-        if ($testType === TestCase::SEMI_WARM) {
-            return $this->runSemiWarmTest($test, $iterations);
-        }
-
-        return $this->runWarmTest($test, $iterations);
     }
 
     private function runColdTest(TestInterface $test, int $iterations): TestResult

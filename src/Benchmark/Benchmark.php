@@ -81,8 +81,7 @@ class Benchmark
             $benchmarkResult->addTestResult($testSuite, $testCase, $container, $result);
 
             if ($result->isSuccessful() === false) {
-                echo "Test failed:\n";
-                var_dump($output);
+                echo "Test failed: " . $result->getMessage() . "\n";
                 break;
             }
         }

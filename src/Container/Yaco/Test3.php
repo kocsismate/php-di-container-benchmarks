@@ -3,13 +3,13 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Yaco;
 
-use DiContainerBenchmarks\Test\UnsupportedFeatureException;
+use DiContainerBenchmarks\Test\UnsupportedTestException;
 
 class Test3 extends AbstractYacoTest
 {
     public function startup(): void
     {
-        throw new UnsupportedFeatureException('Yaco cannot act as a factory.');
+        throw new UnsupportedTestException('Yaco cannot act as a factory.');
     }
 
     public function run(): void

@@ -15,9 +15,14 @@ class TestResult
      */
     private $peakMemoryUsage;
 
-    public static function createUnsuccessful(): TestResult
+    /**
+     * @var string
+     */
+    private $message;
+
+    public static function createUnsuccessful(string $message): TestResult
     {
-        return new TestResult(null, null);
+        return new TestResult(null, null, $message);
     }
 
     public static function createFromJson(string $json): TestResult
@@ -25,10 +30,10 @@ class TestResult
         $result = json_decode($json, true);
 
         if ($result === null) {
-            return new TestResult(null, null);
+            return new TestResult(null, null, "Invalid JSON response!");
         }
 
-        return new TestResult($result["time"], $result["memory"]);
+        return new TestResult($result["time"], $result["memory"], $result["message"]);
     }
 
     public static function createFromMeasurement(
@@ -36,7 +41,10 @@ class TestResult
         float $endNanoseconds,
         int $peakMemoryUsageInBytes
     ): TestResult {
-        return new TestResult(($endNanoseconds - $startNanoseconds) / 1000000, $peakMemoryUsageInBytes / 1024 / 1024);
+        return new TestResult(
+            ($endNanoseconds - $startNanoseconds) / 1000000,
+            $peakMemoryUsageInBytes / 1024 / 1024
+        );
     }
 
     public static function createFromValues(
@@ -46,10 +54,11 @@ class TestResult
         return new TestResult($timeConsumptionInMilliseconds, $peakMemoryUsageInMegaBytes);
     }
 
-    private function __construct(?float $timeConsumptionInMilliseconds, ?float $peakMemoryUsageInMegaBytes)
+    private function __construct(?float $timeConsumptionInMilliseconds, ?float $peakMemoryUsageInMegaBytes, string $message = "")
     {
         $this->timeConsumption = $timeConsumptionInMilliseconds;
         $this->peakMemoryUsage = $peakMemoryUsageInMegaBytes;
+        $this->message = $message;
     }
 
     public function getTimeConsumptionInMilliSeconds(): ?float
@@ -60,6 +69,11 @@ class TestResult
     public function getPeakMemoryUsageInMegaBytes(): ?float
     {
         return $this->peakMemoryUsage;
+    }
+
+    public function getMessage(): string
+    {
+        return $this->message;
     }
 
     public function isSuccessful(): bool
@@ -73,6 +87,7 @@ class TestResult
             [
                 "time" => $this->timeConsumption,
                 "memory" => $this->peakMemoryUsage,
+                "message" => $this->message,
             ]
         );
     }
