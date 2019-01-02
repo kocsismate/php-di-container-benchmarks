@@ -28,7 +28,7 @@
         "symfony/dependency-injection": "^4.2.0",
         "thecodingmachine/yaco": "^1.0.0",
         "yiisoft/yii2": "^2.0.11",
-        "woohoolabs/zen": "^2.5.0",
+        "woohoolabs/zen": "dev-master as 2.6.0",
         "zendframework/zend-servicemanager": "^3.3.0"
     },
     "autoload": {
