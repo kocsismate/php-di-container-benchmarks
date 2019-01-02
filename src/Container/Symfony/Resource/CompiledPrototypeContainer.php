@@ -18,6 +18,6 @@ if (!\class_exists(CompiledPrototypeContainer::class, false)) {
 
 return new \ContainerRSXkMNh\CompiledPrototypeContainer(array(
     'container.build_hash' => 'RSXkMNh',
-    'container.build_id' => '6d0fb61b',
-    'container.build_time' => 1544998655,
+    'container.build_id' => '353bd9c5',
+    'container.build_time' => 1546416705,
 ), __DIR__.\DIRECTORY_SEPARATOR.'ContainerRSXkMNh');

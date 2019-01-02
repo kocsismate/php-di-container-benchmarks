@@ -6,6 +6,8 @@ namespace DiContainerBenchmarks\Container\Zen\Resource;
 use WoohooLabs\Zen\Config\AbstractCompilerConfig;
 use WoohooLabs\Zen\Config\Autoload\AutoloadConfig;
 use WoohooLabs\Zen\Config\Autoload\AutoloadConfigInterface;
+use WoohooLabs\Zen\Config\FileBasedDefinition\FileBasedDefinitionConfig;
+use WoohooLabs\Zen\Config\FileBasedDefinition\FileBasedDefinitionConfigInterface;
 
 class PrototypeCompilerConfig extends AbstractCompilerConfig
 {
@@ -32,6 +34,11 @@ class PrototypeCompilerConfig extends AbstractCompilerConfig
     public function getAutoloadConfig(): AutoloadConfigInterface
     {
         return AutoloadConfig::disabledGlobally(PROJECT_ROOT);
+    }
+
+    public function getFileBasedDefinitionConfig(): FileBasedDefinitionConfigInterface
+    {
+        return FileBasedDefinitionConfig::disabledGlobally("PrototypeDefinitions");
     }
 
     public function getContainerConfigs(): array
