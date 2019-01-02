@@ -28,7 +28,12 @@ class Benchmark
     {
         echo "Building DI Containers...\n";
         foreach ($containers as $container) {
+            echo "Building " . $container->getDisplayedName() . ": ";
+            $t1 = hrtime(true);
             $container->build();
+            $t2 = hrtime(true);
+
+            echo (($t2 - $t1) / 1000000) . " ms\n";
         }
     }
 
