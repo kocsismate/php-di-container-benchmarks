@@ -30,7 +30,7 @@ class TestResult
         $result = json_decode($json, true);
 
         if ($result === null) {
-            return new TestResult(null, null, "Invalid JSON response!");
+            return new TestResult(null, null, "Invalid JSON response: '$json'!");
         }
 
         return new TestResult($result["time"], $result["memory"], $result["message"]);
