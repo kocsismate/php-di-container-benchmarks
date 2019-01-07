@@ -6,7 +6,7 @@ namespace DiContainerBenchmarks\Container\Zen\Resource;
 use DiContainerBenchmarks\Fixture\Class10;
 use DiContainerBenchmarks\Fixture\Class100;
 use WoohooLabs\Zen\Config\AbstractContainerConfig;
-use WoohooLabs\Zen\Config\Hint\WildcardHint;
+use WoohooLabs\Zen\Config\Hint\Psr4WildcardHint;
 
 class PrototypeContainerConfig extends AbstractContainerConfig
 {
@@ -26,8 +26,7 @@ class PrototypeContainerConfig extends AbstractContainerConfig
     protected function getWildcardHints(): array
     {
         return [
-            WildcardHint::prototype(
-                PROJECT_ROOT . "/src/Fixture",
+            Psr4WildcardHint::prototype(
                 'DiContainerBenchmarks\Fixture\Class*',
                 'DiContainerBenchmarks\Fixture\Class*'
             )

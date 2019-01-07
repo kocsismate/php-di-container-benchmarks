@@ -28,7 +28,7 @@ class SingletonCompilerConfig extends AbstractCompilerConfig
 
     public function usePropertyInjection(): bool
     {
-        return true;
+        return false;
     }
 
     public function getAutoloadConfig(): AutoloadConfigInterface

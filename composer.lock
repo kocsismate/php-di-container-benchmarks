@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2880028acbf3d514659703e47c8d3ffa",
+    "content-hash": "0afbc9ffa7434c77a6d052bd2c0c5162",
     "packages": [
         {
             "name": "aura/di",
@@ -1872,16 +1872,16 @@
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v4.2.1",
+            "version": "v4.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "e4adc57a48d3fa7f394edfffa9e954086d7740e5"
+                "reference": "a28dda9df1d5494367454cad91e44751ac53921c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/e4adc57a48d3fa7f394edfffa9e954086d7740e5",
-                "reference": "e4adc57a48d3fa7f394edfffa9e954086d7740e5",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/a28dda9df1d5494367454cad91e44751ac53921c",
+                "reference": "a28dda9df1d5494367454cad91e44751ac53921c",
                 "shasum": ""
             },
             "require": {
@@ -1941,7 +1941,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2018-12-02T15:59:36+00:00"
+            "time": "2019-01-05T16:37:49+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2112,16 +2112,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v4.2.1",
+            "version": "v4.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "c0e2191e9bed845946ab3d99767513b56ca7dcd6"
+                "reference": "939fb792d73f2ce80e6ae9019d205fc480f1c9a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/c0e2191e9bed845946ab3d99767513b56ca7dcd6",
-                "reference": "c0e2191e9bed845946ab3d99767513b56ca7dcd6",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/939fb792d73f2ce80e6ae9019d205fc480f1c9a0",
+                "reference": "939fb792d73f2ce80e6ae9019d205fc480f1c9a0",
                 "shasum": ""
             },
             "require": {
@@ -2181,7 +2181,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2018-12-06T10:45:32+00:00"
+            "time": "2019-01-03T09:07:35+00:00"
         },
         {
             "name": "thecodingmachine/yaco",
@@ -2224,16 +2224,16 @@
         },
         {
             "name": "woohoolabs/zen",
-            "version": "dev-master",
+            "version": "2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/woohoolabs/zen.git",
-                "reference": "7082b4e76d3482cb679ff82ed57ab5b40c8cdf7d"
+                "reference": "3f2389c858027f3cd6a84e37671ce11081b5c872"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/7082b4e76d3482cb679ff82ed57ab5b40c8cdf7d",
-                "reference": "7082b4e76d3482cb679ff82ed57ab5b40c8cdf7d",
+                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/3f2389c858027f3cd6a84e37671ce11081b5c872",
+                "reference": "3f2389c858027f3cd6a84e37671ce11081b5c872",
                 "shasum": ""
             },
             "require": {
@@ -2282,7 +2282,7 @@
                 "ioc",
                 "zen"
             ],
-            "time": "2019-01-01T18:40:47+00:00"
+            "time": "2019-01-07T22:15:47+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -2661,18 +2661,9 @@
         }
     ],
     "packages-dev": [],
-    "aliases": [
-        {
-            "alias": "2.6.0",
-            "alias_normalized": "2.6.0.0",
-            "version": "9999999-dev",
-            "package": "woohoolabs/zen"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "woohoolabs/zen": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

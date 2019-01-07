@@ -27,7 +27,7 @@ class CompiledSingletonContainer extends AbstractCompiledContainer
 
     public function Psr__Container__ContainerInterface()
     {
-        return $this->singletonEntries['Psr\Container\ContainerInterface'] = $this->DiContainerBenchmarks__Container__Zen__Resource__CompiledSingletonContainer();
+        return $this->singletonEntries['Psr\Container\ContainerInterface'] = $this;
     }
 
     public function DiContainerBenchmarks__Container__Zen__Resource__CompiledSingletonContainer()
