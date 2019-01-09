@@ -21,7 +21,7 @@
                 <td><b>Repository:</b></td><td><a target="_blank" href="https://github.com/kocsismate/php-di-container-benchmarks">https://github.com/kocsismate/php-di-container-benchmarks</a></td>
             </tr>
             <tr>
-                <td><b>Generated:</b></td><td>2019-01-07 23:02:25</td>
+                <td><b>Generated:</b></td><td>2019-01-09 01:23:01</td>
             </tr>
         </table>
 
@@ -103,7 +103,7 @@
                         <td>supported</td>
                     </tr>                    <tr>
                         <td><a target="_blank" href="https://laravel.com/docs/5.3/container"><b>illuminate/container</b></a></td>
-                        <td>5.7.19</td>
+                        <td>v5.7.20</td>
                         <td>dynamic</td>
                         <td>supported</td>
                     </tr>                    <tr>
@@ -210,10 +210,10 @@
             </p>
 
             <p>
-                The benchmark is run on a 15-inch MacBook Pro from 2017 (CPU: Intel i7 2,8 GHz; RAM: 16 GB; OS: Mojave),
-                using PHP 7.3 in Docker, OPcache enabled and autoloader optimized (using authoritative mode). During the
-                measurements, a PHP-FPM script served by nginx is executed each time. This is needed because a production
-                environment is simulated much better this way than in the CLI.
+                The benchmark is run on AWS EC2, using a C5.large instance. The operating system on the host is Ubuntu 18.04.
+                PHP 7.3 is running in a Docker container, with OPcache enabled and autoloader optimized (using authoritative
+                mode). During the measurements, a PHP-FPM script served by nginx is executed each time. This is needed
+                because a production environment is simulated much better this way than in the CLI.
             </p>
 
             <p>
@@ -254,122 +254,122 @@ the retrieved objects. That's why this Test Suite simulates production usage ver
                 <tr>
                     <th>2</th>
                     <td><b>Symfony</b></td>
-                    <td>0.035</td>
-                    <td>152%</td>
+                    <td>0.047</td>
+                    <td>204%</td>
                     <td>0.53</td>
                     <td>101%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>Yaco</b></td>
-                    <td>0.059</td>
-                    <td>257%</td>
+                    <td>0.062</td>
+                    <td>270%</td>
                     <td>0.563</td>
                     <td>107%</td>
                 </tr>
                 <tr>
                     <th>4</th>
                     <td><b>PHP-DI</b></td>
-                    <td>0.07</td>
-                    <td>304%</td>
+                    <td>0.063</td>
+                    <td>274%</td>
                     <td>0.53</td>
                     <td>101%</td>
                 </tr>
                 <tr>
                     <th>5</th>
-                    <td><b>PHPixie DI</b></td>
-                    <td>0.073</td>
-                    <td>317%</td>
-                    <td>0.564</td>
-                    <td>108%</td>
+                    <td><b>Joomla</b></td>
+                    <td>0.074</td>
+                    <td>322%</td>
+                    <td>0.599</td>
+                    <td>114%</td>
                 </tr>
                 <tr>
                     <th>6</th>
                     <td><b>Zend ServiceManager</b></td>
-                    <td>0.08</td>
-                    <td>348%</td>
+                    <td>0.079</td>
+                    <td>343%</td>
                     <td>0.566</td>
                     <td>108%</td>
                 </tr>
                 <tr>
                     <th>7</th>
-                    <td><b>Joomla</b></td>
-                    <td>0.082</td>
-                    <td>357%</td>
-                    <td>0.599</td>
-                    <td>114%</td>
+                    <td><b>PHPixie DI</b></td>
+                    <td>0.08</td>
+                    <td>348%</td>
+                    <td>0.564</td>
+                    <td>108%</td>
                 </tr>
                 <tr>
                     <th>8</th>
-                    <td><b>Pimple</b></td>
-                    <td>0.083</td>
-                    <td>361%</td>
-                    <td>0.571</td>
-                    <td>109%</td>
-                </tr>
-                <tr>
-                    <th>9</th>
-                    <td><b>Cobalt</b></td>
-                    <td>0.089</td>
-                    <td>387%</td>
-                    <td>0.551</td>
-                    <td>105%</td>
-                </tr>
-                <tr>
-                    <th>10</th>
                     <td><b>Dice</b></td>
-                    <td>0.107</td>
-                    <td>465%</td>
+                    <td>0.082</td>
+                    <td>357%</td>
                     <td>0.554</td>
                     <td>106%</td>
                 </tr>
                 <tr>
+                    <th>9</th>
+                    <td><b>Pimple</b></td>
+                    <td>0.082</td>
+                    <td>357%</td>
+                    <td>0.571</td>
+                    <td>109%</td>
+                </tr>
+                <tr>
+                    <th>10</th>
+                    <td><b>Cobalt</b></td>
+                    <td>0.095</td>
+                    <td>413%</td>
+                    <td>0.551</td>
+                    <td>105%</td>
+                </tr>
+                <tr>
                     <th>11</th>
                     <td><b>Laravel</b></td>
-                    <td>0.115</td>
-                    <td>500%</td>
+                    <td>0.105</td>
+                    <td>457%</td>
                     <td>0.544</td>
                     <td>104%</td>
                 </tr>
                 <tr>
                     <th>12</th>
-                    <td><b>Opulence IoC</b></td>
-                    <td>0.123</td>
-                    <td>535%</td>
-                    <td>0.553</td>
-                    <td>106%</td>
-                </tr>
-                <tr>
-                    <th>13</th>
                     <td><b>Yii2 Container</b></td>
-                    <td>0.137</td>
-                    <td>596%</td>
+                    <td>0.106</td>
+                    <td>461%</td>
                     <td>0.6</td>
                     <td>115%</td>
                 </tr>
                 <tr>
+                    <th>13</th>
+                    <td><b>Opulence IoC</b></td>
+                    <td>0.109</td>
+                    <td>474%</td>
+                    <td>0.553</td>
+                    <td>106%</td>
+                </tr>
+                <tr>
                     <th>14</th>
+                    <td><b>Auryn</b></td>
+                    <td>0.168</td>
+                    <td>730%</td>
+                    <td>0.56</td>
+                    <td>107%</td>
+                </tr>
+                <tr>
+                    <th>15</th>
                     <td><b>Aura</b></td>
-                    <td>0.186</td>
-                    <td>809%</td>
+                    <td>0.178</td>
+                    <td>774%</td>
                     <td>0.579</td>
                     <td>111%</td>
                 </tr>
                 <tr>
-                    <th>15</th>
+                    <th>16</th>
                     <td><b>Disco</b></td>
-                    <td>0.205</td>
-                    <td>891%</td>
+                    <td>0.212</td>
+                    <td>922%</td>
                     <td>0.634</td>
                     <td>121%</td>
-                </tr>
-                <tr>
-                    <th>16</th>
-                    <td><b>Auryn</b></td>
-                    <td>0.248</td>
-                    <td>1078%</td>
-                    <td>0.56</td>
-                    <td>107%</td>
                 </tr>
             </tbody>
         </table>
@@ -398,122 +398,122 @@ the retrieved objects. That's why this Test Suite simulates production usage ver
                 <tr>
                     <th>2</th>
                     <td><b>Symfony</b></td>
-                    <td>0.051</td>
-                    <td>155%</td>
+                    <td>0.054</td>
+                    <td>164%</td>
                     <td>0.53</td>
                     <td>101%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>Yaco</b></td>
-                    <td>0.065</td>
-                    <td>197%</td>
+                    <td>0.067</td>
+                    <td>203%</td>
                     <td>0.563</td>
                     <td>107%</td>
                 </tr>
                 <tr>
                     <th>4</th>
                     <td><b>PHP-DI</b></td>
-                    <td>0.066</td>
-                    <td>200%</td>
+                    <td>0.067</td>
+                    <td>203%</td>
                     <td>0.53</td>
                     <td>101%</td>
                 </tr>
                 <tr>
                     <th>5</th>
-                    <td><b>Zend ServiceManager</b></td>
-                    <td>0.084</td>
-                    <td>255%</td>
-                    <td>0.566</td>
-                    <td>108%</td>
-                </tr>
-                <tr>
-                    <th>6</th>
-                    <td><b>Pimple</b></td>
-                    <td>0.101</td>
-                    <td>306%</td>
-                    <td>0.571</td>
-                    <td>109%</td>
-                </tr>
-                <tr>
-                    <th>7</th>
                     <td><b>Dice</b></td>
-                    <td>0.102</td>
-                    <td>309%</td>
+                    <td>0.075</td>
+                    <td>227%</td>
                     <td>0.554</td>
                     <td>106%</td>
                 </tr>
                 <tr>
-                    <th>8</th>
+                    <th>6</th>
                     <td><b>Joomla</b></td>
-                    <td>0.104</td>
-                    <td>315%</td>
+                    <td>0.083</td>
+                    <td>252%</td>
                     <td>0.599</td>
                     <td>114%</td>
                 </tr>
                 <tr>
+                    <th>7</th>
+                    <td><b>Pimple</b></td>
+                    <td>0.084</td>
+                    <td>255%</td>
+                    <td>0.571</td>
+                    <td>109%</td>
+                </tr>
+                <tr>
+                    <th>8</th>
+                    <td><b>Zend ServiceManager</b></td>
+                    <td>0.085</td>
+                    <td>258%</td>
+                    <td>0.566</td>
+                    <td>108%</td>
+                </tr>
+                <tr>
                     <th>9</th>
                     <td><b>Cobalt</b></td>
-                    <td>0.105</td>
-                    <td>318%</td>
+                    <td>0.101</td>
+                    <td>306%</td>
                     <td>0.551</td>
                     <td>105%</td>
                 </tr>
                 <tr>
                     <th>10</th>
+                    <td><b>Laravel</b></td>
+                    <td>0.102</td>
+                    <td>309%</td>
+                    <td>0.544</td>
+                    <td>104%</td>
+                </tr>
+                <tr>
+                    <th>11</th>
                     <td><b>PHPixie DI</b></td>
-                    <td>0.122</td>
-                    <td>370%</td>
+                    <td>0.102</td>
+                    <td>309%</td>
                     <td>0.564</td>
                     <td>108%</td>
                 </tr>
                 <tr>
-                    <th>11</th>
-                    <td><b>Yii2 Container</b></td>
-                    <td>0.123</td>
-                    <td>373%</td>
-                    <td>0.6</td>
-                    <td>115%</td>
-                </tr>
-                <tr>
                     <th>12</th>
                     <td><b>Opulence IoC</b></td>
-                    <td>0.154</td>
-                    <td>467%</td>
+                    <td>0.115</td>
+                    <td>348%</td>
                     <td>0.553</td>
                     <td>106%</td>
                 </tr>
                 <tr>
                     <th>13</th>
-                    <td><b>Laravel</b></td>
-                    <td>0.162</td>
-                    <td>491%</td>
-                    <td>0.544</td>
-                    <td>104%</td>
+                    <td><b>Yii2 Container</b></td>
+                    <td>0.126</td>
+                    <td>382%</td>
+                    <td>0.6</td>
+                    <td>115%</td>
                 </tr>
                 <tr>
                     <th>14</th>
                     <td><b>Aura</b></td>
-                    <td>0.224</td>
-                    <td>679%</td>
+                    <td>0.182</td>
+                    <td>552%</td>
                     <td>0.579</td>
                     <td>111%</td>
                 </tr>
                 <tr>
                     <th>15</th>
-                    <td><b>Disco</b></td>
-                    <td>0.236</td>
-                    <td>715%</td>
-                    <td>0.634</td>
-                    <td>121%</td>
+                    <td><b>Auryn</b></td>
+                    <td>0.184</td>
+                    <td>558%</td>
+                    <td>0.56</td>
+                    <td>107%</td>
                 </tr>
                 <tr>
                     <th>16</th>
-                    <td><b>Auryn</b></td>
-                    <td>0.317</td>
-                    <td>961%</td>
-                    <td>0.56</td>
-                    <td>107%</td>
+                    <td><b>Disco</b></td>
+                    <td>0.199</td>
+                    <td>603%</td>
+                    <td>0.634</td>
+                    <td>121%</td>
                 </tr>
             </tbody>
         </table>
@@ -534,7 +534,7 @@ the retrieved objects. That's why this Test Suite simulates production usage ver
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Zen</b></td>
-                    <td>0.1</td>
+                    <td>0.082</td>
                     <td>100%</td>
                     <td>0.524</td>
                     <td>100%</td>
@@ -542,120 +542,120 @@ the retrieved objects. That's why this Test Suite simulates production usage ver
                 <tr>
                     <th>2</th>
                     <td><b>Symfony</b></td>
-                    <td>0.117</td>
+                    <td>0.096</td>
                     <td>117%</td>
                     <td>0.53</td>
                     <td>101%</td>
                 </tr>
                 <tr>
                     <th>3</th>
-                    <td><b>PHP-DI</b></td>
-                    <td>0.158</td>
-                    <td>158%</td>
-                    <td>0.53</td>
-                    <td>101%</td>
-                </tr>
-                <tr>
-                    <th>4</th>
                     <td><b>Yaco</b></td>
-                    <td>0.161</td>
-                    <td>161%</td>
+                    <td>0.115</td>
+                    <td>140%</td>
                     <td>0.563</td>
                     <td>107%</td>
                 </tr>
                 <tr>
+                    <th>4</th>
+                    <td><b>PHP-DI</b></td>
+                    <td>0.126</td>
+                    <td>154%</td>
+                    <td>0.53</td>
+                    <td>101%</td>
+                </tr>
+                <tr>
                     <th>5</th>
                     <td><b>Zend ServiceManager</b></td>
-                    <td>0.179</td>
-                    <td>179%</td>
+                    <td>0.133</td>
+                    <td>162%</td>
                     <td>0.566</td>
                     <td>108%</td>
                 </tr>
                 <tr>
                     <th>6</th>
                     <td><b>Dice</b></td>
-                    <td>0.194</td>
-                    <td>194%</td>
+                    <td>0.147</td>
+                    <td>179%</td>
                     <td>0.554</td>
                     <td>106%</td>
                 </tr>
                 <tr>
                     <th>7</th>
                     <td><b>Yii2 Container</b></td>
-                    <td>0.228</td>
-                    <td>228%</td>
+                    <td>0.175</td>
+                    <td>213%</td>
                     <td>0.6</td>
                     <td>115%</td>
                 </tr>
                 <tr>
                     <th>8</th>
-                    <td><b>Pimple</b></td>
-                    <td>0.248</td>
-                    <td>248%</td>
-                    <td>0.571</td>
-                    <td>109%</td>
-                </tr>
-                <tr>
-                    <th>9</th>
                     <td><b>Cobalt</b></td>
-                    <td>0.263</td>
-                    <td>263%</td>
+                    <td>0.187</td>
+                    <td>228%</td>
                     <td>0.551</td>
                     <td>105%</td>
                 </tr>
                 <tr>
+                    <th>9</th>
+                    <td><b>Pimple</b></td>
+                    <td>0.198</td>
+                    <td>241%</td>
+                    <td>0.571</td>
+                    <td>109%</td>
+                </tr>
+                <tr>
                     <th>10</th>
                     <td><b>Aura</b></td>
-                    <td>0.304</td>
-                    <td>304%</td>
+                    <td>0.219</td>
+                    <td>267%</td>
                     <td>0.579</td>
                     <td>111%</td>
                 </tr>
                 <tr>
                     <th>11</th>
                     <td><b>Joomla</b></td>
-                    <td>0.325</td>
-                    <td>325%</td>
+                    <td>0.225</td>
+                    <td>274%</td>
                     <td>0.599</td>
                     <td>114%</td>
                 </tr>
                 <tr>
                     <th>12</th>
                     <td><b>Opulence IoC</b></td>
-                    <td>0.508</td>
-                    <td>508%</td>
+                    <td>0.285</td>
+                    <td>348%</td>
                     <td>0.553</td>
                     <td>106%</td>
                 </tr>
                 <tr>
                     <th>13</th>
-                    <td><b>Disco</b></td>
-                    <td>0.568</td>
-                    <td>568%</td>
-                    <td>0.634</td>
-                    <td>121%</td>
-                </tr>
-                <tr>
-                    <th>14</th>
                     <td><b>Laravel</b></td>
-                    <td>0.62</td>
-                    <td>620%</td>
+                    <td>0.327</td>
+                    <td>399%</td>
                     <td>0.544</td>
                     <td>104%</td>
                 </tr>
                 <tr>
-                    <th>15</th>
+                    <th>14</th>
                     <td><b>PHPixie DI</b></td>
-                    <td>0.658</td>
-                    <td>658%</td>
+                    <td>0.33</td>
+                    <td>402%</td>
                     <td>0.564</td>
                     <td>108%</td>
                 </tr>
                 <tr>
+                    <th>15</th>
+                    <td><b>Disco</b></td>
+                    <td>0.407</td>
+                    <td>496%</td>
+                    <td>0.634</td>
+                    <td>121%</td>
+                </tr>
+                <tr>
                     <th>16</th>
                     <td><b>Auryn</b></td>
-                    <td>1.13</td>
-                    <td>1130%</td>
+                    <td>0.569</td>
+                    <td>694%</td>
                     <td>0.56</td>
                     <td>107%</td>
                 </tr>
@@ -681,7 +681,7 @@ the retrieved objects. That's why this Test Suite simulates production usage ver
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Zen</b></td>
-                    <td>0.11</td>
+                    <td>0.153</td>
                     <td>100%</td>
                     <td>0.621</td>
                     <td>100%</td>
@@ -689,120 +689,120 @@ the retrieved objects. That's why this Test Suite simulates production usage ver
                 <tr>
                     <th>2</th>
                     <td><b>Symfony</b></td>
-                    <td>0.133</td>
-                    <td>121%</td>
+                    <td>0.156</td>
+                    <td>102%</td>
                     <td>0.64</td>
                     <td>103%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>Yaco</b></td>
-                    <td>0.174</td>
-                    <td>158%</td>
+                    <td>0.195</td>
+                    <td>127%</td>
                     <td>0.67</td>
                     <td>108%</td>
                 </tr>
                 <tr>
                     <th>4</th>
-                    <td><b>PHP-DI</b></td>
+                    <td><b>Joomla</b></td>
                     <td>0.216</td>
-                    <td>196%</td>
-                    <td>0.648</td>
-                    <td>104%</td>
+                    <td>141%</td>
+                    <td>0.706</td>
+                    <td>114%</td>
                 </tr>
                 <tr>
                     <th>5</th>
                     <td><b>PHPixie DI</b></td>
-                    <td>0.226</td>
-                    <td>205%</td>
+                    <td>0.219</td>
+                    <td>143%</td>
                     <td>0.663</td>
                     <td>107%</td>
                 </tr>
                 <tr>
                     <th>6</th>
-                    <td><b>Joomla</b></td>
-                    <td>0.24</td>
-                    <td>218%</td>
-                    <td>0.706</td>
-                    <td>114%</td>
+                    <td><b>PHP-DI</b></td>
+                    <td>0.227</td>
+                    <td>148%</td>
+                    <td>0.648</td>
+                    <td>104%</td>
                 </tr>
                 <tr>
                     <th>7</th>
-                    <td><b>Pimple</b></td>
-                    <td>0.263</td>
-                    <td>239%</td>
-                    <td>0.685</td>
+                    <td><b>Zend ServiceManager</b></td>
+                    <td>0.241</td>
+                    <td>158%</td>
+                    <td>0.681</td>
                     <td>110%</td>
                 </tr>
                 <tr>
                     <th>8</th>
-                    <td><b>Zend ServiceManager</b></td>
-                    <td>0.281</td>
-                    <td>255%</td>
-                    <td>0.681</td>
+                    <td><b>Pimple</b></td>
+                    <td>0.262</td>
+                    <td>171%</td>
+                    <td>0.685</td>
                     <td>110%</td>
                 </tr>
                 <tr>
                     <th>9</th>
                     <td><b>Disco</b></td>
-                    <td>0.336</td>
-                    <td>305%</td>
+                    <td>0.394</td>
+                    <td>258%</td>
                     <td>0.766</td>
                     <td>123%</td>
                 </tr>
                 <tr>
                     <th>10</th>
                     <td><b>Opulence IoC</b></td>
-                    <td>0.537</td>
-                    <td>488%</td>
+                    <td>0.411</td>
+                    <td>269%</td>
                     <td>0.753</td>
                     <td>121%</td>
                 </tr>
                 <tr>
                     <th>11</th>
                     <td><b>Cobalt</b></td>
-                    <td>0.544</td>
-                    <td>495%</td>
+                    <td>0.426</td>
+                    <td>278%</td>
                     <td>0.862</td>
                     <td>139%</td>
                 </tr>
                 <tr>
                     <th>12</th>
-                    <td><b>Yii2 Container</b></td>
-                    <td>0.577</td>
-                    <td>525%</td>
-                    <td>0.821</td>
-                    <td>132%</td>
-                </tr>
-                <tr>
-                    <th>13</th>
                     <td><b>Laravel</b></td>
-                    <td>0.618</td>
-                    <td>562%</td>
+                    <td>0.439</td>
+                    <td>287%</td>
                     <td>0.718</td>
                     <td>116%</td>
                 </tr>
                 <tr>
+                    <th>13</th>
+                    <td><b>Yii2 Container</b></td>
+                    <td>0.458</td>
+                    <td>299%</td>
+                    <td>0.821</td>
+                    <td>132%</td>
+                </tr>
+                <tr>
                     <th>14</th>
                     <td><b>Dice</b></td>
-                    <td>0.641</td>
-                    <td>583%</td>
+                    <td>0.462</td>
+                    <td>302%</td>
                     <td>0.943</td>
                     <td>152%</td>
                 </tr>
                 <tr>
                     <th>15</th>
                     <td><b>Aura</b></td>
-                    <td>0.907</td>
-                    <td>825%</td>
+                    <td>0.586</td>
+                    <td>383%</td>
                     <td>0.894</td>
                     <td>144%</td>
                 </tr>
                 <tr>
                     <th>16</th>
                     <td><b>Auryn</b></td>
-                    <td>1.177</td>
-                    <td>1070%</td>
+                    <td>0.733</td>
+                    <td>479%</td>
                     <td>0.828</td>
                     <td>133%</td>
                 </tr>
@@ -825,7 +825,7 @@ the retrieved objects. That's why this Test Suite simulates production usage ver
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Symfony</b></td>
-                    <td>0.129</td>
+                    <td>0.157</td>
                     <td>100%</td>
                     <td>0.64</td>
                     <td>100%</td>
@@ -833,120 +833,120 @@ the retrieved objects. That's why this Test Suite simulates production usage ver
                 <tr>
                     <th>2</th>
                     <td><b>Zen</b></td>
-                    <td>0.137</td>
-                    <td>106%</td>
+                    <td>0.157</td>
+                    <td>100%</td>
                     <td>0.621</td>
                     <td>97%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>Yaco</b></td>
-                    <td>0.197</td>
-                    <td>153%</td>
+                    <td>0.2</td>
+                    <td>127%</td>
                     <td>0.67</td>
                     <td>105%</td>
                 </tr>
                 <tr>
                     <th>4</th>
                     <td><b>PHP-DI</b></td>
-                    <td>0.235</td>
-                    <td>182%</td>
+                    <td>0.231</td>
+                    <td>147%</td>
                     <td>0.648</td>
                     <td>101%</td>
                 </tr>
                 <tr>
                     <th>5</th>
-                    <td><b>PHPixie DI</b></td>
-                    <td>0.259</td>
-                    <td>201%</td>
-                    <td>0.663</td>
-                    <td>104%</td>
-                </tr>
-                <tr>
-                    <th>6</th>
-                    <td><b>Zend ServiceManager</b></td>
-                    <td>0.261</td>
-                    <td>202%</td>
-                    <td>0.681</td>
-                    <td>106%</td>
-                </tr>
-                <tr>
-                    <th>7</th>
                     <td><b>Joomla</b></td>
-                    <td>0.268</td>
-                    <td>208%</td>
+                    <td>0.241</td>
+                    <td>154%</td>
                     <td>0.706</td>
                     <td>110%</td>
                 </tr>
                 <tr>
+                    <th>6</th>
+                    <td><b>PHPixie DI</b></td>
+                    <td>0.243</td>
+                    <td>155%</td>
+                    <td>0.663</td>
+                    <td>104%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>Zend ServiceManager</b></td>
+                    <td>0.247</td>
+                    <td>157%</td>
+                    <td>0.681</td>
+                    <td>106%</td>
+                </tr>
+                <tr>
                     <th>8</th>
                     <td><b>Pimple</b></td>
-                    <td>0.306</td>
-                    <td>237%</td>
+                    <td>0.274</td>
+                    <td>175%</td>
                     <td>0.685</td>
                     <td>107%</td>
                 </tr>
                 <tr>
                     <th>9</th>
                     <td><b>Disco</b></td>
-                    <td>0.373</td>
-                    <td>289%</td>
+                    <td>0.43</td>
+                    <td>274%</td>
                     <td>0.766</td>
                     <td>120%</td>
                 </tr>
                 <tr>
                     <th>10</th>
                     <td><b>Opulence IoC</b></td>
-                    <td>0.565</td>
-                    <td>438%</td>
+                    <td>0.437</td>
+                    <td>278%</td>
                     <td>0.753</td>
                     <td>118%</td>
                 </tr>
                 <tr>
                     <th>11</th>
                     <td><b>Cobalt</b></td>
-                    <td>0.585</td>
-                    <td>453%</td>
+                    <td>0.451</td>
+                    <td>287%</td>
                     <td>0.862</td>
                     <td>135%</td>
                 </tr>
                 <tr>
                     <th>12</th>
                     <td><b>Yii2 Container</b></td>
-                    <td>0.597</td>
-                    <td>463%</td>
+                    <td>0.465</td>
+                    <td>296%</td>
                     <td>0.821</td>
                     <td>128%</td>
                 </tr>
                 <tr>
                     <th>13</th>
-                    <td><b>Dice</b></td>
-                    <td>0.638</td>
-                    <td>495%</td>
-                    <td>0.943</td>
-                    <td>147%</td>
-                </tr>
-                <tr>
-                    <th>14</th>
                     <td><b>Laravel</b></td>
-                    <td>0.663</td>
-                    <td>514%</td>
+                    <td>0.482</td>
+                    <td>307%</td>
                     <td>0.718</td>
                     <td>112%</td>
                 </tr>
                 <tr>
+                    <th>14</th>
+                    <td><b>Dice</b></td>
+                    <td>0.488</td>
+                    <td>311%</td>
+                    <td>0.943</td>
+                    <td>147%</td>
+                </tr>
+                <tr>
                     <th>15</th>
                     <td><b>Aura</b></td>
-                    <td>0.892</td>
-                    <td>691%</td>
+                    <td>0.624</td>
+                    <td>397%</td>
                     <td>0.894</td>
                     <td>140%</td>
                 </tr>
                 <tr>
                     <th>16</th>
                     <td><b>Auryn</b></td>
-                    <td>1.25</td>
-                    <td>969%</td>
+                    <td>0.782</td>
+                    <td>498%</td>
                     <td>0.828</td>
                     <td>129%</td>
                 </tr>
@@ -968,131 +968,131 @@ the retrieved objects. That's why this Test Suite simulates production usage ver
             </thead>
             <tbody>                <tr>
                     <th>1</th>
-                    <td><b>Symfony</b></td>
-                    <td>0.202</td>
+                    <td><b>Zen</b></td>
+                    <td>0.205</td>
                     <td>100%</td>
-                    <td>0.64</td>
+                    <td>0.621</td>
                     <td>100%</td>
                 </tr>
                 <tr>
                     <th>2</th>
-                    <td><b>Zen</b></td>
-                    <td>0.212</td>
-                    <td>105%</td>
-                    <td>0.621</td>
-                    <td>97%</td>
+                    <td><b>Symfony</b></td>
+                    <td>0.207</td>
+                    <td>101%</td>
+                    <td>0.64</td>
+                    <td>103%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>Yaco</b></td>
-                    <td>0.29</td>
-                    <td>144%</td>
+                    <td>0.255</td>
+                    <td>124%</td>
                     <td>0.67</td>
-                    <td>105%</td>
+                    <td>108%</td>
                 </tr>
                 <tr>
                     <th>4</th>
                     <td><b>PHP-DI</b></td>
-                    <td>0.326</td>
-                    <td>161%</td>
+                    <td>0.288</td>
+                    <td>140%</td>
                     <td>0.648</td>
-                    <td>101%</td>
+                    <td>104%</td>
                 </tr>
                 <tr>
                     <th>5</th>
                     <td><b>Zend ServiceManager</b></td>
-                    <td>0.368</td>
-                    <td>182%</td>
+                    <td>0.306</td>
+                    <td>149%</td>
                     <td>0.681</td>
-                    <td>106%</td>
+                    <td>110%</td>
                 </tr>
                 <tr>
                     <th>6</th>
-                    <td><b>Pimple</b></td>
-                    <td>0.441</td>
-                    <td>218%</td>
-                    <td>0.685</td>
-                    <td>107%</td>
+                    <td><b>Joomla</b></td>
+                    <td>0.374</td>
+                    <td>182%</td>
+                    <td>0.706</td>
+                    <td>114%</td>
                 </tr>
                 <tr>
                     <th>7</th>
-                    <td><b>Joomla</b></td>
-                    <td>0.474</td>
-                    <td>235%</td>
-                    <td>0.706</td>
+                    <td><b>Pimple</b></td>
+                    <td>0.38</td>
+                    <td>185%</td>
+                    <td>0.685</td>
                     <td>110%</td>
                 </tr>
                 <tr>
                     <th>8</th>
-                    <td><b>Yii2 Container</b></td>
-                    <td>0.672</td>
-                    <td>333%</td>
-                    <td>0.821</td>
-                    <td>128%</td>
+                    <td><b>PHPixie DI</b></td>
+                    <td>0.472</td>
+                    <td>230%</td>
+                    <td>0.663</td>
+                    <td>107%</td>
                 </tr>
                 <tr>
                     <th>9</th>
-                    <td><b>Cobalt</b></td>
-                    <td>0.715</td>
-                    <td>354%</td>
-                    <td>0.862</td>
-                    <td>135%</td>
+                    <td><b>Yii2 Container</b></td>
+                    <td>0.524</td>
+                    <td>256%</td>
+                    <td>0.821</td>
+                    <td>132%</td>
                 </tr>
                 <tr>
                     <th>10</th>
-                    <td><b>Disco</b></td>
-                    <td>0.737</td>
-                    <td>365%</td>
-                    <td>0.766</td>
-                    <td>120%</td>
+                    <td><b>Cobalt</b></td>
+                    <td>0.542</td>
+                    <td>264%</td>
+                    <td>0.862</td>
+                    <td>139%</td>
                 </tr>
                 <tr>
                     <th>11</th>
                     <td><b>Dice</b></td>
-                    <td>0.741</td>
-                    <td>367%</td>
+                    <td>0.558</td>
+                    <td>272%</td>
                     <td>0.943</td>
-                    <td>147%</td>
+                    <td>152%</td>
                 </tr>
                 <tr>
                     <th>12</th>
-                    <td><b>PHPixie DI</b></td>
-                    <td>0.804</td>
-                    <td>398%</td>
-                    <td>0.663</td>
-                    <td>104%</td>
+                    <td><b>Opulence IoC</b></td>
+                    <td>0.6</td>
+                    <td>293%</td>
+                    <td>0.753</td>
+                    <td>121%</td>
                 </tr>
                 <tr>
                     <th>13</th>
-                    <td><b>Opulence IoC</b></td>
-                    <td>0.918</td>
-                    <td>454%</td>
-                    <td>0.753</td>
-                    <td>118%</td>
+                    <td><b>Disco</b></td>
+                    <td>0.627</td>
+                    <td>306%</td>
+                    <td>0.766</td>
+                    <td>123%</td>
                 </tr>
                 <tr>
                     <th>14</th>
                     <td><b>Aura</b></td>
-                    <td>1.008</td>
-                    <td>499%</td>
+                    <td>0.686</td>
+                    <td>335%</td>
                     <td>0.894</td>
-                    <td>140%</td>
+                    <td>144%</td>
                 </tr>
                 <tr>
                     <th>15</th>
                     <td><b>Laravel</b></td>
-                    <td>1.142</td>
-                    <td>565%</td>
+                    <td>0.689</td>
+                    <td>336%</td>
                     <td>0.718</td>
-                    <td>112%</td>
+                    <td>116%</td>
                 </tr>
                 <tr>
                     <th>16</th>
                     <td><b>Auryn</b></td>
-                    <td>2.156</td>
-                    <td>1067%</td>
+                    <td>1.168</td>
+                    <td>570%</td>
                     <td>0.828</td>
-                    <td>129%</td>
+                    <td>133%</td>
                 </tr>
             </tbody>
         </table>
@@ -1115,115 +1115,115 @@ objects are included in the measurements.</p>        <table border="1">
             </thead>
             <tbody>                <tr>
                     <th>1</th>
-                    <td><b>Zen</b></td>
-                    <td>0.023</td>
+                    <td><b>Symfony</b></td>
+                    <td>0.028</td>
                     <td>100%</td>
-                    <td>0.523</td>
+                    <td>0.531</td>
                     <td>100%</td>
                 </tr>
                 <tr>
                     <th>2</th>
-                    <td><b>Symfony</b></td>
-                    <td>0.027</td>
-                    <td>117%</td>
-                    <td>0.531</td>
-                    <td>101%</td>
+                    <td><b>Zen</b></td>
+                    <td>0.029</td>
+                    <td>104%</td>
+                    <td>0.523</td>
+                    <td>99%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>Disco</b></td>
-                    <td>0.077</td>
-                    <td>335%</td>
+                    <td>0.064</td>
+                    <td>229%</td>
                     <td>0.631</td>
-                    <td>121%</td>
+                    <td>119%</td>
                 </tr>
                 <tr>
                     <th>4</th>
-                    <td><b>Joomla</b></td>
-                    <td>0.08</td>
-                    <td>348%</td>
-                    <td>0.673</td>
-                    <td>129%</td>
+                    <td><b>PHPixie DI</b></td>
+                    <td>0.066</td>
+                    <td>236%</td>
+                    <td>0.603</td>
+                    <td>114%</td>
                 </tr>
                 <tr>
                     <th>5</th>
-                    <td><b>Cobalt</b></td>
-                    <td>0.083</td>
-                    <td>361%</td>
-                    <td>0.559</td>
-                    <td>107%</td>
+                    <td><b>Joomla</b></td>
+                    <td>0.069</td>
+                    <td>246%</td>
+                    <td>0.673</td>
+                    <td>127%</td>
                 </tr>
                 <tr>
                     <th>6</th>
-                    <td><b>PHPixie DI</b></td>
-                    <td>0.086</td>
-                    <td>374%</td>
-                    <td>0.603</td>
-                    <td>115%</td>
+                    <td><b>Cobalt</b></td>
+                    <td>0.072</td>
+                    <td>257%</td>
+                    <td>0.559</td>
+                    <td>105%</td>
                 </tr>
                 <tr>
                     <th>7</th>
                     <td><b>Zend ServiceManager</b></td>
-                    <td>0.104</td>
-                    <td>452%</td>
+                    <td>0.078</td>
+                    <td>279%</td>
                     <td>0.604</td>
-                    <td>115%</td>
+                    <td>114%</td>
                 </tr>
                 <tr>
                     <th>8</th>
                     <td><b>Dice</b></td>
-                    <td>0.123</td>
-                    <td>535%</td>
+                    <td>0.097</td>
+                    <td>346%</td>
                     <td>0.544</td>
-                    <td>104%</td>
+                    <td>103%</td>
                 </tr>
                 <tr>
                     <th>9</th>
                     <td><b>Pimple</b></td>
-                    <td>0.152</td>
-                    <td>661%</td>
+                    <td>0.116</td>
+                    <td>414%</td>
                     <td>0.633</td>
-                    <td>121%</td>
+                    <td>119%</td>
                 </tr>
                 <tr>
                     <th>10</th>
                     <td><b>Yii2 Container</b></td>
-                    <td>0.214</td>
-                    <td>930%</td>
+                    <td>0.148</td>
+                    <td>529%</td>
                     <td>0.626</td>
-                    <td>120%</td>
+                    <td>118%</td>
                 </tr>
                 <tr>
                     <th>11</th>
                     <td><b>Opulence IoC</b></td>
-                    <td>0.231</td>
-                    <td>1004%</td>
+                    <td>0.159</td>
+                    <td>568%</td>
                     <td>0.555</td>
-                    <td>106%</td>
+                    <td>105%</td>
                 </tr>
                 <tr>
                     <th>12</th>
                     <td><b>Aura</b></td>
-                    <td>0.243</td>
-                    <td>1057%</td>
+                    <td>0.169</td>
+                    <td>604%</td>
                     <td>0.554</td>
-                    <td>106%</td>
+                    <td>104%</td>
                 </tr>
                 <tr>
                     <th>13</th>
                     <td><b>Laravel</b></td>
-                    <td>0.428</td>
-                    <td>1861%</td>
+                    <td>0.264</td>
+                    <td>943%</td>
                     <td>0.547</td>
-                    <td>105%</td>
+                    <td>103%</td>
                 </tr>
                 <tr>
                     <th>14</th>
                     <td><b>Auryn</b></td>
-                    <td>0.616</td>
-                    <td>2678%</td>
+                    <td>0.339</td>
+                    <td>1211%</td>
                     <td>0.545</td>
-                    <td>104%</td>
+                    <td>103%</td>
                 </tr>
                 <tr>
                     <th>15</th>
@@ -1260,7 +1260,7 @@ objects are included in the measurements.</p>        <table border="1">
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Zen</b></td>
-                    <td>0.09</td>
+                    <td>0.084</td>
                     <td>100%</td>
                     <td>0.523</td>
                     <td>100%</td>
@@ -1268,104 +1268,104 @@ objects are included in the measurements.</p>        <table border="1">
                 <tr>
                     <th>2</th>
                     <td><b>Symfony</b></td>
-                    <td>0.102</td>
-                    <td>113%</td>
+                    <td>0.088</td>
+                    <td>105%</td>
                     <td>0.531</td>
                     <td>101%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>Disco</b></td>
-                    <td>0.273</td>
-                    <td>303%</td>
+                    <td>0.193</td>
+                    <td>230%</td>
                     <td>0.631</td>
                     <td>121%</td>
                 </tr>
                 <tr>
                     <th>4</th>
                     <td><b>Cobalt</b></td>
-                    <td>0.308</td>
-                    <td>342%</td>
+                    <td>0.252</td>
+                    <td>300%</td>
                     <td>0.559</td>
                     <td>107%</td>
                 </tr>
                 <tr>
                     <th>5</th>
-                    <td><b>Joomla</b></td>
-                    <td>0.381</td>
-                    <td>423%</td>
-                    <td>0.673</td>
-                    <td>129%</td>
-                </tr>
-                <tr>
-                    <th>6</th>
                     <td><b>PHPixie DI</b></td>
-                    <td>0.437</td>
-                    <td>486%</td>
+                    <td>0.263</td>
+                    <td>313%</td>
                     <td>0.603</td>
                     <td>115%</td>
                 </tr>
                 <tr>
+                    <th>6</th>
+                    <td><b>Joomla</b></td>
+                    <td>0.273</td>
+                    <td>325%</td>
+                    <td>0.673</td>
+                    <td>129%</td>
+                </tr>
+                <tr>
                     <th>7</th>
                     <td><b>Zend ServiceManager</b></td>
-                    <td>0.645</td>
-                    <td>717%</td>
+                    <td>0.374</td>
+                    <td>445%</td>
                     <td>0.604</td>
                     <td>115%</td>
                 </tr>
                 <tr>
                     <th>8</th>
                     <td><b>Dice</b></td>
-                    <td>0.682</td>
-                    <td>758%</td>
+                    <td>0.435</td>
+                    <td>518%</td>
                     <td>0.544</td>
                     <td>104%</td>
                 </tr>
                 <tr>
                     <th>9</th>
                     <td><b>Pimple</b></td>
-                    <td>0.81</td>
-                    <td>900%</td>
+                    <td>0.608</td>
+                    <td>724%</td>
                     <td>0.633</td>
                     <td>121%</td>
                 </tr>
                 <tr>
                     <th>10</th>
                     <td><b>Yii2 Container</b></td>
-                    <td>1.301</td>
-                    <td>1446%</td>
+                    <td>0.715</td>
+                    <td>851%</td>
                     <td>0.626</td>
                     <td>120%</td>
                 </tr>
                 <tr>
                     <th>11</th>
                     <td><b>Aura</b></td>
-                    <td>1.468</td>
-                    <td>1631%</td>
+                    <td>0.828</td>
+                    <td>986%</td>
                     <td>0.554</td>
                     <td>106%</td>
                 </tr>
                 <tr>
                     <th>12</th>
                     <td><b>Opulence IoC</b></td>
-                    <td>1.544</td>
-                    <td>1716%</td>
+                    <td>0.983</td>
+                    <td>1170%</td>
                     <td>0.555</td>
                     <td>106%</td>
                 </tr>
                 <tr>
                     <th>13</th>
                     <td><b>Laravel</b></td>
-                    <td>3.765</td>
-                    <td>4183%</td>
+                    <td>2.109</td>
+                    <td>2511%</td>
                     <td>0.547</td>
                     <td>105%</td>
                 </tr>
                 <tr>
                     <th>14</th>
                     <td><b>Auryn</b></td>
-                    <td>5.229</td>
-                    <td>5810%</td>
+                    <td>2.651</td>
+                    <td>3156%</td>
                     <td>0.545</td>
                     <td>104%</td>
                 </tr>
@@ -1403,115 +1403,115 @@ objects are included in the measurements.</p>        <table border="1">
             </thead>
             <tbody>                <tr>
                     <th>1</th>
-                    <td><b>Zen</b></td>
-                    <td>0.779</td>
+                    <td><b>Symfony</b></td>
+                    <td>0.643</td>
                     <td>100%</td>
-                    <td>0.523</td>
+                    <td>0.531</td>
                     <td>100%</td>
                 </tr>
                 <tr>
                     <th>2</th>
-                    <td><b>Symfony</b></td>
-                    <td>0.812</td>
-                    <td>104%</td>
-                    <td>0.531</td>
-                    <td>101%</td>
+                    <td><b>Zen</b></td>
+                    <td>0.657</td>
+                    <td>102%</td>
+                    <td>0.523</td>
+                    <td>99%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>Disco</b></td>
-                    <td>2.268</td>
-                    <td>291%</td>
+                    <td>1.511</td>
+                    <td>235%</td>
                     <td>0.631</td>
-                    <td>121%</td>
+                    <td>119%</td>
                 </tr>
                 <tr>
                     <th>4</th>
                     <td><b>Cobalt</b></td>
-                    <td>2.518</td>
-                    <td>323%</td>
+                    <td>2.063</td>
+                    <td>321%</td>
                     <td>0.559</td>
-                    <td>107%</td>
+                    <td>105%</td>
                 </tr>
                 <tr>
                     <th>5</th>
-                    <td><b>Joomla</b></td>
-                    <td>3.353</td>
-                    <td>430%</td>
-                    <td>0.673</td>
-                    <td>129%</td>
+                    <td><b>PHPixie DI</b></td>
+                    <td>2.227</td>
+                    <td>346%</td>
+                    <td>0.603</td>
+                    <td>114%</td>
                 </tr>
                 <tr>
                     <th>6</th>
-                    <td><b>PHPixie DI</b></td>
-                    <td>3.927</td>
-                    <td>504%</td>
-                    <td>0.603</td>
-                    <td>115%</td>
+                    <td><b>Joomla</b></td>
+                    <td>2.299</td>
+                    <td>358%</td>
+                    <td>0.673</td>
+                    <td>127%</td>
                 </tr>
                 <tr>
                     <th>7</th>
                     <td><b>Zend ServiceManager</b></td>
-                    <td>5.933</td>
-                    <td>762%</td>
+                    <td>3.366</td>
+                    <td>523%</td>
                     <td>0.604</td>
-                    <td>115%</td>
+                    <td>114%</td>
                 </tr>
                 <tr>
                     <th>8</th>
                     <td><b>Dice</b></td>
-                    <td>6.075</td>
-                    <td>780%</td>
+                    <td>3.801</td>
+                    <td>591%</td>
                     <td>0.544</td>
-                    <td>104%</td>
+                    <td>103%</td>
                 </tr>
                 <tr>
                     <th>9</th>
                     <td><b>Pimple</b></td>
-                    <td>7.18</td>
-                    <td>922%</td>
+                    <td>5.494</td>
+                    <td>854%</td>
                     <td>0.633</td>
-                    <td>121%</td>
+                    <td>119%</td>
                 </tr>
                 <tr>
                     <th>10</th>
                     <td><b>Yii2 Container</b></td>
-                    <td>11.796</td>
-                    <td>1514%</td>
+                    <td>6.417</td>
+                    <td>998%</td>
                     <td>0.626</td>
-                    <td>120%</td>
+                    <td>118%</td>
                 </tr>
                 <tr>
                     <th>11</th>
                     <td><b>Aura</b></td>
-                    <td>13.066</td>
-                    <td>1677%</td>
+                    <td>7.328</td>
+                    <td>1140%</td>
                     <td>0.554</td>
-                    <td>106%</td>
+                    <td>104%</td>
                 </tr>
                 <tr>
                     <th>12</th>
                     <td><b>Opulence IoC</b></td>
-                    <td>14.256</td>
-                    <td>1830%</td>
+                    <td>9.142</td>
+                    <td>1422%</td>
                     <td>0.555</td>
-                    <td>106%</td>
+                    <td>105%</td>
                 </tr>
                 <tr>
                     <th>13</th>
                     <td><b>Laravel</b></td>
-                    <td>35.301</td>
-                    <td>4532%</td>
+                    <td>20.552</td>
+                    <td>3196%</td>
                     <td>0.547</td>
-                    <td>105%</td>
+                    <td>103%</td>
                 </tr>
                 <tr>
                     <th>14</th>
                     <td><b>Auryn</b></td>
-                    <td>49.558</td>
-                    <td>6362%</td>
+                    <td>25.691</td>
+                    <td>3995%</td>
                     <td>0.545</td>
-                    <td>104%</td>
+                    <td>103%</td>
                 </tr>
                 <tr>
                     <th>15</th>
@@ -1551,7 +1551,7 @@ objects are included in the measurements.</p>        <table border="1">
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Symfony</b></td>
-                    <td>0.152</td>
+                    <td>0.174</td>
                     <td>100%</td>
                     <td>0.636</td>
                     <td>100%</td>
@@ -1559,104 +1559,104 @@ objects are included in the measurements.</p>        <table border="1">
                 <tr>
                     <th>2</th>
                     <td><b>Zen</b></td>
-                    <td>0.157</td>
-                    <td>103%</td>
+                    <td>0.192</td>
+                    <td>110%</td>
                     <td>0.621</td>
                     <td>98%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>Disco</b></td>
-                    <td>0.412</td>
-                    <td>271%</td>
+                    <td>0.329</td>
+                    <td>189%</td>
                     <td>0.728</td>
                     <td>114%</td>
                 </tr>
                 <tr>
                     <th>4</th>
                     <td><b>PHPixie DI</b></td>
-                    <td>0.539</td>
-                    <td>355%</td>
+                    <td>0.367</td>
+                    <td>211%</td>
                     <td>0.702</td>
                     <td>110%</td>
                 </tr>
                 <tr>
                     <th>5</th>
                     <td><b>Joomla</b></td>
-                    <td>0.577</td>
-                    <td>380%</td>
+                    <td>0.391</td>
+                    <td>225%</td>
                     <td>0.771</td>
                     <td>121%</td>
                 </tr>
                 <tr>
                     <th>6</th>
-                    <td><b>Cobalt</b></td>
-                    <td>0.703</td>
-                    <td>463%</td>
-                    <td>0.899</td>
-                    <td>141%</td>
-                </tr>
-                <tr>
-                    <th>7</th>
                     <td><b>Zend ServiceManager</b></td>
-                    <td>0.786</td>
-                    <td>517%</td>
+                    <td>0.494</td>
+                    <td>284%</td>
                     <td>0.708</td>
                     <td>111%</td>
                 </tr>
                 <tr>
+                    <th>7</th>
+                    <td><b>Cobalt</b></td>
+                    <td>0.557</td>
+                    <td>320%</td>
+                    <td>0.899</td>
+                    <td>141%</td>
+                </tr>
+                <tr>
                     <th>8</th>
                     <td><b>Pimple</b></td>
-                    <td>0.93</td>
-                    <td>612%</td>
+                    <td>0.732</td>
+                    <td>421%</td>
                     <td>0.678</td>
                     <td>107%</td>
                 </tr>
                 <tr>
                     <th>9</th>
                     <td><b>Dice</b></td>
-                    <td>1.124</td>
-                    <td>739%</td>
+                    <td>0.744</td>
+                    <td>428%</td>
                     <td>0.855</td>
                     <td>135%</td>
                 </tr>
                 <tr>
                     <th>10</th>
                     <td><b>Yii2 Container</b></td>
-                    <td>1.619</td>
-                    <td>1065%</td>
+                    <td>0.997</td>
+                    <td>573%</td>
                     <td>0.814</td>
                     <td>128%</td>
                 </tr>
                 <tr>
                     <th>11</th>
-                    <td><b>Opulence IoC</b></td>
-                    <td>1.816</td>
-                    <td>1195%</td>
-                    <td>0.751</td>
-                    <td>118%</td>
-                </tr>
-                <tr>
-                    <th>12</th>
                     <td><b>Aura</b></td>
-                    <td>2.02</td>
-                    <td>1329%</td>
+                    <td>1.196</td>
+                    <td>687%</td>
                     <td>0.869</td>
                     <td>137%</td>
                 </tr>
                 <tr>
+                    <th>12</th>
+                    <td><b>Opulence IoC</b></td>
+                    <td>1.203</td>
+                    <td>691%</td>
+                    <td>0.751</td>
+                    <td>118%</td>
+                </tr>
+                <tr>
                     <th>13</th>
                     <td><b>Laravel</b></td>
-                    <td>3.835</td>
-                    <td>2523%</td>
+                    <td>2.241</td>
+                    <td>1288%</td>
                     <td>0.729</td>
                     <td>115%</td>
                 </tr>
                 <tr>
                     <th>14</th>
                     <td><b>Auryn</b></td>
-                    <td>5.936</td>
-                    <td>3905%</td>
+                    <td>3.08</td>
+                    <td>1770%</td>
                     <td>0.814</td>
                     <td>128%</td>
                 </tr>
@@ -1695,7 +1695,7 @@ objects are included in the measurements.</p>        <table border="1">
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Symfony</b></td>
-                    <td>0.676</td>
+                    <td>0.635</td>
                     <td>100%</td>
                     <td>0.636</td>
                     <td>100%</td>
@@ -1703,104 +1703,104 @@ objects are included in the measurements.</p>        <table border="1">
                 <tr>
                     <th>2</th>
                     <td><b>Zen</b></td>
-                    <td>0.728</td>
-                    <td>108%</td>
+                    <td>0.668</td>
+                    <td>105%</td>
                     <td>0.621</td>
                     <td>98%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>Disco</b></td>
-                    <td>2.48</td>
-                    <td>367%</td>
+                    <td>1.591</td>
+                    <td>251%</td>
                     <td>0.728</td>
                     <td>114%</td>
                 </tr>
                 <tr>
                     <th>4</th>
-                    <td><b>Cobalt</b></td>
-                    <td>2.777</td>
-                    <td>411%</td>
-                    <td>0.899</td>
-                    <td>141%</td>
-                </tr>
-                <tr>
-                    <th>5</th>
-                    <td><b>Joomla</b></td>
-                    <td>3.714</td>
-                    <td>549%</td>
-                    <td>0.771</td>
-                    <td>121%</td>
-                </tr>
-                <tr>
-                    <th>6</th>
                     <td><b>PHPixie DI</b></td>
-                    <td>3.888</td>
-                    <td>575%</td>
+                    <td>2.197</td>
+                    <td>346%</td>
                     <td>0.702</td>
                     <td>110%</td>
                 </tr>
                 <tr>
+                    <th>5</th>
+                    <td><b>Cobalt</b></td>
+                    <td>2.335</td>
+                    <td>368%</td>
+                    <td>0.899</td>
+                    <td>141%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>Joomla</b></td>
+                    <td>2.53</td>
+                    <td>398%</td>
+                    <td>0.771</td>
+                    <td>121%</td>
+                </tr>
+                <tr>
                     <th>7</th>
                     <td><b>Zend ServiceManager</b></td>
-                    <td>6.053</td>
-                    <td>895%</td>
+                    <td>3.374</td>
+                    <td>531%</td>
                     <td>0.708</td>
                     <td>111%</td>
                 </tr>
                 <tr>
                     <th>8</th>
                     <td><b>Dice</b></td>
-                    <td>6.749</td>
-                    <td>998%</td>
+                    <td>4.222</td>
+                    <td>665%</td>
                     <td>0.855</td>
                     <td>135%</td>
                 </tr>
                 <tr>
                     <th>9</th>
                     <td><b>Pimple</b></td>
-                    <td>7.463</td>
-                    <td>1104%</td>
+                    <td>5.667</td>
+                    <td>892%</td>
                     <td>0.678</td>
                     <td>107%</td>
                 </tr>
                 <tr>
                     <th>10</th>
                     <td><b>Yii2 Container</b></td>
-                    <td>12.194</td>
-                    <td>1804%</td>
+                    <td>6.756</td>
+                    <td>1064%</td>
                     <td>0.814</td>
                     <td>128%</td>
                 </tr>
                 <tr>
                     <th>11</th>
                     <td><b>Aura</b></td>
-                    <td>13.898</td>
-                    <td>2056%</td>
+                    <td>7.692</td>
+                    <td>1211%</td>
                     <td>0.869</td>
                     <td>137%</td>
                 </tr>
                 <tr>
                     <th>12</th>
                     <td><b>Opulence IoC</b></td>
-                    <td>15.082</td>
-                    <td>2231%</td>
+                    <td>9.793</td>
+                    <td>1542%</td>
                     <td>0.751</td>
                     <td>118%</td>
                 </tr>
                 <tr>
                     <th>13</th>
                     <td><b>Laravel</b></td>
-                    <td>35.523</td>
-                    <td>5255%</td>
+                    <td>20.47</td>
+                    <td>3224%</td>
                     <td>0.729</td>
                     <td>115%</td>
                 </tr>
                 <tr>
                     <th>14</th>
                     <td><b>Auryn</b></td>
-                    <td>52.981</td>
-                    <td>7837%</td>
+                    <td>26.897</td>
+                    <td>4236%</td>
                     <td>0.814</td>
                     <td>128%</td>
                 </tr>
@@ -1839,7 +1839,7 @@ objects are included in the measurements.</p>        <table border="1">
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Symfony</b></td>
-                    <td>5.79</td>
+                    <td>5.264</td>
                     <td>100%</td>
                     <td>0.636</td>
                     <td>100%</td>
@@ -1847,104 +1847,104 @@ objects are included in the measurements.</p>        <table border="1">
                 <tr>
                     <th>2</th>
                     <td><b>Zen</b></td>
-                    <td>5.888</td>
-                    <td>102%</td>
+                    <td>5.44</td>
+                    <td>103%</td>
                     <td>0.621</td>
                     <td>98%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>Disco</b></td>
-                    <td>21.199</td>
-                    <td>366%</td>
+                    <td>13.99</td>
+                    <td>266%</td>
                     <td>0.728</td>
                     <td>114%</td>
                 </tr>
                 <tr>
                     <th>4</th>
                     <td><b>Cobalt</b></td>
-                    <td>22.98</td>
-                    <td>397%</td>
+                    <td>19.928</td>
+                    <td>379%</td>
                     <td>0.899</td>
                     <td>141%</td>
                 </tr>
                 <tr>
                     <th>5</th>
-                    <td><b>Joomla</b></td>
-                    <td>33.807</td>
-                    <td>584%</td>
-                    <td>0.771</td>
-                    <td>121%</td>
-                </tr>
-                <tr>
-                    <th>6</th>
                     <td><b>PHPixie DI</b></td>
-                    <td>34.915</td>
-                    <td>603%</td>
+                    <td>20.346</td>
+                    <td>387%</td>
                     <td>0.702</td>
                     <td>110%</td>
                 </tr>
                 <tr>
+                    <th>6</th>
+                    <td><b>Joomla</b></td>
+                    <td>23.618</td>
+                    <td>449%</td>
+                    <td>0.771</td>
+                    <td>121%</td>
+                </tr>
+                <tr>
                     <th>7</th>
                     <td><b>Zend ServiceManager</b></td>
-                    <td>57.508</td>
-                    <td>993%</td>
+                    <td>32.076</td>
+                    <td>609%</td>
                     <td>0.708</td>
                     <td>111%</td>
                 </tr>
                 <tr>
                     <th>8</th>
                     <td><b>Dice</b></td>
-                    <td>60.243</td>
-                    <td>1040%</td>
+                    <td>38.543</td>
+                    <td>732%</td>
                     <td>0.855</td>
                     <td>135%</td>
                 </tr>
                 <tr>
                     <th>9</th>
                     <td><b>Pimple</b></td>
-                    <td>69.021</td>
-                    <td>1192%</td>
+                    <td>54.547</td>
+                    <td>1036%</td>
                     <td>0.678</td>
                     <td>107%</td>
                 </tr>
                 <tr>
                     <th>10</th>
                     <td><b>Yii2 Container</b></td>
-                    <td>117.088</td>
-                    <td>2022%</td>
+                    <td>64.175</td>
+                    <td>1219%</td>
                     <td>0.814</td>
                     <td>128%</td>
                 </tr>
                 <tr>
                     <th>11</th>
                     <td><b>Aura</b></td>
-                    <td>130.168</td>
-                    <td>2248%</td>
+                    <td>72.196</td>
+                    <td>1372%</td>
                     <td>0.869</td>
                     <td>137%</td>
                 </tr>
                 <tr>
                     <th>12</th>
                     <td><b>Opulence IoC</b></td>
-                    <td>146.226</td>
-                    <td>2525%</td>
+                    <td>95.418</td>
+                    <td>1813%</td>
                     <td>0.751</td>
                     <td>118%</td>
                 </tr>
                 <tr>
                     <th>13</th>
                     <td><b>Laravel</b></td>
-                    <td>347.423</td>
-                    <td>6000%</td>
+                    <td>202.364</td>
+                    <td>3844%</td>
                     <td>0.729</td>
                     <td>115%</td>
                 </tr>
                 <tr>
                     <th>14</th>
                     <td><b>Auryn</b></td>
-                    <td>514.323</td>
-                    <td>8883%</td>
+                    <td>264.751</td>
+                    <td>5029%</td>
                     <td>0.814</td>
                     <td>128%</td>
                 </tr>
@@ -1984,131 +1984,131 @@ times. Neither autoloading time, nor startup time are included in the measuremen
             </thead>
             <tbody>                <tr>
                     <th>1</th>
-                    <td><b>Symfony</b></td>
-                    <td>0.084</td>
+                    <td><b>Zen</b></td>
+                    <td>0.054</td>
                     <td>100%</td>
-                    <td>0.53</td>
+                    <td>0.524</td>
                     <td>100%</td>
                 </tr>
                 <tr>
                     <th>2</th>
-                    <td><b>Zen</b></td>
-                    <td>0.101</td>
-                    <td>120%</td>
-                    <td>0.524</td>
-                    <td>99%</td>
+                    <td><b>Symfony</b></td>
+                    <td>0.055</td>
+                    <td>102%</td>
+                    <td>0.53</td>
+                    <td>101%</td>
                 </tr>
                 <tr>
                     <th>3</th>
-                    <td><b>Aura</b></td>
-                    <td>0.105</td>
-                    <td>125%</td>
-                    <td>0.579</td>
-                    <td>109%</td>
+                    <td><b>PHP-DI</b></td>
+                    <td>0.063</td>
+                    <td>117%</td>
+                    <td>0.53</td>
+                    <td>101%</td>
                 </tr>
                 <tr>
                     <th>4</th>
-                    <td><b>Dice</b></td>
-                    <td>0.115</td>
-                    <td>137%</td>
-                    <td>0.554</td>
-                    <td>104%</td>
-                </tr>
-                <tr>
-                    <th>5</th>
-                    <td><b>Yii2 Container</b></td>
-                    <td>0.124</td>
-                    <td>148%</td>
-                    <td>0.6</td>
-                    <td>113%</td>
-                </tr>
-                <tr>
-                    <th>6</th>
                     <td><b>Yaco</b></td>
-                    <td>0.126</td>
-                    <td>150%</td>
+                    <td>0.063</td>
+                    <td>117%</td>
                     <td>0.563</td>
-                    <td>106%</td>
-                </tr>
-                <tr>
-                    <th>7</th>
-                    <td><b>Zend ServiceManager</b></td>
-                    <td>0.129</td>
-                    <td>154%</td>
-                    <td>0.566</td>
                     <td>107%</td>
                 </tr>
                 <tr>
+                    <th>5</th>
+                    <td><b>Zend ServiceManager</b></td>
+                    <td>0.063</td>
+                    <td>117%</td>
+                    <td>0.566</td>
+                    <td>108%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><b>Aura</b></td>
+                    <td>0.067</td>
+                    <td>124%</td>
+                    <td>0.579</td>
+                    <td>111%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>Yii2 Container</b></td>
+                    <td>0.068</td>
+                    <td>126%</td>
+                    <td>0.6</td>
+                    <td>115%</td>
+                </tr>
+                <tr>
                     <th>8</th>
-                    <td><b>PHP-DI</b></td>
-                    <td>0.135</td>
-                    <td>161%</td>
-                    <td>0.53</td>
-                    <td>100%</td>
+                    <td><b>Dice</b></td>
+                    <td>0.076</td>
+                    <td>141%</td>
+                    <td>0.554</td>
+                    <td>106%</td>
                 </tr>
                 <tr>
                     <th>9</th>
                     <td><b>Cobalt</b></td>
-                    <td>0.17</td>
-                    <td>202%</td>
+                    <td>0.098</td>
+                    <td>181%</td>
                     <td>0.551</td>
-                    <td>104%</td>
+                    <td>105%</td>
                 </tr>
                 <tr>
                     <th>10</th>
                     <td><b>Pimple</b></td>
-                    <td>0.178</td>
-                    <td>212%</td>
+                    <td>0.118</td>
+                    <td>219%</td>
                     <td>0.571</td>
-                    <td>108%</td>
+                    <td>109%</td>
                 </tr>
                 <tr>
                     <th>11</th>
                     <td><b>Joomla</b></td>
-                    <td>0.375</td>
-                    <td>446%</td>
+                    <td>0.147</td>
+                    <td>272%</td>
                     <td>0.599</td>
-                    <td>113%</td>
+                    <td>114%</td>
                 </tr>
                 <tr>
                     <th>12</th>
-                    <td><b>Disco</b></td>
-                    <td>0.379</td>
-                    <td>451%</td>
-                    <td>0.634</td>
-                    <td>120%</td>
+                    <td><b>Opulence IoC</b></td>
+                    <td>0.18</td>
+                    <td>333%</td>
+                    <td>0.553</td>
+                    <td>106%</td>
                 </tr>
                 <tr>
                     <th>13</th>
-                    <td><b>Opulence IoC</b></td>
-                    <td>0.462</td>
-                    <td>550%</td>
-                    <td>0.553</td>
-                    <td>104%</td>
+                    <td><b>Disco</b></td>
+                    <td>0.223</td>
+                    <td>413%</td>
+                    <td>0.634</td>
+                    <td>121%</td>
                 </tr>
                 <tr>
                     <th>14</th>
                     <td><b>Laravel</b></td>
-                    <td>0.606</td>
-                    <td>721%</td>
+                    <td>0.228</td>
+                    <td>422%</td>
                     <td>0.544</td>
-                    <td>103%</td>
+                    <td>104%</td>
                 </tr>
                 <tr>
                     <th>15</th>
                     <td><b>PHPixie DI</b></td>
-                    <td>0.723</td>
-                    <td>861%</td>
+                    <td>0.253</td>
+                    <td>469%</td>
                     <td>0.564</td>
-                    <td>106%</td>
+                    <td>108%</td>
                 </tr>
                 <tr>
                     <th>16</th>
                     <td><b>Auryn</b></td>
-                    <td>0.904</td>
-                    <td>1076%</td>
+                    <td>0.408</td>
+                    <td>756%</td>
                     <td>0.56</td>
-                    <td>106%</td>
+                    <td>107%</td>
                 </tr>
             </tbody>
         </table>
@@ -2128,131 +2128,131 @@ times. Neither autoloading time, nor startup time are included in the measuremen
             </thead>
             <tbody>                <tr>
                     <th>1</th>
-                    <td><b>Symfony</b></td>
-                    <td>0.87</td>
+                    <td><b>Zen</b></td>
+                    <td>0.534</td>
                     <td>100%</td>
-                    <td>0.53</td>
+                    <td>0.524</td>
                     <td>100%</td>
                 </tr>
                 <tr>
                     <th>2</th>
-                    <td><b>Zen</b></td>
-                    <td>0.923</td>
-                    <td>106%</td>
-                    <td>0.524</td>
-                    <td>99%</td>
+                    <td><b>Symfony</b></td>
+                    <td>0.543</td>
+                    <td>102%</td>
+                    <td>0.53</td>
+                    <td>101%</td>
                 </tr>
                 <tr>
                     <th>3</th>
                     <td><b>PHP-DI</b></td>
-                    <td>1.044</td>
-                    <td>120%</td>
+                    <td>0.623</td>
+                    <td>117%</td>
                     <td>0.53</td>
-                    <td>100%</td>
+                    <td>101%</td>
                 </tr>
                 <tr>
                     <th>4</th>
                     <td><b>Yaco</b></td>
-                    <td>1.1</td>
-                    <td>126%</td>
+                    <td>0.624</td>
+                    <td>117%</td>
                     <td>0.563</td>
-                    <td>106%</td>
-                </tr>
-                <tr>
-                    <th>5</th>
-                    <td><b>Aura</b></td>
-                    <td>1.167</td>
-                    <td>134%</td>
-                    <td>0.579</td>
-                    <td>109%</td>
-                </tr>
-                <tr>
-                    <th>6</th>
-                    <td><b>Yii2 Container</b></td>
-                    <td>1.17</td>
-                    <td>134%</td>
-                    <td>0.6</td>
-                    <td>113%</td>
-                </tr>
-                <tr>
-                    <th>7</th>
-                    <td><b>Zend ServiceManager</b></td>
-                    <td>1.218</td>
-                    <td>140%</td>
-                    <td>0.566</td>
                     <td>107%</td>
                 </tr>
                 <tr>
-                    <th>8</th>
-                    <td><b>Pimple</b></td>
-                    <td>1.781</td>
-                    <td>205%</td>
-                    <td>0.571</td>
+                    <th>5</th>
+                    <td><b>Zend ServiceManager</b></td>
+                    <td>0.627</td>
+                    <td>117%</td>
+                    <td>0.566</td>
                     <td>108%</td>
                 </tr>
                 <tr>
-                    <th>9</th>
+                    <th>6</th>
+                    <td><b>Aura</b></td>
+                    <td>0.66</td>
+                    <td>124%</td>
+                    <td>0.579</td>
+                    <td>111%</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><b>Yii2 Container</b></td>
+                    <td>0.672</td>
+                    <td>126%</td>
+                    <td>0.6</td>
+                    <td>115%</td>
+                </tr>
+                <tr>
+                    <th>8</th>
                     <td><b>Dice</b></td>
-                    <td>1.894</td>
-                    <td>218%</td>
+                    <td>0.756</td>
+                    <td>142%</td>
                     <td>0.554</td>
-                    <td>104%</td>
+                    <td>106%</td>
+                </tr>
+                <tr>
+                    <th>9</th>
+                    <td><b>Cobalt</b></td>
+                    <td>0.97</td>
+                    <td>182%</td>
+                    <td>0.551</td>
+                    <td>105%</td>
                 </tr>
                 <tr>
                     <th>10</th>
-                    <td><b>Cobalt</b></td>
-                    <td>2.067</td>
-                    <td>238%</td>
-                    <td>0.551</td>
-                    <td>104%</td>
+                    <td><b>Pimple</b></td>
+                    <td>1.173</td>
+                    <td>220%</td>
+                    <td>0.571</td>
+                    <td>109%</td>
                 </tr>
                 <tr>
                     <th>11</th>
                     <td><b>Joomla</b></td>
-                    <td>2.438</td>
-                    <td>280%</td>
+                    <td>1.463</td>
+                    <td>274%</td>
                     <td>0.599</td>
-                    <td>113%</td>
+                    <td>114%</td>
                 </tr>
                 <tr>
                     <th>12</th>
-                    <td><b>Disco</b></td>
-                    <td>4.053</td>
-                    <td>466%</td>
-                    <td>0.634</td>
-                    <td>120%</td>
+                    <td><b>Opulence IoC</b></td>
+                    <td>1.803</td>
+                    <td>338%</td>
+                    <td>0.553</td>
+                    <td>106%</td>
                 </tr>
                 <tr>
                     <th>13</th>
-                    <td><b>Opulence IoC</b></td>
-                    <td>4.152</td>
-                    <td>477%</td>
-                    <td>0.553</td>
-                    <td>104%</td>
+                    <td><b>Disco</b></td>
+                    <td>2.233</td>
+                    <td>418%</td>
+                    <td>0.634</td>
+                    <td>121%</td>
                 </tr>
                 <tr>
                     <th>14</th>
                     <td><b>Laravel</b></td>
-                    <td>5.393</td>
-                    <td>620%</td>
+                    <td>2.279</td>
+                    <td>427%</td>
                     <td>0.544</td>
-                    <td>103%</td>
+                    <td>104%</td>
                 </tr>
                 <tr>
                     <th>15</th>
                     <td><b>PHPixie DI</b></td>
-                    <td>6.587</td>
-                    <td>757%</td>
+                    <td>2.531</td>
+                    <td>474%</td>
                     <td>0.564</td>
-                    <td>106%</td>
+                    <td>108%</td>
                 </tr>
                 <tr>
                     <th>16</th>
                     <td><b>Auryn</b></td>
-                    <td>10.908</td>
-                    <td>1254%</td>
+                    <td>4.099</td>
+                    <td>768%</td>
                     <td>0.56</td>
-                    <td>106%</td>
+                    <td>107%</td>
                 </tr>
             </tbody>
         </table>
@@ -2273,7 +2273,7 @@ times. Neither autoloading time, nor startup time are included in the measuremen
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Zen</b></td>
-                    <td>7.725</td>
+                    <td>5.352</td>
                     <td>100%</td>
                     <td>0.524</td>
                     <td>100%</td>
@@ -2281,120 +2281,120 @@ times. Neither autoloading time, nor startup time are included in the measuremen
                 <tr>
                     <th>2</th>
                     <td><b>Symfony</b></td>
-                    <td>8.034</td>
-                    <td>104%</td>
+                    <td>5.404</td>
+                    <td>101%</td>
                     <td>0.53</td>
                     <td>101%</td>
                 </tr>
                 <tr>
                     <th>3</th>
-                    <td><b>Yaco</b></td>
-                    <td>9.999</td>
-                    <td>129%</td>
-                    <td>0.563</td>
-                    <td>107%</td>
-                </tr>
-                <tr>
-                    <th>4</th>
-                    <td><b>Zend ServiceManager</b></td>
-                    <td>10.2</td>
-                    <td>132%</td>
-                    <td>0.566</td>
-                    <td>108%</td>
-                </tr>
-                <tr>
-                    <th>5</th>
-                    <td><b>Yii2 Container</b></td>
-                    <td>10.437</td>
-                    <td>135%</td>
-                    <td>0.6</td>
-                    <td>115%</td>
-                </tr>
-                <tr>
-                    <th>6</th>
                     <td><b>PHP-DI</b></td>
-                    <td>10.732</td>
-                    <td>139%</td>
+                    <td>6.251</td>
+                    <td>117%</td>
                     <td>0.53</td>
                     <td>101%</td>
                 </tr>
                 <tr>
-                    <th>7</th>
+                    <th>4</th>
+                    <td><b>Yaco</b></td>
+                    <td>6.262</td>
+                    <td>117%</td>
+                    <td>0.563</td>
+                    <td>107%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>Zend ServiceManager</b></td>
+                    <td>6.29</td>
+                    <td>118%</td>
+                    <td>0.566</td>
+                    <td>108%</td>
+                </tr>
+                <tr>
+                    <th>6</th>
                     <td><b>Aura</b></td>
-                    <td>10.781</td>
-                    <td>140%</td>
+                    <td>6.616</td>
+                    <td>124%</td>
                     <td>0.579</td>
                     <td>111%</td>
                 </tr>
                 <tr>
+                    <th>7</th>
+                    <td><b>Yii2 Container</b></td>
+                    <td>6.747</td>
+                    <td>126%</td>
+                    <td>0.6</td>
+                    <td>115%</td>
+                </tr>
+                <tr>
                     <th>8</th>
                     <td><b>Dice</b></td>
-                    <td>11.93</td>
-                    <td>154%</td>
+                    <td>7.582</td>
+                    <td>142%</td>
                     <td>0.554</td>
                     <td>106%</td>
                 </tr>
                 <tr>
                     <th>9</th>
-                    <td><b>Pimple</b></td>
-                    <td>17.159</td>
-                    <td>222%</td>
-                    <td>0.571</td>
-                    <td>109%</td>
-                </tr>
-                <tr>
-                    <th>10</th>
                     <td><b>Cobalt</b></td>
-                    <td>17.411</td>
-                    <td>225%</td>
+                    <td>9.724</td>
+                    <td>182%</td>
                     <td>0.551</td>
                     <td>105%</td>
                 </tr>
                 <tr>
+                    <th>10</th>
+                    <td><b>Pimple</b></td>
+                    <td>11.759</td>
+                    <td>220%</td>
+                    <td>0.571</td>
+                    <td>109%</td>
+                </tr>
+                <tr>
                     <th>11</th>
                     <td><b>Joomla</b></td>
-                    <td>24.335</td>
-                    <td>315%</td>
+                    <td>14.689</td>
+                    <td>274%</td>
                     <td>0.599</td>
                     <td>114%</td>
                 </tr>
                 <tr>
                     <th>12</th>
-                    <td><b>Disco</b></td>
-                    <td>38.348</td>
-                    <td>496%</td>
-                    <td>0.634</td>
-                    <td>121%</td>
-                </tr>
-                <tr>
-                    <th>13</th>
                     <td><b>Opulence IoC</b></td>
-                    <td>39.783</td>
-                    <td>515%</td>
+                    <td>17.967</td>
+                    <td>336%</td>
                     <td>0.553</td>
                     <td>106%</td>
                 </tr>
                 <tr>
+                    <th>13</th>
+                    <td><b>Disco</b></td>
+                    <td>22.158</td>
+                    <td>414%</td>
+                    <td>0.634</td>
+                    <td>121%</td>
+                </tr>
+                <tr>
                     <th>14</th>
                     <td><b>Laravel</b></td>
-                    <td>53.637</td>
-                    <td>694%</td>
+                    <td>22.772</td>
+                    <td>425%</td>
                     <td>0.544</td>
                     <td>104%</td>
                 </tr>
                 <tr>
                     <th>15</th>
                     <td><b>PHPixie DI</b></td>
-                    <td>61.616</td>
-                    <td>798%</td>
+                    <td>25.265</td>
+                    <td>472%</td>
                     <td>0.564</td>
                     <td>108%</td>
                 </tr>
                 <tr>
                     <th>16</th>
                     <td><b>Auryn</b></td>
-                    <td>100.232</td>
-                    <td>1298%</td>
+                    <td>40.863</td>
+                    <td>764%</td>
                     <td>0.56</td>
                     <td>107%</td>
                 </tr>
@@ -2419,7 +2419,7 @@ times. Neither autoloading time, nor startup time are included in the measuremen
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Zen</b></td>
-                    <td>0.08</td>
+                    <td>0.054</td>
                     <td>100%</td>
                     <td>0.621</td>
                     <td>100%</td>
@@ -2427,120 +2427,120 @@ times. Neither autoloading time, nor startup time are included in the measuremen
                 <tr>
                     <th>2</th>
                     <td><b>Symfony</b></td>
-                    <td>0.082</td>
-                    <td>103%</td>
+                    <td>0.055</td>
+                    <td>102%</td>
                     <td>0.64</td>
                     <td>103%</td>
                 </tr>
                 <tr>
                     <th>3</th>
-                    <td><b>Yaco</b></td>
-                    <td>0.102</td>
-                    <td>128%</td>
-                    <td>0.67</td>
-                    <td>108%</td>
-                </tr>
-                <tr>
-                    <th>4</th>
                     <td><b>PHP-DI</b></td>
-                    <td>0.105</td>
-                    <td>131%</td>
+                    <td>0.063</td>
+                    <td>117%</td>
                     <td>0.648</td>
                     <td>104%</td>
                 </tr>
                 <tr>
+                    <th>4</th>
+                    <td><b>Yaco</b></td>
+                    <td>0.063</td>
+                    <td>117%</td>
+                    <td>0.67</td>
+                    <td>108%</td>
+                </tr>
+                <tr>
                     <th>5</th>
                     <td><b>Zend ServiceManager</b></td>
-                    <td>0.105</td>
-                    <td>131%</td>
+                    <td>0.063</td>
+                    <td>117%</td>
                     <td>0.681</td>
                     <td>110%</td>
                 </tr>
                 <tr>
                     <th>6</th>
                     <td><b>Aura</b></td>
-                    <td>0.106</td>
-                    <td>133%</td>
+                    <td>0.065</td>
+                    <td>120%</td>
                     <td>0.894</td>
                     <td>144%</td>
                 </tr>
                 <tr>
                     <th>7</th>
                     <td><b>Yii2 Container</b></td>
-                    <td>0.108</td>
-                    <td>135%</td>
+                    <td>0.068</td>
+                    <td>126%</td>
                     <td>0.821</td>
                     <td>132%</td>
                 </tr>
                 <tr>
                     <th>8</th>
                     <td><b>Dice</b></td>
-                    <td>0.115</td>
-                    <td>144%</td>
+                    <td>0.077</td>
+                    <td>143%</td>
                     <td>0.943</td>
                     <td>152%</td>
                 </tr>
                 <tr>
                     <th>9</th>
                     <td><b>Cobalt</b></td>
-                    <td>0.169</td>
-                    <td>211%</td>
+                    <td>0.098</td>
+                    <td>181%</td>
                     <td>0.862</td>
                     <td>139%</td>
                 </tr>
                 <tr>
                     <th>10</th>
                     <td><b>Pimple</b></td>
-                    <td>0.171</td>
-                    <td>214%</td>
+                    <td>0.118</td>
+                    <td>219%</td>
                     <td>0.685</td>
                     <td>110%</td>
                 </tr>
                 <tr>
                     <th>11</th>
                     <td><b>Joomla</b></td>
-                    <td>0.245</td>
-                    <td>306%</td>
+                    <td>0.147</td>
+                    <td>272%</td>
                     <td>0.706</td>
                     <td>114%</td>
                 </tr>
                 <tr>
                     <th>12</th>
-                    <td><b>Disco</b></td>
-                    <td>0.375</td>
-                    <td>469%</td>
-                    <td>0.766</td>
-                    <td>123%</td>
-                </tr>
-                <tr>
-                    <th>13</th>
                     <td><b>Opulence IoC</b></td>
-                    <td>0.383</td>
-                    <td>479%</td>
+                    <td>0.179</td>
+                    <td>331%</td>
                     <td>0.753</td>
                     <td>121%</td>
                 </tr>
                 <tr>
+                    <th>13</th>
+                    <td><b>Disco</b></td>
+                    <td>0.224</td>
+                    <td>415%</td>
+                    <td>0.766</td>
+                    <td>123%</td>
+                </tr>
+                <tr>
                     <th>14</th>
                     <td><b>Laravel</b></td>
-                    <td>0.521</td>
-                    <td>651%</td>
+                    <td>0.228</td>
+                    <td>422%</td>
                     <td>0.718</td>
                     <td>116%</td>
                 </tr>
                 <tr>
                     <th>15</th>
                     <td><b>PHPixie DI</b></td>
-                    <td>0.598</td>
-                    <td>748%</td>
+                    <td>0.255</td>
+                    <td>472%</td>
                     <td>0.663</td>
                     <td>107%</td>
                 </tr>
                 <tr>
                     <th>16</th>
                     <td><b>Auryn</b></td>
-                    <td>0.895</td>
-                    <td>1119%</td>
+                    <td>0.412</td>
+                    <td>763%</td>
                     <td>0.828</td>
                     <td>133%</td>
                 </tr>
@@ -2563,7 +2563,7 @@ times. Neither autoloading time, nor startup time are included in the measuremen
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Zen</b></td>
-                    <td>0.786</td>
+                    <td>0.534</td>
                     <td>100%</td>
                     <td>0.621</td>
                     <td>100%</td>
@@ -2571,120 +2571,120 @@ times. Neither autoloading time, nor startup time are included in the measuremen
                 <tr>
                     <th>2</th>
                     <td><b>Symfony</b></td>
-                    <td>0.811</td>
-                    <td>103%</td>
+                    <td>0.541</td>
+                    <td>101%</td>
                     <td>0.64</td>
                     <td>103%</td>
                 </tr>
                 <tr>
                     <th>3</th>
-                    <td><b>Yaco</b></td>
-                    <td>1.012</td>
-                    <td>129%</td>
-                    <td>0.67</td>
-                    <td>108%</td>
-                </tr>
-                <tr>
-                    <th>4</th>
                     <td><b>PHP-DI</b></td>
-                    <td>1.031</td>
-                    <td>131%</td>
+                    <td>0.623</td>
+                    <td>117%</td>
                     <td>0.648</td>
                     <td>104%</td>
                 </tr>
                 <tr>
+                    <th>4</th>
+                    <td><b>Yaco</b></td>
+                    <td>0.624</td>
+                    <td>117%</td>
+                    <td>0.67</td>
+                    <td>108%</td>
+                </tr>
+                <tr>
                     <th>5</th>
                     <td><b>Zend ServiceManager</b></td>
-                    <td>1.038</td>
-                    <td>132%</td>
+                    <td>0.627</td>
+                    <td>117%</td>
                     <td>0.681</td>
                     <td>110%</td>
                 </tr>
                 <tr>
                     <th>6</th>
                     <td><b>Aura</b></td>
-                    <td>1.05</td>
-                    <td>134%</td>
+                    <td>0.643</td>
+                    <td>120%</td>
                     <td>0.894</td>
                     <td>144%</td>
                 </tr>
                 <tr>
                     <th>7</th>
                     <td><b>Yii2 Container</b></td>
-                    <td>1.074</td>
-                    <td>137%</td>
+                    <td>0.673</td>
+                    <td>126%</td>
                     <td>0.821</td>
                     <td>132%</td>
                 </tr>
                 <tr>
                     <th>8</th>
                     <td><b>Dice</b></td>
-                    <td>1.143</td>
-                    <td>145%</td>
+                    <td>0.757</td>
+                    <td>142%</td>
                     <td>0.943</td>
                     <td>152%</td>
                 </tr>
                 <tr>
                     <th>9</th>
                     <td><b>Cobalt</b></td>
-                    <td>1.685</td>
-                    <td>214%</td>
+                    <td>0.972</td>
+                    <td>182%</td>
                     <td>0.862</td>
                     <td>139%</td>
                 </tr>
                 <tr>
                     <th>10</th>
                     <td><b>Pimple</b></td>
-                    <td>1.7</td>
-                    <td>216%</td>
+                    <td>1.171</td>
+                    <td>219%</td>
                     <td>0.685</td>
                     <td>110%</td>
                 </tr>
                 <tr>
                     <th>11</th>
                     <td><b>Joomla</b></td>
-                    <td>2.436</td>
-                    <td>310%</td>
+                    <td>1.476</td>
+                    <td>276%</td>
                     <td>0.706</td>
                     <td>114%</td>
                 </tr>
                 <tr>
                     <th>12</th>
-                    <td><b>Disco</b></td>
-                    <td>3.705</td>
-                    <td>471%</td>
-                    <td>0.766</td>
-                    <td>123%</td>
-                </tr>
-                <tr>
-                    <th>13</th>
                     <td><b>Opulence IoC</b></td>
-                    <td>3.851</td>
-                    <td>490%</td>
+                    <td>1.787</td>
+                    <td>335%</td>
                     <td>0.753</td>
                     <td>121%</td>
                 </tr>
                 <tr>
+                    <th>13</th>
+                    <td><b>Disco</b></td>
+                    <td>2.24</td>
+                    <td>419%</td>
+                    <td>0.766</td>
+                    <td>123%</td>
+                </tr>
+                <tr>
                     <th>14</th>
                     <td><b>Laravel</b></td>
-                    <td>5.177</td>
-                    <td>659%</td>
+                    <td>2.288</td>
+                    <td>428%</td>
                     <td>0.718</td>
                     <td>116%</td>
                 </tr>
                 <tr>
                     <th>15</th>
                     <td><b>PHPixie DI</b></td>
-                    <td>5.899</td>
-                    <td>751%</td>
+                    <td>2.553</td>
+                    <td>478%</td>
                     <td>0.663</td>
                     <td>107%</td>
                 </tr>
                 <tr>
                     <th>16</th>
                     <td><b>Auryn</b></td>
-                    <td>9.029</td>
-                    <td>1149%</td>
+                    <td>4.118</td>
+                    <td>771%</td>
                     <td>0.828</td>
                     <td>133%</td>
                 </tr>
@@ -2707,7 +2707,7 @@ times. Neither autoloading time, nor startup time are included in the measuremen
             <tbody>                <tr>
                     <th>1</th>
                     <td><b>Zen</b></td>
-                    <td>7.73</td>
+                    <td>5.352</td>
                     <td>100%</td>
                     <td>0.621</td>
                     <td>100%</td>
@@ -2715,120 +2715,120 @@ times. Neither autoloading time, nor startup time are included in the measuremen
                 <tr>
                     <th>2</th>
                     <td><b>Symfony</b></td>
-                    <td>8.223</td>
-                    <td>106%</td>
+                    <td>5.408</td>
+                    <td>101%</td>
                     <td>0.64</td>
                     <td>103%</td>
                 </tr>
                 <tr>
                     <th>3</th>
-                    <td><b>Yaco</b></td>
-                    <td>9.871</td>
-                    <td>128%</td>
-                    <td>0.67</td>
-                    <td>108%</td>
-                </tr>
-                <tr>
-                    <th>4</th>
-                    <td><b>Zend ServiceManager</b></td>
-                    <td>10.098</td>
-                    <td>131%</td>
-                    <td>0.681</td>
-                    <td>110%</td>
-                </tr>
-                <tr>
-                    <th>5</th>
                     <td><b>PHP-DI</b></td>
-                    <td>10.174</td>
-                    <td>132%</td>
+                    <td>6.251</td>
+                    <td>117%</td>
                     <td>0.648</td>
                     <td>104%</td>
                 </tr>
                 <tr>
+                    <th>4</th>
+                    <td><b>Yaco</b></td>
+                    <td>6.267</td>
+                    <td>117%</td>
+                    <td>0.67</td>
+                    <td>108%</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><b>Zend ServiceManager</b></td>
+                    <td>6.293</td>
+                    <td>118%</td>
+                    <td>0.681</td>
+                    <td>110%</td>
+                </tr>
+                <tr>
                     <th>6</th>
                     <td><b>Aura</b></td>
-                    <td>10.279</td>
-                    <td>133%</td>
+                    <td>6.45</td>
+                    <td>121%</td>
                     <td>0.894</td>
                     <td>144%</td>
                 </tr>
                 <tr>
                     <th>7</th>
                     <td><b>Yii2 Container</b></td>
-                    <td>10.499</td>
-                    <td>136%</td>
+                    <td>6.751</td>
+                    <td>126%</td>
                     <td>0.821</td>
                     <td>132%</td>
                 </tr>
                 <tr>
                     <th>8</th>
                     <td><b>Dice</b></td>
-                    <td>11.267</td>
-                    <td>146%</td>
+                    <td>7.585</td>
+                    <td>142%</td>
                     <td>0.943</td>
                     <td>152%</td>
                 </tr>
                 <tr>
                     <th>9</th>
                     <td><b>Cobalt</b></td>
-                    <td>16.531</td>
-                    <td>214%</td>
+                    <td>9.726</td>
+                    <td>182%</td>
                     <td>0.862</td>
                     <td>139%</td>
                 </tr>
                 <tr>
                     <th>10</th>
                     <td><b>Pimple</b></td>
-                    <td>16.696</td>
-                    <td>216%</td>
+                    <td>11.757</td>
+                    <td>220%</td>
                     <td>0.685</td>
                     <td>110%</td>
                 </tr>
                 <tr>
                     <th>11</th>
                     <td><b>Joomla</b></td>
-                    <td>23.566</td>
-                    <td>305%</td>
+                    <td>14.704</td>
+                    <td>275%</td>
                     <td>0.706</td>
                     <td>114%</td>
                 </tr>
                 <tr>
                     <th>12</th>
-                    <td><b>Disco</b></td>
-                    <td>36.546</td>
-                    <td>473%</td>
-                    <td>0.766</td>
-                    <td>123%</td>
-                </tr>
-                <tr>
-                    <th>13</th>
                     <td><b>Opulence IoC</b></td>
-                    <td>36.994</td>
-                    <td>479%</td>
+                    <td>17.799</td>
+                    <td>333%</td>
                     <td>0.753</td>
                     <td>121%</td>
                 </tr>
                 <tr>
+                    <th>13</th>
+                    <td><b>Disco</b></td>
+                    <td>22.29</td>
+                    <td>416%</td>
+                    <td>0.766</td>
+                    <td>123%</td>
+                </tr>
+                <tr>
                     <th>14</th>
                     <td><b>Laravel</b></td>
-                    <td>50.045</td>
-                    <td>647%</td>
+                    <td>22.773</td>
+                    <td>426%</td>
                     <td>0.718</td>
                     <td>116%</td>
                 </tr>
                 <tr>
                     <th>15</th>
                     <td><b>PHPixie DI</b></td>
-                    <td>57.602</td>
-                    <td>745%</td>
+                    <td>25.427</td>
+                    <td>475%</td>
                     <td>0.663</td>
                     <td>107%</td>
                 </tr>
                 <tr>
                     <th>16</th>
                     <td><b>Auryn</b></td>
-                    <td>91.495</td>
-                    <td>1184%</td>
+                    <td>41.143</td>
+                    <td>769%</td>
                     <td>0.828</td>
                     <td>133%</td>
                 </tr>
