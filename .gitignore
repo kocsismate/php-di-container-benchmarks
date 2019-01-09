@@ -1,4 +1,11 @@
-.env
 vendor/
-.idea/
-.DS_Store
+.terraform/
+
+.terraform*
+.env
+*.pem
+*.tfplan
+*.tfstate
+*.tfstate.backup
+*.tfvars
+archive.zip

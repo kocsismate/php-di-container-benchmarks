@@ -41,31 +41,55 @@ $ composer require kocsismate/di-container-benchmarks:dev-master
 
 ### Usage with Docker
 
-First of all, a fresh version of [Docker Compose](https://www.docker.com/products/docker-compose) and at least Docker
-17.06 CE has to be installed on your machine.
+As a prerequisite, [Docker Compose](https://www.docker.com/products/docker-compose) and at least Docker
+17.06 CE has to be installed on your machine in order to use this benchmark method.
 
-Then copy the ".env.dist" file to ".env" and feel free to override the values in it. Now, you can run
+Copy the `.env.dist` file to `.env` and feel free to override the values in it. Now, you can run
 
 ```bash
 ./benchmark.sh docker
-```
-
-on Unix-based systems, while Windows users should use
-
-```bash
-.\benchmark.bat docker
 ```
 
 to execute the measurements.
 
 The HTML output will be generated in the "var" directory.
 
-### Usage without Docker
+### Usage on AWS EC2
 
-If using Docker is not an option for you then you have to take several steps before running the benchmark:
+As a prerequisite, [Terraform](https://www.terraform.io) and `git` has to be installed on your machine
+in order to use this benchmark method.
+
+First, create the necessary config file by copying the `aws.tfvars.dist` to `aws.tfvars` in the
+`build/infrastructure/config/aws.tfvars.dist` directory:
+
+```bash
+cp build/infrastructure/config/aws.tfvars.dist build/infrastructure/config/aws.tfvars
+```
+
+Then, override the values in it:
+
+- `ssh_key_name`: the name of your key pair added to EC2
+- `ssh_private_key`: the file name of your private key
+- `region`: it is "eu-central-1" by default, but you should choose the closest one to your area
+- `instance_type`: it is "C5.large" by default (this instance type is out of the scope of the free tier!)
+
+Finally, you have to copy your private key in the "build/infrastructure/config" directory with a name which matches
+the `ssh_private_key` setting.
+
+Now, you are ready to go:
+
+```bash
+./benchmark.sh aws
+```
+
+The HTML output will be generated in the "var" directory.
+
+### Usage on your host machine
+
+If the above possibilities aren't available to you then you have to take several steps before running the benchmark:
 
 - Install a web server and configure it to be able to serve "public/index.php"
-- Install PHP 7.2 at least with OPcache enabled
+- Install PHP 7.3 at least with OPcache enabled
 - Install Composer
 - Set the `BENCHMARK_URL` environment variable to the URL where "public/index.php" is available. For instance:
 
@@ -84,8 +108,6 @@ If you don't want to specify the benchmark URL as an environment variable then y
 ```bash
 ./benchmark.sh host http://localhost/index.php
 ```
-
-Windows users can use the `benchmark.bat` instead.
 
 ### Usage from the browser
 

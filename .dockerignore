@@ -1,0 +1,10 @@
+build/infrastructure/
+bin/
+var/
+
+.*
+benchmark.*
+*.md
+*.yml
+Dockerfile
+LICENSE

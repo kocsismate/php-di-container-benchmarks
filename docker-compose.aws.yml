@@ -1,19 +1,6 @@
 version: '2'
 
 services:
-  benchmark-cli:
-    image: php:7.3.0-cli-alpine3.8
-    container_name: benchmark-cli
-    networks:
-      - benchmark
-    volumes:
-      - .:/code:cached
-    env_file:
-      - .env
-    command: /code/build/container/cli/run.sh
-    depends_on:
-      - benchmark-nginx
-
   benchmark-nginx:
     image: nginx:1.15-alpine
     container_name: benchmark-nginx
@@ -22,7 +9,7 @@ services:
     volumes:
       - .:/code:cached
     ports:
-      - "8090:80"
+      - "80:80"
     env_file:
       - .env
     command: /code/build/container/nginx/run.sh

@@ -1,0 +1,4 @@
+ssh_key_name = "ec2"
+ssh_private_key = "ec2.pem"
+region = "eu-central-1"
+instance_type = "c5.large"

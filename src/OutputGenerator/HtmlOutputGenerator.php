@@ -183,10 +183,10 @@ HERE;
             </p>
 
             <p>
-                The benchmark is run on a 15-inch MacBook Pro from 2017 (CPU: Intel i7 2,8 GHz; RAM: 16 GB; OS: Mojave),
-                using PHP 7.3 in Docker, OPcache enabled and autoloader optimized (using authoritative mode). During the
-                measurements, a PHP-FPM script served by nginx is executed each time. This is needed because a production
-                environment is simulated much better this way than in the CLI.
+                The benchmark is run on AWS EC2, using a C5.large instance. The operating system on the host is Ubuntu 18.04.
+                PHP 7.3 is running in a Docker container, with OPcache enabled and autoloader optimized (using authoritative
+                mode). During the measurements, a PHP-FPM script served by nginx is executed each time. This is needed
+                because a production environment is simulated much better this way than in the CLI.
             </p>
 
             <p>
