@@ -7,6 +7,12 @@ use DiContainerBenchmarks\Benchmark\BenchmarkResult;
 use DiContainerBenchmarks\Container\ContainerInterface;
 use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
 use PackageVersions\Versions;
+use function date;
+use function file_put_contents;
+use function round;
+use function sprintf;
+use function strpos;
+use function substr;
 
 class HtmlOutputGenerator implements OutputGeneratorInterface
 {
@@ -202,7 +208,7 @@ HERE;
         <h2 id="results">Results</h2>
 HERE;
         foreach ($testSuites as $i => $testSuite) {
-            $testSuiteNumber = $i+1;
+            $testSuiteNumber = $i + 1;
             $testSuiteTitle = $testSuite->getTitle();
             $testSuiteDescription = $testSuite->getDescription();
 
@@ -263,7 +269,7 @@ HERE;
                 </tr>
 
 HERE;
-                   $rank++;
+                    $rank++;
                 }
                 $html .= <<<HERE
             </tbody>

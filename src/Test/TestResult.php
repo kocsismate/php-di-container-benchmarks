@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Test;
 
+use function json_decode;
+use function json_encode;
+
 class TestResult
 {
     /**

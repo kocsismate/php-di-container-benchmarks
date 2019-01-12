@@ -3,6 +3,10 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Test;
 
+use function class_exists;
+use function hrtime;
+use function memory_get_peak_usage;
+
 class TestRunner
 {
     public function runTest(

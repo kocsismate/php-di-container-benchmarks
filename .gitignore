@@ -3,6 +3,7 @@ vendor/
 
 .terraform*
 .env
+.phpcs-cache
 *.pem
 *.tfplan
 *.tfstate

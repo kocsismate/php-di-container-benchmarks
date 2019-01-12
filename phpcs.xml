@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<ruleset name="php-di-container-benchmarks" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
+<ruleset name="Benchmarks" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
     <description>PHP Coding Standards for PHP DI Container Benchmarks</description>
 
     <arg name="basepath" value="."/>
     <arg name="cache" value=".phpcs-cache"/>
-    <arg name="colors" />
+    <arg name="colors"/>
     <arg name="encoding" value="UTF-8"/>
     <arg name="extensions" value="php"/>
     <arg name="parallel" value="80"/>
@@ -16,4 +16,6 @@
 
     <file>src/</file>
     <exclude-pattern>src/Container*</exclude-pattern>
+
+    <rule ref="WoohooLabs"/>
 </ruleset>

@@ -3,6 +3,13 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Benchmark;
 
+use const CURLOPT_RETURNTRANSFER;
+use const CURLOPT_URL;
+use function curl_close;
+use function curl_exec;
+use function curl_init;
+use function curl_setopt;
+
 class WebBenchmarkContext implements BenchmarkContextInterface
 {
     /**
