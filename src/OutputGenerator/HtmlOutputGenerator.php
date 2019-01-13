@@ -187,20 +187,21 @@ HERE;
                 Furthermore, all Test Cases are performed 30 times (this is referred to as "runs") in order to improve
                 the accuracy of measurements. The median of these results are displayed in the final results.
             </p>
+        </section>    
 
+        <hr>
+        <section>
+            <h2 id="method">Setup</h2>
             <p>
                 The benchmark is run on AWS EC2, using a C5.large instance. The operating system on the host is Ubuntu 18.04.
-                PHP 7.3 is running in a Docker container, with OPcache enabled and autoloader optimized (using authoritative
+                PHP 7.3 is running in a Docker container with OPcache enabled and autoloader optimized (using authoritative
                 mode). During the measurements, a PHP-FPM script served by nginx is executed each time. This is needed
                 because a production environment is simulated much better this way than in the CLI.
             </p>
 
             <p>
                 The examined DI Containers are configured for production usage as if it was probably done in case of a
-                big project. That's why I took advantage of autowiring capabilities when possible. Unfortunately, this
-                discriminates some participants giving them a big handicap, but I wanted to measure container
-                performance with a configuration as advertised or recommended by the documentation and most probable
-                to be used in the real world.
+                big project. That's why I took advantage of autowiring capabilities when possible.
             </p>
         </section>
 
