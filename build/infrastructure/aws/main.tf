@@ -86,13 +86,13 @@ resource "null_resource" "provisioner" {
 
       cd ${var.project_root}
       BRANCH=`git rev-parse --abbrev-ref HEAD`
-      git archive --format zip -o var/archive.zip $BRANCH
+      git archive --format tar -o var/archive.tar $BRANCH
 EOF
   }
 
   provisioner "file" {
-    source      = "${var.project_root}/var/archive.zip"
-    destination = "/tmp/archive.zip"
+    source      = "${var.project_root}/var/archive.tar"
+    destination = "/tmp/archive.tar"
   }
 
   provisioner "remote-exec" {
@@ -101,7 +101,7 @@ EOF
 
       # Update system packages
       sudo apt-get update
-      sudo apt-get -y install git unzip curl ntp
+      sudo apt-get -y install git curl ntp
 
       # Install Docker
       sudo curl -fsSL https://get.docker.com/ | sh
@@ -129,7 +129,7 @@ EOF
       cd /var/www/
 
       # Unzip the archive
-      sudo unzip -q -o /tmp/archive.zip
+      sudo tar -xf /tmp/archive.tar
 
       # Create the config file
       sudo cp .env.dist .env
@@ -137,10 +137,10 @@ EOF
       # Install composer dependencies
       sudo docker run --rm --interactive --tty \
         --volume $PWD:/code \
-        composer install --no-suggest --no-interaction --working-dir=/code
+        composer install --prefer-dist --no-dev --no-suggest --no-interaction --working-dir=/code
 
       # Build DI containers
-      sudo docker-compose run --no-deps cli /code/bin/benchmark build
+      sudo docker-compose run --no-deps benchmark-fpm /code/bin/benchmark build
 
       # Dump autoloader
       sudo docker run --rm --interactive --tty \
@@ -148,7 +148,7 @@ EOF
         composer dump-autoload --classmap-authoritative --no-interaction --working-dir=/code
 
       # Run the server
-      sudo docker-compose -f docker-compose.aws.yml up --build -d
+      sudo docker-compose -f docker-compose.aws.yml up -d
 EOF
   }
 }

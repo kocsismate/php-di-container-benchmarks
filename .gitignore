@@ -9,4 +9,4 @@ vendor/
 *.tfstate
 *.tfstate.backup
 *.tfvars
-archive.zip
+archive.tar
