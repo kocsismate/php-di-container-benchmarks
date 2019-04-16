@@ -73,12 +73,14 @@ Then, override the values in it:
 - `region`: it is "eu-central-1" by default, but you should choose the closest one to your area
 - `instance_type`: it is "C5.large" by default (this instance type is out of the scope of the free tier!)
 
-Finally, you have to copy your private key in the "build/infrastructure/config" directory with a name that matches
+Finally, you have to copy your private key in the "build/infrastructure/config" directory with a file name that matches
 the one defined in the `ssh_private_key` setting.
 
 Now, you are ready to go:
 
 ```bash
+export AWS_ACCESS_KEY_ID={{ YOUR AWS ACCESS KEY }}
+export AWS_SECRET_ACCESS_KEY={{ YOUR AWS SECRET KEY }}
 ./benchmark.sh aws
 ```
 
