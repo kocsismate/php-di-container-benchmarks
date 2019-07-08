@@ -17,8 +17,8 @@ include_once $this->targetDirs[3].'/Fixture/Class3.php';
 include_once $this->targetDirs[3].'/Fixture/Class2.php';
 include_once $this->targetDirs[3].'/Fixture/Class1.php';
 
-$this->factories['DiContainerBenchmarks\Fixture\Class10'] = function () {
+$this->factories['DiContainerBenchmarks\\Fixture\\Class10'] = function () {
     return new \DiContainerBenchmarks\Fixture\Class10(new \DiContainerBenchmarks\Fixture\Class9(new \DiContainerBenchmarks\Fixture\Class8(new \DiContainerBenchmarks\Fixture\Class7(new \DiContainerBenchmarks\Fixture\Class6(new \DiContainerBenchmarks\Fixture\Class5(new \DiContainerBenchmarks\Fixture\Class4(new \DiContainerBenchmarks\Fixture\Class3(new \DiContainerBenchmarks\Fixture\Class2(new \DiContainerBenchmarks\Fixture\Class1())))))))));
 };
 
-return $this->factories['DiContainerBenchmarks\Fixture\Class10']();
+return $this->factories['DiContainerBenchmarks\\Fixture\\Class10']();

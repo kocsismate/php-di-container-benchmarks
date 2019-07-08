@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
     'DiContainerBenchmarks\\Fixture\\Class1' => true,
     'DiContainerBenchmarks\\Fixture\\Class11' => true,
     'DiContainerBenchmarks\\Fixture\\Class12' => true,
@@ -101,4 +101,4 @@ return array(
     'DiContainerBenchmarks\\Fixture\\Class99' => true,
     'Psr\\Container\\ContainerInterface' => true,
     'Symfony\\Component\\DependencyInjection\\ContainerInterface' => true,
-);
+];

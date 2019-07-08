@@ -12,7 +12,7 @@ if [[ "$1" == "docker" ]]; then
         composer install --prefer-dist --no-suggest --no-interaction --working-dir=/code
 
     # Build DI containers
-    docker-compose run --no-deps cli /code/bin/benchmark build
+    docker-compose run --no-deps benchmark-cli /code/bin/benchmark build
 
     # Dump autoloader
     docker run --rm --interactive --tty \

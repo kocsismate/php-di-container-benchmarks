@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerHzaExdq;
+namespace ContainerS84lWEX;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -16,14 +16,14 @@ use Symfony\Component\DependencyInjection\ParameterBag\FrozenParameterBag;
  *
  * @final since Symfony 3.3
  */
-class CompiledSingletonContainer extends Container
+class CompiledPrototypeContainer extends Container
 {
     private $buildParameters;
     private $containerDir;
     private $parameters;
-    private $targetDirs = array();
+    private $targetDirs = [];
 
-    public function __construct(array $buildParameters = array(), $containerDir = __DIR__)
+    public function __construct(array $buildParameters = [], $containerDir = __DIR__)
     {
         $dir = $this->targetDirs[0] = \dirname($containerDir);
         for ($i = 1; $i <= 3; ++$i) {
@@ -33,13 +33,13 @@ class CompiledSingletonContainer extends Container
         $this->containerDir = $containerDir;
         $this->parameters = $this->getDefaultParameters();
 
-        $this->services = $this->privates = array();
-        $this->fileMap = array(
+        $this->services = $this->privates = [];
+        $this->fileMap = [
             'DiContainerBenchmarks\\Fixture\\Class10' => 'getClass10Service.php',
             'DiContainerBenchmarks\\Fixture\\Class100' => 'getClass100Service.php',
-        );
+        ];
 
-        $this->aliases = array();
+        $this->aliases = [];
     }
 
     public function compile()
@@ -110,8 +110,8 @@ class CompiledSingletonContainer extends Container
         return $this->parameterBag;
     }
 
-    private $loadedDynamicParameters = array();
-    private $dynamicParameters = array();
+    private $loadedDynamicParameters = [];
+    private $dynamicParameters = [];
 
     /*
      * Computes a dynamic parameter.
@@ -134,8 +134,8 @@ class CompiledSingletonContainer extends Container
      */
     protected function getDefaultParameters()
     {
-        return array(
+        return [
             'container.dumper.inline_class_loader' => true,
-        );
+        ];
     }
 }
