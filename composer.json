@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": "^7.3",
+        "php": "^7.4",
         "aura/di": "^3.4.0",
         "bitexpert/disco": "^0.10.0",
         "doctrine/cache": "^1.6.1",
@@ -28,7 +28,7 @@
         "symfony/dependency-injection": "^4.3.2",
         "thecodingmachine/yaco": "^1.0.0",
         "yiisoft/yii2": "^2.0.22",
-        "woohoolabs/zen": "^2.7.2",
+        "woohoolabs/zen": "dev-master as 2.8.0",
         "zendframework/zend-servicemanager": "^3.4.0"
     },
     "require-dev": {
@@ -46,7 +46,7 @@
     "config": {
         "bin-compat": "full",
         "platform": {
-            "php": "7.3.0"
+            "php": "7.4.0"
         },
         "sort-packages": true
     },

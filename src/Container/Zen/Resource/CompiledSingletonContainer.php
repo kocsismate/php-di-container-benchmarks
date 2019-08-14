@@ -9,10 +9,10 @@ class CompiledSingletonContainer extends AbstractCompiledContainer
      * @var string[]
      */
     protected static $entryPoints = [
-        \Psr\Container\ContainerInterface::class => 'Psr__Container__ContainerInterface',
-        \DiContainerBenchmarks\Container\Zen\Resource\CompiledSingletonContainer::class => 'DiContainerBenchmarks__Container__Zen__Resource__CompiledSingletonContainer',
-        \DiContainerBenchmarks\Fixture\Class10::class => 'DiContainerBenchmarks__Fixture__Class10',
-        \DiContainerBenchmarks\Fixture\Class100::class => 'DiContainerBenchmarks__Fixture__Class100',
+        'Psr\Container\ContainerInterface' => 'Psr__Container__ContainerInterface',
+        'DiContainerBenchmarks\Container\Zen\Resource\CompiledSingletonContainer' => 'DiContainerBenchmarks__Container__Zen__Resource__CompiledSingletonContainer',
+        'DiContainerBenchmarks\Fixture\Class10' => 'DiContainerBenchmarks__Fixture__Class10',
+        'DiContainerBenchmarks\Fixture\Class100' => 'DiContainerBenchmarks__Fixture__Class100',
     ];
 
     /**

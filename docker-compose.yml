@@ -2,7 +2,7 @@ version: '2'
 
 services:
   benchmark-cli:
-    image: php:7.3.6-cli-alpine3.10
+    image: php:7.4.0beta2-cli-alpine3.10
     container_name: benchmark-cli
     networks:
       - benchmark

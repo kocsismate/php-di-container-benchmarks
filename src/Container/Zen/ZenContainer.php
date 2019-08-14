@@ -45,14 +45,16 @@ class ZenContainer implements ContainerInterface
         // Build container with prototype services
         $builder = new FileSystemContainerBuilder(
             new PrototypeCompilerConfig(),
-            PROJECT_ROOT . "/src/Container/Zen/Resource/CompiledPrototypeContainer.php"
+            PROJECT_ROOT . "/src/Container/Zen/Resource/CompiledPrototypeContainer.php",
+            ""
         );
         $builder->build();
 
         // Build container with singleton services
         $builder = new FileSystemContainerBuilder(
             new SingletonCompilerConfig(),
-            PROJECT_ROOT . "/src/Container/Zen/Resource/CompiledSingletonContainer.php"
+            PROJECT_ROOT . "/src/Container/Zen/Resource/CompiledSingletonContainer.php",
+            ""
         );
         $builder->build();
     }

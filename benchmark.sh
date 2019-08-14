@@ -27,8 +27,7 @@ elif [[ "$1" == "aws" ]]; then
 
     cd $PROJECT_ROOT/build/infrastructure/aws/
 
-    terraform get -update
-    terraform init -backend=true -get=false
+    terraform init -backend=true -get=true
 
     echo "TERRAFORM PLAN:";
 

@@ -6,7 +6,7 @@ terraform {
 }
 
 provider "aws" {
-  version = "~>2.18"
+  version = "~>2.23"
   region = var.region
 }
 
@@ -15,8 +15,7 @@ resource "aws_instance" "ec2_instance" {
   instance_type = var.instance_type
   associate_public_ip_address = true
   key_name = var.ssh_key_name
-  vpc_security_group_ids = [
-    aws_security_group.security_group.id]
+  vpc_security_group_ids = [aws_security_group.security_group.id]
   monitoring = false
 
   tags = {

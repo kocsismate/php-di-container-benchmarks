@@ -18,6 +18,6 @@ if (!\class_exists(CompiledPrototypeContainer::class, false)) {
 
 return new \ContainerS84lWEX\CompiledPrototypeContainer([
     'container.build_hash' => 'S84lWEX',
-    'container.build_id' => '167c6d40',
-    'container.build_time' => 1562605115,
+    'container.build_id' => '9a52b272',
+    'container.build_time' => 1565785397,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerS84lWEX');
