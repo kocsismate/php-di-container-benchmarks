@@ -3,18 +3,16 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Benchmark;
 
-use const CURLOPT_RETURNTRANSFER;
-use const CURLOPT_URL;
 use function curl_close;
 use function curl_exec;
 use function curl_init;
 use function curl_setopt;
+use const CURLOPT_RETURNTRANSFER;
+use const CURLOPT_URL;
 
 class WebBenchmarkContext implements BenchmarkContextInterface
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $benchmarkUrl;
 
     public function __construct(string $benchmarkUrl)

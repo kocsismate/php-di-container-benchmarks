@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "01879bfc0a85efec3f1c278a43b43aec",
+    "content-hash": "cdfc908ab267e9fbcc4a69a3fd9e21de",
     "packages": [
         {
             "name": "aura/di",
@@ -2943,21 +2943,21 @@
         },
         {
             "name": "woohoolabs/coding-standard",
-            "version": "1.1.2",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/woohoolabs/coding-standard.git",
-                "reference": "39a05854d0233fd32f11396fd55dfbe6ee3f08aa"
+                "reference": "e82f6ad55f2f8f86d37df78e87964cf95c47f22b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/woohoolabs/coding-standard/zipball/39a05854d0233fd32f11396fd55dfbe6ee3f08aa",
-                "reference": "39a05854d0233fd32f11396fd55dfbe6ee3f08aa",
+                "url": "https://api.github.com/repos/woohoolabs/coding-standard/zipball/e82f6ad55f2f8f86d37df78e87964cf95c47f22b",
+                "reference": "e82f6ad55f2f8f86d37df78e87964cf95c47f22b",
                 "shasum": ""
             },
             "require": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
-                "php": "^7.1.0",
+                "php": "^7.4.0",
                 "slevomat/coding-standard": "^5.0.0",
                 "squizlabs/php_codesniffer": "^3.4.0"
             },
@@ -2981,7 +2981,7 @@
                 "Woohoo Labs.",
                 "php cs"
             ],
-            "time": "2019-02-07T08:32:48+00:00"
+            "time": "2019-08-22T17:54:03+00:00"
         }
     ],
     "aliases": [

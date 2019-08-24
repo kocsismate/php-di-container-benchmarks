@@ -16,9 +16,7 @@ use function substr;
 
 class HtmlOutputGenerator implements OutputGeneratorInterface
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $path;
 
     public function __construct(string $path)

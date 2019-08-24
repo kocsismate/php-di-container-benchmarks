@@ -11,24 +11,16 @@ class TestCase
 
     public const WARM = "warm";
 
-    /**
-     * @var int
-     */
+    /** @var int */
     private $number;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $title;
 
-    /**
-     * @var int
-     */
+    /** @var int */
     private $iterations;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $testType;
 
     public function __construct(int $number, string $title, int $iterations, string $testType)

@@ -8,19 +8,13 @@ use function json_encode;
 
 class TestResult
 {
-    /**
-     * @var float|null
-     */
+    /** @var float|null */
     private $timeConsumption;
 
-    /**
-     * @var float|null
-     */
+    /** @var float|null */
     private $peakMemoryUsage;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $message;
 
     public static function createUnsuccessful(string $message): TestResult

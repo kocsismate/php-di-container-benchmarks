@@ -7,17 +7,15 @@ use DiContainerBenchmarks\Container\ContainerInterface;
 use DiContainerBenchmarks\Test\TestCase;
 use DiContainerBenchmarks\Test\TestResult;
 use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
-use const SORT_NUMERIC;
 use function count;
 use function round;
 use function sort;
 use function uasort;
+use const SORT_NUMERIC;
 
 class BenchmarkResult
 {
-    /**
-     * @var array
-     */
+    /** @var array */
     private $testResults;
 
     public function __construct()
@@ -66,7 +64,7 @@ class BenchmarkResult
             );
         }
 
-        uasort($results, function (TestResult $a, TestResult $b) {
+        uasort($results, static function (TestResult $a, TestResult $b) {
             if ($a->getTimeConsumptionInMilliSeconds() === null && $b->getTimeConsumptionInMilliSeconds() !== null) {
                 return 1;
             }

@@ -12,9 +12,7 @@ use function hrtime;
 
 class Benchmark
 {
-    /**
-     * @var BenchmarkContextInterface
-     */
+    /** @var BenchmarkContextInterface */
     private $context;
 
     public function __construct(BenchmarkContextInterface $context)
