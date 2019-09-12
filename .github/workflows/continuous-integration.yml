@@ -1,0 +1,51 @@
+name: "Continuous Integration"
+
+on:
+  - pull_request
+  - push
+
+jobs:
+  coding-standards:
+    name: "Coding Standards"
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@master
+
+      - name: "Install PHP 7.4"
+        run: |
+          sudo add-apt-repository ppa:ondrej/php
+          sudo apt-get update
+          sudo apt-get install php7.4 php7.4-mbstring php7.4-xml
+
+      - name: "Validate composer.json"
+        run: php7.4 $(which composer) validate --strict
+
+      - name: "Install dependencies with composer"
+        run: php7.4 $(which composer) install --no-interaction --no-progress --no-suggest
+
+      - name: "Run PHP CodeSniffer"
+        run: php7.4 vendor/bin/phpcs --standard=phpcs.xml
+
+  static-code-analysis:
+    name: "Static Code Analysis"
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@master
+
+      - name: "Install PHP 7.4"
+        run: |
+          sudo add-apt-repository ppa:ondrej/php
+          sudo apt-get update
+          sudo apt-get install php7.4 php7.4-mbstring php7.4-xml
+
+      - name: "Install dependencies with composer"
+        run: php7.4 $(which composer) install --no-interaction --no-progress --no-suggest
+
+      - name: "Run phpstan/phpstan"
+        run: php7.4 vendor/bin/phpstan analyse --level 7 src tests
