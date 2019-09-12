@@ -112,7 +112,7 @@ HERE;
             /** @var ContainerInterface $container */
             $package = $container->getPackage();
             $version = Versions::getVersion($container->getPackage());
-            $displayedVersion = substr($version, 0, strpos($version, "@"));
+            $displayedVersion = substr($version, 0, (int) strpos($version, "@"));
             $url = $container->getUrl();
             $compiled = $container->isCompiled() ? "compiled" : "dynamic";
             $autowiring = $container->isAutowiringSupported() ? "supported" : "not supported";
@@ -252,10 +252,10 @@ HERE;
                         $memoryBase = $memory ?? null;
                     }
 
-                    $timeColumn = $time !== null ? round($time, 3) : "N/A";
-                    $timePercentColumn = $time ? round($time / $timeBase * 100, 0) . "%" : "N/A";
+                    $timeColumn = $time !== null ? round((float) $time, 3) : "N/A";
+                    $timePercentColumn = $time !== null ? round((float) $time / $timeBase * 100, 0) . "%" : "N/A";
                     $memoryColumn = $memory !== null ? round($memory, 3) : "N/A";
-                    $memoryPercentColumn = $memory ? round($memory / $memoryBase * 100, 0) . "%" : "N/A";
+                    $memoryPercentColumn = $memory !== null && $memoryBase !== null ? round($memory / $memoryBase * 100, 0) . "%" : "N/A";
 
                     $html .= <<<HERE
                 <tr>

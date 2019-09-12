@@ -17,8 +17,11 @@ composer-install:
 composer-update:
 	docker run --rm --interactive --tty --volume $(PWD):/app --user $(id -u):$(id -g) composer update --ignore-platform-reqs
 
+phpstan:
+	docker-compose run --rm --no-deps benchmark-cli /bin/sh -c "cd /code && ./vendor/bin/phpstan analyse --memory-limit=256M --level 7 src"
+
 cs:
-	docker-compose -f docker-compose.yml run --no-deps --rm benchmark-cli /code/vendor/bin/phpcs --standard=/code/phpcs.xml
+	docker-compose run --no-deps --rm benchmark-cli /code/vendor/bin/phpcs --standard=/code/phpcs.xml
 
 cs-fix:
-	docker-compose -f docker-compose.yml run --no-deps --rm benchmark-cli /code/vendor/bin/phpcbf --standard=/code/phpcs.xml
+	docker-compose run --no-deps --rm benchmark-cli /code/vendor/bin/phpcbf --standard=/code/phpcs.xml

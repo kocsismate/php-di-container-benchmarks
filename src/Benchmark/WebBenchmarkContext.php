@@ -45,6 +45,6 @@ class WebBenchmarkContext implements BenchmarkContextInterface
         $output = curl_exec($ch);
         curl_close($ch);
 
-        return $output ? $output : "";
+        return is_string($output) ? $output : "";
     }
 }

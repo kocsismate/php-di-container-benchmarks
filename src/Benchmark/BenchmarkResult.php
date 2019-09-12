@@ -13,7 +13,7 @@ use function sort;
 use function uasort;
 use const SORT_NUMERIC;
 
-class BenchmarkResult
+final class BenchmarkResult
 {
     /** @var array */
     private $testResults;
@@ -28,7 +28,7 @@ class BenchmarkResult
         TestCase $testCase,
         ContainerInterface $container,
         TestResult $result
-    ) {
+    ): void {
         $containerName = $container->getDisplayedName();
         $testSuiteNumber = $testSuite->getNumber();
         $testCaseNumber = $testCase->getNumber();
@@ -79,16 +79,16 @@ class BenchmarkResult
         return $results;
     }
 
-    private function getMedian(array $array, $precision = 5): ?float
+    private function getMedian(array $array, int $precision = 5): ?float
     {
-        if (empty($array) || $array[0] === null) {
+        if ($array === [] || $array[0] === null) {
             return null;
         }
 
         sort($array, SORT_NUMERIC);
 
         $count = count($array);
-        $middleIndex = (int) $count / 2;
+        $middleIndex = $count / 2;
         if ($count % 2 === 0) {
             $median = ($array[$middleIndex] + $array[$middleIndex + 1]) / 2;
         } else {
@@ -98,9 +98,9 @@ class BenchmarkResult
         return round($median, $precision);
     }
 
-    private function getAverage(array $array, $precision = 5): ?float
+    private function getAverage(array $array, int $precision = 5): ?float
     {
-        if (empty($array) || $array[0] === null) {
+        if ($array === [] || $array[0] === null) {
             return null;
         }
 

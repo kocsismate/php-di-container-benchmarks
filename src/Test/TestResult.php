@@ -80,7 +80,7 @@ class TestResult
 
     public function toJson(): string
     {
-        return json_encode(
+        return (string) json_encode(
             [
                 "time" => $this->timeConsumption,
                 "memory" => $this->peakMemoryUsage,

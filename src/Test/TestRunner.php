@@ -20,7 +20,6 @@ class TestRunner
             return TestResult::createUnsuccessful("Class '$class' doesn't exist!");
         }
 
-        /** @var TestInterface $test */
         $test = new $class();
         if ($test instanceof TestInterface === false) {
             return TestResult::createUnsuccessful("Class '$class' isn't instance of TestInterface!");
