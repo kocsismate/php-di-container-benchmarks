@@ -21,7 +21,7 @@ jobs:
           sudo apt-get install php7.4 php7.4-mbstring php7.4-xml
 
       - name: "Validate composer.json"
-        run: php7.4 $(which composer) validate --strict
+        run: php7.4 $(which composer) validate --no-check-all
 
       - name: "Install dependencies with composer"
         run: php7.4 $(which composer) install --no-interaction --no-progress --no-suggest
