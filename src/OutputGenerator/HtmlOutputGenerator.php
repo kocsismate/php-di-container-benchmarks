@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\OutputGenerator;
@@ -7,6 +8,7 @@ use DiContainerBenchmarks\Benchmark\BenchmarkResult;
 use DiContainerBenchmarks\Container\ContainerInterface;
 use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
 use PackageVersions\Versions;
+
 use function date;
 use function file_put_contents;
 use function round;

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Benchmark;
@@ -7,10 +8,12 @@ use DiContainerBenchmarks\Container\ContainerInterface;
 use DiContainerBenchmarks\Test\TestCase;
 use DiContainerBenchmarks\Test\TestResult;
 use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
+
 use function count;
 use function round;
 use function sort;
 use function uasort;
+
 use const SORT_NUMERIC;
 
 final class BenchmarkResult

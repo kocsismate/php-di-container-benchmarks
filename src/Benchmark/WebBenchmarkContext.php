@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Benchmark;
@@ -7,6 +8,8 @@ use function curl_close;
 use function curl_exec;
 use function curl_init;
 use function curl_setopt;
+use function is_string;
+
 use const CURLOPT_RETURNTRANSFER;
 use const CURLOPT_URL;
 

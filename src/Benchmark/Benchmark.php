@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Benchmark;
@@ -8,6 +9,7 @@ use DiContainerBenchmarks\OutputGenerator\OutputGeneratorInterface;
 use DiContainerBenchmarks\Test\TestCase;
 use DiContainerBenchmarks\Test\TestResult;
 use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
+
 use function hrtime;
 
 class Benchmark
