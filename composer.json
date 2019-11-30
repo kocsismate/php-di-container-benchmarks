@@ -1,6 +1,6 @@
 {
     "name": "kocsismate/di-container-benchmarks",
-    "description": "Benchmarks of some popular PHP DI Contaners",
+    "description": "Benchmarks of some popular PHP DI Containers",
     "license": "MIT",
     "homepage": "https://github.com/kocsismate/php-di-benchmarks",
     "keywords": ["Dependency Injection Container benchmarks", "Dependency Injection Container performance", "DI"],
