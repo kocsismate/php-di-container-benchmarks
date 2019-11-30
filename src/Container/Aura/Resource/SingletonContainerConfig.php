@@ -8,7 +8,7 @@ use Aura\Di\ContainerConfig;
 
 class SingletonContainerConfig extends ContainerConfig
 {
-    public function define(Container $di)
+    public function define(Container $di): void
     {
         for ($i = 1; $i <= 100; $i++) {
             $className = 'DiContainerBenchmarks\Fixture\Class' . $i;
