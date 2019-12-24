@@ -14,6 +14,7 @@
         "php": "^7.4",
         "aura/di": "^4.0.0",
         "bitexpert/disco": "^0.10.0",
+        "chubbyphp/chubbyphp-container": "^1.0.0",
         "doctrine/cache": "^1.6.1",
         "illuminate/container": "^v6.6.0",
         "joomla/di": "^1.5.1",
