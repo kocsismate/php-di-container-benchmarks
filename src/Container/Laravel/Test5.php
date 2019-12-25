@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Laravel;
 
 use DiContainerBenchmarks\Fixture\Class10;
 
-class Test5 extends AbstractLaravelTest
+final class Test5 extends AbstractLaravelTest
 {
     public function startup(): void
     {

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\PhpDi;
@@ -8,10 +9,7 @@ use Psr\Container\ContainerInterface;
 
 abstract class AbstractPhpDiTest implements TestInterface
 {
-    /**
-     * @var ContainerInterface
-     */
-    protected $container;
+    protected ContainerInterface $container;
 
     protected function setContainerWithPrototypeServices(): void
     {

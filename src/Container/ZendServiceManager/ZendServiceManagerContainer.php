@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\ZendServiceManager;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
 
-class ZendServiceManagerContainer implements ContainerInterface
+final class ZendServiceManagerContainer implements ContainerInterface
 {
     public function getPackage(): string
     {

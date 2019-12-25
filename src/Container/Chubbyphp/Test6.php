@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Chubbyphp;
 
 use DiContainerBenchmarks\Fixture\Class100;
 
-class Test6 extends AbstractChubbyphpTest
+final class Test6 extends AbstractChubbyphpTest
 {
     public function startup(): void
     {

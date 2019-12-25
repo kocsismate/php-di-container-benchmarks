@@ -10,10 +10,7 @@ use Psr\Container\ContainerInterface;
 
 abstract class AbstractZenTest implements TestInterface
 {
-    /**
-     * @var ContainerInterface
-     */
-    protected $container;
+    protected ContainerInterface $container;
 
     protected function setContainerWithPrototypeServices(): void
     {

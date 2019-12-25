@@ -1,9 +1,10 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Disco;
 
-class Test5 extends AbstractDiscoTest
+final class Test5 extends AbstractDiscoTest
 {
     public function startup(): void
     {

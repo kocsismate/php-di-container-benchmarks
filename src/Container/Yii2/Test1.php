@@ -1,11 +1,11 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Yii2;
 
 use DiContainerBenchmarks\Fixture\Class10;
 
-class Test1 extends AbstractYii2Test
+final class Test1 extends AbstractYii2Test
 {
     public function startup(): void
     {

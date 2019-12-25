@@ -13,10 +13,9 @@ use function is_string;
 use const CURLOPT_RETURNTRANSFER;
 use const CURLOPT_URL;
 
-class WebBenchmarkContext implements BenchmarkContextInterface
+final class WebBenchmarkContext implements BenchmarkContextInterface
 {
-    /** @var string */
-    private $benchmarkUrl;
+    private string $benchmarkUrl;
 
     public function __construct(string $benchmarkUrl)
     {

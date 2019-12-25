@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\PHPixieDi;
@@ -8,10 +9,7 @@ use PHPixie\DI\Container\Root as RootContainer;
 
 abstract class AbstractPHPixieDiTest implements TestInterface
 {
-    /**
-     * @var RootContainer
-     */
-    protected $container;
+    protected RootContainer $container;
 
     protected function setContainerWithPrototypeServices(): void
     {

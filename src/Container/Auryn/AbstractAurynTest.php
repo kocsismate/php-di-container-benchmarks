@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Auryn;
@@ -108,10 +109,7 @@ use DiContainerBenchmarks\Test\TestInterface;
 
 abstract class AbstractAurynTest implements TestInterface
 {
-    /**
-     * @var Injector
-     */
-    protected $container;
+    protected Injector $container;
 
     protected function setContainerWithPrototypeServices(): void
     {

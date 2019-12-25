@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Aura;
 
 use DiContainerBenchmarks\Fixture\Class10;
 
-class Test5 extends AbstractAuraTest
+final class Test5 extends AbstractAuraTest
 {
     public function startup(): void
     {

@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Aura;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
 
-class AuraContainer implements ContainerInterface
+final class AuraContainer implements ContainerInterface
 {
     public function getPackage(): string
     {

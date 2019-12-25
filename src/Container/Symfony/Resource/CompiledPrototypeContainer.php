@@ -18,6 +18,6 @@ if (!\class_exists(CompiledPrototypeContainer::class, false)) {
 
 return new \ContainerX68Vxi3\CompiledPrototypeContainer([
     'container.build_hash' => 'X68Vxi3',
-    'container.build_id' => '4abbe052',
-    'container.build_time' => 1575139454,
+    'container.build_id' => '90b6ddbc',
+    'container.build_time' => 1577299003,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerX68Vxi3');

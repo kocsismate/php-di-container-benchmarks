@@ -1,11 +1,12 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\OpulenceIoc;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
 
-class OpulenceIocContainer implements ContainerInterface
+final class OpulenceIocContainer implements ContainerInterface
 {
     public function getPackage(): string
     {

@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Symfony;
 
 use DiContainerBenchmarks\Fixture\Class10;
 
-class Test1 extends AbstractSymfonyTest
+final class Test1 extends AbstractSymfonyTest
 {
     public function startup(): void
     {

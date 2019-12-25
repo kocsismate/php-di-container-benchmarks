@@ -1,11 +1,12 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\OpulenceIoc;
 
 use DiContainerBenchmarks\Fixture\Class10;
 
-class Test3 extends AbstractOpulenceTest
+final class Test3 extends AbstractOpulenceTest
 {
     public function startup(): void
     {

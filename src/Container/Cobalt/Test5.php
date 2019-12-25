@@ -1,11 +1,12 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Cobalt;
 
 use DiContainerBenchmarks\Fixture\Class10;
 
-class Test5 extends AbstractCobaltTest
+final class Test5 extends AbstractCobaltTest
 {
     public function startup(): void
     {

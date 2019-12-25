@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Chubbyphp;
@@ -108,10 +109,7 @@ use Chubbyphp\Container\Container;
 
 abstract class AbstractChubbyphpTest implements TestInterface
 {
-    /**
-     * @var Container
-     */
-    protected $container;
+    protected Container $container;
 
     protected function setContainerWithSingletonServices(): void
     {
@@ -121,7 +119,7 @@ abstract class AbstractChubbyphpTest implements TestInterface
            }
 
            for ($i = 1; $i <= 100; $i++) {
-               echo "\$container->factory(Class" . $i . "::class, function (Container \$container) {\n";
+               echo "\$container->factory(Class" . $i . "::class, static function (Container \$container) {\n";
                echo "    return new Class" . $i . "(\$container->get(Class" . ($i-1) . "::class));\n";
                echo "});\n\n";
            }

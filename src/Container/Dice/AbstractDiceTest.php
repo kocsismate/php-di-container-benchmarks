@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Dice;
@@ -8,10 +9,7 @@ use DiContainerBenchmarks\Test\TestInterface;
 
 abstract class AbstractDiceTest implements TestInterface
 {
-    /**
-     * @var Dice
-     */
-    protected $container;
+    protected Dice $container;
 
     protected function setContainerWithPrototypeServices(): void
     {

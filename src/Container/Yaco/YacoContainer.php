@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Yaco;
@@ -7,7 +8,7 @@ use DiContainerBenchmarks\Container\ContainerInterface;
 use TheCodingMachine\Yaco\Compiler;
 use TheCodingMachine\Yaco\Definition\ObjectDefinition;
 
-class YacoContainer implements ContainerInterface
+final class YacoContainer implements ContainerInterface
 {
     public function getPackage(): string
     {

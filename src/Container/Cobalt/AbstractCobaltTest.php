@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Cobalt;
 
@@ -10,10 +11,7 @@ use Jshannon63\Cobalt\Container;
 
 abstract class AbstractCobaltTest implements TestInterface
 {
-    /**
-     * @var Container
-     */
-    protected $container;
+    protected Container $container;
 
     protected function setContainerWithPrototypeServices(): void
     {

@@ -18,13 +18,7 @@ use const SORT_NUMERIC;
 
 final class BenchmarkResult
 {
-    /** @var array */
-    private $testResults;
-
-    public function __construct()
-    {
-        $this->testResults = [];
-    }
+    private array $testResults = [];
 
     public function addTestResult(
         TestSuiteInterface $testSuite,
@@ -100,7 +94,7 @@ final class BenchmarkResult
 
         return round($median, $precision);
     }
-
+    /*
     private function getAverage(array $array, int $precision = 5): ?float
     {
         if ($array === [] || $array[0] === null) {
@@ -122,4 +116,5 @@ final class BenchmarkResult
 
         return round($total / $num, $precision);
     }
+    */
 }

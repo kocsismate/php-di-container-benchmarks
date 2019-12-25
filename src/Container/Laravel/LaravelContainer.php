@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Laravel;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
 
-class LaravelContainer implements ContainerInterface
+final class LaravelContainer implements ContainerInterface
 {
     public function getPackage(): string
     {

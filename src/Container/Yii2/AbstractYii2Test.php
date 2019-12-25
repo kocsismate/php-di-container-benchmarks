@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Yii2;
 
@@ -108,10 +109,7 @@ use yii\di\Container;
 
 abstract class AbstractYii2Test implements TestInterface
 {
-    /**
-     * @var Container
-     */
-    protected $container;
+    protected Container $container;
 
     protected function setContainerWithPrototypeServices(): void
     {

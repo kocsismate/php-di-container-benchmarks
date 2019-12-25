@@ -12,10 +12,9 @@ use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
 
 use function hrtime;
 
-class Benchmark
+final class Benchmark
 {
-    /** @var BenchmarkContextInterface */
-    private $context;
+    private BenchmarkContextInterface $context;
 
     public function __construct(BenchmarkContextInterface $context)
     {

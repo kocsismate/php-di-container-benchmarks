@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Joomla;
 
 use DiContainerBenchmarks\Fixture\Class100;
 
-class Test2 extends AbstractJoomlaTest
+final class Test2 extends AbstractJoomlaTest
 {
     public function startup(): void
     {

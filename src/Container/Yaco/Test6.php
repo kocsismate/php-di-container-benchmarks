@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Yaco;
 
 use DiContainerBenchmarks\Fixture\Class100;
 
-class Test6 extends AbstractYacoTest
+final class Test6 extends AbstractYacoTest
 {
     public function startup(): void
     {

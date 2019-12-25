@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\ZendServiceManager;
@@ -110,10 +111,7 @@ use Zend\ServiceManager\ServiceManager;
 
 abstract class AbstractZendServiceManagerTest implements TestInterface
 {
-    /**
-     * @var ContainerInterface
-     */
-    protected $container;
+    protected ContainerInterface $container;
 
     protected function setContainerWithPrototypeServices(): void
     {
@@ -124,7 +122,7 @@ abstract class AbstractZendServiceManagerTest implements TestInterface
 
            echo "[\n";
            for ($i = 1; $i <= 100; $i++) {
-               echo "    Class" . $i . "::class => function(ContainerInterface \$container) {\n";
+               echo "    Class" . $i . "::class => static function(ContainerInterface \$container) {\n";
                echo "        return new Class" . $i . "(\$container->get(Class" . ($i-1) . "::class));\n";
                echo "    },\n";
            }
@@ -134,301 +132,301 @@ abstract class AbstractZendServiceManagerTest implements TestInterface
             [
                 "factories" => [
                     Class1::class => InvokableFactory::class,
-                    Class2::class => function(ContainerInterface $container) {
+                    Class2::class => static function(ContainerInterface $container) {
                         return new Class2($container->get(Class1::class));
                     },
-                    Class3::class => function(ContainerInterface $container) {
+                    Class3::class => static function(ContainerInterface $container) {
                         return new Class3($container->get(Class2::class));
                     },
-                    Class4::class => function(ContainerInterface $container) {
+                    Class4::class => static function(ContainerInterface $container) {
                         return new Class4($container->get(Class3::class));
                     },
-                    Class5::class => function(ContainerInterface $container) {
+                    Class5::class => static function(ContainerInterface $container) {
                         return new Class5($container->get(Class4::class));
                     },
-                    Class6::class => function(ContainerInterface $container) {
+                    Class6::class => static function(ContainerInterface $container) {
                         return new Class6($container->get(Class5::class));
                     },
-                    Class7::class => function(ContainerInterface $container) {
+                    Class7::class => static function(ContainerInterface $container) {
                         return new Class7($container->get(Class6::class));
                     },
-                    Class8::class => function(ContainerInterface $container) {
+                    Class8::class => static function(ContainerInterface $container) {
                         return new Class8($container->get(Class7::class));
                     },
-                    Class9::class => function(ContainerInterface $container) {
+                    Class9::class => static function(ContainerInterface $container) {
                         return new Class9($container->get(Class8::class));
                     },
-                    Class10::class => function(ContainerInterface $container) {
+                    Class10::class => static function(ContainerInterface $container) {
                         return new Class10($container->get(Class9::class));
                     },
-                    Class11::class => function(ContainerInterface $container) {
+                    Class11::class => static function(ContainerInterface $container) {
                         return new Class11($container->get(Class10::class));
                     },
-                    Class12::class => function(ContainerInterface $container) {
+                    Class12::class => static function(ContainerInterface $container) {
                         return new Class12($container->get(Class11::class));
                     },
-                    Class13::class => function(ContainerInterface $container) {
+                    Class13::class => static function(ContainerInterface $container) {
                         return new Class13($container->get(Class12::class));
                     },
-                    Class14::class => function(ContainerInterface $container) {
+                    Class14::class => static function(ContainerInterface $container) {
                         return new Class14($container->get(Class13::class));
                     },
-                    Class15::class => function(ContainerInterface $container) {
+                    Class15::class => static function(ContainerInterface $container) {
                         return new Class15($container->get(Class14::class));
                     },
-                    Class16::class => function(ContainerInterface $container) {
+                    Class16::class => static function(ContainerInterface $container) {
                         return new Class16($container->get(Class15::class));
                     },
-                    Class17::class => function(ContainerInterface $container) {
+                    Class17::class => static function(ContainerInterface $container) {
                         return new Class17($container->get(Class16::class));
                     },
-                    Class18::class => function(ContainerInterface $container) {
+                    Class18::class => static function(ContainerInterface $container) {
                         return new Class18($container->get(Class17::class));
                     },
-                    Class19::class => function(ContainerInterface $container) {
+                    Class19::class => static function(ContainerInterface $container) {
                         return new Class19($container->get(Class18::class));
                     },
-                    Class20::class => function(ContainerInterface $container) {
+                    Class20::class => static function(ContainerInterface $container) {
                         return new Class20($container->get(Class19::class));
                     },
-                    Class21::class => function(ContainerInterface $container) {
+                    Class21::class => static function(ContainerInterface $container) {
                         return new Class21($container->get(Class20::class));
                     },
-                    Class22::class => function(ContainerInterface $container) {
+                    Class22::class => static function(ContainerInterface $container) {
                         return new Class22($container->get(Class21::class));
                     },
-                    Class23::class => function(ContainerInterface $container) {
+                    Class23::class => static function(ContainerInterface $container) {
                         return new Class23($container->get(Class22::class));
                     },
-                    Class24::class => function(ContainerInterface $container) {
+                    Class24::class => static function(ContainerInterface $container) {
                         return new Class24($container->get(Class23::class));
                     },
-                    Class25::class => function(ContainerInterface $container) {
+                    Class25::class => static function(ContainerInterface $container) {
                         return new Class25($container->get(Class24::class));
                     },
-                    Class26::class => function(ContainerInterface $container) {
+                    Class26::class => static function(ContainerInterface $container) {
                         return new Class26($container->get(Class25::class));
                     },
-                    Class27::class => function(ContainerInterface $container) {
+                    Class27::class => static function(ContainerInterface $container) {
                         return new Class27($container->get(Class26::class));
                     },
-                    Class28::class => function(ContainerInterface $container) {
+                    Class28::class => static function(ContainerInterface $container) {
                         return new Class28($container->get(Class27::class));
                     },
-                    Class29::class => function(ContainerInterface $container) {
+                    Class29::class => static function(ContainerInterface $container) {
                         return new Class29($container->get(Class28::class));
                     },
-                    Class30::class => function(ContainerInterface $container) {
+                    Class30::class => static function(ContainerInterface $container) {
                         return new Class30($container->get(Class29::class));
                     },
-                    Class31::class => function(ContainerInterface $container) {
+                    Class31::class => static function(ContainerInterface $container) {
                         return new Class31($container->get(Class30::class));
                     },
-                    Class32::class => function(ContainerInterface $container) {
+                    Class32::class => static function(ContainerInterface $container) {
                         return new Class32($container->get(Class31::class));
                     },
-                    Class33::class => function(ContainerInterface $container) {
+                    Class33::class => static function(ContainerInterface $container) {
                         return new Class33($container->get(Class32::class));
                     },
-                    Class34::class => function(ContainerInterface $container) {
+                    Class34::class => static function(ContainerInterface $container) {
                         return new Class34($container->get(Class33::class));
                     },
-                    Class35::class => function(ContainerInterface $container) {
+                    Class35::class => static function(ContainerInterface $container) {
                         return new Class35($container->get(Class34::class));
                     },
-                    Class36::class => function(ContainerInterface $container) {
+                    Class36::class => static function(ContainerInterface $container) {
                         return new Class36($container->get(Class35::class));
                     },
-                    Class37::class => function(ContainerInterface $container) {
+                    Class37::class => static function(ContainerInterface $container) {
                         return new Class37($container->get(Class36::class));
                     },
-                    Class38::class => function(ContainerInterface $container) {
+                    Class38::class => static function(ContainerInterface $container) {
                         return new Class38($container->get(Class37::class));
                     },
-                    Class39::class => function(ContainerInterface $container) {
+                    Class39::class => static function(ContainerInterface $container) {
                         return new Class39($container->get(Class38::class));
                     },
-                    Class40::class => function(ContainerInterface $container) {
+                    Class40::class => static function(ContainerInterface $container) {
                         return new Class40($container->get(Class39::class));
                     },
-                    Class41::class => function(ContainerInterface $container) {
+                    Class41::class => static function(ContainerInterface $container) {
                         return new Class41($container->get(Class40::class));
                     },
-                    Class42::class => function(ContainerInterface $container) {
+                    Class42::class => static function(ContainerInterface $container) {
                         return new Class42($container->get(Class41::class));
                     },
-                    Class43::class => function(ContainerInterface $container) {
+                    Class43::class => static function(ContainerInterface $container) {
                         return new Class43($container->get(Class42::class));
                     },
-                    Class44::class => function(ContainerInterface $container) {
+                    Class44::class => static function(ContainerInterface $container) {
                         return new Class44($container->get(Class43::class));
                     },
-                    Class45::class => function(ContainerInterface $container) {
+                    Class45::class => static function(ContainerInterface $container) {
                         return new Class45($container->get(Class44::class));
                     },
-                    Class46::class => function(ContainerInterface $container) {
+                    Class46::class => static function(ContainerInterface $container) {
                         return new Class46($container->get(Class45::class));
                     },
-                    Class47::class => function(ContainerInterface $container) {
+                    Class47::class => static function(ContainerInterface $container) {
                         return new Class47($container->get(Class46::class));
                     },
-                    Class48::class => function(ContainerInterface $container) {
+                    Class48::class => static function(ContainerInterface $container) {
                         return new Class48($container->get(Class47::class));
                     },
-                    Class49::class => function(ContainerInterface $container) {
+                    Class49::class => static function(ContainerInterface $container) {
                         return new Class49($container->get(Class48::class));
                     },
-                    Class50::class => function(ContainerInterface $container) {
+                    Class50::class => static function(ContainerInterface $container) {
                         return new Class50($container->get(Class49::class));
                     },
-                    Class51::class => function(ContainerInterface $container) {
+                    Class51::class => static function(ContainerInterface $container) {
                         return new Class51($container->get(Class50::class));
                     },
-                    Class52::class => function(ContainerInterface $container) {
+                    Class52::class => static function(ContainerInterface $container) {
                         return new Class52($container->get(Class51::class));
                     },
-                    Class53::class => function(ContainerInterface $container) {
+                    Class53::class => static function(ContainerInterface $container) {
                         return new Class53($container->get(Class52::class));
                     },
-                    Class54::class => function(ContainerInterface $container) {
+                    Class54::class => static function(ContainerInterface $container) {
                         return new Class54($container->get(Class53::class));
                     },
-                    Class55::class => function(ContainerInterface $container) {
+                    Class55::class => static function(ContainerInterface $container) {
                         return new Class55($container->get(Class54::class));
                     },
-                    Class56::class => function(ContainerInterface $container) {
+                    Class56::class => static function(ContainerInterface $container) {
                         return new Class56($container->get(Class55::class));
                     },
-                    Class57::class => function(ContainerInterface $container) {
+                    Class57::class => static function(ContainerInterface $container) {
                         return new Class57($container->get(Class56::class));
                     },
-                    Class58::class => function(ContainerInterface $container) {
+                    Class58::class => static function(ContainerInterface $container) {
                         return new Class58($container->get(Class57::class));
                     },
-                    Class59::class => function(ContainerInterface $container) {
+                    Class59::class => static function(ContainerInterface $container) {
                         return new Class59($container->get(Class58::class));
                     },
-                    Class60::class => function(ContainerInterface $container) {
+                    Class60::class => static function(ContainerInterface $container) {
                         return new Class60($container->get(Class59::class));
                     },
-                    Class61::class => function(ContainerInterface $container) {
+                    Class61::class => static function(ContainerInterface $container) {
                         return new Class61($container->get(Class60::class));
                     },
-                    Class62::class => function(ContainerInterface $container) {
+                    Class62::class => static function(ContainerInterface $container) {
                         return new Class62($container->get(Class61::class));
                     },
-                    Class63::class => function(ContainerInterface $container) {
+                    Class63::class => static function(ContainerInterface $container) {
                         return new Class63($container->get(Class62::class));
                     },
-                    Class64::class => function(ContainerInterface $container) {
+                    Class64::class => static function(ContainerInterface $container) {
                         return new Class64($container->get(Class63::class));
                     },
-                    Class65::class => function(ContainerInterface $container) {
+                    Class65::class => static function(ContainerInterface $container) {
                         return new Class65($container->get(Class64::class));
                     },
-                    Class66::class => function(ContainerInterface $container) {
+                    Class66::class => static function(ContainerInterface $container) {
                         return new Class66($container->get(Class65::class));
                     },
-                    Class67::class => function(ContainerInterface $container) {
+                    Class67::class => static function(ContainerInterface $container) {
                         return new Class67($container->get(Class66::class));
                     },
-                    Class68::class => function(ContainerInterface $container) {
+                    Class68::class => static function(ContainerInterface $container) {
                         return new Class68($container->get(Class67::class));
                     },
-                    Class69::class => function(ContainerInterface $container) {
+                    Class69::class => static function(ContainerInterface $container) {
                         return new Class69($container->get(Class68::class));
                     },
-                    Class70::class => function(ContainerInterface $container) {
+                    Class70::class => static function(ContainerInterface $container) {
                         return new Class70($container->get(Class69::class));
                     },
-                    Class71::class => function(ContainerInterface $container) {
+                    Class71::class => static function(ContainerInterface $container) {
                         return new Class71($container->get(Class70::class));
                     },
-                    Class72::class => function(ContainerInterface $container) {
+                    Class72::class => static function(ContainerInterface $container) {
                         return new Class72($container->get(Class71::class));
                     },
-                    Class73::class => function(ContainerInterface $container) {
+                    Class73::class => static function(ContainerInterface $container) {
                         return new Class73($container->get(Class72::class));
                     },
-                    Class74::class => function(ContainerInterface $container) {
+                    Class74::class => static function(ContainerInterface $container) {
                         return new Class74($container->get(Class73::class));
                     },
-                    Class75::class => function(ContainerInterface $container) {
+                    Class75::class => static function(ContainerInterface $container) {
                         return new Class75($container->get(Class74::class));
                     },
-                    Class76::class => function(ContainerInterface $container) {
+                    Class76::class => static function(ContainerInterface $container) {
                         return new Class76($container->get(Class75::class));
                     },
-                    Class77::class => function(ContainerInterface $container) {
+                    Class77::class => static function(ContainerInterface $container) {
                         return new Class77($container->get(Class76::class));
                     },
-                    Class78::class => function(ContainerInterface $container) {
+                    Class78::class => static function(ContainerInterface $container) {
                         return new Class78($container->get(Class77::class));
                     },
-                    Class79::class => function(ContainerInterface $container) {
+                    Class79::class => static function(ContainerInterface $container) {
                         return new Class79($container->get(Class78::class));
                     },
-                    Class80::class => function(ContainerInterface $container) {
+                    Class80::class => static function(ContainerInterface $container) {
                         return new Class80($container->get(Class79::class));
                     },
-                    Class81::class => function(ContainerInterface $container) {
+                    Class81::class => static function(ContainerInterface $container) {
                         return new Class81($container->get(Class80::class));
                     },
-                    Class82::class => function(ContainerInterface $container) {
+                    Class82::class => static function(ContainerInterface $container) {
                         return new Class82($container->get(Class81::class));
                     },
-                    Class83::class => function(ContainerInterface $container) {
+                    Class83::class => static function(ContainerInterface $container) {
                         return new Class83($container->get(Class82::class));
                     },
-                    Class84::class => function(ContainerInterface $container) {
+                    Class84::class => static function(ContainerInterface $container) {
                         return new Class84($container->get(Class83::class));
                     },
-                    Class85::class => function(ContainerInterface $container) {
+                    Class85::class => static function(ContainerInterface $container) {
                         return new Class85($container->get(Class84::class));
                     },
-                    Class86::class => function(ContainerInterface $container) {
+                    Class86::class => static function(ContainerInterface $container) {
                         return new Class86($container->get(Class85::class));
                     },
-                    Class87::class => function(ContainerInterface $container) {
+                    Class87::class => static function(ContainerInterface $container) {
                         return new Class87($container->get(Class86::class));
                     },
-                    Class88::class => function(ContainerInterface $container) {
+                    Class88::class => static function(ContainerInterface $container) {
                         return new Class88($container->get(Class87::class));
                     },
-                    Class89::class => function(ContainerInterface $container) {
+                    Class89::class => static function(ContainerInterface $container) {
                         return new Class89($container->get(Class88::class));
                     },
-                    Class90::class => function(ContainerInterface $container) {
+                    Class90::class => static function(ContainerInterface $container) {
                         return new Class90($container->get(Class89::class));
                     },
-                    Class91::class => function(ContainerInterface $container) {
+                    Class91::class => static function(ContainerInterface $container) {
                         return new Class91($container->get(Class90::class));
                     },
-                    Class92::class => function(ContainerInterface $container) {
+                    Class92::class => static function(ContainerInterface $container) {
                         return new Class92($container->get(Class91::class));
                     },
-                    Class93::class => function(ContainerInterface $container) {
+                    Class93::class => static function(ContainerInterface $container) {
                         return new Class93($container->get(Class92::class));
                     },
-                    Class94::class => function(ContainerInterface $container) {
+                    Class94::class => static function(ContainerInterface $container) {
                         return new Class94($container->get(Class93::class));
                     },
-                    Class95::class => function(ContainerInterface $container) {
+                    Class95::class => static function(ContainerInterface $container) {
                         return new Class95($container->get(Class94::class));
                     },
-                    Class96::class => function(ContainerInterface $container) {
+                    Class96::class => static function(ContainerInterface $container) {
                         return new Class96($container->get(Class95::class));
                     },
-                    Class97::class => function(ContainerInterface $container) {
+                    Class97::class => static function(ContainerInterface $container) {
                         return new Class97($container->get(Class96::class));
                     },
-                    Class98::class => function(ContainerInterface $container) {
+                    Class98::class => static function(ContainerInterface $container) {
                         return new Class98($container->get(Class97::class));
                     },
-                    Class99::class => function(ContainerInterface $container) {
+                    Class99::class => static function(ContainerInterface $container) {
                         return new Class99($container->get(Class98::class));
                     },
-                    Class100::class => function(ContainerInterface $container) {
+                    Class100::class => static function(ContainerInterface $container) {
                         return new Class100($container->get(Class99::class));
                     },
                 ],
@@ -448,7 +446,7 @@ abstract class AbstractZendServiceManagerTest implements TestInterface
 
            echo "[\n";
            for ($i = 1; $i <= 100; $i++) {
-               echo "    Class" . $i . "::class => function(ContainerInterface \$container) {\n";
+               echo "    Class" . $i . "::class => static function(ContainerInterface \$container) {\n";
                echo "        return new Class" . $i . "(\$container->get(Class" . ($i-1) . "::class));\n";
                echo "    },\n";
            }
@@ -458,301 +456,301 @@ abstract class AbstractZendServiceManagerTest implements TestInterface
             [
                 "factories" => [
                     Class1::class => InvokableFactory::class,
-                    Class2::class => function(ContainerInterface $container) {
+                    Class2::class => static function(ContainerInterface $container) {
                         return new Class2($container->get(Class1::class));
                     },
-                    Class3::class => function(ContainerInterface $container) {
+                    Class3::class => static function(ContainerInterface $container) {
                         return new Class3($container->get(Class2::class));
                     },
-                    Class4::class => function(ContainerInterface $container) {
+                    Class4::class => static function(ContainerInterface $container) {
                         return new Class4($container->get(Class3::class));
                     },
-                    Class5::class => function(ContainerInterface $container) {
+                    Class5::class => static function(ContainerInterface $container) {
                         return new Class5($container->get(Class4::class));
                     },
-                    Class6::class => function(ContainerInterface $container) {
+                    Class6::class => static function(ContainerInterface $container) {
                         return new Class6($container->get(Class5::class));
                     },
-                    Class7::class => function(ContainerInterface $container) {
+                    Class7::class => static function(ContainerInterface $container) {
                         return new Class7($container->get(Class6::class));
                     },
-                    Class8::class => function(ContainerInterface $container) {
+                    Class8::class => static function(ContainerInterface $container) {
                         return new Class8($container->get(Class7::class));
                     },
-                    Class9::class => function(ContainerInterface $container) {
+                    Class9::class => static function(ContainerInterface $container) {
                         return new Class9($container->get(Class8::class));
                     },
-                    Class10::class => function(ContainerInterface $container) {
+                    Class10::class => static function(ContainerInterface $container) {
                         return new Class10($container->get(Class9::class));
                     },
-                    Class11::class => function(ContainerInterface $container) {
+                    Class11::class => static function(ContainerInterface $container) {
                         return new Class11($container->get(Class10::class));
                     },
-                    Class12::class => function(ContainerInterface $container) {
+                    Class12::class => static function(ContainerInterface $container) {
                         return new Class12($container->get(Class11::class));
                     },
-                    Class13::class => function(ContainerInterface $container) {
+                    Class13::class => static function(ContainerInterface $container) {
                         return new Class13($container->get(Class12::class));
                     },
-                    Class14::class => function(ContainerInterface $container) {
+                    Class14::class => static function(ContainerInterface $container) {
                         return new Class14($container->get(Class13::class));
                     },
-                    Class15::class => function(ContainerInterface $container) {
+                    Class15::class => static function(ContainerInterface $container) {
                         return new Class15($container->get(Class14::class));
                     },
-                    Class16::class => function(ContainerInterface $container) {
+                    Class16::class => static function(ContainerInterface $container) {
                         return new Class16($container->get(Class15::class));
                     },
-                    Class17::class => function(ContainerInterface $container) {
+                    Class17::class => static function(ContainerInterface $container) {
                         return new Class17($container->get(Class16::class));
                     },
-                    Class18::class => function(ContainerInterface $container) {
+                    Class18::class => static function(ContainerInterface $container) {
                         return new Class18($container->get(Class17::class));
                     },
-                    Class19::class => function(ContainerInterface $container) {
+                    Class19::class => static function(ContainerInterface $container) {
                         return new Class19($container->get(Class18::class));
                     },
-                    Class20::class => function(ContainerInterface $container) {
+                    Class20::class => static function(ContainerInterface $container) {
                         return new Class20($container->get(Class19::class));
                     },
-                    Class21::class => function(ContainerInterface $container) {
+                    Class21::class => static function(ContainerInterface $container) {
                         return new Class21($container->get(Class20::class));
                     },
-                    Class22::class => function(ContainerInterface $container) {
+                    Class22::class => static function(ContainerInterface $container) {
                         return new Class22($container->get(Class21::class));
                     },
-                    Class23::class => function(ContainerInterface $container) {
+                    Class23::class => static function(ContainerInterface $container) {
                         return new Class23($container->get(Class22::class));
                     },
-                    Class24::class => function(ContainerInterface $container) {
+                    Class24::class => static function(ContainerInterface $container) {
                         return new Class24($container->get(Class23::class));
                     },
-                    Class25::class => function(ContainerInterface $container) {
+                    Class25::class => static function(ContainerInterface $container) {
                         return new Class25($container->get(Class24::class));
                     },
-                    Class26::class => function(ContainerInterface $container) {
+                    Class26::class => static function(ContainerInterface $container) {
                         return new Class26($container->get(Class25::class));
                     },
-                    Class27::class => function(ContainerInterface $container) {
+                    Class27::class => static function(ContainerInterface $container) {
                         return new Class27($container->get(Class26::class));
                     },
-                    Class28::class => function(ContainerInterface $container) {
+                    Class28::class => static function(ContainerInterface $container) {
                         return new Class28($container->get(Class27::class));
                     },
-                    Class29::class => function(ContainerInterface $container) {
+                    Class29::class => static function(ContainerInterface $container) {
                         return new Class29($container->get(Class28::class));
                     },
-                    Class30::class => function(ContainerInterface $container) {
+                    Class30::class => static function(ContainerInterface $container) {
                         return new Class30($container->get(Class29::class));
                     },
-                    Class31::class => function(ContainerInterface $container) {
+                    Class31::class => static function(ContainerInterface $container) {
                         return new Class31($container->get(Class30::class));
                     },
-                    Class32::class => function(ContainerInterface $container) {
+                    Class32::class => static function(ContainerInterface $container) {
                         return new Class32($container->get(Class31::class));
                     },
-                    Class33::class => function(ContainerInterface $container) {
+                    Class33::class => static function(ContainerInterface $container) {
                         return new Class33($container->get(Class32::class));
                     },
-                    Class34::class => function(ContainerInterface $container) {
+                    Class34::class => static function(ContainerInterface $container) {
                         return new Class34($container->get(Class33::class));
                     },
-                    Class35::class => function(ContainerInterface $container) {
+                    Class35::class => static function(ContainerInterface $container) {
                         return new Class35($container->get(Class34::class));
                     },
-                    Class36::class => function(ContainerInterface $container) {
+                    Class36::class => static function(ContainerInterface $container) {
                         return new Class36($container->get(Class35::class));
                     },
-                    Class37::class => function(ContainerInterface $container) {
+                    Class37::class => static function(ContainerInterface $container) {
                         return new Class37($container->get(Class36::class));
                     },
-                    Class38::class => function(ContainerInterface $container) {
+                    Class38::class => static function(ContainerInterface $container) {
                         return new Class38($container->get(Class37::class));
                     },
-                    Class39::class => function(ContainerInterface $container) {
+                    Class39::class => static function(ContainerInterface $container) {
                         return new Class39($container->get(Class38::class));
                     },
-                    Class40::class => function(ContainerInterface $container) {
+                    Class40::class => static function(ContainerInterface $container) {
                         return new Class40($container->get(Class39::class));
                     },
-                    Class41::class => function(ContainerInterface $container) {
+                    Class41::class => static function(ContainerInterface $container) {
                         return new Class41($container->get(Class40::class));
                     },
-                    Class42::class => function(ContainerInterface $container) {
+                    Class42::class => static function(ContainerInterface $container) {
                         return new Class42($container->get(Class41::class));
                     },
-                    Class43::class => function(ContainerInterface $container) {
+                    Class43::class => static function(ContainerInterface $container) {
                         return new Class43($container->get(Class42::class));
                     },
-                    Class44::class => function(ContainerInterface $container) {
+                    Class44::class => static function(ContainerInterface $container) {
                         return new Class44($container->get(Class43::class));
                     },
-                    Class45::class => function(ContainerInterface $container) {
+                    Class45::class => static function(ContainerInterface $container) {
                         return new Class45($container->get(Class44::class));
                     },
-                    Class46::class => function(ContainerInterface $container) {
+                    Class46::class => static function(ContainerInterface $container) {
                         return new Class46($container->get(Class45::class));
                     },
-                    Class47::class => function(ContainerInterface $container) {
+                    Class47::class => static function(ContainerInterface $container) {
                         return new Class47($container->get(Class46::class));
                     },
-                    Class48::class => function(ContainerInterface $container) {
+                    Class48::class => static function(ContainerInterface $container) {
                         return new Class48($container->get(Class47::class));
                     },
-                    Class49::class => function(ContainerInterface $container) {
+                    Class49::class => static function(ContainerInterface $container) {
                         return new Class49($container->get(Class48::class));
                     },
-                    Class50::class => function(ContainerInterface $container) {
+                    Class50::class => static function(ContainerInterface $container) {
                         return new Class50($container->get(Class49::class));
                     },
-                    Class51::class => function(ContainerInterface $container) {
+                    Class51::class => static function(ContainerInterface $container) {
                         return new Class51($container->get(Class50::class));
                     },
-                    Class52::class => function(ContainerInterface $container) {
+                    Class52::class => static function(ContainerInterface $container) {
                         return new Class52($container->get(Class51::class));
                     },
-                    Class53::class => function(ContainerInterface $container) {
+                    Class53::class => static function(ContainerInterface $container) {
                         return new Class53($container->get(Class52::class));
                     },
-                    Class54::class => function(ContainerInterface $container) {
+                    Class54::class => static function(ContainerInterface $container) {
                         return new Class54($container->get(Class53::class));
                     },
-                    Class55::class => function(ContainerInterface $container) {
+                    Class55::class => static function(ContainerInterface $container) {
                         return new Class55($container->get(Class54::class));
                     },
-                    Class56::class => function(ContainerInterface $container) {
+                    Class56::class => static function(ContainerInterface $container) {
                         return new Class56($container->get(Class55::class));
                     },
-                    Class57::class => function(ContainerInterface $container) {
+                    Class57::class => static function(ContainerInterface $container) {
                         return new Class57($container->get(Class56::class));
                     },
-                    Class58::class => function(ContainerInterface $container) {
+                    Class58::class => static function(ContainerInterface $container) {
                         return new Class58($container->get(Class57::class));
                     },
-                    Class59::class => function(ContainerInterface $container) {
+                    Class59::class => static function(ContainerInterface $container) {
                         return new Class59($container->get(Class58::class));
                     },
-                    Class60::class => function(ContainerInterface $container) {
+                    Class60::class => static function(ContainerInterface $container) {
                         return new Class60($container->get(Class59::class));
                     },
-                    Class61::class => function(ContainerInterface $container) {
+                    Class61::class => static function(ContainerInterface $container) {
                         return new Class61($container->get(Class60::class));
                     },
-                    Class62::class => function(ContainerInterface $container) {
+                    Class62::class => static function(ContainerInterface $container) {
                         return new Class62($container->get(Class61::class));
                     },
-                    Class63::class => function(ContainerInterface $container) {
+                    Class63::class => static function(ContainerInterface $container) {
                         return new Class63($container->get(Class62::class));
                     },
-                    Class64::class => function(ContainerInterface $container) {
+                    Class64::class => static function(ContainerInterface $container) {
                         return new Class64($container->get(Class63::class));
                     },
-                    Class65::class => function(ContainerInterface $container) {
+                    Class65::class => static function(ContainerInterface $container) {
                         return new Class65($container->get(Class64::class));
                     },
-                    Class66::class => function(ContainerInterface $container) {
+                    Class66::class => static function(ContainerInterface $container) {
                         return new Class66($container->get(Class65::class));
                     },
-                    Class67::class => function(ContainerInterface $container) {
+                    Class67::class => static function(ContainerInterface $container) {
                         return new Class67($container->get(Class66::class));
                     },
-                    Class68::class => function(ContainerInterface $container) {
+                    Class68::class => static function(ContainerInterface $container) {
                         return new Class68($container->get(Class67::class));
                     },
-                    Class69::class => function(ContainerInterface $container) {
+                    Class69::class => static function(ContainerInterface $container) {
                         return new Class69($container->get(Class68::class));
                     },
-                    Class70::class => function(ContainerInterface $container) {
+                    Class70::class => static function(ContainerInterface $container) {
                         return new Class70($container->get(Class69::class));
                     },
-                    Class71::class => function(ContainerInterface $container) {
+                    Class71::class => static function(ContainerInterface $container) {
                         return new Class71($container->get(Class70::class));
                     },
-                    Class72::class => function(ContainerInterface $container) {
+                    Class72::class => static function(ContainerInterface $container) {
                         return new Class72($container->get(Class71::class));
                     },
-                    Class73::class => function(ContainerInterface $container) {
+                    Class73::class => static function(ContainerInterface $container) {
                         return new Class73($container->get(Class72::class));
                     },
-                    Class74::class => function(ContainerInterface $container) {
+                    Class74::class => static function(ContainerInterface $container) {
                         return new Class74($container->get(Class73::class));
                     },
-                    Class75::class => function(ContainerInterface $container) {
+                    Class75::class => static function(ContainerInterface $container) {
                         return new Class75($container->get(Class74::class));
                     },
-                    Class76::class => function(ContainerInterface $container) {
+                    Class76::class => static function(ContainerInterface $container) {
                         return new Class76($container->get(Class75::class));
                     },
-                    Class77::class => function(ContainerInterface $container) {
+                    Class77::class => static function(ContainerInterface $container) {
                         return new Class77($container->get(Class76::class));
                     },
-                    Class78::class => function(ContainerInterface $container) {
+                    Class78::class => static function(ContainerInterface $container) {
                         return new Class78($container->get(Class77::class));
                     },
-                    Class79::class => function(ContainerInterface $container) {
+                    Class79::class => static function(ContainerInterface $container) {
                         return new Class79($container->get(Class78::class));
                     },
-                    Class80::class => function(ContainerInterface $container) {
+                    Class80::class => static function(ContainerInterface $container) {
                         return new Class80($container->get(Class79::class));
                     },
-                    Class81::class => function(ContainerInterface $container) {
+                    Class81::class => static function(ContainerInterface $container) {
                         return new Class81($container->get(Class80::class));
                     },
-                    Class82::class => function(ContainerInterface $container) {
+                    Class82::class => static function(ContainerInterface $container) {
                         return new Class82($container->get(Class81::class));
                     },
-                    Class83::class => function(ContainerInterface $container) {
+                    Class83::class => static function(ContainerInterface $container) {
                         return new Class83($container->get(Class82::class));
                     },
-                    Class84::class => function(ContainerInterface $container) {
+                    Class84::class => static function(ContainerInterface $container) {
                         return new Class84($container->get(Class83::class));
                     },
-                    Class85::class => function(ContainerInterface $container) {
+                    Class85::class => static function(ContainerInterface $container) {
                         return new Class85($container->get(Class84::class));
                     },
-                    Class86::class => function(ContainerInterface $container) {
+                    Class86::class => static function(ContainerInterface $container) {
                         return new Class86($container->get(Class85::class));
                     },
-                    Class87::class => function(ContainerInterface $container) {
+                    Class87::class => static function(ContainerInterface $container) {
                         return new Class87($container->get(Class86::class));
                     },
-                    Class88::class => function(ContainerInterface $container) {
+                    Class88::class => static function(ContainerInterface $container) {
                         return new Class88($container->get(Class87::class));
                     },
-                    Class89::class => function(ContainerInterface $container) {
+                    Class89::class => static function(ContainerInterface $container) {
                         return new Class89($container->get(Class88::class));
                     },
-                    Class90::class => function(ContainerInterface $container) {
+                    Class90::class => static function(ContainerInterface $container) {
                         return new Class90($container->get(Class89::class));
                     },
-                    Class91::class => function(ContainerInterface $container) {
+                    Class91::class => static function(ContainerInterface $container) {
                         return new Class91($container->get(Class90::class));
                     },
-                    Class92::class => function(ContainerInterface $container) {
+                    Class92::class => static function(ContainerInterface $container) {
                         return new Class92($container->get(Class91::class));
                     },
-                    Class93::class => function(ContainerInterface $container) {
+                    Class93::class => static function(ContainerInterface $container) {
                         return new Class93($container->get(Class92::class));
                     },
-                    Class94::class => function(ContainerInterface $container) {
+                    Class94::class => static function(ContainerInterface $container) {
                         return new Class94($container->get(Class93::class));
                     },
-                    Class95::class => function(ContainerInterface $container) {
+                    Class95::class => static function(ContainerInterface $container) {
                         return new Class95($container->get(Class94::class));
                     },
-                    Class96::class => function(ContainerInterface $container) {
+                    Class96::class => static function(ContainerInterface $container) {
                         return new Class96($container->get(Class95::class));
                     },
-                    Class97::class => function(ContainerInterface $container) {
+                    Class97::class => static function(ContainerInterface $container) {
                         return new Class97($container->get(Class96::class));
                     },
-                    Class98::class => function(ContainerInterface $container) {
+                    Class98::class => static function(ContainerInterface $container) {
                         return new Class98($container->get(Class97::class));
                     },
-                    Class99::class => function(ContainerInterface $container) {
+                    Class99::class => static function(ContainerInterface $container) {
                         return new Class99($container->get(Class98::class));
                     },
-                    Class100::class => function(ContainerInterface $container) {
+                    Class100::class => static function(ContainerInterface $container) {
                         return new Class100($container->get(Class99::class));
                     },
                 ],

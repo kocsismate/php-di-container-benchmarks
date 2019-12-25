@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Dice;
 
 use DiContainerBenchmarks\Fixture\Class10;
 
-class Test1 extends AbstractDiceTest
+final class Test1 extends AbstractDiceTest
 {
     public function startup(): void
     {

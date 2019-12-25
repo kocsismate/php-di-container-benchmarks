@@ -1,11 +1,12 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Yii2;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
 
-class Yii2Container implements ContainerInterface
+final class Yii2Container implements ContainerInterface
 {
     public function getPackage(): string
     {

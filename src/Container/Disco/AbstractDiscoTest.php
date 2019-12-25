@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Disco;
@@ -16,10 +17,7 @@ use ProxyManager\Inflector\ClassNameInflector;
 
 abstract class AbstractDiscoTest implements TestInterface
 {
-    /**
-     * @var ContainerInterface
-     */
-    protected $container;
+    protected ContainerInterface $container;
 
     protected function setContainerWithPrototypeServices(): void
     {

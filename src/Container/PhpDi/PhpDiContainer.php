@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\PhpDi;
@@ -107,7 +108,7 @@ use DiContainerBenchmarks\Fixture\Class98;
 use DiContainerBenchmarks\Fixture\Class99;
 use DiContainerBenchmarks\Fixture\Class100;
 
-class PhpDiContainer implements ContainerInterface
+final class PhpDiContainer implements ContainerInterface
 {
     public function getPackage(): string
     {

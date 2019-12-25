@@ -8,7 +8,7 @@ use function class_exists;
 use function hrtime;
 use function memory_get_peak_usage;
 
-class TestRunner
+final class TestRunner
 {
     public function runTest(
         int $testSuiteNumber,

@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\PHPixieDi;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
 
-class PHPixieDiContainer implements ContainerInterface
+final class PHPixieDiContainer implements ContainerInterface
 {
     public function getPackage(): string
     {

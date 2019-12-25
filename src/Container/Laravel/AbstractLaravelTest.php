@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Laravel;
@@ -11,10 +12,7 @@ use Illuminate\Container\Container;
 
 abstract class AbstractLaravelTest implements TestInterface
 {
-    /**
-     * @var Container
-     */
-    protected $container;
+    protected Container $container;
 
     protected function setContainerWithPrototypeServices(): void
     {

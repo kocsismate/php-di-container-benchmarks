@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Zen;
@@ -8,7 +9,7 @@ use DiContainerBenchmarks\Container\Zen\Resource\PrototypeCompilerConfig;
 use DiContainerBenchmarks\Container\Zen\Resource\SingletonCompilerConfig;
 use WoohooLabs\Zen\Container\Builder\FileSystemContainerBuilder;
 
-class ZenContainer implements ContainerInterface
+final class ZenContainer implements ContainerInterface
 {
     public function getPackage(): string
     {

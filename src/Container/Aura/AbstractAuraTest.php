@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Aura;
@@ -11,10 +12,7 @@ use DiContainerBenchmarks\Test\TestInterface;
 
 abstract class AbstractAuraTest implements TestInterface
 {
-    /**
-     * @var Container
-     */
-    protected $container;
+    protected Container $container;
 
     protected function setContainerWithPrototypeServices(): void
     {

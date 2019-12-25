@@ -16,10 +16,9 @@ use function sprintf;
 use function strpos;
 use function substr;
 
-class HtmlOutputGenerator implements OutputGeneratorInterface
+final class HtmlOutputGenerator implements OutputGeneratorInterface
 {
-    /** @var string */
-    private $path;
+    private string $path;
 
     public function __construct(string $path)
     {

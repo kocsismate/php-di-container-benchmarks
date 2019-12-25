@@ -6,7 +6,7 @@ namespace DiContainerBenchmarks\TestSuite;
 
 use DiContainerBenchmarks\Test\TestCase;
 
-class TestSuite1 implements TestSuiteInterface
+final class TestSuite1 implements TestSuiteInterface
 {
     public function getNumber(): int
     {

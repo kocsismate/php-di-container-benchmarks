@@ -4,25 +4,16 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Test;
 
-class TestCase
+final class TestCase
 {
     public const COLD = "cold";
-
     public const SEMI_WARM = "semi_warm";
-
     public const WARM = "warm";
 
-    /** @var int */
-    private $number;
-
-    /** @var string */
-    private $title;
-
-    /** @var int */
-    private $iterations;
-
-    /** @var string */
-    private $testType;
+    private int $number;
+    private string $title;
+    private int $iterations;
+    private string $testType;
 
     public function __construct(int $number, string $title, int $iterations, string $testType)
     {

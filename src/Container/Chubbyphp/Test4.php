@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Chubbyphp;
 
 use DiContainerBenchmarks\Test\UnsupportedTestException;
 
-class Test4 extends AbstractChubbyphpTest
+final class Test4 extends AbstractChubbyphpTest
 {
     public function startup(): void
     {

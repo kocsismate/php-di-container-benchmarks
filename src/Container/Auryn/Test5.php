@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Auryn;
 
 use DiContainerBenchmarks\Fixture\Class10;
 
-class Test5 extends AbstractAurynTest
+final class Test5 extends AbstractAurynTest
 {
     public function startup(): void
     {

@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\ZendServiceManager;
 
 use DiContainerBenchmarks\Fixture\Class100;
 
-class Test2 extends AbstractZendServiceManagerTest
+final class Test2 extends AbstractZendServiceManagerTest
 {
     public function startup(): void
     {

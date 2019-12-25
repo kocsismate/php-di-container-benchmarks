@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Auryn;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
 
-class AurynContainer implements ContainerInterface
+final class AurynContainer implements ContainerInterface
 {
     public function getPackage(): string
     {

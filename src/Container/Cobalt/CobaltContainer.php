@@ -1,11 +1,12 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Cobalt;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
 
-class CobaltContainer implements ContainerInterface
+final class CobaltContainer implements ContainerInterface
 {
     public function getPackage(): string
     {

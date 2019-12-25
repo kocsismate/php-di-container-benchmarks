@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Chubbyphp;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
 
-class ChubbyphpContainer implements ContainerInterface
+final class ChubbyphpContainer implements ContainerInterface
 {
     public function getPackage(): string
     {

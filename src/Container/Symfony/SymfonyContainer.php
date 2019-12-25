@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Symfony;
@@ -9,7 +10,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Dumper\PhpDumper;
 
-class SymfonyContainer implements ContainerInterface
+final class SymfonyContainer implements ContainerInterface
 {
     public function getPackage(): string
     {

@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Joomla;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
 
-class JoomlaContainer implements ContainerInterface
+final class JoomlaContainer implements ContainerInterface
 {
     public function getPackage(): string
     {

@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Pimple;
 
 use DiContainerBenchmarks\Fixture\Class100;
 
-class Test2 extends AbstractPimpleTest
+final class Test2 extends AbstractPimpleTest
 {
     public function startup(): void
     {

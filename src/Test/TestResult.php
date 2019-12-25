@@ -7,16 +7,11 @@ namespace DiContainerBenchmarks\Test;
 use function json_decode;
 use function json_encode;
 
-class TestResult
+final class TestResult
 {
-    /** @var float|null */
-    private $timeConsumption;
-
-    /** @var float|null */
-    private $peakMemoryUsage;
-
-    /** @var string */
-    private $message;
+    private ?float $timeConsumption;
+    private ?float $peakMemoryUsage;
+    private string $message;
 
     public static function createUnsuccessful(string $message): TestResult
     {
