@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df6bf3cf381026f2f86ccd85aefcb7e6",
+    "content-hash": "45f5e74150d7012f2c710ec5634c92fc",
     "packages": [
         {
             "name": "aura/di",
@@ -295,6 +295,65 @@
                 "markdown-extra"
             ],
             "time": "2018-03-26T11:24:36+00:00"
+        },
+        {
+            "name": "chubbyphp/chubbyphp-container",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chubbyphp/chubbyphp-container.git",
+                "reference": "5454a3ff5a2af29c0ce78cb99715684e618747f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chubbyphp/chubbyphp-container/zipball/5454a3ff5a2af29c0ce78cb99715684e618747f2",
+                "reference": "5454a3ff5a2af29c0ce78cb99715684e618747f2",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2",
+                "psr/container": "^1.0"
+            },
+            "require-dev": {
+                "chubbyphp/chubbyphp-mock": "^1.4.2",
+                "friendsofphp/php-cs-fixer": "^2.16.1",
+                "infection/infection": "^0.14.3",
+                "mavimo/phpstan-junit": "^0.2.3",
+                "nunomaduro/phpinsights": "^1.11",
+                "php-coveralls/php-coveralls": "^2.2",
+                "phploc/phploc": "^5.0",
+                "phpstan/extension-installer": "^1.0.3",
+                "phpstan/phpstan": "^0.11.19",
+                "phpunit/phpunit": "^8.4.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Chubbyphp\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dominik Zogg",
+                    "email": "dominik.zogg@gmail.com"
+                }
+            ],
+            "description": "A simple PSR-11 container implementation.",
+            "keywords": [
+                "PSR-11",
+                "chubbyphp",
+                "container"
+            ],
+            "time": "2019-11-26T14:50:53+00:00"
         },
         {
             "name": "container-interop/container-interop",

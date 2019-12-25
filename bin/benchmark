@@ -8,6 +8,7 @@ use DiContainerBenchmarks\Benchmark\Benchmark;
 use DiContainerBenchmarks\Benchmark\WebBenchmarkContext;
 use DiContainerBenchmarks\Container\Aura\AuraContainer;
 use DiContainerBenchmarks\Container\Auryn\AurynContainer;
+use DiContainerBenchmarks\Container\Chubbyphp\ChubbyphpContainer;
 use DiContainerBenchmarks\Container\Cobalt\CobaltContainer;
 use DiContainerBenchmarks\Container\Dice\DiceContainer;
 use DiContainerBenchmarks\Container\Disco\DiscoContainer;
@@ -42,6 +43,7 @@ $testSuites = [
 $containers = [
     new AuraContainer(),
     new AurynContainer(),
+    new ChubbyphpContainer(),
     new CobaltContainer(),
     new DiceContainer(),
     new DiscoContainer(),
