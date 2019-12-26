@@ -29,7 +29,7 @@ elif [[ "$1" == "aws" ]]; then
 
     terraform init -backend=true -get=true
 
-    echo "TERRAFORM PLAN:";
+    echo "TERRAFORM PLAN:"
 
     terraform plan \
         -input=false \
@@ -38,7 +38,7 @@ elif [[ "$1" == "aws" ]]; then
         -var "project_root=$PROJECT_ROOT" \
         -var-file="$PROJECT_ROOT/build/infrastructure/config/aws.tfvars"
 
-    echo "TERRAFORM APPLY:";
+    echo "TERRAFORM APPLY:"
 
     terraform apply \
         -auto-approve \

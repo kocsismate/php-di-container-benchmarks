@@ -10,7 +10,6 @@ use bitExpert\Disco\BeanFactoryRegistry;
 use DiContainerBenchmarks\Container\Disco\Resource\PrototypeContainerConfig;
 use DiContainerBenchmarks\Container\Disco\Resource\SingletonContainerConfig;
 use DiContainerBenchmarks\Test\TestInterface;
-use Interop\Container\ContainerInterface;
 use ProxyManager\Autoloader\Autoloader;
 use ProxyManager\FileLocator\FileLocator;
 use ProxyManager\Inflector\ClassNameInflector;
