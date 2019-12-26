@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "45f5e74150d7012f2c710ec5634c92fc",
+    "content-hash": "333ddcd324e7c294f02dc3ae68e03143",
     "packages": [
         {
             "name": "aura/di",
@@ -1976,16 +1976,16 @@
         },
         {
             "name": "woohoolabs/zen",
-            "version": "2.8.1",
+            "version": "2.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/woohoolabs/zen.git",
-                "reference": "0de51e974207b22eb804ab9e21a66ce8a22ce70f"
+                "reference": "3fe2dfec6648be432070f44af101c9e2ef099562"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/0de51e974207b22eb804ab9e21a66ce8a22ce70f",
-                "reference": "0de51e974207b22eb804ab9e21a66ce8a22ce70f",
+                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/3fe2dfec6648be432070f44af101c9e2ef099562",
+                "reference": "3fe2dfec6648be432070f44af101c9e2ef099562",
                 "shasum": ""
             },
             "require": {
@@ -1998,12 +1998,12 @@
                 "psr/container-implementation": "1.0.0"
             },
             "require-dev": {
-                "phpstan/phpstan": "^0.11.15",
-                "phpstan/phpstan-strict-rules": "^0.11.0",
+                "phpstan/phpstan": "^0.12.3",
+                "phpstan/phpstan-strict-rules": "^0.12.0",
                 "phpunit/phpunit": "^8.3.4",
-                "squizlabs/php_codesniffer": "^3.4.0",
-                "woohoolabs/coding-standard": "^2.0.1",
-                "woohoolabs/releaser": "^1.1.0"
+                "squizlabs/php_codesniffer": "^3.5.0",
+                "woohoolabs/coding-standard": "^2.1.1",
+                "woohoolabs/releaser": "^1.2.0"
             },
             "bin": [
                 "bin/zen"
@@ -2027,17 +2027,19 @@
                     "email": "kocsismate@woohoolabs.com"
                 }
             ],
-            "description": "Woohoo Labs. Zen DI Container",
+            "description": "Woohoo Labs. Zen DI Container and preload file generator",
             "keywords": [
                 "PSR-11",
+                "Preload Generator",
                 "Woohoo Labs.",
                 "dependency injection container",
                 "di",
                 "dic",
                 "ioc",
+                "preload",
                 "zen"
             ],
-            "time": "2019-09-04T20:34:37+00:00"
+            "time": "2019-12-26T00:00:20+00:00"
         },
         {
             "name": "yiisoft/yii2",

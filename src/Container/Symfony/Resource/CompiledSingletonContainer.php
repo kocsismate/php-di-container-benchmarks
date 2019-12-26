@@ -18,6 +18,6 @@ if (!\class_exists(CompiledSingletonContainer::class, false)) {
 
 return new \ContainerKtzcBjQ\CompiledSingletonContainer([
     'container.build_hash' => 'KtzcBjQ',
-    'container.build_id' => '5fa944c9',
-    'container.build_time' => 1577299004,
+    'container.build_id' => 'c9ff3bd0',
+    'container.build_time' => 1577318982,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerKtzcBjQ');

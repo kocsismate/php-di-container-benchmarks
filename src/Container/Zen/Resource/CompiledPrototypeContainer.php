@@ -1,26 +1,22 @@
 <?php
+
+declare(strict_types=1);
+
 namespace DiContainerBenchmarks\Container\Zen\Resource;
 
 use WoohooLabs\Zen\AbstractCompiledContainer;
 
 class CompiledPrototypeContainer extends AbstractCompiledContainer
 {
-    /**
-     * @var string[]
-     */
-    protected static $entryPoints = [
+    protected static array $entryPoints = [
         'Psr\Container\ContainerInterface' => 'Psr__Container__ContainerInterface',
         'DiContainerBenchmarks\Container\Zen\Resource\CompiledPrototypeContainer' => 'DiContainerBenchmarks__Container__Zen__Resource__CompiledPrototypeContainer',
         'DiContainerBenchmarks\Fixture\Class10' => 'DiContainerBenchmarks__Fixture__Class10',
         'DiContainerBenchmarks\Fixture\Class100' => 'DiContainerBenchmarks__Fixture__Class100',
     ];
+    protected string $rootDirectory;
 
-    /**
-     * @var string
-     */
-    protected $rootDirectory;
-
-    public function __construct(string $rootDirectory = '')
+    public function __construct(string $rootDirectory = "")
     {
         $this->rootDirectory = $rootDirectory;
     }
