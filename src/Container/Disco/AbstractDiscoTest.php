@@ -17,7 +17,7 @@ use ProxyManager\Inflector\ClassNameInflector;
 
 abstract class AbstractDiscoTest implements TestInterface
 {
-    protected ContainerInterface $container;
+    protected AnnotationBeanFactory $container;
 
     protected function setContainerWithPrototypeServices(): void
     {

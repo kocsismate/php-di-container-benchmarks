@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Yaco;
 
-use DiContainerBenchmarks\Container\ContainerInterface;
 use DiContainerBenchmarks\Container\Yaco\Resource\CompiledSingletonContainer;
 use DiContainerBenchmarks\Test\TestInterface;
 
 abstract class AbstractYacoTest implements TestInterface
 {
-    protected ContainerInterface $container;
+    protected CompiledSingletonContainer $container;
 
     protected function setContainerWithPrototypeServices(): void
     {
