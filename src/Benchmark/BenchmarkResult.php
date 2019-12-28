@@ -18,6 +18,7 @@ use const SORT_NUMERIC;
 
 final class BenchmarkResult
 {
+    /** @var array<mixed, mixed> */
     private array $testResults = [];
 
     public function addTestResult(
@@ -61,7 +62,7 @@ final class BenchmarkResult
             );
         }
 
-        uasort($results, static function (TestResult $a, TestResult $b) {
+        uasort($results, static function (TestResult $a, TestResult $b): int {
             if ($a->getTimeConsumptionInMilliSeconds() === null && $b->getTimeConsumptionInMilliSeconds() !== null) {
                 return 1;
             }
@@ -76,20 +77,23 @@ final class BenchmarkResult
         return $results;
     }
 
-    private function getMedian(array $array, int $precision = 5): ?float
+    /**
+     * @param array<int, float|null> $results
+     */
+    private function getMedian(array $results, int $precision = 5): ?float
     {
-        if ($array === [] || $array[0] === null) {
+        if ($results === [] || $results[0] === null) {
             return null;
         }
 
-        sort($array, SORT_NUMERIC);
+        sort($results, SORT_NUMERIC);
 
-        $count = count($array);
+        $count = count($results);
         $middleIndex = $count / 2;
         if ($count % 2 === 0) {
-            $median = ($array[$middleIndex] + $array[$middleIndex + 1]) / 2;
+            $median = ($results[$middleIndex] + $results[$middleIndex + 1]) / 2;
         } else {
-            $median = $array[$middleIndex];
+            $median = $results[$middleIndex];
         }
 
         return round($median, $precision);
