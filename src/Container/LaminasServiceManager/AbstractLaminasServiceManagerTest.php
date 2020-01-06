@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DiContainerBenchmarks\Container\ZendServiceManager;
+namespace DiContainerBenchmarks\Container\LaminasServiceManager;
 
 use DiContainerBenchmarks\Fixture\Class1;
 use DiContainerBenchmarks\Fixture\Class10;
@@ -106,10 +106,10 @@ use DiContainerBenchmarks\Fixture\Class98;
 use DiContainerBenchmarks\Fixture\Class99;
 use DiContainerBenchmarks\Test\TestInterface;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\InvokableFactory;
-use Zend\ServiceManager\ServiceManager;
+use Laminas\ServiceManager\Factory\InvokableFactory;
+use Laminas\ServiceManager\ServiceManager;
 
-abstract class AbstractZendServiceManagerTest implements TestInterface
+abstract class AbstractLaminasServiceManagerTest implements TestInterface
 {
     protected ContainerInterface $container;
 

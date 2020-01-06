@@ -22,7 +22,7 @@ use DiContainerBenchmarks\Container\Symfony\SymfonyContainer;
 use DiContainerBenchmarks\Container\Yaco\YacoContainer;
 use DiContainerBenchmarks\Container\Yii2\Yii2Container;
 use DiContainerBenchmarks\Container\Zen\ZenContainer;
-use DiContainerBenchmarks\Container\ZendServiceManager\ZendServiceManagerContainer;
+use DiContainerBenchmarks\Container\LaminasServiceManager\LaminasServiceManagerContainer;
 use DiContainerBenchmarks\OutputGenerator\HtmlOutputGenerator;
 use DiContainerBenchmarks\TestSuite\TestSuite1;
 use DiContainerBenchmarks\TestSuite\TestSuite2;
@@ -48,6 +48,7 @@ $containers = [
     new DiceContainer(),
     new DiscoContainer(),
     new JoomlaContainer(),
+    new LaminasServiceManagerContainer(),
     new LaravelContainer(),
     new OpulenceIocContainer(),
     new PhpDiContainer(),
@@ -57,7 +58,6 @@ $containers = [
     new YacoContainer(),
     new Yii2Container(),
     new ZenContainer(),
-    new ZendServiceManagerContainer(),
 ];
 
 $outputGenerators = [

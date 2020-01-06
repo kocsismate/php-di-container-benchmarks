@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace DiContainerBenchmarks\Container\ZendServiceManager;
+namespace DiContainerBenchmarks\Container\LaminasServiceManager;
 
 use DiContainerBenchmarks\Fixture\Class10;
 
-final class Test5 extends AbstractZendServiceManagerTest
+final class Test3 extends AbstractLaminasServiceManagerTest
 {
     public function startup(): void
     {
-        $this->setContainerWithSingletonServices();
+        $this->setContainerWithPrototypeServices();
     }
 
     public function run(): void

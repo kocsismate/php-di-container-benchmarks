@@ -19,6 +19,7 @@
         "illuminate/container": "^6.8.0",
         "joomla/di": "^1.5.1",
         "jshannon63/cobalt": "^1.2.1",
+        "laminas/laminas-servicemanager": "^3.4.0",
         "level-2/dice": "^4.0.1",
         "opulence/ioc": "^1.1.7",
         "php-di/php-di": "^6.0.11",
@@ -29,8 +30,7 @@
         "symfony/dependency-injection": "^5.0.2",
         "thecodingmachine/yaco": "^1.0.0",
         "woohoolabs/zen": "^2.9.0",
-        "yiisoft/yii2": "^2.0.31",
-        "zendframework/zend-servicemanager": "^3.4.0"
+        "yiisoft/yii2": "^2.0.31"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12.0",

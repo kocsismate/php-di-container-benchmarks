@@ -2,25 +2,25 @@
 
 declare(strict_types=1);
 
-namespace DiContainerBenchmarks\Container\ZendServiceManager;
+namespace DiContainerBenchmarks\Container\LaminasServiceManager;
 
 use DiContainerBenchmarks\Container\ContainerInterface;
 
-final class ZendServiceManagerContainer implements ContainerInterface
+final class LaminasServiceManagerContainer implements ContainerInterface
 {
     public function getPackage(): string
     {
-        return "zendframework/zend-servicemanager";
+        return "laminas/laminas-servicemanager";
     }
 
     public function getNamespace(): string
     {
-        return "ZendServiceManager";
+        return "LaminasServiceManager";
     }
 
     public function getDisplayedName(): string
     {
-        return "Zend ServiceManager";
+        return "Laminas ServiceManager";
     }
 
     public function isCompiled(): bool
@@ -35,7 +35,7 @@ final class ZendServiceManagerContainer implements ContainerInterface
 
     public function getUrl(): string
     {
-        return "https://zendframework.github.io/zend-servicemanager/";
+        return "https://docs.laminas.dev/laminas-servicemanager/";
     }
 
     public function build(): void
