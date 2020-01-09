@@ -91,7 +91,7 @@ The HTML output will be generated in the "var" directory.
 If the above possibilities aren't available to you then you have to take several steps before running the benchmark:
 
 - Install a web server and configure it to be able to serve "public/index.php"
-- Install PHP 7.3 at least with OPcache enabled
+- Install PHP 7.4 at least with OPcache enabled
 - Install Composer
 - Set the `BENCHMARK_URL` environment variable to the URL where "public/index.php" is available. For instance:
 
