@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "beb0fdd5f794de81529d23f428378b4f",
+    "content-hash": "c7368f11e675aab69d9d69557c62570d",
     "packages": [
         {
             "name": "aura/di",
@@ -220,7 +220,7 @@
             "version": "2.0.7.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:yiisoft/jquery-pjax.git",
+                "url": "https://github.com/yiisoft/jquery-pjax.git",
                 "reference": "aef7b953107264f00234902a3880eb50dafc48be"
             },
             "dist": {
@@ -298,16 +298,16 @@
         },
         {
             "name": "chubbyphp/chubbyphp-container",
-            "version": "1.0.3",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/chubbyphp/chubbyphp-container.git",
-                "reference": "df51e8998d8b661a267a95c69686c5e4dbce8a5d"
+                "reference": "9b0a6f99af814d964ae30a241479bcf54aa7efa2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chubbyphp/chubbyphp-container/zipball/df51e8998d8b661a267a95c69686c5e4dbce8a5d",
-                "reference": "df51e8998d8b661a267a95c69686c5e4dbce8a5d",
+                "url": "https://api.github.com/repos/chubbyphp/chubbyphp-container/zipball/9b0a6f99af814d964ae30a241479bcf54aa7efa2",
+                "reference": "9b0a6f99af814d964ae30a241479bcf54aa7efa2",
                 "shasum": ""
             },
             "require": {
@@ -315,11 +315,10 @@
                 "psr/container": "^1.0"
             },
             "require-dev": {
+                "chubbyphp/chubbyphp-dev-helper": "dev-master",
                 "chubbyphp/chubbyphp-mock": "^1.4.2",
-                "friendsofphp/php-cs-fixer": "^2.16.1",
                 "infection/infection": "^0.15",
                 "mavimo/phpstan-junit": "^0.3",
-                "nunomaduro/phpinsights": "^1.11.1",
                 "php-coveralls/php-coveralls": "^2.2",
                 "phploc/phploc": "^5.0",
                 "phpstan/extension-installer": "^1.0.3",
@@ -329,7 +328,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -353,7 +352,7 @@
                 "chubbyphp",
                 "container"
             ],
-            "time": "2020-01-08T08:14:48+00:00"
+            "time": "2020-06-07T20:40:02+00:00"
         },
         {
             "name": "container-interop/container-interop",
@@ -817,6 +816,7 @@
                 "serialize",
                 "tokenizer"
             ],
+            "abandoned": "opis/closure",
             "time": "2018-03-21T22:21:57+00:00"
         },
         {

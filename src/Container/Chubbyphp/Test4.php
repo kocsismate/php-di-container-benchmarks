@@ -4,16 +4,17 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Chubbyphp;
 
-use DiContainerBenchmarks\Test\UnsupportedTestException;
+use DiContainerBenchmarks\Fixture\Class100;
 
 final class Test4 extends AbstractChubbyphpTest
 {
     public function startup(): void
     {
-        throw new UnsupportedTestException('chubbyphp-container cannot act as a factory.');
+        $this->setContainerWithPrototypeServices();
     }
 
     public function run(): void
     {
+        $this->container->get(Class100::class);
     }
 }
