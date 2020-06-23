@@ -1,5 +1,7 @@
 <?php
 
+namespace ContainerXNPETg2;
+
 return [
     'DiContainerBenchmarks\\Fixture\\Class1' => true,
     'DiContainerBenchmarks\\Fixture\\Class11' => true,
