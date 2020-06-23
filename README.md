@@ -1,6 +1,6 @@
 # PHP DI Container Benchmarks
 
-[![Software License][ico-license]](LICENSE.md)
+[![Software License][ico-license]](LICENSE)
 [![Gitter][ico-gitter]][link-gitter]
 
 ## Table of Contents
