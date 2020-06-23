@@ -1,5 +1,6 @@
 parameters:
-    bootstrap: vendor/autoload.php
+    bootstrapFiles:
+        - vendor/autoload.php
     excludes_analyse:
         - src/Container/
         - src/Fixture/
