@@ -6,9 +6,7 @@
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
 require dirname(__DIR__, 4).'/vendor/autoload.php';
-require __DIR__.'/ContainerXNPETg2/CompiledPrototypeContainer.php';
-require __DIR__.'/ContainerXNPETg2/getClass100Service.php';
-require __DIR__.'/ContainerXNPETg2/getClass10Service.php';
+require __DIR__.'/Container08qPu9v/CompiledPrototypeContainer.php';
 
 $classes = [];
 $classes[] = 'DiContainerBenchmarks\Fixture\Class10';
