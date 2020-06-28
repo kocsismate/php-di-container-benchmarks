@@ -5,8 +5,12 @@
 
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
+if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
+    return;
+}
+
 require dirname(__DIR__, 4).'/vendor/autoload.php';
-require __DIR__.'/Container08qPu9v/CompiledPrototypeContainer.php';
+require __DIR__.'/ContainerV08TPVo/CompiledPrototypeContainer.php';
 
 $classes = [];
 $classes[] = 'DiContainerBenchmarks\Fixture\Class10';

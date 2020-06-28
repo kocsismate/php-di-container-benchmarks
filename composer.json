@@ -27,7 +27,7 @@
         "pimple/pimple": "^3.2.3",
         "psr/container": "^1.0.0",
         "rdlowrey/auryn": "^1.4.2",
-        "symfony/dependency-injection": "^5.0.2",
+        "symfony/dependency-injection": "dev-master as 5.1",
         "thecodingmachine/yaco": "^1.0.0",
         "woohoolabs/zen": "^2.9.0",
         "yiisoft/yii2": "^2.0.31"
