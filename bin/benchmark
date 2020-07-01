@@ -55,7 +55,7 @@ $containers = [
     new PHPixieDiContainer(),
     new PimpleContainer(),
     new SymfonyContainer(),
-    new YacoContainer(),
+    //new YacoContainer(),
     new Yii2Container(),
     new ZenContainer(),
 ];

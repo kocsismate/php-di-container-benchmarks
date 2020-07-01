@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^7.4||^8.0",
         "aura/di": "^4.0.0",
         "bitexpert/disco": "^0.10.0",
         "chubbyphp/chubbyphp-container": "^1.1.0",
