@@ -16,7 +16,6 @@ use DiContainerBenchmarks\Container\Joomla\JoomlaContainer;
 use DiContainerBenchmarks\Container\Laravel\LaravelContainer;
 use DiContainerBenchmarks\Container\OpulenceIoc\OpulenceIocContainer;
 use DiContainerBenchmarks\Container\PhpDi\PhpDiContainer;
-use DiContainerBenchmarks\Container\PHPixieDi\PHPixieDiContainer;
 use DiContainerBenchmarks\Container\Pimple\PimpleContainer;
 use DiContainerBenchmarks\Container\Symfony\SymfonyContainer;
 use DiContainerBenchmarks\Container\Yaco\YacoContainer;
@@ -52,7 +51,6 @@ $containers = [
     new LaravelContainer(),
     new OpulenceIocContainer(),
     new PhpDiContainer(),
-    new PHPixieDiContainer(),
     new PimpleContainer(),
     new SymfonyContainer(),
     //new YacoContainer(),

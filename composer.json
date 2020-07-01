@@ -23,7 +23,6 @@
         "level-2/dice": "^4.0.1",
         "opulence/ioc": "^1.1.7",
         "php-di/php-di": "^6.0.11",
-        "phpixie/di": "^3.2.1",
         "pimple/pimple": "^3.2.3",
         "psr/container": "^1.0.0",
         "rdlowrey/auryn": "^1.4.2",

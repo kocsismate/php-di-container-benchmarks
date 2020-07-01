@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e9785ff305e92afa5e376c0aa3249c62",
+    "content-hash": "c2a23d1b482cb47dc4078e88562c6f68",
     "packages": [
         {
             "name": "aura/di",
@@ -1819,54 +1819,6 @@
                 "reflection"
             ],
             "time": "2019-09-26T11:24:58+00:00"
-        },
-        {
-            "name": "phpixie/di",
-            "version": "3.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHPixie/DI.git",
-                "reference": "ab02fc6345a992bdb31d8fef2fd2e2210e8fedb0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHPixie/DI/zipball/ab02fc6345a992bdb31d8fef2fd2e2210e8fedb0",
-                "reference": "ab02fc6345a992bdb31d8fef2fd2e2210e8fedb0",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phpixie/test": "~3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "PHPixie\\": "src/PHPixie",
-                    "PHPixie\\Tests\\": "tests/PHPixie/Tests"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Tsiupa",
-                    "email": "draconyster@gmail.com",
-                    "homepage": "http://dracony.org"
-                }
-            ],
-            "description": "Dependency injection container for PHPixie",
-            "homepage": "http://phpixie.com",
-            "keywords": [
-                "dependency injection",
-                "di"
-            ],
-            "time": "2018-02-16T00:20:28+00:00"
         },
         {
             "name": "pimple/pimple",
