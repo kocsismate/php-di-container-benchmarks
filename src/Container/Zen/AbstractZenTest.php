@@ -14,11 +14,11 @@ abstract class AbstractZenTest implements TestInterface
 
     protected function setContainerWithPrototypeServices(): void
     {
-        $this->container = new CompiledPrototypeContainer(PROJECT_ROOT);
+        $this->container = new CompiledPrototypeContainer();
     }
 
     protected function setContainerWithSingletonServices(): void
     {
-        $this->container = new CompiledSingletonContainer(PROJECT_ROOT);
+        $this->container = new CompiledSingletonContainer();
     }
 }

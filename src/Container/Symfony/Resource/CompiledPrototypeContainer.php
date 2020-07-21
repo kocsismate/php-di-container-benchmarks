@@ -18,6 +18,6 @@ if (!\class_exists(CompiledPrototypeContainer::class, false)) {
 
 return new \ContainerV08TPVo\CompiledPrototypeContainer([
     'container.build_hash' => 'V08TPVo',
-    'container.build_id' => '7337aae3',
-    'container.build_time' => 1593621694,
+    'container.build_id' => '6a0c7256',
+    'container.build_time' => 1595371797,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerV08TPVo');
