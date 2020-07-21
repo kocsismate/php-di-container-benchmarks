@@ -45,6 +45,12 @@
             "src/Container/PhpDi/Resource/CompiledSingletonContainer.php"
         ]
     },
+    "scripts": {
+        "test": "phpunit",
+        "phpstan": "phpstan analyse --level 8 src",
+        "phpcs": "phpcs",
+        "phpcbf": "phpcbf"
+    },
     "config": {
         "bin-compat": "full",
         "platform": {
