@@ -9,7 +9,7 @@ if [[ "$1" == "docker" ]]; then
     docker run --rm --interactive --tty \
         --volume $PROJECT_ROOT:/code \
         --user $(id -u):$(id -g) \
-        composer install --prefer-dist --no-suggest --no-interaction --working-dir=/code
+        composer install --prefer-dist --no-suggest --no-interaction --working-dir=/code --ignore-platform-reqs
 
     # Build DI containers
     docker-compose run --no-deps benchmark-cli /code/bin/benchmark build
@@ -61,7 +61,7 @@ elif [[ "$1" == "aws" ]]; then
 
 elif [[ "$1" == "host" ]]; then
 
-    composer install --prefer-dist --no-suggest --no-interaction --working-dir=$PROJECT_ROOT
+    composer install --prefer-dist --no-suggest --no-interaction --working-dir=$PROJECT_ROOT --ignore-platform-reqs
 
     $PROJECT_ROOT/bin/benchmark build
 

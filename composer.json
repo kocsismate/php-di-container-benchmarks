@@ -54,7 +54,7 @@
     "config": {
         "bin-compat": "full",
         "platform": {
-            "php": "7.4.0"
+            "php": "8.0.0"
         },
         "sort-packages": true
     },

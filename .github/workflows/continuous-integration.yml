@@ -14,20 +14,22 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@master
 
-      - name: "Install PHP 7.4"
-        run: |
-          sudo add-apt-repository ppa:ondrej/php
-          sudo apt-get update
-          sudo apt-get install php7.4 php7.4-mbstring php7.4-xml
+      - name: "Install PHP 8.0"
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.0"
+          extensions: mbstring, xml
+          coverage: none
+          tools: composer:v2
 
       - name: "Validate composer.json"
-        run: php7.4 $(which composer) validate --no-check-all
+        run: php8.0 $(which composer) validate --no-check-all
 
       - name: "Install dependencies with composer"
-        run: php7.4 $(which composer) install --no-interaction --no-progress --no-suggest
+        run: php8.0 $(which composer) install --no-interaction --no-progress --no-suggest --ignore-platform-reqs
 
       - name: "Run PHP CodeSniffer"
-        run: php7.4 vendor/bin/phpcs --standard=phpcs.xml
+        run: php8.0 vendor/bin/phpcs --standard=phpcs.xml
 
   static-code-analysis:
     name: "Static Code Analysis"
@@ -38,14 +40,16 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@master
 
-      - name: "Install PHP 7.4"
-        run: |
-          sudo add-apt-repository ppa:ondrej/php
-          sudo apt-get update
-          sudo apt-get install php7.4 php7.4-mbstring php7.4-xml
+      - name: "Install PHP 8.0"
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.0"
+          extensions: mbstring, xml
+          coverage: none
+          tools: composer:v2
 
       - name: "Install dependencies with composer"
-        run: php7.4 $(which composer) install --no-interaction --no-progress --no-suggest
+        run: php8.0 $(which composer) install --no-interaction --no-progress --no-suggest  --ignore-platform-reqs
 
       - name: "Run phpstan/phpstan"
-        run: php7.4 vendor/bin/phpstan analyse --level 8 src tests
+        run: php8.0 vendor/bin/phpstan analyse --level 8 src tests
