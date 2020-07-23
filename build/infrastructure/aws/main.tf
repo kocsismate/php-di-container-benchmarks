@@ -85,7 +85,7 @@ EOF
       "sudo cp .env.dist .env",
 
       "# Install composer dependencies",
-      "sudo docker run --rm --interactive --tty --volume $PWD:/code composer install --prefer-dist --no-dev --no-suggest --no-interaction --working-dir=/code",
+      "sudo docker run --rm --interactive --tty --volume $PWD:/code composer install --prefer-dist --no-dev --no-suggest --no-interaction --working-dir=/code --ignore-platform-reqs",
 
       "# Build DI containers",
       "sudo docker-compose run --no-deps benchmark-fpm /code/bin/benchmark build",
