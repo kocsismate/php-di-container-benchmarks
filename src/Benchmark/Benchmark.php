@@ -72,7 +72,7 @@ final class Benchmark
         $testCaseNumber = $testCase->getNumber();
         $containerName = $container->getDisplayedName();
 
-        echo "Running test $testSuiteNumber.$testCaseNumber: $containerName\n";
+        echo "Running test $testSuiteNumber.$testCaseNumber: $containerName";
 
         $this->context->clear();
         for ($run = 0; $run < 30; $run++) {
@@ -86,9 +86,11 @@ final class Benchmark
             $benchmarkResult->addTestResult($testSuite, $testCase, $container, $result);
 
             if ($result->isSuccessful() === false) {
-                echo "Test failed: " . $result->getMessage() . "\n";
+                echo "\nTest failed: " . $result->getMessage() . "\n";
                 break;
             }
         }
+
+        echo " (" . $benchmarkResult->getResult($testSuite, $testCase, $containerName)->getTimeConsumptionInMilliSeconds() . " ms)\n";
     }
 }

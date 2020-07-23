@@ -9,6 +9,7 @@ use DiContainerBenchmarks\Test\TestCase;
 use DiContainerBenchmarks\Test\TestResult;
 use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
 
+use InvalidArgumentException;
 use function count;
 use function round;
 use function sort;
@@ -34,6 +35,18 @@ final class BenchmarkResult
         $this->testResults[$testSuiteNumber][$testCaseNumber][$containerName][] = $result;
     }
 
+    public function getResult(TestSuiteInterface $testSuite, TestCase $testCase, string $containerName): TestResult
+    {
+        $testSuiteNumber = $testSuite->getNumber();
+        $testCaseNumber = $testCase->getNumber();
+
+        if (isset($this->testResults[$testSuiteNumber][$testCaseNumber][$containerName]) === false) {
+            throw new InvalidArgumentException("No result with the given parameters exists");
+        }
+
+        return $this->calculateResults($this->testResults[$testSuiteNumber][$testCaseNumber][$containerName]);
+    }
+
     /**
      * @return TestResult[]
      */
@@ -47,19 +60,8 @@ final class BenchmarkResult
         }
 
         $results = [];
-        foreach ($this->testResults[$testSuiteNumber][$testCaseNumber] as $containerName => $containerResult) {
-            $timeResults = [];
-            $memoryResults = [];
-            foreach ($containerResult as $item) {
-                /** @var TestResult $item */
-                $timeResults[] = $item->getTimeConsumptionInMilliSeconds();
-                $memoryResults[] = $item->getPeakMemoryUsageInMegaBytes();
-            }
-
-            $results[$containerName] = TestResult::createFromValues(
-                $this->getMedian($timeResults),
-                $this->getMedian($memoryResults)
-            );
+        foreach ($this->testResults[$testSuiteNumber][$testCaseNumber] as $containerName => $containerResults) {
+            $results[$containerName] = $this->calculateResults($containerResults);
         }
 
         uasort($results, static function (TestResult $a, TestResult $b): int {
@@ -75,6 +77,24 @@ final class BenchmarkResult
         });
 
         return $results;
+    }
+
+    /**
+     * @param TestResult[] $containerResults
+     */
+    private function calculateResults(array $containerResults): TestResult
+    {
+        $timeResults = [];
+        $memoryResults = [];
+        foreach ($containerResults as $item) {
+            $timeResults[] = $item->getTimeConsumptionInMilliSeconds();
+            $memoryResults[] = $item->getPeakMemoryUsageInMegaBytes();
+        }
+
+        return TestResult::createFromValues(
+            $this->getMedian($timeResults),
+            $this->getMedian($memoryResults)
+        );
     }
 
     /**
