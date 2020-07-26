@@ -87,7 +87,7 @@ final class Benchmark
 
             if ($result->isSuccessful() === false) {
                 echo "\nTest failed: " . $result->getMessage() . "\n";
-                break;
+                return;
             }
         }
 
