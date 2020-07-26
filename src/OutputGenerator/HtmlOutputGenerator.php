@@ -192,7 +192,7 @@ HERE;
         <section>
             <h2 id="method">Setup</h2>
             <p>
-                The benchmark is run on AWS EC2, using a C5.large instance. The operating system on the host is Ubuntu 18.04.
+                The benchmark is run on AWS EC2, using a C5.large instance. The operating system on the host is Ubuntu 20.04.
                 PHP 8.0 is running in a Docker container with OPcache enabled and autoloader optimized (using authoritative
                 mode). During the measurements, a PHP-FPM script served by nginx is executed each time. This is needed
                 because a production environment is simulated much better this way than in the CLI.
