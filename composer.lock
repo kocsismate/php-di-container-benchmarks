@@ -187,7 +187,7 @@
             "version": "3.5.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:jquery/jquery-dist.git",
+                "url": "https://github.com/jquery/jquery-dist.git",
                 "reference": "4c0e4becb8263bb5b3e6dadc448d8e7305ef8215"
             },
             "dist": {
@@ -205,7 +205,7 @@
             "version": "v1.3.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/bestiejs/punycode.js.git",
+                "url": "git@github.com:bestiejs/punycode.js.git",
                 "reference": "38c8d3131a82567bfef18da09f7f4db68c84f8a3"
             },
             "dist": {
@@ -2627,12 +2627,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/woohoolabs/zen.git",
-                "reference": "315ab58581f7f030d19f9b0f54121968087c409d"
+                "reference": "243433b691864cbd5b5ab12265e538f658a3df81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/315ab58581f7f030d19f9b0f54121968087c409d",
-                "reference": "315ab58581f7f030d19f9b0f54121968087c409d",
+                "url": "https://api.github.com/repos/woohoolabs/zen/zipball/243433b691864cbd5b5ab12265e538f658a3df81",
+                "reference": "243433b691864cbd5b5ab12265e538f658a3df81",
                 "shasum": ""
             },
             "require": {
@@ -2686,7 +2686,7 @@
                 "preload",
                 "zen"
             ],
-            "time": "2020-07-21T21:22:45+00:00"
+            "time": "2020-07-26T07:22:33+00:00"
         },
         {
             "name": "yiisoft/yii2",
