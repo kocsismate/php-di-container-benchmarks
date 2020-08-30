@@ -19,3 +19,5 @@ cs: ## Run PHP CodeSniffer to detect issues with coding style
 
 cs-fix: ## Run PHPCBF to automatically fix issues with coding style
 	docker-compose run --no-deps --rm benchmark-cli /code/vendor/bin/phpcbf --standard=/code/phpcs.xml
+
+qa: phpstan cs ## Test code quality
