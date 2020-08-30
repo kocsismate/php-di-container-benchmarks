@@ -26,7 +26,7 @@ performance, while being as unbiased and reliable as possible.
 
 ## Results
 
-You can find the benchmark results [here](https://rawgit.com/kocsismate/php-di-container-benchmarks/master/var/benchmark.html).
+You can find the benchmark results [here](https://kocsismate.github.io/php-di-container-benchmarks/benchmark.html).
 
 ## Install
 

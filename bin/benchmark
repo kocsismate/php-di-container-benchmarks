@@ -59,7 +59,7 @@ $containers = [
 ];
 
 $outputGenerators = [
-    new HtmlOutputGenerator(PROJECT_ROOT . "/var/benchmark.html"),
+    new HtmlOutputGenerator(PROJECT_ROOT . "/docs/benchmark.html"),
 ];
 
 // Validating if benchmark URL is correctly set
