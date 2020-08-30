@@ -8,8 +8,8 @@ use DiContainerBenchmarks\Container\ContainerInterface;
 use DiContainerBenchmarks\Test\TestCase;
 use DiContainerBenchmarks\Test\TestResult;
 use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
-
 use InvalidArgumentException;
+
 use function count;
 use function round;
 use function sort;
@@ -118,6 +118,7 @@ final class BenchmarkResult
 
         return round($median, $precision);
     }
+
     /*
     private function getAverage(array $array, int $precision = 5): ?float
     {
