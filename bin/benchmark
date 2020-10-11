@@ -9,16 +9,11 @@ use DiContainerBenchmarks\Benchmark\WebBenchmarkContext;
 use DiContainerBenchmarks\Container\Aura\AuraContainer;
 use DiContainerBenchmarks\Container\Auryn\AurynContainer;
 use DiContainerBenchmarks\Container\Chubbyphp\ChubbyphpContainer;
-use DiContainerBenchmarks\Container\Cobalt\CobaltContainer;
 use DiContainerBenchmarks\Container\Dice\DiceContainer;
-use DiContainerBenchmarks\Container\Disco\DiscoContainer;
 use DiContainerBenchmarks\Container\Joomla\JoomlaContainer;
 use DiContainerBenchmarks\Container\Laravel\LaravelContainer;
-use DiContainerBenchmarks\Container\OpulenceIoc\OpulenceIocContainer;
 use DiContainerBenchmarks\Container\PhpDi\PhpDiContainer;
-use DiContainerBenchmarks\Container\Pimple\PimpleContainer;
 use DiContainerBenchmarks\Container\Symfony\SymfonyContainer;
-use DiContainerBenchmarks\Container\Yaco\YacoContainer;
 use DiContainerBenchmarks\Container\Yii2\Yii2Container;
 use DiContainerBenchmarks\Container\Zen\ZenContainer;
 use DiContainerBenchmarks\Container\LaminasServiceManager\LaminasServiceManagerContainer;
@@ -43,17 +38,12 @@ $containers = [
     new AuraContainer(),
     new AurynContainer(),
     new ChubbyphpContainer(),
-    new CobaltContainer(),
     new DiceContainer(),
-    new DiscoContainer(),
     new JoomlaContainer(),
     new LaminasServiceManagerContainer(),
     new LaravelContainer(),
-    new OpulenceIocContainer(),
     new PhpDiContainer(),
-    new PimpleContainer(),
     new SymfonyContainer(),
-    //new YacoContainer(),
     new Yii2Container(),
     new ZenContainer(),
 ];
