@@ -118,28 +118,4 @@ final class BenchmarkResult
 
         return round($median, $precision);
     }
-
-    /*
-    private function getAverage(array $array, int $precision = 5): ?float
-    {
-        if ($array === [] || $array[0] === null) {
-            return null;
-        }
-
-        sort($array, SORT_NUMERIC);
-
-        $smallest = $array[0];
-        $num = 0;
-        $total = 0;
-
-        foreach ($array as $val) {
-            if ($val <= $smallest * 1.2) {
-                $num++;
-                $total += $val;
-            }
-        }
-
-        return round($total / $num, $precision);
-    }
-    */
 }
