@@ -57,7 +57,7 @@ final class HtmlOutputGenerator implements OutputGeneratorInterface
                 <td><b>Repository:</b></td><td><a target="_blank" href="https://github.com/kocsismate/php-di-container-benchmarks">https://github.com/kocsismate/php-di-container-benchmarks</a></td>
             </tr>
             <tr>
-                <td><b>Generated:</b></td><td>$now</td>
+                <td><b>Generated:</b></td><td>$now UTC</td>
             </tr>
         </table>
 
