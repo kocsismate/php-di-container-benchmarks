@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": "^7.4||^8.0",
+        "php": "^8.0",
         "aura/di": "^4.0.0",
         "chubbyphp/chubbyphp-container": "^1.1.0",
         "doctrine/cache": "^1.6.1",
@@ -19,10 +19,10 @@
         "joomla/di": "^1.5.1",
         "laminas/laminas-servicemanager": "^3.4.0",
         "level-2/dice": "^4.0.1",
-        "php-di/php-di": "^6.0.11",
+        "php-di/php-di": "^6.3.0",
         "psr/container": "^1.0.0",
         "rdlowrey/auryn": "^1.4.2",
-        "symfony/dependency-injection": "dev-master as 5.1",
+        "symfony/dependency-injection": "^5.1.0",
         "woohoolabs/zen": "3.0.x-dev",
         "yiisoft/yii2": "^2.0.31"
     },

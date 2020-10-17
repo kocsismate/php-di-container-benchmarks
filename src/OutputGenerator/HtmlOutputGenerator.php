@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\OutputGenerator;
 
+use Composer\InstalledVersions;
 use DiContainerBenchmarks\Benchmark\BenchmarkResult;
 use DiContainerBenchmarks\Container\ContainerInterface;
 use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
-use PackageVersions\Versions;
 
 use function date;
 use function file_put_contents;
@@ -112,7 +112,7 @@ HERE;
         foreach ($containers as $i => $container) {
             /** @var ContainerInterface $container */
             $package = $container->getPackage();
-            $version = Versions::getVersion($container->getPackage());
+            $version = InstalledVersions::getVersion($container->getPackage());
             $displayedVersion = substr($version, 0, (int) strpos($version, "@"));
             $url = $container->getUrl();
             $compiled = $container->isCompiled() ? "compiled" : "dynamic";
