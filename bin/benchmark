@@ -6,17 +6,7 @@ require __DIR__ . "/../app/bootstrap.php";
 
 use DiContainerBenchmarks\Benchmark\Benchmark;
 use DiContainerBenchmarks\Benchmark\WebBenchmarkContext;
-use DiContainerBenchmarks\Container\Aura\AuraContainer;
-use DiContainerBenchmarks\Container\Auryn\AurynContainer;
-use DiContainerBenchmarks\Container\Chubbyphp\ChubbyphpContainer;
-use DiContainerBenchmarks\Container\Dice\DiceContainer;
-use DiContainerBenchmarks\Container\Joomla\JoomlaContainer;
-use DiContainerBenchmarks\Container\Laravel\LaravelContainer;
-use DiContainerBenchmarks\Container\PhpDi\PhpDiContainer;
-use DiContainerBenchmarks\Container\Symfony\SymfonyContainer;
-use DiContainerBenchmarks\Container\Yii2\Yii2Container;
-use DiContainerBenchmarks\Container\Zen\ZenContainer;
-use DiContainerBenchmarks\Container\LaminasServiceManager\LaminasServiceManagerContainer;
+use DiContainerBenchmarks\Container\ContainerDefinitions;
 use DiContainerBenchmarks\OutputGenerator\HtmlOutputGenerator;
 use DiContainerBenchmarks\TestSuite\TestSuite1;
 use DiContainerBenchmarks\TestSuite\TestSuite2;
@@ -34,19 +24,7 @@ $testSuites = [
     new TestSuite6(),
 ];
 
-$containers = [
-    new AuraContainer(),
-    new AurynContainer(),
-    new ChubbyphpContainer(),
-    new DiceContainer(),
-    new JoomlaContainer(),
-    new LaminasServiceManagerContainer(),
-    new LaravelContainer(),
-    new PhpDiContainer(),
-    new SymfonyContainer(),
-    new Yii2Container(),
-    new ZenContainer(),
-];
+$containers = ContainerDefinitions::getAllContainerDefinitions();
 
 $outputGenerators = [
     new HtmlOutputGenerator(PROJECT_ROOT . "/docs/benchmark.html"),
@@ -58,7 +36,7 @@ if (empty($argv[1]) === false) {
     $benchmarkUrl = $argv[1];
 }
 if ($benchmarkUrl === false) {
-    echo "Either specify the 'BENCHMARK_URL' environment variable or pass it as a parameter!\n";
+    echo "Either specify the \"BENCHMARK_URL\" environment variable or pass it as an argument\n";
     exit(-1);
 }
 

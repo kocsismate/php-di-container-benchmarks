@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Benchmark;
 
-use DiContainerBenchmarks\Container\ContainerInterface;
+use DiContainerBenchmarks\Container\ContainerDefinitionInterface;
 use DiContainerBenchmarks\OutputGenerator\OutputGeneratorInterface;
 use DiContainerBenchmarks\Test\TestCase;
 use DiContainerBenchmarks\Test\TestResult;
@@ -22,15 +22,15 @@ final class Benchmark
     }
 
     /**
-     * @param ContainerInterface[] $containers
+     * @param ContainerDefinitionInterface[] $containerDefinitions
      */
-    public function buildContainers(array $containers): void
+    public function buildContainers(array $containerDefinitions): void
     {
         echo "Building DI Containers...\n";
-        foreach ($containers as $container) {
-            echo "Building " . $container->getDisplayedName() . ": ";
+        foreach ($containerDefinitions as $containerDefinition) {
+            echo "Building " . $containerDefinition->getDisplayedName() . ": ";
             $t1 = hrtime(true);
-            $container->build();
+            $containerDefinition->getAdapter()->build();
             $t2 = hrtime(true);
 
             echo (($t2 - $t1) / 1000000) . " ms\n";
@@ -39,24 +39,24 @@ final class Benchmark
 
     /**
      * @param TestSuiteInterface[] $testSuites
-     * @param ContainerInterface[] $containers
+     * @param ContainerDefinitionInterface[] $containerDefinitions
      * @param OutputGeneratorInterface[] $outputGenerators
      */
-    public function runBenchmark(array $testSuites, array $containers, array $outputGenerators): void
+    public function runBenchmark(array $testSuites, array $containerDefinitions, array $outputGenerators): void
     {
         $benchmarkResult = new BenchmarkResult();
 
         foreach ($testSuites as $testSuite) {
             foreach ($testSuite->getTestCases() as $testCase) {
-                foreach ($containers as $container) {
-                    $this->runTest($testSuite, $testCase, $container, $benchmarkResult);
+                foreach ($containerDefinitions as $containerDefinition) {
+                    $this->runTest($testSuite, $testCase, $containerDefinition, $benchmarkResult);
                 }
             }
         }
 
         echo "Generating results...\n";
         foreach ($outputGenerators as $outputGenerator) {
-            $outputGenerator->generateOutput($testSuites, $containers, $benchmarkResult);
+            $outputGenerator->generateOutput($testSuites, $containerDefinitions, $benchmarkResult);
         }
 
         echo "Benchmark finished successfully!\n";
@@ -65,25 +65,22 @@ final class Benchmark
     private function runTest(
         TestSuiteInterface $testSuite,
         TestCase $testCase,
-        ContainerInterface $container,
+        ContainerDefinitionInterface $containerDefinition,
         BenchmarkResult $benchmarkResult
     ): void {
         $testSuiteNumber = $testSuite->getNumber();
         $testCaseNumber = $testCase->getNumber();
-        $containerName = $container->getDisplayedName();
+        $containerName = $containerDefinition->getDisplayedName();
 
         echo "Running test $testSuiteNumber.$testCaseNumber: $containerName";
 
         $this->context->clear();
         for ($run = 0; $run < 30; $run++) {
-            $containerNamespace = $container->getNamespace();
+            $container = $containerDefinition->getName();
 
-            $iterations = $testCase->getIterations();
-            $testType = $testCase->getTestType();
-
-            $output = $this->context->getTestOutput($testSuiteNumber, $containerNamespace, $iterations, $testType);
+            $output = $this->context->getTestOutput($testSuiteNumber, $testCaseNumber, $container);
             $result = TestResult::createFromJson($output);
-            $benchmarkResult->addTestResult($testSuite, $testCase, $container, $result);
+            $benchmarkResult->addTestResult($testSuite, $testCase, $containerDefinition, $result);
 
             if ($result->isSuccessful() === false) {
                 echo "\nTest failed: " . $result->getMessage() . "\n";

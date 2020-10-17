@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\TestSuite;
 
+use DiContainerBenchmarks\Fixture\Class10;
 use DiContainerBenchmarks\Test\TestCase;
 
 final class TestSuite5 implements TestSuiteInterface
@@ -29,9 +30,9 @@ HERE;
     public function getTestCases(): array
     {
         return [
-            new TestCase(1, "1000 iterations, bootstrap time excluded", 1000, TestCase::WARM),
-            new TestCase(2, "10 000 iterations, bootstrap time excluded", 10000, TestCase::WARM),
-            new TestCase(3, "100 000 iterations, bootstrap time excluded", 100000, TestCase::WARM),
+            new TestCase(1, "1000 iterations, bootstrap time excluded", 1000, TestCase::WARM, true, Class10::class),
+            new TestCase(2, "10 000 iterations, bootstrap time excluded", 10000, TestCase::WARM, true, Class10::class),
+            new TestCase(3, "100 000 iterations, bootstrap time excluded", 100000, TestCase::WARM, true, Class10::class),
         ];
     }
 }

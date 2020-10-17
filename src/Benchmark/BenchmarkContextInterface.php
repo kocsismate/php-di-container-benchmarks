@@ -8,5 +8,5 @@ interface BenchmarkContextInterface
 {
     public function clear(): void;
 
-    public function getTestOutput(int $number, string $container, int $iterations, string $testType): string;
+    public function getTestOutput(int $testSuite, int $testCase, string $container): string;
 }

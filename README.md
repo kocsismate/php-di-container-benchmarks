@@ -105,7 +105,7 @@ Now you can simply type the following in order to run the benchmark:
 .\benchmark.sh host
 ```
 
-If you don't want to specify the benchmark URL as an environment variable then you can also pass it as a parameter:
+If you don't want to specify the benchmark URL as an environment variable then you can also pass it as an argument:
 
 ```bash
 ./benchmark.sh host http://localhost/index.php

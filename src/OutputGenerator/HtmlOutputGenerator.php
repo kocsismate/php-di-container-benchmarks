@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\OutputGenerator;
 
+require_once __DIR__ . "/../../vendor/composer/InstalledVersions.php";
+
 use Composer\InstalledVersions;
 use DiContainerBenchmarks\Benchmark\BenchmarkResult;
-use DiContainerBenchmarks\Container\ContainerInterface;
+use DiContainerBenchmarks\Container\ContainerDefinitionInterface;
 use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
 
 use function date;
 use function file_put_contents;
 use function round;
 use function sprintf;
-use function strpos;
-use function substr;
 
 final class HtmlOutputGenerator implements OutputGeneratorInterface
 {
@@ -27,7 +27,7 @@ final class HtmlOutputGenerator implements OutputGeneratorInterface
 
     /**
      * @param TestSuiteInterface[] $testSuites
-     * @param ContainerInterface[] $containers
+     * @param ContainerDefinitionInterface[] $containers
      */
     public function generateOutput(array $testSuites, array $containers, BenchmarkResult $benchmarkResult): void
     {
@@ -110,10 +110,10 @@ final class HtmlOutputGenerator implements OutputGeneratorInterface
                 <tbody>
 HERE;
         foreach ($containers as $i => $container) {
-            /** @var ContainerInterface $container */
+            /** @var ContainerDefinitionInterface $container */
             $package = $container->getPackage();
-            $version = InstalledVersions::getVersion($container->getPackage());
-            $displayedVersion = substr($version, 0, (int) strpos($version, "@"));
+            $version = InstalledVersions::getPrettyVersion($package);
+            $displayedVersion = $version ?? "-";
             $url = $container->getUrl();
             $compiled = $container->isCompiled() ? "compiled" : "dynamic";
             $autowiring = $container->isAutowiringSupported() ? "supported" : "not supported";

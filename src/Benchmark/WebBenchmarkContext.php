@@ -34,13 +34,13 @@ final class WebBenchmarkContext implements BenchmarkContextInterface
         curl_close($ch);
     }
 
-    public function getTestOutput(int $number, string $container, int $iterations, string $testType): string
+    public function getTestOutput(int $testSuite, int $testCase, string $container): string
     {
         $ch = curl_init();
         curl_setopt(
             $ch,
             CURLOPT_URL,
-            $this->benchmarkUrl . "?test_suite=$number&container=$container&iterations=$iterations&test_type=$testType"
+            $this->benchmarkUrl . "?test_suite=$testSuite&test_case=$testCase&container=$container"
         );
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 

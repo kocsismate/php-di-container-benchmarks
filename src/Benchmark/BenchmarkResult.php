@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Benchmark;
 
-use DiContainerBenchmarks\Container\ContainerInterface;
+use DiContainerBenchmarks\Container\ContainerDefinitionInterface;
 use DiContainerBenchmarks\Test\TestCase;
 use DiContainerBenchmarks\Test\TestResult;
 use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
@@ -25,7 +25,7 @@ final class BenchmarkResult
     public function addTestResult(
         TestSuiteInterface $testSuite,
         TestCase $testCase,
-        ContainerInterface $container,
+        ContainerDefinitionInterface $container,
         TestResult $result
     ): void {
         $containerName = $container->getDisplayedName();

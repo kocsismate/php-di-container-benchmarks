@@ -7,6 +7,8 @@ namespace DiContainerBenchmarks\Test;
 use function json_decode;
 use function json_encode;
 
+use const JSON_THROW_ON_ERROR;
+
 final class TestResult
 {
     private ?float $timeConsumption;
@@ -20,10 +22,10 @@ final class TestResult
 
     public static function createFromJson(string $json): TestResult
     {
-        $result = json_decode($json, true);
+        $result = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
 
         if ($result === null) {
-            return new TestResult(null, null, "Invalid JSON response: '$json'!");
+            return new TestResult(null, null, "Invalid JSON response: \"$json\"");
         }
 
         return new TestResult($result["time"], $result["memory"], $result["message"]);
@@ -81,7 +83,8 @@ final class TestResult
                 "time" => $this->timeConsumption,
                 "memory" => $this->peakMemoryUsage,
                 "message" => $this->message,
-            ]
+            ],
+            JSON_THROW_ON_ERROR
         );
     }
 }

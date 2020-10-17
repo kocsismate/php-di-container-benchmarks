@@ -14,13 +14,23 @@ final class TestCase
     private string $title;
     private int $iterations;
     private string $testType;
+    private bool $singleton;
+    private string $classToRetrieve;
 
-    public function __construct(int $number, string $title, int $iterations, string $testType)
-    {
+    public function __construct(
+        int $number,
+        string $title,
+        int $iterations,
+        string $testType,
+        bool $isSingleton,
+        string $classToRetrieve
+    ) {
         $this->number = $number;
         $this->title = $title;
         $this->iterations = $iterations;
         $this->testType = $testType;
+        $this->singleton = $isSingleton;
+        $this->classToRetrieve = $classToRetrieve;
     }
 
     public function getNumber(): int
@@ -41,5 +51,15 @@ final class TestCase
     public function getTestType(): string
     {
         return $this->testType;
+    }
+
+    public function isSingleton(): bool
+    {
+        return $this->singleton;
+    }
+
+    public function getClassToRetrieve(): string
+    {
+        return $this->classToRetrieve;
     }
 }
