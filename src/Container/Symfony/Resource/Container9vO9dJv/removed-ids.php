@@ -1,6 +1,6 @@
 <?php
 
-namespace Container7JuzhdU;
+namespace Container9vO9dJv;
 
 return [
     'DiContainerBenchmarks\\Fixture\\Class1' => true,

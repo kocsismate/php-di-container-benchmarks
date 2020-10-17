@@ -25,7 +25,7 @@ final class SymfonyContainerAdapter implements ContainerAdapterInterface
 
         // Build container with prototype services
         $containerBuilder = new ContainerBuilder();
-        $containerBuilder->setParameter('container.dumper.inline_class_loader', true);
+        $containerBuilder->setParameter('container.dumper.inline_class_loader', false);
         $containerBuilder->setParameter('container.dumper.inline_factories', true);
 
         for ($i = 1; $i <= 100; $i++) {
@@ -46,7 +46,7 @@ final class SymfonyContainerAdapter implements ContainerAdapterInterface
 
         // Build container with singleton services
         $containerBuilder = new ContainerBuilder();
-        $containerBuilder->setParameter('container.dumper.inline_class_loader', true);
+        $containerBuilder->setParameter('container.dumper.inline_class_loader', false);
         $containerBuilder->setParameter('container.dumper.inline_factories', true);
 
         for ($i = 1; $i <= 100; $i++) {

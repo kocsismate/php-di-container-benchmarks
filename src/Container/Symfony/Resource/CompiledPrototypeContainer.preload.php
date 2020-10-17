@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 4).'/vendor/autoload.php';
-require __DIR__.'/ContainerV08TPVo/CompiledPrototypeContainer.php';
+require __DIR__.'/ContainerWnp0rIn/CompiledPrototypeContainer.php';
 
 $classes = [];
 $classes[] = 'DiContainerBenchmarks\Fixture\Class10';
