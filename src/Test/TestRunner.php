@@ -54,6 +54,8 @@ final class TestRunner
         $iterations = $testCase->getIterations();
         $class = $testCase->getClassToRetrieve();
 
+        gc_collect_cycles();
+
         // Start benchmark
         $t1 = hrtime(true);
 
@@ -77,6 +79,8 @@ final class TestRunner
 
         // Warm-up
         $isSingleton ? $adapter->bootstrapSingletonContainer() : $adapter->bootstrapPrototypeContainer();
+
+        gc_collect_cycles();
 
         // Start benchmark
         $t1 = hrtime(true);
@@ -102,6 +106,8 @@ final class TestRunner
         // Warm-up
         $container = $isSingleton ? $adapter->bootstrapSingletonContainer() : $adapter->bootstrapPrototypeContainer();
         $container->get($class);
+
+        gc_collect_cycles();
 
         // Start benchmark
         $t1 = hrtime(true);
