@@ -77,6 +77,6 @@ elif [[ "$1" == "host" ]]; then
 else
 
     echo 'Available options: "docker", "aws", "host"!'
-    exit -1
+    exit 1
 
 fi

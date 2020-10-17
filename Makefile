@@ -5,6 +5,10 @@ $(VERBOSE).SILENT:
 help: ## Print the help screen
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
+TYPE ?= "docker"
+benchmark: ## Runs the benchmark
+	./benchmark.sh "$(TYPE)"
+
 composer-install: ## Install Composer dependencies
 	docker run --rm --interactive --tty --volume $(PWD):/app --user $(id -u):$(id -g) composer install --ignore-platform-reqs
 
