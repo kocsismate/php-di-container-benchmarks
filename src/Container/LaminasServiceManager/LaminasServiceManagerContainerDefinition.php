@@ -21,7 +21,7 @@ final class LaminasServiceManagerContainerDefinition implements ContainerDefinit
 
     public function getDisplayedName(): string
     {
-        return "Laminas ServiceManager";
+        return "ServiceManager";
     }
 
     public function isCompiled(): bool
