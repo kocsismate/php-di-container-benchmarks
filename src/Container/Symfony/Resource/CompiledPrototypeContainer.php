@@ -18,6 +18,6 @@ if (!\class_exists(CompiledPrototypeContainer::class, false)) {
 
 return new \ContainerWnp0rIn\CompiledPrototypeContainer([
     'container.build_hash' => 'Wnp0rIn',
-    'container.build_id' => '317026f0',
-    'container.build_time' => 1602975822,
+    'container.build_id' => '1c01de37',
+    'container.build_time' => 1603035117,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerWnp0rIn');
