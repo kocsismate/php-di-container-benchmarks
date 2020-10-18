@@ -57,9 +57,13 @@ EOF
       "sudo curl -fsSL https://get.docker.com/ | sh",
 
       "# Install Docker Compose",
-      "sudo curl -L https://github.com/docker/compose/releases/download/${var.docker_compose_version}/docker-compose-`uname -s`-`uname -m` > /tmp/docker-compose",
-      "sudo mv /tmp/docker-compose /usr/local/bin/docker-compose",
-      "sudo chmod +x /usr/local/bin/docker-compose",
+      "sudo apt-get install -y python3 python3-pip",
+      "python3 -m pip install -IU docker-compose",
+      "sudo ln -s /home/ubuntu/.local/bin/docker-compose /usr/local/bin/docker-compose",
+
+      # "sudo curl -L https://github.com/docker/compose/releases/download/${var.docker_compose_version}/docker-compose-`uname -s`-`uname -m` > /tmp/docker-compose",
+      # "sudo mv /tmp/docker-compose /usr/local/bin/docker-compose",
+      # "sudo chmod +x /usr/local/bin/docker-compose",
 
       "docker -v",
       "docker-compose --version",
@@ -110,7 +114,7 @@ data "aws_ami" "ubuntu" {
 
   filter {
     name = "architecture"
-    values = ["x86_64"]
+    values = [var.image_architecture]
   }
 
   filter {

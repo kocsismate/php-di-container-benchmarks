@@ -8,9 +8,9 @@ variable "region" {}
 
 variable "instance_type" {}
 
-variable "image_name" {
-  default = "ubuntu-focal-20.04-amd64-server"
-}
+variable "image_name" {}
+
+variable "image_architecture" {}
 
 variable "docker_compose_version" {
   default = "1.26.2"

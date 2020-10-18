@@ -2,3 +2,13 @@ ssh_key_name = "ec2"
 ssh_private_key = "ec2.pem"
 region = "eu-central-1"
 instance_type = "c5.large"
+
+# X86_64
+instance_type = "c5.large"
+image_name = "ubuntu-focal-20.04-amd64-server"
+image_architecture = "x86_64"
+
+# ARM
+# instance_type = "c6g.large"
+# image_name = "ubuntu-focal-20.04-arm64-server"
+# image_architecture = "arm64"
