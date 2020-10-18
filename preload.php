@@ -5,7 +5,15 @@ require_once __DIR__ . "/src/Container/ContainerDefinitions.php";
 require_once __DIR__ . "/src/Container/ContainerDefinitionInterface.php";
 
 for ($i = 1; $i <= 100; $i++) {
-    require_once __DIR__ . "/src/Fixture/Class$i.php";
+    require_once __DIR__ . "/src/Fixture/A/FixtureA$i.php";
+}
+
+for ($i = 1; $i <= 1000; $i++) {
+    require_once __DIR__ . "/src/Fixture/B/FixtureB$i.php";
+}
+
+for ($i = 1; $i <= 1000; $i++) {
+    require_once __DIR__ . "/src/Fixture/C/FixtureC$i.php";
 }
 
 require_once __DIR__ . "/src/Test/TestCase.php";
