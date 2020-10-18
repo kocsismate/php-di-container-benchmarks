@@ -23,7 +23,7 @@ final class TestSuite5 implements TestSuiteInterface
     {
         return <<<HERE
 In this Test Suite, containers have to fetch an object graph of 10 objects (defined as Singletons) 1000, 10 000 and 100 000
-times. Neither autoloading time, nor startup time are included in the measurements.
+times. Neither autoloading time, nor bootstrap time is included in the measurements.
 HERE;
     }
 

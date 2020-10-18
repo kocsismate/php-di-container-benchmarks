@@ -173,18 +173,18 @@ HERE;
 
             <p>
                 There are 3 main types of Test Suites: "Cold" ones (Test Suite 1-2) measure performance including
-                autoloading and startup time of containers as well as autoloading time of the retrieved objects.
-                "Semi-Warm" ones (Test Suite 3-4) measure performance excluding container autoloading time, but
-                including startup time and autoloading time of the retrieved objects, while "Warm" ones (Test Suite 5-6)
-                exclude autoloading and startup time equally. Time of compilation is always excluded from the results
-                due to OPcache.
+                autoloading and bootstrap time of containers. "Semi-Warm" ones (Test Suite 3-4) measure performance
+                excluding container autoloading time, but including bootstrap time, while "Warm" ones (Test Suite 5-6)
+                exclude autoloading and bootstrap time equally. The time of script compilation is always excluded
+                from the results due to OPcache. Retrieved objects are always autoloaded (via preloading) prior to
+                running the tests.
             </p>
 
             <p>
                 Each Test Suite contains three Test Cases which define the number of iterations the main task has to be
                 repeated in order to simulate real world usage patterns. This number ranges from 10 to 100 000.
                 Furthermore, all Test Cases are performed 30 times (this is referred to as "runs") in order to improve
-                the accuracy of measurements. The median of these results are displayed in the final results.
+                the accuracy of measurements. The median of these results is displayed in the final results.
             </p>
         </section>    
 
@@ -192,10 +192,13 @@ HERE;
         <section>
             <h2 id="method">Setup</h2>
             <p>
-                The benchmark is run on AWS EC2, using a C5.large instance. The operating system on the host is Ubuntu 20.04.
+                The benchmark is run on AWS EC2, using a c5.large instance. The operating system on the host is Ubuntu 20.04.
                 PHP 8.0 is running in a Docker container with OPcache enabled and autoloader optimized (using authoritative
-                mode). During the measurements, a PHP-FPM script served by nginx is executed each time. This is needed
-                because a production environment is simulated much better this way than in the CLI.
+                mode). Preloading is used for loading all classes besides the container-specific ones in order to keep the
+                memory and autoloading overhead as small as possible. The code which performs the measurements is automatically
+                generated in order to minimize the number of unnecessary instructions. During the measurements, a PHP-FPM script
+                served by nginx is executed each time. This is needed because a production environment is simulated much better this
+                way than in the CLI.
             </p>
 
             <p>
