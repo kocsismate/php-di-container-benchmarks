@@ -56,17 +56,7 @@ EOF
       "# Install Docker",
       "sudo curl -fsSL https://get.docker.com/ | sh",
 
-      "# Install Docker Compose",
-      "sudo apt-get install -y python3 python3-pip",
-      "python3 -m pip install -IU docker-compose",
-      "sudo ln -s /home/ubuntu/.local/bin/docker-compose /usr/local/bin/docker-compose",
-
-      # "sudo curl -L https://github.com/docker/compose/releases/download/${var.docker_compose_version}/docker-compose-`uname -s`-`uname -m` > /tmp/docker-compose",
-      # "sudo mv /tmp/docker-compose /usr/local/bin/docker-compose",
-      # "sudo chmod +x /usr/local/bin/docker-compose",
-
       "docker -v",
-      "docker-compose --version",
     ]
   }
 
@@ -89,16 +79,21 @@ EOF
       "sudo cp .env.dist .env",
 
       "# Install composer dependencies",
-      "sudo docker run --rm --interactive --tty --volume $PWD:/code composer:2.0 install --prefer-dist --no-dev --no-suggest --no-interaction --working-dir=/code --ignore-platform-reqs",
+      "sudo docker run --rm --interactive --tty --volume $PWD:/code composer:2.0 install --prefer-dist --no-dev --no-interaction --working-dir=/code --ignore-platform-reqs",
+
+      "# Build Docker container",
+      "sudo docker build . -t benchmark-fpm:latest",
 
       "# Build DI containers",
-      "sudo docker-compose run --no-deps benchmark-fpm /code/bin/benchmark build",
+      "sudo docker run --rm --volume $PWD:/code --env-file .env benchmark-fpm /code/bin/benchmark build",
 
       "# Dump autoloader",
       "sudo docker run --rm --interactive --tty --volume $PWD:/code composer:2.0 dump-autoload --classmap-authoritative --no-interaction --working-dir=/code",
 
       "# Run the server",
-      "sudo docker-compose -f docker-compose.aws.yml up -d",
+      "sudo docker network create benchmark",
+      "sudo docker run --detach --rm --name=benchmark-fpm   --network=benchmark --env-file .env --log-driver=none benchmark-fpm /code/build/container/fpm/run.sh",
+      "sudo docker run --detach --rm --name=benchmark-nginx --network=benchmark -p 80:80 --env-file .env --volume $PWD:/code:cached --log-driver=none nginx:1.19-alpine /code/build/container/nginx/run.sh",
     ]
   }
 }
