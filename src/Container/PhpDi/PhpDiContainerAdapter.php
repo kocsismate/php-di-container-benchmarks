@@ -29,7 +29,7 @@ final class PhpDiContainerAdapter implements ContainerAdapterInterface
 
     public function bootstrapSingletonContainer()
     {
-        require __DIR__.'/Resource/CompiledSingletonContainer.php';
+        require_once __DIR__ . "/Resource/CompiledSingletonContainer.php";
 
         return new CompiledSingletonContainer();
     }

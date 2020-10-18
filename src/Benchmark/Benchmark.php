@@ -7,9 +7,11 @@ namespace DiContainerBenchmarks\Benchmark;
 use DiContainerBenchmarks\Container\ContainerDefinitionInterface;
 use DiContainerBenchmarks\OutputGenerator\OutputGeneratorInterface;
 use DiContainerBenchmarks\Test\TestCase;
+use DiContainerBenchmarks\Test\TestCaseGenerator;
 use DiContainerBenchmarks\Test\TestResult;
 use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
 
+use function file_put_contents;
 use function hrtime;
 
 final class Benchmark
@@ -34,6 +36,30 @@ final class Benchmark
             $t2 = hrtime(true);
 
             echo (($t2 - $t1) / 1000000) . " ms\n";
+        }
+    }
+
+    /**
+     * @param TestSuiteInterface[] $testSuites
+     */
+    public function generateTestCases(array $testSuites): void
+    {
+        echo "Generating test cases...\n";
+        foreach ($testSuites as $testSuite) {
+            $testSuiteNumber = $testSuite->getNumber();
+
+            foreach ($testSuite->getTestCases() as $testCase) {
+                $testCaseNumber = $testCase->getNumber();
+
+                echo "Generating test case $testSuiteNumber/$testCaseNumber: ";
+                $code = TestCaseGenerator::generate($testCase);
+                $result = file_put_contents(__DIR__ . "/../../app/generated/test_case_{$testSuiteNumber}_{$testCaseNumber}.php", $code);
+                if ($result === false) {
+                    echo "Failed\n";
+                } else {
+                    echo "Done\n";
+                }
+            }
         }
     }
 
