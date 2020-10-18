@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Zen;
@@ -29,7 +30,7 @@ class ZenPrototypeContainerConfig extends AbstractContainerConfig
             Psr4WildcardHint::prototype(
                 'DiContainerBenchmarks\Fixture\Class*',
                 'DiContainerBenchmarks\Fixture\Class*'
-            )
+            ),
         ];
     }
 }

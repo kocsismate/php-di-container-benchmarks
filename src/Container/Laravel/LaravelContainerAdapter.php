@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Laravel;
 
+use DiContainerBenchmarks\Container\ContainerAdapterInterface;
 use DiContainerBenchmarks\Fixture\Class1;
 use DiContainerBenchmarks\Fixture\Class10;
 use DiContainerBenchmarks\Fixture\Class100;
-use DiContainerBenchmarks\Container\ContainerAdapterInterface;
 use Illuminate\Container\Container;
 
 final class LaravelContainerAdapter implements ContainerAdapterInterface

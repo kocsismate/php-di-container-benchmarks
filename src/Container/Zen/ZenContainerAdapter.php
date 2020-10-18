@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Zen;
 
+use DiContainerBenchmarks\Container\ContainerAdapterInterface;
 use DiContainerBenchmarks\Container\Zen\Resource\CompiledPrototypeContainer;
 use DiContainerBenchmarks\Container\Zen\Resource\CompiledSingletonContainer;
-use DiContainerBenchmarks\Container\ContainerAdapterInterface;
 use WoohooLabs\Zen\Container\Builder\FileSystemContainerBuilder;
 
 final class ZenContainerAdapter implements ContainerAdapterInterface

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Zen;
 
-use DiContainerBenchmarks\Container\ContainerDefinitionInterface;
 use DiContainerBenchmarks\Container\ContainerAdapterInterface;
+use DiContainerBenchmarks\Container\ContainerDefinitionInterface;
 
 final class ZenContainerDefinition implements ContainerDefinitionInterface
 {

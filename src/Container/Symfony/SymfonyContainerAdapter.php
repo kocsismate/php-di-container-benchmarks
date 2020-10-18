@@ -10,14 +10,25 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Dumper\PhpDumper;
 
+use function file_put_contents;
+use function glob;
+use function is_dir;
+use function key;
+use function mkdir;
+use function rmdir;
+use function sprintf;
+use function strpos;
+use function substr;
+use function unlink;
+
 final class SymfonyContainerAdapter implements ContainerAdapterInterface
 {
     public function build(): void
     {
         $path = PROJECT_ROOT . "/src/Container/Symfony/Resource/";
 
-        foreach (glob($path.'/Container*/') as $dir) {
-            foreach (glob($dir.'/*') as $file) {
+        foreach (glob($path . "/Container*/") as $dir) {
+            foreach (glob($dir . "/*") as $file) {
                 unlink($file);
             }
             rmdir($dir);
@@ -25,8 +36,8 @@ final class SymfonyContainerAdapter implements ContainerAdapterInterface
 
         // Build container with prototype services
         $containerBuilder = new ContainerBuilder();
-        $containerBuilder->setParameter('container.dumper.inline_class_loader', false);
-        $containerBuilder->setParameter('container.dumper.inline_factories', true);
+        $containerBuilder->setParameter("container.dumper.inline_class_loader", false);
+        $containerBuilder->setParameter("container.dumper.inline_factories", true);
 
         for ($i = 1; $i <= 100; $i++) {
             $definition = new Definition("DiContainerBenchmarks\\Fixture\\Class$i", []);
@@ -46,8 +57,8 @@ final class SymfonyContainerAdapter implements ContainerAdapterInterface
 
         // Build container with singleton services
         $containerBuilder = new ContainerBuilder();
-        $containerBuilder->setParameter('container.dumper.inline_class_loader', false);
-        $containerBuilder->setParameter('container.dumper.inline_factories', true);
+        $containerBuilder->setParameter("container.dumper.inline_class_loader", false);
+        $containerBuilder->setParameter("container.dumper.inline_factories", true);
 
         for ($i = 1; $i <= 100; $i++) {
             $definition = new Definition("DiContainerBenchmarks\\Fixture\\Class$i", []);
@@ -65,15 +76,15 @@ final class SymfonyContainerAdapter implements ContainerAdapterInterface
             "CompiledSingletonContainer"
         );
     }
-    
+
     public function bootstrapSingletonContainer()
     {
-        return require __DIR__.'/Resource/CompiledSingletonContainer.php';
+        return require __DIR__ . "/Resource/CompiledSingletonContainer.php";
     }
 
     public function bootstrapPrototypeContainer()
     {
-        return require __DIR__.'/Resource/CompiledPrototypeContainer.php';
+        return require __DIR__ . "/Resource/CompiledPrototypeContainer.php";
     }
 
     protected function dumpRegularContainer(ContainerBuilder $containerBuilder, string $path, string $class)
@@ -100,7 +111,7 @@ final class SymfonyContainerAdapter implements ContainerAdapterInterface
             [
                 "namespace" => "DiContainerBenchmarks\\Container\\Symfony\\Resource",
                 "class" => $class,
-                "file" => $path.'/'.$class.'.php',
+                "file" => "$path/$class.php",
                 "as_files" => true,
                 "debug" => false,
             ]

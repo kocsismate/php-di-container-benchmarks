@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Yii2;
 
+use DiContainerBenchmarks\Container\ContainerAdapterInterface;
 use DiContainerBenchmarks\Fixture\Class1;
 use DiContainerBenchmarks\Fixture\Class10;
 use DiContainerBenchmarks\Fixture\Class100;
@@ -104,7 +105,6 @@ use DiContainerBenchmarks\Fixture\Class96;
 use DiContainerBenchmarks\Fixture\Class97;
 use DiContainerBenchmarks\Fixture\Class98;
 use DiContainerBenchmarks\Fixture\Class99;
-use DiContainerBenchmarks\Container\ContainerAdapterInterface;
 use yii\di\Container;
 
 final class AbstractYii2ContainerAdapter implements ContainerAdapterInterface

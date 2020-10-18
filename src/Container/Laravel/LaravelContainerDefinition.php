@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Container\Laravel;
 
-use DiContainerBenchmarks\Container\ContainerDefinitionInterface;
 use DiContainerBenchmarks\Container\ContainerAdapterInterface;
+use DiContainerBenchmarks\Container\ContainerDefinitionInterface;
 
 final class LaravelContainerDefinition implements ContainerDefinitionInterface
 {
