@@ -21,7 +21,6 @@
     <exclude-pattern>src/Container/Symfony/Resource/*</exclude-pattern>
     <exclude-pattern>src/Container/Zen/Resource/*</exclude-pattern>
     <exclude-pattern>src/Fixture/*</exclude-pattern>
-    <exclude-pattern>src/Test/Generated/*</exclude-pattern>
 
     <rule ref="WoohooLabs"/>
 </ruleset>

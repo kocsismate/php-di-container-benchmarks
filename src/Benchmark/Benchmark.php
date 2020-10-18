@@ -85,7 +85,7 @@ final class Benchmark
             $outputGenerator->generateOutput($testSuites, $containerDefinitions, $benchmarkResult);
         }
 
-        echo "Benchmark finished successfully!\n";
+        echo "Benchmark finished successfully\n";
     }
 
     private function runTest(

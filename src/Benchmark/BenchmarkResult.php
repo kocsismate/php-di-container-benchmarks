@@ -10,6 +10,7 @@ use DiContainerBenchmarks\Test\TestResult;
 use DiContainerBenchmarks\TestSuite\TestSuiteInterface;
 use InvalidArgumentException;
 
+use function assert;
 use function count;
 use function round;
 use function sort;
