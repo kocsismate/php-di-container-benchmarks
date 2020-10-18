@@ -6,6 +6,12 @@ require_once __DIR__ . "/../app/bootstrap.php";
 
 use DiContainerBenchmarks\Test\TestRunner;
 
+if (isset($_GET["opcache"])) {
+    echo "<pre>";
+    var_dump(opcache_get_status());
+    exit;
+}
+
 if (isset($_GET["clear"])) {
     opcache_reset();
     exit;
@@ -26,6 +32,5 @@ $testCaseNumber = (int) $_GET["test_case"];
 $container = (string) $_GET["container"];
 
 $testRunner = new TestRunner();
-$result = $testRunner->runTest($testSuiteNumber, $testCaseNumber, $container);
 
-echo $result->toJson();
+echo $testRunner->runTest($testSuiteNumber, $testCaseNumber, $container)->toJson();
