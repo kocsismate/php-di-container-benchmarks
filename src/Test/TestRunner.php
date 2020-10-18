@@ -9,6 +9,7 @@ use DiContainerBenchmarks\Container\ContainerDefinitions;
 use DiContainerBenchmarks\TestSuite\TestSuites;
 use Throwable;
 
+use function gc_collect_cycles;
 use function hrtime;
 use function memory_get_peak_usage;
 
