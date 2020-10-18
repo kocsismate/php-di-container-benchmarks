@@ -110,6 +110,10 @@ final class BenchmarkResult
 
         $count = count($results);
         $middleIndex = $count / 2;
+
+        assert($results[$middleIndex] !== null);
+        assert($results[$middleIndex + 1] !== null);
+
         if ($count % 2 === 0) {
             $median = ($results[$middleIndex] + $results[$middleIndex + 1]) / 2;
         } else {
