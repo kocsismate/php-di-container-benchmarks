@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace DiContainerBenchmarks\Container\Symfony;
 
 use DiContainerBenchmarks\Container\ContainerAdapterInterface;
+use DiContainerBenchmarks\Fixture\A\FixtureA10;
+use DiContainerBenchmarks\Fixture\A\FixtureA100;
+use DiContainerBenchmarks\Fixture\C\FixtureC1000;
 use RuntimeException;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
@@ -40,13 +43,36 @@ final class SymfonyContainerAdapter implements ContainerAdapterInterface
         $containerBuilder->setParameter("container.dumper.inline_factories", true);
 
         for ($i = 1; $i <= 100; $i++) {
-            $definition = new Definition("DiContainerBenchmarks\\Fixture\\Class$i", []);
+            $definition = new Definition("DiContainerBenchmarks\\Fixture\\A\\FixtureA$i", []);
             $definition->setShared(false);
             $definition->setAutowired(true);
-            $containerBuilder->setDefinition("DiContainerBenchmarks\\Fixture\\Class$i", $definition);
+            $containerBuilder->setDefinition("DiContainerBenchmarks\\Fixture\\A\\FixtureA$i", $definition);
         }
-        $containerBuilder->getDefinition("DiContainerBenchmarks\\Fixture\\Class10")->setPublic(true);
-        $containerBuilder->getDefinition("DiContainerBenchmarks\\Fixture\\Class100")->setPublic(true);
+
+        for ($i = 1; $i <= 1000; $i++) {
+            $definition = new Definition("DiContainerBenchmarks\\Fixture\\B\\FixtureB$i", []);
+            $definition->setShared(false);
+            $definition->setAutowired(true);
+            $definition->setPublic(true);
+            $containerBuilder->setDefinition("DiContainerBenchmarks\\Fixture\\B\\FixtureB$i", $definition);
+        }
+
+        $definition = new Definition(FixtureC1000::class, []);
+        $definition->setShared(false);
+        $definition->setAutowired(true);
+        $definition->setPublic(true);
+        $containerBuilder->setDefinition(FixtureC1000::class, $definition);
+
+        for ($i = 1; $i <= 1000; $i++) {
+            $definition = new Definition("DiContainerBenchmarks\\Fixture\\C\\FixtureC$i", []);
+            $definition->setShared(false);
+            $definition->setAutowired(true);
+            $containerBuilder->setDefinition("DiContainerBenchmarks\\Fixture\\C\\FixtureC$i", $definition);
+        }
+
+        $containerBuilder->getDefinition(FixtureA10::class)->setPublic(true);
+        $containerBuilder->getDefinition(FixtureA100::class)->setPublic(true);
+        $containerBuilder->getDefinition(FixtureC1000::class)->setPublic(true);
 
         $containerBuilder->compile();
         $this->dumpFileContainer(
@@ -61,13 +87,30 @@ final class SymfonyContainerAdapter implements ContainerAdapterInterface
         $containerBuilder->setParameter("container.dumper.inline_factories", true);
 
         for ($i = 1; $i <= 100; $i++) {
-            $definition = new Definition("DiContainerBenchmarks\\Fixture\\Class$i", []);
+            $definition = new Definition("DiContainerBenchmarks\\Fixture\\A\\FixtureA$i", []);
             $definition->setShared(true);
             $definition->setAutowired(true);
-            $containerBuilder->setDefinition("DiContainerBenchmarks\\Fixture\\Class$i", $definition);
+            $containerBuilder->setDefinition("DiContainerBenchmarks\\Fixture\\A\\FixtureA$i", $definition);
         }
-        $containerBuilder->getDefinition("DiContainerBenchmarks\\Fixture\\Class10")->setPublic(true);
-        $containerBuilder->getDefinition("DiContainerBenchmarks\\Fixture\\Class100")->setPublic(true);
+
+        for ($i = 1; $i <= 1000; $i++) {
+            $definition = new Definition("DiContainerBenchmarks\\Fixture\\B\\FixtureB$i", []);
+            $definition->setShared(true);
+            $definition->setAutowired(true);
+            $definition->setPublic(true);
+            $containerBuilder->setDefinition("DiContainerBenchmarks\\Fixture\\B\\FixtureB$i", $definition);
+        }
+
+        for ($i = 1; $i <= 1000; $i++) {
+            $definition = new Definition("DiContainerBenchmarks\\Fixture\\C\\FixtureC$i", []);
+            $definition->setShared(true);
+            $definition->setAutowired(true);
+            $containerBuilder->setDefinition("DiContainerBenchmarks\\Fixture\\C\\FixtureC$i", $definition);
+        }
+
+        $containerBuilder->getDefinition(FixtureA10::class)->setPublic(true);
+        $containerBuilder->getDefinition(FixtureA100::class)->setPublic(true);
+        $containerBuilder->getDefinition(FixtureC1000::class)->setPublic(true);
 
         $containerBuilder->compile();
         $this->dumpFileContainer(
