@@ -52,7 +52,7 @@ Copy the `.env.dist` file to `.env` and feel free to override the values in it. 
 
 to execute the measurements.
 
-The HTML output will be generated in the "var" directory.
+The HTML output will be generated in the "docs" directory.
 
 ### Usage on AWS EC2
 
