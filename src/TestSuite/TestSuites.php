@@ -8,14 +8,21 @@ final class TestSuites
 {
     public static function getTestSuite(int $number): ?TestSuiteInterface
     {
-        return match ($number) {
-            1 => new TestSuite1(),
-            2 => new TestSuite2(),
-            3 => new TestSuite3(),
-            4 => new TestSuite4(),
-            5 => new TestSuite5(),
-            6 => new TestSuite6(),
-            default => null,
-        };
+        switch ($number) {
+            case 1:
+                return new TestSuite1();
+            case 2:
+                return new TestSuite2();
+            case 3:
+                return new TestSuite3();
+            case 4:
+                return new TestSuite4();
+            case 5:
+                return new TestSuite5();
+            case 6:
+                return new TestSuite6();
+            default:
+                return null;
+        }
     }
 }
