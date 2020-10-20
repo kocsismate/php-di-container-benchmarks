@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\TestSuite;
 
-use DiContainerBenchmarks\Fixture\Class10;
+use DiContainerBenchmarks\Fixture\A\FixtureA100;
 use DiContainerBenchmarks\Test\TestCase;
 
 final class TestSuite1 implements TestSuiteInterface
@@ -16,24 +16,42 @@ final class TestSuite1 implements TestSuiteInterface
 
     public function getTitle(): string
     {
-        return "\"Cold\" Retrieval of a small object graph (10 objects)";
+        return "Instantiating an object graph of moderate size - Singleton scope";
     }
 
     public function getDescription(): string
     {
         return <<<HERE
-In this Test Suite, containers have to fetch an object graph of 10 objects (defined as Singletons) 10, 100 and 1000
-times. Autoloading and bootstrap time of the containers are included in the measurements. That's why this Test Suite
-simulates production usage very well.
+In this Test Suite, containers have to instantiate the same object graph of 100 objects (defined as Singletons) 1000 and 10 000
+times. The first test case includes autoloading and bootstrap time of the containers in the measurements. The second
+test case excludes these. The third one warms up the container before the measurements.
 HERE;
     }
 
     public function getTestCases(): array
     {
         return [
-            new TestCase(1, "10 iterations, autoload + bootstrap time included", 10, TestCase::COLD, true, Class10::class),
-            new TestCase(2, "100 iterations, autoload + bootstrap time included", 100, TestCase::COLD, true, Class10::class),
-            new TestCase(3, "1000 iterations, autoload + bootstrap time included", 1000, TestCase::COLD, true, Class10::class),
+            new TestCase(
+                1,
+                1000,
+                TestCase::COLD,
+                true,
+                [FixtureA100::class]
+            ),
+            new TestCase(
+                2,
+                1000,
+                TestCase::WARM,
+                true,
+                [FixtureA100::class]
+            ),
+            new TestCase(
+                3,
+                100_000,
+                TestCase::HOT,
+                true,
+                [FixtureA100::class]
+            ),
         ];
     }
 }

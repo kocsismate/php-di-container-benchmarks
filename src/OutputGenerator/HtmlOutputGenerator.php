@@ -165,24 +165,23 @@ HERE;
 
             <p>            
                 Each container is given 6 tasks (Test Suites) where they have to create or fetch object graphs of
-                different sizes (10 or 100 objects). For this purpose, containers are configured either to always
-                instantiate objects (this is usually called as Prototype scope) or to instantiate objects only at
-                the first retrieval and return the same instance on the subsequent calls (which is usually referred to
-                as Singleton scope or shared services).
+                different sizes (100, 1, or 1000 objects, respectively). For this purpose, containers are configured
+                either to always instantiate objects (this is usually called as Prototype scope) or to instantiate objects
+                only at the first retrieval and return the same instance on the subsequent calls (which is usually referred
+                to as Singleton scope or shared services).
             </p>
 
             <p>
-                There are 3 main types of Test Suites: "Cold" ones (Test Suite 1-2) measure performance including
-                autoloading and bootstrap time of containers. "Semi-Warm" ones (Test Suite 3-4) measure performance
-                excluding container autoloading time, but including bootstrap time, while "Warm" ones (Test Suite 5-6)
-                exclude autoloading and bootstrap time equally. The time of script compilation is always excluded
-                from the results due to OPcache. Retrieved objects are always autoloaded (via preloading) prior to
-                running the tests.
+                There are 3 main types of Test Cases: "Cold" ones measure performance including autoloading and bootstrap
+                time of containers. "Warm" ones measure performance excluding autoloading and bootstrap time equally,
+                while "Hot" ones additionally can warm up their caches before the measurements. The time of script
+                compilation is always excluded from the results due to OPcache. Retrieved objects are always
+                autoloaded (via preloading) prior to running the tests.
             </p>
 
             <p>
-                Each Test Suite contains three Test Cases which define the number of iterations the main task has to be
-                repeated in order to simulate real world usage patterns. This number ranges from 10 to 100 000.
+                Each Test Suite contains three Test Cases which define how many times the main task has to be
+                repeated in order to simulate different usage patterns. This number ranges from 10 to 100 000.
                 Furthermore, all Test Cases are performed 30 times (this is referred to as "runs") in order to improve
                 the accuracy of measurements. The median of these results is displayed in the final results.
             </p>

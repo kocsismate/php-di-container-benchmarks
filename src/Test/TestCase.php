@@ -4,33 +4,36 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\Test;
 
+use function number_format;
+
 final class TestCase
 {
     public const COLD = "cold";
-    public const SEMI_WARM = "semi_warm";
-    public const WARM = "warm";
+    public const WARM = "semi_warm";
+    public const HOT = "hot";
 
     private int $number;
-    private string $title;
     private int $iterations;
-    private string $testType;
+    private string $mode;
     private bool $singleton;
-    private string $classToRetrieve;
+    /** @var string[] */
+    private array $classesToRetrieve;
 
+    /**
+     * @param string[] $classesToRetrieve
+     */
     public function __construct(
         int $number,
-        string $title,
         int $iterations,
         string $testType,
         bool $isSingleton,
-        string $classToRetrieve
+        array $classesToRetrieve
     ) {
         $this->number = $number;
-        $this->title = $title;
         $this->iterations = $iterations;
-        $this->testType = $testType;
+        $this->mode = $testType;
         $this->singleton = $isSingleton;
-        $this->classToRetrieve = $classToRetrieve;
+        $this->classesToRetrieve = $classesToRetrieve;
     }
 
     public function getNumber(): int
@@ -40,7 +43,22 @@ final class TestCase
 
     public function getTitle(): string
     {
-        return $this->title;
+        $title = number_format($this->iterations, 0, ".", " ");
+        $title .= " iteration" . ($this->iterations > 1 ? "s" : "") . ", ";
+
+        switch ($this->mode) {
+            case self::COLD:
+                $title .= "container bootstrap time included";
+                break;
+            case self::WARM:
+                $title .= "container bootstrap time excluded";
+                break;
+            case self::HOT:
+                $title .= "container already warmed up";
+                break;
+        }
+
+        return $title;
     }
 
     public function getIterations(): int
@@ -48,9 +66,9 @@ final class TestCase
         return $this->iterations;
     }
 
-    public function getTestType(): string
+    public function getMode(): string
     {
-        return $this->testType;
+        return $this->mode;
     }
 
     public function isSingleton(): bool
@@ -58,8 +76,11 @@ final class TestCase
         return $this->singleton;
     }
 
-    public function getClassToRetrieve(): string
+    /**
+     * @return string[]
+     */
+    public function getClassesToRetrieve(): array
     {
-        return $this->classToRetrieve;
+        return $this->classesToRetrieve;
     }
 }

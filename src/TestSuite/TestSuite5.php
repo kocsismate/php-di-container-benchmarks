@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\TestSuite;
 
-use DiContainerBenchmarks\Fixture\Class10;
+use DiContainerBenchmarks\Fixture\C\FixtureC1000;
 use DiContainerBenchmarks\Test\TestCase;
 
 final class TestSuite5 implements TestSuiteInterface
@@ -16,23 +16,42 @@ final class TestSuite5 implements TestSuiteInterface
 
     public function getTitle(): string
     {
-        return "\"Warm\" Fetching of the same small object graph (10 objects)";
+        return "Instantiating a single, large sized object graph - Singleton scope";
     }
 
     public function getDescription(): string
     {
         return <<<HERE
-In this Test Suite, containers have to fetch an object graph of 10 objects (defined as Singletons) 1000, 10 000 and 100 000
-times. Neither autoloading time, nor bootstrap time is included in the measurements.
+In this Test Suite, containers have to instantiate the same object graph of 1000 objects (defined as Singletons) 100 and 10 000 times.
+The first test case includes autoloading and bootstrap time of the containers in the measurements. The second
+test case excludes these. The third one warms up the container before the measurements.
 HERE;
     }
 
     public function getTestCases(): array
     {
         return [
-            new TestCase(1, "1000 iterations, bootstrap time excluded", 1000, TestCase::WARM, true, Class10::class),
-            new TestCase(2, "10 000 iterations, bootstrap time excluded", 10000, TestCase::WARM, true, Class10::class),
-            new TestCase(3, "100 000 iterations, bootstrap time excluded", 100000, TestCase::WARM, true, Class10::class),
+            new TestCase(
+                1,
+                100,
+                TestCase::COLD,
+                true,
+                [FixtureC1000::class]
+            ),
+            new TestCase(
+                2,
+                100,
+                TestCase::WARM,
+                true,
+                [FixtureC1000::class]
+            ),
+            new TestCase(
+                3,
+                10_000,
+                TestCase::HOT,
+                true,
+                [FixtureC1000::class]
+            ),
         ];
     }
 }
