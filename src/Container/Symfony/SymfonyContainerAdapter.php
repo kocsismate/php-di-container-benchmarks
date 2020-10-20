@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace DiContainerBenchmarks\Container\Symfony;
 
 use DiContainerBenchmarks\Container\ContainerAdapterInterface;
+use DiContainerBenchmarks\Container\Symfony\Resource\CompiledPrototypeContainer;
+use DiContainerBenchmarks\Container\Symfony\Resource\CompiledSingletonContainer;
 use DiContainerBenchmarks\Fixture\A\FixtureA10;
 use DiContainerBenchmarks\Fixture\A\FixtureA100;
 use DiContainerBenchmarks\Fixture\C\FixtureC1000;
@@ -40,7 +42,7 @@ final class SymfonyContainerAdapter implements ContainerAdapterInterface
         // Build container with prototype services
         $containerBuilder = new ContainerBuilder();
         $containerBuilder->setParameter("container.dumper.inline_class_loader", false);
-        $containerBuilder->setParameter("container.dumper.inline_factories", true);
+        $containerBuilder->setParameter("container.dumper.inline_factories", false);
 
         for ($i = 1; $i <= 100; $i++) {
             $definition = new Definition("DiContainerBenchmarks\\Fixture\\A\\FixtureA$i", []);
@@ -75,16 +77,17 @@ final class SymfonyContainerAdapter implements ContainerAdapterInterface
         $containerBuilder->getDefinition(FixtureC1000::class)->setPublic(true);
 
         $containerBuilder->compile();
-        $this->dumpFileContainer(
+        $this->dumpContainer(
             $containerBuilder,
             $path,
-            "CompiledPrototypeContainer"
+            "CompiledPrototypeContainer",
+            false
         );
 
         // Build container with singleton services
         $containerBuilder = new ContainerBuilder();
         $containerBuilder->setParameter("container.dumper.inline_class_loader", false);
-        $containerBuilder->setParameter("container.dumper.inline_factories", true);
+        $containerBuilder->setParameter("container.dumper.inline_factories", false);
 
         for ($i = 1; $i <= 100; $i++) {
             $definition = new Definition("DiContainerBenchmarks\\Fixture\\A\\FixtureA$i", []);
@@ -113,62 +116,51 @@ final class SymfonyContainerAdapter implements ContainerAdapterInterface
         $containerBuilder->getDefinition(FixtureC1000::class)->setPublic(true);
 
         $containerBuilder->compile();
-        $this->dumpFileContainer(
+        $this->dumpContainer(
             $containerBuilder,
             $path,
-            "CompiledSingletonContainer"
+            "CompiledSingletonContainer",
+            false
         );
     }
 
     public function bootstrapSingletonContainer()
     {
-        return require __DIR__ . "/Resource/CompiledSingletonContainer.php";
+        //return require __DIR__ . "/Resource/CompiledSingletonContainer.php";
+        return new CompiledSingletonContainer();
     }
 
     public function bootstrapPrototypeContainer()
     {
-        return require __DIR__ . "/Resource/CompiledPrototypeContainer.php";
+        //return require __DIR__ . "/Resource/CompiledPrototypeContainer.php";
+        return new CompiledPrototypeContainer();
     }
 
-    protected function dumpRegularContainer(ContainerBuilder $containerBuilder, string $path, string $class)
+    protected function dumpContainer(ContainerBuilder $containerBuilder, string $path, string $class, bool $asFiles): void
     {
         $dumper = new PhpDumper($containerBuilder);
-        file_put_contents(
-            $path . $class . ".php",
-            $dumper->dump(
-                [
-                    "namespace" => "DiContainerBenchmarks\\Container\\Symfony\\Resource",
-                    "class" => $class,
-                    "as_files" => false,
-                    "debug" => false,
-                ]
-            )
-        );
-    }
-
-    protected function dumpFileContainer(ContainerBuilder $containerBuilder, string $path, string $class)
-    {
-        $dumper = new PhpDumper($containerBuilder);
-
         $content = $dumper->dump(
             [
                 "namespace" => "DiContainerBenchmarks\\Container\\Symfony\\Resource",
                 "class" => $class,
-                "file" => "$path/$class.php",
-                "as_files" => true,
+                "as_files" => $asFiles,
                 "debug" => false,
             ]
         );
 
-        $file = key($content);
-        $dir = $path . substr($file, 0, strpos($file, "/"));
-        $result = @mkdir($dir, 0777, true) || is_dir($dir);
-        if ($result === false) {
-            throw new RuntimeException(sprintf("Unable to create the container directory (%s)\n", $dir));
-        }
+        if ($asFiles) {
+            $file = key($content);
+            $dir = $path . substr($file, 0, strpos($file, "/"));
+            $result = @mkdir($dir, 0777, true) || is_dir($dir);
+            if ($result === false) {
+                throw new RuntimeException(sprintf("Unable to create the container directory (%s)\n", $dir));
+            }
 
-        foreach ($content as $file => $code) {
-            file_put_contents($path . $file, $code);
+            foreach ($content as $file => $code) {
+                file_put_contents($path . $file, $code);
+            }
+        } else {
+            file_put_contents($path . $class . ".php", $content);
         }
     }
 }
