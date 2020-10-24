@@ -15,6 +15,7 @@
         "ext-curl": "*",
         "ext-json": "*",
         "ext-zend-opcache": "*",
+        "composer-runtime-api": "^2.0",
         "aura/di": "^4.0.0",
         "chubbyphp/chubbyphp-container": "^1.1.0",
         "doctrine/cache": "^1.6.1",
