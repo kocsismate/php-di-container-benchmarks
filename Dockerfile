@@ -1,4 +1,4 @@
-FROM php:8.0.0RC2-fpm-alpine3.12
+FROM php:8.0.0-fpm-alpine3.12
 MAINTAINER Máté Kocsis <kocsismate@woohoolabs.com>
 
 RUN docker-php-ext-install opcache
