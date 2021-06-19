@@ -16,7 +16,7 @@ composer-update: ## Update Composer dependencies
 	docker run --rm --interactive --tty --volume $(PWD):/app --user $(id -u):$(id -g) composer update --ignore-platform-reqs
 
 phpstan: ## Run PHPStan to perform static analysis
-	docker-compose run --rm --no-deps benchmark-cli /bin/sh -c "cd /code && ./vendor/bin/phpstan"
+	docker-compose run --rm --no-deps benchmark-cli /code/vendor/bin/phpstan analyse
 
 cs: ## Run PHP CodeSniffer to detect issues with coding style
 	docker-compose run --no-deps --rm benchmark-cli /code/vendor/bin/phpcs --standard=/code/phpcs.xml
