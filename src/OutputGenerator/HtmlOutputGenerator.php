@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace DiContainerBenchmarks\OutputGenerator;
 
-require_once __DIR__ . "/../../vendor/composer/InstalledVersions.php";
-
 use Composer\InstalledVersions;
 use DiContainerBenchmarks\Benchmark\BenchmarkResult;
 use DiContainerBenchmarks\Container\ContainerDefinitionInterface;
