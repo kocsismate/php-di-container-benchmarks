@@ -32,7 +32,7 @@ final class TestCaseGenerator
 
         if ($type === TestCase::HOT) {
             foreach ($classes as $class) {
-                $code .= "\$container->get('$class');\n";
+                $code .= "\$container->get($class::class);\n";
             }
         }
 
@@ -50,7 +50,7 @@ final class TestCaseGenerator
 
         for ($i = 0; $i < $iterations; $i++) {
             foreach ($classes as $class) {
-                $code .= "\$container->get('$class');\n";
+                $code .= "\$container->get($class::class);\n";
             }
         }
 
