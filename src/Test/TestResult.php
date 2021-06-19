@@ -22,8 +22,7 @@ final class TestResult
 
     public static function createFromJson(string $json): TestResult
     {
-        $result = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
-
+        $result = json_decode($json, true, 512);
         if ($result === null) {
             return new TestResult(null, null, "Invalid JSON response: \"$json\"");
         }

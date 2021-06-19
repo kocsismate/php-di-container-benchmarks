@@ -40,6 +40,8 @@ if ($benchmarkUrl === false) {
     exit(-1);
 }
 
+$benchmarkUrl = trim($benchmarkUrl, '"');
+
 $benchmark = new Benchmark(new WebBenchmarkContext($benchmarkUrl));
 
 if (isset($argv[1]) && $argv[1] === "build") {
