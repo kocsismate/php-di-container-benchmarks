@@ -14,21 +14,21 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@master
 
-      - name: "Install PHP 8.0"
+      - name: "Install PHP 8.1"
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.0"
+          php-version: "8.1"
           extensions: mbstring, xml
           tools: composer:v2
 
       - name: "Validate composer.json"
-        run: php8.0 $(which composer) validate --no-check-all
+        run: composer validate --no-check-all
 
       - name: "Install dependencies with composer"
-        run: php8.0 $(which composer) install --no-interaction --no-progress --ignore-platform-reqs
+        run: composer install --no-interaction --no-progress --ignore-platform-reqs
 
       - name: "Run PHP CodeSniffer"
-        run: php8.0 vendor/bin/phpcs --standard=phpcs.xml
+        run: vendor/bin/phpcs --standard=phpcs.xml
 
   static-code-analysis:
     name: "Static Code Analysis"
@@ -39,15 +39,15 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@master
 
-      - name: "Install PHP 8.0"
+      - name: "Install PHP 8.1"
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.0"
+          php-version: "8.1"
           extensions: mbstring, xml
           tools: composer:v2
 
       - name: "Install dependencies with composer"
-        run: php8.0 $(which composer) install --no-interaction --no-progress --ignore-platform-reqs
+        run: composer install --no-interaction --no-progress --ignore-platform-reqs
 
       - name: "Run phpstan/phpstan"
-        run: php8.0 vendor/bin/phpstan analyse
+        run: vendor/bin/phpstan analyse
