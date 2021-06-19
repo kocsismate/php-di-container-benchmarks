@@ -86,7 +86,7 @@ final class HtmlOutputGenerator implements OutputGeneratorInterface
             </p>
 
             <p>
-                
+
                 I have been interested in the topic since then - and my curiosity was just growing after I had started
                 to develop my own DI container, Zen - so I wanted to conduct another benchmark that also tries to measure
                 real-life performance, while being as unbiased and reliable as possible. So here is my take! If you have any
@@ -163,7 +163,7 @@ HERE;
         <section>
             <h2 id="method">Method</h2>
 
-            <p>            
+            <p>
                 Each container is given 6 tasks (Test Suites) where they have to create or fetch object graphs of
                 different sizes (100, 1, or 1000 objects, respectively). For this purpose, containers are configured
                 either to always instantiate objects (this is usually called as Prototype scope) or to instantiate objects
@@ -185,7 +185,7 @@ HERE;
                 Furthermore, all Test Cases are performed 30 times (this is referred to as "runs") in order to improve
                 the accuracy of measurements. The median of these results is displayed in the final results.
             </p>
-        </section>    
+        </section>
 
         <hr>
         <section>
@@ -220,12 +220,14 @@ HERE;
 HERE;
             foreach ($testSuite->getTestCases() as $testCase) {
                 $testCaseTitle = $testCase->getTitle();
+                $testCaseNumber = $testCase->getNumber();
+                $testCaseFixtureUrl = "https://github.com/kocsismate/php-di-container-benchmarks/blob/master/app/generated/test_case_{$testSuiteNumber}_{$testCaseNumber}.php";
 
                 $html .= <<<HERE
         <table border="1">
             <thead>
                 <tr>
-                    <th colspan="6" style="font-size: 18px;">$testCaseTitle</th>
+                    <th colspan="6" style="font-size: 18px;">$testCaseTitle (<a target="_blank" href="$testCaseFixtureUrl">code</a>)</th>
                 </tr>
                 <tr>
                     <th style='width: 50px;'>Rank</th>
