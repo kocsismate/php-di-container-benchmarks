@@ -16,7 +16,7 @@ final class AuraContainerDefinition implements ContainerDefinitionInterface
 
     public function getName(): string
     {
-        return "Aura";
+        return "aura";
     }
 
     public function getDisplayedName(): string
