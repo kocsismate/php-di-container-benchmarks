@@ -15,7 +15,7 @@ services:
       - benchmark-nginx
 
   benchmark-nginx:
-    image: nginx:1.19-alpine
+    image: nginx:1.21-alpine
     container_name: benchmark-nginx
     networks:
       - benchmark
