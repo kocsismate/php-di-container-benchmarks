@@ -16189,6 +16189,9 @@ class CompiledPrototypeContainer extends Container
         return $this->factories['DiContainerBenchmarks\\Fixture\\C\\FixtureC1000']();
     }
 
+    /**
+     * @return array|bool|float|int|string|null
+     */
     public function getParameter(string $name)
     {
         if (!(isset($this->parameters[$name]) || isset($this->loadedDynamicParameters[$name]) || \array_key_exists($name, $this->parameters))) {

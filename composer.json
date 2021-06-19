@@ -16,17 +16,17 @@
         "ext-json": "*",
         "composer-runtime-api": "^2.0",
         "aura/di": "^4.0.0",
-        "chubbyphp/chubbyphp-container": "^1.1.0",
+        "chubbyphp/chubbyphp-container": "^2.0.0",
         "doctrine/cache": "^1.6.1",
         "illuminate/container": "^8.17.0",
-        "joomla/di": "^1.5.1",
+        "joomla/di": "^2.0.x-dev",
         "laminas/laminas-servicemanager": "^3.5.0",
         "level-2/dice": "^4.0.1",
         "php-di/php-di": "^6.3.0",
         "psr/container": "^1.0.0",
         "symfony/config": "^5.1",
         "symfony/dependency-injection": "^5.1.0",
-        "woohoolabs/zen": "3.0.x-dev",
+        "woohoolabs/zen": "^3.0.0",
         "yiisoft/yii2": "^2.0.31"
     },
     "require-dev": {
@@ -51,6 +51,7 @@
         "platform": {
             "php": "8.0.0"
         },
+        "platform-check": false,
         "sort-packages": true
     },
     "repositories": [
