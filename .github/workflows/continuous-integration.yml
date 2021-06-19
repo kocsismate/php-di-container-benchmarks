@@ -50,4 +50,4 @@ jobs:
         run: php8.0 $(which composer) install --no-interaction --no-progress --ignore-platform-reqs
 
       - name: "Run phpstan/phpstan"
-        run: php8.0 vendor/bin/phpstan analyse --level 8 src
+        run: php8.0 vendor/bin/phpstan analyse

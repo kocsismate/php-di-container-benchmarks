@@ -1,4 +1,7 @@
 parameters:
+    level: max
+    paths:
+        - src
     bootstrapFiles:
         - app/bootstrap.php
     excludes_analyse:
