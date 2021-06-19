@@ -17,5 +17,5 @@ variable "image_name" {}
 variable "image_architecture" {}
 
 variable "docker_compose_version" {
-  default = "1.26.2"
+  default = "1.29.2"
 }

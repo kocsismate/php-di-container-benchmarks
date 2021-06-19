@@ -1,12 +1,16 @@
 terraform {
-  required_version = "~>0.13.4"
+  required_version = "~>1.0.0"
   backend "local" {
     path = "./terraform.tfstate"
+  }
+  required_providers {
+    aws = {
+      version = "~>3.40"
+    }
   }
 }
 
 provider "aws" {
-  version = "~>3.11"
   region = var.region
   access_key = var.access_key
   secret_key = var.secret_key
