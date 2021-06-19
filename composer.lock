@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7c6ce92df0c6c970250469bf8783df82",
+    "content-hash": "5b4a62f7b34aee0b7de98867617d1186",
     "packages": [
         {
             "name": "aura/di",
@@ -204,28 +204,28 @@
         },
         {
             "name": "chubbyphp/chubbyphp-container",
-            "version": "1.4.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/chubbyphp/chubbyphp-container.git",
-                "reference": "1891f3237e794541474979c024be18ac69f9396b"
+                "reference": "d10b7e46954df587cc3c8e643280779bff79cbf9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chubbyphp/chubbyphp-container/zipball/1891f3237e794541474979c024be18ac69f9396b",
-                "reference": "1891f3237e794541474979c024be18ac69f9396b",
+                "url": "https://api.github.com/repos/chubbyphp/chubbyphp-container/zipball/d10b7e46954df587cc3c8e643280779bff79cbf9",
+                "reference": "d10b7e46954df587cc3c8e643280779bff79cbf9",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4|^8.0",
-                "psr/container": "^1.0"
+                "psr/container": "^1.1|^2.0"
             },
             "require-dev": {
                 "chubbyphp/chubbyphp-dev-helper": "dev-master",
                 "chubbyphp/chubbyphp-mock": "^1.6",
                 "infection/infection": "^0.20.2",
                 "php-coveralls/php-coveralls": "^2.4.3",
-                "phploc/phploc": "^6.0.2",
+                "phploc/phploc": "^7.0.2",
                 "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan": "^0.12.64",
                 "phpunit/phpunit": "^9.5"
@@ -233,7 +233,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "2.0-dev"
                 }
             },
             "autoload": {
@@ -259,9 +259,9 @@
             ],
             "support": {
                 "issues": "https://github.com/chubbyphp/chubbyphp-container/issues",
-                "source": "https://github.com/chubbyphp/chubbyphp-container/tree/1.4.0"
+                "source": "https://github.com/chubbyphp/chubbyphp-container/tree/2.0.0"
             },
-            "time": "2021-01-09T18:19:20+00:00"
+            "time": "2021-03-07T09:28:49+00:00"
         },
         {
             "name": "container-interop/container-interop",
